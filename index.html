@@ -8,6 +8,12 @@
 <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2410c'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='34' text-anchor='middle' fill='%23fff'%3E30%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Daily PM">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -221,7 +227,7 @@ function renderHome(){
 
 async function openQuiz(date){
   $app.innerHTML = header(true) + `<p class="muted">Loading questions…</p>`;
-  try{ const r = await fetch(`quizzes/${date}.json`,{cache:"no-store"}); if(!r.ok) throw 0; quiz = await r.json(); }
+  try{ const r = await fetch(`quizzes/${date}.json?t=${Date.now()}`,{cache:"no-store"}); if(!r.ok) throw 0; quiz = await r.json(); }
   catch{ $app.innerHTML = header(true)+`<div class="card empty"><h2>Couldn't load this quiz</h2><p class="muted">Check your connection and try again.</p></div>`; return; }
   const a = attemptFor(date);
   if(a){ renderResults(a.answers||{}, a); return; }
@@ -357,9 +363,31 @@ async function route(){
   window.scrollTo(0,0);
 }
 
+async function loadIndex(){
+  try{ const r = await fetch("quizzes/index.json?t="+Date.now(),{cache:"no-store"}); if(r.ok){ index = await r.json(); store.set("dpm:index",index); return; } }catch{}
+  index = store.get("dpm:index") || index;
+}
+
+// Installed apps stay in memory between opens, so re-check for a new quiz whenever the app comes back to the foreground.
+let lastSync = Date.now();
+document.addEventListener("visibilitychange", async ()=>{
+  if(document.visibilityState !== "visible" || Date.now()-lastSync < 60e3) return;
+  lastSync = Date.now();
+  const before = index.quizzes[0]?.date;
+  await loadIndex(); await loadAttempts();
+  if(!location.hash.startsWith("#/q/")) renderHome();
+  else if(index.quizzes[0]?.date !== before) toast("A new quiz is ready — tap ← All quizzes");
+});
+
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js").then(reg=>{
+    document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible") reg.update().catch(()=>{}); });
+  }).catch(()=>{});
+}
+
 (async()=>{
   const t = store.get("dpm:theme"); if(t) document.documentElement.dataset.theme = t;
-  try{ const r = await fetch("quizzes/index.json",{cache:"no-store"}); if(r.ok) index = await r.json(); }catch{}
+  await loadIndex();
   await loadAttempts();
   addEventListener("hashchange", route);
   route();
