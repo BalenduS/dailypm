@@ -133,6 +133,19 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01e
 .ex b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;color:var(--muted)}
 .ex.why{background:var(--bad-soft)}
 .ex.why b{color:var(--bad)}
+.cardtop{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bm{flex:none;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 11px 5px 8px;font-size:13px;font-weight:600;color:var(--muted);min-height:34px}
+.bm:hover{border-color:var(--muted);color:var(--ink)}
+.bm.on{--fill:1;color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.dumpcard{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;margin:-8px 0 26px}
+.dumpicon{--fill:1;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.dt{flex:1;display:flex;flex-direction:column;font-size:14px}
+.dt b{font:650 17px Fraunces,Georgia,serif}
+.dt span{color:var(--muted)}
+.dq.closed{border-left-color:var(--line)}
+.ro.try{width:100%;text-align:left;background:transparent;border:1.5px solid var(--line);margin-bottom:8px;padding:11px 12px}
+.ro.try:hover{border-color:var(--muted)}
+.dq .hint,.dq .orig{font-size:13px;margin:8px 0 0}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:20;max-width:calc(100% - 32px)}
 .empty{padding:28px 20px;text-align:center}
 @media (max-width:420px){.hero h1{font-size:26px}.qcard h2{font-size:19px}.score{flex-direction:column;text-align:center}}
@@ -149,7 +162,8 @@ const store = {
   set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} },
   del(k){ try{ localStorage.removeItem(k); }catch{} }
 };
-let index = {quizzes:[]}, attempts = [], quiz = null, state = null;
+let index = {quizzes:[]}, attempts = [], quiz = null, state = null, bookmarks = new Set();
+const quizCache = {};
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const todayIST = () => new Date(Date.now() + 5.5*3600e3).toISOString().slice(0,10);
@@ -161,9 +175,33 @@ const pillClass = pct => pct>=80?"good":pct>=60?"mid":"bad";
 function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),3200); }
 
 async function loadAttempts(){
-  try{ const r = await fetch(API,{cache:"no-store"}); if(r.ok){ attempts=(await r.json()).attempts||[]; store.set("dpm:attempts",attempts); return; } }catch{}
+  try{ const r = await fetch(API,{cache:"no-store"}); if(r.ok){ const d = await r.json();
+    attempts = d.attempts||[]; store.set("dpm:attempts",attempts);
+    bookmarks = new Set((d.bookmarks||[]).map(b=>b.question_id)); store.set("dpm:bookmarks",[...bookmarks]); return; } }catch{}
   attempts = store.get("dpm:attempts") || [];
+  bookmarks = new Set(store.get("dpm:bookmarks") || []);
 }
+
+const BM_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 3.5h12a.5.5 0 0 1 .5.5v16.2a.3.3 0 0 1-.48.24L12 16l-6.02 4.44a.3.3 0 0 1-.48-.24V4a.5.5 0 0 1 .5-.5z" fill="currentColor" fill-opacity="var(--fill,0)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+const bmBtn = id => { const on = bookmarks.has(id); return `<button class="bm ${on?"on":""}" data-bm="${id}" aria-pressed="${on}" title="${on?"Remove from Question Dump":"Save to Question Dump"}">${BM_ICON}<span>${on?"Saved":"Save"}</span></button>`; };
+function paintBm(id){
+  const on = bookmarks.has(id);
+  document.querySelectorAll(`[data-bm="${id}"]`).forEach(b=>{ b.classList.toggle("on",on); b.setAttribute("aria-pressed",on); b.title = on?"Remove from Question Dump":"Save to Question Dump"; b.querySelector("span").textContent = on?"Saved":"Save"; });
+}
+async function toggleBookmark(id){
+  const on = !bookmarks.has(id);
+  on ? bookmarks.add(id) : bookmarks.delete(id); paintBm(id); store.set("dpm:bookmarks",[...bookmarks]);
+  try{
+    const r = await fetch(API,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({action:"bookmark",question_id:id,on})});
+    if(!r.ok) throw 0;
+    toast(on?"Saved to Question Dump":"Removed from Question Dump");
+  }catch{
+    on ? bookmarks.delete(id) : bookmarks.add(id); paintBm(id); store.set("dpm:bookmarks",[...bookmarks]);
+    toast("Couldn't update — check your connection");
+  }
+  if(location.hash==="#/dump" && !on) renderDump();
+}
+document.addEventListener("click", e=>{ const b = e.target.closest("[data-bm]"); if(b){ e.preventDefault(); e.stopPropagation(); toggleBookmark(b.dataset.bm); } });
 const attemptFor = d => attempts.find(a => a.quiz_date === d);
 
 function streak(){
@@ -219,6 +257,11 @@ function renderHome(){
       <div class="card stat"><b>${avg===null?"–":avg+"%"}</b><span>Average</span></div>
       <div class="card stat"><b>${best===null?"–":best}</b><span>Best /30</span></div>
     </div>${spark}
+    <button class="card dumpcard" onclick="location.hash='#/dump'">
+      <span class="dumpicon">${BM_ICON}</span>
+      <span class="dt"><b>Question Dump</b><span>${bookmarks.size ? `${bookmarks.size} question${bookmarks.size>1?"s":""} saved for revision` : "Tap Save on any question to keep it here"}</span></span>
+      <span class="muted">→</span>
+    </button>
     <div class="section-title"><h2>All quizzes</h2><span class="muted" style="font-size:14px">${attempts.length} taken</span></div>
     <div class="list">${rows||`<p class="muted">Nothing here yet.</p>`}</div>`;
   const tb = document.getElementById("theme");
@@ -246,7 +289,7 @@ function renderQuestion(){
       <div class="bar"><i style="width:${n/qs.length*100}%"></i></div>
     </div>
     <div class="card qcard">
-      <span class="tag"><span class="dot"></span>${esc(q.topic)} · ${esc(q.difficulty)}</span>
+      <div class="cardtop"><span class="tag"><span class="dot"></span>${esc(q.topic)} · ${esc(q.difficulty)}</span>${bmBtn(q.id)}</div>
       <h2>${esc(q.question)}</h2>
       <div class="opts">${q.options.map((o,k)=>`<button class="opt ${pick===k?"sel":""}" data-k="${k}"><span class="k">${L[k]}</span><span>${esc(o)}</span></button>`).join("")}</div>
       <div class="nav">
@@ -316,7 +359,7 @@ function renderResults(answers, a, unsaved){
     document.getElementById("rlist").innerHTML = list.map(({q,i,pick})=>{
       const ok = pick===q.answer, skipped = pick===undefined || pick===null;
       return `<div class="card rq ${ok?"":"wrong"}">
-        <span class="tag"><span class="dot" style="background:${ok?"var(--good)":"var(--bad)"}"></span>Q${i+1} · ${esc(q.topic)} · ${ok?"Correct":skipped?"Skipped":"Wrong"}</span>
+        <div class="cardtop"><span class="tag"><span class="dot" style="background:${ok?"var(--good)":"var(--bad)"}"></span>Q${i+1} · ${esc(q.topic)} · ${ok?"Correct":skipped?"Skipped":"Wrong"}</span>${bmBtn(q.id)}</div>
         <h3>${esc(q.question)}</h3>
         ${q.options.map((o,k)=>`<div class="ro ${k===q.answer?"correct":""} ${k===pick&&!ok?"picked":""}"><span class="k">${L[k]}</span><span>${esc(o)}</span>${k===q.answer?`<span class="lab">✓ Correct</span>`:k===pick?`<span class="lab">Your answer</span>`:""}</div>`).join("")}
         ${!ok && !skipped ? `<div class="ex why"><b>Why ${L[pick]} is wrong</b>${esc(q.rationales[pick])}</div>` : ""}
@@ -357,9 +400,60 @@ document.addEventListener("keydown", e=>{
   else if(e.key==="ArrowLeft" && state.i>0){ state.i--; renderQuestion(); }
 });
 
+async function getQuiz(date){
+  if(quizCache[date]) return quizCache[date];
+  try{ const r = await fetch(`quizzes/${date}.json?t=${Date.now()}`,{cache:"no-store"}); if(r.ok) return quizCache[date] = await r.json(); }catch{}
+  return null;
+}
+
+const dumpUI = { topic:"All", tries:{}, revealAll:false };
+async function renderDump(){
+  if(!$app.querySelector("#dumplist")) $app.innerHTML = header(true) + `<p class="muted">Loading your saved questions…</p>`;
+  const dates = [...new Set([...bookmarks].map(id=>id.slice(0,10)))];
+  await Promise.all(dates.map(getQuiz));
+  const items = [];
+  dates.sort().reverse().forEach(d=>{
+    const qz = quizCache[d]; if(!qz) return;
+    const att = attemptFor(d);
+    qz.questions.forEach((q,i)=>{ if(bookmarks.has(q.id)) items.push({q, i, date:d, orig: att?.answers?.[q.id]}); });
+  });
+  const topics = ["All", ...new Set(items.map(x=>x.q.topic))];
+  if(!topics.includes(dumpUI.topic)) dumpUI.topic = "All";
+  const shown = items.filter(x=>dumpUI.topic==="All" || x.q.topic===dumpUI.topic);
+  const card = ({q,i,date,orig}) => {
+    const tried = dumpUI.tries[q.id], open = dumpUI.revealAll || tried!==undefined;
+    const pick = tried!==undefined ? tried : undefined;
+    return `<div class="card rq dq ${open ? (pick===undefined||pick===q.answer?"":"wrong") : "closed"}">
+      <div class="cardtop"><span class="tag">${fmtShort(date)} · Q${i+1} · ${esc(q.topic)}</span>${bmBtn(q.id)}</div>
+      <h3>${esc(q.question)}</h3>
+      ${q.options.map((o,k)=> open
+        ? `<div class="ro ${k===q.answer?"correct":""} ${k===pick&&pick!==q.answer?"picked":""}"><span class="k">${L[k]}</span><span>${esc(o)}</span>${k===q.answer?`<span class="lab">✓ Correct</span>`:k===pick?`<span class="lab">Your pick</span>`:k===orig?`<span class="lab muted">Quiz answer</span>`:""}</div>`
+        : `<button class="ro try" data-try="${q.id}" data-k="${k}"><span class="k">${L[k]}</span><span>${esc(o)}</span></button>`).join("")}
+      ${open ? `
+        ${pick!==undefined && pick!==q.answer ? `<div class="ex why"><b>Why ${L[pick]} is wrong</b>${esc(q.rationales[pick])}</div>` : ""}
+        <div class="ex"><b>Correct answer: ${L[q.answer]}</b>${esc(q.explanation)}</div>
+        ${q.interview_tip?`<div class="ex tip"><b>In interviews</b>${esc(q.interview_tip)}</div>`:""}
+        ${orig!==undefined && orig!==q.answer ? `<p class="muted orig">In the quiz you picked ${L[orig]}.</p>`:""}`
+      : `<p class="muted hint">Pick an answer to check yourself.</p>`}
+    </div>`;
+  };
+  $app.innerHTML = header(true) + `
+    <div class="section-title" style="margin-top:4px"><h2 style="font-size:26px">Question Dump</h2><span class="muted" style="font-size:14px">${items.length} saved</span></div>
+    <p class="muted" style="margin:0 2px 14px">Revise: answers stay hidden until you pick one.</p>
+    ${items.length ? `<div class="filters">${topics.map(t=>`<button data-topic="${esc(t)}" class="${t===dumpUI.topic?"on":""}">${esc(t)}${t==="All"?` ${items.length}`:""}</button>`).join("")}
+      <button id="revealall" class="${dumpUI.revealAll?"on":""}" style="margin-left:auto">${dumpUI.revealAll?"Hide answers":"Show all answers"}</button></div>` : ""}
+    <div id="dumplist">${shown.map(card).join("") || `<div class="card empty"><h2>Nothing saved yet</h2><p class="muted">Tap <b>Save</b> on any question — during the quiz or in your results — and it lands here for revision.</p></div>`}</div>
+    ${Object.keys(dumpUI.tries).length && !dumpUI.revealAll ? `<p style="text-align:center"><button class="ghost" id="resettries">Reset my picks</button></p>`:""}`;
+  $app.querySelectorAll("[data-topic]").forEach(b=>b.onclick=()=>{ dumpUI.topic=b.dataset.topic; renderDump(); });
+  $app.querySelectorAll("[data-try]").forEach(b=>b.onclick=()=>{ dumpUI.tries[b.dataset.try]=+b.dataset.k; const y=scrollY; renderDump().then(()=>scrollTo(0,y)); });
+  const ra = document.getElementById("revealall"); if(ra) ra.onclick=()=>{ dumpUI.revealAll=!dumpUI.revealAll; renderDump(); };
+  const rt = document.getElementById("resettries"); if(rt) rt.onclick=()=>{ dumpUI.tries={}; renderDump(); };
+}
+
 async function route(){
   const m = location.hash.match(/^#\/q\/(\d{4}-\d{2}-\d{2})$/);
-  if(m){ await openQuiz(m[1]); } else { state = null; quiz = null; renderHome(); }
+  if(location.hash==="#/dump"){ state = null; quiz = null; await renderDump(); }
+  else if(m){ await openQuiz(m[1]); } else { state = null; quiz = null; renderHome(); }
   window.scrollTo(0,0);
 }
 
@@ -375,7 +469,8 @@ document.addEventListener("visibilitychange", async ()=>{
   lastSync = Date.now();
   const before = index.quizzes[0]?.date;
   await loadIndex(); await loadAttempts();
-  if(!location.hash.startsWith("#/q/")) renderHome();
+  if(location.hash==="#/dump") renderDump();
+  else if(!location.hash.startsWith("#/q/")) renderHome();
   else if(index.quizzes[0]?.date !== before) toast("A new quiz is ready — tap ← All quizzes");
 });
 

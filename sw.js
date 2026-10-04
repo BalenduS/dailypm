@@ -1,6 +1,6 @@
 // Daily PM service worker — network-first, so the app always shows the newest
 // quiz when online and falls back to the last copy when offline.
-const CACHE = "dailypm-v1";
+const CACHE = "dailypm-v2";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", e => {

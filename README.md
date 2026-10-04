@@ -6,6 +6,7 @@
 
 - Answer all 30, submit, and every question shows the correct answer, an explanation, and — if you missed it — why your pick was wrong.
 - Scores, topic breakdowns, and streaks are saved online and shown on the home page.
+- Tap **Save** on any question to add it to the **Question Dump** for later revision (answers stay hidden until you pick one).
 
 ## How it works
 | Part | Where |
@@ -15,4 +16,4 @@
 | No-repeat ledger | `ledger/asked.jsonl` |
 | Validation & publishing | `tools/finalize.py` |
 | Daily routine | `GENERATE.md`, run by a Claude scheduled task at 8:00 AM IST |
-| Score storage | Supabase Edge Function `dailypm-scores` → table `dailypm_attempts` |
+| Score + bookmark storage | Supabase Edge Function `dailypm-scores` → tables `dailypm_attempts`, `dailypm_bookmarks` |
