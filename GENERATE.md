@@ -19,32 +19,36 @@ Same shape as `drafts/2026-10-04.json`:
    "question": "...", "options": ["A","B","C","D"], "answer": 0,
    "explanation": "Why the correct answer is right (2-4 sentences, teach the idea)",
    "rationales": ["why option A is right/wrong", "...B", "...C", "...D"],
+   "interview_tip": "How this comes up in PM interviews and what a strong answer signals",
    "source": "https://... (only for news questions)"}
 ]}
 ```
 
+## Purpose
+Balendu is preparing for Product Manager interviews at top-tier companies (Google, Meta, Amazon, OpenAI and similar). Every question should build a skill those loops test, at that bar. Scenario-style questions should feel like real interview prompts.
+
 Mix for each day (30 total):
-| Topic | Count |
+| Area (interview loop it trains) | Count |
 |---|---|
-| Strategy (vision, positioning, moats, business models, competitive analysis) | 3 |
-| Discovery & research (interviews, JTBD, OST, validation, personas) | 3 |
-| Prioritization & frameworks (RICE, ICE, Kano, MoSCoW, opportunity scoring, cost of delay) | 2 |
-| Metrics & analytics (North Star, funnels, cohorts, SQL-literate thinking, unit economics) | 3 |
-| Experimentation (A/B design, stats pitfalls, interpreting results) | 2 |
-| Execution & delivery (agile, specs/PRDs, roadmaps, launches, incidents) | 3 |
-| Stakeholders & leadership (alignment, influence, conflict, communication) | 2 |
-| Day-to-day scenarios (realistic "what do you do" situations) | 3 |
-| AI product management (LLMs, evals, RAG, agents, cost/latency, safety, ML metrics) | 4 |
-| Technology for PMs (APIs, webhooks, architecture, data, security, mobile) | 2 |
-| Growth, GTM & pricing | 2 |
+| Product sense / design — users, pain points, solutions, trade-offs (Google, Meta "product sense") | 4 |
+| Analytical & metrics — success metrics, North Star, funnels, root-causing metric changes (Meta "execution", Google "analytical") | 4 |
+| Experimentation — A/B design, stats pitfalls, reading results | 2 |
+| Estimation & guesstimates — market sizing, back-of-envelope (one numeric answer, show the method in the explanation) | 2 |
+| Strategy & business — positioning, moats, business models, market entry, competition, pricing | 3 |
+| Execution & delivery — prioritization, roadmaps, specs, launches, incidents | 3 |
+| Behavioural & leadership — stakeholders, conflict, influence, ownership (Amazon Leadership Principles style) | 3 |
+| AI product management — LLMs, evals, RAG, agents, cost/latency, safety, ML metrics, AI product strategy | 5 |
+| Technical fluency — APIs, system design basics, data, scaling, security | 2 |
+| Growth & GTM — acquisition, activation, retention, monetisation | 1 |
 | Current events in product/AI (from step 2) | 1 |
 
 Rules:
-- Difficulty mix: about 10 easy, 13 medium, 7 hard. Scenario questions should be the hard ones.
-- Exactly one defensibly correct answer. Distractors must be plausible — common misconceptions, not jokes.
+- Difficulty mix: about 8 easy, 14 medium, 8 hard. Behavioural, product-sense and root-cause scenarios should be the hard ones.
+- Exactly one defensibly correct answer. Distractors must be plausible — the answers weaker candidates actually give, not jokes.
 - Every rationale explains *why* that option is right or wrong, so a wrong pick teaches something.
+- Every question has an `interview_tip`: one or two sentences on how this shows up in a PM interview and what a strong answer signals.
 - No "all of the above" / "none of the above". Keep options similar in length.
-- Where natural, use contexts like WhatsApp commerce, Shopify, Indian D2C brands, and AI assistants.
+- Vary contexts: big-tech consumer products, marketplaces, B2B SaaS, WhatsApp/Shopify commerce, Indian D2C, AI assistants.
 - Don't worry about answer positions — the finalize script balances them.
 
 ## 4. Validate and publish

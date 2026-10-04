@@ -1,6 +1,6 @@
 {
   "date": "2026-10-04",
-  "theme": "Day 1 — foundations across the PM stack",
+  "theme": "Foundations across the PM stack",
   "questions": [
     {
       "topic": "Prioritization",
@@ -20,7 +20,8 @@
         "Correct. Value (R × I × C) divided by cost (E).",
         "This inverts the formula — more impact and confidence would lower the score, and more effort would raise it.",
         "Multiplying by effort rewards expensive work. Effort belongs in the denominator."
-      ]
+      ],
+      "interview_tip": "In prioritization rounds, don't just name RICE — show the math on 2–3 options, then say what you'd sanity-check (confidence is often inflated)."
     },
     {
       "topic": "Prioritization",
@@ -40,7 +41,8 @@
         "That describes basic (must-be) features. Missing a delighter doesn't upset anyone.",
         "Linear satisfaction is the definition of performance (one-dimensional) features — more is better in proportion.",
         "Correct. No penalty for absence, and they migrate toward 'expected' over time."
-      ]
+      ],
+      "interview_tip": "Use Kano in product-design answers to explain why you'd ship the basics first and pick one delighter as the differentiator."
     },
     {
       "topic": "Metrics",
@@ -60,7 +62,8 @@
         "Completed orders capture the core value exchange and move with product changes — a reasonable North Star candidate.",
         "Active merchants getting sales measures value for the paying customer — also a strong candidate.",
         "Weekly GMV through chat tracks value flowing through the product. It can be skewed by a few large merchants, but it isn't vanity."
-      ]
+      ],
+      "interview_tip": "Metrics rounds at Meta and Google probe this directly: pick a metric that reflects user value and explain why cumulative counts fail."
     },
     {
       "topic": "Experimentation",
@@ -80,7 +83,8 @@
         "Sample size is driven by the primary metric's baseline and minimum detectable effect, not guardrails.",
         "Correct. Guardrails are do-no-harm constraints.",
         "Audience has nothing to do with it — guardrails are monitored throughout the test."
-      ]
+      ],
+      "interview_tip": "When designing an experiment in an interview, always name your primary metric, 1–2 guardrails, and your launch rule."
     },
     {
       "topic": "Experimentation",
@@ -100,7 +104,8 @@
         "Correct. Multiple looks + optional stopping = inflated Type I error.",
         "Peeking mainly inflates false positives (Type I), not false negatives. Stopping early on a fluke is the core issue.",
         "Users don't see your dashboard; peeking doesn't change their behaviour."
-      ]
+      ],
+      "interview_tip": "Mentioning pre-registered sample size or sequential testing signals real experimentation experience."
     },
     {
       "topic": "Experimentation",
@@ -120,7 +125,8 @@
         "Re-weighting fixes the counts but not the bias in who was dropped.",
         "More traffic won't fix a systematic bug — the mismatch will persist.",
         "Correct. SRM invalidates the comparison until the root cause is found."
-      ]
+      ],
+      "interview_tip": "A strong signal in analytics rounds: before reading any A/B result, say you'd check the split and data integrity first."
     },
     {
       "topic": "Metrics",
@@ -140,7 +146,8 @@
         "A steep week-1 drop is still a problem worth fixing — usually activation or onboarding.",
         "That's what a curve trending toward zero looks like. Flattening means the decline stops.",
         "Possibly part of the story, but the curve shape doesn't tell you that, and pausing marketing is a big leap from this data."
-      ]
+      ],
+      "interview_tip": "If asked 'how do you know you have product-market fit?', cohort curves that flatten are the crisp, data-backed answer."
     },
     {
       "topic": "Discovery",
@@ -160,7 +167,8 @@
         "Stated willingness to pay is notoriously unreliable without a real commitment.",
         "Correct. Specific past behaviour, no pitch, no leading.",
         "Asking for validation invites compliments, not data."
-      ]
+      ],
+      "interview_tip": "In product-sense rounds, describe how you'd validate the problem with past-behaviour questions before proposing solutions."
     },
     {
       "topic": "Discovery",
@@ -180,7 +188,8 @@
         "Correct. Outcome → opportunities → solutions → assumption tests.",
         "The outcome is the root; opportunities hang beneath it.",
         "Solutions sit under opportunities, not the other way round."
-      ]
+      ],
+      "interview_tip": "Framing discovery as outcome → opportunities → solutions shows you don't jump to features."
     },
     {
       "topic": "Discovery",
@@ -200,7 +209,8 @@
         "That's a demographic, not a job — JTBD deliberately moves away from demographics.",
         "A dashboard is a feature request; the underlying job is hidden.",
         "Correct. Situation, motivation, and outcome — no product named."
-      ]
+      ],
+      "interview_tip": "Opening a product-design answer with the user's job (situation, motivation, outcome) is a reliable structure."
     },
     {
       "topic": "Strategy",
@@ -220,7 +230,8 @@
         "Capabilities come after how to win — they're what you need to deliver it.",
         "The winning aspiration is the first choice, before where to play.",
         "Management systems are the last choice in the cascade."
-      ]
+      ],
+      "interview_tip": "Strategy questions ('should X enter market Y?') land well when you answer where to play and how to win explicitly."
     },
     {
       "topic": "Strategy",
@@ -240,7 +251,8 @@
         "This is the popular loose usage Christensen explicitly argued against.",
         "Correct. Low-end or new-market foothold, then moving upmarket.",
         "That describes sustaining innovation — what incumbents are good at."
-      ]
+      ],
+      "interview_tip": "Use the term precisely — interviewers notice when candidates call every new tech 'disruptive'."
     },
     {
       "topic": "Execution",
@@ -260,7 +272,8 @@
         "Correct.",
         "Developers own the Sprint Backlog plan and estimates, not Product Backlog ordering.",
         "Stakeholders give input; they don't own the backlog."
-      ]
+      ],
+      "interview_tip": "Execution rounds may test whether you know the boundaries of PM, PO, and engineering ownership."
     },
     {
       "topic": "Execution",
@@ -280,7 +293,8 @@
         "Too rigid — scope can be renegotiated with the team, and the request deserves real evaluation.",
         "Overtime hides the trade-off and isn't sustainable.",
         "Correct. Evaluate, protect the goal, schedule appropriately."
-      ]
+      ],
+      "interview_tip": "A classic behavioural prompt — show you quantify the ask, protect commitments, and make trade-offs explicit."
     },
     {
       "topic": "Execution",
@@ -300,7 +314,8 @@
         "They serve different purposes and are both needed.",
         "This reverses them.",
         "Neither is defined by those roles; the team owns DoD, and AC are typically written by the PO with the team."
-      ]
+      ],
+      "interview_tip": "Small but telling: precise delivery vocabulary signals you've actually run teams."
     },
     {
       "topic": "Stakeholders",
@@ -320,7 +335,8 @@
         "That's for low power, high interest stakeholders.",
         "Correct.",
         "That's for low power, low interest. Ignoring a powerful stakeholder is risky."
-      ]
+      ],
+      "interview_tip": "For 'tell me about a difficult stakeholder', show how you tailored communication to influence and interest."
     },
     {
       "topic": "Stakeholders",
@@ -340,7 +356,8 @@
         "Correct. Diagnose, then present explicit trade-offs.",
         "Hidden quality cuts create launch-day incidents and shift risk without anyone agreeing to it.",
         "Blame escalation damages the relationship and doesn't solve the problem."
-      ]
+      ],
+      "interview_tip": "Amazon-style behavioural rounds love this: show data, options, and a clear recommendation — not heroics."
     },
     {
       "topic": "Day-to-day",
@@ -360,7 +377,8 @@
         "Treating a symptom before knowing the cause — and possibly a tracking bug.",
         "Useful for slow trends, too slow for an overnight cliff.",
         "Too broad; you'd lose good changes and might not even fix the cause."
-      ]
+      ],
+      "interview_tip": "The canonical root-cause question: clarify, check data integrity, segment, correlate with changes, then hypothesise."
     },
     {
       "topic": "AI Product",
@@ -380,7 +398,8 @@
         "Fine-tuning bakes in stale prices and doesn't reliably teach facts.",
         "Instructions help a little but don't give the model the facts it's missing.",
         "Correct. Grounding + fallback + measurement."
-      ]
+      ],
+      "interview_tip": "AI PM interviews expect grounding, fallback behaviour, and evals — not just 'better prompts'."
     },
     {
       "topic": "AI Product",
@@ -400,7 +419,8 @@
         "Accuracy hides the trade-off and is misleading with rare classes like fraud.",
         "Correct. Asymmetric costs → optimise for recall.",
         "0.5 is arbitrary; thresholds should reflect business costs."
-      ]
+      ],
+      "interview_tip": "Tie thresholds to the cost of each error type; it shows you think about ML in business terms."
     },
     {
       "topic": "AI Product",
@@ -420,7 +440,8 @@
         "Correct. Evals against a baseline.",
         "Time doesn't test anything.",
         "Prompt changes alter behaviour across every conversation — they're product changes."
-      ]
+      ],
+      "interview_tip": "Saying how you'd build and maintain an eval set is now table stakes for AI PM roles at OpenAI, Google and Meta."
     },
     {
       "topic": "AI Product",
@@ -440,7 +461,8 @@
         "Temperature doesn't change speed or per-token price.",
         "Context window is a fixed model property.",
         "That's higher temperature."
-      ]
+      ],
+      "interview_tip": "Know when you'd want low temperature (extraction, support) vs higher (brainstorming, copy)."
     },
     {
       "topic": "AI Product",
@@ -460,7 +482,8 @@
         "A trivial share of total tokens.",
         "Nothing in the scenario mentions images.",
         "Correct. Repeated input context dominates."
-      ]
+      ],
+      "interview_tip": "Unit-economics questions for AI products often hinge on tokens per conversation — estimate it out loud."
     },
     {
       "topic": "AI Product",
@@ -480,7 +503,8 @@
         "Doesn't scale with catalog size and drives up cost on every message.",
         "Correct.",
         "Massively expensive and pointless for this problem."
-      ]
+      ],
+      "interview_tip": "A frequent AI PM question: explain RAG for fresh knowledge, fine-tuning for behaviour and format."
     },
     {
       "topic": "Technology",
@@ -500,7 +524,8 @@
         "Correct.",
         "Rotating keys to evade limits usually breaks the provider's terms.",
         "429 is temporary — dropping requests loses data unnecessarily."
-      ]
+      ],
+      "interview_tip": "Technical rounds check that you can reason about integration failure modes, not write the code."
     },
     {
       "topic": "Technology",
@@ -520,7 +545,8 @@
         "Idempotency is about correctness, not speed.",
         "Encryption and idempotency are unrelated.",
         "Providers can't detect idempotency; it's your responsibility."
-      ]
+      ],
+      "interview_tip": "Calling out duplicate events and retries in a system-design discussion shows engineering credibility."
     },
     {
       "topic": "Technology",
@@ -540,7 +566,8 @@
         "Flags reduce blast radius but don't replace testing.",
         "Not their purpose, and client-side flags can be inspected anyway.",
         "Correct."
-      ]
+      ],
+      "interview_tip": "In launch-plan answers, describe staged rollout via flags with a kill switch and the metrics you'd watch."
     },
     {
       "topic": "Growth",
@@ -560,7 +587,8 @@
         "Correct. 4 × 0.2 = 0.8, below the self-sustaining threshold.",
         "That's just the conversion rate.",
         "The arithmetic doesn't give 1.2."
-      ]
+      ],
+      "interview_tip": "Growth rounds may ask you to compute K live — keep the formula and the 1/(1−K) amplification handy."
     },
     {
       "topic": "Growth",
@@ -580,7 +608,8 @@
         "Correct.",
         "Time spent can mean confusion as easily as value.",
         "Finishing a tour doesn't show value was experienced."
-      ]
+      ],
+      "interview_tip": "Strong answers define activation by its correlation with retention, then design onboarding around it."
     },
     {
       "topic": "Pricing",
@@ -600,7 +629,8 @@
         "That's live price testing; Van Westendorp is survey-based.",
         "That's competitive benchmarking.",
         "That's an econometric analysis of real sales."
-      ]
+      ],
+      "interview_tip": "In pricing questions, pair survey methods like this with a live price test to validate."
     }
   ]
 }

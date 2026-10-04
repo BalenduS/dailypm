@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "theme": "Day 1 — foundations across the PM stack",
+ "theme": "Foundations across the PM stack",
  "questions": [
   {
    "id": "2026-10-04-01",
@@ -21,7 +21,8 @@
     "Adding the factors breaks the logic: a feature reaching nobody (Reach = 0) could still score well. The value factors must multiply so any zero zeroes the score."
    ],
    "answer": 1,
-   "explanation": "RICE multiplies the value side — how many people it reaches, how much it moves each of them, and how sure you are — then divides by the cost (effort, usually in person-months). Dividing by effort is what turns it into a value-per-unit-of-work score."
+   "explanation": "RICE multiplies the value side — how many people it reaches, how much it moves each of them, and how sure you are — then divides by the cost (effort, usually in person-months). Dividing by effort is what turns it into a value-per-unit-of-work score.",
+   "interview_tip": "In prioritization rounds, don't just name RICE — show the math on 2–3 options, then say what you'd sanity-check (confidence is often inflated)."
   },
   {
    "id": "2026-10-04-02",
@@ -42,7 +43,8 @@
     "Linear satisfaction is the definition of performance (one-dimensional) features — more is better in proportion."
    ],
    "answer": 0,
-   "explanation": "Delighters are unexpected — customers don't miss them when absent but are pleased when present. Kano's key insight is that they decay: yesterday's delighter (say, free returns or dark mode) becomes today's performance or basic expectation."
+   "explanation": "Delighters are unexpected — customers don't miss them when absent but are pleased when present. Kano's key insight is that they decay: yesterday's delighter (say, free returns or dark mode) becomes today's performance or basic expectation.",
+   "interview_tip": "Use Kano in product-design answers to explain why you'd ship the basics first and pick one delighter as the differentiator."
   },
   {
    "id": "2026-10-04-03",
@@ -63,7 +65,8 @@
     "Completed orders capture the core value exchange and move with product changes — a reasonable North Star candidate."
    ],
    "answer": 2,
-   "explanation": "A cumulative count can only go up, so it hides churn and says nothing about whether customers are getting value. A North Star should reflect delivered value, be sensitive to change, and be something teams can influence week to week."
+   "explanation": "A cumulative count can only go up, so it hides churn and says nothing about whether customers are getting value. A North Star should reflect delivered value, be sensitive to change, and be something teams can influence week to week.",
+   "interview_tip": "Metrics rounds at Meta and Google probe this directly: pick a metric that reflects user value and explain why cumulative counts fail."
   },
   {
    "id": "2026-10-04-04",
@@ -84,7 +87,8 @@
     "Correct. Guardrails are do-no-harm constraints."
    ],
    "answer": 3,
-   "explanation": "Guardrails protect the business from 'winning' the wrong way — e.g. a checkout change that lifts conversion but increases refunds, latency, or unsubscribes. You set a tolerance and block the launch if a guardrail degrades beyond it."
+   "explanation": "Guardrails protect the business from 'winning' the wrong way — e.g. a checkout change that lifts conversion but increases refunds, latency, or unsubscribes. You set a tolerance and block the launch if a guardrail degrades beyond it.",
+   "interview_tip": "When designing an experiment in an interview, always name your primary metric, 1–2 guardrails, and your launch rule."
   },
   {
    "id": "2026-10-04-05",
@@ -105,7 +109,8 @@
     "Peeking mainly inflates false positives (Type I), not false negatives. Stopping early on a fluke is the core issue."
    ],
    "answer": 1,
-   "explanation": "A p-value is only valid at the pre-planned sample size. Each extra look is another chance for random noise to cross the threshold, so 'stop when significant' can push false positives to 20–30%+. Fix it by committing to a sample size, or by using sequential testing methods designed for continuous monitoring."
+   "explanation": "A p-value is only valid at the pre-planned sample size. Each extra look is another chance for random noise to cross the threshold, so 'stop when significant' can push false positives to 20–30%+. Fix it by committing to a sample size, or by using sequential testing methods designed for continuous monitoring.",
+   "interview_tip": "Mentioning pre-registered sample size or sequential testing signals real experimentation experience."
   },
   {
    "id": "2026-10-04-06",
@@ -126,7 +131,8 @@
     "The imbalance itself signals biased exclusion; the users you lost may be exactly the ones who would have changed the result."
    ],
    "answer": 0,
-   "explanation": "At this sample size, a 52/48 split is wildly unlikely by chance (a chi-square test would give a tiny p-value). That's a Sample Ratio Mismatch: something — bot filtering, a redirect, a crash in one variant, logging loss — is dropping users unevenly, and those missing users are probably not random. The outcome can't be trusted until the cause is found."
+   "explanation": "At this sample size, a 52/48 split is wildly unlikely by chance (a chi-square test would give a tiny p-value). That's a Sample Ratio Mismatch: something — bot filtering, a redirect, a crash in one variant, logging loss — is dropping users unevenly, and those missing users are probably not random. The outcome can't be trusted until the cause is found.",
+   "interview_tip": "A strong signal in analytics rounds: before reading any A/B result, say you'd check the split and data integrity first."
   },
   {
    "id": "2026-10-04-07",
@@ -147,7 +153,8 @@
     "A steep week-1 drop is still a problem worth fixing — usually activation or onboarding."
    ],
    "answer": 0,
-   "explanation": "A curve that flattens (asymptotes above zero) means some users stick indefinitely — the classic retention signal of fit for a segment. The next move is to understand who those 22% are and why, and to shrink the early drop through better activation."
+   "explanation": "A curve that flattens (asymptotes above zero) means some users stick indefinitely — the classic retention signal of fit for a segment. The next move is to understand who those 22% are and why, and to shrink the early drop through better activation.",
+   "interview_tip": "If asked 'how do you know you have product-market fit?', cohort curves that flatten are the crisp, data-backed answer."
   },
   {
    "id": "2026-10-04-08",
@@ -168,7 +175,8 @@
     "Stated willingness to pay is notoriously unreliable without a real commitment."
    ],
    "answer": 2,
-   "explanation": "Past, specific behaviour is evidence; opinions about the future are guesses (and people are polite). Asking about the last time something happened reveals the real workflow, workarounds, frequency, and pain."
+   "explanation": "Past, specific behaviour is evidence; opinions about the future are guesses (and people are polite). Asking about the last time something happened reveals the real workflow, workarounds, frequency, and pain.",
+   "interview_tip": "In product-sense rounds, describe how you'd validate the problem with past-behaviour questions before proposing solutions."
   },
   {
    "id": "2026-10-04-09",
@@ -189,7 +197,8 @@
     "The outcome is the root; opportunities hang beneath it."
    ],
    "answer": 1,
-   "explanation": "The tree starts with a desired business/product outcome, branches into customer opportunities (needs, pains, desires) discovered through research, then solutions that address a chosen opportunity, then assumption tests to de-risk those solutions. It keeps teams from jumping straight to solutions."
+   "explanation": "The tree starts with a desired business/product outcome, branches into customer opportunities (needs, pains, desires) discovered through research, then solutions that address a chosen opportunity, then assumption tests to de-risk those solutions. It keeps teams from jumping straight to solutions.",
+   "interview_tip": "Framing discovery as outcome → opportunities → solutions shows you don't jump to features."
   },
   {
    "id": "2026-10-04-10",
@@ -210,7 +219,8 @@
     "That's a demographic, not a job — JTBD deliberately moves away from demographics."
    ],
    "answer": 1,
-   "explanation": "A good job statement captures the situation, the motivation, and the desired outcome — independent of any product. 'When ___, I want to ___, so I can ___' keeps the focus on progress the customer is trying to make."
+   "explanation": "A good job statement captures the situation, the motivation, and the desired outcome — independent of any product. 'When ___, I want to ___, so I can ___' keeps the focus on progress the customer is trying to make.",
+   "interview_tip": "Opening a product-design answer with the user's job (situation, motivation, outcome) is a reliable structure."
   },
   {
    "id": "2026-10-04-11",
@@ -231,7 +241,8 @@
     "Correct. Where to play and how to win are designed as a pair."
    ],
    "answer": 3,
-   "explanation": "The five linked choices are: winning aspiration → where to play → how to win → must-have capabilities → management systems. 'Where to play' (segments, channels, geographies) and 'how to win' (the advantage in those places) are the heart of the strategy and must fit each other."
+   "explanation": "The five linked choices are: winning aspiration → where to play → how to win → must-have capabilities → management systems. 'Where to play' (segments, channels, geographies) and 'how to win' (the advantage in those places) are the heart of the strategy and must fit each other.",
+   "interview_tip": "Strategy questions ('should X enter market Y?') land well when you answer where to play and how to win explicitly."
   },
   {
    "id": "2026-10-04-12",
@@ -252,7 +263,8 @@
     "This is the popular loose usage Christensen explicitly argued against."
    ],
    "answer": 2,
-   "explanation": "Disruption begins where incumbents aren't motivated to compete — overserved low-end customers or non-consumers — with a 'worse but cheaper/simpler/more accessible' offering. Incumbents rationally ignore it until it improves enough to serve the mainstream."
+   "explanation": "Disruption begins where incumbents aren't motivated to compete — overserved low-end customers or non-consumers — with a 'worse but cheaper/simpler/more accessible' offering. Incumbents rationally ignore it until it improves enough to serve the mainstream.",
+   "interview_tip": "Use the term precisely — interviewers notice when candidates call every new tech 'disruptive'."
   },
   {
    "id": "2026-10-04-13",
@@ -273,7 +285,8 @@
     "Stakeholders give input; they don't own the backlog."
    ],
    "answer": 0,
-   "explanation": "The Product Owner is accountable for maximising value and for Product Backlog management, including ordering. Others can influence it, but the PO makes the call — and the organisation must respect those decisions."
+   "explanation": "The Product Owner is accountable for maximising value and for Product Backlog management, including ordering. Others can influence it, but the PO makes the call — and the organisation must respect those decisions.",
+   "interview_tip": "Execution rounds may test whether you know the boundaries of PM, PO, and engineering ownership."
   },
   {
    "id": "2026-10-04-14",
@@ -294,7 +307,8 @@
     "Too rigid — scope can be renegotiated with the team, and the request deserves real evaluation."
    ],
    "answer": 0,
-   "explanation": "A demo a month away doesn't require breaking the current sprint. Quantify the value (deal size, likelihood), protect the sprint goal, and slot it into the next sprint planning. If it were truly critical, the PO could renegotiate scope with the team — explicitly trading something out."
+   "explanation": "A demo a month away doesn't require breaking the current sprint. Quantify the value (deal size, likelihood), protect the sprint goal, and slot it into the next sprint planning. If it were truly critical, the PO could renegotiate scope with the team — explicitly trading something out.",
+   "interview_tip": "A classic behavioural prompt — show you quantify the ask, protect commitments, and make trade-offs explicit."
   },
   {
    "id": "2026-10-04-15",
@@ -315,7 +329,8 @@
     "This reverses them."
    ],
    "answer": 0,
-   "explanation": "The DoD is a shared, cross-cutting checklist (code reviewed, tested, documented, deployed to staging, etc.) that every item must meet. Acceptance criteria describe the specific behaviour a given story must exhibit. An item is done only when both are met."
+   "explanation": "The DoD is a shared, cross-cutting checklist (code reviewed, tested, documented, deployed to staging, etc.) that every item must meet. Acceptance criteria describe the specific behaviour a given story must exhibit. An item is done only when both are met.",
+   "interview_tip": "Small but telling: precise delivery vocabulary signals you've actually run teams."
   },
   {
    "id": "2026-10-04-16",
@@ -336,7 +351,8 @@
     "That's for low power, low interest. Ignoring a powerful stakeholder is risky."
    ],
    "answer": 1,
-   "explanation": "High-power, low-interest stakeholders can block you but don't want detail. Keep them satisfied with concise updates on what touches their priorities (budget, risk) so they're never surprised — and stay ready to engage more if their interest rises."
+   "explanation": "High-power, low-interest stakeholders can block you but don't want detail. Keep them satisfied with concise updates on what touches their priorities (budget, risk) so they're never surprised — and stay ready to engage more if their interest rises.",
+   "interview_tip": "For 'tell me about a difficult stakeholder', show how you tailored communication to influence and interest."
   },
   {
    "id": "2026-10-04-17",
@@ -357,7 +373,8 @@
     "Correct. Diagnose, then present explicit trade-offs."
    ],
    "answer": 3,
-   "explanation": "Good PMs turn an impasse into a decision. Understand the estimate (what's big, what's uncertain), find what's truly needed for launch, and present options: cut to an MVP by the date, move the date, or add resources with stated risks. Leadership decides with clear trade-offs."
+   "explanation": "Good PMs turn an impasse into a decision. Understand the estimate (what's big, what's uncertain), find what's truly needed for launch, and present options: cut to an MVP by the date, move the date, or add resources with stated risks. Leadership decides with clear trade-offs.",
+   "interview_tip": "Amazon-style behavioural rounds love this: show data, options, and a clear recommendation — not heroics."
   },
   {
    "id": "2026-10-04-18",
@@ -378,7 +395,8 @@
     "Treating a symptom before knowing the cause — and possibly a tracking bug."
    ],
    "answer": 2,
-   "explanation": "Sudden overnight drops are most often caused by instrumentation breaks, a bad deploy, an outage in one platform or payment provider, or a traffic-mix shift. Segment the drop (platform, browser, country, source, step) and line it up against changes before deciding anything."
+   "explanation": "Sudden overnight drops are most often caused by instrumentation breaks, a bad deploy, an outage in one platform or payment provider, or a traffic-mix shift. Segment the drop (platform, browser, country, source, step) and line it up against changes before deciding anything.",
+   "interview_tip": "The canonical root-cause question: clarify, check data integrity, segment, correlate with changes, then hypothesise."
   },
   {
    "id": "2026-10-04-19",
@@ -399,7 +417,8 @@
     "Correct. Grounding + fallback + measurement."
    ],
    "answer": 3,
-   "explanation": "Prices change, so they must come from a source of truth at answer time. Retrieval or a product-lookup tool supplies facts; instructions give the model a safe fallback; an eval set of price questions catches regressions. Prompt wording alone isn't a control."
+   "explanation": "Prices change, so they must come from a source of truth at answer time. Retrieval or a product-lookup tool supplies facts; instructions give the model a safe fallback; an eval set of price questions catches regressions. Prompt wording alone isn't a control.",
+   "interview_tip": "AI PM interviews expect grounding, fallback behaviour, and evals — not just 'better prompts'."
   },
   {
    "id": "2026-10-04-20",
@@ -420,7 +439,8 @@
     "That would be right if false positives were the expensive error — here they cost 80× less."
    ],
    "answer": 1,
-   "explanation": "When false negatives (missed fraud) cost far more than false positives (an extra call), lower the threshold to raise recall. The right threshold comes from the cost of each error type, not a default."
+   "explanation": "When false negatives (missed fraud) cost far more than false positives (an extra call), lower the threshold to raise recall. The right threshold comes from the cost of each error type, not a default.",
+   "interview_tip": "Tie thresholds to the cost of each error type; it shows you think about ML in business terms."
   },
   {
    "id": "2026-10-04-21",
@@ -441,7 +461,8 @@
     "Prompt changes alter behaviour across every conversation — they're product changes."
    ],
    "answer": 2,
-   "explanation": "LLM changes can fix one behaviour and silently break others. A versioned eval set (common intents, edge cases, known past failures) scored against the baseline turns 'feels better' into evidence and catches regressions."
+   "explanation": "LLM changes can fix one behaviour and silently break others. A versioned eval set (common intents, edge cases, known past failures) scored against the baseline turns 'feels better' into evidence and catches regressions.",
+   "interview_tip": "Saying how you'd build and maintain an eval set is now table stakes for AI PM roles at OpenAI, Google and Meta."
   },
   {
    "id": "2026-10-04-22",
@@ -462,7 +483,8 @@
     "Context window is a fixed model property."
    ],
    "answer": 0,
-   "explanation": "Temperature scales the probability distribution used for sampling. Low values concentrate on the highest-probability tokens (consistent, predictable); high values flatten it (more varied, more surprising, more error-prone)."
+   "explanation": "Temperature scales the probability distribution used for sampling. Low values concentrate on the highest-probability tokens (consistent, predictable); high values flatten it (more varied, more surprising, more error-prone).",
+   "interview_tip": "Know when you'd want low temperature (extraction, support) vs higher (brainstorming, copy)."
   },
   {
    "id": "2026-10-04-23",
@@ -483,7 +505,8 @@
     "Correct. Repeated input context dominates."
    ],
    "answer": 3,
-   "explanation": "Most chat APIs are stateless: each turn sends the full prompt plus history again. A 6K prompt over 12 turns is ~72K input tokens before counting history. Fixes include prompt caching, trimming the prompt, and summarising older turns."
+   "explanation": "Most chat APIs are stateless: each turn sends the full prompt plus history again. A 6K prompt over 12 turns is ~72K input tokens before counting history. Fixes include prompt caching, trimming the prompt, and summarising older turns.",
+   "interview_tip": "Unit-economics questions for AI products often hinge on tokens per conversation — estimate it out loud."
   },
   {
    "id": "2026-10-04-24",
@@ -504,7 +527,8 @@
     "Slow, costly, and still doesn't guarantee factual recall."
    ],
    "answer": 1,
-   "explanation": "Retrieval keeps knowledge outside the model, so updates are instant and answers can cite a source. Fine-tuning is better for teaching style, format, or narrow behaviours — not for fast-changing facts."
+   "explanation": "Retrieval keeps knowledge outside the model, so updates are instant and answers can cite a source. Fine-tuning is better for teaching style, format, or narrow behaviours — not for fast-changing facts.",
+   "interview_tip": "A frequent AI PM question: explain RAG for fresh knowledge, fine-tuning for behaviour and format."
   },
   {
    "id": "2026-10-04-25",
@@ -525,7 +549,8 @@
     "Correct."
    ],
    "answer": 3,
-   "explanation": "429 means 'Too Many Requests'. Backing off exponentially (with random jitter so clients don't retry in sync) and respecting Retry-After lets the service recover. Longer term: queue requests, batch, and cache."
+   "explanation": "429 means 'Too Many Requests'. Backing off exponentially (with random jitter so clients don't retry in sync) and respecting Retry-After lets the service recover. Longer term: queue requests, batch, and cache.",
+   "interview_tip": "Technical rounds check that you can reason about integration failure modes, not write the code."
   },
   {
    "id": "2026-10-04-26",
@@ -546,7 +571,8 @@
     "Providers can't detect idempotency; it's your responsibility."
    ],
    "answer": 2,
-   "explanation": "Webhook systems retry when they don't get a timely success response, so duplicates are normal. Store the event or order ID and skip already-processed events — otherwise a customer might get the same WhatsApp confirmation twice."
+   "explanation": "Webhook systems retry when they don't get a timely success response, so duplicates are normal. Store the event or order ID and skip already-processed events — otherwise a customer might get the same WhatsApp confirmation twice.",
+   "interview_tip": "Calling out duplicate events and retries in a system-design discussion shows engineering credibility."
   },
   {
    "id": "2026-10-04-27",
@@ -567,7 +593,8 @@
     "Flags add a small check; they don't speed anything up."
    ],
    "answer": 0,
-   "explanation": "Flags let code ship dark, then turn on for internal users, a percentage, or specific merchants — and off immediately if something breaks. They also power A/B tests. The cost is flag debt, so remove them after rollout."
+   "explanation": "Flags let code ship dark, then turn on for internal users, a percentage, or specific merchants — and off immediately if something breaks. They also power A/B tests. The cost is flag debt, so remove them after rollout.",
+   "interview_tip": "In launch-plan answers, describe staged rollout via flags with a kill switch and the metrics you'd watch."
   },
   {
    "id": "2026-10-04-28",
@@ -588,7 +615,8 @@
     "Adding 4 + 0.2 isn't how K is calculated."
    ],
    "answer": 1,
-   "explanation": "K = invites per user × conversion rate = 4 × 0.2 = 0.8. Below 1, each generation is smaller, so viral growth decays — though K = 0.8 still amplifies every paid or organic user by about 5× in total (1 ÷ (1 − 0.8)). Cycle time matters too."
+   "explanation": "K = invites per user × conversion rate = 4 × 0.2 = 0.8. Below 1, each generation is smaller, so viral growth decays — though K = 0.8 still amplifies every paid or organic user by about 5× in total (1 ÷ (1 − 0.8)). Cycle time matters too.",
+   "interview_tip": "Growth rounds may ask you to compute K live — keep the formula and the 1/(1−K) amplification handy."
   },
   {
    "id": "2026-10-04-29",
@@ -609,7 +637,8 @@
     "Correct."
    ],
    "answer": 3,
-   "explanation": "Activation marks the moment a user first experiences core value ('aha'), validated by its link to retention — like Slack's '2,000 messages sent by a team'. Teams then shape onboarding to drive users to that moment quickly."
+   "explanation": "Activation marks the moment a user first experiences core value ('aha'), validated by its link to retention — like Slack's '2,000 messages sent by a team'. Teams then shape onboarding to drive users to that moment quickly.",
+   "interview_tip": "Strong answers define activation by its correlation with retention, then design onboarding around it."
   },
   {
    "id": "2026-10-04-30",
@@ -630,7 +659,8 @@
     "That's live price testing; Van Westendorp is survey-based."
    ],
    "answer": 2,
-   "explanation": "Respondents answer four price-perception questions; plotting the cumulative curves shows where they cross, giving an acceptable range and an 'optimal' point. It's quick and useful early, but stated preferences — validate with real purchase behaviour."
+   "explanation": "Respondents answer four price-perception questions; plotting the cumulative curves shows where they cross, giving an acceptable range and an 'optimal' point. It's quick and useful early, but stated preferences — validate with real purchase behaviour.",
+   "interview_tip": "In pricing questions, pair survey methods like this with a live price test to validate."
   }
  ]
 }

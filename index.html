@@ -53,15 +53,24 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01e
 .btn.secondary{background:var(--chip);color:var(--ink)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 26px}
 .stat{padding:14px 12px;text-align:center}
-.stat b{display:block;font:650 24px Fraunces,Georgia,serif}
+.stat b{display:block;font:600 24px "IBM Plex Sans",system-ui,sans-serif}
 .stat span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .section-title{display:flex;justify-content:space-between;align-items:baseline;margin:6px 2px 10px}
 .section-title h2{font-size:19px}
 .list{display:flex;flex-direction:column;gap:8px}
 .row{display:flex;align-items:center;gap:12px;padding:12px 14px;text-align:left;width:100%;border:1px solid var(--line);background:var(--paper);border-radius:12px}
 .row:hover{border-color:var(--muted)}
-.row .d{font-weight:600;min-width:92px}
-.row .t{flex:1;color:var(--muted);font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .t{flex:1;min-width:0;font-size:14px;line-height:1.35}
+.row .t b{font-weight:600}
+.row .t span{color:var(--muted);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal{flex:none;width:44px;border:1px solid var(--line);border-radius:10px;overflow:hidden;text-align:center;background:var(--paper);line-height:1}
+.cal i{display:block;font-style:normal;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:3px 0}
+.cal b{display:block;font:600 19px "IBM Plex Sans",system-ui,sans-serif;padding:5px 0 6px}
+.cal.big{width:58px}.cal.big i{font-size:11px;padding:4px 0}.cal.big b{font-size:26px;padding:7px 0 8px}
+.herotop{display:flex;gap:14px;align-items:center;margin-bottom:6px}
+.fulldate{font-weight:500;margin-top:2px}
+.ex.tip{background:var(--accent-soft)}
+.ex.tip b{color:var(--accent)}
 .pill{font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--chip);white-space:nowrap}
 .pill.good{background:var(--good-soft);color:var(--good)}
 .pill.mid{background:var(--accent-soft);color:var(--accent)}
@@ -96,7 +105,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01e
 .score{display:flex;gap:20px;align-items:center;padding:20px}
 .ring{--p:0;width:108px;height:108px;flex:none;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center}
 .ring>div{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;text-align:center;line-height:1.1}
-.ring b{font:650 28px Fraunces,Georgia,serif}
+.ring b{font:600 28px "IBM Plex Sans",system-ui,sans-serif}
 .topics{display:flex;flex-direction:column;gap:8px;padding:16px 18px;margin-top:12px}
 .trow{display:grid;grid-template-columns:1fr 44px;gap:10px;align-items:center;font-size:14px}
 .trow .lb{display:flex;justify-content:space-between}
@@ -138,6 +147,9 @@ let index = {quizzes:[]}, attempts = [], quiz = null, state = null;
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const todayIST = () => new Date(Date.now() + 5.5*3600e3).toISOString().slice(0,10);
+const fmtLong = d => { const x=new Date(d+"T00:00:00"); return `${x.toLocaleDateString("en-GB",{weekday:"long"})}, ${x.getDate()} ${x.toLocaleDateString("en-GB",{month:"long"})} ${x.getFullYear()}`; };
+const fmtShort = d => { const x=new Date(d+"T00:00:00"); return `${x.toLocaleDateString("en-GB",{weekday:"short"})}, ${x.getDate()} ${x.toLocaleDateString("en-GB",{month:"short"})} ${x.getFullYear()}`; };
+const cal = (d,big) => { const x=new Date(d+"T00:00:00"); return `<span class="cal${big?" big":""}"><i>${x.toLocaleDateString("en-IN",{month:"short"})}</i><b>${x.getDate()}</b></span>`; };
 const fmt = d => new Date(d+"T00:00:00").toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
 const pillClass = pct => pct>=80?"good":pct>=60?"mid":"bad";
 function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),3200); }
@@ -171,21 +183,28 @@ function renderHome(){
   if(latest){
     const a = attemptFor(latest.date), draft = store.get("dpm:draft:"+latest.date);
     const isToday = latest.date === todayIST();
+    const dayNo = index.quizzes.length;
     hero = `<div class="card hero">
-      <div class="date">${isToday?"Today · ":""}${fmt(latest.date)}</div>
+      <div class="herotop">
+        ${cal(latest.date, true)}
+        <div>
+          <div class="date">${isToday?"Today's quiz":"Latest quiz"} · Day ${dayNo}</div>
+          <div class="fulldate">${fmtLong(latest.date)}</div>
+        </div>
+      </div>
       <h1>${esc(latest.theme||"Today's 30")}</h1>
-      <p>${latest.count} questions across strategy, discovery, metrics, execution, AI and more.</p>
+      <p>${latest.count} interview-grade questions — product sense, execution, metrics, strategy, AI and more.${isToday?"":" Today's set arrives at 8:00 AM."}</p>
       ${a ? `<button class="btn secondary" onclick="location.hash='#/q/${latest.date}'">Review · ${a.score}/${a.total}</button>`
           : `<button class="btn" onclick="location.hash='#/q/${latest.date}'">${draft&&Object.keys(draft.answers||{}).length?`Resume · ${Object.keys(draft.answers).length}/30`:"Start quiz"} →</button>`}
     </div>`;
   }
   const recent = [...attempts].sort((x,y)=>x.quiz_date<y.quiz_date?-1:1).slice(-30);
   const spark = recent.length>1 ? `<div class="spark" title="Last ${recent.length} scores">${recent.map(a=>`<i style="height:${Math.max(6,a.score/a.total*100)}%"></i>`).join("")}</div>` : "";
-  const rows = index.quizzes.map(q=>{
+  const rows = index.quizzes.map((q,i)=>{
     const a = attemptFor(q.date);
     const pct = a ? Math.round(a.score/a.total*100) : null;
     return `<button class="row" onclick="location.hash='#/q/${q.date}'">
-      <span class="d">${fmt(q.date)}</span><span class="t">${esc(q.theme)}</span>
+      ${cal(q.date)}<span class="t"><b>Day ${index.quizzes.length-i}</b> · ${fmtShort(q.date)}<br><span>${esc(q.theme)}</span></span>
       ${a?`<span class="pill ${pillClass(pct)}">${a.score}/${a.total}</span>`:`<span class="pill">Not taken</span>`}
     </button>`;}).join("");
   $app.innerHTML = header() + hero + `
@@ -296,6 +315,7 @@ function renderResults(answers, a, unsaved){
         ${q.options.map((o,k)=>`<div class="ro ${k===q.answer?"correct":""} ${k===pick&&!ok?"picked":""}"><span class="k">${L[k]}</span><span>${esc(o)}</span>${k===q.answer?`<span class="lab">✓ Correct</span>`:k===pick?`<span class="lab">Your answer</span>`:""}</div>`).join("")}
         ${!ok && !skipped ? `<div class="ex why"><b>Why ${L[pick]} is wrong</b>${esc(q.rationales[pick])}</div>` : ""}
         <div class="ex"><b>${ok?"Why it's right":`Correct answer: ${L[q.answer]}`}</b>${esc(q.explanation)}</div>
+        ${q.interview_tip?`<div class="ex tip"><b>In interviews</b>${esc(q.interview_tip)}</div>`:""}
       </div>`;}).join("") || `<p class="muted">Nothing to show — ${filter==="wrong"?"you got everything right":"no correct answers"}.</p>`;
   };
   const wrongN = qs.filter(q=>answers[q.id]!==q.answer).length;

@@ -43,7 +43,7 @@ def main(path):
 
     seen_c, problems = set(), []
     for i, q in enumerate(qs, 1):
-        for k in ("topic", "concept", "difficulty", "question", "options", "answer", "explanation", "rationales"):
+        for k in ("topic", "concept", "difficulty", "question", "options", "answer", "explanation", "rationales", "interview_tip"):
             if k not in q:
                 problems.append(f"Q{i}: missing '{k}'")
         if problems:
@@ -91,6 +91,7 @@ def main(path):
             "rationales": [q["rationales"][j] for j in order],
             "answer": order.index(q["answer"]),
             "explanation": q["explanation"],
+            **({"interview_tip": q["interview_tip"]} if q.get("interview_tip") else {}),
             **({"source": q["source"]} if q.get("source") else {}),
         })
 
