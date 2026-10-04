@@ -1,0 +1,636 @@
+{
+ "date": "2026-10-04",
+ "theme": "Day 1 — foundations across the PM stack",
+ "questions": [
+  {
+   "id": "2026-10-04-01",
+   "topic": "Prioritization",
+   "concept": "RICE scoring formula",
+   "difficulty": "easy",
+   "question": "How is a RICE score calculated?",
+   "options": [
+    "(Reach × Effort) ÷ (Impact × Confidence)",
+    "(Reach × Impact × Confidence) ÷ Effort",
+    "Reach × Impact × Confidence × Effort",
+    "Reach + Impact + Confidence − Effort"
+   ],
+   "rationales": [
+    "This inverts the formula — more impact and confidence would lower the score, and more effort would raise it.",
+    "Correct. Value (R × I × C) divided by cost (E).",
+    "Multiplying by effort rewards expensive work. Effort belongs in the denominator.",
+    "Adding the factors breaks the logic: a feature reaching nobody (Reach = 0) could still score well. The value factors must multiply so any zero zeroes the score."
+   ],
+   "answer": 1,
+   "explanation": "RICE multiplies the value side — how many people it reaches, how much it moves each of them, and how sure you are — then divides by the cost (effort, usually in person-months). Dividing by effort is what turns it into a value-per-unit-of-work score."
+  },
+  {
+   "id": "2026-10-04-02",
+   "topic": "Prioritization",
+   "concept": "Kano model attractive features",
+   "difficulty": "medium",
+   "question": "Which statement about 'attractive' (delighter) features in the Kano model is true?",
+   "options": [
+    "Their absence causes no dissatisfaction, and over time they tend to become expected",
+    "Their absence causes strong dissatisfaction, just like basic features",
+    "Customers explicitly ask for them in surveys, so they are easy to discover",
+    "Satisfaction rises linearly with how much of them you provide"
+   ],
+   "rationales": [
+    "Correct. No penalty for absence, and they migrate toward 'expected' over time.",
+    "That describes basic (must-be) features. Missing a delighter doesn't upset anyone.",
+    "The opposite — delighters are usually unarticulated. Customers rarely ask for what they can't imagine, which is why they come from observation and discovery, not request lists.",
+    "Linear satisfaction is the definition of performance (one-dimensional) features — more is better in proportion."
+   ],
+   "answer": 0,
+   "explanation": "Delighters are unexpected — customers don't miss them when absent but are pleased when present. Kano's key insight is that they decay: yesterday's delighter (say, free returns or dark mode) becomes today's performance or basic expectation."
+  },
+  {
+   "id": "2026-10-04-03",
+   "topic": "Metrics",
+   "concept": "Vanity metric vs North Star",
+   "difficulty": "easy",
+   "question": "For a WhatsApp commerce platform, which of these is a vanity metric rather than a good North Star?",
+   "options": [
+    "Weekly active merchants with at least one chat-driven sale",
+    "Gross merchandise value transacted via chat per week",
+    "Total cumulative registered users since launch",
+    "Weekly orders completed through chat"
+   ],
+   "rationales": [
+    "Active merchants getting sales measures value for the paying customer — also a strong candidate.",
+    "Weekly GMV through chat tracks value flowing through the product. It can be skewed by a few large merchants, but it isn't vanity.",
+    "Correct. Cumulative totals never decline and don't measure value delivered — classic vanity.",
+    "Completed orders capture the core value exchange and move with product changes — a reasonable North Star candidate."
+   ],
+   "answer": 2,
+   "explanation": "A cumulative count can only go up, so it hides churn and says nothing about whether customers are getting value. A North Star should reflect delivered value, be sensitive to change, and be something teams can influence week to week."
+  },
+  {
+   "id": "2026-10-04-04",
+   "topic": "Experimentation",
+   "concept": "Guardrail metrics",
+   "difficulty": "easy",
+   "question": "In an A/B test, what is a guardrail metric?",
+   "options": [
+    "A metric reported only to executives after the test ends",
+    "The single metric the experiment is designed to improve",
+    "A metric used to decide the sample size before launch",
+    "A metric that must not get worse, even if the primary metric improves"
+   ],
+   "rationales": [
+    "Audience has nothing to do with it — guardrails are monitored throughout the test.",
+    "That's the primary (or success / OEC) metric.",
+    "Sample size is driven by the primary metric's baseline and minimum detectable effect, not guardrails.",
+    "Correct. Guardrails are do-no-harm constraints."
+   ],
+   "answer": 3,
+   "explanation": "Guardrails protect the business from 'winning' the wrong way — e.g. a checkout change that lifts conversion but increases refunds, latency, or unsubscribes. You set a tolerance and block the launch if a guardrail degrades beyond it."
+  },
+  {
+   "id": "2026-10-04-05",
+   "topic": "Experimentation",
+   "concept": "Peeking problem",
+   "difficulty": "medium",
+   "question": "Your team checks a fixed-horizon A/B test daily and plans to stop the moment it hits p < 0.05. What's the problem?",
+   "options": [
+    "Nothing — checking daily just gets you the answer faster",
+    "Repeated peeking with early stopping inflates the false-positive rate well above 5%",
+    "Daily checks change user behaviour in the test",
+    "It reduces statistical power, so you'll miss real effects"
+   ],
+   "rationales": [
+    "This is exactly the trap — faster answers, but many of them wrong.",
+    "Correct. Multiple looks + optional stopping = inflated Type I error.",
+    "Users don't see your dashboard; peeking doesn't change their behaviour.",
+    "Peeking mainly inflates false positives (Type I), not false negatives. Stopping early on a fluke is the core issue."
+   ],
+   "answer": 1,
+   "explanation": "A p-value is only valid at the pre-planned sample size. Each extra look is another chance for random noise to cross the threshold, so 'stop when significant' can push false positives to 20–30%+. Fix it by committing to a sample size, or by using sequential testing methods designed for continuous monitoring."
+  },
+  {
+   "id": "2026-10-04-06",
+   "topic": "Experimentation",
+   "concept": "Sample ratio mismatch",
+   "difficulty": "hard",
+   "question": "A test designed as 50/50 shows 52.1% vs 47.9% of users across 400,000 participants. The variant wins on conversion. What should you do?",
+   "options": [
+    "Treat the result as untrustworthy and debug assignment or logging first",
+    "Extend the test for another week to balance traffic",
+    "Re-weight the groups to 50/50 and recompute the result",
+    "Ship it — a 2-point traffic imbalance doesn't affect conversion rates"
+   ],
+   "rationales": [
+    "Correct. SRM invalidates the comparison until the root cause is found.",
+    "More traffic won't fix a systematic bug — the mismatch will persist.",
+    "Re-weighting fixes the counts but not the bias in who was dropped.",
+    "The imbalance itself signals biased exclusion; the users you lost may be exactly the ones who would have changed the result."
+   ],
+   "answer": 0,
+   "explanation": "At this sample size, a 52/48 split is wildly unlikely by chance (a chi-square test would give a tiny p-value). That's a Sample Ratio Mismatch: something — bot filtering, a redirect, a crash in one variant, logging loss — is dropping users unevenly, and those missing users are probably not random. The outcome can't be trusted until the cause is found."
+  },
+  {
+   "id": "2026-10-04-07",
+   "topic": "Metrics",
+   "concept": "Retention curve flattening",
+   "difficulty": "medium",
+   "question": "Your cohort retention curves drop steeply in week 1, then flatten at around 22% from week 6 onward for every cohort. What does this most likely indicate?",
+   "options": [
+    "A core group of users is getting lasting value — a sign of product-market fit for some segment",
+    "The product will eventually lose all users, just slowly",
+    "Marketing is bringing in low-quality traffic and should be paused",
+    "The product has no retention problem at all"
+   ],
+   "rationales": [
+    "Correct. A flat tail = a retained core.",
+    "That's what a curve trending toward zero looks like. Flattening means the decline stops.",
+    "Possibly part of the story, but the curve shape doesn't tell you that, and pausing marketing is a big leap from this data.",
+    "A steep week-1 drop is still a problem worth fixing — usually activation or onboarding."
+   ],
+   "answer": 0,
+   "explanation": "A curve that flattens (asymptotes above zero) means some users stick indefinitely — the classic retention signal of fit for a segment. The next move is to understand who those 22% are and why, and to shrink the early drop through better activation."
+  },
+  {
+   "id": "2026-10-04-08",
+   "topic": "Discovery",
+   "concept": "Mom Test interview questions",
+   "difficulty": "easy",
+   "question": "Which customer interview question gives you the most reliable signal?",
+   "options": [
+    "Do you think this is a good idea?",
+    "Would you use a feature that auto-generates order summaries?",
+    "Tell me about the last time you had to reconcile orders across channels.",
+    "How much would you pay for a tool that solved this?"
+   ],
+   "rationales": [
+    "Asking for validation invites compliments, not data.",
+    "Hypothetical and leading — people say yes to features they'd never use.",
+    "Correct. Specific past behaviour, no pitch, no leading.",
+    "Stated willingness to pay is notoriously unreliable without a real commitment."
+   ],
+   "answer": 2,
+   "explanation": "Past, specific behaviour is evidence; opinions about the future are guesses (and people are polite). Asking about the last time something happened reveals the real workflow, workarounds, frequency, and pain."
+  },
+  {
+   "id": "2026-10-04-09",
+   "topic": "Discovery",
+   "concept": "Opportunity Solution Tree structure",
+   "difficulty": "medium",
+   "question": "In Teresa Torres' Opportunity Solution Tree, what's the correct order from root to leaves?",
+   "options": [
+    "Outcome → Solution → Opportunity → Assumption test",
+    "Outcome → Opportunity → Solution → Assumption test",
+    "Solution → Opportunity → Outcome → Experiment",
+    "Opportunity → Outcome → Experiment → Solution"
+   ],
+   "rationales": [
+    "Solutions sit under opportunities, not the other way round.",
+    "Correct. Outcome → opportunities → solutions → assumption tests.",
+    "Starting from a solution is exactly what the tree is designed to prevent.",
+    "The outcome is the root; opportunities hang beneath it."
+   ],
+   "answer": 1,
+   "explanation": "The tree starts with a desired business/product outcome, branches into customer opportunities (needs, pains, desires) discovered through research, then solutions that address a chosen opportunity, then assumption tests to de-risk those solutions. It keeps teams from jumping straight to solutions."
+  },
+  {
+   "id": "2026-10-04-10",
+   "topic": "Discovery",
+   "concept": "JTBD job statement",
+   "difficulty": "medium",
+   "question": "Which is the best Jobs-to-be-Done job statement for a small D2C brand owner?",
+   "options": [
+    "Wants a dashboard with better charts",
+    "When a customer asks 'where's my order?', I want to answer instantly without checking three tools, so I can keep them happy without hiring support staff",
+    "Use our WhatsApp bot to send order updates",
+    "A 28–35-year-old founder with under ₹1 crore revenue"
+   ],
+   "rationales": [
+    "A dashboard is a feature request; the underlying job is hidden.",
+    "Correct. Situation, motivation, and outcome — no product named.",
+    "This names your solution, not the customer's job.",
+    "That's a demographic, not a job — JTBD deliberately moves away from demographics."
+   ],
+   "answer": 1,
+   "explanation": "A good job statement captures the situation, the motivation, and the desired outcome — independent of any product. 'When ___, I want to ___, so I can ___' keeps the focus on progress the customer is trying to make."
+  },
+  {
+   "id": "2026-10-04-11",
+   "topic": "Strategy",
+   "concept": "Playing to Win cascade",
+   "difficulty": "medium",
+   "question": "In Lafley & Martin's 'Playing to Win' strategy cascade, which choice comes directly after 'Where to play'?",
+   "options": [
+    "What is our winning aspiration",
+    "What management systems are required",
+    "What capabilities must be in place",
+    "How to win"
+   ],
+   "rationales": [
+    "The winning aspiration is the first choice, before where to play.",
+    "Management systems are the last choice in the cascade.",
+    "Capabilities come after how to win — they're what you need to deliver it.",
+    "Correct. Where to play and how to win are designed as a pair."
+   ],
+   "answer": 3,
+   "explanation": "The five linked choices are: winning aspiration → where to play → how to win → must-have capabilities → management systems. 'Where to play' (segments, channels, geographies) and 'how to win' (the advantage in those places) are the heart of the strategy and must fit each other."
+  },
+  {
+   "id": "2026-10-04-12",
+   "topic": "Strategy",
+   "concept": "Disruptive innovation",
+   "difficulty": "hard",
+   "question": "According to Clayton Christensen, a disruptive innovation typically…",
+   "options": [
+    "Outperforms incumbents on the metrics mainstream customers value from day one",
+    "Is driven by incumbents improving their best products for their best customers",
+    "Starts in low-end or new-market footholds, underperforming on mainstream metrics, then improves upward",
+    "Is any new technology that makes an industry change quickly"
+   ],
+   "rationales": [
+    "Being better on mainstream metrics from the start is a sustaining innovation, not disruption.",
+    "That describes sustaining innovation — what incumbents are good at.",
+    "Correct. Low-end or new-market foothold, then moving upmarket.",
+    "This is the popular loose usage Christensen explicitly argued against."
+   ],
+   "answer": 2,
+   "explanation": "Disruption begins where incumbents aren't motivated to compete — overserved low-end customers or non-consumers — with a 'worse but cheaper/simpler/more accessible' offering. Incumbents rationally ignore it until it improves enough to serve the mainstream."
+  },
+  {
+   "id": "2026-10-04-13",
+   "topic": "Execution",
+   "concept": "Scrum product backlog ownership",
+   "difficulty": "easy",
+   "question": "In Scrum, who is accountable for ordering the Product Backlog?",
+   "options": [
+    "The Product Owner",
+    "The Developers, by vote",
+    "The Scrum Master",
+    "The most senior stakeholder"
+   ],
+   "rationales": [
+    "Correct.",
+    "Developers own the Sprint Backlog plan and estimates, not Product Backlog ordering.",
+    "The Scrum Master coaches the team and process; they don't own backlog order.",
+    "Stakeholders give input; they don't own the backlog."
+   ],
+   "answer": 0,
+   "explanation": "The Product Owner is accountable for maximising value and for Product Backlog management, including ordering. Others can influence it, but the PO makes the call — and the organisation must respect those decisions."
+  },
+  {
+   "id": "2026-10-04-14",
+   "topic": "Execution",
+   "concept": "Mid-sprint scope request",
+   "difficulty": "medium",
+   "question": "Midway through a sprint, the Head of Sales asks you to add a feature 'urgently' for a prospect demo next month. What's the best response?",
+   "options": [
+    "Understand the deal impact, check it against the sprint goal, and if it isn't critical now, prioritise it for the next sprint",
+    "Add it to the current sprint immediately — sales pressure is a business priority",
+    "Ask the engineers to work extra hours so nothing else moves",
+    "Refuse outright: sprints are locked and can never change"
+   ],
+   "rationales": [
+    "Correct. Evaluate, protect the goal, schedule appropriately.",
+    "Silently adding scope endangers the sprint goal and erodes trust in commitments.",
+    "Overtime hides the trade-off and isn't sustainable.",
+    "Too rigid — scope can be renegotiated with the team, and the request deserves real evaluation."
+   ],
+   "answer": 0,
+   "explanation": "A demo a month away doesn't require breaking the current sprint. Quantify the value (deal size, likelihood), protect the sprint goal, and slot it into the next sprint planning. If it were truly critical, the PO could renegotiate scope with the team — explicitly trading something out."
+  },
+  {
+   "id": "2026-10-04-15",
+   "topic": "Execution",
+   "concept": "Definition of Done vs acceptance criteria",
+   "difficulty": "medium",
+   "question": "What's the difference between the Definition of Done and acceptance criteria?",
+   "options": [
+    "DoD is a quality bar applied to every increment; acceptance criteria are specific to each story",
+    "They are the same thing with different names",
+    "DoD is written by the customer; acceptance criteria are written by QA",
+    "Acceptance criteria apply to every story; DoD is written per story"
+   ],
+   "rationales": [
+    "Correct. Universal quality standard vs story-specific behaviour.",
+    "They serve different purposes and are both needed.",
+    "Neither is defined by those roles; the team owns DoD, and AC are typically written by the PO with the team.",
+    "This reverses them."
+   ],
+   "answer": 0,
+   "explanation": "The DoD is a shared, cross-cutting checklist (code reviewed, tested, documented, deployed to staging, etc.) that every item must meet. Acceptance criteria describe the specific behaviour a given story must exhibit. An item is done only when both are met."
+  },
+  {
+   "id": "2026-10-04-16",
+   "topic": "Stakeholders",
+   "concept": "Power/interest grid quadrants",
+   "difficulty": "easy",
+   "question": "On a power/interest grid, how should you manage a stakeholder with high power but low interest (e.g. the CFO for a minor UI project)?",
+   "options": [
+    "Manage closely — involve them in every decision",
+    "Keep satisfied — brief, targeted updates, and escalate only what affects them",
+    "Keep informed with detailed weekly updates",
+    "Monitor with minimal effort"
+   ],
+   "rationales": [
+    "That's for high power, high interest — and it would annoy someone who doesn't want detail.",
+    "Correct.",
+    "That's for low power, high interest stakeholders.",
+    "That's for low power, low interest. Ignoring a powerful stakeholder is risky."
+   ],
+   "answer": 1,
+   "explanation": "High-power, low-interest stakeholders can block you but don't want detail. Keep them satisfied with concise updates on what touches their priorities (budget, risk) so they're never surprised — and stay ready to engage more if their interest rises."
+  },
+  {
+   "id": "2026-10-04-17",
+   "topic": "Stakeholders",
+   "concept": "Handling an impossible deadline",
+   "difficulty": "medium",
+   "question": "Your engineering lead says the committed launch date is impossible. Leadership already announced it. What do you do first?",
+   "options": [
+    "Escalate to the CEO that engineering is underperforming",
+    "Tell engineering the date is fixed and they need to find a way",
+    "Quietly cut QA time to make the date",
+    "Break down what's driving the estimate, then bring leadership explicit options trading scope, date, and risk"
+   ],
+   "rationales": [
+    "Blame escalation damages the relationship and doesn't solve the problem.",
+    "Ignoring the estimate usually means a late or broken launch plus burned trust.",
+    "Hidden quality cuts create launch-day incidents and shift risk without anyone agreeing to it.",
+    "Correct. Diagnose, then present explicit trade-offs."
+   ],
+   "answer": 3,
+   "explanation": "Good PMs turn an impasse into a decision. Understand the estimate (what's big, what's uncertain), find what's truly needed for launch, and present options: cut to an MVP by the date, move the date, or add resources with stated risks. Leadership decides with clear trade-offs."
+  },
+  {
+   "id": "2026-10-04-18",
+   "topic": "Day-to-day",
+   "concept": "Investigating a sudden metric drop",
+   "difficulty": "medium",
+   "question": "Checkout conversion dropped 15% overnight. What's the best first step?",
+   "options": [
+    "Schedule user interviews to understand why people stopped buying",
+    "Roll back every release from the past month",
+    "Validate the data — check tracking, recent releases, and which segments/platforms dropped",
+    "Launch a discount campaign to recover conversions"
+   ],
+   "rationales": [
+    "Useful for slow trends, too slow for an overnight cliff.",
+    "Too broad; you'd lose good changes and might not even fix the cause.",
+    "Correct. Confirm it's real, then localise it.",
+    "Treating a symptom before knowing the cause — and possibly a tracking bug."
+   ],
+   "answer": 2,
+   "explanation": "Sudden overnight drops are most often caused by instrumentation breaks, a bad deploy, an outage in one platform or payment provider, or a traffic-mix shift. Segment the drop (platform, browser, country, source, step) and line it up against changes before deciding anything."
+  },
+  {
+   "id": "2026-10-04-19",
+   "topic": "AI Product",
+   "concept": "Reducing hallucinations in a catalog bot",
+   "difficulty": "medium",
+   "question": "Your WhatsApp shopping bot sometimes invents product prices. What's the most effective fix?",
+   "options": [
+    "Fine-tune the model on last year's catalog",
+    "Add 'never lie' to the system prompt and ship",
+    "Raise the temperature so answers are more varied",
+    "Ground answers in live catalog data (retrieval or tool calls), tell the model to say it doesn't know when data is missing, and track it with evals"
+   ],
+   "rationales": [
+    "Fine-tuning bakes in stale prices and doesn't reliably teach facts.",
+    "Instructions help a little but don't give the model the facts it's missing.",
+    "Higher temperature increases randomness — and hallucination risk.",
+    "Correct. Grounding + fallback + measurement."
+   ],
+   "answer": 3,
+   "explanation": "Prices change, so they must come from a source of truth at answer time. Retrieval or a product-lookup tool supplies facts; instructions give the model a safe fallback; an eval set of price questions catches regressions. Prompt wording alone isn't a control."
+  },
+  {
+   "id": "2026-10-04-20",
+   "topic": "AI Product",
+   "concept": "Precision vs recall trade-off",
+   "difficulty": "medium",
+   "question": "You're building an ML model to flag fraudulent COD orders before dispatch. Missing a fraud costs ₹800; wrongly flagging a genuine order costs a ₹10 verification call. What should you favour?",
+   "options": [
+    "Neither; use a 0.5 threshold by default",
+    "Recall — catch as much fraud as possible, accepting more false positives",
+    "Accuracy — it balances both errors equally",
+    "Precision — avoid flagging genuine customers at all costs"
+   ],
+   "rationales": [
+    "0.5 is arbitrary; thresholds should reflect business costs.",
+    "Correct. Asymmetric costs → optimise for recall.",
+    "Accuracy hides the trade-off and is misleading with rare classes like fraud.",
+    "That would be right if false positives were the expensive error — here they cost 80× less."
+   ],
+   "answer": 1,
+   "explanation": "When false negatives (missed fraud) cost far more than false positives (an extra call), lower the threshold to raise recall. The right threshold comes from the cost of each error type, not a default."
+  },
+  {
+   "id": "2026-10-04-21",
+   "topic": "AI Product",
+   "concept": "Evals before shipping prompt changes",
+   "difficulty": "easy",
+   "question": "An engineer wants to ship a rewritten system prompt that 'feels better' after trying five chats. What should you require?",
+   "options": [
+    "A sign-off from the CEO",
+    "A one-week waiting period",
+    "Running the new prompt against a fixed eval set of representative and edge cases and comparing with the current prompt",
+    "Nothing — prompt changes are low-risk"
+   ],
+   "rationales": [
+    "Seniority isn't evidence of quality.",
+    "Time doesn't test anything.",
+    "Correct. Evals against a baseline.",
+    "Prompt changes alter behaviour across every conversation — they're product changes."
+   ],
+   "answer": 2,
+   "explanation": "LLM changes can fix one behaviour and silently break others. A versioned eval set (common intents, edge cases, known past failures) scored against the baseline turns 'feels better' into evidence and catches regressions."
+  },
+  {
+   "id": "2026-10-04-22",
+   "topic": "AI Product",
+   "concept": "LLM temperature",
+   "difficulty": "easy",
+   "question": "What does lowering an LLM's temperature generally do?",
+   "options": [
+    "Makes outputs more deterministic and focused on the most likely tokens",
+    "Makes the model faster and cheaper",
+    "Makes the model more creative",
+    "Increases the context window"
+   ],
+   "rationales": [
+    "Correct.",
+    "Temperature doesn't change speed or per-token price.",
+    "That's higher temperature.",
+    "Context window is a fixed model property."
+   ],
+   "answer": 0,
+   "explanation": "Temperature scales the probability distribution used for sampling. Low values concentrate on the highest-probability tokens (consistent, predictable); high values flatten it (more varied, more surprising, more error-prone)."
+  },
+  {
+   "id": "2026-10-04-23",
+   "topic": "AI Product",
+   "concept": "LLM cost drivers in multi-turn chat",
+   "difficulty": "hard",
+   "question": "A support bot has a 6,000-token system prompt and conversations average 12 turns. Costs are higher than forecast. What's the most likely driver?",
+   "options": [
+    "Output tokens, because replies are long",
+    "Image inputs",
+    "The number of users who say 'thanks' at the end",
+    "Input tokens — the system prompt and growing history are resent every turn"
+   ],
+   "rationales": [
+    "Output is pricier per token, but short support replies rarely outweigh tens of thousands of resent input tokens.",
+    "Nothing in the scenario mentions images.",
+    "A trivial share of total tokens.",
+    "Correct. Repeated input context dominates."
+   ],
+   "answer": 3,
+   "explanation": "Most chat APIs are stateless: each turn sends the full prompt plus history again. A 6K prompt over 12 turns is ~72K input tokens before counting history. Fixes include prompt caching, trimming the prompt, and summarising older turns."
+  },
+  {
+   "id": "2026-10-04-24",
+   "topic": "AI Product",
+   "concept": "RAG vs fine-tuning for changing data",
+   "difficulty": "medium",
+   "question": "Your bot must answer questions about inventory and offers that change daily. Which approach fits best?",
+   "options": [
+    "Put the entire catalog in the system prompt",
+    "Retrieval/tool calls that fetch current data at query time",
+    "Train a new model from scratch",
+    "Fine-tune the model nightly on the new catalog"
+   ],
+   "rationales": [
+    "Doesn't scale with catalog size and drives up cost on every message.",
+    "Correct.",
+    "Massively expensive and pointless for this problem.",
+    "Slow, costly, and still doesn't guarantee factual recall."
+   ],
+   "answer": 1,
+   "explanation": "Retrieval keeps knowledge outside the model, so updates are instant and answers can cite a source. Fine-tuning is better for teaching style, format, or narrow behaviours — not for fast-changing facts."
+  },
+  {
+   "id": "2026-10-04-25",
+   "topic": "Technology",
+   "concept": "Handling API rate limits",
+   "difficulty": "easy",
+   "question": "Your integration keeps hitting HTTP 429 from a partner API. What's the standard client-side handling?",
+   "options": [
+    "Switch to a different API key per request",
+    "Treat it as a permanent failure and drop the request",
+    "Retry immediately in a tight loop",
+    "Retry with exponential backoff and jitter, honouring any Retry-After header"
+   ],
+   "rationales": [
+    "Rotating keys to evade limits usually breaks the provider's terms.",
+    "429 is temporary — dropping requests loses data unnecessarily.",
+    "Hammering makes the limit worse and can get you blocked.",
+    "Correct."
+   ],
+   "answer": 3,
+   "explanation": "429 means 'Too Many Requests'. Backing off exponentially (with random jitter so clients don't retry in sync) and respecting Retry-After lets the service recover. Longer term: queue requests, batch, and cache."
+  },
+  {
+   "id": "2026-10-04-26",
+   "topic": "Technology",
+   "concept": "Idempotent webhook handlers",
+   "difficulty": "medium",
+   "question": "Why must a Shopify order-created webhook handler be idempotent?",
+   "options": [
+    "Idempotency makes the handler respond faster",
+    "Webhooks are encrypted and need idempotency to decrypt",
+    "The provider may deliver the same event more than once, and you mustn't create duplicate messages or orders",
+    "Shopify rejects handlers that aren't idempotent"
+   ],
+   "rationales": [
+    "Idempotency is about correctness, not speed.",
+    "Encryption and idempotency are unrelated.",
+    "Correct. At-least-once delivery means duplicates.",
+    "Providers can't detect idempotency; it's your responsibility."
+   ],
+   "answer": 2,
+   "explanation": "Webhook systems retry when they don't get a timely success response, so duplicates are normal. Store the event or order ID and skip already-processed events — otherwise a customer might get the same WhatsApp confirmation twice."
+  },
+  {
+   "id": "2026-10-04-27",
+   "topic": "Technology",
+   "concept": "Feature flags",
+   "difficulty": "easy",
+   "question": "What's the main product benefit of feature flags?",
+   "options": [
+    "They decouple deploying code from releasing it, enabling gradual rollouts and instant kill switches",
+    "They hide features from competitors",
+    "They replace the need for QA",
+    "They make the code run faster"
+   ],
+   "rationales": [
+    "Correct.",
+    "Not their purpose, and client-side flags can be inspected anyway.",
+    "Flags reduce blast radius but don't replace testing.",
+    "Flags add a small check; they don't speed anything up."
+   ],
+   "answer": 0,
+   "explanation": "Flags let code ship dark, then turn on for internal users, a percentage, or specific merchants — and off immediately if something breaks. They also power A/B tests. The cost is flag debt, so remove them after rollout."
+  },
+  {
+   "id": "2026-10-04-28",
+   "topic": "Growth",
+   "concept": "Viral coefficient (K-factor)",
+   "difficulty": "medium",
+   "question": "Each new user sends 4 invites on average and 20% of invites convert. What does this imply?",
+   "options": [
+    "K = 0.2 — virality is negligible",
+    "K = 0.8 — each user brings 0.8 new users, so it can't sustain exponential growth on its own",
+    "K = 1.2, so the product is self-sustaining",
+    "K = 4.2, so growth is exponential"
+   ],
+   "rationales": [
+    "That's just the conversion rate.",
+    "Correct. 4 × 0.2 = 0.8, below the self-sustaining threshold.",
+    "The arithmetic doesn't give 1.2.",
+    "Adding 4 + 0.2 isn't how K is calculated."
+   ],
+   "answer": 1,
+   "explanation": "K = invites per user × conversion rate = 4 × 0.2 = 0.8. Below 1, each generation is smaller, so viral growth decays — though K = 0.8 still amplifies every paid or organic user by about 5× in total (1 ÷ (1 − 0.8)). Cycle time matters too."
+  },
+  {
+   "id": "2026-10-04-29",
+   "topic": "Growth",
+   "concept": "Defining an activation metric",
+   "difficulty": "medium",
+   "question": "What makes a good activation metric?",
+   "options": [
+    "Time spent in the app during the first session",
+    "The number of sign-ups per day",
+    "Whether users completed the onboarding tour",
+    "An early action new users take that strongly predicts long-term retention"
+   ],
+   "rationales": [
+    "Time spent can mean confusion as easily as value.",
+    "That's acquisition, not activation.",
+    "Finishing a tour doesn't show value was experienced.",
+    "Correct."
+   ],
+   "answer": 3,
+   "explanation": "Activation marks the moment a user first experiences core value ('aha'), validated by its link to retention — like Slack's '2,000 messages sent by a team'. Teams then shape onboarding to drive users to that moment quickly."
+  },
+  {
+   "id": "2026-10-04-30",
+   "topic": "Pricing",
+   "concept": "Van Westendorp price sensitivity",
+   "difficulty": "hard",
+   "question": "What does the Van Westendorp Price Sensitivity Meter measure?",
+   "options": [
+    "Price elasticity from historical sales data",
+    "Competitors' prices across the market",
+    "An acceptable price range, from asking when the product seems too cheap, cheap, expensive, and too expensive",
+    "Actual purchase conversion at different price points"
+   ],
+   "rationales": [
+    "That's an econometric analysis of real sales.",
+    "That's competitive benchmarking.",
+    "Correct.",
+    "That's live price testing; Van Westendorp is survey-based."
+   ],
+   "answer": 2,
+   "explanation": "Respondents answer four price-perception questions; plotting the cumulative curves shows where they cross, giving an acceptable range and an 'optimal' point. It's quick and useful early, but stated preferences — validate with real purchase behaviour."
+  }
+ ]
+}

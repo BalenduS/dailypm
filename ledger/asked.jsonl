@@ -1,0 +1,30 @@
+{"date": "2026-10-04", "topic": "Prioritization", "concept": "RICE scoring formula", "question": "How is a RICE score calculated?"}
+{"date": "2026-10-04", "topic": "Prioritization", "concept": "Kano model attractive features", "question": "Which statement about 'attractive' (delighter) features in the Kano model is true?"}
+{"date": "2026-10-04", "topic": "Metrics", "concept": "Vanity metric vs North Star", "question": "For a WhatsApp commerce platform, which of these is a vanity metric rather than a good North Star?"}
+{"date": "2026-10-04", "topic": "Experimentation", "concept": "Guardrail metrics", "question": "In an A/B test, what is a guardrail metric?"}
+{"date": "2026-10-04", "topic": "Experimentation", "concept": "Peeking problem", "question": "Your team checks a fixed-horizon A/B test daily and plans to stop the moment it hits p < 0.05. What's the problem?"}
+{"date": "2026-10-04", "topic": "Experimentation", "concept": "Sample ratio mismatch", "question": "A test designed as 50/50 shows 52.1% vs 47.9% of users across 400,000 participants. The variant wins on conversion. What should you do?"}
+{"date": "2026-10-04", "topic": "Metrics", "concept": "Retention curve flattening", "question": "Your cohort retention curves drop steeply in week 1, then flatten at around 22% from week 6 onward for every cohort. What does this most likely indicate?"}
+{"date": "2026-10-04", "topic": "Discovery", "concept": "Mom Test interview questions", "question": "Which customer interview question gives you the most reliable signal?"}
+{"date": "2026-10-04", "topic": "Discovery", "concept": "Opportunity Solution Tree structure", "question": "In Teresa Torres' Opportunity Solution Tree, what's the correct order from root to leaves?"}
+{"date": "2026-10-04", "topic": "Discovery", "concept": "JTBD job statement", "question": "Which is the best Jobs-to-be-Done job statement for a small D2C brand owner?"}
+{"date": "2026-10-04", "topic": "Strategy", "concept": "Playing to Win cascade", "question": "In Lafley & Martin's 'Playing to Win' strategy cascade, which choice comes directly after 'Where to play'?"}
+{"date": "2026-10-04", "topic": "Strategy", "concept": "Disruptive innovation", "question": "According to Clayton Christensen, a disruptive innovation typically…"}
+{"date": "2026-10-04", "topic": "Execution", "concept": "Scrum product backlog ownership", "question": "In Scrum, who is accountable for ordering the Product Backlog?"}
+{"date": "2026-10-04", "topic": "Execution", "concept": "Mid-sprint scope request", "question": "Midway through a sprint, the Head of Sales asks you to add a feature 'urgently' for a prospect demo next month. What's the best response?"}
+{"date": "2026-10-04", "topic": "Execution", "concept": "Definition of Done vs acceptance criteria", "question": "What's the difference between the Definition of Done and acceptance criteria?"}
+{"date": "2026-10-04", "topic": "Stakeholders", "concept": "Power/interest grid quadrants", "question": "On a power/interest grid, how should you manage a stakeholder with high power but low interest (e.g. the CFO for a minor UI project)?"}
+{"date": "2026-10-04", "topic": "Stakeholders", "concept": "Handling an impossible deadline", "question": "Your engineering lead says the committed launch date is impossible. Leadership already announced it. What do you do first?"}
+{"date": "2026-10-04", "topic": "Day-to-day", "concept": "Investigating a sudden metric drop", "question": "Checkout conversion dropped 15% overnight. What's the best first step?"}
+{"date": "2026-10-04", "topic": "AI Product", "concept": "Reducing hallucinations in a catalog bot", "question": "Your WhatsApp shopping bot sometimes invents product prices. What's the most effective fix?"}
+{"date": "2026-10-04", "topic": "AI Product", "concept": "Precision vs recall trade-off", "question": "You're building an ML model to flag fraudulent COD orders before dispatch. Missing a fraud costs ₹800; wrongly flagging a genuine order costs a ₹10 verification call. What should you favour?"}
+{"date": "2026-10-04", "topic": "AI Product", "concept": "Evals before shipping prompt changes", "question": "An engineer wants to ship a rewritten system prompt that 'feels better' after trying five chats. What should you require?"}
+{"date": "2026-10-04", "topic": "AI Product", "concept": "LLM temperature", "question": "What does lowering an LLM's temperature generally do?"}
+{"date": "2026-10-04", "topic": "AI Product", "concept": "LLM cost drivers in multi-turn chat", "question": "A support bot has a 6,000-token system prompt and conversations average 12 turns. Costs are higher than forecast. What's the most likely driver?"}
+{"date": "2026-10-04", "topic": "AI Product", "concept": "RAG vs fine-tuning for changing data", "question": "Your bot must answer questions about inventory and offers that change daily. Which approach fits best?"}
+{"date": "2026-10-04", "topic": "Technology", "concept": "Handling API rate limits", "question": "Your integration keeps hitting HTTP 429 from a partner API. What's the standard client-side handling?"}
+{"date": "2026-10-04", "topic": "Technology", "concept": "Idempotent webhook handlers", "question": "Why must a Shopify order-created webhook handler be idempotent?"}
+{"date": "2026-10-04", "topic": "Technology", "concept": "Feature flags", "question": "What's the main product benefit of feature flags?"}
+{"date": "2026-10-04", "topic": "Growth", "concept": "Viral coefficient (K-factor)", "question": "Each new user sends 4 invites on average and 20% of invites convert. What does this imply?"}
+{"date": "2026-10-04", "topic": "Growth", "concept": "Defining an activation metric", "question": "What makes a good activation metric?"}
+{"date": "2026-10-04", "topic": "Pricing", "concept": "Van Westendorp price sensitivity", "question": "What does the Van Westendorp Price Sensitivity Meter measure?"}

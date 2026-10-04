@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daily PM</title>
+<meta name="description" content="30 product management questions, every morning.">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2410c'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='34' text-anchor='middle' fill='%23fff'%3E30%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e7; --paper:#fffdf8; --ink:#1d2230; --muted:#6b6f7b; --line:#e4dccb;
+  --accent:#c2410c; --accent-soft:#fbe5d6; --good:#15803d; --good-soft:#dcf3e2;
+  --bad:#b91c1c; --bad-soft:#fbe0e0; --chip:#efe7d6; --shadow:0 1px 0 rgba(29,34,48,.04),0 8px 24px -12px rgba(29,34,48,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161c; --paper:#1c1f27; --ink:#ece7dc; --muted:#9a9da8; --line:#2c303b;
+    --accent:#fb923c; --accent-soft:#3a2416; --good:#4ade80; --good-soft:#143021;
+    --bad:#f87171; --bad-soft:#3a1a1a; --chip:#262a34; --shadow:0 1px 0 rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161c; --paper:#1c1f27; --ink:#ece7dc; --muted:#9a9da8; --line:#2c303b;
+  --accent:#fb923c; --accent-soft:#3a2416; --good:#4ade80; --good-soft:#143021;
+  --bad:#f87171; --bad-soft:#3a1a1a; --chip:#262a34; --shadow:0 1px 0 rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 120px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01em;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.muted{color:var(--muted)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font:600 15px Fraunces,Georgia,serif}
+.brand b{font:650 19px Fraunces,Georgia,serif}
+.ghost{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--muted)}
+.ghost:hover{color:var(--ink);border-color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.hero{padding:22px 20px;position:relative;overflow:hidden}
+.hero .date{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:30px;line-height:1.15;margin:8px 0 6px}
+.hero p{margin:0 0 18px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 20px;font-weight:600;background:var(--accent);color:#fff;min-height:48px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.secondary{background:var(--chip);color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 26px}
+.stat{padding:14px 12px;text-align:center}
+.stat b{display:block;font:650 24px Fraunces,Georgia,serif}
+.stat span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.section-title{display:flex;justify-content:space-between;align-items:baseline;margin:6px 2px 10px}
+.section-title h2{font-size:19px}
+.list{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 14px;text-align:left;width:100%;border:1px solid var(--line);background:var(--paper);border-radius:12px}
+.row:hover{border-color:var(--muted)}
+.row .d{font-weight:600;min-width:92px}
+.row .t{flex:1;color:var(--muted);font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--chip);white-space:nowrap}
+.pill.good{background:var(--good-soft);color:var(--good)}
+.pill.mid{background:var(--accent-soft);color:var(--accent)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.spark{display:flex;align-items:flex-end;gap:3px;height:44px;padding:0 2px;margin:-12px 0 24px}
+.spark i{flex:1;max-width:14px;background:var(--accent);opacity:.75;border-radius:3px 3px 0 0;min-height:3px}
+
+/* quiz */
+.qhead{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 12px;margin:-10px 0 8px}
+.qhead .bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:10px}
+.qhead .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.tag{display:inline-flex;gap:6px;align-items:center;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.qcard{padding:22px 18px}
+.qcard h2{font-size:22px;line-height:1.3;margin:10px 0 18px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px;border:1.5px solid var(--line);background:transparent;border-radius:12px;width:100%;transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--muted)}
+.opt .k{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--chip);font:500 13px "IBM Plex Mono",monospace}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.sel .k{background:var(--accent);color:#fff}
+.nav{display:flex;gap:10px;justify-content:space-between;margin-top:18px}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:22px 0 0}
+.dots button{aspect-ratio:1;border:1px solid var(--line);background:var(--paper);border-radius:8px;font-size:12px;padding:0;min-height:30px}
+.dots button.done{background:var(--chip);border-color:var(--chip)}
+.dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
+.submitbar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 30%)}
+.submitbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between}
+
+/* results */
+.score{display:flex;gap:20px;align-items:center;padding:20px}
+.ring{--p:0;width:108px;height:108px;flex:none;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center}
+.ring>div{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;text-align:center;line-height:1.1}
+.ring b{font:650 28px Fraunces,Georgia,serif}
+.topics{display:flex;flex-direction:column;gap:8px;padding:16px 18px;margin-top:12px}
+.trow{display:grid;grid-template-columns:1fr 44px;gap:10px;align-items:center;font-size:14px}
+.trow .lb{display:flex;justify-content:space-between}
+.trow .tb{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:4px}
+.trow .tb i{display:block;height:100%;background:var(--good)}
+.filters{display:flex;gap:8px;margin:22px 0 12px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 14px;font-size:14px}
+.filters button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.rq{padding:18px;margin-bottom:12px;border-left:4px solid var(--good)}
+.rq.wrong{border-left-color:var(--bad)}
+.rq h3{font:600 17px/1.4 "IBM Plex Sans",system-ui,sans-serif;margin:8px 0 12px}
+.ro{display:flex;gap:10px;padding:9px 11px;border-radius:10px;font-size:15px;margin-bottom:6px;border:1px solid transparent}
+.ro .k{flex:none;font:500 13px "IBM Plex Mono",monospace;width:22px;color:var(--muted)}
+.ro.correct{background:var(--good-soft);border-color:color-mix(in srgb,var(--good) 35%,transparent)}
+.ro.picked{background:var(--bad-soft);border-color:color-mix(in srgb,var(--bad) 35%,transparent)}
+.ro .lab{margin-left:auto;font-size:12px;font-weight:600;white-space:nowrap;padding-left:8px}
+.ro.correct .lab{color:var(--good)} .ro.picked .lab{color:var(--bad)}
+.ex{margin-top:12px;font-size:15px;padding:12px 14px;background:var(--chip);border-radius:10px}
+.ex b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;color:var(--muted)}
+.ex.why{background:var(--bad-soft)}
+.ex.why b{color:var(--bad)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:20;max-width:calc(100% - 32px)}
+.empty{padding:28px 20px;text-align:center}
+@media (max-width:420px){.hero h1{font-size:26px}.qcard h2{font-size:19px}.score{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p class="muted">Loading…</p></div>
+<script>
+const API = "https://uzflymfutbjfkdcutsif.supabase.co/functions/v1/dailypm-scores";
+const L = ["A","B","C","D"];
+const $app = document.getElementById("app");
+const store = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch{ return null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} },
+  del(k){ try{ localStorage.removeItem(k); }catch{} }
+};
+let index = {quizzes:[]}, attempts = [], quiz = null, state = null;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const todayIST = () => new Date(Date.now() + 5.5*3600e3).toISOString().slice(0,10);
+const fmt = d => new Date(d+"T00:00:00").toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
+const pillClass = pct => pct>=80?"good":pct>=60?"mid":"bad";
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),3200); }
+
+async function loadAttempts(){
+  try{ const r = await fetch(API,{cache:"no-store"}); if(r.ok){ attempts=(await r.json()).attempts||[]; store.set("dpm:attempts",attempts); return; } }catch{}
+  attempts = store.get("dpm:attempts") || [];
+}
+const attemptFor = d => attempts.find(a => a.quiz_date === d);
+
+function streak(){
+  const done = new Set(attempts.map(a=>a.quiz_date)); let n=0;
+  let d = new Date(todayIST()+"T00:00:00Z");
+  if(!done.has(d.toISOString().slice(0,10))) d.setUTCDate(d.getUTCDate()-1);
+  while(done.has(d.toISOString().slice(0,10))){ n++; d.setUTCDate(d.getUTCDate()-1); }
+  return n;
+}
+
+function header(back){
+  return `<div class="top">
+    <a class="brand" href="#"><span class="mark">30</span><b>Daily PM</b></a>
+    ${back?`<button class="ghost" onclick="location.hash=''">← All quizzes</button>`:`<button class="ghost" id="theme">Theme</button>`}
+  </div>`;
+}
+
+function renderHome(){
+  const latest = index.quizzes[0];
+  const avg = attempts.length ? Math.round(attempts.reduce((s,a)=>s+a.score/a.total,0)/attempts.length*100) : null;
+  const best = attempts.length ? Math.max(...attempts.map(a=>a.score)) : null;
+  let hero = `<div class="card empty"><h2>No quiz yet</h2><p class="muted">The first set lands at 8:00 AM.</p></div>`;
+  if(latest){
+    const a = attemptFor(latest.date), draft = store.get("dpm:draft:"+latest.date);
+    const isToday = latest.date === todayIST();
+    hero = `<div class="card hero">
+      <div class="date">${isToday?"Today · ":""}${fmt(latest.date)}</div>
+      <h1>${esc(latest.theme||"Today's 30")}</h1>
+      <p>${latest.count} questions across strategy, discovery, metrics, execution, AI and more.</p>
+      ${a ? `<button class="btn secondary" onclick="location.hash='#/q/${latest.date}'">Review · ${a.score}/${a.total}</button>`
+          : `<button class="btn" onclick="location.hash='#/q/${latest.date}'">${draft&&Object.keys(draft.answers||{}).length?`Resume · ${Object.keys(draft.answers).length}/30`:"Start quiz"} →</button>`}
+    </div>`;
+  }
+  const recent = [...attempts].sort((x,y)=>x.quiz_date<y.quiz_date?-1:1).slice(-30);
+  const spark = recent.length>1 ? `<div class="spark" title="Last ${recent.length} scores">${recent.map(a=>`<i style="height:${Math.max(6,a.score/a.total*100)}%"></i>`).join("")}</div>` : "";
+  const rows = index.quizzes.map(q=>{
+    const a = attemptFor(q.date);
+    const pct = a ? Math.round(a.score/a.total*100) : null;
+    return `<button class="row" onclick="location.hash='#/q/${q.date}'">
+      <span class="d">${fmt(q.date)}</span><span class="t">${esc(q.theme)}</span>
+      ${a?`<span class="pill ${pillClass(pct)}">${a.score}/${a.total}</span>`:`<span class="pill">Not taken</span>`}
+    </button>`;}).join("");
+  $app.innerHTML = header() + hero + `
+    <div class="stats">
+      <div class="card stat"><b>${streak()}</b><span>Day streak</span></div>
+      <div class="card stat"><b>${avg===null?"–":avg+"%"}</b><span>Average</span></div>
+      <div class="card stat"><b>${best===null?"–":best}</b><span>Best /30</span></div>
+    </div>${spark}
+    <div class="section-title"><h2>All quizzes</h2><span class="muted" style="font-size:14px">${attempts.length} taken</span></div>
+    <div class="list">${rows||`<p class="muted">Nothing here yet.</p>`}</div>`;
+  const tb = document.getElementById("theme");
+  if(tb) tb.onclick = ()=>{ const r=document.documentElement; const dark = r.dataset.theme ? r.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark?"light":"dark"; store.set("dpm:theme", r.dataset.theme); };
+}
+
+async function openQuiz(date){
+  $app.innerHTML = header(true) + `<p class="muted">Loading questions…</p>`;
+  try{ const r = await fetch(`quizzes/${date}.json`,{cache:"no-store"}); if(!r.ok) throw 0; quiz = await r.json(); }
+  catch{ $app.innerHTML = header(true)+`<div class="card empty"><h2>Couldn't load this quiz</h2><p class="muted">Check your connection and try again.</p></div>`; return; }
+  const a = attemptFor(date);
+  if(a){ renderResults(a.answers||{}, a); return; }
+  const draft = store.get("dpm:draft:"+date);
+  state = draft || {answers:{}, i:0, started:Date.now()};
+  renderQuestion();
+}
+
+function saveDraft(){ store.set("dpm:draft:"+quiz.date, state); }
+
+function renderQuestion(){
+  const qs = quiz.questions, q = qs[state.i], n = Object.keys(state.answers).length, pick = state.answers[q.id];
+  $app.innerHTML = header(true) + `
+    <div class="qhead">
+      <div class="qmeta"><span class="mono">Q${state.i+1} / ${qs.length}</span><span class="muted">${n} answered</span></div>
+      <div class="bar"><i style="width:${n/qs.length*100}%"></i></div>
+    </div>
+    <div class="card qcard">
+      <span class="tag"><span class="dot"></span>${esc(q.topic)} · ${esc(q.difficulty)}</span>
+      <h2>${esc(q.question)}</h2>
+      <div class="opts">${q.options.map((o,k)=>`<button class="opt ${pick===k?"sel":""}" data-k="${k}"><span class="k">${L[k]}</span><span>${esc(o)}</span></button>`).join("")}</div>
+      <div class="nav">
+        <button class="btn secondary" id="prev" ${state.i===0?"disabled":""}>← Prev</button>
+        <button class="btn secondary" id="next" ${state.i===qs.length-1?"disabled":""}>Next →</button>
+      </div>
+    </div>
+    <div class="dots">${qs.map((x,k)=>`<button class="${state.answers[x.id]!==undefined?"done":""} ${k===state.i?"cur":""}" data-j="${k}">${k+1}</button>`).join("")}</div>
+    <div class="submitbar"><div class="in">
+      <span class="muted" style="font-size:14px">${n===qs.length?"All answered":`${qs.length-n} left`}</span>
+      <button class="btn" id="submit" ${n===0?"disabled":""}>Submit ${n}/${qs.length}</button>
+    </div></div>`;
+  $app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>choose(+b.dataset.k));
+  $app.querySelectorAll(".dots button").forEach(b=>b.onclick=()=>{ state.i=+b.dataset.j; saveDraft(); renderQuestion(); });
+  document.getElementById("prev").onclick=()=>{ state.i--; saveDraft(); renderQuestion(); };
+  document.getElementById("next").onclick=()=>{ state.i++; saveDraft(); renderQuestion(); };
+  document.getElementById("submit").onclick=submit;
+}
+
+function choose(k){
+  const qs = quiz.questions;
+  state.answers[qs[state.i].id] = k; saveDraft();
+  renderQuestion();
+  if(state.i < qs.length-1){
+    setTimeout(()=>{
+      let j = state.i+1;
+      while(j<qs.length && state.answers[qs[j].id]!==undefined) j++;
+      state.i = j<qs.length ? j : Math.min(state.i+1, qs.length-1);
+      saveDraft(); renderQuestion(); window.scrollTo({top:0,behavior:"smooth"});
+    }, 260);
+  }
+}
+
+async function submit(){
+  const qs = quiz.questions, n = Object.keys(state.answers).length;
+  if(n < qs.length && !confirm(`${qs.length-n} unanswered — they'll count as wrong. Submit anyway?`)) return;
+  const btn = document.getElementById("submit"); btn.disabled = true; btn.textContent = "Saving…";
+  const topic_scores = {}; let score = 0;
+  qs.forEach(q=>{ const ok = state.answers[q.id]===q.answer; if(ok) score++;
+    const t = topic_scores[q.topic] ||= {correct:0,total:0}; t.total++; if(ok) t.correct++; });
+  const payload = { quiz_date: quiz.date, score, total: qs.length, answers: state.answers, topic_scores,
+    duration_seconds: Math.round((Date.now()-(state.started||Date.now()))/1000) };
+  let saved = false;
+  try{
+    const r = await fetch(API,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});
+    saved = r.ok || r.status===409;
+    if(!r.ok && r.status!==409){ const e = await r.json().catch(()=>({})); toast("Couldn't save score: "+(e.error||r.status)); }
+  }catch{ toast("Offline — score shown but not saved. Submit again when online."); }
+  if(saved){
+    store.del("dpm:draft:"+quiz.date);
+    await loadAttempts();
+    const a = attemptFor(quiz.date) || {...payload, submitted_at:new Date().toISOString()};
+    renderResults(a.answers, a);
+  } else {
+    btn.disabled = false; btn.textContent = "Retry submit";
+    renderResults(state.answers, payload, true);
+  }
+}
+
+function renderResults(answers, a, unsaved){
+  const qs = quiz.questions; let filter = "all";
+  const pct = Math.round(a.score/a.total*100);
+  const ts = a.topic_scores && Object.keys(a.topic_scores).length ? a.topic_scores : (()=>{ const t={}; qs.forEach(q=>{ const x=t[q.topic]||={correct:0,total:0}; x.total++; if(answers[q.id]===q.answer) x.correct++; }); return t; })();
+  const mins = a.duration_seconds ? Math.max(1,Math.round(a.duration_seconds/60)) : null;
+  const draw = () => {
+    const list = qs.map((q,i)=>({q,i,pick:answers[q.id]})).filter(x=> filter==="all" || (filter==="wrong") === (x.pick!==x.q.answer));
+    document.getElementById("rlist").innerHTML = list.map(({q,i,pick})=>{
+      const ok = pick===q.answer, skipped = pick===undefined || pick===null;
+      return `<div class="card rq ${ok?"":"wrong"}">
+        <span class="tag"><span class="dot" style="background:${ok?"var(--good)":"var(--bad)"}"></span>Q${i+1} · ${esc(q.topic)} · ${ok?"Correct":skipped?"Skipped":"Wrong"}</span>
+        <h3>${esc(q.question)}</h3>
+        ${q.options.map((o,k)=>`<div class="ro ${k===q.answer?"correct":""} ${k===pick&&!ok?"picked":""}"><span class="k">${L[k]}</span><span>${esc(o)}</span>${k===q.answer?`<span class="lab">✓ Correct</span>`:k===pick?`<span class="lab">Your answer</span>`:""}</div>`).join("")}
+        ${!ok && !skipped ? `<div class="ex why"><b>Why ${L[pick]} is wrong</b>${esc(q.rationales[pick])}</div>` : ""}
+        <div class="ex"><b>${ok?"Why it's right":`Correct answer: ${L[q.answer]}`}</b>${esc(q.explanation)}</div>
+      </div>`;}).join("") || `<p class="muted">Nothing to show — ${filter==="wrong"?"you got everything right":"no correct answers"}.</p>`;
+  };
+  const wrongN = qs.filter(q=>answers[q.id]!==q.answer).length;
+  $app.innerHTML = header(true) + `
+    <div class="card score">
+      <div class="ring" style="--p:${pct}"><div><div><b>${a.score}</b><div class="muted" style="font-size:13px">of ${a.total}</div></div></div></div>
+      <div>
+        <div class="tag">${fmt(quiz.date)}${mins?` · ${mins} min`:""}</div>
+        <h2 style="font-size:22px;line-height:1.25;margin:6px 0 4px">${pct>=90?"Outstanding.":pct>=75?"Strong work.":pct>=60?"Solid — room to sharpen.":"Good reps. Review the misses."}</h2>
+        <p class="muted" style="margin:0">${unsaved?"Not saved yet — tap Retry submit.":"Saved to your history."}</p>
+      </div>
+    </div>
+    <div class="card topics">${Object.entries(ts).sort((x,y)=>x[1].correct/x[1].total-y[1].correct/y[1].total).map(([t,v])=>`
+      <div class="trow"><div><div class="lb"><span>${esc(t)}</span><span class="muted">${v.correct}/${v.total}</span></div><div class="tb"><i style="width:${v.correct/v.total*100}%"></i></div></div><span class="mono" style="text-align:right;font-size:13px">${Math.round(v.correct/v.total*100)}%</span></div>`).join("")}
+    </div>
+    <div class="filters">
+      <button data-f="all" class="on">All ${qs.length}</button>
+      <button data-f="wrong">Wrong ${wrongN}</button>
+      <button data-f="right">Right ${qs.length-wrongN}</button>
+    </div>
+    <div id="rlist"></div>
+    ${unsaved?`<div class="submitbar"><div class="in"><span class="muted" style="font-size:14px">Score not saved</span><button class="btn" id="retry">Retry submit</button></div></div>`:""}`;
+  $app.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{ filter = b.dataset.f==="right"?"right":b.dataset.f; $app.querySelectorAll(".filters button").forEach(x=>x.classList.toggle("on",x===b)); draw(); });
+  const rt = document.getElementById("retry"); if(rt) rt.onclick = ()=>{ renderQuestion(); setTimeout(submit,0); };
+  draw(); window.scrollTo(0,0);
+}
+
+document.addEventListener("keydown", e=>{
+  if(!state || !quiz || !location.hash.startsWith("#/q/") || attemptFor(quiz.date)) return;
+  if(!document.querySelector(".opt")) return;
+  if(["1","2","3","4"].includes(e.key)) choose(+e.key-1);
+  else if(e.key==="ArrowRight" && state.i<quiz.questions.length-1){ state.i++; renderQuestion(); }
+  else if(e.key==="ArrowLeft" && state.i>0){ state.i--; renderQuestion(); }
+});
+
+async function route(){
+  const m = location.hash.match(/^#\/q\/(\d{4}-\d{2}-\d{2})$/);
+  if(m){ await openQuiz(m[1]); } else { state = null; quiz = null; renderHome(); }
+  window.scrollTo(0,0);
+}
+
+(async()=>{
+  const t = store.get("dpm:theme"); if(t) document.documentElement.dataset.theme = t;
+  try{ const r = await fetch("quizzes/index.json",{cache:"no-store"}); if(r.ok) index = await r.json(); }catch{}
+  await loadAttempts();
+  addEventListener("hashchange", route);
+  route();
+})();
+</script>
+</body>
+</html>
