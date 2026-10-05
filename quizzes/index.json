@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-05",
+   "theme": "Interview-loop drills: product sense, root causes and staged AI rollouts",
+   "count": 30
+  },
+  {
    "date": "2026-10-04",
    "theme": "Foundations across the PM stack",
    "count": 30
