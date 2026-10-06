@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-06",
+   "theme": "Trade-offs under pressure: hidden needs, unit economics and AI watermarking",
+   "count": 30
+  },
+  {
    "date": "2026-10-05",
    "theme": "Interview-loop drills: product sense, root causes and staged AI rollouts",
    "count": 30

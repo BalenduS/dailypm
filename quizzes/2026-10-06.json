@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-06",
+ "theme": "Trade-offs under pressure: hidden needs, unit economics and AI watermarking",
+ "questions": [
+  {
+   "id": "2026-10-06-01",
+   "topic": "Product Sense",
+   "concept": "Context of use constrains the solution",
+   "difficulty": "hard",
+   "question": "An interviewer asks: \"Improve a music-streaming app for people who listen while driving.\" Which solution best fits this user's context?",
+   "options": [
+    "Voice-first controls and one-tap 'keep playing what I like' that need no screen reading",
+    "Social sharing so drivers can post what they're listening to in real time",
+    "A richer visual discovery feed with album art and editorial playlist cards",
+    "Synced on-screen lyrics so drivers can sing along to every track"
+   ],
+   "rationales": [
+    "Correct. It solves the real pain (controlling music without looking) within the safety constraint of driving.",
+    "Posting while driving is unsafe and solves a want that isn't a driving-specific pain point.",
+    "Visual discovery is great at home but asks a driver to read and browse, which the context forbids.",
+    "Lyrics require sustained reading; it is a passenger feature, not a driver one."
+   ],
+   "answer": 0,
+   "explanation": "The defining constraint for drivers is that eyes and hands must stay on the road, so attention and safety shape every design choice. Strong product-sense answers derive the solution from the context of use: low-glance, voice or single-tap interactions that keep good music flowing. Features that demand reading or typing fail the core constraint even if they are attractive in other contexts.",
+   "interview_tip": "Name the context constraint explicitly ('eyes-free, hands-busy') before brainstorming. Interviewers look for solutions that visibly follow from the user's situation, not generic feature lists."
+  },
+  {
+   "id": "2026-10-06-02",
+   "topic": "Product Sense",
+   "concept": "Solving the underlying need behind a feature request",
+   "difficulty": "hard",
+   "question": "B2B analytics customers keep asking for an 'export everything to Excel' button. Interviews reveal most exporters paste three charts into a weekly update for their manager. What should you build first?",
+   "options": [
+    "An API so customers' engineers can pull the raw data into their own tools",
+    "The full Excel export exactly as requested, since customers asked for it repeatedly",
+    "Scheduled, shareable report digests that email the chosen charts to stakeholders each week",
+    "A more powerful in-app chart builder so users never need to leave the product"
+   ],
+   "rationales": [
+    "An API serves engineering-heavy customers, not the analysts doing a quick weekly update.",
+    "Building the literal request ignores what discovery revealed and leaves users doing tedious copy-paste every week.",
+    "Correct. It removes the weekly manual work and serves the real job, while creating exposure to new viewers.",
+    "A better chart builder doesn't address the need to get charts in front of a manager who isn't in the tool."
+   ],
+   "answer": 2,
+   "explanation": "Feature requests are customers' proposed solutions; the PM's job is to find the job behind them. Here the job is 'keep my manager informed weekly with minimal effort'. A scheduled shareable digest does that job better than an export, keeps usage inside the product, and spreads the product to new stakeholders. The export may still be worth doing later, but it is not the highest-leverage answer to the discovered need.",
+   "interview_tip": "When given a feature request in an interview, ask 'what are they trying to get done?' Showing you can reframe a request into a job — and still acknowledge the original ask — signals customer insight."
+  },
+  {
+   "id": "2026-10-06-03",
+   "topic": "Product Sense",
+   "concept": "Choosing among brainstormed solutions",
+   "difficulty": "medium",
+   "question": "In a product-design interview you've proposed three solutions for your chosen user segment. How should you decide which one to recommend?",
+   "options": [
+    "Compare each against the stated goal and pain point on impact, effort and risk, then commit to one",
+    "Recommend building all three in parallel so no opportunity is missed",
+    "Choose the one with the lowest engineering effort to guarantee a fast launch",
+    "Pick the most innovative idea because interviewers reward bold thinking above all"
+   ],
+   "rationales": [
+    "Correct. Explicit criteria linked to the goal make the recommendation defensible and show prioritisation.",
+    "Doing everything avoids the trade-off the interviewer is testing and is unrealistic with finite resources.",
+    "Effort matters, but optimising only for ease can pick the idea with the least user impact.",
+    "Novelty alone isn't a criterion; a bold idea that misses the pain point is a weak recommendation."
+   ],
+   "answer": 0,
+   "explanation": "Interviewers want to see a reasoned prioritisation that ties back to the goal and segment you defined earlier. A simple comparison on impact (against the pain point), effort and risk, followed by a clear recommendation and its trade-off, shows judgment. Refusing to choose, or using a single criterion, loses that signal.",
+   "interview_tip": "Say 'Let me evaluate these against our goal' and use a quick table: impact, effort, risk. Then commit and name what you're giving up — decisiveness with reasoning is the signal."
+  },
+  {
+   "id": "2026-10-06-04",
+   "topic": "Product Sense",
+   "concept": "Long-term user value over short-term engagement",
+   "difficulty": "hard",
+   "question": "A social app's surveys show many users feel regret after long scrolling sessions. Leadership wants to address this without damaging the business. Which approach is strongest?",
+   "options": [
+    "Test features like 'you're all caught up' and judge them on long-term retention and satisfaction, not session time",
+    "Add hard daily time limits for every user to remove regretful sessions entirely",
+    "Lower feed quality slightly so users naturally end their sessions sooner",
+    "Leave the feed unchanged, because session time is rising and regret is just a survey artifact"
+   ],
+   "rationales": [
+    "Correct. It treats user well-being as a product goal and uses the right, longer-term success metrics.",
+    "Forced limits are heavy-handed, remove user choice and would hurt satisfied users too.",
+    "Deliberately degrading quality harms everyone and erodes trust; it is not a user-centred fix.",
+    "Dismissing consistent survey evidence because a short-term metric looks good is the classic engagement trap."
+   ],
+   "answer": 0,
+   "explanation": "Short-term engagement metrics can hide value destruction: users who regret time spent are more likely to churn or disengage later. The strongest approach treats regret as a real signal, tests interventions, and evaluates them on long-horizon metrics such as retention and satisfaction rather than on session time, which those features will intentionally reduce.",
+   "interview_tip": "Interviewers at consumer companies probe whether you'd chase engagement at any cost. Distinguishing 'time well spent' from raw time, and naming long-term metrics, signals mature product judgment."
+  },
+  {
+   "id": "2026-10-06-05",
+   "topic": "Metrics",
+   "concept": "Metric drop absorbed by another surface",
+   "difficulty": "hard",
+   "question": "In an e-commerce app, searches per user fell 10% week over week, but orders per user are flat. A new personalised home feed launched the same week. What is the most likely explanation to check first?",
+   "options": [
+    "Search relevance has broken badly and users are abandoning the app altogether",
+    "Logging for search events was removed, so the true drop must be larger than 10%",
+    "The home feed is satisfying intent that used to require search, so orders shifted to the feed path",
+    "The drop is random noise, so the team should simply wait another week"
+   ],
+   "rationales": [
+    "If search were broken and users left, orders would fall too — they're flat.",
+    "Instrumentation issues are worth ruling out, but this answer assumes the drop is worse without evidence.",
+    "Correct. Timing plus a flat outcome metric strongly suggests demand moved to the new feed; verify with path attribution.",
+    "A 10% move coinciding with a launch deserves investigation, not passive waiting."
+   ],
+   "answer": 2,
+   "explanation": "When one metric drops while the outcome it feeds stays flat, look for substitution: another surface may now be doing the job. Here the timing of the home-feed launch and stable orders point to cannibalisation of search, which is not necessarily bad. Confirm by checking order attribution by entry path before declaring a problem.",
+   "interview_tip": "In root-cause questions, check whether the downstream outcome moved and what launched at the same time. Saying 'this may be healthy cannibalisation' shows you think in systems, not single charts."
+  },
+  {
+   "id": "2026-10-06-06",
+   "topic": "Metrics",
+   "concept": "Pairing a goal metric with a counter-metric",
+   "difficulty": "medium",
+   "question": "Your team plans to send more push notifications to increase sessions. Which counter-metric matters most to track alongside it?",
+   "options": [
+    "Notification opt-out and app uninstall rates",
+    "Total number of notifications sent per day",
+    "Number of notification templates the team created",
+    "Average session length on the web version"
+   ],
+   "rationales": [
+    "Correct. It directly measures the damage over-notifying causes and protects the channel's long-term value.",
+    "Volume sent is an input you control, not a measure of user harm.",
+    "Template count measures team output, not user impact.",
+    "Web session length is unrelated to the mobile push change being made."
+   ],
+   "answer": 0,
+   "explanation": "A counter-metric catches the harm that optimising the goal metric can cause. More notifications can lift sessions short term while annoying users into disabling notifications or uninstalling — destroying the channel itself. Tracking opt-outs and uninstalls makes that cost visible.",
+   "interview_tip": "Whenever you propose a success metric, name its counter-metric unprompted. Interviewers treat this as a hallmark of experienced PMs who anticipate second-order effects."
+  },
+  {
+   "id": "2026-10-06-07",
+   "topic": "Metrics",
+   "concept": "Net revenue retention (NRR)",
+   "difficulty": "easy",
+   "question": "A B2B SaaS company reports net revenue retention (NRR) of 115%. What does that mean?",
+   "options": [
+    "Total company revenue grew 15%, including revenue from brand-new customers",
+    "115% of customers renewed their contracts at the end of the year",
+    "The company added 15% more new customers than it lost during the year",
+    "Revenue from last year's customers grew 15%, as expansion outweighed churn and downgrades"
+   ],
+   "rationales": [
+    "Total growth includes new logos; NRR deliberately excludes them.",
+    "Renewal rate can't exceed 100%; NRR exceeds it because of upsell and expansion revenue.",
+    "NRR is about revenue, not customer counts, and excludes new customers entirely.",
+    "Correct. NRR measures revenue change within the existing customer base, net of churn and downgrades."
+   ],
+   "answer": 3,
+   "explanation": "NRR looks only at a fixed cohort of existing customers: starting revenue plus expansion, minus contraction and churn, divided by starting revenue. Above 100% means the existing base grows on its own even before any new sales, a strong signal of product value in B2B.",
+   "interview_tip": "For B2B SaaS cases, mention NRR as a health metric — it shows you understand that expansion, not just acquisition, drives SaaS growth."
+  },
+  {
+   "id": "2026-10-06-08",
+   "topic": "Metrics",
+   "concept": "Finding the leakiest funnel step",
+   "difficulty": "easy",
+   "question": "A checkout funnel shows: 10,000 product views → 4,000 add-to-carts → 1,000 checkout starts → 800 purchases. Which step has the lowest step-to-step conversion rate?",
+   "options": [
+    "Product view → add-to-cart (40%)",
+    "Checkout start → purchase (80%)",
+    "Product view → purchase (8%)",
+    "Add-to-cart → checkout start (25%)"
+   ],
+   "rationales": [
+    "4,000 / 10,000 = 40% — the biggest absolute drop, but not the lowest rate.",
+    "800 / 1,000 = 80% — this step is actually healthy.",
+    "8% is the overall funnel conversion, not a single step.",
+    "Correct. 1,000 / 4,000 = 25%, the lowest of the three step rates."
+   ],
+   "answer": 3,
+   "explanation": "Step conversion divides each stage by the one before it: 40%, 25% and 80%. The cart-to-checkout step converts worst, so it is a natural first place to investigate (e.g., surprise shipping costs, forced login). The 8% figure is the end-to-end rate, not a step.",
+   "interview_tip": "In funnel questions, compute step rates out loud and distinguish absolute from relative drop-off. Then hypothesise causes for the weak step — that shows analysis leading to action."
+  },
+  {
+   "id": "2026-10-06-09",
+   "topic": "Experimentation",
+   "concept": "Minimum detectable effect and sample size",
+   "difficulty": "medium",
+   "question": "Your A/B test is sized to detect a 2% relative lift. The team now wants to reliably detect a 1% lift instead. Roughly how does the required sample size change?",
+   "options": [
+    "It roughly doubles",
+    "It roughly quadruples",
+    "It stays the same",
+    "It roughly halves"
+   ],
+   "rationales": [
+    "Doubling is the intuitive linear guess, but the relationship is quadratic.",
+    "Correct. n ∝ 1/MDE², so halving the MDE needs about four times the sample.",
+    "Smaller effects are harder to separate from noise, so more data is required.",
+    "Detecting a smaller effect can never need less data."
+   ],
+   "answer": 1,
+   "explanation": "Required sample size scales with the inverse square of the minimum detectable effect (MDE). Halving the MDE means multiplying the sample by about 2² = 4. That's why chasing tiny effects quickly becomes impractical for low-traffic products.",
+   "interview_tip": "When discussing test design, mention MDE and power before launch. Knowing that smaller effects need disproportionately more traffic shows you can judge whether a test is even feasible."
+  },
+  {
+   "id": "2026-10-06-10",
+   "topic": "Experimentation",
+   "concept": "Multiple comparisons false positives",
+   "difficulty": "medium",
+   "question": "An experiment tracked 20 independent metrics. One shows a 'significant' change at p < 0.05; the other 19 are flat. How should you treat it?",
+   "options": [
+    "As a confirmed win, since p < 0.05 means 95% certainty the effect is real",
+    "As proof the experiment was broken, so all results should be discarded",
+    "Skeptically: with 20 metrics, about one false positive is expected by chance alone",
+    "As significant only if the change is in the direction the team hoped for"
+   ],
+   "rationales": [
+    "p < 0.05 does not mean 95% certainty the effect is real, and ignores the many tests run.",
+    "One lone significant metric is expected noise, not evidence the setup failed.",
+    "Correct. Multiple comparisons inflate false positives; an isolated hit among many metrics is weak evidence.",
+    "Direction of the hoped-for effect doesn't change the statistics; that's motivated reasoning."
+   ],
+   "answer": 2,
+   "explanation": "At a 5% threshold, testing 20 metrics yields about one false positive on average even when nothing changed. Unless the metric was the pre-registered primary one, treat it as a hypothesis: apply a correction (e.g., Bonferroni or false-discovery-rate control) or re-test.",
+   "interview_tip": "Say 'I'd pre-register one primary metric and treat the rest as exploratory.' It signals statistical maturity that data-heavy interview loops look for."
+  },
+  {
+   "id": "2026-10-06-11",
+   "topic": "Estimation",
+   "concept": "Single-store annual revenue estimate",
+   "difficulty": "easy",
+   "question": "Estimate a busy city café's annual revenue: it sells about 300 drinks a day at an average ₹200, open roughly 360 days a year. Which is closest?",
+   "options": [
+    "About ₹6 lakh",
+    "About ₹22 lakh",
+    "About ₹22 crore",
+    "About ₹2.2 crore"
+   ],
+   "rationales": [
+    "This roughly equals ₹60k × 10 days, missing most of the year.",
+    "This is off by 10× — a common slip when converting lakh and crore.",
+    "This is 10× too high; it would imply ~3,000 drinks a day.",
+    "Correct. 300 × 200 × 360 ≈ ₹2.16 crore."
+   ],
+   "answer": 3,
+   "explanation": "Daily revenue = 300 × ₹200 = ₹60,000. Annual = ₹60,000 × 360 ≈ ₹2.16 crore (₹21.6 million). In interviews, state assumptions, compute in steps, and sanity-check: ₹60k a day for a busy café is plausible.",
+   "interview_tip": "Structure estimation as drivers × rates and say a sanity check aloud. Careful unit handling (lakh vs crore) is noticed in India-based loops."
+  },
+  {
+   "id": "2026-10-06-12",
+   "topic": "Estimation",
+   "concept": "Back-of-envelope storage estimate",
+   "difficulty": "medium",
+   "question": "A photo app has 50 million daily active users. 10% upload photos each day, averaging 2 photos of 2 MB each. Roughly how much new storage is needed per day (before replication)?",
+   "options": [
+    "About 2 TB",
+    "About 20 TB",
+    "About 2 PB",
+    "About 200 TB"
+   ],
+   "rationales": [
+    "Too low by 10× — likely dropped a factor in the chain.",
+    "Correct. 5M uploaders × 2 photos × 2 MB = 20 TB.",
+    "2 PB is 100× too high for these assumptions.",
+    "Too high by 10× — perhaps applied 100% of users uploading."
+   ],
+   "answer": 1,
+   "explanation": "Uploaders = 50M × 10% = 5M. Photos = 5M × 2 = 10M. Storage = 10M × 2 MB = 20M MB = 20 TB per day. Mentioning that replication, thumbnails and backups multiply this shows engineering awareness.",
+   "interview_tip": "For technical estimation, write the chain out and keep units explicit. Then note multipliers (replication, thumbnails) — it shows you can talk credibly with engineers."
+  },
+  {
+   "id": "2026-10-06-13",
+   "topic": "Strategy",
+   "concept": "Switching costs as a moat",
+   "difficulty": "easy",
+   "question": "For a small-business accounting SaaS, which is usually the most durable competitive moat?",
+   "options": [
+    "A large paid advertising budget in the first year",
+    "Switching costs from years of financial data and workflows embedded in the product",
+    "A modern user interface with a fresh visual design",
+    "A slightly lower monthly price than the nearest competitor"
+   ],
+   "rationales": [
+    "Ad budgets buy temporary reach, not lasting defensibility.",
+    "Correct. Embedded data and workflows create high switching costs that protect retention over time.",
+    "Design can be copied within a release cycle; it's a differentiator, not a durable moat.",
+    "Price cuts are easily matched and compress margins rather than protecting them."
+   ],
+   "answer": 1,
+   "explanation": "Moats are advantages competitors can't easily copy. Once a business's ledgers, integrations, and accountant workflows live in one tool, moving is risky and costly, so customers stay. Price, UI and ad spend can all be matched quickly by rivals.",
+   "interview_tip": "When asked 'what's the moat?', name a specific source — network effects, switching costs, scale economies, brand, proprietary data — and explain why it's hard to copy."
+  },
+  {
+   "id": "2026-10-06-14",
+   "topic": "Strategy",
+   "concept": "Bundling to leverage distribution",
+   "difficulty": "medium",
+   "question": "A company with a dominant office-software suite bundles a new team-chat product into existing subscriptions. Why is this hard for a best-of-breed chat startup to counter?",
+   "options": [
+    "Bundling lets the incumbent charge a higher standalone price for chat",
+    "Customers already paying for the suite see the chat tool as free, removing a separate buying decision",
+    "Bundled products are always technically superior to standalone products",
+    "Regulators prohibit startups from offering their own bundles"
+   ],
+   "rationales": [
+    "The point of the bundle is that chat isn't priced separately at all.",
+    "Correct. Zero marginal price and built-in distribution make 'good enough' beat 'best' for many buyers.",
+    "Bundled tools are often weaker; their advantage is distribution and price, not quality.",
+    "Startups can bundle too; there's no such general prohibition."
+   ],
+   "answer": 1,
+   "explanation": "Bundling turns a purchase decision into a default: the marginal price of the bundled tool is zero to existing customers, and distribution comes for free through the existing install base. A standalone rival must convince buyers to pay extra for something 'already included', even if its product is better.",
+   "interview_tip": "In strategy questions, distinguish product advantage from distribution advantage. Explaining why distribution often wins shows commercial realism."
+  },
+  {
+   "id": "2026-10-06-15",
+   "topic": "Strategy",
+   "concept": "Commoditize your complement",
+   "difficulty": "hard",
+   "question": "Why might a company whose revenue comes from ads in its social apps release powerful AI models openly for free?",
+   "options": [
+    "Because open models cost nothing to train, so there is no investment to recover",
+    "To commoditise a layer its products depend on, lowering costs and preventing a rival from controlling it",
+    "Because open-sourcing guarantees its models will be the most accurate on the market",
+    "To earn licensing revenue from every developer who downloads the models"
+   ],
+   "rationales": [
+    "Frontier models cost huge amounts to train; the strategy accepts that cost for strategic reasons.",
+    "Correct. Free models weaken rivals' pricing power over a critical input and strengthen the company's own position.",
+    "Openness doesn't guarantee accuracy leadership; it's a positioning choice.",
+    "Free open release forgoes licensing revenue — that isn't the motive."
+   ],
+   "answer": 1,
+   "explanation": "'Commoditise your complement' means making the inputs to your core business cheap and abundant. AI models complement an ads business built on apps; if models are free and widely available, no competitor can charge a toll on that layer, and the ecosystem improves the tools the company uses itself.",
+   "interview_tip": "Use this lens when asked why a company gives something away. Tying the 'free' product to where the company actually makes money signals sharp strategic thinking."
+  },
+  {
+   "id": "2026-10-06-16",
+   "topic": "Execution",
+   "concept": "Staged rollout with rollback criteria",
+   "difficulty": "medium",
+   "question": "You're launching a redesigned payments flow to 20 million users. Which rollout plan is strongest?",
+   "options": [
+    "Release to internal employees only, then go straight to 100% of users",
+    "Release to 100% at once so all users get the improvement on the same day",
+    "Ramp 1% → 10% → 50% → 100%, with pre-agreed metrics that trigger a pause or rollback",
+    "Ramp gradually, and decide whether to roll back only if users complain"
+   ],
+   "rationales": [
+    "Dogfooding is useful but employees don't represent the device and payment-method diversity of real users.",
+    "A big-bang launch exposes everyone to any bug at once on a critical flow.",
+    "Correct. Gradual exposure plus predefined criteria contains risk and speeds up decisions.",
+    "Waiting for complaints is slow and reactive; many payment failures are silent."
+   ],
+   "answer": 2,
+   "explanation": "For high-risk changes, staged rollouts limit the blast radius and give time to observe real-world behaviour. Defining rollback criteria (e.g., payment success rate drops by more than 0.5 points) before launch turns judgement calls during stress into clear, fast decisions.",
+   "interview_tip": "When asked 'how would you launch?', mention ramp stages, guardrail metrics and rollback triggers. It signals you've shipped at scale and respect risk."
+  },
+  {
+   "id": "2026-10-06-17",
+   "topic": "Execution",
+   "concept": "Now-Next-Later roadmap format",
+   "difficulty": "easy",
+   "question": "What is the main advantage of a 'Now / Next / Later' roadmap over a date-based Gantt chart?",
+   "options": [
+    "It communicates priority and certainty without implying false precision about delivery dates",
+    "It removes the need to talk to stakeholders about what's coming",
+    "It guarantees every 'Now' item will ship within the quarter",
+    "It lists more features, giving stakeholders a fuller picture"
+   ],
+   "rationales": [
+    "Correct. It shows sequence and confidence levels without brittle date commitments.",
+    "Any roadmap is a communication tool; this format still needs stakeholder conversations.",
+    "No format guarantees delivery; 'Now' means current focus, not a promise.",
+    "Its value isn't more features — it's clearer prioritisation and uncertainty."
+   ],
+   "answer": 0,
+   "explanation": "Now/Next/Later buckets show what the team is working on, what comes after, and what's being explored — with confidence decreasing further out. That's honest about uncertainty and keeps focus on problems and outcomes rather than committing to dates that will slip.",
+   "interview_tip": "If asked how you communicate roadmaps, describe tailoring the level of date commitment to the audience. Showing you avoid false precision signals experience."
+  },
+  {
+   "id": "2026-10-06-18",
+   "topic": "Execution",
+   "concept": "PM role during a live incident",
+   "difficulty": "medium",
+   "question": "Your checkout is down during a sale. Engineers have an incident commander and are debugging. What is the most useful thing for the PM to do?",
+   "options": [
+    "Start drafting the root-cause analysis to identify who caused the outage",
+    "Join the debugging and suggest technical fixes to speed things up",
+    "Wait quietly until the incident is resolved, then send one summary",
+    "Own stakeholder and customer communication with regular updates and help assess business impact"
+   ],
+   "rationales": [
+    "Root-cause analysis comes after recovery and should be blameless, not about finding a culprit.",
+    "Unless the PM is the relevant expert, joining debugging adds noise and interrupts the people fixing it.",
+    "Silence leaves sales, support and leadership guessing, and generates more interruptions.",
+    "Correct. Communication and business decisions free engineers to focus on restoring service."
+   ],
+   "answer": 3,
+   "explanation": "In a live incident the incident commander directs the fix. The PM adds most value by shielding engineers from interruptions: sending regular stakeholder and customer updates, quantifying impact, and making business calls (e.g., pausing ads or extending the sale) quickly.",
+   "interview_tip": "Incident stories are common in execution rounds. Describe your role crisply — communication, impact, decisions — and mention the follow-up postmortem."
+  },
+  {
+   "id": "2026-10-06-19",
+   "topic": "Behavioural",
+   "concept": "Responding to critical feedback from your team",
+   "difficulty": "hard",
+   "question": "In a retro, engineers say you change priorities so often that they can't finish anything. Which response best shows ownership and earns trust?",
+   "options": [
+    "Acknowledge it, review how often priorities changed and why, and agree a change process you then follow",
+    "Promise never to change priorities again for the rest of the quarter",
+    "Explain that shifting priorities are normal in a fast-moving business and the team must adapt",
+    "Ask the engineering manager to address the team's morale separately"
+   ],
+   "rationales": [
+    "Correct. It shows humility, uses data, and makes a concrete, sustainable change the team can hold you to.",
+    "An absolute promise is unrealistic and will be broken, eroding trust further.",
+    "This is defensive and dismisses a legitimate problem the team raised.",
+    "Delegating the issue avoids your own ownership of the behaviour being criticised."
+   ],
+   "answer": 0,
+   "explanation": "Earning trust means taking feedback seriously without being defensive, checking it against facts, and changing behaviour in a visible way. Agreeing on a process — for example, protecting sprint scope and explaining the 'why' of any change — fixes the system and shows follow-through.",
+   "interview_tip": "For 'tell me about feedback you received', show the full loop: listened, verified, changed, and measured the result. Defensiveness is the red flag interviewers watch for."
+  },
+  {
+   "id": "2026-10-06-20",
+   "topic": "Behavioural",
+   "concept": "Resolving conflicting stakeholder priorities",
+   "difficulty": "hard",
+   "question": "The Head of Sales wants a feature for a big prospect; the Head of Support wants you to fix bugs driving 30% of tickets. Both escalate to you. What's the best approach?",
+   "options": [
+    "Escalate to your VP immediately and let them decide between the two",
+    "Split engineering capacity 50/50 so both leaders get part of what they want",
+    "Quantify both against shared company goals, propose a recommendation, and align the two leaders on the trade-off",
+    "Do whatever the more senior stakeholder asks to avoid escalation"
+   ],
+   "rationales": [
+    "Escalating immediately skips your job of framing the trade-off; escalation is a last resort.",
+    "Splitting evenly avoids deciding and may leave both efforts under-resourced.",
+    "Correct. Data tied to shared goals plus a clear recommendation shows judgment and influence.",
+    "Seniority isn't a prioritisation criterion; it ignores impact."
+   ],
+   "answer": 2,
+   "explanation": "Strong PMs resolve conflict by making the trade-off explicit in shared terms — revenue at stake, support cost, churn risk — and bringing a recommendation. Getting both leaders to see the same data turns a political fight into a decision, and escalation is used only if alignment fails.",
+   "interview_tip": "Behavioural answers on conflict should include the numbers you used and the outcome. Interviewers want to see you can drive decisions without formal authority."
+  },
+  {
+   "id": "2026-10-06-21",
+   "topic": "Behavioural",
+   "concept": "Making your individual contribution clear in team stories",
+   "difficulty": "medium",
+   "question": "You're describing a cross-functional launch you drove with design, engineering and marketing. How should you frame your story so the interviewer can assess you?",
+   "options": [
+    "One that focuses on the technical architecture the engineers built",
+    "One that describes the team's goal, then your specific decisions and actions, with a measurable result",
+    "One that lists every team member and their contribution in detail",
+    "One that credits 'we' throughout to show you are a humble team player"
+   ],
+   "rationales": [
+    "Technical details from others don't reveal your PM skills.",
+    "Correct. It shows ownership and impact while still acknowledging the team.",
+    "Detailing everyone's role uses time without showing your own judgment.",
+    "Constant 'we' hides your contribution, leaving the interviewer unable to evaluate you."
+   ],
+   "answer": 1,
+   "explanation": "Interviewers assess you, not your team. Using STAR, set the context briefly, then spend most time on what you personally decided and did, ending with a quantified result and a learning. Credit the team, but make your role unmistakable.",
+   "interview_tip": "Practise saying 'I' for your actions and 'we' for the outcome. A crisp, quantified result at the end makes the story memorable."
+  },
+  {
+   "id": "2026-10-06-22",
+   "topic": "AI Product",
+   "concept": "Building a representative eval set",
+   "difficulty": "medium",
+   "question": "You're creating an evaluation set for an AI support assistant before launch. Which approach is best?",
+   "options": [
+    "Sample real user queries, including edge cases and adversarial inputs, with agreed expected outcomes",
+    "Write 20 polished example questions that show the assistant at its best",
+    "Rely on a public benchmark score instead of building your own set",
+    "Use only the hardest questions possible to stress-test the model"
+   ],
+   "rationales": [
+    "Correct. Representative real data plus targeted edge cases gives a trustworthy measure of real-world quality.",
+    "Curated best cases overstate quality and hide the failures users will hit.",
+    "Public benchmarks don't reflect your users, domain or policies.",
+    "Only hard cases distort the picture; you also need common queries that drive most traffic."
+   ],
+   "answer": 0,
+   "explanation": "A useful eval set mirrors the real distribution of what users ask, plus deliberate coverage of edge cases, safety risks and failure modes. Clear expected outcomes let you score changes consistently. Versioning it lets you compare prompts or models over time.",
+   "interview_tip": "AI PM interviews often ask 'how would you know it's good?' Describe building an eval set from real traffic and using it as a launch gate — it shows you treat quality as measurable."
+  },
+  {
+   "id": "2026-10-06-23",
+   "topic": "AI Product",
+   "concept": "Compounding error in multi-step agents",
+   "difficulty": "medium",
+   "question": "An AI agent completes a task in 10 sequential steps, each succeeding independently 95% of the time. Roughly what is its end-to-end success rate?",
+   "options": [
+    "About 85%",
+    "About 95%",
+    "About 50%",
+    "About 60%"
+   ],
+   "rationales": [
+    "This underestimates how quickly errors compound across ten steps.",
+    "That would only be true for a single step.",
+    "Close, but overstates the drop; 0.95¹⁰ is nearer 60%.",
+    "Correct. 0.95 to the power of 10 is about 0.60."
+   ],
+   "answer": 3,
+   "explanation": "Independent step success rates multiply: 0.95¹⁰ ≈ 0.60. Long agent chains degrade quickly, which is why teams shorten workflows, add verification and retries at weak steps, or keep a human in the loop for critical points.",
+   "interview_tip": "When discussing agents, mention compounding error and how you'd mitigate it. It shows you understand why demos impress but production reliability is hard."
+  },
+  {
+   "id": "2026-10-06-24",
+   "topic": "AI Product",
+   "concept": "Diagnosing retrieval vs generation failures in RAG",
+   "difficulty": "hard",
+   "question": "Your RAG help bot gives wrong answers about refund policy. Logs show the correct policy document was not among the retrieved chunks in most failing cases. What should the team do first?",
+   "options": [
+    "Switch to a larger, more expensive language model",
+    "Improve retrieval — e.g., chunking, hybrid keyword + semantic search, or re-ranking",
+    "Rewrite the system prompt to tell the model to be more careful with policies",
+    "Fine-tune the model on example refund conversations"
+   ],
+   "rationales": [
+    "A larger model still lacks the missing context and adds cost.",
+    "Correct. The bottleneck is getting the right document retrieved; fix that layer first.",
+    "Prompting can't make the model use a document that wasn't provided.",
+    "Fine-tuning bakes in policy that changes, and still doesn't fix retrieval."
+   ],
+   "answer": 1,
+   "explanation": "RAG failures split into retrieval failures (the right context never reached the model) and generation failures (the model misused good context). Here the evidence points to retrieval, so prompt changes or a bigger model can't fix it: the model can't use information it never saw.",
+   "interview_tip": "Break AI quality issues into pipeline stages and locate the failure with evidence. Interviewers value PMs who debug systematically rather than reaching for 'use a bigger model'."
+  },
+  {
+   "id": "2026-10-06-25",
+   "topic": "AI Product",
+   "concept": "Confirmation gates for irreversible agent actions",
+   "difficulty": "easy",
+   "question": "Your AI agent can issue customer refunds. What's the most sensible safeguard for launch?",
+   "options": [
+    "Let the agent issue any refund automatically to maximise efficiency",
+    "Allow refunds only if the customer types the word 'refund' exactly",
+    "Disable refunds entirely until the model never makes a mistake",
+    "Require human approval for refunds above a set amount, with automatic handling below it"
+   ],
+   "rationales": [
+    "Unrestricted authority exposes the business to costly errors and abuse.",
+    "A keyword trigger isn't a safety control and is trivially gamed.",
+    "No model is perfect; waiting for zero errors means never shipping value.",
+    "Correct. Risk-proportional human review balances efficiency and safety."
+   ],
+   "answer": 3,
+   "explanation": "High-impact, hard-to-reverse actions need guardrails proportional to risk. Approval thresholds let the agent handle low-value cases quickly while humans review costly ones. As accuracy is proven, the threshold can be raised.",
+   "interview_tip": "In AI safety questions, propose graduated autonomy — start supervised, expand as evals prove reliability. It signals pragmatic risk management."
+  },
+  {
+   "id": "2026-10-06-26",
+   "topic": "AI Product",
+   "concept": "Pricing AI features with variable inference cost",
+   "difficulty": "medium",
+   "question": "Your SaaS adds an AI feature whose inference cost varies 50× between light and heavy users. Which pricing approach best protects margins while keeping adoption easy?",
+   "options": [
+    "Include a usage allowance in each plan, with metered or credit-based pricing above it",
+    "Price it per seat at the level needed to cover the heaviest users",
+    "Add it free and unlimited to every plan to maximise adoption",
+    "Charge a single flat add-on price regardless of how much it's used"
+   ],
+   "rationales": [
+    "Correct. A hybrid allowance-plus-usage model balances adoption and margin protection.",
+    "Pricing for the extreme user overcharges most customers and slows adoption.",
+    "Unlimited free use invites unbounded costs from heavy users.",
+    "A flat add-on is either too expensive for light users or loss-making on heavy ones."
+   ],
+   "answer": 0,
+   "explanation": "When marginal costs vary widely, pure flat pricing lets heavy users destroy margins, while pricing for the heaviest users scares off everyone else. An included allowance keeps adoption friction low; metering above it aligns price with cost and value.",
+   "interview_tip": "AI pricing questions test whether you connect cost structure to pricing model. Mentioning usage distributions and margin per segment shows business depth."
+  },
+  {
+   "id": "2026-10-06-27",
+   "topic": "Technology",
+   "concept": "Caching and data staleness",
+   "difficulty": "easy",
+   "question": "Engineering proposes caching product prices to speed up page loads. What trade-off should you raise?",
+   "options": [
+    "Caching removes the need for a database to store prices at all",
+    "Users may briefly see outdated prices unless the cache is invalidated when prices change",
+    "Caching means prices can never be changed again without a full redeploy",
+    "Caching will slow down the page because data must be stored twice"
+   ],
+   "rationales": [
+    "The cache is a fast copy; the database remains the source of truth.",
+    "Correct. Freshness vs speed is the core caching trade-off, and price accuracy matters.",
+    "Prices can still change; the cache just needs refreshing or invalidating.",
+    "Caching speeds up reads; that's why it's proposed."
+   ],
+   "answer": 1,
+   "explanation": "Caches serve stored copies of data, which is fast but can go stale. For prices, showing an old price can cause disputes or losses, so you need an invalidation strategy (e.g., purge on update or short expiry) matched to how often data changes.",
+   "interview_tip": "Technical-fluency questions reward naming the trade-off and its user impact. Asking 'how stale is acceptable for this data?' is a strong PM question."
+  },
+  {
+   "id": "2026-10-06-28",
+   "topic": "Technology",
+   "concept": "Async job queues for long-running tasks",
+   "difficulty": "medium",
+   "question": "Users request a year-long sales report that takes about 3 minutes to generate. Requests often time out. What's the best design?",
+   "options": [
+    "Generate reports only for one month at a time to keep requests short",
+    "Block the user from using the app until the report finishes",
+    "Queue the report as a background job and notify the user with a link when it's ready",
+    "Raise the request timeout to 10 minutes so the browser waits for it"
+   ],
+   "rationales": [
+    "Restricting the range removes functionality users clearly need.",
+    "Blocking the UI creates a poor experience and does not solve the scaling problem.",
+    "Correct. Asynchronous processing fits long tasks and gives a better user experience.",
+    "Long timeouts tie up resources and still fail on flaky connections."
+   ],
+   "answer": 2,
+   "explanation": "Long-running work shouldn't tie up a synchronous request. A job queue processes it in the background, scales independently and survives retries; the user gets a notification or download link when done, keeping the app responsive.",
+   "interview_tip": "Show you know when to go async. Describing the user experience (progress state, notification) alongside the architecture makes the answer PM-strong."
+  },
+  {
+   "id": "2026-10-06-29",
+   "topic": "Growth",
+   "concept": "CAC payback period",
+   "difficulty": "medium",
+   "question": "A subscription app spends ₹6,000 to acquire a customer, who pays ₹1,000 per month at a 75% gross margin. What's the CAC payback period?",
+   "options": [
+    "4.5 months",
+    "12 months",
+    "8 months",
+    "6 months"
+   ],
+   "rationales": [
+    "This multiplies rather than divides by the margin.",
+    "No standard calculation gives 12 months with these inputs.",
+    "Correct. ₹6,000 ÷ ₹750 = 8 months.",
+    "This ignores gross margin, dividing CAC by revenue."
+   ],
+   "answer": 2,
+   "explanation": "Payback = CAC ÷ monthly gross profit per customer. Gross profit = ₹1,000 × 75% = ₹750, so ₹6,000 ÷ ₹750 = 8 months. Using revenue instead of gross profit (6 months) is a common mistake that overstates efficiency.",
+   "interview_tip": "Unit-economics questions test whether you use gross profit, not revenue. Pairing payback with retention ('do customers stay longer than 8 months?') signals business acumen."
+  },
+  {
+   "id": "2026-10-06-30",
+   "topic": "Current Events",
+   "concept": "OpenAI textGrain EU watermarking (Oct 2026)",
+   "difficulty": "easy",
+   "question": "In October 2026, OpenAI said it would add invisible watermarks to ChatGPT and Codex text for EU users. According to TechCrunch, what prompted the move?",
+   "options": [
+    "A US federal law requiring watermarks on all AI-generated text",
+    "Advertisers demanding proof that marketing copy was written by humans",
+    "A voluntary pledge made with Indian regulators under the DPDP rules",
+    "The EU AI Act's transparency rules requiring AI-generated content to be machine-detectable"
+   ],
+   "rationales": [
+    "No such US federal law was cited; the move is EU-specific.",
+    "Advertiser pressure wasn't the reported reason.",
+    "India's DPDP rules concern personal data protection, not AI content marking.",
+    "Correct. The EU AI Act's transparency requirements drove the EU rollout."
+   ],
+   "answer": 3,
+   "explanation": "TechCrunch reported that OpenAI is rolling out a watermarking system called textGrain to EU users to comply with the EU AI Act's transparency obligations, which require marking AI-generated content so systems can identify it. It subtly shapes word choices so a detector can find a pattern; heavy editing reduces detectability. Anthropic had announced similar watermarking for Claude, applied globally.",
+   "interview_tip": "Expect 'how would regulation change your AI roadmap?' questions. Citing a real example of compliance shaping product design — and its trade-offs, like user backlash — shows you track the landscape.",
+   "source": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu"
+  }
+ ]
+}
