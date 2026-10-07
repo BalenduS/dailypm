@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-07",
+   "theme": "Honest numbers: reading metrics without fooling yourself, AI costs, and WhatsApp's new pricing",
+   "count": 30
+  },
+  {
    "date": "2026-10-06",
    "theme": "Trade-offs under pressure: hidden needs, unit economics and AI watermarking",
    "count": 30
