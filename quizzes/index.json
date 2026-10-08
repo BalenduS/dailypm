@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-08",
+   "theme": "Trust by design — incentives, defaults and AI you can verify",
+   "count": 30
+  },
+  {
    "date": "2026-10-07",
    "theme": "Honest numbers: reading metrics without fooling yourself, AI costs, and WhatsApp's new pricing",
    "count": 30

@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-08",
+ "theme": "Trust by design — incentives, defaults and AI you can verify",
+ "questions": [
+  {
+   "id": "2026-10-08-01",
+   "topic": "Product Sense",
+   "concept": "Intentional friction for high-stakes actions",
+   "difficulty": "hard",
+   "question": "A UPI payments app wants to cut scam losses, which mostly happen when users send money to a payee for the first time after a phone call. Leadership has a 'zero friction' design principle. What's the strongest design proposal?",
+   "options": [
+    "Keep the flow frictionless for everyone and invest in a bigger post-fraud refund and dispute team instead",
+    "Run an in-app awareness campaign about scams while leaving the payment flow itself unchanged",
+    "Add a short, targeted pause only for first-time payees: show the payee's verified name, a scam warning, and a few seconds' delay before Pay",
+    "Require every payment, including to saved contacts, to pass an extra OTP and a confirmation screen"
+   ],
+   "rationales": [
+    "Refunds after the fact are costly, slow and often impossible for push payments; it treats the symptom and ignores prevention.",
+    "Awareness helps at the margin, but scams work by creating panic in the moment; a campaign doesn't intervene when the decision is made.",
+    "Correct. Friction is targeted at the risky, irreversible moment, with trust cues (verified name) and a cooling-off beat that breaks the scammer's urgency.",
+    "Blanket friction punishes the 95%+ of safe repeat payments and pushes users to competitors, while scammers simply coach victims through one more OTP."
+   ],
+   "answer": 2,
+   "explanation": "Friction is a tool, not an enemy: good design removes it from low-risk moments and adds it precisely where the cost of a mistake is high and irreversible. Scoping the pause to first-time payees protects the riskiest moment while repeat payments stay fast. A strong answer reframes the principle ('zero unnecessary friction') rather than obeying or ignoring it.",
+   "interview_tip": "Interviewers like candidates who challenge a stated principle with nuance. Say where friction belongs and why, and name the metric trade-off (fraud loss vs. payment completion) you'd watch."
+  },
+  {
+   "id": "2026-10-08-02",
+   "topic": "Product Sense",
+   "concept": "Single-player mode to solve marketplace cold start",
+   "difficulty": "hard",
+   "question": "You're launching a marketplace connecting home bakers with local buyers in a new city. You have few bakers and almost no buyers. Which product approach best addresses the cold-start problem?",
+   "options": [
+    "Wait to launch until at least 1,000 bakers have signed up through a pre-registration waitlist",
+    "Launch with a large paid buyer-acquisition campaign across the whole city so demand pulls bakers onto the platform",
+    "Give bakers a standalone tool they value on day one — a free storefront and order manager they can share on WhatsApp — so supply joins before demand exists",
+    "Launch in ten cities at once so that the combined network looks large enough to attract both sides"
+   ],
+   "rationales": [
+    "A waitlist offers bakers nothing while they wait, so sign-ups go cold and you learn nothing about real behaviour.",
+    "Paid buyers arriving to an empty catalogue churn immediately; you burn budget and damage first impressions.",
+    "Correct. Single-player utility solves the chicken-and-egg problem: bakers get value alone, and their shared storefronts seed demand.",
+    "Spreading thin makes every local network weaker; marketplaces are won city-by-city because liquidity is local."
+   ],
+   "answer": 2,
+   "explanation": "The cold-start problem is that neither side wants to join an empty network. A 'come for the tool, stay for the network' approach gives one side standalone value, so supply accumulates without needing buyers yet; the bakers' own sharing then brings the first buyers. Strong answers pick which side to seed and explain how that side gets value before the network effect kicks in.",
+   "interview_tip": "In marketplace product-sense prompts, explicitly name the cold-start problem and which side you'll seed first. Mentioning 'liquidity' and how you'd measure it (e.g., % of listings that get an order) signals depth."
+  },
+  {
+   "id": "2026-10-08-03",
+   "topic": "Product Sense",
+   "concept": "Defaults as the most powerful design choice",
+   "difficulty": "medium",
+   "question": "A note-taking app is adding sharing. Research shows most users never change settings. Which decision deserves the most design attention?",
+   "options": [
+    "The number of permission levels offered in the advanced settings menu for power users",
+    "The default visibility of a new shared link — for example 'only invited people' versus 'anyone with the link'",
+    "The wording of the help-centre article that explains how sharing permissions work",
+    "The colour and placement of the Share button within the editor toolbar"
+   ],
+   "rationales": [
+    "Advanced options matter for a minority; the stated research says most users never open them.",
+    "Correct. The default determines what the majority experiences, including the privacy risk, so it is the highest-leverage choice.",
+    "Help articles are read by very few users; relying on them to explain a risky default is a weak safeguard.",
+    "Button placement affects discoverability, but it doesn't decide what happens to users' data once they share."
+   ],
+   "answer": 1,
+   "explanation": "When most users never touch settings, the default effectively is the product for them. A permissive default can leak private notes at scale; a restrictive one can make sharing feel broken. Choosing defaults deliberately, and measuring their effects, has more impact than options few people will see.",
+   "interview_tip": "Mentioning defaults shows you understand real user behaviour. A strong answer states which default you'd pick, what risk it guards against, and what metric would tell you it's wrong."
+  },
+  {
+   "id": "2026-10-08-04",
+   "topic": "Product Sense",
+   "concept": "Simultaneous-reveal reviews to reduce retaliation",
+   "difficulty": "hard",
+   "question": "A home-rental marketplace finds hosts and guests leave suspiciously positive reviews. Interviews reveal both sides fear the other will retaliate with a bad review. What's the best product change?",
+   "options": [
+    "Let users edit their review any time after seeing the other party's review, so they can respond fairly",
+    "Offer a discount on the next booking to anyone who leaves a review within 48 hours",
+    "Remove star ratings and keep only free-text reviews so that scores look less harsh",
+    "Hide each review until both sides have submitted or a 14-day window closes, then reveal both at once"
+   ],
+   "rationales": [
+    "Editable reviews after seeing the other side make retaliation easier, worsening the inflation problem.",
+    "Incentives increase review volume but not honesty, and can bias reviews even more positive.",
+    "Text-only reviews don't change the fear of retaliation; people will still write vague, positive text.",
+    "Correct. Neither side can see or react to the other's review before submitting, which removes the retaliation incentive."
+   ],
+   "answer": 3,
+   "explanation": "The root cause is strategic behaviour: people soften honest feedback because the other side can see it and respond. Simultaneous reveal (a double-blind window) removes the ability to retaliate, so honest reviews become safe. Strong product-sense answers find the incentive problem behind a data-quality symptom.",
+   "interview_tip": "In trust-and-safety or marketplace prompts, interviewers want you to diagnose incentives, not just add features. Naming the mechanism ('reviews are a repeated game, so make them simultaneous') signals strong product thinking."
+  },
+  {
+   "id": "2026-10-08-05",
+   "topic": "Metrics",
+   "concept": "Instrumentation bug vs real behaviour change",
+   "difficulty": "hard",
+   "question": "The morning after an app release, dashboards show 'add to cart' events down 40%. Backend data shows orders and revenue are flat, and the release included an analytics SDK upgrade. What's the most likely explanation and next step?",
+   "options": [
+    "Event tracking probably broke in the release; verify client events against server logs before treating it as a user-behaviour change",
+    "Orders will fall soon as the funnel catches up; warn leadership about a revenue miss next week",
+    "Users are adding fewer items to cart; start a UX investigation of the product page redesign",
+    "The 40% drop is seasonal; compare against the same day last year before doing anything"
+   ],
+   "rationales": [
+    "Correct. Flat orders plus an SDK change point to a logging issue; reconcile client and server data first.",
+    "Orders happen within the same session as add-to-cart, so there's no lag that would explain flat orders today.",
+    "A real 40% drop in carts would reduce orders, which are flat; the evidence contradicts a behaviour change.",
+    "Seasonality rarely produces a 40% overnight drop that coincides exactly with a release and spares downstream metrics."
+   ],
+   "answer": 0,
+   "explanation": "When a top-of-funnel event collapses while downstream outcomes (orders, revenue) are unchanged and the release touched analytics code, the data pipeline is the prime suspect. Users can't place orders without adding to cart, so a real 40% drop should show up downstream. Validating the measurement first prevents chasing a phantom problem.",
+   "interview_tip": "In root-cause questions, say 'first, is the data real?' and give a specific check. Interviewers reward candidates who use downstream metrics to sanity-check upstream ones."
+  },
+  {
+   "id": "2026-10-08-06",
+   "topic": "Metrics",
+   "concept": "Survivorship bias in per-user engagement averages",
+   "difficulty": "medium",
+   "question": "A fitness app's average workouts per active user rose from 3.1 to 3.8 per week over a quarter, and the team calls it an engagement win. Meanwhile, monthly active users fell 25%. What's the most important caution?",
+   "options": [
+    "Falling MAU is normal seasonality, so the engagement rise can be taken at face value",
+    "A 0.7 increase is too small to matter, so the team should ignore the change",
+    "Workouts per user is a vanity metric; the team should track app downloads instead",
+    "The average may have risen because less-engaged users churned, leaving only heavy users — check cohort-level engagement"
+   ],
+   "rationales": [
+    "Assuming seasonality without evidence skips the more likely explanation linking the two moves.",
+    "A 23% relative rise is not small; the issue is interpretation, not magnitude.",
+    "Downloads are a weaker, more vanity-prone metric; workouts per user is fine if read correctly.",
+    "Correct. Composition change in the denominator can inflate the average; cohort analysis reveals whether anyone actually improved."
+   ],
+   "answer": 3,
+   "explanation": "A per-user average over 'active users' changes when the denominator's composition changes. If light users leave, the remaining base is heavier on average even if no individual works out more. Looking at the same cohorts over time separates real engagement gains from survivorship.",
+   "interview_tip": "When one metric improves while the user base shrinks, interviewers expect you to ask who is in the denominator. Proposing a cohort cut is a crisp, senior-sounding move."
+  },
+  {
+   "id": "2026-10-08-07",
+   "topic": "Metrics",
+   "concept": "Controllable input metrics vs output metrics",
+   "difficulty": "easy",
+   "question": "Amazon's operating style emphasises 'controllable input metrics'. Which is an input metric for an e-commerce marketplace rather than an output metric?",
+   "options": [
+    "Percentage of top-searched products that are in stock with fast delivery",
+    "Total profit from the holiday season",
+    "Quarterly revenue reported to investors",
+    "Free cash flow for the year"
+   ],
+   "rationales": [
+    "Correct. In-stock rate on popular items is something teams can directly improve and it drives purchases.",
+    "Seasonal profit is an output metric shaped by price, cost, demand and many inputs.",
+    "Revenue is an outcome of many inputs; teams can't move it directly.",
+    "Free cash flow is a financial output, far removed from any single team's daily actions."
+   ],
+   "answer": 0,
+   "explanation": "Output metrics like revenue and profit are results you can't directly act on. Input metrics are the drivers a team controls day to day, like selection, in-stock rate and delivery speed, which in turn move outputs. Managing inputs gives teams levers and faster feedback.",
+   "interview_tip": "Amazon interviewers often probe whether you can turn a goal into controllable drivers. Naming inputs and explaining how they move the output shows metric maturity."
+  },
+  {
+   "id": "2026-10-08-08",
+   "topic": "Metrics",
+   "concept": "Google HEART framework categories",
+   "difficulty": "easy",
+   "question": "Using Google's HEART framework for a travel-booking flow, which category does 'percentage of users who complete a booking without hitting an error' belong to?",
+   "options": [
+    "Task success",
+    "Retention",
+    "Happiness",
+    "Adoption"
+   ],
+   "rationales": [
+    "Correct. Completion without errors measures whether users can accomplish the task effectively.",
+    "Retention measures users coming back over time, not success within a single flow.",
+    "Happiness covers attitudes such as satisfaction or NPS, usually from surveys, not completion behaviour.",
+    "Adoption measures new users of a product or feature in a period, not whether they complete tasks."
+   ],
+   "answer": 0,
+   "explanation": "HEART stands for Happiness, Engagement, Adoption, Retention and Task success. Task success covers effectiveness and efficiency: completion rates, error rates and time to complete. A booking completed without errors is a direct task-success measure.",
+   "interview_tip": "HEART is a handy structure when asked to define metrics for a UX change. Pair it with Goals-Signals-Metrics to show you go from intent to measurement."
+  },
+  {
+   "id": "2026-10-08-09",
+   "topic": "Experimentation",
+   "concept": "CUPED variance reduction",
+   "difficulty": "medium",
+   "question": "Your A/B tests on a B2B dashboard need months to reach significance because usage varies hugely between accounts. Which technique most directly shortens test duration without changing what you measure?",
+   "options": [
+    "Use pre-experiment usage as a covariate (CUPED) to remove explainable variance from the metric",
+    "Stop the test as soon as the dashboard shows a significant result",
+    "Lower the significance threshold from 0.05 to 0.20 so results come in faster",
+    "Only include the 10% most active accounts so the data looks cleaner"
+   ],
+   "rationales": [
+    "Correct. Using pre-period data as a covariate cuts variance and therefore the sample needed, without biasing the estimate.",
+    "Stopping at first significance is peeking, which inflates false positives.",
+    "Relaxing alpha just accepts many more false positives; it speeds results by making them less trustworthy.",
+    "Restricting to power users changes the population, so results won't generalise to all accounts."
+   ],
+   "answer": 0,
+   "explanation": "CUPED adjusts each unit's metric using its own pre-experiment behaviour, which is correlated with the outcome but unaffected by the treatment. This removes a large chunk of variance, so the same effect can be detected with fewer units or less time. It keeps the metric and false-positive rate intact.",
+   "interview_tip": "Mentioning variance reduction signals you've worked with real experimentation platforms. Contrast it with the 'shortcuts' that trade away validity."
+  },
+  {
+   "id": "2026-10-08-10",
+   "topic": "Experimentation",
+   "concept": "Non-significant result from an underpowered test",
+   "difficulty": "hard",
+   "question": "A checkout test ran for one week on 2% of traffic and showed a +1.5% conversion lift with p = 0.30. The team was hoping for at least +1%. A stakeholder says 'the test proved it doesn't work, kill it.' What's the best response?",
+   "options": [
+    "Ship it: the observed lift of 1.5% is above the 1% target, so the result is a success",
+    "Agree: p = 0.30 means there's a 70% chance the feature has no effect, so it should be killed",
+    "Rerun the same test for another week at 2% and ship if either week reaches significance",
+    "The test was likely underpowered to detect a 1% lift, so it's inconclusive — compute the required sample and rerun with more traffic or time"
+   ],
+   "rationales": [
+    "The point estimate is too noisy to trust; shipping on it ignores the wide uncertainty.",
+    "This misreads the p-value: it's the probability of data this extreme if there were no effect, not the probability that there is no effect.",
+    "Running repeated small tests and shipping on any success inflates the false-positive rate and doesn't fix power.",
+    "Correct. Absence of evidence isn't evidence of absence; size the test for the effect you care about."
+   ],
+   "answer": 3,
+   "explanation": "A non-significant result means the data can't rule out zero; it does not prove zero. With tiny traffic the confidence interval is wide, likely spanning both no effect and the hoped-for lift. The right move is a power calculation for the minimum effect that matters and a properly sized test.",
+   "interview_tip": "Interviewers love testing p-value interpretation. A strong answer corrects the misreading kindly and proposes a concrete next step with a power calculation."
+  },
+  {
+   "id": "2026-10-08-11",
+   "topic": "Estimation",
+   "concept": "Annual revenue sizing for a vertical SaaS",
+   "difficulty": "medium",
+   "question": "You're sizing a booking-and-reminders SaaS for Indian dental clinics. Assume 80,000 clinics, 25% would adopt, and each pays ₹1,500 per month. What's the annual revenue opportunity?",
+   "options": [
+    "About ₹36 crore (₹360 million)",
+    "About ₹3.6 crore (₹36 million)",
+    "About ₹360 crore (₹3.6 billion)",
+    "About ₹30 crore (₹300 million)"
+   ],
+   "rationales": [
+    "Correct. 20,000 clinics × ₹18,000 a year = ₹36 crore.",
+    "Off by 10×; typically from dropping a zero when converting to crore.",
+    "Off by 10× the other way; often from multiplying by 120 months or mis-converting crore.",
+    "Close but wrong; it uses ₹1,250/month or 10 months, a common slip when rounding mid-calculation."
+   ],
+   "answer": 0,
+   "explanation": "Method: 80,000 clinics × 25% = 20,000 paying clinics. ₹1,500 × 12 = ₹18,000 per clinic per year. 20,000 × ₹18,000 = ₹360,000,000, which is ₹36 crore (1 crore = 10 million). In an interview, also sanity-check the adoption rate and note it as the most sensitive assumption.",
+   "interview_tip": "Sizing questions reward clear structure and unit discipline. Say each step aloud, convert units carefully (lakh/crore), and name the assumption you'd validate first."
+  },
+  {
+   "id": "2026-10-08-12",
+   "topic": "Estimation",
+   "concept": "Peak requests-per-second estimate",
+   "difficulty": "medium",
+   "question": "An app has 10 million daily active users, each making about 20 API requests a day. Traffic at peak hour is roughly 3× the daily average rate. Roughly what peak requests per second should the backend handle?",
+   "options": [
+    "About 2,300 requests per second",
+    "About 700 requests per second",
+    "About 7,000 requests per second",
+    "About 70,000 requests per second"
+   ],
+   "rationales": [
+    "This is the daily average; it forgets the peak multiplier, which is what capacity planning needs.",
+    "Off by 10× low, often from dividing by 864,000 or dropping a zero in the user count.",
+    "Correct. ~2,300 average × 3 peak factor ≈ 7,000 requests per second.",
+    "Off by 10×, usually from dividing by 8,640 instead of 86,400 seconds."
+   ],
+   "answer": 2,
+   "explanation": "Method: 10M × 20 = 200 million requests per day. A day has 86,400 seconds, so the average is about 200M ÷ 86,400 ≈ 2,300 per second. Applying the 3× peak factor gives roughly 7,000 per second. Rounding 86,400 to ~100,000 is a handy shortcut that keeps you in the right range.",
+   "interview_tip": "Technical estimation shows up in AI and platform PM loops. Interviewers check that you know seconds per day and plan for peaks, not averages."
+  },
+  {
+   "id": "2026-10-08-13",
+   "topic": "Strategy",
+   "concept": "Aggregation theory",
+   "difficulty": "easy",
+   "question": "According to Ben Thompson's aggregation theory, what gives aggregators such as Google Search or Uber their power?",
+   "options": [
+    "They charge the highest prices in the market, which funds their marketing advantage",
+    "They own the user relationship and demand, which lets them commoditise suppliers who compete for access to those users",
+    "They are protected mainly by government licences that keep new competitors out",
+    "They own the physical supply, such as the cars or web content, which competitors can't replicate"
+   ],
+   "rationales": [
+    "Aggregators often offer free or cheap experiences to users; high prices are not the source of power.",
+    "Correct. Controlling demand at scale lets aggregators set terms for modular, interchangeable supply.",
+    "Licences are not central to the theory; aggregators often grow in lightly regulated spaces.",
+    "Aggregators typically do not own supply; Uber doesn't own cars and Google doesn't write web pages."
+   ],
+   "answer": 1,
+   "explanation": "Aggregators win by delivering a great user experience at near-zero marginal cost, which attracts users; suppliers then must come to them on the aggregator's terms. Power comes from controlling demand, not owning supply. This explains why suppliers like publishers or drivers feel squeezed.",
+   "interview_tip": "Referencing aggregation theory helps in strategy questions about platforms. Strong candidates use it to predict who captures value between a platform and its suppliers."
+  },
+  {
+   "id": "2026-10-08-14",
+   "topic": "Strategy",
+   "concept": "Deliberate self-cannibalisation",
+   "difficulty": "medium",
+   "question": "A profitable desktop software company sees cloud-native rivals winning new customers with cheaper subscriptions. A cloud version would cannibalise its own licence revenue. What's the strongest strategic reasoning?",
+   "options": [
+    "Cut the desktop licence price by half to match competitors and keep everything else unchanged",
+    "If customers are going to move anyway, it's better to cannibalise yourself than let a competitor do it — plan the transition and protect margins over time",
+    "Launch the cloud product under a separate brand and price it above the desktop version so it doesn't compete",
+    "Avoid the cloud version, since protecting existing licence revenue is always the priority for a profitable company"
+   ],
+   "rationales": [
+    "A price cut sacrifices margin without addressing why customers prefer cloud (collaboration, no installs, subscription).",
+    "Correct. Cannibalising yourself keeps customers in your ecosystem rather than ceding them to competitors.",
+    "Pricing the cloud product above desktop defeats the purpose and won't win the price-sensitive customers leaving.",
+    "Protecting a shrinking base while customers defect is the classic incumbent mistake."
+   ],
+   "answer": 1,
+   "explanation": "When a shift in customer preference is real, refusing to cannibalise doesn't keep the revenue — it hands it to rivals. Leading the transition lets the incumbent keep customers, use its distribution and manage the revenue dip. Strong answers recognise the innovator's dilemma and plan the transition rather than deny it.",
+   "interview_tip": "Strategy prompts often hide an innovator's dilemma. Say explicitly whether the shift is real, then show how you'd manage the transition's financial impact."
+  },
+  {
+   "id": "2026-10-08-15",
+   "topic": "Strategy",
+   "concept": "Subsidising the price-sensitive side of a two-sided market",
+   "difficulty": "medium",
+   "question": "A new job platform connects job seekers with employers. Seekers are numerous and very price-sensitive; employers value access to candidates and have budgets. How should it price at launch?",
+   "options": [
+    "Charge both sides equally so that the platform appears fair and neutral to everyone",
+    "Make it free for job seekers and charge employers, since seekers' participation is what employers are paying for",
+    "Charge job seekers a small fee to filter out low-quality candidates, and keep it free for employers",
+    "Charge whichever side signs up second, since they benefit from the network the first side created"
+   ],
+   "rationales": [
+    "Equal pricing ignores very different price sensitivity and would choke seeker growth.",
+    "Correct. Subsidise the price-sensitive side that creates value; charge the side with willingness to pay.",
+    "Charging seekers deters the side employers come for; quality can be handled through product features instead.",
+    "Order of sign-up isn't the right basis; price sensitivity and cross-side value are."
+   ],
+   "answer": 1,
+   "explanation": "In two-sided markets, platforms often subsidise the side that's more price-sensitive and whose presence creates value for the other side. Free seekers attract volume; employers pay for access to that volume. Getting the 'money side' and 'subsidy side' right is central to platform pricing.",
+   "interview_tip": "Platform pricing comes up in Meta, Google and marketplace interviews. Use the terms 'subsidy side' and 'money side' and justify which is which."
+  },
+  {
+   "id": "2026-10-08-16",
+   "topic": "Execution",
+   "concept": "Cost of delay",
+   "difficulty": "easy",
+   "question": "Two features each take three weeks. Feature A would bring ₹20 lakh a month in new revenue; Feature B ₹5 lakh a month. Using cost of delay, which should you build first and why?",
+   "options": [
+    "Feature A, because each month it waits costs four times as much value as delaying Feature B",
+    "Either one, because they take the same effort so the order doesn't matter",
+    "Neither, until both can be shipped together in a single combined release",
+    "Feature B, because smaller features are less risky and should always be done first"
+   ],
+   "rationales": [
+    "Correct. Equal durations mean you simply sequence by cost of delay, and A's is four times larger.",
+    "Order matters even with equal effort: shipping A first captures more value over the same period.",
+    "Bundling delays both features' value with no stated benefit.",
+    "Lower risk isn't implied here, and doing the lower-value item first loses ₹15 lakh a month while it's being built."
+   ],
+   "answer": 0,
+   "explanation": "Cost of delay asks how much value you lose per unit of time a feature isn't live. With equal duration, building the higher cost-of-delay item first maximises value delivered. This is the core idea behind Weighted Shortest Job First (cost of delay ÷ duration).",
+   "interview_tip": "Cost of delay is a crisp way to justify sequencing to stakeholders. In interviews, quantifying the 'cost of waiting' sounds more rigorous than just ranking by impact."
+  },
+  {
+   "id": "2026-10-08-17",
+   "topic": "Execution",
+   "concept": "Cutting scope to protect a fixed date",
+   "difficulty": "medium",
+   "question": "Your team is building a GST-invoicing feature that must be live on a fixed regulatory deadline in six weeks. Mid-way, you're behind by about two weeks. What's the best plan?",
+   "options": [
+    "Keep the date, cut to the minimum the regulation requires, and move nice-to-have features to a follow-up release",
+    "Add three engineers from another team now so the original scope can be finished by the deadline",
+    "Ask the team to work weekends for the remaining weeks so that all of the scope still ships on time",
+    "Move the date by two weeks and inform customers that the release will slip"
+   ],
+   "rationales": [
+    "Correct. Fixed date, flexible scope: protect the compliance-critical core and defer the rest.",
+    "New people need ramp-up and coordination, which typically slows a late project further.",
+    "Extended crunch increases defects and burnout, and still might not close the gap.",
+    "A regulatory deadline can't move; slipping exposes customers to penalties."
+   ],
+   "answer": 0,
+   "explanation": "When a date is truly fixed (regulation, a sale event), scope becomes the variable. Cutting to the must-haves protects the deadline with predictable quality, while extras follow later. Adding people late often slows teams down (Brooks's law), and sustained overtime raises bug risk.",
+   "interview_tip": "Interviewers want to see you identify which constraint is fixed (time, scope, resources, quality) and flex the right one. Naming Brooks's law is a nice touch."
+  },
+  {
+   "id": "2026-10-08-18",
+   "topic": "Execution",
+   "concept": "Working Backwards PR/FAQ",
+   "difficulty": "easy",
+   "question": "At Amazon, what is the main purpose of writing a 'Working Backwards' press release and FAQ before building a product?",
+   "options": [
+    "To give engineers a detailed technical specification of the system architecture",
+    "To prepare marketing materials early so the launch announcement is ready on time",
+    "To secure legal approval for the product's public claims before development starts",
+    "To force clarity on the customer, their problem and the benefit before committing engineering effort"
+   ],
+   "rationales": [
+    "Architecture details belong in technical design docs, not the customer-focused PR/FAQ.",
+    "The PR is rarely published as written; it's an internal thinking document, not marketing collateral.",
+    "Legal review happens later; the PR/FAQ is about product clarity.",
+    "Correct. It tests whether the customer benefit is clear and compelling before investment."
+   ],
+   "answer": 3,
+   "explanation": "The PR/FAQ starts from the customer experience: if you can't write a compelling press release for the finished product, the idea probably isn't strong enough. The FAQ forces answers to hard questions about customers, economics and risks. It's a thinking tool for deciding what to build, not a launch artefact.",
+   "interview_tip": "In Amazon loops, referencing 'working backwards from the customer' is expected. Strong candidates describe how they'd use a PR/FAQ to kill or sharpen an idea."
+  },
+  {
+   "id": "2026-10-08-19",
+   "topic": "Behavioural",
+   "concept": "Ownership of a customer problem outside your team",
+   "difficulty": "hard",
+   "question": "You notice many support tickets about a confusing refund email sent by another team's system. It isn't your area and that team is busy. Which action best shows Amazon-style ownership?",
+   "options": [
+    "Raise it in the leadership review as an example of the other team's poor quality",
+    "Log a ticket in the other team's backlog and move on, since it's their system to own",
+    "Quietly change the email template yourself through a shared config without telling the owning team",
+    "Quantify the impact from tickets, bring it to that team's PM with a proposed fix, and offer your team's help to ship it"
+   ],
+   "rationales": [
+    "Blaming in a public forum damages relationships and does nothing to fix the issue faster.",
+    "Filing and forgetting is 'that's not my job' behaviour; the customer problem likely persists.",
+    "Changing another team's system without telling them breaks trust and risks breaking things they own.",
+    "Correct. You take responsibility for the outcome, make the case with data, and collaborate rather than bypass."
+   ],
+   "answer": 3,
+   "explanation": "Ownership means acting on behalf of the whole company and its customers, not just your scope. Bringing data, a solution and help makes it easy for the owning team to act while respecting their ownership. It avoids both 'not my job' and going around people.",
+   "interview_tip": "For 'Ownership' stories, show you acted beyond your scope while keeping relationships intact. Interviewers listen for the impact you quantified and how you got another team to act."
+  },
+  {
+   "id": "2026-10-08-20",
+   "topic": "Behavioural",
+   "concept": "Separating the what from the how with engineering",
+   "difficulty": "hard",
+   "question": "Your tech lead strongly prefers an approach that takes four weeks; you'd read about a library that might do it in one. You're not certain it fits. How should you handle it?",
+   "options": [
+    "Escalate to the engineering manager so they can decide between the two approaches",
+    "Accept the four-week plan silently to avoid friction and adjust the roadmap around it",
+    "Share the goal and time constraint, raise the library as a question, and let the tech lead weigh it — you own the what and why, they own the how",
+    "Insist on the library, since the PM is accountable for the deadline and needs to make the final call"
+   ],
+   "rationales": [
+    "Escalating a normal technical discussion before even talking it through erodes the working relationship.",
+    "Staying silent withholds useful information and the time constraint, which is a failure to communicate.",
+    "Correct. You bring context and a suggestion but respect engineering ownership of the solution.",
+    "Overriding the technical expert on implementation damages trust and risks a poor technical choice."
+   ],
+   "answer": 2,
+   "explanation": "Strong PMs set clear goals and constraints and trust engineers to choose implementations, while still contributing ideas. Framing the library as a question invites the expert to evaluate it, and sharing the time pressure lets them make an informed trade-off. This builds trust and often leads to better solutions.",
+   "interview_tip": "Conflict-with-engineering questions test whether you know where your authority ends. A strong answer shows respect for expertise plus clear communication of goals."
+  },
+  {
+   "id": "2026-10-08-21",
+   "topic": "Behavioural",
+   "concept": "Dive Deep on a result that looks too good",
+   "difficulty": "hard",
+   "question": "An analyst reports that a small onboarding tweak raised 30-day retention by 35%, far beyond any past change. Leadership wants to announce it this week. What best shows the 'Dive Deep' principle?",
+   "options": [
+    "Announce it immediately, since the analyst is experienced and delaying would slow the team's momentum",
+    "Before announcing, check the test setup, sample ratio, segment cuts and metric definitions with the analyst, and share a short timeline to validate",
+    "Reject the result outright because effects that large are almost always wrong",
+    "Announce it but add a disclaimer that the numbers may change later"
+   ],
+   "rationales": [
+    "Trusting an outlier without checking risks a public retraction and lost credibility.",
+    "Correct. You investigate surprising data with specific checks and a clear timeline before committing publicly.",
+    "Dismissing without investigating is also not diving deep; the effect might be real.",
+    "Announcing with a vague disclaimer still spreads a possibly false result."
+   ],
+   "answer": 1,
+   "explanation": "Dive Deep means staying connected to details and auditing when metrics and anecdotes don't fit expectations. Unusually large effects often come from bugs, sample ratio mismatch or metric changes. Validating quickly, while keeping leadership informed, protects credibility without dismissing a real win.",
+   "interview_tip": "For Dive Deep stories, name the specific checks you ran and what you found. Interviewers want to hear that you're sceptical of surprising data but not cynical."
+  },
+  {
+   "id": "2026-10-08-22",
+   "topic": "AI Product",
+   "concept": "RAG chunk size trade-off",
+   "difficulty": "medium",
+   "question": "Your RAG assistant answers HR policy questions. Documents are split into whole-chapter chunks of about 8,000 tokens. Answers often miss the specific rule asked about. What's the most likely fix?",
+   "options": [
+    "Use smaller, meaningful chunks (e.g., by section with some overlap) so retrieval returns the passages that contain the answer",
+    "Fine-tune the LLM on HR policy documents so that it doesn't need retrieval",
+    "Increase the number of retrieved chapters from three to ten so the right content is always included",
+    "Switch to a larger LLM with a bigger context window so it can read entire chapters more carefully"
+   ],
+   "rationales": [
+    "Correct. Right-sized, semantically coherent chunks improve both retrieval precision and answer grounding.",
+    "Fine-tuning doesn't reliably teach exact, changing policy facts and loses traceability to sources.",
+    "More huge chunks add noise and cost; the issue is chunk granularity, not count.",
+    "A bigger context window doesn't fix poor retrieval, and long noisy context can make the model miss details."
+   ],
+   "answer": 0,
+   "explanation": "Very large chunks dilute embeddings — a chapter's vector reflects many topics, so similarity search matches loosely — and they bury the relevant sentence in lots of text. Smaller, section-level chunks with overlap improve retrieval precision and make it easier for the model to use the right passage. Chunking is one of the highest-leverage RAG design choices.",
+   "interview_tip": "AI PM interviews often probe RAG design. Mentioning chunking, overlap and retrieval evals shows you understand where quality is actually won or lost."
+  },
+  {
+   "id": "2026-10-08-23",
+   "topic": "AI Product",
+   "concept": "Token counts vary by language",
+   "difficulty": "easy",
+   "question": "Your AI assistant costs noticeably more per conversation for Hindi and Tamil users than for English users with similar message lengths. What's the most likely reason?",
+   "options": [
+    "LLM providers charge a language surcharge for all non-English requests",
+    "Tokenisers often split non-English scripts into more tokens per word, so the same message costs more",
+    "Non-English users always write much longer messages than English users",
+    "Models refuse non-English requests more often, leading to more retries"
+   ],
+   "rationales": [
+    "Providers price by token, not by language; the difference comes from token counts.",
+    "Correct. Tokenisation efficiency differs by language and script, which directly changes cost.",
+    "The question states message lengths are similar; length doesn't explain the gap.",
+    "Refusal rates aren't a typical driver of systematic cost differences across languages."
+   ],
+   "answer": 1,
+   "explanation": "LLM pricing is per token, and tokenisers trained mostly on English text tend to break other scripts into more, smaller pieces. The same sentence in Hindi can use several times more tokens than in English. This affects cost, latency and how much fits in the context window, so it matters for products serving India.",
+   "interview_tip": "For AI products in multilingual markets, showing awareness of tokenisation costs signals practical depth. Mention measuring cost per conversation by language."
+  },
+  {
+   "id": "2026-10-08-24",
+   "topic": "AI Product",
+   "concept": "Concept drift in production ML",
+   "difficulty": "hard",
+   "question": "A fraud model launched with 90% precision. Eight months later, precision is 72% and fraud losses are rising, though no code changed. What's the most likely cause and response?",
+   "options": [
+    "Precision always falls over time, so it should be replaced with a hand-written rules engine",
+    "Fraud patterns have shifted (concept drift); monitor live performance, label fresh data and retrain on a regular cadence",
+    "The team set the threshold wrong at launch; it was never really 90% precise",
+    "The model has a software bug that slowly worsens; roll back to the original version immediately"
+   ],
+   "rationales": [
+    "Rules engines also go stale against adaptive fraudsters and lose learned nuance.",
+    "Correct. Adversarial domains like fraud drift quickly; monitoring and retraining are the standard response.",
+    "Launch precision was measured; gradual decline over months points to drift, not an initial error.",
+    "No code changed and the original version is the same model; rolling back doesn't help."
+   ],
+   "answer": 1,
+   "explanation": "ML models learn patterns from past data; when the world changes — fraudsters adapt — the relationship between inputs and outcomes drifts. Performance degrades without any code change. Production ML needs monitoring, fresh labels and retraining as part of the product, not a one-time launch.",
+   "interview_tip": "AI PMs are expected to treat models as living systems. Mention drift monitoring, feedback loops and retraining cadence in any ML product answer."
+  },
+  {
+   "id": "2026-10-08-25",
+   "topic": "AI Product",
+   "concept": "Constrained structured outputs",
+   "difficulty": "medium",
+   "question": "Your LLM extracts order details from WhatsApp messages and passes them to the order system. About 3% of responses break the parser because of missing fields or extra text. What's the best fix?",
+   "options": [
+    "Add 'please respond only in JSON' in capital letters to the prompt",
+    "Ask the support team to manually fix the broken orders each day",
+    "Switch to a higher temperature so the model tries different formats until one works",
+    "Use the model's structured-output / JSON-schema mode so responses must match the required fields and types"
+   ],
+   "rationales": [
+    "Prompt emphasis helps a bit but remains probabilistic; at scale some responses still break.",
+    "Manual fixes don't scale and add delay and cost to every broken order.",
+    "Higher temperature increases randomness, which makes formatting errors more likely, not less.",
+    "Correct. Schema-constrained output makes integration reliable rather than hoping the model follows instructions."
+   ],
+   "answer": 3,
+   "explanation": "Many LLM APIs can constrain output to a JSON schema, guaranteeing valid structure. That turns a probabilistic formatting problem into a deterministic contract with downstream systems. You still need validation of field values, but parse failures largely disappear.",
+   "interview_tip": "AI PM interviews value knowing when to use deterministic controls around a probabilistic model. Mention schema validation and graceful fallbacks."
+  },
+  {
+   "id": "2026-10-08-26",
+   "topic": "AI Product",
+   "concept": "Inline citations to calibrate user trust",
+   "difficulty": "medium",
+   "question": "Users of your AI legal-research assistant either over-trust wrong answers or ignore correct ones. Which product change best helps users calibrate trust?",
+   "options": [
+    "Hide the model's sources so that users focus on the answer instead of the documents",
+    "Make answers longer and more detailed so they appear more authoritative",
+    "Add a fixed disclaimer at the bottom of every answer that the AI can make mistakes",
+    "Show inline citations linking each claim to the source passage so users can verify quickly"
+   ],
+   "rationales": [
+    "Hiding sources removes the main way users can verify, worsening calibration.",
+    "Longer, more authoritative answers increase over-trust without improving accuracy.",
+    "Boilerplate disclaimers become banner-blind and give no answer-specific signal.",
+    "Correct. Verifiable citations let users judge each answer on its evidence."
+   ],
+   "answer": 3,
+   "explanation": "Calibrated trust means users rely on the AI when it's right and catch it when it's wrong. Claim-level citations let users check the evidence in seconds, exposing unsupported claims. Generic disclaimers are quickly ignored and don't help users judge any specific answer.",
+   "interview_tip": "Trust and verification are core AI UX topics. Strong answers distinguish calibrated trust from just more trust, and propose ways to measure it, such as verification rates."
+  },
+  {
+   "id": "2026-10-08-27",
+   "topic": "Technology",
+   "concept": "Eventual consistency trade-off",
+   "difficulty": "medium",
+   "question": "An engineer proposes making a social app's like counts 'eventually consistent' to handle huge traffic. What does this mean for users?",
+   "options": [
+    "Like counts will only update once a day during a batch job",
+    "Every like must be confirmed by all servers before the user sees it, so liking is slower",
+    "Different users may briefly see slightly different like counts, but they converge shortly afterwards",
+    "Likes may be permanently lost if servers are busy during a spike"
+   ],
+   "rationales": [
+    "Eventual usually means seconds, not a daily batch; that would be a different design.",
+    "That describes strong consistency, the opposite trade-off.",
+    "Correct. Short-lived differences are accepted in exchange for scalability and availability.",
+    "Eventual consistency doesn't mean data loss; updates still propagate and persist."
+   ],
+   "answer": 2,
+   "explanation": "Eventual consistency allows replicas to be temporarily out of sync, with updates propagating over time until all agree. It improves availability and scale at the cost of brief staleness. That's fine for like counts, but not for things like bank balances.",
+   "interview_tip": "PMs should know which product data can tolerate staleness. Saying 'eventual consistency is fine for likes, not for payments' shows sound judgement."
+  },
+  {
+   "id": "2026-10-08-28",
+   "topic": "Technology",
+   "concept": "OAuth delegated access",
+   "difficulty": "easy",
+   "question": "Your scheduling app wants to read users' Google Calendars. Why use OAuth rather than asking users for their Google password?",
+   "options": [
+    "OAuth makes the calendar data load faster than direct password login",
+    "OAuth is required only for apps that charge a subscription fee",
+    "OAuth grants limited, revocable access via tokens without your app ever seeing the user's password",
+    "OAuth encrypts the calendar data so even Google can't read it"
+   ],
+   "rationales": [
+    "OAuth is about authorisation, not performance.",
+    "OAuth applies regardless of business model; any third-party access should use it.",
+    "Correct. Scoped, revocable tokens replace password sharing.",
+    "OAuth does not encrypt data from the provider; it controls who can access it."
+   ],
+   "answer": 2,
+   "explanation": "OAuth is a delegation protocol: the user approves specific permissions (scopes) on Google's own page, and your app receives a token. The token can be limited to calendar access and revoked anytime, and your app never stores the password. This is safer and is what platforms require.",
+   "interview_tip": "Technical fluency questions often test security basics. Mentioning scopes and least privilege shows you think about user trust."
+  },
+  {
+   "id": "2026-10-08-29",
+   "topic": "Growth",
+   "concept": "Reverse trial",
+   "difficulty": "medium",
+   "question": "A freemium design tool finds most free users never discover premium features, so conversion is low. Which approach most directly addresses this?",
+   "options": [
+    "Increase the number of features in the free plan so users love the product more",
+    "Remove the free plan entirely and require a credit card to sign up",
+    "A reverse trial: new users get full premium for 14 days, then drop to the free plan unless they upgrade",
+    "Send a weekly email listing all premium features to free users"
+   ],
+   "rationales": [
+    "A richer free plan reduces the reasons to upgrade, likely lowering conversion further.",
+    "Removing free sharply cuts top-of-funnel and word of mouth; it's a much bigger bet than the problem needs.",
+    "Correct. Users experience premium value first, and loss aversion helps conversion, while non-converters remain on free.",
+    "Feature-list emails are easy to ignore and don't let users feel the value."
+   ],
+   "answer": 2,
+   "explanation": "In a reverse trial, users experience premium value from day one and feel loss when it's removed, while those who don't convert still stay on free. It addresses the discovery problem directly and keeps the free tier's acquisition benefits. It's a common PLG pattern for products with valuable premium features.",
+   "interview_tip": "PLG questions often test monetisation mechanics. Strong answers connect the tactic to the diagnosed problem (here, discovery of premium value)."
+  },
+  {
+   "id": "2026-10-08-30",
+   "topic": "Current Events",
+   "concept": "Sign in with ChatGPT plan allowance (DevDay 2026)",
+   "difficulty": "easy",
+   "question": "At OpenAI DevDay 2026 (recap published 29 September 2026), OpenAI announced 'Sign in with ChatGPT'. What does it let Plus and Pro users do in participating partner tools such as Notion, Vercel and Devin?",
+   "options": [
+    "Replace the partner tools' own AI models with GPT-6 Astra by default",
+    "Use their existing ChatGPT plan's usage allowance inside those partner tools",
+    "Transfer their ChatGPT chat history into the partner tools automatically",
+    "Get a free paid subscription to each partner tool for one year"
+   ],
+   "rationales": [
+    "It doesn't swap partner models; it's a sign-in and usage-billing integration.",
+    "Correct. Per OpenAI's recap, Plus and Pro users can spend their ChatGPT plan allowance inside participating partner tools.",
+    "The announcement is about identity and usage allowance, not migrating chat history.",
+    "There's no free partner subscription; users draw on their own ChatGPT plan's allowance."
+   ],
+   "answer": 1,
+   "explanation": "OpenAI's recap says Sign in with ChatGPT lets users 'use your plan allowance' across 16 partners, including Devin, Notion and Vercel. Identity is available globally, while plan usage applies to Plus and Pro users in participating tools. For PMs, it turns a ChatGPT subscription into a cross-app distribution and billing layer, similar to how login platforms became ecosystems.",
+   "interview_tip": "Expect 'what do you think of this launch?' questions. A strong answer explains the strategic intent (distribution, lock-in, platform economics) and who wins or loses among partners.",
+   "source": "https://openai.com/index/devday-2026-recap/"
+  }
+ ]
+}
