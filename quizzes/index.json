@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-09",
+   "theme": "One level deeper — decompositions, hidden trade-offs and decision models",
+   "count": 30
+  },
+  {
    "date": "2026-10-08",
    "theme": "Trust by design — incentives, defaults and AI you can verify",
    "count": 30
