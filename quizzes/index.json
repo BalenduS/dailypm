@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-10",
+   "theme": "Who you really build for — buyers vs users, trust gaps, and Google's business-first Gemini agent",
+   "count": 30
+  },
+  {
    "date": "2026-10-09",
    "theme": "One level deeper — decompositions, hidden trade-offs and decision models",
    "count": 30

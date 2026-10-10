@@ -1,0 +1,666 @@
+{
+ "date": "2026-10-10",
+ "theme": "Who you really build for — buyers vs users, trust gaps, and Google's business-first Gemini agent",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Buyer vs end-user needs in B2B products",
+   "difficulty": "hard",
+   "question": "You're PM for a B2B expense-management tool. Finance leaders buy it, but employees file the expenses. Renewals are slipping because employees hate the app and keep emailing receipts to finance instead. Interviewer: 'What do you prioritise?'",
+   "options": [
+    "Make receipt capture effortless for employees (e.g., forward-to-email or snap-and-go), since adoption by users is what makes the buyer's value real",
+    "Add richer approval workflows and reports for finance leaders, since they sign the renewal contract",
+    "Run an internal change-management campaign at each customer to mandate use of the app",
+    "Offer a renewal discount to finance leaders while the team investigates employee complaints"
+   ],
+   "answer": 0,
+   "explanation": "In B2B the buyer and the user are often different people, but the buyer's value (clean, policy-compliant spend data) only materialises if users actually adopt the product. Here the user experience is the bottleneck on the buyer's outcome, so removing employee friction is the highest-leverage move. A strong answer names both personas and shows how one's pain blocks the other's value.",
+   "rationales": [
+    "Correct. It fixes the root cause of churn: low employee adoption means finance never gets the data it paid for, so improving the user flow protects the renewal.",
+    "Serving the buyer seems logical, but more reports don't help when the underlying data never enters the system because employees avoid the app.",
+    "Mandates can raise usage briefly but don't remove the friction; users comply grudgingly and the product still looks like a burden at renewal time.",
+    "A discount treats the symptom and erodes revenue without changing why employees avoid the product."
+   ],
+   "interview_tip": "Product-sense prompts in B2B often hide a buyer/user split. Explicitly separating the economic buyer from the daily user, and explaining how they depend on each other, signals real B2B maturity.",
+   "source": ""
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Choice overload in discovery surfaces",
+   "difficulty": "medium",
+   "question": "A food-delivery app's research shows hungry users scroll for 8+ minutes at dinner time and many close the app without ordering. Which solution best addresses the core problem?",
+   "options": [
+    "Show a small set of personalised 'quick picks' (e.g., reorder favourites, 3 nearby top-rated options) at the top, so users can decide fast",
+    "Add more filters (cuisine, price, rating, delivery time, dietary) so users can narrow the full restaurant list",
+    "Add more restaurants to the catalogue so users are more likely to find something they want",
+    "Show discount banners on every restaurant card to give users a reason to commit"
+   ],
+   "answer": 0,
+   "explanation": "The pain is decision fatigue, not lack of options. Too many choices increase decision time and abandonment (choice overload). Reducing the decision set to a few relevant, personalised options lowers effort at the moment users are hungry and impatient.",
+   "rationales": [
+    "Correct. It shrinks the decision to a handful of relevant options, directly reducing the time and effort that cause abandonment.",
+    "Filters help power users but add more decisions; a tired user now has to configure filters before choosing, which can increase effort.",
+    "More supply makes the overload worse; the problem is too much choice, not too little.",
+    "Discounts everywhere don't differentiate options, so they don't help users choose and they cost margin."
+   ],
+   "interview_tip": "Interviewers like when you diagnose the real pain (decision effort) before proposing features. Mentioning choice overload and designing for the user's state (hungry, rushed) shows strong user empathy.",
+   "source": ""
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Reducing first-transaction risk between strangers",
+   "difficulty": "hard",
+   "question": "You're PM for a C2C second-hand electronics marketplace in India. Many buyers chat with sellers but never complete their first purchase, citing fear of fraud. Which solution best addresses this?",
+   "options": [
+    "Hold the buyer's payment in escrow and release it to the seller only after the buyer confirms the item works, with simple dispute resolution",
+    "Show seller star ratings and the number of past sales on every listing",
+    "Add a detailed safety guide with tips on meeting sellers and checking devices",
+    "Let buyers negotiate prices in chat so they feel more in control of the deal"
+   ],
+   "answer": 0,
+   "explanation": "First-time buyers fear losing money to a stranger. Ratings and guides inform but don't remove that risk. Escrow shifts the risk off the buyer: the platform guarantees the outcome, so trust in the platform substitutes for trust in an unknown seller. That's why escrow-style protection works well for cold-start trust.",
+   "rationales": [
+    "Correct. Escrow removes the buyer's financial risk, which is the actual blocker, and makes the platform the trusted party.",
+    "Ratings help, but new sellers have none and ratings can be gamed; they reduce uncertainty without removing the risk of losing money.",
+    "Education places the burden on the buyer and doesn't change what happens if the seller cheats.",
+    "Negotiation addresses price, not fraud; buyers still risk paying for a faulty or non-existent item."
+   ],
+   "interview_tip": "For marketplace trust prompts, separate 'information' fixes (ratings) from 'risk-transfer' fixes (guarantees, escrow). Explaining why risk transfer works better for first transactions is a strong signal.",
+   "source": ""
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Batching notifications into digests",
+   "difficulty": "medium",
+   "question": "A team-collaboration app sends a push notification for every comment, reaction and mention. Users are disabling all notifications, so they miss important mentions. What's the best fix?",
+   "options": [
+    "Send direct mentions and replies in real time, and batch lower-priority activity (reactions, general comments) into a periodic digest",
+    "Cap every user at five notifications per day, sent in the order they occur",
+    "Add a settings page with toggles for each notification type and let users configure it",
+    "Send all notifications only by email instead of push, so users aren't interrupted"
+   ],
+   "answer": 0,
+   "explanation": "Notification fatigue happens when low-value alerts drown out high-value ones, so users turn everything off. Tiering by urgency (real time for things needing action, digests for the rest) keeps the important signal while cutting volume. Smart defaults beat asking users to configure everything.",
+   "rationales": [
+    "Correct. It preserves timely delivery of high-value alerts while reducing noise, which addresses why users disable notifications.",
+    "A hard cap ignores importance; a critical mention could be dropped while five reactions get through.",
+    "Granular settings help power users, but most users never configure them; the default experience stays noisy.",
+    "Switching channel just moves the noise to email and delays urgent mentions."
+   ],
+   "interview_tip": "Interviewers look for prioritising by user value and urgency, and for good defaults. Mentioning that most users never touch settings shows practical product judgment.",
+   "source": ""
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Cohort retention vs aggregate active users",
+   "difficulty": "medium",
+   "question": "A subscription app's monthly active users are growing 10% a month, and leadership says retention is healthy. What should you check first to confirm?",
+   "options": [
+    "Retention curves by signup cohort, because rising new signups can hide that each cohort is retaining worse",
+    "Total MAU growth by country, to confirm growth is coming from every market",
+    "Daily active users, because DAU reacts faster than MAU",
+    "Average session length across all users, to confirm engagement is rising"
+   ],
+   "answer": 0,
+   "explanation": "Aggregate active users mix new and existing users. Strong acquisition can grow MAU even while each new cohort churns faster. Cohort retention curves (e.g., % of January signups active in month 1, 2, 3) isolate whether users are actually sticking.",
+   "rationales": [
+    "Correct. Cohort analysis separates acquisition from retention and reveals whether newer cohorts retain worse.",
+    "Country splits show where growth comes from but still blend new and returning users, so they can't prove retention is healthy.",
+    "DAU is also an aggregate; it has the same problem of hiding cohort decay behind new signups.",
+    "Session length measures depth of engagement, not whether users come back over time."
+   ],
+   "interview_tip": "When an interviewer says 'growth is great', a strong candidate asks how much is new users vs retained users. Proposing cohort curves shows you won't be fooled by aggregate numbers.",
+   "source": ""
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Position bias in click-through metrics",
+   "difficulty": "hard",
+   "question": "After a search-ranking change, the click-through rate on the top result rose sharply and the team calls it a win. Which concern should you raise first?",
+   "options": [
+    "Users click the top slot largely because of its position, so measure downstream success (purchases, long clicks, fewer reformulations) rather than top-slot CTR alone",
+    "CTR should be measured per session rather than per query, so the increase is probably a calculation error",
+    "The increase may be due to novelty, so wait two weeks and re-check the same top-slot CTR",
+    "Top-slot CTR rising means lower slots lost clicks, so the change must have hurt overall search quality"
+   ],
+   "answer": 0,
+   "explanation": "Position bias means users click higher results partly just because they're higher. A ranking change can raise top-slot clicks without improving relevance. The better test is whether users found what they needed: conversions, long dwell clicks, fewer back-clicks or query reformulations.",
+   "rationales": [
+    "Correct. It recognises position bias and moves to outcome metrics that show whether search actually got better.",
+    "Per-session vs per-query is a valid definitional choice, but nothing suggests a calculation error; this dodges the real bias.",
+    "Novelty is worth checking, but re-checking the same biased metric later doesn't fix the measurement problem.",
+    "Clicks shifting to the top isn't automatically bad; if the top result is better, that's the goal. The issue is that CTR can't tell you which it is."
+   ],
+   "interview_tip": "Search and feed questions often test whether you'll trust a click metric. Naming position bias and pairing CTR with success signals shows analytical depth.",
+   "source": ""
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Percentile latency over averages",
+   "difficulty": "easy",
+   "question": "Your app's average page-load time is 1.2 seconds, but support tickets about slowness are rising. Which metric best captures what those users experience?",
+   "options": [
+    "The 95th or 99th percentile load time, which shows how slow it is for the slowest users",
+    "The median load time, which is less affected by outliers than the average",
+    "The average load time segmented by day of week",
+    "The minimum load time, which shows the best possible performance"
+   ],
+   "answer": 0,
+   "explanation": "Averages hide the long tail. A small share of very slow loads can drive many complaints while the average looks fine. Tracking p95/p99 latency tells you how bad things are for the worst-served users, which is why reliability teams set targets on percentiles.",
+   "rationales": [
+    "Correct. Tail percentiles directly measure the slow experiences that generate complaints.",
+    "The median shows the typical user, which is exactly the user who isn't complaining; it ignores the tail even more than the average.",
+    "Day-of-week segmentation may reveal patterns, but it's still an average and still hides the slow tail.",
+    "The minimum shows best-case performance and says nothing about users having a bad time."
+   ],
+   "interview_tip": "Quoting p95/p99 instead of averages for latency is a quick credibility signal in technical and metrics discussions.",
+   "source": ""
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Time-to-value as an onboarding metric",
+   "difficulty": "medium",
+   "question": "You own onboarding for a B2B analytics tool. Which metric best tells you whether onboarding changes are helping new accounts succeed?",
+   "options": [
+    "Median time from signup to the first dashboard built with the customer's own data",
+    "Percentage of new users who complete every step of the product tour",
+    "Number of signups per week from the marketing site",
+    "Average number of help-center articles viewed by new users"
+   ],
+   "answer": 0,
+   "explanation": "Time-to-value measures how quickly a new user reaches the first meaningful outcome the product promises. Shortening it usually improves activation and retention. Tour completion measures compliance with your flow, not whether the user got value.",
+   "rationales": [
+    "Correct. It tracks how fast users reach real value (their own data in a dashboard), which onboarding should shorten.",
+    "Tour completion can be high while users still never connect data; finishing a tour isn't the same as getting value.",
+    "Signups measure acquisition, which onboarding doesn't control.",
+    "Help-article views are ambiguous: more views could mean engaged users or confused ones."
+   ],
+   "interview_tip": "For onboarding questions, defining the 'first value moment' and measuring time to reach it is a strong, specific answer interviewers like.",
+   "source": ""
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Long-term holdout groups",
+   "difficulty": "medium",
+   "question": "Your team shipped 12 winning A/B tests this year, each showing a +1-2% lift in engagement. Yet overall engagement is roughly flat. What's the best way to measure the true combined impact going forward?",
+   "options": [
+    "Keep a small long-term holdout group that doesn't get the shipped changes, and compare it with everyone else over months",
+    "Add up the lifts from each experiment to report the total impact",
+    "Re-run each of the 12 experiments one at a time to confirm the results",
+    "Increase sample sizes in future experiments so each lift estimate is more precise"
+   ],
+   "answer": 0,
+   "explanation": "Individual test lifts often don't add up: effects can overlap, fade over time, or be inflated by the winner's curse. A long-term holdout, a small group kept on the old experience, measures the cumulative real effect of everything shipped.",
+   "rationales": [
+    "Correct. A holdout directly measures the combined, long-run effect of all launches against an untouched baseline.",
+    "Summing lifts assumes effects are independent and permanent, which is exactly the assumption that's failing here.",
+    "Re-running tests is slow and still measures each change in isolation, not the combined effect.",
+    "Bigger samples improve precision per test but don't address overlap, decay or selection bias across winners."
+   ],
+   "interview_tip": "Mentioning holdouts and the winner's curse when an interviewer asks 'how do you know your launches added up' signals experience with mature experimentation programs.",
+   "source": ""
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Multi-armed bandits vs fixed A/B tests",
+   "difficulty": "medium",
+   "question": "An e-commerce team wants to pick the best of five banner creatives for a 4-day festive sale. They care more about sale revenue than learning exactly how each creative performs. What approach fits best?",
+   "options": [
+    "A multi-armed bandit that shifts traffic toward better-performing creatives as data comes in",
+    "A classic A/B/n test with equal traffic split for the whole sale, then pick the winner",
+    "Launch the creative the design team likes best, since four days is too short to test",
+    "Run a two-week A/B test before the sale to choose the creative"
+   ],
+   "answer": 0,
+   "explanation": "Bandits balance exploration and exploitation: they keep testing but send more traffic to winners, reducing the revenue lost on weaker options. They suit short-lived decisions where earning matters more than precise measurement. Classic A/B tests are better when you need clean, unbiased effect estimates.",
+   "rationales": [
+    "Correct. With a short window and a revenue goal, a bandit limits traffic wasted on losers while still learning.",
+    "An equal split gives clean estimates, but by the time you know the winner the sale is nearly over and you've lost revenue on weak creatives.",
+    "Skipping testing relies on opinion; it may pick a weak creative with no way to correct course.",
+    "A pre-sale test uses non-festive traffic, which behaves differently, and still delays the decision."
+   ],
+   "interview_tip": "Knowing when NOT to run a classic A/B test, and naming the explore/exploit trade-off, shows experimentation maturity beyond textbook answers.",
+   "source": ""
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual smartphone unit sales in India",
+   "difficulty": "medium",
+   "question": "Estimate the number of smartphones sold in India per year. Which is closest?",
+   "options": [
+    "About 150 million",
+    "About 40 million",
+    "About 500 million",
+    "About 1 billion"
+   ],
+   "answer": 0,
+   "explanation": "Method: India has ~1.4 billion people; assume ~700 million smartphone users. Most people replace their phone every ~3 years, so replacement demand is ~700M / 3 ≈ 230M. Then adjust: some users keep phones longer or buy used phones; first-time buyers add some. A reasonable range is ~150-200 million new units per year, so ~150 million is closest. Industry trackers report roughly this order of magnitude.",
+   "rationales": [
+    "Correct. Users ÷ replacement cycle, adjusted down for longer use and second-hand phones, lands in the ~150M range.",
+    "Too low: this would imply people keep phones for more than 15 years, which doesn't match typical replacement cycles.",
+    "Too high: this would mean most users buy a new phone almost every year, which is unrealistic for a price-sensitive market.",
+    "Far too high: this is close to India's entire population buying a phone every year."
+   ],
+   "interview_tip": "In estimation rounds, interviewers care about the structure (population → users → replacement cycle → adjustments) and sanity checks more than the exact number. Say your assumptions out loud.",
+   "source": ""
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Support headcount from ticket volume",
+   "difficulty": "medium",
+   "question": "A SaaS company gets 2 million support tickets a month. Each takes about 10 minutes to handle. An agent has about 6 productive hours a day and works 22 days a month. Roughly how many agents are needed?",
+   "options": [
+    "About 2,500",
+    "About 250",
+    "About 10,000",
+    "About 800"
+   ],
+   "answer": 0,
+   "explanation": "Total work: 2,000,000 × 10 min = 20,000,000 minutes ≈ 333,000 hours per month. Each agent: 6 hrs × 22 days = 132 productive hours per month. 333,000 / 132 ≈ 2,525 agents, so about 2,500 (before adding buffer for peaks, training and attrition).",
+   "rationales": [
+    "Correct. 333k hours of work divided by 132 hours per agent gives roughly 2,500 agents.",
+    "Off by 10x, typically from treating 10 minutes as 1 minute or dropping a zero in total minutes.",
+    "Too high: this would mean each agent only has ~33 productive hours a month.",
+    "Too low: this usually comes from using 8 hours × 30 days, or forgetting to convert minutes to hours correctly."
+   ],
+   "interview_tip": "Capacity estimates come up for ops-heavy products. Showing clean unit conversions and then mentioning buffers (peaks, shrinkage) signals practical thinking.",
+   "source": ""
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Land-and-expand wedge strategy",
+   "difficulty": "medium",
+   "question": "A startup wants to sell an all-in-one HR suite to mid-size Indian companies dominated by entrenched vendors. Which entry strategy is most likely to work?",
+   "options": [
+    "Start with one painful, easy-to-adopt workflow (e.g., payroll compliance) that wins a foothold, then expand into adjacent modules",
+    "Launch the full suite at a lower price than incumbents to win head-to-head deals",
+    "Target the largest enterprises first because they bring the most revenue per deal",
+    "Spend heavily on brand marketing so the startup looks as established as incumbents"
+   ],
+   "answer": 0,
+   "explanation": "A wedge is a narrow product that solves an acute pain with low switching effort. Once inside the account, the company earns trust and data to expand into adjacent workflows. Competing suite-vs-suite against incumbents means matching years of features and fighting high switching costs.",
+   "rationales": [
+    "Correct. A focused wedge lowers adoption friction and creates a base to expand from, avoiding a full frontal fight.",
+    "A cheaper full suite still has to match incumbent feature depth and overcome high switching costs; price alone rarely wins.",
+    "Large enterprises have the longest sales cycles and the deepest incumbent lock-in, which is hard for a new entrant.",
+    "Brand spend doesn't fix product gaps or switching costs and burns cash early."
+   ],
+   "interview_tip": "For market-entry prompts, naming a specific wedge and the expansion path shows strategic sequencing, not just a feature list.",
+   "source": ""
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Vertical specialist unbundling a horizontal platform",
+   "difficulty": "hard",
+   "question": "You're PM at a horizontal CRM used across many industries. A vertical CRM built only for real-estate agents is winning your real-estate customers quickly. What's the most likely reason, and the best response?",
+   "options": [
+    "The vertical tool fits the workflow end to end (listings, site visits, local integrations); respond by deciding whether real estate is core enough to build a dedicated vertical experience, or let it go",
+    "The vertical tool is cheaper; respond by cutting prices for real-estate customers",
+    "The vertical tool spends more on marketing; respond by increasing ad spend in real estate",
+    "The vertical tool is newer; respond by redesigning the general UI to look more modern"
+   ],
+   "answer": 0,
+   "explanation": "Horizontal platforms serve many segments 'well enough', which leaves room for vertical specialists to unbundle a segment with deep workflow fit, data models and integrations. The key strategic decision is whether that segment is core. If it is, build a vertical solution; if not, accept the loss and focus.",
+   "rationales": [
+    "Correct. It identifies workflow fit as the advantage and frames the real choice: invest in the vertical or deliberately cede it.",
+    "Price may matter, but when a specialist wins quickly it's usually because it fits the job better; cutting price doesn't close the workflow gap.",
+    "Marketing can't explain sustained switching if the product doesn't fit better.",
+    "A cosmetic redesign doesn't address missing industry-specific features."
+   ],
+   "interview_tip": "Strategy interviews reward recognising patterns (unbundling, bundling) and making an explicit choice, including the option to not compete. 'Focus means saying no' is a strong signal.",
+   "source": ""
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Purchasing-power-parity regional pricing",
+   "difficulty": "medium",
+   "question": "A US productivity app priced at $12/month sees strong interest from India but very low conversion. What pricing approach makes most sense?",
+   "options": [
+    "Introduce regional pricing adjusted for local purchasing power, with safeguards against cross-region abuse",
+    "Keep one global price to protect brand value and avoid arbitrage",
+    "Give Indian users a permanent free tier with all features unlocked",
+    "Offer the same $12 price but allow annual billing only, to lower the monthly cost"
+   ],
+   "answer": 0,
+   "explanation": "Willingness to pay varies by market. Pricing adjusted for purchasing power (PPP) can unlock large markets while still being profitable on low marginal cost software. Safeguards (local payment methods, billing-country checks) limit arbitrage.",
+   "rationales": [
+    "Correct. It matches price to local willingness to pay and protects against misuse.",
+    "A single global price is simple but leaves a large market unconverted; brand value isn't hurt much by regional prices.",
+    "Giving everything away removes the reason to pay and doesn't test willingness to pay at all.",
+    "Annual billing at the same rate raises the upfront cost, which makes conversion harder, not easier."
+   ],
+   "interview_tip": "When discussing pricing for India or other emerging markets, mentioning PPP pricing plus abuse safeguards shows global product thinking.",
+   "source": ""
+  },
+  {
+   "topic": "Execution",
+   "concept": "Selecting design partners for a B2B beta",
+   "difficulty": "medium",
+   "question": "You're about to beta-test a new workflow automation feature with B2B customers. Which beta group should you pick?",
+   "options": [
+    "5-8 customers who have the target problem, represent your key segments, and commit to regular feedback sessions",
+    "Your 20 largest customers, since their feedback carries the most revenue weight",
+    "Whoever signs up first from an in-app banner, to avoid bias in selection",
+    "Customers who have complained the most, since they'll give the most honest feedback"
+   ],
+   "answer": 0,
+   "explanation": "Good design partners have the problem you're solving, reflect the segments you plan to serve, and commit time to give feedback. A small, engaged group gives deep learning. Picking only by size, speed or complaints skews what you learn.",
+   "rationales": [
+    "Correct. It optimises for relevance, representativeness and engagement, which make beta feedback useful.",
+    "The largest customers may have unusual needs and risk-averse teams; their feedback can steer you toward custom work.",
+    "Self-selection attracts enthusiasts who may not represent the core segment or have the target problem.",
+    "Frequent complainers may have issues unrelated to this feature, and their feedback may not generalise."
+   ],
+   "interview_tip": "When asked how you'd run a beta, describe selection criteria and the feedback cadence. It shows you treat a beta as a learning tool, not just a soft launch.",
+   "source": ""
+  },
+  {
+   "topic": "Execution",
+   "concept": "Launch tiering by impact",
+   "difficulty": "easy",
+   "question": "Your company ships dozens of changes each month. Marketing and support complain they're either overwhelmed or caught off guard. What's the best process fix?",
+   "options": [
+    "Classify launches into tiers (e.g., major, medium, minor) with a defined level of announcement, enablement and support prep for each",
+    "Require a full launch plan with press, training and docs for every change",
+    "Only notify marketing and support after a change has shipped",
+    "Release all changes together in one large quarterly launch"
+   ],
+   "answer": 0,
+   "explanation": "Launch tiers match effort to impact. A big new product gets press, training and a coordinated plan; a small UI tweak gets a changelog entry. This keeps go-to-market teams prepared without drowning them in process.",
+   "rationales": [
+    "Correct. Tiers scale preparation to impact, fixing both overload and surprise.",
+    "Full plans for everything create heavy overhead and slow shipping; small changes don't need it.",
+    "Post-hoc notice is exactly what causes support to be caught off guard.",
+    "Big-bang quarterly releases slow learning and increase risk by bundling many changes."
+   ],
+   "interview_tip": "Execution interviews value lightweight, scalable process. Launch tiering is a concise example of matching process to risk.",
+   "source": ""
+  },
+  {
+   "topic": "Execution",
+   "concept": "Communicating estimates as ranges",
+   "difficulty": "medium",
+   "question": "An executive asks for a firm ship date for a feature that's still in early design, with several unknowns. What's the best response?",
+   "options": [
+    "Give a range with confidence level (e.g., 'likely Q2, could slip to Q3 if the payments integration is complex'), name the key unknowns and when you'll narrow it",
+    "Commit to the earliest plausible date to show urgency, then manage expectations later",
+    "Refuse to give any date until design is complete",
+    "Add a 50% buffer to the engineering estimate and present that as the firm date"
+   ],
+   "answer": 0,
+   "explanation": "Early estimates are uncertain (the 'cone of uncertainty'). Giving a range, explaining what drives it and committing to a date when you'll tighten it keeps leaders informed and builds trust. False precision or refusing to answer both damage credibility.",
+   "rationales": [
+    "Correct. It's honest about uncertainty, gives leadership something usable, and sets a plan to narrow the range.",
+    "Committing early to an optimistic date almost guarantees a miss and erodes trust.",
+    "Refusing gives leadership nothing to plan with and looks evasive.",
+    "Padding is better than optimism, but presenting a padded guess as 'firm' still hides the real uncertainty."
+   ],
+   "interview_tip": "Interviewers often ask how you handle date pressure. Ranges plus named risks and a plan to de-risk show maturity and credibility.",
+   "source": ""
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Delivering results with constrained resources",
+   "difficulty": "hard",
+   "question": "In an Amazon-style interview you're asked: 'Tell me about a time you accomplished something with fewer resources than you needed.' Which story outline is strongest?",
+   "options": [
+    "Headcount was cut by half mid-project; I re-scoped to the one capability driving most customer value, reused an existing service instead of building new, and shipped on time with measured impact",
+    "We didn't get enough engineers, so I worked weekends to fill gaps and we shipped a little late but with every feature",
+    "Leadership denied our headcount request, so I escalated repeatedly until we got two more engineers and then delivered",
+    "We were under-resourced, so I asked the team to cut testing time to save effort and we hit the date"
+   ],
+   "answer": 0,
+   "explanation": "Strong 'frugality' stories show inventive trade-offs: focusing scope on the highest-value outcome, reusing what exists, and delivering measurable results. They avoid heroics, escalation as the main move, or cutting quality silently.",
+   "rationales": [
+    "Correct. It shows prioritisation, resourcefulness and a measured outcome, which is what this question probes.",
+    "Personal heroics don't scale and the story shows no smart trade-off; shipping late with everything signals weak prioritisation.",
+    "Getting more resources isn't doing more with less; it sidesteps the question.",
+    "Cutting testing is a risky quality trade-off and suggests poor judgment rather than resourcefulness."
+   ],
+   "interview_tip": "For Amazon's Frugality principle, interviewers want a clear constraint, a creative trade-off and quantified results. Avoid stories that rely on overtime or escalation.",
+   "source": ""
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Addressing a peer's missed commitments",
+   "difficulty": "hard",
+   "question": "An engineer on a partner team (not reporting to you) has missed three commitments your launch depends on. How do you handle it?",
+   "options": [
+    "Talk to them privately first to understand the cause and agree on a realistic plan; if it still slips, involve their manager with facts focused on the shared goal",
+    "Escalate to their manager right away, since three misses show a clear pattern",
+    "Quietly ask one of your own engineers to build the dependency instead",
+    "Raise the missed dates in the weekly cross-team meeting so the issue is visible"
+   ],
+   "answer": 0,
+   "explanation": "Start with a direct, private conversation to understand blockers (they may be overloaded or unclear on priority) and agree on a plan. If that fails, escalate with facts and a focus on the shared outcome, not blame. This shows respect, ownership and judgment.",
+   "rationales": [
+    "Correct. It seeks understanding first, keeps trust intact, and escalates constructively only if needed.",
+    "Escalating first can damage the relationship and skips understanding the root cause.",
+    "Working around them hides the problem, duplicates effort and may conflict with their team's plans.",
+    "Public call-outs embarrass the person and usually make cooperation worse."
+   ],
+   "interview_tip": "Behavioural rounds test how you handle friction without authority. A strong answer shows empathy first, a clear plan, and escalation as a last resort done respectfully.",
+   "source": ""
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Holding the quality bar under ship pressure",
+   "difficulty": "hard",
+   "question": "Two days before launch, testing shows a new checkout flow fails for about 3% of users on older Android phones. The team wants to ship and fix later. What's the strongest response?",
+   "options": [
+    "Quantify the impact (lost orders, affected users), consider a targeted fallback to the old flow for those devices, and launch only if affected users have a working path",
+    "Ship on schedule because 97% of users are fine and the date was promised",
+    "Delay the launch until the bug is fully fixed, regardless of how long it takes",
+    "Ship and add a banner asking affected users to update their phones"
+   ],
+   "answer": 0,
+   "explanation": "Holding a high bar doesn't mean blocking every launch. It means not shipping something that breaks a core flow for real customers. Quantifying impact and finding a way to protect affected users (e.g., device-based fallback) lets you ship without harming them.",
+   "rationales": [
+    "Correct. It balances urgency with customer impact and finds a way to launch without breaking checkout for anyone.",
+    "3% of checkout users failing can be a large number of lost orders; shipping knowingly breaks a core flow.",
+    "An open-ended delay ignores options that protect users while still launching.",
+    "Asking users to update phones they may not be able to upgrade shifts the burden to customers."
+   ],
+   "interview_tip": "This maps to Amazon's 'Insist on the Highest Standards' and 'Customer Obsession'. Strong answers show creativity in protecting customers, not just a binary ship/don't-ship choice.",
+   "source": ""
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Layered input and output safety classifiers",
+   "difficulty": "easy",
+   "question": "You're launching a consumer AI chat assistant. Besides tuning the model's own behaviour, what's a standard additional safety layer?",
+   "options": [
+    "Separate classifiers that screen user inputs and model outputs for policy violations before they're acted on or shown",
+    "Lowering the model's temperature to zero so it can't produce harmful content",
+    "Making the system prompt longer with more rules about what not to say",
+    "Limiting conversations to five turns so users can't steer the model"
+   ],
+   "answer": 0,
+   "explanation": "Defence in depth is standard: the model is trained to behave safely, and separate moderation classifiers check inputs and outputs. If one layer misses something, another can catch it.",
+   "rationales": [
+    "Correct. Independent input/output classifiers add a second line of defence beyond the model itself.",
+    "Temperature controls randomness, not safety; a deterministic model can still produce harmful output.",
+    "System prompts help but can be bypassed; relying on them alone is a single, fragile layer.",
+    "Turn limits reduce some multi-turn attacks but hurt the product and don't stop single-turn harms."
+   ],
+   "interview_tip": "When discussing AI safety in interviews, describing 'defence in depth' with multiple layers shows you understand no single control is enough.",
+   "source": ""
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Inter-annotator agreement for eval labels",
+   "difficulty": "hard",
+   "question": "Your team labels 1,000 AI responses as 'helpful' or 'not helpful' to build an eval set. Two labelers agree on only 60% of items. What should you do first?",
+   "options": [
+    "Tighten the labeling guidelines with clear definitions and examples, then re-measure agreement before trusting the eval",
+    "Use the eval as is, since 60% agreement is better than random",
+    "Average the two labelers' scores to get a more reliable label",
+    "Replace the human labelers with an LLM judge, which gives consistent answers"
+   ],
+   "answer": 0,
+   "explanation": "Low agreement means the label itself is ambiguous. If humans can't agree on 'helpful', the eval measures noise, and model improvements won't show reliably. Fix the rubric (definitions, edge cases, examples) and check agreement again before using the data.",
+   "rationales": [
+    "Correct. It treats low agreement as a sign of an unclear rubric and fixes the foundation before relying on the eval.",
+    "60% agreement on a binary label is close to chance; the eval would be too noisy to guide decisions.",
+    "Averaging hides disagreement but doesn't make an ambiguous label meaningful.",
+    "An LLM judge can be consistent but still wrong; without a clear rubric and human agreement you can't calibrate it."
+   ],
+   "interview_tip": "Strong AI PMs know evals are only as good as their labels. Mentioning inter-annotator agreement and rubric quality signals real experience building evals.",
+   "source": ""
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Matching reasoning effort to task difficulty",
+   "difficulty": "medium",
+   "question": "Your AI assistant uses a reasoning model that 'thinks' before answering. Users love its accuracy on hard questions but complain that simple questions take 20 seconds. What's the best fix?",
+   "options": [
+    "Route or set reasoning effort by query difficulty, so simple questions get fast answers and hard ones get deeper reasoning",
+    "Switch everything to a faster, non-reasoning model to cut latency",
+    "Keep deep reasoning for all queries and show a progress animation",
+    "Let users choose 'fast' or 'smart' mode for every message"
+   ],
+   "answer": 0,
+   "explanation": "Reasoning models trade latency and cost for accuracy. Not every query needs that. Adapting reasoning effort to difficulty gives fast answers for easy questions and keeps quality for hard ones.",
+   "rationales": [
+    "Correct. It matches compute to the task, improving speed where reasoning adds little and keeping accuracy where it matters.",
+    "A blanket switch fixes latency but loses the accuracy users value on hard questions.",
+    "Animations make waiting feel better but don't fix the core problem of slow simple answers.",
+    "A manual toggle can be an option, but forcing a choice on every message adds friction; a good default is better."
+   ],
+   "interview_tip": "AI product interviews often probe cost/latency/quality trade-offs. Proposing adaptive compute shows you think in terms of matching resources to user needs.",
+   "source": ""
+  },
+  {
+   "topic": "AI Product",
+   "concept": "How LLM function calling works",
+   "difficulty": "easy",
+   "question": "You're adding 'check order status' to an AI shopping assistant using function (tool) calling. How does this typically work?",
+   "options": [
+    "The model outputs a structured request naming the function and its arguments; your app runs the function and returns the result to the model to respond",
+    "The model connects directly to your order database and runs the query itself",
+    "The model memorises order statuses during fine-tuning and recalls them on request",
+    "The user must type the exact function name for the model to call it"
+   ],
+   "answer": 0,
+   "explanation": "With function calling, the model decides when a tool is needed and produces a structured call (e.g., JSON with function name and arguments). Your application executes it, applies permissions, and passes the result back so the model can answer. The model never runs code or accesses systems directly.",
+   "rationales": [
+    "Correct. The model proposes the call; your app executes it and controls access.",
+    "Models don't directly access databases; your app executes calls, which is also where you enforce security.",
+    "Order status changes constantly; training on it would be stale immediately.",
+    "The model decides when to call tools from natural language; users don't need to name functions."
+   ],
+   "interview_tip": "Explaining that the app (not the model) executes tool calls shows technical fluency and sets up good answers about permissions and safety.",
+   "source": ""
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Benchmark contamination in model evaluation",
+   "difficulty": "medium",
+   "question": "A vendor claims its new model scores 95% on a popular public benchmark, far higher than others. Before choosing it for your product, what's the biggest concern?",
+   "options": [
+    "The benchmark questions may have leaked into the model's training data, inflating the score; test it on your own held-out tasks",
+    "The benchmark is too hard, so a 95% score is probably a measurement error",
+    "Public benchmarks are always run with temperature zero, which doesn't match production",
+    "A higher benchmark score always means higher cost, so the model will be too expensive"
+   ],
+   "answer": 0,
+   "explanation": "Public benchmarks can end up in training data (contamination), so a model may have memorised answers. Scores then overstate real ability. The safest check is a private eval on your own tasks that the model couldn't have seen.",
+   "rationales": [
+    "Correct. Contamination is a known risk with public benchmarks; a private, task-specific eval is the reliable check.",
+    "There's no reason to assume a high score is a calculation error; the real risk is that the score doesn't reflect real ability.",
+    "Benchmark settings vary and aren't always temperature zero; this isn't the main concern.",
+    "Benchmark scores and price aren't tied; this is an assumption, not an evaluation concern."
+   ],
+   "interview_tip": "AI PM interviews value skepticism toward leaderboard numbers. Saying 'I'd validate on our own held-out eval set' is a strong, practical answer.",
+   "source": ""
+  },
+  {
+   "topic": "Technology",
+   "concept": "CDN for static asset latency",
+   "difficulty": "easy",
+   "question": "Users in India report that your US-hosted website loads images and scripts slowly. What's the most direct fix?",
+   "options": [
+    "Serve static assets through a content delivery network (CDN) with servers close to users",
+    "Upgrade the US server to a larger machine with more CPU",
+    "Add a database index to speed up queries",
+    "Increase the server's API rate limit"
+   ],
+   "answer": 0,
+   "explanation": "Much of the delay is the physical distance between users and the server. A CDN caches static files (images, scripts, styles) on servers around the world, so users download them from nearby, which cuts latency.",
+   "rationales": [
+    "Correct. A CDN reduces network distance for static content, which is the main cause here.",
+    "A bigger server helps with load, but doesn't reduce the time data takes to travel across the world.",
+    "Indexes speed up database queries, not delivery of static files.",
+    "Rate limits control request volume; they don't make responses arrive faster."
+   ],
+   "interview_tip": "Being able to name the right layer (network, server, database) for a performance problem shows solid technical fluency in PM interviews.",
+   "source": ""
+  },
+  {
+   "topic": "Technology",
+   "concept": "Backward-compatible API versioning",
+   "difficulty": "easy",
+   "question": "Your public API needs a change that renames a field many partners rely on. What's the safest approach?",
+   "options": [
+    "Release the change in a new API version, keep the old version working, and give partners a clear deprecation timeline",
+    "Rename the field in place and email partners about the change",
+    "Keep the old field name forever and never make breaking changes",
+    "Rename the field and return an error if partners use the old name, so they notice quickly"
+   ],
+   "answer": 0,
+   "explanation": "Breaking changes in a public API can break partners' integrations. Versioning lets existing clients keep working while new clients adopt the change, and a deprecation timeline gives everyone time to migrate.",
+   "rationales": [
+    "Correct. It allows change without breaking existing integrations and sets clear expectations.",
+    "In-place renames break partners immediately; many won't see or act on the email in time.",
+    "Avoiding all breaking changes forever leads to a messy API; versioning is the controlled way to evolve.",
+    "Forcing errors breaks partners in production, damaging trust."
+   ],
+   "interview_tip": "API questions in PM interviews often test empathy for developers. Mentioning versioning and deprecation timelines shows you think about ecosystem impact.",
+   "source": ""
+  },
+  {
+   "topic": "Growth",
+   "concept": "Product-qualified leads (PQLs)",
+   "difficulty": "medium",
+   "question": "A freemium B2B tool has thousands of free teams. The sales team has limited capacity. Which teams should sales contact first?",
+   "options": [
+    "Teams whose product usage signals readiness to buy, such as hitting plan limits, adding many members, or using paid-tier features",
+    "Teams that signed up most recently, since their interest is freshest",
+    "Teams from the biggest companies by employee count, regardless of usage",
+    "Teams that opened the most marketing emails"
+   ],
+   "answer": 0,
+   "explanation": "Product-qualified leads are users whose in-product behaviour shows they're getting value and nearing a reason to upgrade. They convert better than leads based only on demographics or marketing engagement.",
+   "rationales": [
+    "Correct. Usage-based signals show real value and buying intent, so sales time is spent where conversion is likeliest.",
+    "Recent signups may not have found value yet; contacting them early can feel pushy.",
+    "Company size suggests potential, but without usage the team may not need the product.",
+    "Email opens show interest in content, not in buying the product."
+   ],
+   "interview_tip": "For product-led growth questions, mentioning PQLs shows you understand how product data and sales work together.",
+   "source": ""
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Google Gemini agent enterprise-first launch (Oct 2026)",
+   "difficulty": "easy",
+   "question": "On October 8, 2026, Google announced a unified Gemini agent that carries out tasks, not just answers questions. Which launch decision did Google make, according to TechCrunch?",
+   "options": [
+    "Launch it for businesses first and bring it to consumers later, citing the harder security, scale and performance problems powerful agents raise",
+    "Launch it for consumers first on Android, and bring it to enterprises once the agent proves reliable at scale",
+    "Launch it only with Google's own Gemini models, with no option to choose third-party models",
+    "Launch it as a free, consumer-only feature inside Gmail with no audit trail"
+   ],
+   "answer": 0,
+   "explanation": "Google said the agent would launch for businesses first, with consumers later. Sundar Pichai said the enterprise focus lets Google work on the harder security, scale and performance problems that come with powerful agents. The agent can use third-party models, with Anthropic's Claude as the first option, and its actions are logged in an audit trail attributed to the agent.",
+   "rationales": [
+    "Correct. TechCrunch reports a business-first launch, with Pichai citing security, scale and performance challenges.",
+    "This reverses the actual sequence; consumers are planned for later.",
+    "Users can choose third-party models; Anthropic's Claude is the first, with open-source and private models planned.",
+    "The launch targets businesses and includes an audit trail attributed to the agent."
+   ],
+   "interview_tip": "Use launches like this to discuss rollout strategy: starting with enterprises lets you work through security and governance with fewer, high-touch customers before scaling to consumers.",
+   "source": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+  }
+ ]
+}
