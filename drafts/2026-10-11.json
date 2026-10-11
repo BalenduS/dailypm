@@ -1,0 +1,513 @@
+{"date": "2026-10-11", "theme": "Marketplace balance, true incrementality, and ChatGPT's new visual ads", "questions": [
+{"topic": "Product Sense", "concept": "Needs-based vs demographic segmentation", "difficulty": "hard",
+ "question": "Interviewer: 'Design a better grocery-shopping experience.' You start segmenting users. Which segmentation will give you the strongest base for the rest of your answer?",
+ "options": [
+  "By shopping need and behaviour, e.g. urgent top-up shoppers, weekly planners and bulk family stockers",
+  "By age band, e.g. 18-24, 25-34, 35-49 and 50+, since each generation shops differently",
+  "By city tier, e.g. metro, tier-2 and tier-3, since infrastructure differs across them",
+  "By income bracket, since spending power decides basket size and preferred brands"
+ ],
+ "answer": 0,
+ "explanation": "Segments are useful in a product-sense answer when people inside a segment share a problem and differ from people in other segments. Needs- and behaviour-based segments (why and how people shop) map directly to distinct pain points and solutions. Demographics such as age, city or income are easy to name but rarely predict a specific unmet need on their own.",
+ "rationales": [
+  "Correct. Each segment has a different job and pain point (speed vs planning vs value), so picking one leads naturally to focused solutions.",
+  "Age is a common default, but a 25-year-old and a 45-year-old doing an urgent top-up have the same need; age doesn't define the problem.",
+  "City tier can matter for logistics, but it describes where users are, not what problem they're trying to solve, so it's a weak primary cut.",
+  "Income affects basket size, yet two people with the same income can shop for completely different reasons; it doesn't point to a solution."
+ ],
+ "interview_tip": "Interviewers notice whether your segments are 'MECE demographics' or real problem groups. Segmenting by motivation or behaviour, then picking one with a clear reason, signals product judgement rather than template-following."},
+{"topic": "Product Sense", "concept": "Identifying the constrained side of a marketplace", "difficulty": "hard",
+ "question": "You're PM for a home-services marketplace (cleaners, electricians) in Pune. Customer sign-ups are growing fast, but 40% of booking attempts show 'no professionals available' for the requested slot, and repeat bookings are falling. Where should you focus first?",
+ "options": [
+  "Grow and activate supply in the busiest slots and areas, since unmet demand is now the binding constraint",
+  "Increase customer-acquisition spend to raise order volume and attract more professionals",
+  "Add a referral programme so happy customers bring friends to the platform",
+  "Redesign the booking screen so customers find open slots more easily"
+ ],
+ "answer": 0,
+ "explanation": "Marketplaces grow when both sides are in balance, and at any moment one side is usually the constraint. A 40% 'no availability' rate shows demand is outrunning supply, which also explains falling repeat bookings: customers who fail to book don't come back. The right move is targeted supply growth and utilisation (recruiting, onboarding speed, incentives for peak slots) where demand is unmet.",
+ "rationales": [
+  "Correct. Supply is the bottleneck; every extra customer acquired now mostly creates another failed booking.",
+  "More demand sounds like it attracts supply, but with 40% of requests already unfilled, it mainly burns money and frustrates more customers.",
+  "Referrals are another way to add demand, which is the side that is already in excess here.",
+  "UI tweaks help only if open slots exist; the data says there often are none to find."
+ ],
+ "interview_tip": "Marketplace prompts reward candidates who first diagnose which side is constrained using a liquidity metric (fill rate, search-to-book). Naming that metric before proposing solutions signals structured thinking."},
+{"topic": "Product Sense", "concept": "Undo instead of confirmation dialogs for frequent actions", "difficulty": "easy",
+ "question": "Users of an email app archive dozens of emails a day. Occasionally someone archives the wrong email by mistake. What is the best design?",
+ "options": [
+  "Archive instantly and show a brief 'Undo' option after each archive",
+  "Show an 'Are you sure?' confirmation dialog before every archive",
+  "Require a long-press instead of a tap to archive any email",
+  "Move archived emails to a hidden folder that users can search later"
+ ],
+ "answer": 0,
+ "explanation": "For frequent, low-stakes and reversible actions, confirmation dialogs add friction to every use and users quickly learn to click through them without reading. An immediate action with a short undo window keeps the common path fast while making mistakes easy to fix. Confirmation friction should be saved for rare, high-stakes or irreversible actions.",
+ "rationales": [
+  "Correct. It keeps the frequent action fast and makes the rare mistake cheap to reverse.",
+  "Confirmations on a routine action slow everyone down and become habitual clicks, so they don't even prevent many mistakes.",
+  "A long-press hides the action and slows down the many correct archives to protect against a few wrong ones.",
+  "Archived mail is already findable; the problem is that users don't notice the mistake, and this gives no immediate way to recover."
+ ],
+ "interview_tip": "This tests whether you match friction to risk. A strong answer contrasts reversible, frequent actions (undo) with irreversible ones like payments or deletion (confirmation or friction)."},
+{"topic": "Product Sense", "concept": "Implicit signals over onboarding questionnaires for cold-start personalization", "difficulty": "medium",
+ "question": "A new short-video app asks every new user to pick 10 interests across three onboarding screens before showing any content. 35% drop off during these screens, and the picks predict later viewing only weakly. What is the best change?",
+ "options": [
+  "Show a varied feed right away and learn preferences from watch time, skips and likes in the first sessions",
+  "Cut the questionnaire to three interests so it's faster to complete",
+  "Make the questionnaire optional but reward users with coins for completing it",
+  "Ask for interests later through a pop-up after the user's first week"
+ ],
+ "answer": 0,
+ "explanation": "Stated preferences are costly to collect and often poor predictors of real behaviour. For content products, implicit signals from the first few minutes of use (what people watch, skip or rewatch) are cheap and more accurate, and showing content immediately gets users to value faster. A short, varied 'exploration' feed lets the system learn quickly.",
+ "rationales": [
+  "Correct. It removes onboarding friction and uses behaviour, which predicts viewing better than declared interests.",
+  "A shorter form reduces drop-off a little, but still delays value and still relies on weak stated preferences.",
+  "Rewards may raise completion, but the answers stay weak predictors and the delay before content remains.",
+  "Asking later avoids the drop-off, but by week one the app already has far richer behavioural data than a pop-up would add."
+ ],
+ "interview_tip": "Personalisation questions test whether you know 'revealed' beats 'stated' preference. Mentioning an exploration strategy for the first session shows you understand the cold-start problem."},
+{"topic": "Metrics", "concept": "Incrementality vs cannibalization in feature adoption", "difficulty": "hard",
+ "question": "A social app launched a new short-video tab. Within a month, 40% of daily users spend time there and the team reports it as a big success. Total time spent in the app per user is flat. What's the most important conclusion?",
+ "options": [
+  "The tab is mostly shifting time from other surfaces, so its incremental value is unproven and needs a holdout or cannibalisation analysis",
+  "The tab is a success because 40% adoption in a month is far above typical new-feature adoption",
+  "Total time is flat because of seasonality, so the tab's effect should be judged on tab usage alone",
+  "The tab has failed and should be rolled back, since total time didn't grow"
+ ],
+ "answer": 0,
+ "explanation": "Adoption of a new surface isn't the same as added value. If total time is flat, the new tab may simply be pulling time from feed or stories, which matters if those surfaces monetise better or drive other goals. The right next step is to measure incremental impact (e.g. a holdout group) and see which surfaces lost time and what that does to ads, creation and retention.",
+ "rationales": [
+  "Correct. Flat total time suggests cannibalisation; only a comparison against a holdout shows the tab's true net effect.",
+  "High adoption is real, but adoption measures where time goes, not whether the product as a whole improved.",
+  "Seasonality could play a part, but judging on tab usage alone ignores exactly the cannibalisation the flat total points to.",
+  "Rolling back is premature; shifting time can still be good (e.g. better retention or creation) and needs measurement first."
+ ],
+ "interview_tip": "When a feature 'wins' on its own metric, interviewers want you to ask 'at whose expense?' Mentioning a holdout and checking neighbouring surfaces signals system-level thinking."},
+{"topic": "Metrics", "concept": "Decomposing cancellations by who cancels and when", "difficulty": "hard",
+ "question": "A ride-hailing app's cancellation rate in Hyderabad rose from 12% to 18% in a week. Demand, pricing and app version are unchanged. What should you do first to root-cause it?",
+ "options": [
+  "Split cancellations by who cancelled (rider vs driver) and when (before match, after match, after long wait) to see which bucket grew",
+  "Survey riders who cancelled to ask why they cancelled",
+  "Compare Hyderabad's cancellation rate with other cities to see if it's a national trend",
+  "Raise driver incentives in Hyderabad to improve availability and reduce cancellations"
+ ],
+ "answer": 0,
+ "explanation": "A single cancellation rate mixes very different failure modes. Rider cancellations after a long wait point to supply or ETA problems; driver cancellations after match point to bad trip assignments or driver economics; quick rider cancellations may mean price shock. Decomposing by actor and timing quickly narrows the cause before you spend on fixes.",
+ "rationales": [
+  "Correct. Decomposition turns one vague number into specific buckets, each linked to a different likely cause.",
+  "Surveys are slow and have low response; they help later, once you know which bucket of cancellations to ask about.",
+  "Checking other cities is useful context, but it doesn't tell you which kind of cancellation grew in Hyderabad.",
+  "Incentives are a fix for one possible cause (supply); spending before diagnosing may miss a driver-side or ETA problem entirely."
+ ],
+ "interview_tip": "Root-cause questions reward breaking a ratio into its components by actor, step and time. Stating the hypothesis each bucket would confirm signals a structured, data-led approach."},
+{"topic": "Metrics", "concept": "Matching retention window to natural usage frequency", "difficulty": "medium",
+ "question": "You're PM for a train-ticket booking app. Most users travel a few times a year. Leadership wants to track 'Day-7 retention' as the main health metric. What's the best response?",
+ "options": [
+  "Use a retention window matched to natural usage, e.g. share of users who book again within 90 or 180 days",
+  "Keep Day-7 retention because it is the industry standard for consumer apps",
+  "Use DAU/MAU, since stickiness shows how habitual the app is",
+  "Track app opens per week, since opens happen more often than bookings"
+ ],
+ "answer": 0,
+ "explanation": "Retention should be measured on the cadence at which the product naturally delivers value. For infrequent-use products like travel booking, Day-7 retention looks terrible even for happy users, and pushing it could lead to spammy engagement tactics. A repeat-booking rate over a window that fits travel frequency reflects real loyalty.",
+ "rationales": [
+  "Correct. It measures whether users come back when they next have the need, which is what retention means for this product.",
+  "Day-7 suits daily-use apps; here it would mostly measure noise and push the team towards the wrong behaviour.",
+  "DAU/MAU is meant for habit-forming daily products and will be very low for a travel app regardless of quality.",
+  "Opens are an activity metric that can be inflated by notifications without any increase in bookings."
+ ],
+ "interview_tip": "Interviewers like candidates who ask 'how often should a satisfied user come back?' before choosing a retention metric. It shows you tailor metrics to the product instead of copying templates."},
+{"topic": "Metrics", "concept": "Unit of analysis mismatch: per-session vs per-user conversion", "difficulty": "medium",
+ "question": "After a change, session-level conversion (orders ÷ sessions) fell from 5% to 4%, but orders per user and total orders both rose. What most likely explains this?",
+ "options": [
+  "Users are opening more sessions (e.g. browsing more), so the denominator grew faster than orders",
+  "The change hurt conversion, and the rise in orders is just random noise",
+  "Order tracking broke, so the order counts are inflated",
+  "New low-intent users joined and dragged the per-session rate down while existing users improved"
+ ],
+ "answer": 0,
+ "explanation": "Per-session and per-user metrics can move in opposite directions. If each user starts more sessions, orders ÷ sessions falls even while each user buys more. Because orders per user and total orders both rose, the most likely story is more sessions per user, which is often a good sign, not a conversion problem.",
+ "rationales": [
+  "Correct. More sessions per user grows the denominator; with orders per user up, users are actually buying more.",
+  "Both total orders and orders per user rose, which is hard to call noise and contradicts 'the change hurt conversion'.",
+  "A tracking bug is possible, but nothing points to it, and it wouldn't explain why sessions grew.",
+  "A mix shift could lower the per-session rate, but orders per user rose overall, which fits more sessions per user better than an influx of low-intent users."
+ ],
+ "interview_tip": "Always check the denominator and the unit of analysis. Saying 'which unit matters to the business: sessions or users?' signals strong metric hygiene."},
+{"topic": "Experimentation", "concept": "Switchback experiments for marketplace-wide changes", "difficulty": "medium",
+ "question": "A food-delivery company wants to test a new rider-assignment algorithm. Because all orders in a city share the same pool of riders, splitting customers 50/50 would let the two groups affect each other. Which design is most appropriate?",
+ "options": [
+  "A switchback test that alternates the whole city between old and new algorithms in randomised time blocks",
+  "A standard 50/50 user-level A/B test with a larger sample size",
+  "Launch to all cities and compare this month's metrics with last month's",
+  "Run the new algorithm only for premium customers and compare them with regular customers"
+ ],
+ "answer": 0,
+ "explanation": "When treatment and control share a resource (riders), user-level randomisation leaks: the treated group can steal riders from control, biasing results. Switchback designs randomise over time (and sometimes region), so at any moment the whole market runs one version. Comparing many randomised time blocks gives a cleaner estimate of the system-level effect.",
+ "rationales": [
+  "Correct. Randomising whole-market time blocks avoids treatment and control competing for the same riders.",
+  "A bigger sample doesn't fix interference; the bias comes from shared supply, not from too few users.",
+  "Before/after comparisons mix the algorithm's effect with seasonality, weather and other changes.",
+  "Premium customers differ from regular ones, so any difference can't be attributed to the algorithm."
+ ],
+ "interview_tip": "Marketplace companies often ask how you'd test changes with network effects. Naming switchbacks or geo-randomisation and explaining the interference problem signals strong experimentation depth."},
+{"topic": "Experimentation", "concept": "Change aversion in tests on existing users", "difficulty": "medium",
+ "question": "You test a cleaner navigation redesign. Among existing users, key metrics drop 4% in week one and slowly recover. Among brand-new users in the same test, the redesign performs 3% better from day one. What's the best interpretation?",
+ "options": [
+  "Existing users are showing change aversion; run the test longer and weight the new-user result as a signal of long-term effect",
+  "The redesign is worse, because existing users are the majority and matter most",
+  "The new-user result is a novelty effect and should be ignored",
+  "The test is broken, because the two groups shouldn't behave differently"
+ ],
+ "answer": 0,
+ "explanation": "Change aversion (primacy effect) makes existing users perform worse at first because they must relearn habits, even when the new design is better. New users have no old habits, so their result is a cleaner read of the design's steady-state quality. The right move is a longer test to watch the existing-user recovery, with the new-user cohort as a strong hint of long-term impact.",
+ "rationales": [
+  "Correct. The early dip plus recovery is classic change aversion, and new users show how the design performs without habit effects.",
+  "Existing users matter, but an early dip that recovers says more about relearning than about the design's long-term quality.",
+  "Novelty effects make things look better at first for people who notice a change; new users have nothing to compare against, so novelty is unlikely.",
+  "Different reactions from new and existing users are expected for redesigns and don't mean the test is broken."
+ ],
+ "interview_tip": "Pair this with the novelty effect: novelty inflates early results, change aversion deflates them. Showing you'd segment new vs existing users and run long enough signals mature test reading."},
+{"topic": "Estimation", "concept": "Replacement-cycle market sizing", "difficulty": "easy",
+ "question": "Estimate India's annual market for school bags. Assume about 250 million school students, each buying a new bag every 2 years, at an average price of ₹500. Which is closest?",
+ "options": [
+  "About ₹6,000 crore a year",
+  "About ₹600 crore a year",
+  "About ₹60,000 crore a year",
+  "About ₹12,500 crore a year"
+ ],
+ "answer": 0,
+ "explanation": "Bags bought per year = 250 million ÷ 2 = 125 million. Market = 125 million × ₹500 = ₹62.5 billion, which is about ₹6,250 crore (1 crore = 10 million). The key step is dividing by the replacement cycle so you count purchases per year, not the total number of users.",
+ "rationales": [
+  "Correct. 125 million bags a year × ₹500 ≈ ₹6,250 crore.",
+  "This is ten times too small, a common slip when converting billions of rupees into crore.",
+  "This is ten times too large; it usually comes from a crore conversion error in the other direction.",
+  "This forgets the 2-year replacement cycle and assumes every student buys a bag every year (250M × ₹500)."
+ ],
+ "interview_tip": "For durable goods, interviewers watch for the replacement-cycle step. Stating it explicitly and sanity-checking units (crore vs billion) shows rigour."},
+{"topic": "Estimation", "concept": "Ad-revenue estimate from impressions and CPM", "difficulty": "medium",
+ "question": "An Indian news app has 5 million daily active users. Each sees about 20 ad impressions a day, and the average CPM (revenue per 1,000 impressions) is ₹50. Roughly what is its annual ad revenue?",
+ "options": [
+  "About ₹180 crore",
+  "About ₹18 crore",
+  "About ₹1,800 crore",
+  "About ₹500 crore"
+ ],
+ "answer": 0,
+ "explanation": "Daily impressions = 5M × 20 = 100M. Yearly = 100M × 365 ≈ 36.5 billion. Revenue = 36.5 billion ÷ 1,000 × ₹50 = ₹1.825 billion, about ₹182 crore. The method is users × impressions per user × days, then divide by 1,000 and multiply by CPM.",
+ "rationales": [
+  "Correct. 36.5 billion impressions × ₹0.05 each ≈ ₹182 crore.",
+  "Ten times too small; this usually happens when the ÷1,000 is applied twice or a zero is dropped.",
+  "Ten times too large; this usually comes from forgetting to divide by 1,000 correctly or a crore conversion slip.",
+  "This roughly treats CPM as a per-100 rate or adds unjustified assumptions; it doesn't follow from the given numbers."
+ ],
+ "interview_tip": "Ad-revenue estimates come up for consumer products at Meta and Google. Saying the formula aloud before calculating, then sanity-checking revenue per user per year (~₹365 here), signals clarity."},
+{"topic": "Strategy", "concept": "Defining competition by the job, not the category", "difficulty": "easy",
+ "question": "You're PM for a meditation app. When analysing competition, which view is most useful for strategy?",
+ "options": [
+  "Anything users currently 'hire' to unwind or sleep better, including YouTube videos, podcasts and simply scrolling",
+  "Only other meditation apps with similar features and pricing",
+  "Only the top three meditation apps by downloads in your market",
+  "Wellness companies that also sell physical products, such as fitness trackers"
+ ],
+ "answer": 0,
+ "explanation": "Customers don't choose within a category; they choose among all ways to get a job done. For a meditation app, the real alternatives include free videos, music, podcasts or doing nothing. Seeing these indirect competitors explains why users don't switch and what you must beat on convenience, cost and results.",
+ "rationales": [
+  "Correct. It frames competition around the job users need done, revealing the substitutes that actually win their time.",
+  "Category rivals matter, but focusing only on them misses the free substitutes most users actually rely on.",
+  "Top apps by downloads are an even narrower view of the same category.",
+  "Hardware wellness companies are adjacent, but not what most users choose instead of a meditation session."
+ ],
+ "interview_tip": "Defining competition by the user's job shows strategic maturity. Mention indirect substitutes and 'non-consumption' to stand out."},
+{"topic": "Strategy", "concept": "Contribution margin per order", "difficulty": "medium",
+ "question": "A quick-commerce app has an average order value of ₹500 with an 18% gross margin. Per order it spends ₹45 on delivery, ₹25 on discounts and ₹15 on packaging and payment fees. What is the contribution margin per order?",
+ "options": [
+  "₹5",
+  "₹90",
+  "-₹10",
+  "₹45"
+ ],
+ "answer": 0,
+ "explanation": "Gross margin per order = 18% × ₹500 = ₹90. Subtract variable costs per order: ₹45 + ₹25 + ₹15 = ₹85. Contribution margin = ₹90 - ₹85 = ₹5. That thin margin means fixed costs (dark stores, tech, salaries) can't be covered without larger baskets, lower delivery cost or fewer discounts.",
+ "rationales": [
+  "Correct. ₹90 gross margin minus ₹85 of per-order variable costs leaves ₹5.",
+  "₹90 is only the gross margin; it ignores delivery, discounts and fees, which are variable per order.",
+  "This comes from a calculation error, such as adding an extra cost; the stated numbers give a small positive margin.",
+  "₹45 is just the gross margin minus delivery, forgetting discounts and packaging and payment fees."
+ ],
+ "interview_tip": "Unit-economics questions are common for marketplace and commerce PM roles. Laying out revenue, then each variable cost, and naming the biggest lever (AOV, delivery cost) signals business fluency."},
+{"topic": "Strategy", "concept": "Multi-homing erodes network-effect moats", "difficulty": "hard",
+ "question": "A ride-hailing company assumes its network effect is a strong moat. But most drivers run two apps at once, and riders compare prices across apps before booking. What does this mean for strategy?",
+ "options": [
+  "Multi-homing on both sides weakens the moat, so advantage must come from cost, reliability, or exclusive value that makes users prefer one app",
+  "The network effect is still strong, because the company has the largest number of drivers",
+  "The company should use legal contracts to ban drivers from working on rival apps",
+  "Multi-homing only affects riders, so driver-side network effects remain a durable moat"
+ ],
+ "answer": 0,
+ "explanation": "Network effects create a moat only when users find it costly to use several platforms. When drivers and riders can easily multi-home, a rival can tap the same supply and demand, so scale advantages shrink. Durable advantage then comes from things like lower cost per trip, better ETAs, loyalty programs or services competitors can't easily copy.",
+ "rationales": [
+  "Correct. Easy multi-homing on both sides limits how much scale alone protects the business.",
+  "Having the most drivers matters less when those same drivers also serve competitors.",
+  "Exclusivity bans are hard to enforce, often legally risky, and drivers may simply leave.",
+  "The question states that drivers run two apps at once, so the driver side is multi-homing too."
+ ],
+ "interview_tip": "When asked about moats, test your claimed network effect against multi-homing and switching costs. Doing so signals you think like a strategist, not just a marketer."},
+{"topic": "Execution", "concept": "WIP limits to improve flow", "difficulty": "easy",
+ "question": "Your team has 14 items 'in progress' at once, and very little is finished each week. What is the most direct fix?",
+ "options": [
+  "Set a work-in-progress limit so new work starts only when something finishes",
+  "Add more items to the board so engineers always have something to pick up",
+  "Ask engineers to report progress percentages daily on every item",
+  "Lengthen sprints so there is more time to finish all 14 items"
+ ],
+ "answer": 0,
+ "explanation": "Too much work in parallel causes context-switching and waiting, which slows everything. A WIP limit forces the team to finish work before starting more, which shortens cycle time and makes delivery more predictable. It's a core idea from Kanban and lean flow.",
+ "rationales": [
+  "Correct. Limiting work in progress reduces multitasking and gets items finished faster.",
+  "Adding more work makes the problem worse by spreading attention thinner.",
+  "Status reporting adds overhead without changing how much is being juggled.",
+  "Longer sprints hide the problem; the team would still juggle too many items at once."
+ ],
+ "interview_tip": "Execution questions often test flow vs busyness. Saying 'stop starting, start finishing' and referencing cycle time signals delivery maturity."},
+{"topic": "Execution", "concept": "Setting success criteria before launch", "difficulty": "medium",
+ "question": "Your team is about to launch a 'save for later' feature. A week after launch, everyone will look at the data. What should you do before launch?",
+ "options": [
+  "Write down the target metric, expected change, guardrails and what you'd do at each outcome",
+  "Wait to see the data first, then decide which metrics best show the feature's value",
+  "Agree that the feature succeeds if any engagement metric improves",
+  "Rely on qualitative feedback from launch-day users to decide whether it worked"
+ ],
+ "answer": 0,
+ "explanation": "Defining success criteria and decision rules before launch prevents post-hoc rationalisation, where teams pick whichever metric looks good. It forces a clear hypothesis, aligns stakeholders in advance and makes the next decision (iterate, scale, or kill) much faster.",
+ "rationales": [
+  "Correct. Pre-committing to metrics and decisions makes the result honest and actionable.",
+  "Choosing metrics after seeing data invites cherry-picking and confirmation bias.",
+  "With many metrics, at least one will improve by chance, so this bar is meaningless.",
+  "Early anecdotal feedback is useful but biased and too thin to judge success."
+ ],
+ "interview_tip": "Interviewers like hearing that you set the bar before launch. It signals intellectual honesty and makes your 'how would you measure success?' answers more credible."},
+{"topic": "Execution", "concept": "Sunk cost in roadmap decisions", "difficulty": "medium",
+ "question": "Your team is 70% through a six-month project to build a desktop app. New research shows target users have moved to mobile and the desktop opportunity is now small. A director says, 'We've invested too much to stop now.' What should you recommend?",
+ "options": [
+  "Decide based only on the remaining cost vs expected future value, and pivot or stop if mobile is the better use of the remaining time",
+  "Finish the desktop app because 70% of the investment would otherwise be wasted",
+  "Finish the desktop app quickly with reduced quality so the team can then move to mobile",
+  "Pause both projects until next year's planning cycle to avoid making a rushed decision"
+ ],
+ "answer": 0,
+ "explanation": "Money and time already spent can't be recovered whatever you choose, so they shouldn't drive the decision. The right question is whether the remaining 30% of effort creates more value on desktop or elsewhere. Reusable work (backend, design system) can be salvaged, but the forward-looking comparison decides.",
+ "rationales": [
+  "Correct. It ignores sunk cost and compares the future value of the remaining effort.",
+  "This is the sunk-cost fallacy: past spend is gone either way and doesn't make desktop more valuable.",
+  "Shipping a low-quality app still spends the remaining effort on a shrinking opportunity and may harm the brand.",
+  "Waiting wastes months while the evidence already points to a clear decision."
+ ],
+ "interview_tip": "Stories about stopping a project are powerful in interviews. Showing you killed or pivoted work based on new evidence, while salvaging what you could, signals good judgement."},
+{"topic": "Behavioural", "concept": "Correcting your own error publicly", "difficulty": "hard",
+ "question": "The day after a leadership review, you discover the conversion figure in your deck was double-counted. Leadership used it to approve extra hiring for your team. What do you do?",
+ "options": [
+  "Tell leadership promptly, share the corrected number and its impact on the decision, and explain how you'll prevent this again",
+  "Quietly fix the number in the shared deck and mention it only if someone asks",
+  "Wait until the next quarterly review to present the corrected figure alongside new data",
+  "Ask the analyst who prepared the data to send the correction, since the error came from their query"
+ ],
+ "answer": 0,
+ "explanation": "Owning a mistake quickly and transparently builds trust, especially when a decision was based on it. A strong answer corrects the record, explains what it means for the decision, takes responsibility even if others contributed, and adds a process fix such as a review step. This maps to Amazon's 'Earn Trust' and 'Ownership' principles.",
+ "rationales": [
+  "Correct. It is prompt, honest and solution-focused, and it lets leaders revisit the decision with accurate data.",
+  "A silent fix leaves leaders believing the wrong number and damages trust badly if found out.",
+  "Delaying lets a decision based on wrong data run for months, making it harder and costlier to undo.",
+  "You presented the deck, so you own the correction; shifting it to the analyst looks like blame-avoidance."
+ ],
+ "interview_tip": "Interviewers probe whether you own mistakes or deflect. Describing a fast, transparent correction plus a prevention mechanism signals integrity and maturity."},
+{"topic": "Behavioural", "concept": "Creating clarity in an ambiguous charter", "difficulty": "hard",
+ "question": "You join a new team whose charter is just 'improve the seller experience'. There are no metrics, the backlog is a list of requests, and stakeholders each have different ideas. What's the strongest first 30-day approach?",
+ "options": [
+  "Talk to sellers and stakeholders, review data to find the biggest problems, then propose a focused goal and metric to align on",
+  "Start shipping the most-requested backlog items quickly to build credibility",
+  "Ask your manager to define clear goals and metrics before you take any action",
+  "Write a detailed two-year roadmap covering every stakeholder's ideas"
+ ],
+ "answer": 0,
+ "explanation": "In ambiguous situations, strong PMs create clarity: they gather evidence from users, data and stakeholders, identify the biggest problems, and propose a focused goal and success metric that others can rally around. This turns a vague charter into a direction without waiting for someone else to define it.",
+ "rationales": [
+  "Correct. It combines discovery and alignment, and ends with a clear goal the team can own.",
+  "Quick wins help, but shipping requests without a goal may spend months on low-impact work.",
+  "Managers expect PMs to bring clarity in ambiguous areas, not to wait for it.",
+  "A big roadmap of everyone's ideas avoids hard choices and isn't based on evidence."
+ ],
+ "interview_tip": "'Tell me about a time you dealt with ambiguity' is common at Google and Meta. Show how you turned vague goals into a measurable direction and got buy-in."},
+{"topic": "Behavioural", "concept": "Mediating designer-engineer conflict with shared user evidence", "difficulty": "hard",
+ "question": "Your designer wants a custom animation-heavy onboarding; your tech lead says it will add four weeks and hurt performance on low-end phones. Both are frustrated and the debate is going in circles. As PM, what's the best move?",
+ "options": [
+  "Re-anchor on the user goal and constraints, then test a lighter version with real users and agree on the decision criteria together",
+  "Side with engineering, because the timeline and performance concerns are concrete",
+  "Side with design, because onboarding quality shapes first impressions",
+  "Escalate to both of their managers to decide"
+ ],
+ "answer": 0,
+ "explanation": "PMs resolve cross-functional conflicts by moving the debate from opinions to shared goals and evidence. Restating the user outcome, the constraint (low-end devices), and the success metric gives both sides common criteria. A quick prototype test of a lighter version often settles the question and keeps both partners invested.",
+ "rationales": [
+  "Correct. It aligns both sides on goals and evidence instead of picking a winner.",
+  "Engineering's points are valid, but siding with them by default can alienate design and miss a better solution.",
+  "Design's point matters, but ignoring performance on low-end phones may hurt the very users onboarding is for.",
+  "Escalation is a last resort; a PM is expected to facilitate the decision first."
+ ],
+ "interview_tip": "Conflict stories are scored on how you resolve them, not who 'wins'. Show you built shared criteria and used data so both sides stayed committed."},
+{"topic": "AI Product", "concept": "Pairwise side-by-side evaluation", "difficulty": "easy",
+ "question": "You're comparing two versions of an AI writing assistant. When raters score each answer on a 1-10 scale, scores are noisy and inconsistent. What's a common, more reliable approach?",
+ "options": [
+  "Show raters both answers to the same prompt side by side and ask which is better",
+  "Ask raters to score each answer on a 1-100 scale for more precision",
+  "Let each rater use their own scoring rubric to capture different views",
+  "Measure only response length, since longer answers are usually more helpful"
+ ],
+ "answer": 0,
+ "explanation": "People are much better at relative judgements than absolute ones. Pairwise (side-by-side) comparisons reduce rater noise and calibration differences, and the results can be summarised as win rates. This is how many LLM evaluations and leaderboards compare models.",
+ "rationales": [
+  "Correct. Comparing two answers directly gives more consistent judgements than absolute scores.",
+  "A finer scale adds false precision; raters still disagree on what a '63' means.",
+  "Different rubrics make results even less comparable across raters.",
+  "Length is a poor proxy; raters and models are often biased towards longer, not better, answers."
+ ],
+ "interview_tip": "AI PM interviews often ask how you'd compare models. Mentioning side-by-side win rates, plus controls for position and length bias, signals evaluation fluency."},
+{"topic": "AI Product", "concept": "PII redaction before sending data to a third-party LLM", "difficulty": "medium",
+ "question": "Your bank's support team wants to use a third-party LLM API to summarise customer chats, which contain account numbers and phone numbers. What should you require before launch?",
+ "options": [
+  "Detect and mask personal and financial identifiers before sending text, and confirm the vendor's data-retention and training terms",
+  "Nothing extra, since the vendor uses HTTPS so the data is already secure",
+  "Ask agents to avoid typing personal details in future chats",
+  "Only send chats from customers who have high account balances"
+ ],
+ "answer": 0,
+ "explanation": "Sending sensitive data to an outside model creates privacy and compliance risk (for example under India's DPDP Act). Redacting personal and financial identifiers before the API call means the vendor never sees them, and checking contractual terms on retention and training use closes the remaining gap. Summaries rarely need the raw identifiers anyway.",
+ "rationales": [
+  "Correct. Data minimisation plus vendor terms addresses both technical and contractual risk.",
+  "HTTPS protects data in transit, but the vendor still receives and may store the sensitive data.",
+  "Customers share details themselves, and past chats already contain them; relying on behaviour isn't a control.",
+  "Filtering by balance is arbitrary and doesn't reduce privacy risk at all."
+ ],
+ "interview_tip": "AI PM interviews often include a privacy angle. Naming data minimisation, vendor terms and the relevant regulation signals that you can ship AI responsibly."},
+{"topic": "AI Product", "concept": "User control over AI assistant memory", "difficulty": "medium",
+ "question": "Your AI assistant will now remember facts across chats (e.g. 'user is vegetarian'). Users like the personalisation, but some are surprised by what it remembers. What's the most important product decision?",
+ "options": [
+  "Make memory visible and controllable: show what is remembered, and let users edit, delete or turn it off",
+  "Remember everything silently, since more context gives better answers",
+  "Disable memory entirely to avoid any privacy concerns",
+  "Only remember facts users mention more than three times"
+ ],
+ "answer": 0,
+ "explanation": "Memory makes assistants more useful but can feel creepy if users don't know what is stored. Transparency (seeing what's remembered) and control (edit, delete, pause) build trust and let users fix wrong memories. This balances personalisation with privacy and is how leading assistants have approached memory.",
+ "rationales": [
+  "Correct. Visible, user-controlled memory keeps the benefits while building trust.",
+  "Silent memory may improve answers but drives the 'creepy' surprise and erodes trust.",
+  "Turning memory off throws away a feature users value instead of fixing the trust issue.",
+  "A repetition rule is arbitrary and still leaves users unable to see or correct memories."
+ ],
+ "interview_tip": "Personalisation vs privacy is a frequent AI product debate. Strong answers propose transparency and control rather than an all-or-nothing choice."},
+{"topic": "AI Product", "concept": "Defensibility of thin LLM wrapper products", "difficulty": "medium",
+ "question": "A startup sells an AI tool that writes product descriptions by calling a frontier model with a clever prompt. Investors worry it has no moat. Which strategy most strengthens its defensibility?",
+ "options": [
+  "Embed deeply in sellers' workflows (catalog sync, bulk edits, performance feedback) and use their outcome data to improve results",
+  "Keep the prompt secret so competitors can't copy it",
+  "Switch to the newest model every time one is released",
+  "Lower prices below cost to win market share quickly"
+ ],
+ "answer": 0,
+ "explanation": "Prompts and model access are easy to copy, and model providers can add the same feature themselves. Defensibility comes from workflow integration (switching costs), proprietary data about what actually performs, and distribution. These make the product harder to replace than a prompt.",
+ "rationales": [
+  "Correct. Workflow integration and outcome data create switching costs and improving results that are hard to copy.",
+  "Prompts are easy to reverse-engineer or recreate, so secrecy is a weak moat.",
+  "Every competitor can adopt the newest model too, so it gives no lasting edge.",
+  "Below-cost pricing burns cash and doesn't create an advantage once prices rise."
+ ],
+ "interview_tip": "'What's the moat for an AI wrapper?' is a common question at AI companies. Answering with workflow, data and distribution rather than model or prompt shows strategic depth."},
+{"topic": "AI Product", "concept": "Faithfulness metric in RAG evaluation", "difficulty": "easy",
+ "question": "When evaluating a RAG (retrieval-augmented generation) assistant, what does a 'faithfulness' or 'groundedness' metric measure?",
+ "options": [
+  "Whether the answer's claims are supported by the retrieved documents",
+  "Whether the retrieved documents are the most relevant ones for the question",
+  "How quickly the assistant returns its answer",
+  "How often users return to use the assistant again"
+ ],
+ "answer": 0,
+ "explanation": "Faithfulness checks if the generated answer sticks to what the retrieved context says, rather than adding unsupported claims. It's measured separately from retrieval quality (did we fetch the right documents?). Splitting the two tells you whether to fix retrieval or generation.",
+ "rationales": [
+  "Correct. Faithfulness is about the answer being supported by the provided context.",
+  "That describes retrieval relevance (e.g. precision or recall of retrieved documents), a different metric.",
+  "That is latency, an operational metric unrelated to accuracy.",
+  "That is a retention metric, not a quality measure of individual answers."
+ ],
+ "interview_tip": "Knowing the separate RAG metrics (retrieval relevance, faithfulness, answer correctness) signals you can debug AI quality systematically."},
+{"topic": "Technology", "concept": "Relational vs document database fit", "difficulty": "easy",
+ "question": "You're building a payments ledger where every transaction must update account balances accurately and consistently. Which type of database is usually the better fit?",
+ "options": [
+  "A relational (SQL) database with transactions that guarantee consistency",
+  "A document (NoSQL) database chosen mainly for its flexible schema",
+  "A key-value cache, because it's the fastest",
+  "A search engine index, so transactions are easy to find"
+ ],
+ "answer": 0,
+ "explanation": "Payments need strong consistency: money must not be lost or double-counted. Relational databases offer ACID transactions that update several records together or not at all, which suits ledgers. Document databases shine for flexible, evolving data like catalogs or profiles.",
+ "rationales": [
+  "Correct. ACID transactions make relational databases a natural fit for financial records.",
+  "Flexible schemas help fast-changing data, but a ledger needs strict consistency more than flexibility.",
+  "Caches are fast but not designed as a durable source of truth for money.",
+  "Search indexes help with querying, not with reliably recording financial transactions."
+ ],
+ "interview_tip": "You don't need to design databases, but matching data needs (consistency vs flexibility) to storage choices signals strong technical fluency."},
+{"topic": "Technology", "concept": "Serial vs parallel service calls and latency", "difficulty": "easy",
+ "question": "To load a product page, your service calls three independent services one after another: pricing (120 ms), inventory (200 ms) and reviews (80 ms). If engineering makes these calls in parallel, roughly what will the combined wait become?",
+ "options": [
+  "About 200 ms, the time of the slowest call",
+  "About 400 ms, the sum of all three calls",
+  "About 133 ms, the average of the three calls",
+  "About 80 ms, the time of the fastest call"
+ ],
+ "answer": 0,
+ "explanation": "In sequence, latencies add up: 120 + 200 + 80 = 400 ms. In parallel, all calls run at once, so you wait only for the slowest (200 ms). This only works when calls don't depend on each other's results.",
+ "rationales": [
+  "Correct. Parallel calls finish when the slowest one does.",
+  "That's the current serial total, not the parallel time.",
+  "Averages don't apply; you must wait for every call to finish.",
+  "You can't render until all three return, so the slowest call sets the time."
+ ],
+ "interview_tip": "Latency questions test whether you understand the critical path. Mentioning that only independent calls can run in parallel shows real fluency."},
+{"topic": "Growth", "concept": "Growth accounting with new, resurrected and churned users", "difficulty": "medium",
+ "question": "A consumer app's MAU has stayed flat at 10 million for three months, while new users per month rose from 1.0 million to 1.5 million. Using growth accounting (MAU change = new + resurrected - churned), what must be true?",
+ "options": [
+  "Churned minus resurrected users grew by about 0.5 million a month, so more existing users are being lost",
+  "Retention has improved, because more new users are joining",
+  "The app is growing healthily because acquisition is up",
+  "Resurrected users must have grown faster than new users"
+ ],
+ "answer": 0,
+ "explanation": "With MAU flat, new + resurrected - churned = 0. If new users rose by 0.5M, then (churned - resurrected) must also have risen by 0.5M. So the app is losing more existing users or reactivating fewer, which acquisition is hiding. The next step is to analyse churn and resurrection by cohort.",
+ "rationales": [
+  "Correct. Higher acquisition with flat MAU means net losses of existing users increased by the same amount.",
+  "More new users says nothing positive about retention; flat MAU suggests retention got worse.",
+  "Higher acquisition with no MAU growth is a 'leaky bucket', not healthy growth.",
+  "If resurrected users had grown too, MAU would have risen; the maths points the other way."
+ ],
+ "interview_tip": "Growth accounting is a favourite of growth teams at Meta and others. Breaking MAU into new, resurrected and churned users signals a rigorous way of reading top-line numbers."},
+{"topic": "Current Events", "concept": "ChatGPT visual ad format test (Oct 2026)", "difficulty": "easy",
+ "question": "On 5 October 2026, OpenAI announced a new visual ad format for ChatGPT. According to OpenAI, where and for whom will it first be tested?",
+ "options": [
+  "During image generation, for users on the Free and Go plans, starting in the US",
+  "Inside every text answer, for Plus and Pro users worldwide",
+  "In the sidebar of ChatGPT Enterprise, for business users in the EU",
+  "Only in the Codex coding app, for developers in Southeast Asia"
+ ],
+ "answer": 0,
+ "explanation": "OpenAI said the visual ads will initially appear during image generation, clearly labelled and separate from the generated image, and be tested with Free and Go users in the US with an initial group of advertisers. It also said ads don't influence ChatGPT's answers. Starting with lower-priced tiers in one market is a typical staged monetisation launch.",
+ "rationales": [
+  "Correct. OpenAI's announcement places the test in image generation, for Free and Go users, in the US first.",
+  "OpenAI described a test limited to image generation and lower-priced plans, not all answers for paid users.",
+  "Enterprise and the EU weren't named; the test begins in the US with consumer plans.",
+  "Codex wasn't part of the announcement, and Southeast Asia was not named as the market for this format."
+ ],
+ "interview_tip": "Ads in AI assistants raise trust and incentive questions. A strong PM view covers where ads appear, which users see them, and how the product shows answers aren't influenced by advertisers.",
+ "source": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/"}
+]}
