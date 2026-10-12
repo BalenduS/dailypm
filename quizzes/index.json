@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-12",
+   "theme": "Shared devices, triggered tests and TikTok's Buy Direct",
+   "count": 30
+  },
+  {
    "date": "2026-10-11",
    "theme": "Marketplace balance, true incrementality, and ChatGPT's new visual ads",
    "count": 30

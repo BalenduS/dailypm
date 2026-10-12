@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-12",
+ "theme": "Shared devices, triggered tests and TikTok's Buy Direct",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Designing for shared-device households",
+   "difficulty": "hard",
+   "question": "You're PM for an Indian learning app. Interviews show many families share one smartphone: a parent, a teenager and a younger child all use the same account. Recommendations feel random and progress streaks break. What's the strongest product response?",
+   "options": [
+    "Add lightweight learner profiles with a quick switcher on launch, so each person gets their own progress and recommendations",
+    "Require every family member to sign up with a separate phone number and log in with an OTP each time",
+    "Improve the recommendation model with more training data so it learns the blended household's preferences",
+    "Show a banner telling families the app is designed for one person per device and works best that way"
+   ],
+   "answer": 0,
+   "explanation": "The root problem is that the app's unit of identity (one account per device) doesn't match the real unit of usage (several people per device). Lightweight profiles fix the mismatch with minimal friction — the pattern streaming services use for shared TVs. The other options either add heavy friction, treat a data-modelling problem as a model-quality problem, or ignore how the target users actually live.",
+   "rationales": [
+    "Correct. Profiles align identity with the real user, keep onboarding friction low and directly fix both broken streaks and mixed recommendations.",
+    "Separate OTP logins add friction on every switch and assume each person has a phone number they control, which young children often don't.",
+    "A better model can't separate three people's signals if every event is logged under one identity; the input itself is mixed.",
+    "Telling users to change their behaviour ignores a common, durable usage pattern in your market and pushes families to churn."
+   ],
+   "interview_tip": "Interviewers love when you question the product's assumptions about who the 'user' is. Spotting a mismatch between account and actual person, especially in emerging markets, signals real user empathy."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Aligning features with users' mental models",
+   "difficulty": "medium",
+   "question": "In a photo-backup app, many users delete photos from the app to 'free up phone space', not realising this also deletes the cloud copy. Support tickets about lost memories are rising. What's the best fix?",
+   "options": [
+    "Offer a clear 'Free up space on this phone' action that removes only device copies, separate from 'Delete everywhere'",
+    "Add a confirmation dialog to every delete action that says 'Are you sure you want to delete this photo?'",
+    "Publish a help-centre article explaining how cloud sync and device storage interact in detail",
+    "Remove the delete button from the app so users can only delete photos from the phone's gallery"
+   ],
+   "answer": 0,
+   "explanation": "Users are trying to do a legitimate job — free up space — and the product only gives them a destructive tool for it. Matching the interface to their mental model means providing an explicit action for the job they're trying to do. Generic confirmations and documentation don't change the misunderstanding.",
+   "rationales": [
+    "Correct. It gives users the action they actually want and makes the destructive action distinct, removing the root cause of the errors.",
+    "Generic 'are you sure?' dialogs get clicked through by habit, and they don't explain that the cloud copy is also deleted.",
+    "Few users read help articles before acting; documentation doesn't fix an interface that invites the wrong action.",
+    "Removing delete breaks a legitimate need and pushes users to a flow that may also delete the cloud copy, so the problem stays."
+   ],
+   "interview_tip": "In design questions, explain the user's goal behind a 'mistake'. Saying 'users aren't wrong, the model of the product is' shows you design from user intent, not from features."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Anticipating misuse of social features",
+   "difficulty": "hard",
+   "question": "You're PM at a matrimonial app. Leadership wants to add 'See who viewed your profile' to boost engagement. In a product review, what should you raise first?",
+   "options": [
+    "How the feature could enable stalking or pressure, and what controls are needed, such as opt-in visibility and private browsing",
+    "Whether the viewer list should be sorted by most recent view or by best compatibility score first",
+    "How many extra daily sessions the feature will drive, based on similar features in other social apps",
+    "Whether the feature should be free or reserved for premium members to support monetisation"
+   ],
+   "answer": 0,
+   "explanation": "Features that expose behaviour between strangers in a high-stakes context like matchmaking create safety risks, especially for women, who may face unwanted contact or family pressure. A strong PM surfaces abuse vectors and the controls needed before optimising engagement or monetisation. Those other questions matter, but only once the feature is safe to ship.",
+   "rationales": [
+    "Correct. Identifying misuse and designing controls first protects vulnerable users and the platform's trust, which is the core asset of a matrimonial app.",
+    "Sorting is a detail-level design choice; debating it before deciding whether and how the feature is safe skips the biggest risk.",
+    "Engagement upside is the reason leadership wants it, but leading with it ignores the harms that could outweigh the gains.",
+    "Monetisation is a valid later question, yet gating it doesn't address the safety risk; paid users could still misuse it."
+   ],
+   "interview_tip": "Interviewers at Meta and Google often probe 'what could go wrong?'. Proactively naming abuse cases and mitigations signals maturity and a trust-and-safety mindset."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Reducing creation effort for supply-side users",
+   "difficulty": "medium",
+   "question": "Small sellers in tier-3 towns use your WhatsApp commerce tool, but only 20% finish creating their product catalogue. Interviews show typing names, descriptions and prices in English is slow and stressful. What's the best solution to explore first?",
+   "options": [
+    "Let sellers snap a photo and speak in their own language, then auto-draft the listing for them to confirm",
+    "Run weekly webinars teaching sellers how to write good product descriptions in English",
+    "Make the catalogue form shorter by removing the description field for all sellers",
+    "Offer a cash bonus to sellers who complete a catalogue of at least 20 products"
+   ],
+   "answer": 0,
+   "explanation": "The barrier is the effort and language burden of typing. Photo-plus-voice input in the seller's own language, with AI drafting the listing, attacks that root cause while keeping the seller in control. Training, removing useful fields, or paying incentives don't remove the underlying friction.",
+   "rationales": [
+    "Correct. It removes the typing and language burden, matches how these sellers already use WhatsApp (photos, voice notes) and keeps them in control.",
+    "Webinars ask busy sellers to invest more effort to overcome friction the product created; attendance and impact are usually low.",
+    "Dropping descriptions lowers effort but also lowers listing quality and buyer trust, and doesn't help with names and prices.",
+    "Cash bonuses may lift completion briefly, but they pay for behaviour without fixing why it's hard, and costs rise with scale."
+   ],
+   "interview_tip": "For supply-side problems, interviewers look for solutions that fit the user's existing habits and context. Grounding ideas in observed behaviour (voice notes, photos) signals strong user insight."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Bot traffic inflating top-of-funnel metrics",
+   "difficulty": "hard",
+   "question": "Overnight, sign-ups for your B2B SaaS free trial jump 60%, but activation rate falls from 35% to 21%. Almost all new sign-ups use disposable email domains and arrive from a small range of IP addresses. What's the most likely explanation?",
+   "options": [
+    "Automated or fraudulent sign-ups are inflating the top of the funnel, while genuine sign-ups and activations are roughly unchanged",
+    "A recent onboarding change is confusing new users, causing a sharp drop in activation for everyone",
+    "A successful marketing campaign brought in lower-intent users who are less likely to activate",
+    "The activation event's tracking broke in the latest release, undercounting how many users activate"
+   ],
+   "answer": 0,
+   "explanation": "Disposable emails and clustered IPs are classic signs of bots or abuse. Fake accounts add to sign-ups but never activate, so the activation rate (a ratio) falls even if real behaviour hasn't changed. The right next step is to filter suspicious traffic and recompute both metrics on genuine users.",
+   "rationales": [
+    "Correct. The pattern points to non-human or fraudulent sign-ups diluting the denominator of the activation rate.",
+    "An onboarding problem would hurt activation without a 60% sign-up spike from disposable domains and narrow IP ranges.",
+    "A campaign could add low-intent users, but they'd come from varied IPs and real email domains, not a tight cluster.",
+    "A tracking bug would lower activation counts, but it wouldn't explain the surge in sign-ups with suspicious traits."
+   ],
+   "interview_tip": "In root-cause questions, interviewers reward you for checking data quality and traffic legitimacy before assuming user behaviour changed. Naming the specific evidence that points to bots is a strong signal."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Account-level metrics for team products",
+   "difficulty": "medium",
+   "question": "You're PM for a team-collaboration SaaS sold per workspace. Leadership tracks daily active users, but sales says renewals depend on whether whole teams rely on the product. Which primary metric best reflects that?",
+   "options": [
+    "Weekly active workspaces where at least three members collaborate on shared work",
+    "Total daily active users across all workspaces, regardless of how they use the product",
+    "Average session length per user, as a measure of how deeply people engage",
+    "Number of new workspaces created each week from self-serve sign-ups"
+   ],
+   "answer": 0,
+   "explanation": "In B2B team products, the customer who renews is the account, and value comes from people working together. A metric at the workspace level that requires collaboration captures whether the product is embedded in a team's workflow. Individual-level or acquisition metrics miss that.",
+   "rationales": [
+    "Correct. It measures value at the level that pays and renews, and requires the collaborative behaviour that predicts retention.",
+    "Total DAU can rise because of a few heavy accounts while many workspaces quietly drift away, hiding renewal risk.",
+    "Session length says little about team adoption; long sessions can even signal confusion rather than value.",
+    "New workspaces measure acquisition, not whether existing customers rely on the product enough to renew."
+   ],
+   "interview_tip": "For B2B metric questions, say who the customer is (the account) and pick a unit of analysis to match. Interviewers notice when candidates default to consumer metrics like DAU."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Net Promoter Score calculation",
+   "difficulty": "easy",
+   "question": "In a survey of 200 customers, 110 give a score of 9-10, 50 give 7-8, and 40 give 0-6. What is the Net Promoter Score?",
+   "options": [
+    "+35",
+    "+55",
+    "+70",
+    "+45"
+   ],
+   "answer": 0,
+   "explanation": "NPS = % promoters (9-10) minus % detractors (0-6). Promoters are 110/200 = 55%; detractors are 40/200 = 20%. 55 - 20 = +35. Passives (7-8) count in the total but not in the subtraction.",
+   "rationales": [
+    "Correct. 55% promoters minus 20% detractors gives +35.",
+    "+55 is just the share of promoters; it forgets to subtract the detractors.",
+    "+70 treats passives as promoters (160/200 = 80%) and then subtracts detractors, but passives are neutral.",
+    "+45 subtracts a detractor share of 10%, miscounting the 40 detractors out of 200 as half their true share."
+   ],
+   "interview_tip": "NPS comes up as a quick sanity check. Strong candidates get the formula right and also mention its limits — it's a lagging, coarse signal best paired with behavioural retention data."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Time spent as an ambiguous metric for utility products",
+   "difficulty": "medium",
+   "question": "After a redesign of a bill-payment app, average time in app per session rises from 90 to 140 seconds. The design team calls it an engagement win. What's the best interpretation?",
+   "options": [
+    "It's ambiguous; for a task-focused app, longer sessions may mean users struggle to finish payments, so check task completion time and success",
+    "It's a clear win, because more time in the app means users find the redesigned experience more engaging",
+    "It's a clear loss, because any increase in session time for a utility app always signals a worse experience",
+    "It's irrelevant, since only the number of monthly active users matters for a bill-payment app"
+   ],
+   "answer": 0,
+   "explanation": "Time spent is a good-is-up metric for entertainment but often good-is-down for utilities, where users want to finish a job quickly. Longer sessions could reflect confusion or, less likely, useful new features. The right move is to look at task-level metrics such as completion rate and time to complete a payment.",
+   "rationales": [
+    "Correct. It recognises the metric's direction depends on product type and proposes the task-level metrics that resolve the ambiguity.",
+    "Treating time spent as engagement fits feeds and video, but for bill payment, extra time often means extra friction.",
+    "It's directionally suspicious, but 'always worse' is too strong; you need task completion data before concluding.",
+    "MAU alone ignores whether the core task got harder, which could hurt retention and trust over time."
+   ],
+   "interview_tip": "Interviewers test whether you know which direction is 'good' for a metric in context. Saying 'this depends on the job the user is doing' and naming the deciding metric is a strong answer."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Triggered analysis to avoid dilution",
+   "difficulty": "hard",
+   "question": "You A/B test a change to the coupon-entry step of checkout, randomising all 2 million app users. Only about 5% of users ever reach that step during the test. The overall result is flat and non-significant. What's the best next step?",
+   "options": [
+    "Analyse only users who reached the coupon step in either group, since others couldn't be affected and dilute the effect",
+    "Conclude the change has no effect, because the test included a very large number of users",
+    "Re-run the test with 4 million users so the overall comparison has more statistical power",
+    "Compare users who used a coupon in treatment with all users in control to isolate the impact"
+   ],
+   "answer": 0,
+   "explanation": "When a change only affects users who reach a certain point (the trigger), including everyone else adds noise without signal and dilutes the measured effect. A triggered analysis compares users who reached the step in both groups, keeping randomisation intact because the trigger condition is the same in each arm.",
+   "rationales": [
+    "Correct. Restricting both arms to triggered users keeps the comparison fair and removes 95% of unaffected noise.",
+    "A large total sample doesn't help if 95% of users couldn't be affected; the effect is diluted, not absent.",
+    "Doubling users helps power a bit, but it's slower and wasteful compared with removing the unaffected users from analysis.",
+    "Comparing a filtered treatment group with an unfiltered control breaks randomisation and creates selection bias."
+   ],
+   "interview_tip": "Interviewers at large tech companies probe practical test design. Mentioning triggering, and why the trigger must apply equally to both arms, signals real experimentation experience."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Statistical power definition",
+   "difficulty": "easy",
+   "question": "Your data scientist says an A/B test is designed with '80% power to detect a 3% lift'. What does that mean?",
+   "options": [
+    "If the true lift is 3%, there's an 80% chance the test will detect it as statistically significant",
+    "There's an 80% chance that the treatment really produces at least a 3% lift in the metric",
+    "80% of users in the test will experience the 3% improvement the treatment is designed for",
+    "If the test shows a significant result, there's an 80% chance the lift is exactly 3%"
+   ],
+   "answer": 0,
+   "explanation": "Power is the probability of detecting an effect of a given size, if that effect is real. 80% power means a 20% chance of a false negative (Type II error) when the true lift is 3%. It says nothing about the probability that the treatment works.",
+   "rationales": [
+    "Correct. Power is the chance of correctly getting a significant result when an effect of that size truly exists.",
+    "This confuses power with the probability the hypothesis is true, which frequentist tests don't provide.",
+    "Power is about the test's ability to detect an effect, not about how many users experience a benefit.",
+    "A significant result doesn't tell you the effect is exactly the size the test was designed to detect."
+   ],
+   "interview_tip": "PM interviewers expect you to explain power and sample size in plain words. Linking power to the risk of missing real wins shows you can talk with data scientists credibly."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Daily refuelling volume estimate",
+   "difficulty": "easy",
+   "question": "A city has 2 million households. Assume 60% own a two-wheeler and each two-wheeler is refuelled once every 10 days. Roughly how many two-wheeler refuelling stops happen in the city per day?",
+   "options": [
+    "About 1.2 lakh (120,000)",
+    "About 12 lakh (1.2 million)",
+    "About 12,000",
+    "About 2 lakh (200,000)"
+   ],
+   "answer": 0,
+   "explanation": "Two-wheelers: 2,000,000 × 0.6 = 1,200,000 (assuming one per owning household). Each refuels every 10 days, so daily refuels = 1,200,000 ÷ 10 = 120,000. State assumptions such as one vehicle per household and an even spread across days.",
+   "rationales": [
+    "Correct. 1.2 million two-wheelers ÷ 10-day cycle = 120,000 refuels per day.",
+    "1.2 million is the number of two-wheelers; it forgets to divide by the 10-day refuelling cycle.",
+    "12,000 divides by 100 instead of 10, an order-of-magnitude slip.",
+    "2 lakh divides all 2 million households by 10, ignoring that only 60% own a two-wheeler."
+   ],
+   "interview_tip": "In estimation rounds, interviewers care about structure and sanity checks more than the number. Say each assumption aloud and check the order of magnitude before answering."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Seat-based ARR estimate",
+   "difficulty": "medium",
+   "question": "You're estimating annual recurring revenue for a new team-chat SaaS for Indian SMBs. Assume 40,000 reachable SMBs, 5% become customers in year one, each pays for 8 seats, and the price is ₹400 per seat per month. What's the year-one ARR?",
+   "options": [
+    "About ₹7.7 crore",
+    "About ₹77 lakh",
+    "About ₹6.4 crore",
+    "About ₹1.6 crore"
+   ],
+   "answer": 0,
+   "explanation": "Customers: 40,000 × 5% = 2,000. Seats: 2,000 × 8 = 16,000. Monthly revenue: 16,000 × ₹400 = ₹64 lakh. ARR: ₹64 lakh × 12 = ₹7.68 crore, about ₹7.7 crore. Note the assumption that all customers are paying for a full year at run rate.",
+   "rationales": [
+    "Correct. 2,000 customers × 8 seats × ₹400 × 12 months ≈ ₹7.7 crore.",
+    "₹77 lakh is off by a factor of 10, a common slip when converting lakh and crore.",
+    "₹6.4 crore multiplies monthly revenue by 10 instead of 12 months, or confuses ₹64 lakh per month with annual figures.",
+    "₹1.6 crore uses 2,000 customers but only 2 seats each, ignoring the 8-seat assumption."
+   ],
+   "interview_tip": "For revenue sizing, interviewers watch for a clean chain: market → customers → units → price → time. Being careful with lakh/crore conversions in Indian contexts shows rigour."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Penetration vs skimming pricing",
+   "difficulty": "medium",
+   "question": "A startup launches a consumer AI note-taker into a market where several well-funded rivals are about to launch similar products, and the value grows as users store more notes. Which launch pricing strategy fits best?",
+   "options": [
+    "Penetration pricing — a low price or generous free tier to build a user base and switching costs quickly",
+    "Skimming pricing — a high premium price for early adopters, lowering it later as competitors arrive",
+    "Cost-plus pricing — inference and hosting costs plus a fixed margin, adjusted every quarter",
+    "Prestige pricing — a deliberately high price to signal quality and attract enterprise buyers first"
+   ],
+   "answer": 0,
+   "explanation": "Penetration pricing suits markets with fast-arriving competition and value that compounds with usage (stored notes create switching costs). Skimming works best when you have a defensible lead and buyers who'll pay a premium for being first. Cost-plus ignores customer value and competition.",
+   "rationales": [
+    "Correct. Low initial prices speed adoption before rivals arrive, and accumulated notes then make users less likely to switch.",
+    "Skimming needs a durable lead; with similar rivals launching soon, a high price hands them the market.",
+    "Cost-plus anchors price on your costs rather than customer value or competition, which rarely wins a land-grab.",
+    "Prestige pricing may suit luxury or niche B2B, but a consumer note-taker in a crowded market needs adoption first."
+   ],
+   "interview_tip": "Pricing questions test whether you can tie price to market dynamics. Naming the conditions that favour each strategy, not just the strategy, shows strategic reasoning."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Adjacency expansion leveraging existing assets",
+   "difficulty": "medium",
+   "question": "Your WhatsApp commerce SaaS serves 50,000 small Indian sellers and sees their order and payment data. The board wants a second revenue line. Which expansion best leverages your existing advantages?",
+   "options": [
+    "Offer working-capital loans to existing sellers, underwritten using their sales history on your platform",
+    "Launch a consumer social-media app for shoppers to share product reviews with friends",
+    "Build a general accounting product for large enterprises in the manufacturing sector",
+    "Open physical retail stores in metro cities to sell your sellers' products directly"
+   ],
+   "answer": 0,
+   "explanation": "Strong adjacencies reuse your customers, data, distribution or capabilities. Seller lending uses the same customers and proprietary transaction data that lenders lack, giving a real underwriting edge. The other options need new customers, new capabilities, or both.",
+   "rationales": [
+    "Correct. It sells to the same customers and uses unique sales data to underwrite better than outsiders can.",
+    "A consumer social app needs a new audience and a very different growth engine; your seller relationships don't help much.",
+    "Large enterprises are a different customer, sales motion and product; little of your current advantage carries over.",
+    "Physical retail is capital-heavy and operationally unrelated to software, and it could compete with your own sellers."
+   ],
+   "interview_tip": "When asked 'what should we do next?', interviewers want you to anchor on the company's unfair advantages. Explaining which asset carries over is the signal."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Economies of scale as a moat",
+   "difficulty": "easy",
+   "question": "A large cloud provider can offer lower prices than smaller rivals because it buys hardware in huge volumes and spreads data-centre costs across millions of customers. What kind of advantage is this?",
+   "options": [
+    "Economies of scale — unit costs fall as volume grows",
+    "Direct network effects — each user adds value for other users",
+    "Switching costs — customers find it costly to move away",
+    "Brand loyalty — customers prefer it because of its reputation"
+   ],
+   "answer": 0,
+   "explanation": "Economies of scale mean average cost per unit falls as output grows, here through bulk purchasing and spreading fixed costs. This is distinct from network effects, where the product becomes more valuable to each user as more users join.",
+   "rationales": [
+    "Correct. Bulk buying and spreading fixed costs over more customers lowers unit cost, a classic scale economy.",
+    "Network effects are about value rising with users; one customer's compute doesn't make another's more useful.",
+    "Switching costs may exist in cloud, but the scenario describes a cost advantage, not lock-in.",
+    "Brand may matter, but the scenario explains lower prices through cost structure, not reputation."
+   ],
+   "interview_tip": "Interviewers often ask 'what's the moat?'. Distinguishing scale economies from network effects and switching costs precisely shows strategic vocabulary and clear thinking."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Clarifying a single decision owner (DACI)",
+   "difficulty": "medium",
+   "question": "A decision about which payment provider to use for a new market has been stuck for three weeks. Six people from product, finance, legal and engineering keep debating in meetings without resolution. What's the most effective step?",
+   "options": [
+    "Agree on one decision-maker, who's consulted and informed, and a decision date, then run a focused review",
+    "Schedule more frequent meetings so the six stakeholders can continue the discussion until they agree",
+    "Ask the engineering team to choose, since they will be the ones integrating the provider",
+    "Pick the provider yourself and announce it, so the team can move forward immediately"
+   ],
+   "answer": 0,
+   "explanation": "Decisions stall when nobody knows who decides and everyone feels they need to agree. A DACI-style setup (Driver, Approver, Contributors, Informed) names a single approver, clarifies who gives input and sets a deadline, turning endless debate into a structured decision.",
+   "rationales": [
+    "Correct. Clear decision rights and a deadline let input be heard while ensuring someone actually decides.",
+    "More meetings without clear ownership tend to repeat the same debate; consensus may never arrive.",
+    "Engineering's input matters, but finance and legal concerns are also material; giving one function the call ignores them.",
+    "Deciding unilaterally without authority can be reversed later and damages trust with the stakeholders you need."
+   ],
+   "interview_tip": "Execution interviews often include a 'stuck decision' prompt. Naming a decision framework and making decision rights explicit signals that you can create momentum without authority."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Kanban for interrupt-driven work",
+   "difficulty": "easy",
+   "question": "Your platform team's work is mostly unplanned: urgent requests from other teams, production fixes and small integrations arriving daily. Two-week sprint plans are always broken by day three. Which process change fits best?",
+   "options": [
+    "Move to Kanban with work-in-progress limits and a continuously prioritised queue",
+    "Switch to longer four-week sprints so there's more room for unplanned work",
+    "Keep two-week sprints but refuse all requests until the next sprint planning",
+    "Plan each quarter in detail upfront so all incoming work can be anticipated"
+   ],
+   "answer": 0,
+   "explanation": "Kanban suits teams with a continuous, unpredictable flow of work: items are pulled from a prioritised queue as capacity frees up, and WIP limits keep focus. Sprints work best when work can be planned in batches and protected for the sprint length.",
+   "rationales": [
+    "Correct. Kanban handles a steady stream of interruptions while still controlling focus through WIP limits.",
+    "Longer sprints make the mismatch worse: more planned work gets disrupted by more interruptions.",
+    "Refusing urgent production fixes for up to two weeks is unrealistic and harms partner teams and users.",
+    "Detailed quarterly plans can't anticipate unplanned interrupts, which is the core of this team's work."
+   ],
+   "interview_tip": "Interviewers check whether you choose process to fit the work, not out of habit. Saying why a method fits the team's demand pattern is a strong signal."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Bug triage by severity and reach",
+   "difficulty": "medium",
+   "question": "Before a release, you have capacity to fix two of four bugs: (A) a typo on a rarely visited settings page; (B) a crash affecting 0.5% of users when uploading a document; (C) a calculation error in invoices affecting 8% of business customers; (D) a slow animation on the home screen for all users. Which two should you fix?",
+   "options": [
+    "B and C — they cause data errors or crashes and affect meaningful numbers of users",
+    "C and D — they affect the most users, so they have the largest total impact",
+    "A and D — they're quick, visible improvements that make the product feel polished",
+    "B and D — crashes and performance issues should always be fixed before logic bugs"
+   ],
+   "answer": 0,
+   "explanation": "Bug triage weighs severity (how bad the harm is) and reach (how many users). Wrong invoice amounts damage trust and can have financial and legal consequences; crashes lose users' work. A slow animation affects everyone but causes little harm; a rare typo is trivial.",
+   "rationales": [
+    "Correct. These two cause the most serious harm — incorrect money and lost work — to a significant number of users.",
+    "D has the widest reach, but its severity is low; reach alone shouldn't outrank a crash that loses user work.",
+    "Quick polish fixes are tempting, but they leave severe financial and crash bugs in production.",
+    "A blanket rule ranking performance above correctness ignores severity; a slow animation is less harmful than wrong invoices."
+   ],
+   "interview_tip": "Triage questions test judgement under constraints. Naming your criteria (severity × reach, with extra weight for money, data loss and trust) before choosing shows structured thinking."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Building trust with a new team",
+   "difficulty": "hard",
+   "question": "You join as PM of a team whose last two PMs left within a year. Engineers are sceptical, saying PMs 'throw requirements over the wall'. In your first month, what approach best builds trust?",
+   "options": [
+    "Listen one-on-one to each engineer, involve them early in problem framing, and deliver on a few small commitments",
+    "Present a bold six-month roadmap in your first week to show the team you have a clear vision",
+    "Ask your manager to tell the team that your requirements must be followed to avoid more churn",
+    "Focus on stakeholders and customers first, and engage the engineers once the roadmap is settled"
+   ],
+   "answer": 0,
+   "explanation": "Trust comes from understanding people's concerns and then showing, through behaviour, that you'll work differently. Listening first, bringing engineers into problem discovery and following through on small promises directly counters the 'over the wall' pattern they experienced.",
+   "rationales": [
+    "Correct. It addresses the team's specific concern and builds credibility through consistent actions rather than claims.",
+    "A roadmap without the team's input repeats the 'requirements over the wall' pattern and deepens scepticism.",
+    "Leaning on authority may force compliance, but it signals distrust and makes collaboration worse.",
+    "Postponing engagement with engineers until plans are fixed is exactly the behaviour that eroded trust before."
+   ],
+   "interview_tip": "This mirrors Amazon's 'Earn Trust'. Strong answers describe concrete listening and follow-through actions and what changed as a result, not just good intentions."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Pushing back on a dark-pattern request",
+   "difficulty": "hard",
+   "question": "Your director asks you to make subscription cancellation harder by hiding it behind several screens and a phone call, to cut churn this quarter. What's the strongest response?",
+   "options": [
+    "Raise the user-trust and regulatory risks, then propose retention ideas like pause options or a save offer, backed by data",
+    "Implement it as asked, since the director owns the churn target and has the final decision",
+    "Refuse outright and escalate to the CEO that your director is asking for something unethical",
+    "Implement it quietly but make the cancellation path only slightly harder than it is now"
+   ],
+   "answer": 0,
+   "explanation": "Strong PMs push back on harmful requests with substance, not just objections: they name the risks (complaints, regulatory scrutiny of cancellation dark patterns, brand damage) and offer better alternatives that address the real goal. This respects the director's objective while protecting users and the company.",
+   "rationales": [
+    "Correct. It addresses the goal (reduce churn) with ethical alternatives and gives the director a clear reason to change course.",
+    "Blind compliance ignores your responsibility to users and to the company's long-term trust and legal exposure.",
+    "Jumping straight to the CEO bypasses a reasonable conversation and damages the relationship before you've tried to influence.",
+    "A watered-down dark pattern still harms users and avoids the honest conversation the situation needs."
+   ],
+   "interview_tip": "Interviewers use these prompts to test integrity and influence. The best answers show courage to disagree plus a constructive alternative that serves the business goal."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Escalating a cross-team deadlock constructively",
+   "difficulty": "hard",
+   "question": "Your team and a partner team disagree on who should build a shared component. After two meetings, you're deadlocked and the launch is at risk. How should you escalate?",
+   "options": [
+    "Jointly write a short summary of both options and trade-offs with the other PM, and take it to your shared manager together",
+    "Escalate to your own manager privately, explaining why the other team is being unreasonable",
+    "Avoid escalating to protect the relationship and have your team quietly build the component",
+    "Send a message to both teams' leadership stating that the launch will slip because of the partner team"
+   ],
+   "answer": 0,
+   "explanation": "Good escalation is a joint, neutral request for a decision, not a complaint. Presenting both options and their trade-offs together makes the decision easy for leadership and preserves the working relationship with the other team.",
+   "rationales": [
+    "Correct. A joint, balanced escalation gets a fast decision and keeps trust intact between teams.",
+    "A one-sided private escalation feels like going around a peer and usually damages the relationship.",
+    "Silently absorbing the work may be fine sometimes, but it hides a resourcing decision leadership should make and can burn out your team.",
+    "Blaming the other team publicly makes the conflict political and makes cooperation harder in future."
+   ],
+   "interview_tip": "Interviewers want to hear that you escalate early, together and with clear options. Saying 'escalation is a tool, not a failure' signals maturity."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Bias in explicit thumbs-up/down feedback",
+   "difficulty": "medium",
+   "question": "Your AI assistant shows thumbs-up/down buttons. Fewer than 1% of responses get rated, and most ratings are thumbs-down. The team wants to use this as the main quality metric. What's the main concern?",
+   "options": [
+    "Ratings come from a small, self-selected group skewed toward frustrated users, so they don't represent overall quality",
+    "Thumbs ratings are too detailed, making it hard to aggregate them into a single quality score",
+    "Users can only rate responses after a conversation ends, so ratings arrive too late to be useful",
+    "Thumbs feedback measures model latency rather than the helpfulness of the response"
+   ],
+   "answer": 0,
+   "explanation": "Explicit feedback is sparse and suffers from selection bias: people rate when they feel strongly, often when annoyed. It's useful for finding failure examples but not as a representative quality metric. Combine it with implicit signals (retries, copying, task completion) and sampled evals.",
+   "rationales": [
+    "Correct. Low response rates and self-selection make the ratings unrepresentative, though still valuable for finding failures.",
+    "Binary ratings are actually very coarse; the problem is who rates, not too much detail.",
+    "The scenario doesn't say ratings are delayed; the key issue is sample size and bias.",
+    "Ratings reflect users' satisfaction with the answer, which may include speed, but they don't measure latency."
+   ],
+   "interview_tip": "AI PM interviews often ask how you'd measure quality. Strong candidates combine explicit feedback, implicit behaviour and offline evals, and they name the biases in each."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Reranking retrieved chunks in RAG",
+   "difficulty": "medium",
+   "question": "Your RAG assistant retrieves the top 5 chunks by vector similarity. Logs show the right chunk is often in the top 50 but not the top 5, so answers miss it. What's the most targeted fix?",
+   "options": [
+    "Retrieve more candidates, such as the top 50, then use a reranker model to choose the best 5 for the prompt",
+    "Switch to a larger LLM, since a smarter model will compensate for missing context",
+    "Put all 50 chunks into the prompt every time so nothing relevant is left out",
+    "Fine-tune the LLM on your documents so it no longer needs retrieval at all"
+   ],
+   "answer": 0,
+   "explanation": "When recall is fine at a wider cut but precision at the top is poor, a two-stage pipeline helps: cheap vector search fetches many candidates, and a more accurate reranker (often a cross-encoder) reorders them so the best few reach the model. This targets the observed failure directly.",
+   "rationales": [
+    "Correct. Reranking fixes ordering of retrieved candidates, which is exactly where the pipeline is failing.",
+    "A bigger model can't use information that never reaches its prompt; this is a retrieval-ordering problem.",
+    "Stuffing 50 chunks raises cost and latency and can bury the right chunk among noise, hurting answer quality.",
+    "Fine-tuning doesn't reliably teach facts, can't keep up with document changes and loses citations to sources."
+   ],
+   "interview_tip": "Interviewers like hearing you locate the failure in the pipeline before choosing a fix. Explaining recall vs precision at different stages shows strong technical fluency."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Defining an AI agent vs a chatbot",
+   "difficulty": "easy",
+   "question": "Which description best captures what makes an AI 'agent' different from a basic chatbot?",
+   "options": [
+    "It can plan steps, call tools or APIs, observe results and keep acting toward a goal",
+    "It uses a much larger language model with more parameters than a typical chatbot",
+    "It answers questions in a friendly, human-like personality chosen by the product team",
+    "It is trained only on a company's private data rather than public internet data"
+   ],
+   "answer": 0,
+   "explanation": "An agent works in a loop: it decides what to do, takes actions through tools (APIs, browsers, code), observes the results and continues until the goal is reached. Model size, personality or training data don't define agency.",
+   "rationales": [
+    "Correct. Tool use plus a plan-act-observe loop toward a goal is what distinguishes agents.",
+    "Model size affects capability, but a large model that only replies to text is still a chatbot.",
+    "Personality is a design choice for any conversational product, not a defining agent feature.",
+    "Training data source doesn't make something an agent; many agents use general-purpose models."
+   ],
+   "interview_tip": "When AI PM interviewers ask about agents, a crisp definition followed by risks (compounding errors, irreversible actions) and how you'd evaluate them is a strong opener."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Measuring AI suggestions by retained acceptance",
+   "difficulty": "hard",
+   "question": "You launch AI-drafted replies in a customer-support tool. The team proposes 'acceptance rate' (agents click 'Use draft') as the success metric. What's the most important improvement to this metric?",
+   "options": [
+    "Measure how much of the accepted draft is kept when sent, alongside resolution and reopen rates",
+    "Count how many drafts are shown to agents per day, since more exposure means more value",
+    "Measure model latency, since agents accept drafts more often when they appear quickly",
+    "Track acceptance rate only for the most experienced agents, as they judge quality best"
+   ],
+   "answer": 0,
+   "explanation": "Clicking 'Use draft' can just mean an agent wanted a starting point and then rewrote most of it. Measuring how much of the draft survives editing, plus downstream outcomes like resolution and reopen rates, captures whether the AI actually saved time and helped customers.",
+   "rationales": [
+    "Correct. Retained content and downstream outcomes reveal whether drafts are truly useful, not just clicked.",
+    "Exposure counts measure volume, not value; showing more drafts can even add noise for agents.",
+    "Latency affects adoption, but it's a supporting metric and doesn't tell you whether drafts are good.",
+    "Restricting to experts biases the metric and hides how the feature works for the agents who might benefit most."
+   ],
+   "interview_tip": "AI PM loops probe whether you can see through proxy metrics. Proposing 'accepted and kept' and outcome metrics shows you measure real user value, not surface interaction."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Fallback when an LLM provider fails",
+   "difficulty": "medium",
+   "question": "Your AI shopping assistant depends on one third-party LLM API. During a recent two-hour provider outage, the assistant simply failed. What's the most sensible resilience plan?",
+   "options": [
+    "Add a fallback to a second model or provider, plus a graceful non-AI path like search, with eval checks on the fallback",
+    "Cache every past answer so the assistant can replay old responses for all future questions",
+    "Show an error message telling users to try again later until the provider recovers",
+    "Train your own frontier-scale model so you no longer depend on any third-party provider"
+   ],
+   "answer": 0,
+   "explanation": "Single-provider dependence is a reliability risk. A tested fallback model (evaluated so quality is acceptable) and a graceful degradation path keep the experience working. Caching only covers repeats, error messages don't solve the problem, and training a frontier model is unrealistic for most teams.",
+   "rationales": [
+    "Correct. Multi-provider fallback plus graceful degradation keeps the core job working, and evals ensure the fallback is good enough.",
+    "Caching helps for repeated queries, but most shopping questions are new, so it can't cover an outage.",
+    "An error message is the current failure; it doesn't help users or protect revenue during outages.",
+    "Building a frontier-scale model is extremely costly and slow, and it still needs its own resilience plan."
+   ],
+   "interview_tip": "Interviewers increasingly ask about AI reliability. Mentioning fallbacks, graceful degradation and testing the fallback's quality shows production-level thinking."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Role of a load balancer",
+   "difficulty": "easy",
+   "question": "Your web app runs on six identical servers. What is the main job of a load balancer placed in front of them?",
+   "options": [
+    "Spread incoming requests across healthy servers and stop sending traffic to any that fail",
+    "Store frequently used data in memory so database queries return faster",
+    "Encrypt the data stored on each server's disk to protect it from theft",
+    "Compress images and scripts before they're sent to users' browsers"
+   ],
+   "answer": 0,
+   "explanation": "A load balancer distributes traffic across multiple servers so no single one is overwhelmed, and it uses health checks to route around failing servers. That improves both capacity and availability.",
+   "rationales": [
+    "Correct. Distributing traffic and routing around unhealthy servers is the core purpose.",
+    "That describes a cache such as Redis, not a load balancer.",
+    "Disk encryption protects data at rest and is unrelated to distributing requests.",
+    "Compression is usually handled by web servers or CDNs; it's not the load balancer's main role."
+   ],
+   "interview_tip": "System-design questions for PMs test basic vocabulary. Explaining components in terms of user impact (uptime, speed) shows you can work credibly with engineers."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Separating OLTP and analytics workloads",
+   "difficulty": "medium",
+   "question": "Analysts run heavy reporting queries directly on your app's production database. During month-end reports, checkout slows down for customers. What's the standard fix?",
+   "options": [
+    "Copy data to a separate analytics warehouse or read replica and run reports there",
+    "Ask analysts to run their reports only at night to avoid busy periods",
+    "Add more columns to the production tables so reports need fewer joins",
+    "Delete older transaction data so the production database is smaller"
+   ],
+   "answer": 0,
+   "explanation": "Production (OLTP) databases are optimised for many small, fast transactions. Large analytical (OLAP) queries compete for the same resources. Moving analytics to a data warehouse or read replica isolates the workloads so customer-facing performance isn't affected.",
+   "rationales": [
+    "Correct. Separating workloads protects checkout performance and gives analysts a system suited to large queries.",
+    "Scheduling helps a little but is fragile; month-end needs and global customers make 'quiet hours' unreliable.",
+    "Changing production schema for reporting adds complexity and doesn't remove the resource contention.",
+    "Deleting history loses data analysts and finance need, and still leaves heavy queries on production."
+   ],
+   "interview_tip": "When you mention data infrastructure in interviews, tie it to user impact. Explaining why analytics and transactions should be separated shows practical technical judgement."
+  },
+  {
+   "topic": "Growth",
+   "concept": "LTV to CAC ratio",
+   "difficulty": "medium",
+   "question": "A D2C brand's customers generate ₹3,000 in gross-margin lifetime value, and it costs ₹2,500 to acquire each through paid ads. The growth team wants to double ad spend. What's the best assessment?",
+   "options": [
+    "The LTV:CAC ratio of 1.2 is thin; improve retention or lower CAC before scaling, since more spend usually raises CAC",
+    "The ratio is above 1, so every rupee spent is profitable and doubling spend is clearly right",
+    "The ratio is irrelevant; only top-line revenue growth matters for a D2C brand at this stage",
+    "The brand should stop all paid marketing immediately, since the ratio is below 1"
+   ],
+   "answer": 0,
+   "explanation": "LTV:CAC = 3,000 ÷ 2,500 = 1.2. A common rule of thumb is around 3:1 for healthy unit economics, leaving room for overheads and uncertainty in LTV estimates. Scaling paid spend usually raises marginal CAC, so a thin ratio could turn negative.",
+   "rationales": [
+    "Correct. 1.2 leaves little margin for overheads or rising marginal CAC; fix economics before scaling.",
+    "Above 1 isn't enough: it ignores fixed costs, LTV estimation risk and the fact that marginal CAC tends to rise with spend.",
+    "Growth without healthy unit economics burns cash; investors and boards scrutinise LTV:CAC closely.",
+    "The ratio is 1.2, which is above 1, so stopping all spend is an overreaction; the issue is scaling, not existence."
+   ],
+   "interview_tip": "Growth interviews often include unit-economics maths. Calculating quickly and noting that marginal CAC rises with spend signals business acumen."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "TikTok Buy Direct in-feed checkout (Oct 2026)",
+   "difficulty": "easy",
+   "question": "On 5 October 2026, TikTok announced an AI shopping assistant and a checkout feature called 'Buy Direct'. According to TechCrunch and The Next Web, what does Buy Direct let users do?",
+   "options": [
+    "Buy from a brand straight from the For You feed with one click, without leaving TikTok",
+    "Buy only from TikTok Shop sellers, after being redirected to each brand's own website",
+    "Pay for products using a new TikTok cryptocurrency wallet built with Stripe",
+    "Book a live video call with a brand's sales staff before completing a purchase"
+   ],
+   "answer": 0,
+   "explanation": "TikTok said users can buy directly from brands from the For You feed with one click and without leaving TikTok, and that the features were built with partners including Salesforce, Shopify, Shoplazza and Stripe. The Next Web noted the features work across the app, not only inside TikTok Shop. For PMs, it's an example of a platform reducing drop-off by keeping checkout in-app.",
+   "rationales": [
+    "Correct. Buy Direct is one-click, in-feed buying from brands while staying inside TikTok.",
+    "The point is to keep users in the app, and reports say it works beyond TikTok Shop, so redirecting off-platform is the opposite.",
+    "No cryptocurrency wallet was announced; Stripe was named as one of the commerce and payments partners.",
+    "Live video calls with sales staff weren't part of the announcement; the AI Shopping Assistant handles questions conversationally."
+   ],
+   "interview_tip": "Be ready to discuss why platforms pull checkout in-house: fewer redirect drop-offs, more data and ad attribution — but harder trade-offs for brands that lose the direct customer relationship.",
+   "source": "https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/"
+  }
+ ]
+}
