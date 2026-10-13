@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-13",
+ "theme": "Caregiver users, regression to the mean and GPT-6's Intelligent UI",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Designing for caregiver proxy users",
+   "difficulty": "hard",
+   "question": "You're PM for a grocery delivery app in India. A fast-growing segment is adult children living in other cities who order for their elderly parents. Parents struggle with the app, and orders often arrive when no one can receive them. What's the strongest product direction?",
+   "options": [
+    "Add a linked 'order for family' mode: the child manages payment and the basket, the parent confirms delivery slots by a simple call or WhatsApp reply",
+    "Redesign the whole app with larger fonts and fewer screens so elderly parents can order fully on their own without help",
+    "Run a campaign encouraging adult children to teach their parents the app during festival visits home",
+    "Let children enter the parent's address as a saved location and keep the rest of the ordering flow unchanged"
+   ],
+   "answer": 0,
+   "explanation": "The real job is split across two people: the child is the decision-maker and payer, the parent is the recipient who knows when they're home. A strong answer designs for both roles explicitly, giving each the minimum interaction they need in a channel they're comfortable with. Single-user fixes either over-burden the parent or ignore the delivery coordination problem.",
+   "rationales": [
+    "Correct. It models the actual two-person job — the child buys, the parent receives — and gives the parent a low-effort, familiar way to coordinate delivery.",
+    "Accessibility helps, but it assumes the parent wants to be the shopper; the evidence says the child is doing the buying, and slot coordination is still unsolved.",
+    "Education campaigns depend on behaviour change from people who've already chosen to delegate; it doesn't fix the product mismatch.",
+    "Saving an address is table stakes; orders would still arrive when the parent can't receive them because the parent has no say in the slot."
+   ],
+   "interview_tip": "Product sense interviews reward spotting that the buyer and the user are different people. Naming both roles and designing each one's minimal interaction signals strong user empathy."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Operational transparency to reduce waiting anxiety",
+   "difficulty": "medium",
+   "question": "Support tickets for a food-delivery app spike with 'where is my order?' even though average delivery times haven't changed. What's the most effective first product change?",
+   "options": [
+    "Show live stage-by-stage progress (accepted, cooking, picked up, nearby) with an updating ETA on the order screen",
+    "Promise a shorter delivery time at checkout so customers feel the service is faster than competitors",
+    "Add a chatbot to the help screen that answers 'where is my order?' questions automatically",
+    "Send a single push notification when the rider is two minutes away from the customer's address"
+   ],
+   "answer": 0,
+   "explanation": "The problem is uncertainty, not speed: people tolerate waits better when they can see work happening and know what's next. Visible progress with an honest, updating ETA removes the reason to contact support. Faster promises, deflection bots or a single late ping don't address the anxiety of the silent middle of the wait.",
+   "rationales": [
+    "Correct. Operational transparency addresses the root cause — not knowing what's happening — and should cut tickets without changing delivery speed.",
+    "Over-promising raises expectations you won't meet, which increases complaints when orders arrive 'late' against the new promise.",
+    "A bot deflects the ticket but the user still had to come asking; it treats the symptom rather than removing the need to ask.",
+    "One notification at the very end leaves the anxious part of the wait — the long gap after ordering — completely silent."
+   ],
+   "interview_tip": "When metrics say nothing changed but complaints rise, interviewers want you to look at perception. Separating actual from perceived performance is a strong product-sense signal."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Solving coordination in group decisions",
+   "difficulty": "medium",
+   "question": "You're designing a feature in a travel app to help a group of friends plan a trip together. Research shows plans stall because no one wants to impose and messages get lost in group chats. Which solution best addresses the core problem?",
+   "options": [
+    "A shared plan where the organiser proposes 2-3 options with a deadline, friends vote, and the app locks the winner automatically",
+    "A shared wishlist where every friend can add as many destinations and hotels as they like for the group to browse",
+    "Better in-app group chat with threads, reactions and photo sharing so conversations stay in one place",
+    "Personalised destination recommendations for each friend based on their individual past bookings"
+   ],
+   "answer": 0,
+   "explanation": "The failure is a coordination problem: too many open options, no forcing function, and social reluctance to decide. Narrowing to a few options, adding a deadline and making the decision mechanical (a vote) removes the social cost of choosing. More options, more chat or more individual recommendations all increase divergence rather than drive convergence.",
+   "rationales": [
+    "Correct. Constrained options, a deadline and an automatic outcome directly tackle indecision and the social cost of imposing.",
+    "An open wishlist widens the choice set, which makes convergence harder — the opposite of what a stalled group needs.",
+    "Moving the chat in-app keeps the same dynamic; the problem isn't where people talk but that nothing forces a decision.",
+    "Individual recommendations optimise for each person separately and can increase disagreement within the group."
+   ],
+   "interview_tip": "Interviewers like candidates who diagnose the type of problem (here, coordination) before proposing features. Explicitly naming the mechanism that drives convergence signals structured thinking."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Workarounds as evidence of unmet need",
+   "difficulty": "hard",
+   "question": "You're exploring opportunities for a B2B invoicing tool. Which research finding is the strongest signal that a pain point is worth building for?",
+   "options": [
+    "Many customers export invoices to spreadsheets weekly and maintain manual macros to reconcile payments the tool doesn't track",
+    "In a survey, 70% of customers rated 'better payment reconciliation' as 'important' or 'very important' to them",
+    "Two large prospects mentioned during sales calls that a competitor offers automated reconciliation",
+    "Users who visit the reports page spend twice as long there as on any other page in the product"
+   ],
+   "answer": 0,
+   "explanation": "Workarounds are revealed behaviour: customers are already paying a recurring cost in time and effort to solve the problem, which shows both frequency and severity. Stated importance in surveys is cheap to give, competitor mentions show parity pressure rather than pain, and time-on-page is ambiguous. Costly, repeated workarounds are among the best evidence of a real, monetisable need.",
+   "rationales": [
+    "Correct. Recurring, effortful workarounds show users are already 'paying' to solve this problem — strong evidence of real pain and willingness to switch.",
+    "Survey importance ratings are stated preferences; people rate most things important, so this doesn't distinguish real pain from nice-to-have.",
+    "Competitor mentions from prospects point to a sales objection, not necessarily a widespread pain for existing users.",
+    "Long time on the reports page could mean value or confusion; it doesn't identify an unmet need on its own."
+   ],
+   "interview_tip": "When asked how you'd validate a problem, strong candidates talk about observed behaviour and workarounds over stated preferences. It signals rigour in discovery."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "OS-level change as a hidden cause of metric drops",
+   "difficulty": "hard",
+   "question": "Re-engagement from push notifications dropped 25% this month, only on Android. There was no app release and no change to notification content or volume. What's the most likely cause to investigate first?",
+   "options": [
+    "An Android OS or device-maker update changed notification permissions or battery limits, so fewer notifications are actually delivered",
+    "Android users have grown tired of the notification content, so they are choosing to ignore it more often this month",
+    "A competitor launched a rival app this month that is drawing Android users' attention away from your notifications",
+    "The analytics dashboard is double-counting iOS opens, which makes Android look worse by comparison"
+   ],
+   "answer": 0,
+   "explanation": "When a drop is isolated to one platform and nothing in your own product changed, look at the platform itself. OS updates and OEM battery optimisations regularly change permission prompts and background delivery, cutting delivered notifications. You'd confirm by comparing sent vs delivered vs opened by OS version and device maker.",
+   "rationales": [
+    "Correct. A platform-only drop with no change on your side points to the platform; checking delivery rates by OS version and OEM would confirm it quickly.",
+    "Fatigue builds gradually and would affect iOS users receiving the same content too; it doesn't explain a sudden Android-only drop.",
+    "A competitor would pull users on both platforms, and wouldn't create a sharp drop concentrated on one OS.",
+    "Double-counting iOS wouldn't lower Android re-engagement in absolute terms; the Android number itself fell."
+   ],
+   "interview_tip": "In root-cause questions, interviewers watch whether you separate internal from external causes and use the shape of the drop (which segment, how sudden) to narrow hypotheses."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "North Star metric for a booking marketplace",
+   "difficulty": "medium",
+   "question": "Which North Star metric best fits a home-rental marketplace like Airbnb?",
+   "options": [
+    "Nights booked, because it captures value delivered to both guests and hosts and grows with the business",
+    "Number of active listings, because supply is what attracts guests to the marketplace in the first place",
+    "Monthly app downloads, because acquiring new guests is the first step in every booking journey",
+    "Average nightly price, because a higher price per night directly increases the platform's take"
+   ],
+   "answer": 0,
+   "explanation": "A good North Star reflects the core value exchange and leads revenue. Nights booked is only produced when a guest finds a place and a host earns money, so it captures both sides of the marketplace. Supply counts, downloads and price are inputs or partial views that can rise without more value being created.",
+   "rationales": [
+    "Correct. Nights booked measures the completed value exchange between guests and hosts and correlates with long-term revenue.",
+    "Listings are a supply-side input; you can add listings that never get booked without delivering value.",
+    "Downloads are a top-of-funnel vanity metric that says nothing about whether anyone actually stayed somewhere.",
+    "Price can rise while bookings fall; optimising it alone could shrink the marketplace."
+   ],
+   "interview_tip": "When defining a North Star for a marketplace, interviewers look for a metric that captures value to both sides. Mentioning supporting input metrics (listings, search-to-book conversion) is a bonus."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "L28 engagement distribution (power-user curve)",
+   "difficulty": "medium",
+   "question": "Your messaging app's DAU/MAU looks healthy, but leadership wants to understand how many users are deeply engaged. Which view best shows this?",
+   "options": [
+    "A histogram of users by number of days active in the last 28 days (an L28 curve)",
+    "Total messages sent per day across all users, trended over the past quarter",
+    "Average session length across all users who opened the app this month",
+    "The share of monthly users who signed up within the current calendar month"
+   ],
+   "answer": 0,
+   "explanation": "An L28 (or L7) distribution shows how many users were active on 1, 2, ... 28 of the last 28 days. A 'smile' with a large hump at the high end signals a core of power users, while a curve piled at 1-2 days signals shallow usage. Single averages and totals hide this distribution.",
+   "rationales": [
+    "Correct. The L28 curve reveals the shape of engagement — how many users are casual versus near-daily — which an average ratio hides.",
+    "Total message volume can be driven by a small group of heavy users and doesn't show how many users are engaged.",
+    "Average session length collapses everyone into one number and can be skewed by a few very long sessions.",
+    "The share of new signups describes growth composition, not depth of engagement."
+   ],
+   "interview_tip": "Mentioning engagement distributions (the 'power user curve') instead of only averages signals metric maturity in Meta-style analytical interviews."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Regression to the mean in targeted interventions",
+   "difficulty": "hard",
+   "question": "Your team sent a re-engagement campaign to the 10% of sellers with the worst ratings last month. This month, those sellers' average rating rose sharply. The team wants to roll out the campaign to all sellers. What's the main problem with this conclusion?",
+   "options": [
+    "Sellers picked for an extreme low score tend to drift back toward average anyway, so the gain may not be caused by the campaign",
+    "Ratings are a lagging indicator, so any effect of the campaign would only show up after several months, not one",
+    "The sample of sellers is too small to compute an average rating that is statistically meaningful at all",
+    "The campaign should have been sent to the best sellers first, since they are most likely to respond to it"
+   ],
+   "answer": 0,
+   "explanation": "Selecting a group because of an extreme measurement guarantees some improvement next period, because part of the extreme value was noise or bad luck. This is regression to the mean. To know whether the campaign worked, you need a randomised control group drawn from the same low-rated sellers who didn't receive it.",
+   "rationales": [
+    "Correct. Choosing units on an extreme value builds in a rebound; only a control group from the same pool can isolate the campaign's effect.",
+    "The improvement already appeared within a month, so the lagging-indicator point doesn't explain away the observed rise.",
+    "10% of all sellers is usually a large group; the issue is the selection method, not the sample size.",
+    "Targeting the best sellers changes the question entirely and wouldn't tell you whether the campaign helps struggling sellers."
+   ],
+   "interview_tip": "Spotting regression to the mean in a 'before vs after' story is a classic analytical-interview differentiator. Proposing a holdout from the same selected pool is what a strong answer sounds like."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Sequential testing for valid early stopping",
+   "difficulty": "medium",
+   "question": "Your leadership wants the option to stop an A/B test early if results are clearly good or clearly harmful, without inflating false positives. What's the right approach?",
+   "options": [
+    "Use a sequential testing method with pre-planned interim looks and adjusted significance thresholds",
+    "Check the dashboard daily and stop as soon as the p-value drops below 0.05 for the primary metric",
+    "Run the test for one day with all traffic, then decide based on the first day's results",
+    "Lower the significance level to 0.01 for the whole test and check results whenever you like"
+   ],
+   "answer": 0,
+   "explanation": "Repeatedly checking a fixed-horizon test and stopping at the first significant result inflates the false positive rate. Sequential methods (group sequential designs, always-valid p-values) are built for multiple looks: they plan the interim analyses and adjust thresholds so the overall error rate stays controlled.",
+   "rationales": [
+    "Correct. Sequential designs allow principled early stopping while keeping the overall false-positive rate at the planned level.",
+    "This is the peeking problem: stopping at the first significant daily check produces many more false positives than 5%.",
+    "One day ignores weekly cycles and novelty effects, and full exposure removes the safety of a controlled test.",
+    "A stricter threshold reduces but doesn't remove the inflation from unlimited looks, and it costs power without a plan."
+   ],
+   "interview_tip": "Interviewers like when you go beyond 'don't peek' and name the fix. Knowing sequential testing exists signals you can balance speed with statistical rigour."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Interpreting a p-value correctly",
+   "difficulty": "easy",
+   "question": "An A/B test on a checkout button reports p = 0.03 for conversion. Which interpretation is correct?",
+   "options": [
+    "If the button had no real effect, a difference at least this large would appear about 3% of the time by chance",
+    "There is a 97% probability that the new button truly increases conversion for all users",
+    "There is a 3% probability that the new button has no effect on conversion at all",
+    "The new button increases conversion by about 3% compared with the old button"
+   ],
+   "answer": 0,
+   "explanation": "A p-value is the probability of seeing data at least as extreme as what you observed, assuming the null hypothesis (no effect) is true. It is not the probability that the hypothesis is true or false, and it says nothing about the size of the effect.",
+   "rationales": [
+    "Correct. The p-value is calculated assuming no effect and tells you how surprising the observed result would be under that assumption.",
+    "A p-value isn't the probability the treatment works; that would need a Bayesian analysis with a prior.",
+    "This flips the conditional: it's not the probability the null is true, but the probability of the data given the null.",
+    "Effect size is a separate quantity; a tiny or large lift could both produce p = 0.03 depending on sample size."
+   ],
+   "interview_tip": "A crisp, correct definition of a p-value is a quick credibility check in analytical rounds. Pairing it with the effect size and confidence interval shows maturity."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Service-frequency market sizing (haircuts)",
+   "difficulty": "medium",
+   "question": "Estimate the number of haircuts in Mumbai per month. Assume about 20 million people, roughly half male. Men get a haircut about every 5 weeks; women about every 3 months. Which is closest?",
+   "options": [
+    "About 12 million haircuts per month",
+    "About 1.2 million haircuts per month",
+    "About 40 million haircuts per month",
+    "About 120 million haircuts per month"
+   ],
+   "answer": 0,
+   "explanation": "Men: 10M people x (30 days / 35 days) ≈ 8.6M haircuts a month. Women: 10M people / 3 months ≈ 3.3M a month. Total ≈ 12M. The method — population x share x frequency per period — is what matters; you'd then sanity-check against the number of salons and chairs.",
+   "rationales": [
+    "Correct. 8.6M (men) + 3.3M (women) ≈ 12M a month using the given frequencies.",
+    "This is 10x too low — it would imply each person gets a haircut only about once every 17 months.",
+    "This would mean every person gets about two haircuts a month, far above the stated frequencies.",
+    "This is 10x too high — six haircuts per person per month isn't plausible."
+   ],
+   "interview_tip": "Estimation interviewers care about clear segmentation and a frequency assumption you can defend. A quick sanity check at the end (does it match supply?) is a strong signal."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Supply-side headcount sizing (wedding photographers)",
+   "difficulty": "medium",
+   "question": "Estimate how many professional wedding photographers India needs. Assume about 10 million weddings a year, each needing one lead photographer, and a photographer can cover about 60 weddings a year given multi-day events and peak seasons. Which is closest?",
+   "options": [
+    "About 170,000 photographers",
+    "About 17,000 photographers",
+    "About 1.7 million photographers",
+    "About 600,000 photographers"
+   ],
+   "answer": 0,
+   "explanation": "Required supply = annual demand / capacity per provider. 10,000,000 weddings / 60 weddings per photographer ≈ 167,000, or about 170,000. In a real answer you'd also note seasonality: demand clusters in peak months, so the true number needed at peak is higher than the annual average implies.",
+   "rationales": [
+    "Correct. 10M / 60 ≈ 167k photographers on an annual-average basis.",
+    "This would require each photographer to cover about 600 weddings a year — more than one a day.",
+    "This implies each photographer covers about 6 weddings a year, far below the stated capacity.",
+    "This assumes each photographer covers about 17 weddings a year, not the 60 given."
+   ],
+   "interview_tip": "Demand divided by per-unit capacity is a common estimation pattern. Calling out peak seasonality as a correction signals you think about real-world constraints."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Blue Ocean ERRC grid",
+   "difficulty": "medium",
+   "question": "A new budget hotel chain removes features like restaurants and big lobbies, but invests heavily in very clean rooms, great beds and fast Wi-Fi. Which strategy framework best describes this move?",
+   "options": [
+    "Blue Ocean's eliminate-reduce-raise-create grid, reshaping the value curve instead of competing on every feature",
+    "Porter's cost leadership, aiming to be the cheapest hotel in every market by cutting all costs evenly",
+    "Ansoff's diversification, moving into a new market with an entirely new product line",
+    "Kano model delighters, adding surprise features that customers didn't ask for to stand out"
+   ],
+   "answer": 0,
+   "explanation": "The Blue Ocean ERRC grid asks which factors to eliminate, reduce, raise and create. Cutting things customers value little (restaurants, lobbies) and raising the few they care most about (sleep quality, Wi-Fi) creates a distinct value curve at a lower cost — the pattern famously used by budget hotel chains.",
+   "rationales": [
+    "Correct. The chain eliminated and reduced low-value factors while raising key ones, which is exactly the ERRC logic.",
+    "Pure cost leadership cuts evenly to be cheapest; here the chain deliberately spends more on certain factors.",
+    "This is still a hotel for travellers, so it isn't diversification into a new market with a new product.",
+    "Clean rooms and good beds are core needs, not surprise delighters, and the strategy is about trade-offs not add-ons."
+   ],
+   "interview_tip": "Strategy questions reward naming a framework only when it clarifies the trade-off. Explaining what was cut and why shows real strategic judgement."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Vertical integration trade-offs",
+   "difficulty": "medium",
+   "question": "A D2C coffee brand in India currently buys roasted beans from a supplier. The founders want to buy farms and run their own roastery. What is the strongest argument for this vertical integration?",
+   "options": [
+    "Quality and traceability are the brand's core promise, and owning roasting lets them control the attribute customers pay for",
+    "Owning farms will immediately reduce working capital needs because the brand will no longer pay suppliers",
+    "Vertical integration always lowers costs because the brand captures the supplier's profit margin",
+    "Running farms will let the brand focus fully on marketing, since supply problems will disappear"
+   ],
+   "answer": 0,
+   "explanation": "Vertical integration makes most sense when the step you bring in-house controls something core to your differentiation, or when suppliers can hold you hostage. It brings capital needs, new operational skills and less flexibility, so 'it's cheaper' isn't automatically true. Here, quality and traceability are what customers pay for, which justifies control.",
+   "rationales": [
+    "Correct. Integrating the step that determines your differentiating attribute is the classic strong case for vertical integration.",
+    "Owning farms usually increases capital needs: land, equipment, inventory and seasonal cash cycles.",
+    "Capturing a supplier's margin only helps if you can operate at their efficiency; often you can't at first.",
+    "Running farms adds a complex new operation; it creates more management work, not less."
+   ],
+   "interview_tip": "For build/own vs buy questions, interviewers listen for whether the integrated step is core to differentiation. Weighing control against capital and flexibility signals mature thinking."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Seat-based pricing erosion from AI automation",
+   "difficulty": "hard",
+   "question": "Your customer-support SaaS charges per agent seat. Your new AI agent resolves 40% of tickets automatically, so customers plan to cut agent headcount. What's the strongest pricing response?",
+   "options": [
+    "Shift part of pricing toward usage or outcomes, such as per resolved conversation, so revenue tracks the value the AI delivers",
+    "Keep per-seat pricing and raise the seat price to cover the revenue lost from customers cutting agents",
+    "Limit the AI agent to a small share of tickets so customers don't reduce the number of seats they buy",
+    "Give the AI agent away for free to drive adoption and rely on seat expansion from other features later"
+   ],
+   "answer": 0,
+   "explanation": "When your product reduces the number of humans doing the work, seat-based pricing punishes you for your own success. Aligning price with the value metric — work completed or outcomes — keeps revenue growing as automation grows. Many AI support vendors now price per resolution for this reason.",
+   "rationales": [
+    "Correct. Moving to a usage or outcome metric aligns price with value delivered as automation replaces seats.",
+    "Raising seat prices is a short-term patch that customers will notice and resent, and seats keep shrinking.",
+    "Throttling your own product to protect revenue invites competitors who deliver the full value.",
+    "Giving away the most valuable capability abandons the revenue and assumes seat growth that the AI itself undermines."
+   ],
+   "interview_tip": "AI-era pricing is a hot strategy topic. Strong answers identify the value metric and explain why it must move when AI substitutes for labour."
+  },
+  {
+   "topic": "Execution",
+   "concept": "INVEST criteria for user stories",
+   "difficulty": "easy",
+   "question": "Your team uses the INVEST checklist for user stories. What does the 'I' stand for?",
+   "options": [
+    "Independent — the story can be built and delivered without depending on other stories",
+    "Innovative — the story introduces a new capability rather than polishing an existing one",
+    "Impactful — the story is expected to move one of the team's key metrics",
+    "Itemised — the story lists every subtask and technical step needed to build it"
+   ],
+   "answer": 0,
+   "explanation": "INVEST stands for Independent, Negotiable, Valuable, Estimable, Small and Testable. Independent stories can be prioritised and shipped in any order, which keeps planning flexible and reduces blocking dependencies.",
+   "rationales": [
+    "Correct. Independent stories avoid tight coupling so they can be reordered and delivered separately.",
+    "Innovation isn't part of INVEST; many valuable stories are improvements to existing features.",
+    "Value is covered by the 'V'; the 'I' is about independence from other stories.",
+    "INVEST stories should be negotiable, not fully specified with every technical step upfront."
+   ],
+   "interview_tip": "Knowing INVEST is basic, but explaining why independence matters for prioritisation shows you understand how backlogs actually flow."
+  },
+  {
+   "topic": "Execution",
+   "concept": "ICE scoring",
+   "difficulty": "easy",
+   "question": "In the ICE prioritisation framework used by many growth teams, what do the three letters stand for?",
+   "options": [
+    "Impact, Confidence and Ease",
+    "Impact, Cost and Effort",
+    "Importance, Customers and Effort",
+    "Investment, Confidence and Engagement"
+   ],
+   "answer": 0,
+   "explanation": "ICE scores each idea on Impact (how much it could move the goal), Confidence (how sure you are) and Ease (how easy it is to do). It's a quick, lightweight way to rank many experiment ideas, though it's more subjective than RICE because it has no explicit reach factor.",
+   "rationales": [
+    "Correct. ICE = Impact x Confidence x Ease, a fast scoring method popular for growth experiments.",
+    "Cost and effort overlap and confidence is missing; this isn't the framework.",
+    "Importance and customers aren't the dimensions; ICE explicitly scores confidence and ease.",
+    "Investment and engagement aren't part of ICE; the 'I' is impact and the 'E' is ease."
+   ],
+   "interview_tip": "If asked how you prioritise, naming a framework is fine, but strong candidates also explain its weakness — ICE is subjective, so they calibrate scores across the team."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Engaging legal and privacy review early",
+   "difficulty": "medium",
+   "question": "You're planning a feature that uses customers' purchase history to personalise WhatsApp marketing messages. Launch is 8 weeks away. When should you involve legal and privacy reviewers?",
+   "options": [
+    "Now, at the PRD stage, so consent, data use and retention requirements shape the design before it's built",
+    "After engineering finishes the feature, so reviewers can test the real product rather than a document",
+    "Only if a customer complains after launch, since involving legal earlier tends to slow the team down",
+    "One week before launch, so their feedback is based on the final design and doesn't change mid-build"
+   ],
+   "answer": 0,
+   "explanation": "Privacy and consent requirements (for example, opt-in for marketing messages and data-protection rules like India's DPDP Act) can change the data model, flows and UX. Finding them late forces rework or delays. Bringing reviewers in at the spec stage turns them into design partners rather than a last-minute gate.",
+   "rationales": [
+    "Correct. Early review lets requirements shape the design, avoiding costly rework and launch delays.",
+    "Reviewing only after build risks discovering a requirement that forces you to redo the data model or consent flow.",
+    "Waiting for complaints exposes the company to regulatory and trust risk that's far costlier than early review.",
+    "One week out leaves no time to act on significant findings, so you either slip or ship with known risk."
+   ],
+   "interview_tip": "Execution interviews reward PMs who de-risk launches by surfacing cross-functional dependencies early. Mentioning specific regulation shows domain awareness."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Changing your mind when evidence contradicts you",
+   "difficulty": "hard",
+   "question": "An interviewer asks: 'Tell me about a time you were strongly convinced about a product decision and turned out to be wrong.' Which answer structure is strongest?",
+   "options": [
+    "Describe the conviction and why you held it, the evidence that changed your mind, how you changed course quickly, and what you now do differently",
+    "Describe a decision where a stakeholder overruled you, and explain why you still believe your original view was correct",
+    "Pick a minor decision where the stakes were low, so the mistake doesn't reflect poorly on your judgement",
+    "Explain that you rarely get decisions wrong because you always gather all the data before committing"
+   ],
+   "answer": 0,
+   "explanation": "This question tests intellectual honesty and learning (Amazon's 'Are Right, A Lot' and 'Learn and Be Curious'). A strong answer shows you held a real conviction for good reasons, noticed disconfirming evidence, acted on it quickly, and changed your process. Deflecting or avoiding real stakes signals low self-awareness.",
+   "rationales": [
+    "Correct. It shows genuine conviction, openness to evidence, speed in correcting course and a durable lesson.",
+    "This avoids the question: it's a story about being overruled, not about being wrong and learning from it.",
+    "Choosing a trivial example signals you're managing perception rather than reflecting honestly.",
+    "Claiming you're rarely wrong comes across as lacking self-awareness, which is exactly what the question probes."
+   ],
+   "interview_tip": "Interviewers are checking self-awareness and how fast you update. A specific moment when evidence changed your mind is far more convincing than a polished story with no real mistake."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Framing a bold vision with a staged path",
+   "difficulty": "hard",
+   "question": "You believe your payments team should build an end-to-end checkout for small WhatsApp sellers — a big bet. Leadership is sceptical because previous big bets slipped. What's the most effective way to pitch it?",
+   "options": [
+    "Share the long-term vision with the customer problem, then propose a small first milestone with clear success metrics that earns the next stage",
+    "Ask for the full team and budget upfront, since a half-funded bet is more likely to fail than a fully funded one",
+    "Build a prototype quietly with a few engineers, then show leadership once it's too far along to stop",
+    "Scale the idea back to a small feature request so it fits within the current roadmap without debate"
+   ],
+   "answer": 0,
+   "explanation": "Amazon's 'Think Big' principle pairs ambition with credibility. A strong pitch makes the vision and customer problem vivid, then de-risks it with a staged plan: a first milestone, measurable success criteria and explicit decision points. This addresses leadership's real concern — open-ended bets that slip — without shrinking the ambition.",
+   "rationales": [
+    "Correct. It keeps the big vision while directly addressing past slippage with staged commitments and clear metrics.",
+    "Asking for everything upfront ignores leadership's stated concern and makes a 'no' more likely.",
+    "Working around leadership damages trust and misallocates resources without alignment.",
+    "Shrinking the idea to avoid debate gives up the strategic opportunity you believe in."
+   ],
+   "interview_tip": "In 'Think Big' questions, interviewers look for vision plus a credible path. Showing how you reduce risk for decision-makers signals you can get big bets funded."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Supporting team sustainability after a crunch",
+   "difficulty": "hard",
+   "question": "Your team just shipped a major launch after six weeks of late nights. Two engineers seem exhausted and one hinted they're thinking of leaving. Leadership wants the next big feature started immediately. What's the best move as PM?",
+   "options": [
+    "Talk to the engineers, work with the engineering manager to protect a short recovery period, and use a retro to fix the planning that caused the crunch",
+    "Start the next feature immediately to keep momentum, then plan time off once that feature has shipped",
+    "Tell the engineers the crunch was a one-time event and promise it won't happen again without changing anything",
+    "Leave it to the engineering manager entirely, since team wellbeing is outside a PM's responsibilities"
+   ],
+   "answer": 0,
+   "explanation": "Sustainable delivery is part of a PM's job: a burnt-out team ships slower and loses people. A strong response listens first, partners with the EM to create real recovery time, makes the trade-off visible to leadership, and addresses the root cause through a retro so the next plan is realistic.",
+   "rationales": [
+    "Correct. It addresses the people immediately, partners with the EM, and fixes the planning failure that created the crunch.",
+    "Pushing straight into the next feature risks losing team members and repeating the same crunch.",
+    "Promises without changes to how work is planned aren't credible and erode trust.",
+    "PMs share responsibility for how plans affect the team; fully deferring to the EM avoids ownership."
+   ],
+   "interview_tip": "Behavioural questions on team health test whether you see people as part of delivery. Mentioning both immediate care and root-cause fixes signals mature leadership."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Lost-in-the-middle effect in long contexts",
+   "difficulty": "medium",
+   "question": "Your contract-review assistant stuffs a full 200-page contract into a long-context model. Users report it misses clauses buried in the middle of documents, while clauses near the start and end are handled well. What's the most likely explanation and fix?",
+   "options": [
+    "Models often attend less reliably to information in the middle of long inputs; retrieve and pass only the relevant sections",
+    "The model's context window is too small, so the middle pages are silently truncated before the model reads them",
+    "The temperature setting is too high, which makes the model randomly skip some clauses in the input",
+    "The middle sections of contracts are usually less important, so users are reporting edge cases that don't matter"
+   ],
+   "answer": 0,
+   "explanation": "Research and practice show that many models use information at the start and end of long contexts more reliably than information in the middle — the 'lost in the middle' effect. Passing a shorter, focused context via retrieval, or splitting the task by section, usually improves recall and cuts cost.",
+   "rationales": [
+    "Correct. A positional recall weakness explains the pattern, and narrowing the context to relevant sections addresses it.",
+    "If the contract were truncated, the end of the document would be lost too, not just the middle.",
+    "Temperature affects randomness in generation, not systematic misses at a particular position in the input.",
+    "Clauses in the middle can be critical; dismissing user reports ignores a real product failure."
+   ],
+   "interview_tip": "AI PM interviews increasingly probe whether 'just use a bigger context window' is a real solution. Knowing its limits signals hands-on experience."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Least-privilege tool access for AI agents",
+   "difficulty": "medium",
+   "question": "You're launching an AI agent that helps Shopify merchants answer customer emails. It needs to look up order status. How should you scope its access to the store?",
+   "options": [
+    "Give it read-only access to orders and nothing more, adding narrower write actions later only with confirmation steps",
+    "Give it full admin access so it can handle any request a customer might make without hitting a permission error",
+    "Give it the same permissions as the merchant's most senior staff member, since it acts on the merchant's behalf",
+    "Give it write access to orders but not products, since order changes are the most common customer request"
+   ],
+   "answer": 0,
+   "explanation": "Least privilege limits the damage from model errors and prompt injection: an agent can only do what its permissions allow. Starting read-only for a lookup use case keeps the blast radius small; any write actions should be narrowly scoped and gated behind confirmation.",
+   "rationales": [
+    "Correct. Minimal, read-only access fits the use case and limits harm from mistakes or malicious instructions in emails.",
+    "Full admin access means a single prompt-injection email could trigger refunds, deletions or data exposure.",
+    "Senior-staff permissions are far broader than order lookup needs and carry the same blast-radius risk.",
+    "Write access to orders isn't needed to look up status and allows unintended changes like cancellations."
+   ],
+   "interview_tip": "Security-minded thinking about agents is a strong differentiator. Interviewers want to hear 'blast radius' and how permissions grow with trust and safeguards."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Model Context Protocol (MCP)",
+   "difficulty": "easy",
+   "question": "What is the main purpose of the Model Context Protocol (MCP) in AI products?",
+   "options": [
+    "A standard way to connect AI applications to external tools and data sources through a common interface",
+    "A compression format that shrinks prompts so more text fits into a model's context window",
+    "A training technique that teaches models to remember previous conversations across sessions",
+    "A benchmark that measures how well models use the context provided in a prompt"
+   ],
+   "answer": 0,
+   "explanation": "MCP is an open protocol that standardises how AI applications connect to tools and data (files, databases, SaaS apps). Instead of building a custom integration for each model-and-tool pair, a tool exposes an MCP server once and any compatible AI client can use it.",
+   "rationales": [
+    "Correct. MCP is an integration standard connecting AI apps to tools and data through a shared protocol.",
+    "MCP doesn't compress prompts; it defines how clients and tool servers communicate.",
+    "MCP isn't a training method; it works at run time between applications and tools.",
+    "MCP isn't a benchmark; it's an interoperability protocol."
+   ],
+   "interview_tip": "Knowing the integration layer of the AI stack helps in AI PM interviews about agents and platforms. Linking MCP to ecosystem and distribution strategy is a strong add."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Batch inference for offline workloads",
+   "difficulty": "easy",
+   "question": "Your team runs an LLM nightly to tag 2 million product listings. Results are needed by the next morning. What's the simplest way to significantly cut inference cost?",
+   "options": [
+    "Use the provider's batch API, which processes requests asynchronously at a discounted price",
+    "Switch to streaming responses so tokens are returned as soon as the model generates them",
+    "Increase the model's temperature so it generates shorter, more varied tags for each listing",
+    "Send all 2 million listings in a single prompt so the model processes them together at once"
+   ],
+   "answer": 0,
+   "explanation": "Many LLM providers offer batch APIs that trade latency (results within hours) for a significant discount. For overnight jobs with no user waiting, this is close to free savings. Streaming helps perceived latency, not cost, and a single giant prompt won't fit in the context window.",
+   "rationales": [
+    "Correct. Batch processing fits a non-urgent workload and providers typically discount it substantially.",
+    "Streaming improves perceived speed for interactive users; it doesn't reduce the number of tokens billed.",
+    "Temperature controls randomness, not length or price, and could make tagging less consistent.",
+    "Two million listings far exceed any context window, and one huge prompt would hurt quality."
+   ],
+   "interview_tip": "Cost questions in AI PM interviews reward matching the serving mode to the latency need. Mentioning batch, caching and model routing together shows breadth."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Sycophancy in LLM assistants",
+   "difficulty": "medium",
+   "question": "Your AI writing coach gets great thumbs-up ratings, but expert reviewers find it praises weak drafts and agrees with users who push back on correct feedback. What's the most useful next step?",
+   "options": [
+    "Add evals that test whether the assistant holds correct positions under user pushback, and adjust training or prompts to reward honest feedback",
+    "Keep the current behaviour, since high thumbs-up ratings show users are getting the value they want",
+    "Ask users to rate responses on a 10-point scale instead of thumbs, to get more precise feedback",
+    "Lower the model's temperature so it gives more consistent answers when users push back"
+   ],
+   "answer": 0,
+   "explanation": "Sycophancy — telling users what they want to hear — is common in models tuned on user approval. It inflates satisfaction while reducing real usefulness. Targeted evals (for example, pushback tests and expert-graded feedback quality) make it visible, and training or prompting changes can reward honest critique.",
+   "rationales": [
+    "Correct. You measure the specific failure and change what the model is rewarded for, rather than trusting approval signals.",
+    "Thumbs-up ratings are exactly the signal that can reward sycophancy; it optimises for feeling good, not improving.",
+    "A finer rating scale still measures approval, so it would encode the same bias.",
+    "Temperature affects randomness, not whether the model caves to pressure; it would consistently cave."
+   ],
+   "interview_tip": "Interviewers like candidates who know that user-approval metrics can mislead for AI products. Proposing a targeted eval for a known failure mode signals AI product maturity."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Latency vs throughput",
+   "difficulty": "easy",
+   "question": "An engineer says: 'Our API handles 5,000 requests per second, but each request takes 800 ms.' What do these two numbers describe?",
+   "options": [
+    "Throughput (requests handled per second) and latency (time for one request to complete)",
+    "Bandwidth (data per second) and uptime (share of time the API is available)",
+    "Latency (requests per second) and throughput (time for one request to complete)",
+    "Concurrency (users online) and error rate (share of requests that fail)"
+   ],
+   "answer": 0,
+   "explanation": "Throughput is how much work a system completes per unit of time; latency is how long one unit of work takes. They are related but distinct: a system can have high throughput and still feel slow to each user if latency is high.",
+   "rationales": [
+    "Correct. Requests per second is throughput; time per request is latency.",
+    "Bandwidth is data volume per second and uptime is availability; neither matches these numbers.",
+    "This swaps the definitions: requests per second is throughput, and time per request is latency.",
+    "These numbers don't describe concurrent users or failure rates."
+   ],
+   "interview_tip": "Technical-fluency rounds check whether you use basic terms precisely. Explaining which one users feel (latency) and which drives cost (throughput) is a strong signal."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Hashing vs encrypting passwords",
+   "difficulty": "easy",
+   "question": "How should a well-built app store user passwords?",
+   "options": [
+    "As salted hashes using a slow hashing algorithm, so the original password can't be recovered",
+    "Encrypted with a strong key, so support staff can decrypt and tell users their password if they forget it",
+    "In plain text inside a database that only admins have permission to access",
+    "Encoded in Base64 so the password isn't readable to someone glancing at the database"
+   ],
+   "answer": 0,
+   "explanation": "Passwords should be hashed with a slow, salted algorithm (such as bcrypt or Argon2). Hashing is one-way: the app checks a login by hashing the input and comparing. If the database leaks, attackers can't simply reverse the hashes, and salts stop identical passwords from looking the same.",
+   "rationales": [
+    "Correct. Slow, salted, one-way hashes protect passwords even if the database is stolen.",
+    "Reversible encryption means anyone with the key — or who steals it — can read every password.",
+    "Plain text is the worst option: any breach or insider exposes every user's password immediately.",
+    "Base64 is encoding, not security; anyone can decode it instantly."
+   ],
+   "interview_tip": "Security basics come up in technical-fluency rounds. Knowing why 'we can't tell you your password' is a good sign shows you understand user-trust trade-offs."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Diminishing returns in paid acquisition",
+   "difficulty": "medium",
+   "question": "Your D2C skincare brand doubled its monthly ad spend on Instagram. New customers rose only 30% and blended CAC jumped. What's the most likely explanation?",
+   "options": [
+    "The extra spend reached less-interested audiences, so the marginal CAC of the added customers is much higher than the average",
+    "The ad platform's algorithm needs a few months to learn, after which CAC will drop back to its old level",
+    "Customers acquired in the first month always cost more, so CAC naturally rises at the start of any quarter",
+    "Doubling spend should double customers, so the gap must be caused by a tracking bug in the ad dashboard"
+   ],
+   "answer": 0,
+   "explanation": "Paid channels saturate: the first dollars reach the most responsive audiences, and each additional dollar reaches less-interested people at higher cost. Looking at marginal CAC — the cost of the extra customers — rather than blended CAC shows when a channel has hit diminishing returns and it's time to diversify.",
+   "rationales": [
+    "Correct. Channel saturation raises marginal CAC; the extra customers cost far more than the earlier ones.",
+    "Learning phases are short-lived; they don't explain a sustained shortfall from doubling spend.",
+    "There's no general rule that the first month of a quarter has higher CAC; this isn't a real mechanism.",
+    "Assuming linear returns is the mistake; diminishing returns are normal, so a bug isn't the likely cause."
+   ],
+   "interview_tip": "Growth interviews reward candidates who distinguish marginal from average metrics. Explaining when to shift spend to new channels signals real GTM experience."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "GPT-6 Intelligent UI in ChatGPT (Oct 2026)",
+   "difficulty": "easy",
+   "question": "When OpenAI rolled out GPT-6 in ChatGPT in early October 2026, it introduced a capability called 'Intelligent UI'. What does it do?",
+   "options": [
+    "Lets ChatGPT respond with interactive interfaces — buttons, forms, charts — rendered progressively as the model generates",
+    "Automatically redesigns third-party websites so they're easier for AI agents to navigate and use",
+    "Lets enterprise admins build custom ChatGPT dashboards without writing any code or prompts",
+    "Adapts ChatGPT's colour theme and layout to each user's device and accessibility settings"
+   ],
+   "answer": 0,
+   "explanation": "OpenAI's GPT-6 announcement (7 October 2026) describes Intelligent UI as letting ChatGPT answer with fully interactive interfaces — graphics, tappable buttons, forms, charts and calculators — using a component library and a compiler that render the UI progressively as the model generates. GPT-6 rolled out to paid tiers first, then Free and Go a day later.",
+   "rationales": [
+    "Correct. Intelligent UI turns responses into interactive interfaces built on the fly during generation.",
+    "It changes ChatGPT's own responses; it doesn't modify third-party websites.",
+    "It isn't an admin dashboard builder; it's a response format for all users in the Chat tab.",
+    "It isn't a theming or accessibility feature; it's about interactive content inside answers."
+   ],
+   "interview_tip": "Be ready to discuss what 'generative UI' means for product design: when should an answer be text vs an interactive tool? Having a view on this shows you follow where AI products are heading.",
+   "source": "https://openai.com/index/gpt-6-for-everyone/"
+  }
+ ]
+}

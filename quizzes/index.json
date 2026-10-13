@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-13",
+   "theme": "Caregiver users, regression to the mean and GPT-6's Intelligent UI",
+   "count": 30
+  },
+  {
    "date": "2026-10-12",
    "theme": "Shared devices, triggered tests and TikTok's Buy Direct",
    "count": 30
