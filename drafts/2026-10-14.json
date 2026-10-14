@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-14",
+ "theme": "Infrequent-use design, take rates and Meta's Muse Wonder",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "One-tap reorder for replenishment purchases",
+   "difficulty": "medium",
+   "question": "You're PM for a pet-supplies app. 60% of revenue comes from customers re-buying the same food every 4-6 weeks, yet they still search, browse and check out from scratch each time, and many lapse to a supermarket. Which improvement best fits this job?",
+   "options": [
+    "A 'Buy again' shelf on the home screen with one-tap reorder and a timed nudge when their usual cycle is due",
+    "A richer catalog with more brands so returning customers discover new foods each time they visit",
+    "A loyalty points scheme that rewards every fifth order with a discount on the next purchase",
+    "Personalised editorial content about pet nutrition to keep customers engaged between purchases"
+   ],
+   "answer": 0,
+   "explanation": "Replenishment is a low-thought, recurring job: the user already knows what they want and the enemy is effort and forgetting. Removing steps (one-tap reorder) and prompting at the natural cycle attacks both causes of lapse. Discovery and content solve a browsing job these users don't have.",
+   "rationales": [
+    "Correct. It removes the repeated search-and-checkout effort and uses the known purchase cycle to beat forgetting — the two reasons they lapse to the supermarket.",
+    "More choice adds browsing effort to a job where users already know the answer; it can even increase friction.",
+    "Points add a reward but leave the repeated effort and forgetting untouched; lapsing users may never reach the fifth order.",
+    "Content builds engagement, not convenience; it doesn't make the actual repeat purchase any easier."
+   ],
+   "interview_tip": "Interviewers like candidates who name the job type (recurring, low-consideration) before designing. Matching the solution to the job, not to generic 'engagement', signals sharp product sense."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Designing for infrequent-use products",
+   "difficulty": "hard",
+   "question": "You're designing an app that helps Indian families file annual income-tax returns. Users open it once a year and forget everything in between. Which design principle should most shape the product?",
+   "options": [
+    "Remember last year's answers and pre-fill them, so each return starts as 'confirm what changed' rather than a blank form",
+    "Build daily tax tips and streaks so users form a habit and stay familiar with the interface all year",
+    "Offer a dense power-user dashboard so experienced filers can jump to any section quickly",
+    "Add a detailed tutorial video at first launch that explains every section of the return"
+   ],
+   "answer": 0,
+   "explanation": "For once-a-year products, users are effectively novices every time; the product must carry the memory they lack. Pre-filling from last year turns a daunting task into a quick review of changes, which is where most time and anxiety go. Forcing artificial frequency or building for experts misreads the usage pattern.",
+   "rationales": [
+    "Correct. The product holds the context users forget, shrinking the yearly task to reviewing deltas — ideal for rare, high-stakes use.",
+    "Manufacturing daily engagement for a yearly job annoys users and rarely sticks; it fights the natural frequency instead of designing for it.",
+    "Nobody becomes a power user of a once-a-year task; dense dashboards overwhelm the effective novice.",
+    "A one-off tutorial is forgotten by next year and front-loads effort before the user gets value."
+   ],
+   "interview_tip": "Usage frequency is a key product-sense lens. Saying 'every user is a returning novice here' and designing around memory and recognition shows you adapt principles to context."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Reducing no-shows in appointment booking",
+   "difficulty": "hard",
+   "question": "You run a booking app for salons in Tier-2 Indian cities. Salons complain 25% of bookings are no-shows, and some are leaving the platform. Customers book freely because it costs nothing. What's the strongest first approach?",
+   "options": [
+    "Add WhatsApp reminders with easy one-tap reschedule, plus a small refundable deposit only for customers with a history of no-shows",
+    "Require full prepayment for every booking so customers are committed before they arrive",
+    "Let salons overbook every slot by 25% to absorb expected no-shows automatically",
+    "Ban customers after their second no-show to protect salon revenue"
+   ],
+   "answer": 0,
+   "explanation": "No-shows come from two different causes: forgetting and low commitment. Reminders with easy rescheduling fix forgetting and turn a no-show into a freed slot; a targeted deposit adds commitment only where history shows it's needed, preserving conversion for reliable customers. Blanket measures over-penalise the majority.",
+   "rationales": [
+    "Correct. It addresses both causes, makes cancelling easy (so slots can be refilled), and applies friction only to the risky segment.",
+    "Full prepayment for everyone will crush conversion in price-sensitive markets where cash and pay-at-visit are the norm.",
+    "Overbooking shifts the pain to customers who do show up and wait, damaging trust on the demand side.",
+    "Bans are blunt, lose customers who simply forgot, and do nothing to prevent the first no-shows."
+   ],
+   "interview_tip": "Marketplace questions test whether you balance both sides. Diagnosing causes first and applying targeted friction rather than blanket rules signals mature trade-off thinking."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Supporting code-mixed language input (Hinglish)",
+   "difficulty": "hard",
+   "question": "You're PM for search in a grocery app in North India. Analysis shows many failed searches are queries like 'aloo 1 kilo', 'sabun' or 'doodh', typed in Roman script. Product proposes a full Hindi-script interface to fix it. What's your view?",
+   "options": [
+    "Prioritise understanding Romanised and code-mixed queries — map transliterated and Hinglish terms to catalog items — before investing in a Devanagari UI",
+    "Ship the Hindi-script interface first, since vernacular users clearly prefer their own script",
+    "Add spelling autocorrect for English product names, since users are misspelling English words",
+    "Show a prompt asking users to search in English for better results"
+   ],
+   "answer": 0,
+   "explanation": "The evidence shows users typing Hindi words in Roman script, not asking for Devanagari. The failure is in query understanding, so the fix is transliteration and synonym mapping. Many Indian users read English UI fine but think about products in their own words; build for observed behaviour, not assumptions about preference.",
+   "rationales": [
+    "Correct. It fixes the actual failure the data shows — the search engine not understanding how users naturally type.",
+    "A script change assumes a preference the data doesn't show; users already typing Roman script may not use a Devanagari UI at all.",
+    "These aren't misspelled English words; 'doodh' won't autocorrect to 'milk'. It misdiagnoses the problem.",
+    "Asking users to change their language pushes the product's limitation onto them and will raise abandonment."
+   ],
+   "interview_tip": "India-context product questions reward anchoring on observed behaviour. Distinguishing 'vernacular UI' from 'vernacular understanding' shows you diagnose before building."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Measuring success when lower usage is good (self-serve deflection)",
+   "difficulty": "medium",
+   "question": "You launched an improved help center for a B2B SaaS product. Help-center page views went down 20% after launch. How should you judge whether it worked?",
+   "options": [
+    "Look at whether support tickets per active account fell and issue resolution rose, since good help content can reduce both tickets and repeat visits",
+    "Treat it as a failure, because fewer page views means customers are getting less value from help content",
+    "Ignore usage and judge it on design-quality feedback from the support team",
+    "Measure average time on page, since longer reading time means the articles are more useful"
+   ],
+   "answer": 0,
+   "explanation": "For help content the goal is resolving problems with minimum effort, so fewer views can be success if users find answers faster. The right metrics are outcome-based: ticket deflection (tickets per account) and resolution, ideally paired with search success. Usage volume alone is ambiguous here.",
+   "rationales": [
+    "Correct. It measures the outcome the help center exists for — problems solved without a ticket — rather than raw usage.",
+    "Fewer views could mean better navigation and faster answers; equating usage with value is wrong for problem-solving products.",
+    "Internal opinion of design isn't an outcome metric; it can't show whether customers' problems got solved.",
+    "Longer time on page can mean confusion; for help content, faster resolution is usually better."
+   ],
+   "interview_tip": "Interviewers probe whether you blindly treat 'more usage' as good. Naming when less is more and picking an outcome metric shows metric maturity."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Exogenous spike from a competitor outage",
+   "difficulty": "hard",
+   "question": "Your food-delivery app's new-user signups jump 40% on Tuesday and Wednesday in one city, then return to normal. No launches or campaigns ran. Signups from that city's app-store search rose most. What's the most likely explanation to check first?",
+   "options": [
+    "An external event, such as a competitor's outage in that city, sent users searching for an alternative",
+    "Your recent onboarding redesign finally started improving conversion",
+    "An instrumentation bug double-counted signups across all platforms",
+    "Normal weekly seasonality, since Tuesdays are always strong"
+   ],
+   "answer": 0,
+   "explanation": "A sharp, short spike limited to one city, driven by app-store search with no internal change, points to an external cause pushing intent to you. Checking news and competitor status confirms it quickly. It matters because those users may retain differently and the spike shouldn't be credited to your product work.",
+   "rationales": [
+    "Correct. Local, temporary, search-driven, and no internal change — classic signs of an outside event redirecting demand.",
+    "A product improvement would lift all cities and persist, not vanish after two days in one city.",
+    "A logging bug would typically affect all regions and channels, not just one city's app-store search traffic.",
+    "Weekly seasonality would show every week; a one-off 40% jump isn't a regular pattern."
+   ],
+   "interview_tip": "Root-cause questions reward checking internal vs external causes and using the shape of the change (where, when, which channel). Narrating that triage signals strong analytical thinking."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Weighting engagement actions by value",
+   "difficulty": "medium",
+   "question": "A social app's feed is ranked to maximise total interactions, counting a like, a comment and a share equally. Leadership worries the feed is rewarding low-effort clickbait. What metric change best addresses this?",
+   "options": [
+    "Weight interactions by their value, e.g. meaningful comments and shares between friends count more than quick likes",
+    "Switch the goal to total time spent in the feed, which captures deeper engagement",
+    "Count only likes, since they are the most common and least noisy signal",
+    "Measure posts viewed per session, since more posts seen means a more efficient feed"
+   ],
+   "answer": 0,
+   "explanation": "Not all engagement is equal: a thoughtful comment or a share to a friend signals more value than a passive like. Weighting actions aligns the ranking target with what leadership actually values and discourages clickbait that farms cheap reactions. This is how 'meaningful interactions' style metrics work.",
+   "rationales": [
+    "Correct. Weighted engagement encodes what counts as valuable, so the ranking stops rewarding cheap reactions.",
+    "Time spent can also reward clickbait and doom-scrolling; it doesn't separate valuable from low-quality engagement.",
+    "Likes are the cheapest action and the easiest for clickbait to farm — this worsens the problem.",
+    "Posts viewed rewards fast scrolling and shallow content, not meaningful engagement."
+   ],
+   "interview_tip": "Feed-metric questions at Meta-style loops test whether you see that the metric shapes behaviour. Proposing weighted, value-aligned signals shows depth."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Take rate between GMV and revenue",
+   "difficulty": "easy",
+   "question": "A services marketplace reports ₹500 crore of gross merchandise value (GMV) in a year and ₹60 crore of net revenue. What is its take rate?",
+   "options": [
+    "12%",
+    "8.3%",
+    "60%",
+    "88%"
+   ],
+   "answer": 0,
+   "explanation": "Take rate is the share of GMV the marketplace keeps as revenue: 60 / 500 = 12%. GMV measures the value transacted through the platform, while revenue is what the platform earns. Confusing the two inflates how big a marketplace business really is.",
+   "rationales": [
+    "Correct. 60 ÷ 500 = 0.12, so the marketplace keeps 12% of what flows through it.",
+    "This is 500 ÷ 60 inverted and expressed as a percentage — the wrong way round.",
+    "This mistakes the revenue figure in crore for a percentage.",
+    "This is the share that goes to suppliers (100% − 12%), not what the platform keeps."
+   ],
+   "interview_tip": "Marketplace interviews often test GMV vs revenue. Knowing take rate and why it differs by category (e.g. ads, payments, logistics) signals business fluency."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Geo experiments for marketing measurement",
+   "difficulty": "medium",
+   "question": "You want to measure whether a ₹2 crore TV and outdoor campaign actually drives app installs. You can't randomise which individuals see a billboard. What's the best design?",
+   "options": [
+    "Run the campaign in a set of matched cities and hold out comparable cities, then compare install changes between the two groups",
+    "Compare installs in the month after launch to the month before, across all cities",
+    "Ask new users in a signup survey whether they saw the campaign",
+    "Attribute installs that arrive within 24 hours of each TV slot to the campaign"
+   ],
+   "answer": 0,
+   "explanation": "When you can't randomise people, randomise (or carefully match) regions. A geo experiment compares treated and held-out markets, controlling for seasonality and other shocks that hit both. Before/after and self-reports can't separate the campaign's effect from everything else.",
+   "rationales": [
+    "Correct. Geographic holdouts give a counterfactual for offline media, isolating incremental installs.",
+    "Before/after is confounded by seasonality, competitor moves and other launches happening at the same time.",
+    "Recall surveys are biased and can't tell you what would have happened without the campaign.",
+    "Time-window attribution counts installs that would have happened anyway and misses delayed effects."
+   ],
+   "interview_tip": "Interviewers like candidates who adapt experimentation when user-level randomisation is impossible. Mentioning geo holdouts and matched markets signals strong causal thinking."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Carryover effects from reused user buckets",
+   "difficulty": "medium",
+   "question": "Your team reuses the same 50/50 user split for back-to-back experiments. In the last test, the treatment group saw an aggressive notification change that annoyed users. The new test, on an unrelated feature, shows treatment is 3% worse on retention. What's the concern?",
+   "options": [
+    "Carryover: the earlier test may have changed treatment users' behaviour, biasing the new comparison — re-randomise users for each test",
+    "Novelty effect: users are reacting to the new feature simply because it is unfamiliar",
+    "Sample ratio mismatch: the groups must be unequal in size",
+    "Peeking: the team must have checked results too often"
+   ],
+   "answer": 0,
+   "explanation": "If the same users stay in treatment across experiments, effects from an earlier test can persist and contaminate the next one. Here the earlier annoying notifications could explain lower retention regardless of the new feature. Fresh randomisation (or washout periods) prevents this.",
+   "rationales": [
+    "Correct. Reused buckets carry the earlier test's lingering effects into the new comparison.",
+    "Novelty usually inflates treatment early, and nothing suggests unfamiliarity is the cause here.",
+    "Nothing indicates the group sizes are off; the split is the same 50/50.",
+    "Peeking inflates false positives but doesn't explain a bias tied to the groups' history."
+   ],
+   "interview_tip": "Experimentation interviews reward awareness of platform-level pitfalls, not just stats. Mentioning re-randomisation or washout periods signals hands-on experience."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Daily EV charging sessions estimate",
+   "difficulty": "medium",
+   "question": "Estimate public EV charging sessions per day in a city with 50,000 electric cars. Assume 40% of owners lack home charging and rely on public chargers, each such car needs a charge every 3 days, and the other owners use public charging on 5% of days. Roughly how many sessions per day?",
+   "options": [
+    "About 8,200",
+    "About 20,000",
+    "About 2,500",
+    "About 50,000"
+   ],
+   "answer": 0,
+   "explanation": "Public-dependent cars: 50,000 × 40% = 20,000, charging every 3 days ≈ 6,670 sessions/day. Home chargers: 30,000 × 5% = 1,500 sessions/day. Total ≈ 8,170, about 8,200. Splitting by segment with different behaviour is the key move.",
+   "rationales": [
+    "Correct. 20,000 ÷ 3 ≈ 6,670 plus 30,000 × 0.05 = 1,500 gives about 8,200.",
+    "This counts every public-dependent car charging daily and ignores the 3-day cycle.",
+    "This roughly counts only the 1,500 home-charger sessions plus a fraction of the rest; it misses most public-dependent charging.",
+    "This assumes every EV charges publicly every day, ignoring home charging entirely."
+   ],
+   "interview_tip": "Strong estimation answers segment the population by behaviour and state assumptions clearly. Interviewers value the structure and a sanity check more than the exact number."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual diaper market (units) in urban India",
+   "difficulty": "medium",
+   "question": "Estimate annual disposable diaper units used in urban India. Assume 500 million urban people, 2% are babies under 2.5 years, 60% of those use disposables, and users average 4 diapers a day. Roughly how many units per year?",
+   "options": [
+    "About 8.8 billion",
+    "About 14.6 billion",
+    "About 2.4 billion",
+    "About 880 million"
+   ],
+   "answer": 0,
+   "explanation": "Babies: 500M × 2% = 10M. Disposable users: 10M × 60% = 6M. Daily units: 6M × 4 = 24M. Annual: 24M × 365 ≈ 8.76 billion, about 8.8 billion. The chain is population → target segment → adoption → usage rate → time period.",
+   "rationales": [
+    "Correct. 6M users × 4/day × 365 ≈ 8.8 billion units.",
+    "This skips the 60% adoption step (10M × 4 × 365), overstating the market.",
+    "This is roughly 24M × 100, as if diapers were used for only about 100 days a year.",
+    "This is off by a factor of ten — a slipped decimal in the population step."
+   ],
+   "interview_tip": "Consumption-based sizing tests clean chaining of assumptions. Calling out the adoption rate as the most uncertain input, and sanity-checking it, signals rigor."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Outcome-based pricing for AI agents",
+   "difficulty": "medium",
+   "question": "A customer-support AI agent startup charges per seat today. Customers using it well need fewer human agents, so seat counts — and revenue — shrink as the product succeeds. Which pricing model best aligns revenue with value?",
+   "options": [
+    "Charge per successfully resolved conversation, with clear rules on what counts as a resolution",
+    "Raise the per-seat price to offset falling seat counts",
+    "Switch to a flat annual fee per company regardless of usage",
+    "Charge per message the agent sends, since it tracks usage closely"
+   ],
+   "answer": 0,
+   "explanation": "When AI replaces work, charging for the outcome delivered (a resolved ticket) grows revenue as the product creates more value. It needs a crisp, auditable definition of success to avoid disputes. Per-seat pricing punishes success; per-message pricing rewards verbosity rather than results.",
+   "rationales": [
+    "Correct. Revenue tracks the value created and grows with automation, provided 'resolution' is defined clearly.",
+    "Higher seat prices fight the trend temporarily but still shrink as automation removes seats, and anger customers.",
+    "A flat fee breaks the link to value entirely, under-charging heavy users and over-charging light ones.",
+    "Per-message pricing rewards long, chatty conversations — the opposite of efficient resolution."
+   ],
+   "interview_tip": "AI pricing is a hot strategy topic. Explaining why outcome pricing aligns incentives, and naming the definition and attribution risks, signals strong commercial judgement."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Platform envelopment",
+   "difficulty": "medium",
+   "question": "A dominant messaging app adds a free built-in payments feature, instantly reaching its 400 million users. A standalone payments app with a better product starts losing share. What strategic move is the messaging app using?",
+   "options": [
+    "Platform envelopment — entering an adjacent market by bundling it into a platform that shares the same users",
+    "Disruptive innovation — entering at the low end with a cheaper, simpler product",
+    "Counter-positioning — adopting a business model the incumbent can't copy",
+    "Vertical integration — buying its own suppliers to control costs"
+   ],
+   "answer": 0,
+   "explanation": "Envelopment is when a platform with an overlapping user base enters another market by bundling the new function, using its existing relationships and distribution. The target loses even with a better standalone product because users get 'good enough' for free inside an app they already use. Defences include multi-platform presence or differentiating on what the bundle can't do.",
+   "rationales": [
+    "Correct. It leverages the shared user base to absorb an adjacent function — the textbook envelopment play.",
+    "Disruption starts from overlooked low-end customers; here a dominant player uses existing scale.",
+    "Counter-positioning is a new entrant using a model incumbents won't copy; this is an incumbent bundling.",
+    "Vertical integration is about owning the supply chain, not adding adjacent features for the same users."
+   ],
+   "interview_tip": "Strategy rounds often ask how incumbents attack adjacent markets. Naming envelopment and the defence options shows you can reason about competition, not just features."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Open-core business model",
+   "difficulty": "easy",
+   "question": "A developer-tools company releases its core database for free under an open-source licence and sells hosted versions plus enterprise features like SSO, audit logs and support. What business model is this?",
+   "options": [
+    "Open core — free open-source adoption drives demand, and paid enterprise or hosted features monetise it",
+    "Freemium — a free tier with usage limits that upgrades to a paid tier",
+    "Razor and blades — a cheap base product monetised by recurring consumables",
+    "Marketplace — the company takes a cut of transactions between buyers and sellers"
+   ],
+   "answer": 0,
+   "explanation": "Open core gives away the core product as open source to win developer adoption and community, then charges for what larger organisations need: hosting, security, compliance and support. The challenge is drawing the line so the free core is truly useful while enterprises still have reasons to pay, and guarding against cloud providers hosting it themselves.",
+   "rationales": [
+    "Correct. Open-source core for adoption plus paid enterprise and hosted features is the open-core model.",
+    "Freemium is a single proprietary product with a limited free tier, not an open-source core.",
+    "Razor and blades relies on recurring consumables, which don't exist here.",
+    "No buyer-seller transactions are being intermediated, so it isn't a marketplace."
+   ],
+   "interview_tip": "Developer-platform strategy questions often test open source as a go-to-market tool. Mentioning where to draw the paid line signals real business-model thinking."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Release trains for predictable shipping",
+   "difficulty": "easy",
+   "question": "A mobile team ships 'whenever features are ready', and releases keep slipping because one late feature holds up everything else. What process change most directly helps?",
+   "options": [
+    "Move to a fixed release train — ship on a regular schedule and let unfinished features catch the next one, behind flags if needed",
+    "Add a longer QA phase before every release so nothing ships with bugs",
+    "Require all features in a release to be estimated more carefully before work starts",
+    "Ship only one feature per release so nothing can block anything else"
+   ],
+   "answer": 0,
+   "explanation": "A release train decouples the schedule from any single feature: the train leaves on time and late work waits for the next one. Combined with feature flags, it makes delivery predictable and reduces pressure to rush. Better estimates help, but don't stop one feature from blocking the rest.",
+   "rationales": [
+    "Correct. Fixed cadence plus flags stops one late feature from delaying the whole release.",
+    "More QA may improve quality but makes releases slower and doesn't fix the blocking problem.",
+    "Better estimates reduce surprises but some features will still run late and block the release.",
+    "One feature per release creates huge overhead, especially with app-store review cycles."
+   ],
+   "interview_tip": "Execution questions reward process fixes that address root cause. Mentioning release trains with feature flags signals you've shipped mobile software at scale."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Time-boxed technical spike",
+   "difficulty": "easy",
+   "question": "Engineering can't estimate a feature that depends on an unfamiliar third-party API — guesses range from 1 week to 2 months. What's the best next step?",
+   "options": [
+    "Run a short time-boxed spike to prototype against the API and reduce the uncertainty, then estimate",
+    "Take the average of the guesses and plan the roadmap around five weeks",
+    "Plan for two months to be safe and inform stakeholders of the long timeline",
+    "Start building the full feature and report progress as it becomes clearer"
+   ],
+   "answer": 0,
+   "explanation": "When uncertainty is too wide to plan around, buy information cheaply. A spike is a small, time-boxed investigation whose output is knowledge, not shippable code. A few days of prototyping usually collapses the range and reveals risks before you commit.",
+   "rationales": [
+    "Correct. A time-boxed spike spends a little to remove most of the uncertainty before committing.",
+    "Averaging wild guesses produces a number with false confidence; the underlying uncertainty remains.",
+    "Padding to the worst case may waste weeks and could kill a feature that's actually quick.",
+    "Building blind commits fully before you know the risks, the costliest way to learn."
+   ],
+   "interview_tip": "Interviewers like PMs who reduce uncertainty before committing. Naming a spike and its time-box shows practical delivery instincts."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Customer migration plan for a breaking platform change",
+   "difficulty": "medium",
+   "question": "Your B2B platform must retire an old API version that 300 customer integrations still call. Security requires it gone within six months. What's the best plan?",
+   "options": [
+    "Announce a dated deprecation timeline, give a migration guide and tooling, track usage per customer, and personally contact the largest remaining callers before shutdown",
+    "Turn off the old version in six months and rely on the announcement email to prompt migration",
+    "Keep the old version running indefinitely to avoid breaking any customers",
+    "Silently redirect old-version calls to the new API and fix whatever breaks"
+   ],
+   "answer": 0,
+   "explanation": "Breaking changes need a managed migration: clear dates, easy paths, and usage tracking so you know who's still exposed. Proactive outreach to big remaining callers prevents a shutdown-day outage for key accounts. It balances the security deadline with customer trust.",
+   "rationales": [
+    "Correct. Clear dates, tooling, usage tracking and targeted outreach make the deadline achievable without surprise outages.",
+    "A single email is easily missed; you'd break integrations for customers who never saw it.",
+    "Ignoring the security requirement isn't acceptable, and old versions add maintenance cost forever.",
+    "Silent redirects cause unpredictable failures for customers and destroy trust."
+   ],
+   "interview_tip": "Platform PM interviews test empathy for developers plus firm deadlines. Mentioning usage tracking per customer and proactive outreach signals operational maturity."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Taking over a failing project",
+   "difficulty": "hard",
+   "question": "You join a team and inherit a project that's three months late, with a frustrated client and a demoralised team. In an interview, which first-30-days approach would be most compelling?",
+   "options": [
+    "Listen to the team and client to find the real causes, reset scope and dates with a credible plan, and communicate it openly — then deliver early visible wins",
+    "Commit to the original deadline to restore the client's confidence and ask the team to work weekends",
+    "Rewrite the plan from scratch on day one so it's clearly your project now",
+    "Escalate to leadership that the previous PM caused the delays so expectations are reset"
+   ],
+   "answer": 0,
+   "explanation": "A strong answer starts with diagnosis, not action: understand why it's late from the people involved. Then reset to an honest plan, communicate it transparently and rebuild trust with early wins. Blaming predecessors or promising the impossible both damage credibility.",
+   "rationales": [
+    "Correct. It shows diagnosis, ownership, honest reset and trust-building with both team and client.",
+    "Recommitting to a date already missed, by overworking a demoralised team, usually fails twice.",
+    "Rewriting before understanding the causes ignores the team's knowledge and may repeat old mistakes.",
+    "Blaming the previous PM doesn't fix the project and signals low ownership."
+   ],
+   "interview_tip": "Amazon-style 'Ownership' stories reward diagnosing before acting and resetting expectations honestly. Concrete first steps and measured results make the answer land."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Late executive feedback before launch",
+   "difficulty": "hard",
+   "question": "Two days before a launch your team spent months on, a senior VP sees a demo and asks for major changes to the main flow. What's the strongest way to handle it?",
+   "options": [
+    "Understand the concern behind the request, show the evidence behind current decisions, and propose options — launch as planned, a quick fix, or a later iteration — with clear trade-offs",
+    "Make all the requested changes, delaying launch, because a senior VP asked for them",
+    "Launch as planned and explain afterwards that the feedback came too late",
+    "Ask your manager to tell the VP the team won't make changes this late"
+   ],
+   "answer": 0,
+   "explanation": "Late feedback deserves a real hearing — the VP may see a risk you missed — but not automatic compliance. Understanding the underlying concern, sharing the user data behind your choices, and laying out options lets the decision be made on trade-offs, not hierarchy. It also prevents future surprises by involving them earlier.",
+   "rationales": [
+    "Correct. It respects the input, uses evidence, and frames a decision with options instead of caving or ignoring.",
+    "Automatically complying ignores evidence and team investment; the concern may be solvable more cheaply.",
+    "Ignoring a senior stakeholder risks real problems they spotted and damages the relationship.",
+    "Hiding behind your manager avoids ownership and skips understanding the concern."
+   ],
+   "interview_tip": "This tests influence and backbone. Strong answers show curiosity about the concern, evidence, and options — and a lesson on engaging execs earlier."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Repairing a strained cross-functional relationship",
+   "difficulty": "hard",
+   "question": "The head of sales openly criticises your team for 'never shipping what customers need', and your relationship has become tense. What's the best response?",
+   "options": [
+    "Meet one-on-one to understand their specific customer losses, share how you prioritise, and set up a regular channel for feeding deal insights into the roadmap",
+    "Send them the roadmap prioritisation framework so they understand the process",
+    "Escalate to your manager that sales is undermining the product team",
+    "Add sales's top three requests to the next sprint to repair the relationship quickly"
+   ],
+   "answer": 0,
+   "explanation": "Criticism often hides a real problem: sales is losing deals and feels unheard. A private conversation to understand specifics, transparency about trade-offs, and a lasting feedback mechanism turn an adversary into a partner. Neither appeasement nor process documents fix trust.",
+   "rationales": [
+    "Correct. It seeks the underlying need, builds transparency and creates a durable channel, repairing trust.",
+    "A document doesn't address the frustration and can read as dismissive.",
+    "Escalating first hardens the conflict without understanding what sales needs.",
+    "Shipping requests to buy peace skips prioritisation and teaches that public pressure works."
+   ],
+   "interview_tip": "Stakeholder-conflict stories should show empathy, data and a lasting fix. Interviewers look for curiosity before defence and a concrete mechanism you set up."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Barge-in handling in voice agents",
+   "difficulty": "medium",
+   "question": "You're building an AI voice agent for a bank's customer helpline. In testing, callers get frustrated because the agent keeps talking over them when they try to correct it mid-sentence. Which capability matters most to fix?",
+   "options": [
+    "Barge-in: detect the caller speaking, stop playback immediately, and respond to the interruption",
+    "A larger language model so the agent's answers are more accurate",
+    "Longer, more detailed responses so callers have fewer reasons to interrupt",
+    "A text transcript sent after the call so callers can review what was said"
+   ],
+   "answer": 0,
+   "explanation": "Natural conversation includes interruptions. Barge-in handling — detecting user speech, halting playback and processing the new input — is core to voice UX and often matters more than model size. Without it, even accurate agents feel robotic and frustrating.",
+   "rationales": [
+    "Correct. Handling interruptions directly fixes the observed frustration and is essential to natural voice interaction.",
+    "Accuracy helps, but a smarter agent that still talks over people remains frustrating.",
+    "Longer responses make interruptions more likely and the problem worse.",
+    "A transcript afterwards doesn't fix the in-call experience."
+   ],
+   "interview_tip": "Voice-AI questions test whether you know conversational UX beyond the model. Mentioning turn-taking, latency and barge-in signals hands-on understanding."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Context compaction in long-running agents",
+   "difficulty": "hard",
+   "question": "Your coding agent runs multi-hour tasks. After many steps, it starts forgetting early instructions and costs climb because every call resends the whole history. What's the best design fix?",
+   "options": [
+    "Periodically compact the history: summarise completed steps, keep key decisions and instructions, and store details externally for retrieval when needed",
+    "Switch to a model with a much larger context window so the full history always fits",
+    "Restart the agent from scratch every hour with the original prompt only",
+    "Drop the oldest messages once the context fills up"
+   ],
+   "answer": 0,
+   "explanation": "Long-running agents need context management, not just bigger windows. Compaction keeps what matters (goals, decisions, constraints) in a compact form and moves details to external memory, cutting cost and keeping attention on the essentials. Bigger windows still cost more and models attend poorly to very long contexts.",
+   "rationales": [
+    "Correct. Summarising and externalising details controls cost and keeps key instructions in focus.",
+    "A bigger window delays the problem; cost per call rises and attention to early content still degrades.",
+    "Restarting loses all progress and context accumulated during the task.",
+    "Blindly dropping the oldest messages throws away the original instructions — the very thing it's forgetting."
+   ],
+   "interview_tip": "Agent PM interviews increasingly ask about context management. Explaining compaction trade-offs (what to keep, what to externalise) signals real agent-building fluency."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Model calibration",
+   "difficulty": "medium",
+   "question": "A loan-document classifier outputs a confidence score. When it says 90% confident, it's correct only 70% of the time. What does this tell you?",
+   "options": [
+    "The model is poorly calibrated (over-confident), so its scores can't be used directly as probabilities for thresholds",
+    "The model has low accuracy and should be retrained on more data",
+    "The model is overfitting, since it performs worse on new data than training data",
+    "The model has high recall but low precision on the positive class"
+   ],
+   "answer": 0,
+   "explanation": "Calibration means confidence matches real-world accuracy: 90% confident should be right about 90% of the time. An over-confident model can still be accurate overall, but thresholds and human-review routing built on its scores will be wrong. Recalibration techniques fix the mapping without changing rankings.",
+   "rationales": [
+    "Correct. The gap between stated confidence and observed accuracy is a calibration problem, which matters for any score-based decision.",
+    "Overall accuracy may be fine; the issue is that the confidence numbers are misleading.",
+    "Overfitting is about train-vs-test performance gaps, which this observation doesn't show.",
+    "Precision and recall describe error types, not whether confidence scores match accuracy."
+   ],
+   "interview_tip": "Calibration comes up when designing thresholds or human-in-the-loop flows. Knowing scores aren't automatically probabilities signals strong ML product literacy."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Red-teaming before launch",
+   "difficulty": "easy",
+   "question": "Before launching a public AI chatbot, your team wants to find ways it could be misused or tricked into harmful outputs. What's the most effective practice?",
+   "options": [
+    "Red-teaming: have people deliberately try to break the system with adversarial prompts and misuse scenarios, then fix what they find",
+    "Rely on the model provider's safety training, since frontier models are already aligned",
+    "Launch to everyone and monitor user reports to find problems quickly",
+    "Test with your standard eval set of typical customer questions"
+   ],
+   "answer": 0,
+   "explanation": "Red-teaming applies an attacker's mindset to find failure modes before real users do: jailbreaks, prompt injection, harmful advice, data leakage. Typical-use evals miss these because they don't try to break the system. Findings feed into guardrails and eval sets.",
+   "rationales": [
+    "Correct. Deliberate adversarial testing finds misuse paths that normal testing misses.",
+    "Provider safety helps but doesn't cover your product's specific context, tools and data.",
+    "Learning from public incidents means real harm and reputation damage first.",
+    "Typical-use evals don't probe adversarial behaviour, so they miss most misuse."
+   ],
+   "interview_tip": "Safety comes up in every AI PM loop. Mentioning red-teaming alongside guardrails and incident response shows you treat safety as a product requirement."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Synthetic data to expand eval coverage",
+   "difficulty": "medium",
+   "question": "Your travel-booking assistant's eval set has 300 real queries, almost all in English and about simple bookings. You need coverage of multi-city trips, Hindi queries and edge cases that rarely appear in logs. What's a good approach?",
+   "options": [
+    "Generate synthetic test cases with an LLM for the missing scenarios, then have humans review and correct them before adding them to the eval set",
+    "Wait until enough real examples of these cases appear in production logs",
+    "Rely on the 300 real queries, since real data is always better than synthetic data",
+    "Use synthetic data directly without review, since the generating model is highly capable"
+   ],
+   "answer": 0,
+   "explanation": "Synthetic generation fills coverage gaps quickly for rare or new scenarios, but generated cases can be unrealistic or wrong. Human review keeps quality high. Combining real data for realism with reviewed synthetic data for coverage gives a stronger eval set.",
+   "rationales": [
+    "Correct. Synthetic generation plus human review expands coverage fast while keeping quality.",
+    "Waiting for rare cases in logs could take months and means shipping blind to them.",
+    "Real data is realistic but here it misses the scenarios you most need to test.",
+    "Unreviewed synthetic cases can carry the generator's mistakes and biases into your evals."
+   ],
+   "interview_tip": "Eval-design questions reward balancing realism and coverage. Mentioning human review of synthetic data signals practical eval experience."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Read replica lag",
+   "difficulty": "medium",
+   "question": "Users update their profile photo, the app says 'Saved', but refreshing immediately still shows the old photo for a few seconds. The backend writes to a primary database and serves reads from replicas. What's the likely cause?",
+   "options": [
+    "Replication lag — the replica hasn't received the write yet; fix by reading the user's own recent writes from the primary",
+    "The write failed silently and the app showed 'Saved' by mistake",
+    "The CDN is permanently caching the old photo and must be disabled",
+    "The database index on the profile table is missing, so reads are slow"
+   ],
+   "answer": 0,
+   "explanation": "Read replicas copy data from the primary asynchronously, so they can lag slightly. A user reading right after writing may hit a stale replica. A common fix is 'read-your-own-writes': route a user's reads to the primary briefly after they write.",
+   "rationales": [
+    "Correct. Brief staleness right after a write is the hallmark of replica lag; read-your-own-writes fixes it.",
+    "If the write failed, the new photo would never appear, not show up after a few seconds.",
+    "Caching could cause staleness, but disabling the CDN is drastic; the few-second pattern points to replication.",
+    "A missing index makes reads slower, not stale; it wouldn't show old data."
+   ],
+   "interview_tip": "Technical fluency questions test whether you understand why systems behave oddly. Naming replication lag and a user-facing fix shows you can talk trade-offs with engineers."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Circuit breaker pattern",
+   "difficulty": "easy",
+   "question": "Your checkout service calls a third-party fraud-check API. When that API slows down, checkout requests pile up and the whole site becomes unresponsive. Which pattern helps most?",
+   "options": [
+    "A circuit breaker that stops calling the failing API after repeated errors and uses a fallback until it recovers",
+    "Retrying every failed call immediately until it succeeds",
+    "Increasing the timeout so slow calls have more time to complete",
+    "Adding more database replicas to handle the extra load"
+   ],
+   "answer": 0,
+   "explanation": "A circuit breaker detects that a dependency is failing and 'opens', short-circuiting calls to a fallback (e.g. a simpler rules check) instead of waiting. This stops one slow dependency from exhausting resources and taking down the whole system. It periodically tests whether the dependency has recovered.",
+   "rationales": [
+    "Correct. It isolates the failing dependency and keeps checkout working via a fallback.",
+    "Immediate retries add more load to a struggling service and make the pile-up worse.",
+    "Longer timeouts hold resources even longer, making the cascade worse.",
+    "The bottleneck is the external API, not the database, so replicas won't help."
+   ],
+   "interview_tip": "Resilience patterns come up in system-design-lite questions. Naming circuit breakers and the business fallback signals you think about failure modes."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Programmatic SEO as an acquisition channel",
+   "difficulty": "easy",
+   "question": "A travel startup notices people search for phrases like 'best time to visit Coorg' and 'Goa weekend trip cost' across thousands of destinations. What acquisition approach best fits?",
+   "options": [
+    "Programmatic SEO — generate useful, data-backed pages for each destination-and-intent combination at scale",
+    "Run paid search ads on every destination keyword",
+    "Write one long blog post covering all destinations",
+    "Focus on Instagram influencers to drive awareness"
+   ],
+   "answer": 0,
+   "explanation": "Programmatic SEO uses structured data and templates to create many high-quality pages that match long-tail search intent. It compounds over time and cuts acquisition cost compared with paid ads. Quality and unique data matter — thin, duplicate pages get penalised.",
+   "rationales": [
+    "Correct. Templated, data-rich pages capture long-tail intent across thousands of destinations at low marginal cost.",
+    "Paid ads on thousands of keywords are expensive and stop working the moment spend stops.",
+    "A single post can't rank for thousands of specific queries.",
+    "Influencers can build awareness but don't capture existing search demand."
+   ],
+   "interview_tip": "Growth interviews test channel-fit thinking. Matching a channel to how users already search, and mentioning quality risks, signals solid GTM judgement."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Meta Muse Wonder paid-tier model gating (Oct 2026)",
+   "difficulty": "easy",
+   "question": "On October 12, 2026, Meta launched its Muse Wonder agent models. According to reports, how did Meta initially make the most capable version, Muse Wonder Full, available?",
+   "options": [
+    "Only through paid Muse Code subscriptions, with plans starting at $50 per month",
+    "As open downloadable weights for any developer, like earlier Llama models",
+    "Free to all users inside WhatsApp and Instagram from day one",
+    "Only to enterprise customers through a sales-led contract"
+   ],
+   "answer": 0,
+   "explanation": "Meta made Muse Wonder available to developers through the Meta Model API and its Muse Code tool, while Muse Wonder Full was limited to paid Muse Code subscriptions starting at $50 per month. Meta has not announced plans to open-source the Wonder models. Gating the strongest model behind a paid developer tool is a common way to fund high inference costs and target high-value users first.",
+   "rationales": [
+    "Correct. Reports state Muse Wonder Full is available only through paid Muse Code subscriptions from $50 per month.",
+    "Meta has not announced plans to release Wonder weights, unlike some earlier models.",
+    "The consumer Muse assistant gets Muse Wonder later, initially for subscribers — not free to everyone on day one.",
+    "Access is via self-serve subscriptions and the Meta Model API, not sales-led enterprise contracts."
+   ],
+   "interview_tip": "Interviewers may ask how you'd launch a costly frontier model. Discussing tiered access — who gets it first and how it pays for compute — shows commercial AI product thinking.",
+   "source": "https://www.anews.com.tr/tech/2026/10/13/meta-launches-new-ai-models-to-compete-with-openai-and-anthropic"
+  }
+ ]
+}
