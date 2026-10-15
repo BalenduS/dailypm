@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-15",
+ "theme": "Shared-screen privacy, 7 Powers and failed-payment churn",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Substitution preferences for out-of-stock items",
+   "difficulty": "hard",
+   "question": "You're PM for a quick-commerce grocery app in Bengaluru. 9% of orders contain an item that's out of stock at packing time; pickers substitute on their own, and these orders have 3x the 1-star rate and higher next-month churn. Which change best addresses the root problem?",
+   "options": [
+    "Let customers set a per-item rule at checkout (pick a backup, 'best match', or 'refund it') and show any swap for approval before dispatch",
+    "Improve demand forecasting so stock-outs fall, and keep picker substitutions as they are in the meantime",
+    "Automatically refund every out-of-stock item and send an apology coupon instead of substituting anything",
+    "Train pickers with a guide on choosing the closest brand, size and price for each substituted item"
+   ],
+   "answer": 0,
+   "explanation": "The pain isn't the stock-out itself — it's losing control over what arrives. Some customers want any milk, others only their brand, others no swap at all. Capturing intent up front and confirming swaps restores control cheaply; forecasting helps over time but doesn't fix the experience for the stock-outs that will still happen.",
+   "rationales": [
+    "Correct. It captures each customer's own preference and adds a quick confirmation, turning a surprise into a choice — the actual cause of the 1-star reviews.",
+    "Fewer stock-outs is good, but it's slow and never reaches zero; the bad substitution experience persists for every remaining case.",
+    "Blanket refunds disappoint customers who wanted a swap (they needed the item tonight) — it replaces one wrong guess with another.",
+    "Better picker judgement still guesses on the customer's behalf; preferences are personal, so even a 'closest match' is wrong for many."
+   ],
+   "interview_tip": "Strong candidates separate the trigger (stock-out) from the user pain (loss of control) and design for preference diversity. Saying 'fix forecasting' alone signals operational thinking without user empathy."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Delegating moderation to community admins with rules",
+   "difficulty": "hard",
+   "question": "Large Facebook Groups are drowning admins in join requests, 40% of them spam accounts. Admins of groups over 50k members spend hours a day approving manually and some are quitting. As PM for Groups, what should you build first?",
+   "options": [
+    "Admin-set membership questions plus auto-approve/decline rules (account age, answered questions, spam score), with a review queue only for edge cases",
+    "A central Meta spam classifier that silently blocks suspected spam requests before admins ever see them",
+    "A feature that lets admins promote more members to admin so the approval work is shared across more people",
+    "Closing new-member requests automatically once a group passes 50k members to protect existing members"
+   ],
+   "answer": 0,
+   "explanation": "The constraint is admin time, and admins hold context Meta lacks about who belongs in their group. Letting them encode their judgement as rules scales that judgement and shrinks the queue to genuine edge cases. A global classifier helps, but silent blocking can't reflect each group's norms and creates opaque false positives.",
+   "rationales": [
+    "Correct. It scales the admins' own judgement through rules, cutting manual work to edge cases while keeping control in their hands.",
+    "Useful as an input, but a one-size classifier ignores each group's criteria and silently drops real people, which admins can't see or fix.",
+    "Spreading the same manual work across more people treats the symptom; total hours spent approving stay the same.",
+    "Stopping growth punishes healthy groups and real joiners to avoid a tooling problem."
+   ],
+   "interview_tip": "In Meta product-sense rounds, identifying the overloaded power user (admins, creators, sellers) and giving them leverage is a strong move. Mention how you'd measure it: approval time per admin and admin retention."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Risk reversal for high-consideration purchases",
+   "difficulty": "medium",
+   "question": "An Indian D2C mattress brand sees lots of traffic and long time-on-page, but conversion is 0.4%. Exit surveys say 'I can't know if it's comfortable without lying on it.' Which product change best tackles that barrier?",
+   "options": [
+    "A 100-night home trial with free pickup and full refund if they don't like it",
+    "A detailed firmness chart and 3D animation showing the mattress layers",
+    "A 10% first-order discount shown in an exit-intent popup",
+    "More customer photos and star ratings on the product page"
+   ],
+   "answer": 0,
+   "explanation": "The barrier is uncertainty about a costly, hard-to-reverse purchase. Risk reversal moves the risk from the buyer to the seller, so trying it is safe. Information and discounts don't remove the uncertainty that the user named.",
+   "rationales": [
+    "Correct. It removes the exact fear named — not knowing how it feels — by making the decision reversible at no cost.",
+    "More information helps a little, but firmness charts can't substitute for lying on it; the uncertainty remains.",
+    "A discount lowers price, not risk; a cheaper mattress you might hate is still a scary purchase.",
+    "Social proof reassures somewhat, but other people's comfort doesn't tell you about your own."
+   ],
+   "interview_tip": "Interviewers reward candidates who quote the user's stated barrier and match the solution to it. Naming the cost (returns, logistics) and how you'd monitor return rate shows business sense too."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Audience controls to reduce sharing anxiety",
+   "difficulty": "hard",
+   "question": "Instagram sees users taking lots of casual photos but posting far less to their main feed than a few years ago. Research says people feel their whole follower list — bosses, relatives, acquaintances — is watching. Which direction best addresses this?",
+   "options": [
+    "Give users easy ways to share to a chosen smaller audience (e.g. a close-friends list) so casual posts feel safe",
+    "Add more filters and editing tools so users feel their photos are good enough to post",
+    "Show a prompt reminding users how many followers would enjoy seeing a new post from them",
+    "Rank casual posts higher in followers' feeds so posters get more likes and feel rewarded"
+   ],
+   "answer": 0,
+   "explanation": "The pain is audience anxiety (context collapse): one post goes to everyone. Letting people pick a smaller audience lowers the social risk of posting casual content. Polish tools or engagement rewards target different problems and can even increase pressure.",
+   "rationales": [
+    "Correct. It directly attacks context collapse — the named reason — by letting users control who sees each post.",
+    "Editing tools address 'my photo isn't good enough', not 'the wrong people are watching'; they can raise the bar further.",
+    "Reminding people of a large audience amplifies the exact anxiety that stops them posting.",
+    "More likes reward posting, but the fear is about being seen by certain people; wider reach makes that worse."
+   ],
+   "interview_tip": "Naming the underlying concept (context collapse) and tying it back to the user research shows structured product sense. Good answers also note trade-offs, like smaller audiences reducing reach for creators."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Isolating a conversion drop to one payment method",
+   "difficulty": "hard",
+   "question": "Checkout conversion on your D2C site fell from 62% to 55% yesterday. Traffic, devices and app versions look normal. When you break conversion down by payment method, cards and COD are flat but UPI success rate fell from 94% to 71%, mostly for one bank's users. What's your best next step?",
+   "options": [
+    "Treat it as a payment-provider issue: confirm with the gateway or bank, temporarily push other payment methods for affected users, and track recovery",
+    "Roll back yesterday's checkout UI release, since conversion changes usually come from your own deploys",
+    "Launch a discount for UPI users to win back the customers who failed to pay yesterday",
+    "Wait a week to see whether the drop persists before involving anyone, as one day may be noise"
+   ],
+   "answer": 0,
+   "explanation": "Segmenting localised the drop to one method and one issuing bank, which points to an external dependency rather than your product. The right move is to verify with the partner, mitigate for users now (offer cards/COD or another UPI app), and watch the metric return. Rolling back unrelated code wastes time.",
+   "rationales": [
+    "Correct. The data isolates an external cause; confirm it, protect users with alternatives, and monitor — that's how you run an incident you don't own.",
+    "Nothing points at your release: other methods are flat. Rolling back without evidence costs time and may not change anything.",
+    "A discount doesn't help people whose payments are failing; the problem is the payment rail, not their willingness to buy.",
+    "A 7-point drop concentrated in one bank is a clear signal, not noise; waiting loses a week of revenue."
+   ],
+   "interview_tip": "In root-cause questions, interviewers watch for the breakdown sequence (internal vs external, then segment) and for an immediate mitigation, not just a diagnosis."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Success metric for search autocomplete",
+   "difficulty": "easy",
+   "question": "You're launching query autocomplete in an e-commerce app's search bar. Which is the best primary success metric?",
+   "options": [
+    "Share of searches that start from a suggestion and end in a product click or add-to-cart",
+    "Number of autocomplete suggestions shown per day",
+    "Average number of characters users type before searching",
+    "Total number of searches performed per user"
+   ],
+   "answer": 0,
+   "explanation": "Autocomplete exists to help users reach a good result faster. Measuring searches that use a suggestion and lead to a meaningful action captures both adoption and usefulness. Exposure counts or raw search volume can rise without users being helped.",
+   "rationales": [
+    "Correct. It combines use of the feature with a downstream sign of success, so it rewards helpful suggestions, not just shown ones.",
+    "Impressions measure exposure, not value — suggestions can be shown constantly and ignored.",
+    "Fewer characters typed is a nice input, but users could type less and still land on bad results.",
+    "More searches can mean users are struggling to find things; it's ambiguous for search quality."
+   ],
+   "interview_tip": "Good metric answers link the feature's job to an outcome and avoid counting activity alone. Mentioning a guardrail like search-to-purchase rate earns extra credit."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Logo churn vs revenue churn",
+   "difficulty": "easy",
+   "question": "A B2B SaaS company lost 10 of its 200 customers this quarter, but those 10 were all small accounts making up 1% of revenue. Which statement is correct?",
+   "options": [
+    "Logo churn is 5% while gross revenue churn is about 1%",
+    "Logo churn and revenue churn are both 5% because each customer counts equally",
+    "Revenue churn is 5% and logo churn is about 1%",
+    "Churn is 1% because only revenue matters in B2B SaaS"
+   ],
+   "answer": 0,
+   "explanation": "Logo (customer) churn counts accounts lost: 10/200 = 5%. Revenue churn weighs those accounts by what they paid: here ~1%. Both matter — logo churn can show a problem with small customers that revenue churn hides.",
+   "rationales": [
+    "Correct. 10 of 200 accounts is 5% logo churn; those accounts were 1% of revenue, so revenue churn is about 1%.",
+    "Revenue churn weights by account size, so it differs whenever churned accounts are bigger or smaller than average.",
+    "This swaps the two definitions.",
+    "Logo churn still matters — losing many small customers may signal a product or onboarding problem for a whole segment."
+   ],
+   "interview_tip": "PMs in B2B interviews should know both and explain when they diverge. Pointing out what the gap reveals (a segment problem) shows analytical maturity."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "North Star for a B2B e-signature product",
+   "difficulty": "medium",
+   "question": "You're choosing a North Star metric for a B2B e-signature product (like DocuSign) sold per seat. Which is best?",
+   "options": [
+    "Number of documents fully completed (signed by all parties) per week",
+    "Number of paid seats across all customer accounts",
+    "Number of documents sent for signature per week",
+    "Number of weekly logins by account admins"
+   ],
+   "answer": 0,
+   "explanation": "A North Star should capture the value customers get. For e-signature, value lands when an agreement is fully executed. 'Sent' counts unfinished work, seats reflect revenue rather than value, and admin logins are activity.",
+   "rationales": [
+    "Correct. A completed document is the moment the customer's job is done, and it tends to lead revenue and retention.",
+    "Seats are a business output that lags value; customers can hold unused seats until renewal.",
+    "Sent documents include ones that stall or are abandoned, so they overstate value delivered.",
+    "Admin logins measure activity by a small group, not whether agreements get done."
+   ],
+   "interview_tip": "Interviewers want the metric tied to the moment of value for the customer, plus a reason it predicts revenue. Naming a counter-metric like time-to-complete is a plus."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Interaction effects between concurrent experiments",
+   "difficulty": "medium",
+   "question": "Two teams run A/B tests at the same time on the same checkout page: one changes button colour, the other rewrites the price display. Users are randomised independently into each. When is this a real problem?",
+   "options": [
+    "When the two changes interact, so one test's effect depends on which arm of the other test a user is in",
+    "Always — any user who is in two experiments at once makes both results invalid",
+    "Only if the two tests have different sample sizes",
+    "Only when both tests end up statistically significant"
+   ],
+   "answer": 0,
+   "explanation": "Independent randomisation spreads each test's arms evenly across the other test, so main effects stay unbiased. The risk is an interaction: e.g. a new price display only works with a certain button. When changes touch the same element or decision, check for interactions or run them as a combined (factorial) test.",
+   "rationales": [
+    "Correct. Overlap is fine unless effects interact; then each test's result depends on the other, and the combination you ship may not behave as measured.",
+    "Big platforms run many overlapping tests safely; independent randomisation keeps main effects unbiased.",
+    "Different sample sizes affect power, not whether tests interfere with each other.",
+    "Interaction can exist whether or not either test is significant; significance doesn't create or remove it."
+   ],
+   "interview_tip": "At Google/Meta scale, overlapping experiments are normal. A strong answer explains why independence protects main effects and when to worry about interactions."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Reading a confidence interval for lift",
+   "difficulty": "easy",
+   "question": "An A/B test reports a +1.8% lift in conversion with a 95% confidence interval of [+0.5%, +3.1%]. What's the best reading?",
+   "options": [
+    "The effect is very likely positive, with a plausible true lift between about 0.5% and 3.1%",
+    "There's a 95% chance the true lift is exactly 1.8%",
+    "The test is inconclusive because the interval is wider than the lift itself",
+    "Users who saw the change converted between 0.5% and 3.1% of the time"
+   ],
+   "answer": 0,
+   "explanation": "A confidence interval gives a range of effect sizes consistent with the data. Because the interval excludes zero, the result is significant at the 5% level, and the range tells you the realistic upside and downside for decision-making.",
+   "rationales": [
+    "Correct. Excluding zero means significance, and the range shows the plausible size of the effect, which matters for the ship decision.",
+    "A point estimate is never 'exactly' right; the interval exists because the true value is uncertain.",
+    "Width relative to the estimate doesn't make it inconclusive; what matters is whether it includes zero and whether the range is useful.",
+    "The interval is about the difference in conversion between arms, not the conversion rate itself."
+   ],
+   "interview_tip": "Interviewers like PMs who talk in ranges: 'worst case +0.5%, best case +3%' — and then decide whether the low end still justifies the cost."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual school-bag unit sales in India",
+   "difficulty": "medium",
+   "question": "Estimate how many school bags are sold in India each year.",
+   "options": [
+    "About 150 million",
+    "About 15 million",
+    "About 1.5 billion",
+    "About 40 million"
+   ],
+   "answer": 0,
+   "explanation": "Method: India has roughly 250 million school students. Most use one bag that lasts about 1.5–2 years (younger kids replace more often, some buy new each year). 250M ÷ ~1.7 years ≈ 150 million bags a year. Add a little for spares and college students; the order of magnitude is ~100–200 million.",
+   "rationales": [
+    "Correct. ~250M students replacing a bag every ~1.7 years gives ~150M per year.",
+    "That would mean each bag lasts ~17 years, or only a small slice of students buys one — far too low.",
+    "That's about six bags per student per year, which is far above real replacement rates.",
+    "That implies each bag lasts ~6 years; school bags wear out much faster than that."
+   ],
+   "interview_tip": "Interviewers care about the structure (population × share × replacement rate) and sanity checks, not the exact number. Say your assumptions aloud and check the result against something you know."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Peak streaming bandwidth for a live sports final",
+   "difficulty": "medium",
+   "question": "A streaming app expects 50 million concurrent viewers for a cricket final, mostly on phones at an average bitrate of about 2 Mbps. Roughly how much peak egress bandwidth is needed?",
+   "options": [
+    "About 100 Tbps",
+    "About 10 Tbps",
+    "About 1 Pbps",
+    "About 100 Gbps"
+   ],
+   "answer": 0,
+   "explanation": "Method: 50,000,000 viewers × 2 Mbps = 100,000,000 Mbps = 100,000 Gbps = 100 Tbps. That's why such events lean on many CDNs and ISP-embedded caches, and why lowering the default bitrate on mobile is a real product lever.",
+   "rationales": [
+    "Correct. 50M × 2 Mbps = 100M Mbps = 100 Tbps.",
+    "Off by 10x — it would assume only 5M viewers or a 0.2 Mbps stream.",
+    "1 Pbps is 1,000 Tbps — that would need about 20 Mbps per viewer, far above typical mobile bitrates.",
+    "100 Gbps would serve only about 50,000 viewers at 2 Mbps."
+   ],
+   "interview_tip": "Technical estimation questions test unit fluency (Mbps → Gbps → Tbps). Linking the number to a product decision — default quality, CDN mix — makes the answer stand out."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Local vs global network effects",
+   "difficulty": "easy",
+   "question": "Why can a new ride-hailing app compete in one city against a global leader more easily than a new social network can compete against Facebook?",
+   "options": [
+    "Ride-hailing network effects are mostly local — riders care about drivers in their city — so a rival only needs density in one city",
+    "Ride-hailing apps have no network effects at all, so there's nothing to overcome",
+    "Social networks are cheaper to build, so incumbents can copy any new feature faster",
+    "Global ride-hailing leaders are not allowed to cut prices to fight new local entrants"
+   ],
+   "answer": 0,
+   "explanation": "In ride-hailing, a rider in Pune gains nothing from drivers in New York, so the network effect resets city by city. A challenger can win one city with enough supply. Social networks connect people across places, so the incumbent's whole network is the moat.",
+   "rationales": [
+    "Correct. Local network effects let a challenger compete city by city, which is how many regional players have survived.",
+    "Ride-hailing does have strong network effects (more drivers → shorter waits); they're just local.",
+    "Build cost isn't the main barrier; the incumbent's network of connected people is.",
+    "Nothing stops incumbents from cutting prices; they often do."
+   ],
+   "interview_tip": "Interviewers like candidates who check the scope of a network effect before calling it a moat. 'Is this network local or global?' is a sharp strategy question."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Process power (7 Powers)",
+   "difficulty": "medium",
+   "question": "In Hamilton Helmer's '7 Powers', which example best fits 'process power'?",
+   "options": [
+    "Toyota's production system — embedded organisational practices that competitors struggle to copy even when they study them",
+    "A patented drug that competitors are legally barred from making for 20 years",
+    "A social app whose value grows as more friends join",
+    "A cloud provider whose unit costs fall as its data centres grow"
+   ],
+   "answer": 0,
+   "explanation": "Process power comes from complex, evolved ways of working that give lower cost or better quality and are slow to copy even with full visibility. The other options are cornered resource (patent), network economies, and scale economies.",
+   "rationales": [
+    "Correct. Toyota is Helmer's classic example: rivals toured its plants for years but couldn't easily replicate the system.",
+    "That's a cornered resource — exclusive access to a valuable asset, here protected by law.",
+    "That's network economies: value rises with the number of users.",
+    "That's scale economies: unit costs fall as volume grows."
+   ],
+   "interview_tip": "Knowing a moat framework is useful, but interviewers value applying it: name which power a company has and why it's hard to copy."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Fast-follower advantage",
+   "difficulty": "easy",
+   "question": "Which situation most favours being a fast follower rather than the first mover?",
+   "options": [
+    "Customer needs and the best product design are still unclear, and the pioneer is spending heavily to educate the market",
+    "Strong network effects mean the first player to reach scale will likely take most of the market",
+    "The first mover can lock up a scarce resource such as exclusive supplier contracts",
+    "Customers face high switching costs once they adopt a product in this category"
+   ],
+   "answer": 0,
+   "explanation": "Followers benefit when the pioneer pays to discover what works and to teach customers, and when nothing locks the market in early. Network effects, scarce resources and switching costs all reward moving first.",
+   "rationales": [
+    "Correct. The follower can learn from the pioneer's mistakes and enter with a better-fit product at lower cost.",
+    "Network effects reward early scale; waiting can mean the market tips before you arrive.",
+    "Scarce resources are a first-mover advantage — the follower may find them already taken.",
+    "High switching costs keep customers with whoever wins them first."
+   ],
+   "interview_tip": "Good strategy answers say 'it depends' and then name the specific conditions. Interviewers listen for whether you can explain when timing matters."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Exit criteria for a beta",
+   "difficulty": "medium",
+   "question": "Your B2B analytics feature is in a closed beta with 20 customers. Leadership asks, 'When will it go GA?' What's the best way to decide?",
+   "options": [
+    "Agree in advance on measurable exit criteria — e.g. reliability, key-task success, no open severity-1 bugs, and repeat usage by most beta accounts",
+    "Set a fixed date six weeks after beta start, since betas should be time-boxed",
+    "Go GA once at least half the beta customers say they like the feature in a survey",
+    "Wait until all feature requests from beta customers have been built"
+   ],
+   "answer": 0,
+   "explanation": "Exit criteria turn 'is it ready?' into a check against agreed bars for quality, usefulness and stability. They make the decision objective and give leadership a clear status. Dates alone ignore readiness; stated liking is weak evidence; finishing every request never ends.",
+   "rationales": [
+    "Correct. Pre-agreed, measurable criteria cover quality and real usage and make the GA call transparent.",
+    "Time-boxing helps urgency, but a date alone can ship an unready feature or hold back a ready one.",
+    "Saying they like it is weaker than repeat usage; people are polite in surveys.",
+    "Beta feedback is endless; building every request delays launch and bloats the product."
+   ],
+   "interview_tip": "Execution interviews reward defining 'done' before you start. Mentioning both quality bars and adoption bars shows balanced judgement."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Story points measure relative effort",
+   "difficulty": "easy",
+   "question": "In agile teams, what do story points estimate?",
+   "options": [
+    "The relative effort, complexity and uncertainty of a piece of work compared with other items",
+    "The exact number of hours an engineer will spend on the task",
+    "The business value a story will deliver to customers",
+    "The priority order in which stories should be built"
+   ],
+   "answer": 0,
+   "explanation": "Story points are a relative sizing tool: a 5 is roughly bigger than a 3 and smaller than an 8. They fold in complexity and risk, not just time, and a team's velocity helps forecast. They are not hours, value or priority.",
+   "rationales": [
+    "Correct. Points compare work items against each other, including complexity and risk.",
+    "Points deliberately avoid hours; converting them back to hours defeats their purpose.",
+    "Value is a separate judgement; a low-effort story can be high value.",
+    "Priority is set by the PM/product owner, separately from size."
+   ],
+   "interview_tip": "Interviewers may probe whether you misuse points (e.g. comparing teams' velocity). Saying they're a team-internal forecasting tool signals practical agile experience."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Diagnosing low adoption: awareness before value",
+   "difficulty": "medium",
+   "question": "You shipped a 'scheduled reports' feature to all users of a B2B dashboard. After a month, only 2% have used it, though it was a top customer request. What should you check first?",
+   "options": [
+    "What share of target users have even seen the feature — its discoverability and entry points — before judging its value",
+    "Whether to remove the feature, since 2% adoption shows customers didn't really want it",
+    "Whether competitors offer a better version that customers are using instead",
+    "Whether to add more scheduling options, since the feature may be too basic"
+   ],
+   "answer": 0,
+   "explanation": "Adoption is a funnel: aware → tried → successful → repeated. Low usage of a requested feature often means people don't know it exists or can't find it. Check exposure and the first-use funnel before concluding the feature lacks value or needs more scope.",
+   "rationales": [
+    "Correct. Check awareness and first-use drop-off first; you can't judge value if users never found it.",
+    "Killing it skips diagnosis; a requested feature with poor visibility looks just like an unwanted one in the top-line number.",
+    "Competitor research may help later, but your own funnel data is quicker and more direct.",
+    "Adding options assumes the problem is depth before confirming users reached the feature at all."
+   ],
+   "interview_tip": "Breaking adoption into a funnel is a reusable framework that interviewers love. It shows you diagnose before prescribing."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Renegotiating an inherited customer commitment",
+   "difficulty": "hard",
+   "question": "You've just taken over a product area. Your predecessor promised a large enterprise customer a custom integration by next quarter. Your research shows it would serve only them and delay a platform fix that many customers need. What do you do?",
+   "options": [
+    "Meet the customer with the account team, understand the outcome they need, be honest about the trade-off, and propose an alternative path or timeline you can actually keep",
+    "Deliver the integration as promised, since breaking a commitment would damage trust in the company",
+    "Quietly deprioritise the integration and let the account team handle any fallout later",
+    "Escalate to your VP and ask them to decide, since you didn't make the original promise"
+   ],
+   "answer": 0,
+   "explanation": "A commitment made by the company still matters, so you don't drop it silently — but you also own the roadmap now. Talking directly with the customer about the outcome they need often reveals a cheaper solution, and being open early protects trust. Escalating without a proposal avoids ownership.",
+   "rationales": [
+    "Correct. It respects the promise, digs into the real need, and resets expectations openly with a plan you can deliver — ownership plus customer obsession.",
+    "Blindly honouring it ignores your evidence and harms many customers; you can keep trust while renegotiating.",
+    "Silence turns a hard conversation into a broken promise discovered late — the worst outcome for trust.",
+    "Involving your VP is fine, but handing over the decision without a recommendation signals you don't own your area."
+   ],
+   "interview_tip": "Amazon interviewers look for Ownership and Earn Trust: you take responsibility for decisions you inherited and have the hard conversation early, with a proposal."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Coaching a struggling junior PM",
+   "difficulty": "hard",
+   "question": "A junior PM you mentor keeps missing details in specs, and engineers have started going around them to you. What's the best response?",
+   "options": [
+    "Redirect engineers back to the junior PM, give the PM specific examples privately, and agree on a short plan — e.g. spec reviews together for a few weeks",
+    "Take over the specs yourself for now so engineering isn't slowed down",
+    "Tell the engineers to be patient because everyone is learning",
+    "Report the issue to the junior PM's manager and let them handle it"
+   ],
+   "answer": 0,
+   "explanation": "Growing someone means protecting their role while fixing the gap. Sending engineers back to them keeps their authority; specific, private feedback and a time-boxed support plan build skill. Taking over or escalating first undermines them.",
+   "rationales": [
+    "Correct. It preserves their ownership with the team, gives clear feedback, and adds structured support with an end date.",
+    "Taking over fixes the short term but signals to everyone that the junior PM isn't trusted, and they don't learn.",
+    "Asking for patience ignores a real quality problem and doesn't help the PM improve.",
+    "Their manager may need to know, but skipping direct feedback first is unfair and avoids your mentoring role."
+   ],
+   "interview_tip": "This tests 'Hire and Develop the Best'. Strong answers show specific, kind feedback, protecting the person's standing, and a measurable plan."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Exec bypassing you to redirect your team",
+   "difficulty": "hard",
+   "question": "A senior director outside your org keeps messaging your engineers directly with 'quick asks' that pull them off sprint work. Your team doesn't feel able to say no. What's the best approach?",
+   "options": [
+    "Talk to the director privately, understand what they need, offer a clear intake path through you, and agree how urgent asks will be handled",
+    "Tell your engineers to ignore messages from the director from now on",
+    "Raise it in the director's next staff meeting so everyone sees the problem",
+    "Absorb the asks into the sprint to keep the director happy and avoid conflict"
+   ],
+   "answer": 0,
+   "explanation": "The director has real needs and is using the fastest path they know. A private conversation that respects those needs and offers a better channel protects your team without creating a feud. Ignoring, shaming or absorbing all lead to worse outcomes.",
+   "rationales": [
+    "Correct. It addresses the cause directly and respectfully, protects the team, and gives the director a reliable way to get help.",
+    "Ignoring a senior leader puts engineers in an awkward spot and escalates tension.",
+    "Calling it out publicly embarrasses them and makes cooperation less likely.",
+    "Silently absorbing asks hides the cost, breaks sprint commitments, and teaches that bypassing works."
+   ],
+   "interview_tip": "Interviewers look for courage with tact: you protect your team, handle it 1:1 first, and fix the process rather than blame the person."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Quantization to cut serving cost",
+   "difficulty": "medium",
+   "question": "Your team self-hosts an open-weights LLM and GPU costs are too high. An engineer proposes 4-bit quantization. What's the key trade-off to evaluate?",
+   "options": [
+    "Lower memory and cost per request versus a possible drop in output quality, which must be checked on your own evals",
+    "Lower cost versus losing the ability to stream tokens to users",
+    "Lower latency versus a much smaller context window",
+    "Lower cost versus needing to retrain the model from scratch"
+   ],
+   "answer": 0,
+   "explanation": "Quantization stores weights with fewer bits, so the model uses less memory and often runs cheaper and faster on the same hardware. The cost is a possible accuracy drop, which varies by task — so you test it on your eval set, especially on hard or long-tail cases.",
+   "rationales": [
+    "Correct. Memory and cost savings come with possible quality loss, so measure on your task-specific evals before switching.",
+    "Quantized models can still stream tokens; streaming depends on the serving stack, not weight precision.",
+    "Context window length isn't directly set by quantization; it's mainly a model and memory configuration choice.",
+    "Quantization is applied to an existing model; it doesn't need full retraining."
+   ],
+   "interview_tip": "AI PM interviews test whether you know the main levers on inference cost (smaller models, quantization, caching, batching) and insist on evals before changing them."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Rubric-based grading for open-ended outputs",
+   "difficulty": "medium",
+   "question": "You're evaluating an AI assistant that writes customer-support replies. There's no single correct answer per ticket. What's the most useful evaluation approach?",
+   "options": [
+    "Define a rubric (accuracy against policy, resolves the issue, tone, no made-up promises) and score samples against it with trained raters or a calibrated LLM judge",
+    "Compare each reply with a human-written reply using word-overlap scores like BLEU",
+    "Measure the average length of replies and aim for a target length",
+    "Ask the model to rate its own reply on a 1–10 scale"
+   ],
+   "answer": 0,
+   "explanation": "When many answers are valid, you grade quality on explicit criteria. A rubric makes 'good' concrete and lets humans or a calibrated LLM judge score consistently. Word overlap punishes good replies phrased differently, length is a weak proxy, and self-rating is biased.",
+   "rationales": [
+    "Correct. A clear rubric captures what matters to the business and supports consistent, scalable grading.",
+    "Word-overlap metrics reward copying the reference wording, not quality; a great reply phrased differently scores low.",
+    "Length says little about whether the reply is correct or helpful.",
+    "Models tend to rate themselves generously and miss their own errors."
+   ],
+   "interview_tip": "Strong AI PMs can turn 'quality' into a rubric tied to business outcomes, and know when an LLM judge must be checked against human labels."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Index freshness in RAG",
+   "difficulty": "medium",
+   "question": "Your RAG-based HR assistant keeps quoting last year's leave policy, even though HR updated the document three weeks ago. Retrieval and generation both work well in tests. What's the most likely cause?",
+   "options": [
+    "The search index wasn't re-indexed after the update, so the old version of the document is still being retrieved",
+    "The model's context window is too small to hold the new policy",
+    "The temperature is set too high, causing the model to invent the old policy",
+    "The embedding model needs fine-tuning on HR vocabulary"
+   ],
+   "answer": 0,
+   "explanation": "RAG answers are only as current as the index. If documents change but aren't re-ingested (or old versions aren't removed), the system faithfully retrieves outdated content. Fix it with update-triggered re-indexing, removing stale versions, and showing 'last updated' dates.",
+   "rationales": [
+    "Correct. Stale or duplicate documents in the index are a common RAG failure; fresh ingestion and removing old versions fix it.",
+    "The model quotes the old policy accurately, which suggests it's getting the old text, not that the new text doesn't fit.",
+    "High temperature causes variation, not consistent quoting of an older real document.",
+    "Retrieval works in tests, and the issue is version, not vocabulary."
+   ],
+   "interview_tip": "Interviewers value PMs who think about the data pipeline, not just the model. Mentioning freshness SLAs and 'last updated' labels shows product judgement."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Top-p (nucleus) sampling",
+   "difficulty": "easy",
+   "question": "What does setting top-p = 0.9 do when an LLM generates text?",
+   "options": [
+    "At each step it samples only from the smallest set of tokens whose combined probability reaches 90%",
+    "It makes the model choose the single most likely token 90% of the time",
+    "It limits the response to 90% of the maximum output length",
+    "It filters out 10% of answers that a safety classifier flags"
+   ],
+   "answer": 0,
+   "explanation": "Top-p (nucleus) sampling cuts off the unlikely tail of the probability distribution, then samples among what's left. It controls randomness alongside temperature: lower top-p means more focused, predictable output.",
+   "rationales": [
+    "Correct. It keeps the most likely tokens up to 90% total probability and samples among them.",
+    "That describes a mix of greedy and random decoding, not top-p.",
+    "Output length is set by max tokens, not top-p.",
+    "Safety filtering is a separate system; top-p is a decoding setting."
+   ],
+   "interview_tip": "You won't be asked to code decoding, but knowing how temperature and top-p affect consistency helps you choose settings for, say, a support bot vs a brainstorming tool."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Open-weights self-hosting vs frontier API",
+   "difficulty": "hard",
+   "question": "A bank wants to add an AI assistant to summarise call transcripts: millions of calls a month, data must stay in-country, and summaries only need to be 'good enough'. Today a frontier-model API gives the best quality. What should the PM recommend exploring first?",
+   "options": [
+    "A smaller open-weights model hosted in-country, tuned on the task and checked against the frontier model on a shared eval set",
+    "The frontier API anyway, because its higher quality outweighs residency and cost concerns",
+    "Training a new model from scratch so the bank fully owns it",
+    "Waiting for frontier providers to open in-country data centres before starting"
+   ],
+   "answer": 0,
+   "explanation": "High volume, a narrow task, a 'good enough' bar and strict residency all favour a smaller self-hosted model. The frontier model becomes the quality benchmark: if the tuned small model is close on your evals, you get compliance and much lower unit cost.",
+   "rationales": [
+    "Correct. It meets residency, cuts cost at high volume, and uses evals to show quality is close enough for this narrow task.",
+    "Residency is a hard constraint for a bank; quality doesn't override regulation, and API costs grow with millions of calls.",
+    "Training from scratch is very costly and slow, and unnecessary when strong open-weights models exist.",
+    "Waiting delays value with no guarantee; a viable option exists now."
+   ],
+   "interview_tip": "AI strategy questions test whether you weigh constraints (regulation, cost at scale, quality bar) instead of defaulting to 'use the best model'. Anchor the decision in evals."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Stateless auth with signed tokens (JWT)",
+   "difficulty": "easy",
+   "question": "Your app uses JSON Web Tokens (JWTs) for login sessions. What's a key property PMs should understand?",
+   "options": [
+    "The server can check a token's signature without a database lookup, but a token stays valid until it expires unless you add a revocation mechanism",
+    "JWTs encrypt user data so nobody can read what's inside the token",
+    "JWTs must be stored on the server, so they don't scale to many users",
+    "A JWT can only be used once and must be refreshed after every request"
+   ],
+   "answer": 0,
+   "explanation": "JWTs are signed, not encrypted by default: anyone holding one can read its contents, but only the server can create a valid one. Because validation is stateless, they scale well, but logging out or banning a user needs short expiry times or a revocation list.",
+   "rationales": [
+    "Correct. Stateless validation is the benefit; the trade-off is that revoking a token before expiry needs extra design.",
+    "Standard JWTs are signed, not encrypted — their content is readable, so don't put secrets in them.",
+    "The point of JWTs is that the server doesn't need to store sessions.",
+    "JWTs are reused until expiry; single-use behaviour isn't part of the standard."
+   ],
+   "interview_tip": "Technical-fluency questions check whether you can spot product implications — e.g. 'log out of all devices' needs short-lived tokens or revocation."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Pub/sub for decoupling services",
+   "difficulty": "medium",
+   "question": "When an order is placed, five services must react: inventory, email, analytics, loyalty points and fraud checks. Today checkout calls each one directly and fails if any is down. What's the better design?",
+   "options": [
+    "Checkout publishes an 'order placed' event to a message broker, and each service subscribes and processes it independently",
+    "Checkout calls all five services in parallel instead of one after another",
+    "Merge the five services into the checkout service so there are no network calls",
+    "Add retries to each direct call so failures are less likely"
+   ],
+   "answer": 0,
+   "explanation": "Publish/subscribe decouples the sender from the receivers: checkout succeeds once the event is recorded, and each service handles it at its own pace. New consumers can be added without changing checkout, and an outage in, say, email no longer blocks orders.",
+   "rationales": [
+    "Correct. Events decouple services, so one failing consumer doesn't break checkout and new consumers are easy to add.",
+    "Parallel calls cut latency but keep checkout dependent on all five services being up.",
+    "Merging everything creates a large, fragile system that's harder to change and scale.",
+    "Retries help with brief glitches but still tie checkout's success to every service."
+   ],
+   "interview_tip": "PMs don't design systems, but knowing why event-driven designs improve reliability helps you discuss trade-offs like eventual delays in emails or points."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Involuntary churn from failed payments (dunning)",
+   "difficulty": "medium",
+   "question": "A subscription app finds that 30% of its monthly churn comes from cards that failed at renewal (expired, insufficient funds), not users choosing to cancel. Which tactic best addresses this?",
+   "options": [
+    "Smart payment retries plus reminders to update payment details before and after a failure, with a short grace period",
+    "A win-back email campaign offering 50% off to users who churned last month",
+    "A cancellation survey to understand why users are leaving",
+    "Adding more premium features so users value the subscription more"
+   ],
+   "answer": 0,
+   "explanation": "Involuntary churn is a payments problem, not a value problem — these users didn't decide to leave. Dunning (well-timed retries, card-update prompts, account updater services, grace periods) recovers many of them cheaply. Discounts and features target people who chose to leave.",
+   "rationales": [
+    "Correct. It recovers customers who still want the product by fixing the payment failure itself.",
+    "Discounts give away revenue to people who never meant to leave; fixing the payment is cheaper.",
+    "These users didn't cancel, so a cancellation survey won't reach them.",
+    "Their issue isn't value; better features won't fix an expired card."
+   ],
+   "interview_tip": "Separating voluntary from involuntary churn is a quick win interviewers like — it shows you segment the problem before reaching for growth tactics."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Two-signal check for personal data on a shared screen (Apple HomeView, Oct 2026)",
+   "difficulty": "medium",
+   "question": "Apple's HomeView hub, announced on 13 October 2026, recognises up to six household members by face. Apple says personal content like Messages and Calendar appears only when the user is recognised AND their paired iPhone or iPad is nearby and was recently unlocked. What product problem does that second check mainly address?",
+   "options": [
+    "It reduces the chance of showing private data to the wrong person on a shared device, since face recognition alone can make mistakes or be fooled",
+    "It lowers the device's cost by moving all processing to the iPhone",
+    "It increases engagement by encouraging people to carry their iPhone at home",
+    "It meets EU rules, which is why the hub requires an iPhone"
+   ],
+   "answer": 0,
+   "explanation": "On a shared screen, one wrong match leaks private messages to a family member or guest. Requiring a second, independent signal (the user's own unlocked phone nearby) makes a mistake much less likely, at the cost of some convenience. It's a classic trade-off between convenience and privacy on multi-user devices.",
+   "rationales": [
+    "Correct. Two independent signals reduce false matches — the main risk when personal data appears on a household device.",
+    "Apple says some features rely on a paired device, but this specific check is about who sees personal content, not cost.",
+    "Engagement isn't the goal of a privacy check; the requirement adds friction, not usage.",
+    "Apple says HomeView isn't sold in the EU at all because Siri AI isn't available there, so EU rules aren't the reason for this check."
+   ],
+   "interview_tip": "News questions reward reading the design choice behind a launch. Explaining the convenience-vs-privacy trade-off on shared devices shows product judgement, not just awareness.",
+   "source": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/"
+  }
+ ]
+}

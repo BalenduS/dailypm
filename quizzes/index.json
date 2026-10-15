@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-15",
+   "theme": "Shared-screen privacy, 7 Powers and failed-payment churn",
+   "count": 30
+  },
+  {
    "date": "2026-10-14",
    "theme": "Infrequent-use design, take rates and Meta's Muse Wonder",
    "count": 30
