@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-16",
+   "theme": "Agentic checkout, causal lift and cornered resources",
+   "count": 30
+  },
+  {
    "date": "2026-10-15",
    "theme": "Shared-screen privacy, 7 Powers and failed-payment churn",
    "count": 30

@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-16",
+ "theme": "Agentic checkout, causal lift and cornered resources",
+ "questions": [
+  {
+   "id": "2026-10-16-01",
+   "topic": "Product Sense",
+   "concept": "Confirming payee identity before money transfers",
+   "difficulty": "hard",
+   "question": "You're PM for a UPI payments app. Support data shows a rising share of complaints are 'sent money to the wrong person' after users mistype a phone number or UPI ID; reversals are slow and often impossible. Which change best attacks the root problem?",
+   "options": [
+    "Show the bank-registered name of the payee before the user confirms, and add a first-time-payee warning for new recipients",
+    "Cap the first payment to any new recipient at ₹2,000 so mistakes are always small and recoverable",
+    "Require users to enter the recipient's UPI ID twice, like a password confirmation field, before paying",
+    "Add a 'Raise dispute' button on every transaction so wrong transfers can be escalated to the bank faster"
+   ],
+   "rationales": [
+    "Correct. It adds a human-readable check at the point of decision, so most typos get caught before the money leaves — prevention beats recovery when reversals are hard.",
+    "Limits shrink the damage but don't prevent the mistake, and they frustrate legitimate large first payments like rent or fees.",
+    "Typing twice catches some typos but adds friction to every payment, and users copy-paste the same wrong ID — it checks consistency, not correctness.",
+    "Faster disputes help after the error, but reversals depend on banks and the recipient; the user still loses money and trust in many cases."
+   ],
+   "answer": 0,
+   "explanation": "The failure happens before the money moves: the user can't tell the identifier they typed points to the wrong person. Showing the verified payee name turns an invisible error into a visible one at the exact moment of decision, and a first-time warning adds attention only where risk is highest. Recovery tools and limits treat symptoms after the fact.",
+   "interview_tip": "Interviewers look for whether you locate the moment the error is made and design feedback there. Strong answers prefer cheap prevention at the decision point over expensive recovery flows."
+  },
+  {
+   "id": "2026-10-16-02",
+   "topic": "Product Sense",
+   "concept": "Gift purchase flows where buyer and recipient differ",
+   "difficulty": "hard",
+   "question": "An Indian D2C apparel brand sees that ~25% of Diwali orders are gifts, but gift orders have twice the return rate, mostly for wrong size. What's the best product change to explore first?",
+   "options": [
+    "Promote free-size items like scarves and accessories as the default gifting category during the festival",
+    "Offer a 'let them choose size' gift option: the recipient gets a link to confirm size and address before the item ships",
+    "Offer free gift wrapping and a personalised note to make gift orders feel more premium and reduce returns",
+    "Add a detailed size chart with body measurements on every product page so gift buyers can pick more carefully"
+   ],
+   "rationales": [
+    "Steering gifts to free-size items dodges the problem and gives up the core catalogue during the biggest sales season.",
+    "Correct. It routes the missing information to the person who has it, attacking the real cause of returns without dropping the product line.",
+    "Wrapping improves the experience, but it does nothing about wrong sizes, which is what drives the returns.",
+    "Size charts help self-buyers, but the gift buyer still doesn't know the recipient's measurements — this improves a tool for the wrong user."
+   ],
+   "answer": 1,
+   "explanation": "The key insight is that the buyer doesn't have the information (the recipient's size), so better tools for the buyer can't fix it. Moving the size decision to the person who knows it removes the root cause while keeping the surprise of the gift.",
+   "interview_tip": "A strong product-sense answer notices that the buyer and the end user are different people with different information. Naming 'who knows what' is a signal of structured user thinking."
+  },
+  {
+   "id": "2026-10-16-03",
+   "topic": "Product Sense",
+   "concept": "Breaking long forms into steps with progress cues",
+   "difficulty": "easy",
+   "question": "A lending app's loan application is one long page with 28 fields, and most drop-offs happen before users scroll halfway. Which change is the most standard first fix?",
+   "options": [
+    "Keep the single page but make every field optional so users can submit faster and fill gaps later",
+    "Add a banner explaining that the form takes 10 minutes so users set aside time before starting",
+    "Shrink the font and spacing so all 28 fields fit on one screen without scrolling",
+    "Split it into short steps grouped by topic, with a progress indicator and saved progress between steps"
+   ],
+   "rationales": [
+    "A lender needs most of these fields to decide; making them optional pushes the problem to a later, more frustrating step.",
+    "Setting expectations helps a little, but announcing a 10-minute effort can scare off even more users at the start.",
+    "Cramming fields together makes the form harder to read and tap on mobile, increasing errors.",
+    "Correct. Chunking plus progress cues lowers perceived effort and lets users resume, a proven pattern for long applications."
+   ],
+   "answer": 3,
+   "explanation": "Long forms overwhelm users before they start. Chunking related fields into steps reduces perceived effort, a progress bar shows the end is near, and saving progress lets people come back. It keeps required data while cutting cognitive load.",
+   "interview_tip": "Easy UX questions test whether you know common patterns. Mentioning saved progress and measuring step-level drop-off shows you'd verify the fix with data."
+  },
+  {
+   "id": "2026-10-16-04",
+   "topic": "Product Sense",
+   "concept": "Social proof at the point of decision",
+   "difficulty": "medium",
+   "question": "A hotel booking app wants to lift conversion for first-time users who view a hotel but don't book. Which use of social proof is most likely to help?",
+   "options": [
+    "Show recent, relevant signals near the Book button, like 'Rated 4.6 by 1,200 families' for a user browsing family rooms",
+    "Add a homepage banner saying '10 million travellers trust us' that every visitor sees on launch",
+    "Show a live counter of how many people are viewing each hotel right now on every listing",
+    "Add a page of curated customer testimonials linked from the app's footer menu"
+   ],
+   "rationales": [
+    "Correct. Specific, relevant proof at the decision point answers the user's 'will this work for me?' doubt exactly when it matters.",
+    "Generic scale claims build some brand trust, but they're far from the booking decision and say nothing about this hotel.",
+    "'X people viewing' counters create urgency, but they're often seen as manipulative and don't address fit; overused, they erode trust.",
+    "Testimonials buried in the footer are rarely seen by users deciding on a specific hotel."
+   ],
+   "answer": 0,
+   "explanation": "Social proof works best when it is specific, relevant to the user's situation, and placed where the doubt arises — right before committing. Generic brand claims or pressure tactics are weaker and can backfire.",
+   "interview_tip": "Interviewers like candidates who connect a psychological principle to placement and relevance. Flagging that manipulative urgency can hurt trust shows good judgement."
+  },
+  {
+   "id": "2026-10-16-05",
+   "topic": "Metrics",
+   "concept": "Difference-in-differences for non-randomized launches",
+   "difficulty": "hard",
+   "question": "Your food-delivery app launched a new 'scheduled orders' feature in Pune only (no A/B test). Pune orders rose 6% in the month after launch, while comparable cities without the feature rose 4% in the same month. Pre-launch, Pune and those cities moved in parallel. What's the best estimate of the feature's impact?",
+   "options": [
+    "It can't be estimated at all without a randomized A/B test, so the team should report no impact",
+    "About +6%, since that is the actual growth Pune saw after the feature went live",
+    "About +2%, the difference between Pune's change and the comparison cities' change over the same period",
+    "About +10%, adding Pune's growth to the comparison cities' growth to capture total lift"
+   ],
+   "rationales": [
+    "Randomized tests are best, but quasi-experimental methods like this give a reasonable estimate when a test wasn't possible.",
+    "This credits the feature with growth that happened everywhere, overstating impact by including seasonal or market-wide effects.",
+    "Correct. Subtracting the control's change removes shared trends, leaving roughly +2% attributable to the feature (assuming parallel trends hold).",
+    "Adding the two changes has no causal logic; the control change is something to remove, not add."
+   ],
+   "answer": 2,
+   "explanation": "This is difference-in-differences: the comparison cities show what would likely have happened anyway (seasonality, marketing, trends). Subtracting their change from Pune's isolates the feature's effect. It relies on the parallel-trends assumption, which the pre-launch data supports.",
+   "interview_tip": "When asked to measure a launch with no experiment, strong candidates name a control group and the parallel-trends assumption. Saying 'it's impossible' or quoting the raw lift are common weak answers."
+  },
+  {
+   "id": "2026-10-16-06",
+   "topic": "Metrics",
+   "concept": "Prevalence vs user-report counts for harmful content",
+   "difficulty": "medium",
+   "question": "A social app's trust & safety team reports that user reports of harmful posts fell 30% this quarter and calls it a win. What's the best response?",
+   "options": [
+    "Accept the win, because fewer reports directly means users are seeing less harmful content in their feeds",
+    "Increase the reporting button's visibility so report numbers go back up and give a more complete picture",
+    "Check prevalence — the share of views that land on harmful content, measured by sampling — since report counts also depend on how willing and able users are to report",
+    "Measure the number of posts removed by moderators instead, since removals are a cleaner signal than reports"
+   ],
+   "rationales": [
+    "Fewer reports may reflect a UI change or reporting fatigue, not less harm — taking it at face value is a classic proxy error.",
+    "Making reporting easier changes the proxy again; it doesn't tell you the true level of harm.",
+    "Correct. Prevalence measures exposure directly and isn't swayed by reporting behaviour, so it confirms whether harm really fell.",
+    "Removals depend on moderator capacity and policy; they can rise or fall without harm changing, so they're also a proxy."
+   ],
+   "answer": 2,
+   "explanation": "Reports are a noisy proxy: they can fall because a report button moved, users gave up, or harmful content reached people who don't report. Prevalence, estimated by labelling a random sample of viewed content, measures what users actually experience.",
+   "interview_tip": "Interviewers probe whether you question the metric before celebrating it. Naming an exposure-based metric and explaining why the proxy moved signals strong analytical instincts."
+  },
+  {
+   "id": "2026-10-16-07",
+   "topic": "Metrics",
+   "concept": "Completion rate as a content quality signal",
+   "difficulty": "medium",
+   "question": "You run a podcast app's recommendations. Which metric best tells you whether recommended episodes were actually good for the listener, rather than just clickable?",
+   "options": [
+    "Total app installs in the month, since good recommendations spread through word of mouth",
+    "Click-through rate on recommended episodes, since a click shows the recommendation caught the user's interest",
+    "Completion rate (share of started episodes listened to most of the way), read together with follow-up listens",
+    "Number of recommendations shown per session, since more impressions mean more chances to engage"
+   ],
+   "rationales": [
+    "Installs are too far from recommendations and moved by many other factors like marketing.",
+    "CTR rewards catchy titles and thumbnails; it can rise while satisfaction falls (clickbait).",
+    "Correct. Completion shows the episode held attention, and follow-up listening shows it was worth coming back for.",
+    "Impressions are an input you control, not an outcome — more of them says nothing about quality."
+   ],
+   "answer": 2,
+   "explanation": "Clicks measure the title's appeal; completion measures whether the content delivered. Pairing completion with return listening captures whether the recommendation created lasting value, not just a tap.",
+   "interview_tip": "Content-quality metric questions test whether you separate 'attracted' from 'satisfied'. Mentioning that completion needs normalising for episode length adds depth."
+  },
+  {
+   "id": "2026-10-16-08",
+   "topic": "Metrics",
+   "concept": "Mean vs median for skewed values",
+   "difficulty": "easy",
+   "question": "Average order value on your B2B marketplace jumped from ₹8,000 to ₹14,000 week over week, but the team says nothing changed for typical buyers. What most likely explains this?",
+   "options": [
+    "Prices were raised across the board, since that is the only way the average could jump so quickly",
+    "A few very large orders pulled the mean up; the median order value would show what a typical buyer spends",
+    "The number of orders must have dropped sharply, which mechanically raises the average order value",
+    "Typical buyers increased their basket size, because average order value reflects every order equally"
+   ],
+   "rationales": [
+    "A price rise is possible, but it would lift the typical order as well — and it's not the only explanation.",
+    "Correct. Skewed data plus a few outliers moves the mean; the median is robust and reflects the typical order.",
+    "Fewer orders doesn't by itself raise the average; average order value is total revenue divided by orders.",
+    "If typical buyers changed, the median would move too; the team's observation suggests it didn't."
+   ],
+   "answer": 1,
+   "explanation": "Means are sensitive to outliers in skewed distributions like order values. A handful of bulk orders can move the average a lot while the median — the middle order — stays put, which matches 'nothing changed for typical buyers'.",
+   "interview_tip": "A simple question, but interviewers like hearing you'd check the distribution (median, percentiles) before drawing conclusions from an average."
+  },
+  {
+   "id": "2026-10-16-09",
+   "topic": "Experimentation",
+   "concept": "Pre-registering a primary metric before a test",
+   "difficulty": "easy",
+   "question": "Before launching an A/B test of a new checkout design, what's the main benefit of writing down the primary metric and decision rule in advance?",
+   "options": [
+    "It makes the test reach statistical significance faster because fewer metrics are being measured",
+    "It allows the team to skip guardrail metrics, since only the primary metric will be reviewed",
+    "It guarantees the treatment will win, because the team designed the change around that metric",
+    "It prevents picking whichever metric looks best afterwards, which inflates false positives and biases the decision"
+   ],
+   "rationales": [
+    "Writing a plan doesn't change the sample size needed; significance speed depends on traffic and effect size.",
+    "Guardrails still matter; pre-registration defines the main metric, it doesn't remove the others.",
+    "Planning can't guarantee a result — the point is to read whatever happens fairly.",
+    "Correct. Pre-registration guards against cherry-picking, a major source of false wins."
+   ],
+   "answer": 3,
+   "explanation": "With many metrics, some will look significant by chance. Committing to one primary metric and a ship rule up front keeps the decision honest and stops 'metric shopping' after seeing results.",
+   "interview_tip": "Saying 'I'd define the primary metric, guardrails and decision rule before launch' is a simple habit that signals experimentation maturity."
+  },
+  {
+   "id": "2026-10-16-10",
+   "topic": "Experimentation",
+   "concept": "Graph cluster randomization for social features",
+   "difficulty": "hard",
+   "question": "You're testing a new 'group video call' feature on a messaging app. You randomize individual users 50/50. Why might the result be misleading, and what's the better design?",
+   "options": [
+    "Treated and control users talk to each other, so effects leak across groups; randomize by clusters of connected users instead",
+    "Users may have different phone models, so stratify by device type to balance the two groups",
+    "Group calls are a new feature, so the novelty effect will dominate; run an A/A test before starting",
+    "Individual randomization makes the sample too large, so switch to a 5/95 split to reduce noise"
+   ],
+   "rationales": [
+    "Correct. Cluster randomization limits spillover between arms, so the measured effect reflects real exposure to the feature.",
+    "Stratifying by device helps balance, but it doesn't address users in different arms affecting each other.",
+    "Novelty is a real concern, but an A/A test checks the platform, not interference between users.",
+    "A smaller treatment share doesn't fix interference, and it makes the test less powerful, not more accurate."
+   ],
+   "answer": 0,
+   "explanation": "Social features have network effects: a treated user can only call people who also have the feature, and control users get invited by treated friends. That spillover biases the comparison. Randomizing clusters of densely connected users keeps most interactions within one arm.",
+   "interview_tip": "Interviewers at social companies expect you to spot network interference. Naming cluster or ego-network randomization, and the trade-off of fewer independent units, shows depth."
+  },
+  {
+   "id": "2026-10-16-11",
+   "topic": "Estimation",
+   "concept": "Tourist-flow sizing for hotel room-nights",
+   "difficulty": "easy",
+   "question": "Estimate annual occupied hotel room-nights in Goa. Assume about 9 million tourist visits a year, an average stay of 4 nights, 2 guests per room, and ignore homestays and day-trippers.",
+   "options": [
+    "About 36 million room-nights",
+    "About 18 million room-nights",
+    "About 180 million room-nights",
+    "About 1.8 million room-nights"
+   ],
+   "rationales": [
+    "This counts guest-nights and forgets that two guests share one room.",
+    "Correct. 9M × 4 = 36M guest-nights, divided by 2 guests per room = 18M room-nights.",
+    "This is ten times too high; no step in the stated assumptions multiplies by 10.",
+    "This is off by a factor of 10 — a common slip when converting millions mid-calculation."
+   ],
+   "answer": 1,
+   "explanation": "Guest-nights = 9M visits × 4 nights = 36M. Each room holds 2 guests, so room-nights = 36M ÷ 2 = 18M. The method is: flow of visitors × length of stay ÷ occupancy per unit.",
+   "interview_tip": "Interviewers care about the structure (flow × duration ÷ occupancy) and sanity checks more than the number. Calling out the unit (guests vs rooms) is what separates careful candidates."
+  },
+  {
+   "id": "2026-10-16-12",
+   "topic": "Estimation",
+   "concept": "Attach-rate revenue estimate (in-flight Wi-Fi)",
+   "difficulty": "medium",
+   "question": "An Indian airline flies 2,000 flights a day with 180 seats each and an 85% load factor. If 5% of passengers buy a ₹500 Wi-Fi pass, what's the rough annual Wi-Fi revenue?",
+   "options": [
+    "About ₹28 crore",
+    "About ₹2,800 crore",
+    "About ₹330 crore",
+    "About ₹280 crore"
+   ],
+   "rationales": [
+    "This is off by 10x — usually from mixing up lakh, crore and billion during conversion.",
+    "This is 10x too high, typically from treating the daily figure as ₹7.65 crore instead of ₹76.5 lakh.",
+    "This skips the 85% load factor and assumes every seat is filled, overstating passengers by about 18%.",
+    "Correct. 306k passengers × 5% × ₹500 × 365 ≈ ₹2.8 billion, i.e. about ₹280 crore."
+   ],
+   "answer": 3,
+   "explanation": "Passengers/day = 2,000 × 180 × 0.85 ≈ 306,000. Buyers = 5% ≈ 15,300. Revenue/day ≈ 15,300 × ₹500 ≈ ₹76.5 lakh. Per year ≈ ₹76.5 lakh × 365 ≈ ₹27,900 lakh ≈ ₹280 crore (₹2.8 billion).",
+   "interview_tip": "In guesstimates with Indian units, state conversions out loud (1 crore = 10 million). Interviewers reward clear structure: volume × attach rate × price × time."
+  },
+  {
+   "id": "2026-10-16-13",
+   "topic": "Strategy",
+   "concept": "Cornered resource (7 Powers)",
+   "difficulty": "medium",
+   "question": "In Hamilton Helmer's 7 Powers, which example is the clearest case of a 'cornered resource'?",
+   "options": [
+    "A software firm whose customers would face months of migration work to switch vendors",
+    "A cloud provider whose huge data centres give it lower cost per server than smaller rivals",
+    "A ride-hailing app that has more drivers than rivals in a city, so pickups are faster",
+    "A drug maker holding an exclusive patent on a molecule that competitors cannot legally copy"
+   ],
+   "rationales": [
+    "This is switching costs — the value a customer would lose by moving.",
+    "This is scale economies — cost advantages that come from size.",
+    "This is a network effect (more drivers improve the service for riders), a different power.",
+    "Correct. An exclusive patent is a classic cornered resource: valuable, hard to replicate, and owned on favourable terms."
+   ],
+   "answer": 3,
+   "explanation": "A cornered resource is preferential access, on attractive terms, to a coveted asset that independently boosts value — like a patent, a unique licence, or a rare team. The other options describe network effects, scale economies and switching costs.",
+   "interview_tip": "Knowing the 7 Powers lets you name moats precisely in strategy rounds. Strong candidates also test durability: how long until the resource can be copied or expires?"
+  },
+  {
+   "id": "2026-10-16-14",
+   "topic": "Strategy",
+   "concept": "Ad-supported tier as price discrimination",
+   "difficulty": "medium",
+   "question": "A paid music-streaming app in India is losing price-sensitive students to free options. Leadership proposes a cheaper ad-supported tier. What's the main strategic logic?",
+   "options": [
+    "It lowers content licensing costs, since labels charge less for streams shown alongside ads",
+    "It raises average revenue per user immediately, since ad revenue per user is always higher than subscriptions",
+    "It removes the need for a free tier, because users will always prefer some payment to seeing ads",
+    "It captures users who won't pay the full price while keeping the ad-free plan as a premium choice for those who will"
+   ],
+   "rationales": [
+    "Licensing usually charges per stream or a revenue share regardless of ads; it doesn't get cheaper.",
+    "Ad revenue per user is usually lower than subscription revenue, especially in India; ARPU often drops.",
+    "Many users still prefer free with ads; a paid ad tier doesn't remove that demand.",
+    "Correct. It's price discrimination: different segments pay in different ways, and the premium tier stays intact."
+   ],
+   "answer": 3,
+   "explanation": "Tiering by willingness to pay lets you serve price-sensitive users without discounting your main plan. The risk to manage is downgrades from paying users, so the tiers need a clear difference (ads, offline, quality).",
+   "interview_tip": "When discussing new tiers, strong candidates name the cannibalisation risk and how they'd measure it (downgrade rate vs net new payers)."
+  },
+  {
+   "id": "2026-10-16-15",
+   "topic": "Strategy",
+   "concept": "Keeping platform take rate low to grow ecosystem",
+   "difficulty": "hard",
+   "question": "A commerce platform could double its take rate on third-party app developers from 10% to 20% this year with little short-term churn. A long-term-focused PM argues against it. What's the strongest argument?",
+   "options": [
+    "A higher take rate would reduce the platform's own operating costs, which leadership doesn't want to change",
+    "A lower take rate keeps building on the platform attractive, so more and better apps make merchants more loyal — value captured later can exceed the short-term gain",
+    "Higher take rates are illegal in most markets due to antitrust rules, so the change creates legal exposure",
+    "Developers will immediately leave for rival platforms, so revenue will fall below the current level within a quarter"
+   ],
+   "rationales": [
+    "Changing take rate affects revenue, not operating cost; this argument doesn't make sense.",
+    "Correct. The argument is about ecosystem growth: under-pricing encourages investment by developers, which strengthens the core product's moat.",
+    "Take rates can attract regulatory scrutiny, but higher rates aren't illegal by default — it's a weak absolute claim.",
+    "The prompt says short-term churn is low; claiming immediate exodus ignores the given facts."
+   ],
+   "answer": 1,
+   "explanation": "Platforms often deliberately capture less than they could so the ecosystem creates more value than it takes. Rich third-party apps make the core product stickier for merchants. The question states little short-term churn, so the case rests on long-term ecosystem health, not immediate loss.",
+   "interview_tip": "Strong strategy answers weigh value creation vs value capture across time. Citing how app stores and marketplaces face developer backlash adds realism."
+  },
+  {
+   "id": "2026-10-16-16",
+   "topic": "Execution",
+   "concept": "Fixed time, variable scope (Shape Up appetite)",
+   "difficulty": "medium",
+   "question": "Your team adopts an approach where leadership sets an 'appetite' of six weeks for a new invoicing feature. Halfway through, the work is bigger than expected. What does this approach expect the team to do?",
+   "options": [
+    "Extend the deadline by however long the remaining work needs, since quality can't be compromised",
+    "Pause the project and restart with a fresh estimate once the team understands the full scope",
+    "Cut or simplify scope to ship something valuable within six weeks, rather than extending the deadline",
+    "Add more engineers from other teams so the full original scope fits within the six weeks"
+   ],
+   "rationales": [
+    "Open-ended extensions are exactly what the appetite is meant to prevent.",
+    "Restarting wastes the work done; the approach expects trade-offs within the budget instead.",
+    "Correct. Time is fixed and scope is variable; teams hammer scope to fit the appetite.",
+    "Adding people mid-project usually slows things down and still treats scope as fixed."
+   ],
+   "answer": 2,
+   "explanation": "An appetite is a fixed time budget that says how much a problem is worth. When work grows, scope flexes — the team finds the core of the solution and drops the rest — so delivery stays predictable.",
+   "interview_tip": "In execution rounds, talking about fixing time and flexing scope shows you can protect dates without heroics. Mention how you'd decide what to cut (core user value first)."
+  },
+  {
+   "id": "2026-10-16-17",
+   "topic": "Execution",
+   "concept": "Enabling support and sales before launch",
+   "difficulty": "easy",
+   "question": "Your B2B SaaS team is launching a new billing feature next week. Engineering and QA are done. Which step is most often missed and should be done now?",
+   "options": [
+    "Brief support and sales with FAQs, known limitations and escalation paths so they can handle customer questions",
+    "Write next quarter's roadmap so the team has clear work lined up after the launch",
+    "Run another full regression cycle on the whole product to be extra sure nothing else broke",
+    "Schedule a team celebration so morale stays high through the launch week"
+   ],
+   "rationales": [
+    "Correct. Enabling customer-facing teams prevents confusion, bad promises and slow responses on day one.",
+    "Planning ahead is useful, but it doesn't help this launch go well.",
+    "QA is already done; another full cycle delays launch without addressing the readiness gap.",
+    "Celebrating is nice, but it isn't a launch-readiness step."
+   ],
+   "answer": 0,
+   "explanation": "Launches fail when customer-facing teams are surprised. Support needs answers and escalation paths; sales needs to know what to say and what not to promise. This is part of launch readiness, not an afterthought.",
+   "interview_tip": "Interviewers want to see launch checklists that go beyond code: support, sales, docs, monitoring and comms. Mentioning a 'launch readiness review' signals experience."
+  },
+  {
+   "id": "2026-10-16-18",
+   "topic": "Execution",
+   "concept": "Brooks's law when adding engineers late",
+   "difficulty": "easy",
+   "question": "A project is two weeks behind with three weeks left. A director offers four extra engineers who've never worked on this codebase. What's the most likely effect?",
+   "options": [
+    "It will cut the remaining time roughly in half, since there are now about twice as many engineers",
+    "It will guarantee on-time delivery as long as the new engineers work on separate files",
+    "It may slow the team down at first, because onboarding and coordination costs rise before new people become productive",
+    "It will have no effect either way, since experienced engineers adjust to new codebases immediately"
+   ],
+   "rationales": [
+    "Software work doesn't scale linearly with people; this is the 'mythical man-month' trap.",
+    "Separate files don't remove onboarding, reviews or integration work, so no guarantee.",
+    "Correct. Ramp-up and coordination overhead often outweigh the extra hands in the short term.",
+    "Ramp-up on an unfamiliar codebase takes real time, even for strong engineers."
+   ],
+   "answer": 2,
+   "explanation": "Brooks's law says adding people to a late software project can make it later: new members need ramp-up time from existing engineers, and communication paths grow with team size. Better levers are usually cutting scope or moving the date.",
+   "interview_tip": "When asked about a late project, name scope cuts first and explain why adding people is risky. It shows you understand how engineering teams actually work."
+  },
+  {
+   "id": "2026-10-16-19",
+   "topic": "Behavioural",
+   "concept": "Simplifying by retiring a process you own",
+   "difficulty": "hard",
+   "question": "Two years ago you created a weekly cross-team review that was useful then. Now engineers say it's a status meeting that wastes 10 hours a week across teams, though your director likes it. In an 'Invent and Simplify' interview story, what's the strongest action?",
+   "options": [
+    "Gather data on what decisions the meeting still produces, propose replacing it with an async update plus a short exception review, and run it as a trial with your director",
+    "Keep the meeting, since your director likes it and changing a working process risks upsetting a senior stakeholder",
+    "Ask engineers to send a delegate instead of attending, so fewer people lose time while the meeting continues",
+    "Cancel the meeting immediately without consulting anyone, since you created it and can remove it"
+   ],
+   "rationales": [
+    "Correct. It's evidence-based, keeps the useful part, and earns the director's buy-in through a reversible trial.",
+    "Avoiding the change protects comfort, not the team; it signals unwillingness to challenge your own work.",
+    "Delegates reduce cost a bit but keep an unnecessary process alive — a half-step that avoids simplifying.",
+    "Acting alone ignores a stakeholder who values it and loses trust, even if the call is right."
+   ],
+   "answer": 0,
+   "explanation": "Simplifying often means removing your own creations. The strong move uses evidence of value vs cost, offers a lighter replacement that keeps what still matters, and brings the stakeholder along with a trial instead of forcing the change.",
+   "interview_tip": "Amazon-style interviewers love stories where you killed something you built. Quantify the cost saved and what you kept, and show how you brought skeptics along."
+  },
+  {
+   "id": "2026-10-16-20",
+   "topic": "Behavioural",
+   "concept": "Refusing to inflate a forecast",
+   "difficulty": "hard",
+   "question": "Your manager asks you to present a launch forecast of 40% adoption to the VP, but your analysis supports 15–20%. Your manager says the higher number will help secure headcount. What's the best response?",
+   "options": [
+    "Share your analysis privately with your manager, explain the risk of a forecast you can't defend, and offer to present the realistic range with an upside scenario and what would unlock it",
+    "Present 40% but add a note in the appendix that your own estimate was lower, so you're covered",
+    "Present 40% as asked, since your manager is accountable for the number and knows the politics better",
+    "Go directly to the VP before the meeting and tell them your manager wants to inflate the forecast"
+   ],
+   "rationales": [
+    "Correct. It's honest, respects the relationship by going to your manager first, and gives them a better way to make the case.",
+    "A buried caveat is covering yourself, not acting with integrity; the VP still sees a misleading headline.",
+    "Presenting a number you believe is wrong damages your credibility and sets the team up to fail later.",
+    "Skipping your manager breaks trust and escalates before trying to resolve the issue directly."
+   ],
+   "answer": 0,
+   "explanation": "Integrity and trust matter, but so does how you handle it. Raising it with your manager first, explaining the cost of missing an inflated target, and offering a constructive framing (base case plus upside drivers) helps them get headcount honestly.",
+   "interview_tip": "Integrity questions look for courage plus tact. A strong answer shows you disagreed openly with your manager, offered a better alternative, and would escalate only if needed."
+  },
+  {
+   "id": "2026-10-16-21",
+   "topic": "Behavioural",
+   "concept": "Resolving overlapping ownership with a peer PM",
+   "difficulty": "hard",
+   "question": "You discover that a peer PM on another team has started building a recommendations widget almost identical to one on your roadmap for next quarter. Leadership hasn't noticed. What's the best first step?",
+   "options": [
+    "Speed up your own team so you can ship first and establish ownership of the widget",
+    "Drop it from your roadmap quietly to avoid conflict, since the other team started first",
+    "Meet the peer PM directly, compare goals and users, and agree a proposal on who owns what (or how to combine) before taking it to your managers together",
+    "Raise it in the next leadership review as a duplication problem caused by the other team"
+   ],
+   "rationales": [
+    "Racing to ship turns a coordination problem into a turf war and may waste both teams' work.",
+    "Silently dropping it may leave your users' needs unmet and avoids a conversation that should happen.",
+    "Correct. It resolves the overlap peer-to-peer, keeps the relationship healthy, and brings managers a joint recommendation.",
+    "Escalating with blame damages trust and skips the simple step of talking to your peer."
+   ],
+   "answer": 2,
+   "explanation": "Duplicate work wastes effort and confuses users. The best move is direct, collaborative: understand each side's goals, then jointly propose a clear owner or merged plan so leadership gets a solution, not a dispute.",
+   "interview_tip": "Interviewers want to see that you resolve conflict directly and turn it into a shared plan. Mention what you agreed, how you told leadership, and the outcome."
+  },
+  {
+   "id": "2026-10-16-22",
+   "topic": "AI Product",
+   "concept": "Abstaining when retrieval finds no relevant evidence",
+   "difficulty": "medium",
+   "question": "Your RAG-based HR policy assistant sometimes answers confidently about policies that don't exist when search returns only loosely related documents. What's the best fix to try first?",
+   "options": [
+    "Fine-tune the model on all HR documents so it memorises policies and doesn't need retrieval",
+    "Increase the number of retrieved documents from 5 to 50 so the model always has something to work with",
+    "Add a relevance threshold and instruct the model to say it can't find the policy and point to HR when no retrieved passage supports an answer",
+    "Raise the model's temperature so it explores more possible answers before choosing one"
+   ],
+   "rationales": [
+    "Fine-tuning is costly, goes stale as policies change, and doesn't stop the model guessing about policies that don't exist.",
+    "More loosely related documents add noise and can make the model even more likely to stitch an answer together.",
+    "Correct. Abstaining on weak evidence stops made-up answers and gives users a safe path.",
+    "Higher temperature increases randomness and makes hallucination worse, not better."
+   ],
+   "answer": 2,
+   "explanation": "The model is filling gaps when retrieval fails. Letting it abstain when evidence is weak — and routing users to a human — trades a small drop in coverage for a large gain in trust. Measuring 'unsupported answer rate' tracks the fix.",
+   "interview_tip": "Strong AI PMs design for 'I don't know'. Mention how you'd measure the trade-off between answer coverage and wrong answers."
+  },
+  {
+   "id": "2026-10-16-23",
+   "topic": "AI Product",
+   "concept": "Turning production failures into regression evals",
+   "difficulty": "medium",
+   "question": "Your AI support agent occasionally gives wrong refund amounts. The team fixes each case by editing the prompt, but old bugs keep coming back. What practice addresses this best?",
+   "options": [
+    "Switch to the largest available model, since larger models don't repeat earlier mistakes",
+    "Add each real failure to a regression eval set and run it on every prompt or model change before shipping",
+    "Write a longer system prompt that lists every past bug so the model remembers to avoid them",
+    "Ask support agents to manually review every AI response for a month to catch refund mistakes"
+   ],
+   "rationales": [
+    "Bigger models still make mistakes and can behave differently; without tests you won't know.",
+    "Correct. A growing regression suite catches reintroduced bugs before users see them.",
+    "Ever-longer prompts are fragile and can create new conflicts; they're not a testing system.",
+    "Manual review is expensive and temporary; it doesn't stop regressions on future changes."
+   ],
+   "answer": 1,
+   "explanation": "Prompt fixes can quietly break earlier fixes. Capturing every production failure as a test case, and gating releases on that suite, makes quality cumulative, like regression tests in software.",
+   "interview_tip": "Interviewers ask how you'd keep an AI feature from regressing. 'Every bug becomes a test case' is a crisp, credible answer."
+  },
+  {
+   "id": "2026-10-16-24",
+   "topic": "AI Product",
+   "concept": "Measuring consistency across repeated samples",
+   "difficulty": "medium",
+   "question": "Your team tested a new AI resume-feedback prompt by running each of 50 test resumes once; it scored 92% on the rubric. Users still report quality varies a lot. What's the most likely gap in the evaluation?",
+   "options": [
+    "Each input was only sampled once; running each several times would show how often outputs vary and fail on the same input",
+    "50 resumes is too many, so the average hides the variation users actually see",
+    "The model was tested in English only, and every user complaint must come from other languages",
+    "The rubric is too strict; loosening it would raise the score and better match user experience"
+   ],
+   "rationales": [
+    "Correct. Repeated sampling measures reliability per input, not just average quality.",
+    "More test cases help, not hurt; 50 isn't the issue here.",
+    "Language could matter, but nothing suggests it; the prompt points to output variability.",
+    "Loosening the rubric hides problems instead of finding them."
+   ],
+   "answer": 0,
+   "explanation": "LLM outputs are non-deterministic. A single run per input estimates average quality but hides variability. Sampling each input several times reveals how often the same case fails — the inconsistency users feel.",
+   "interview_tip": "Mentioning consistency (e.g. 'passes 5 out of 5 runs') shows you understand that LLMs are probabilistic, a key AI PM skill."
+  },
+  {
+   "id": "2026-10-16-25",
+   "topic": "AI Product",
+   "concept": "Step and spend budgets for autonomous agents",
+   "difficulty": "medium",
+   "question": "Your coding agent occasionally gets stuck retrying a failing test in a loop, running for hours and costing hundreds of dollars per task. What should you add first?",
+   "options": [
+    "Hard caps on steps, time and cost per task, with a clear handoff to the user when a cap is hit",
+    "A cheaper model for all tasks so runaway loops cost less money when they happen",
+    "A daily summary email listing tasks that ran unusually long so the team can review them",
+    "A bigger context window so the agent can remember more of its previous failed attempts"
+   ],
+   "rationales": [
+    "Correct. Caps limit the damage and create a defined fallback to a human.",
+    "A cheaper model reduces cost per step but loops still run for hours, and quality may drop for all tasks.",
+    "Reviewing after the fact doesn't stop the cost or the stuck user experience.",
+    "More context might help a little, but it doesn't stop a loop and can increase cost per step."
+   ],
+   "answer": 0,
+   "explanation": "Agents can loop. Budgets bound the worst case and hand control back to the user with context. That protects cost and user trust while the team fixes the underlying loop behaviour.",
+   "interview_tip": "For agent questions, strong candidates talk about worst-case bounds: budgets, timeouts and human handoff. It shows you think about reliability, not just capability."
+  },
+  {
+   "id": "2026-10-16-26",
+   "topic": "AI Product",
+   "concept": "Shadow mode before switching models",
+   "difficulty": "easy",
+   "question": "You plan to replace the model behind your fraud-flagging feature. What does running the new model in 'shadow mode' mean?",
+   "options": [
+    "The new model is tested on a fixed offline dataset before it ever sees production traffic",
+    "The new model processes real traffic in parallel and its outputs are logged for comparison, but only the old model's decisions affect users",
+    "The new model runs only at night when traffic is low, to reduce the risk of outages",
+    "The new model is shown to a small percentage of users while the rest continue to see the old model"
+   ],
+   "rationales": [
+    "That's offline evaluation; shadow mode uses live traffic.",
+    "Correct. Shadow mode runs in parallel on live traffic without affecting users.",
+    "Time-of-day runs aren't shadow mode and don't compare against the current model.",
+    "That's a canary or A/B rollout — users do see the new model's results."
+   ],
+   "answer": 1,
+   "explanation": "Shadow mode compares models on real production data with zero user impact. It catches differences that offline datasets miss, before you risk a live rollout.",
+   "interview_tip": "Naming shadow mode, then canary, then full rollout shows a safe, staged approach to model changes."
+  },
+  {
+   "id": "2026-10-16-27",
+   "topic": "Technology",
+   "concept": "Race conditions causing inventory oversell",
+   "difficulty": "easy",
+   "question": "During a flash sale, your app sold 120 units of a product that only had 100 in stock. Each order checked stock and then reduced it in two separate steps. What's the most likely cause?",
+   "options": [
+    "A database index was missing, which made stock queries return the wrong number",
+    "A race condition: many orders read 'in stock' at the same moment before any of them reduced the count",
+    "A slow CDN, since images loaded late and users clicked Buy multiple times",
+    "A caching problem, because product pages showed an old price during the sale"
+   ],
+   "rationales": [
+    "Missing indexes slow queries; they don't return wrong counts.",
+    "Correct. Concurrent check-then-update without atomicity lets multiple orders claim the same unit.",
+    "Slow images don't change stock counts; duplicate clicks would be handled at the order level.",
+    "A stale price doesn't create extra units; the issue is counting stock."
+   ],
+   "answer": 1,
+   "explanation": "When check and update are separate, concurrent requests can all see the same stock and all succeed. The fix is an atomic update (e.g. 'reduce stock only if stock > 0') or a lock or reservation step.",
+   "interview_tip": "PMs don't need to code the fix, but knowing 'atomic update or reservation' helps you write better specs for high-traffic events."
+  },
+  {
+   "id": "2026-10-16-28",
+   "topic": "Technology",
+   "concept": "Hot partitions from a skewed shard key",
+   "difficulty": "medium",
+   "question": "Your chat app shards messages by group ID. One celebrity fan group with millions of members is slowing down the whole database shard it lives on. What's the underlying issue?",
+   "options": [
+    "The database needs vertical scaling, because every shard is running out of disk space",
+    "The group ID is too long, so the database spends too much time comparing keys",
+    "Eventual consistency, because members see messages in a different order",
+    "A hot partition: the shard key sends a huge, uneven share of traffic to one shard instead of spreading it"
+   ],
+   "rationales": [
+    "The problem is one shard, not all; and it's traffic, not disk space.",
+    "Key length has a tiny impact compared with uneven traffic.",
+    "Message ordering is a separate issue; the symptom is load on one shard.",
+    "Correct. A skewed key creates a hotspot that one shard can't handle."
+   ],
+   "answer": 3,
+   "explanation": "Sharding spreads load only if the key distributes traffic evenly. A single very busy key concentrates load on one shard. Fixes include splitting busy keys, adding a suffix to spread writes, or special handling for large groups.",
+   "interview_tip": "Knowing hotspots helps PMs anticipate scale issues with power users or viral content and discuss trade-offs with engineers."
+  },
+  {
+   "id": "2026-10-16-29",
+   "topic": "Growth",
+   "concept": "Metered paywall for news subscriptions",
+   "difficulty": "medium",
+   "question": "A digital news site is choosing between a hard paywall (no free articles) and a metered paywall (5 free articles a month). Why do many publishers choose metered?",
+   "options": [
+    "It prevents readers from sharing articles, because each reader only gets five articles a month",
+    "It always earns more subscription revenue than a hard paywall, regardless of the publisher's content",
+    "It removes the need for advertising, since free readers will eventually all become subscribers",
+    "It lets casual readers sample and keeps search and social traffic, while asking engaged readers — the most likely to pay — to subscribe"
+   ],
+   "rationales": [
+    "Meters don't block sharing; shared articles count toward the meter or are often free.",
+    "It depends on the content and audience; 'always' is too strong.",
+    "Most metered sites still rely on ads from free readers.",
+    "Correct. The meter targets payment at engaged users while keeping the top of the funnel open."
+   ],
+   "answer": 3,
+   "explanation": "A meter balances reach and revenue: light readers keep the site discoverable and ad revenue flowing, and heavy readers hit the wall and convert. Hard paywalls suit very unique content but lose reach.",
+   "interview_tip": "Monetisation questions reward segment-based thinking: who pays, when, and what happens to the rest of the funnel."
+  },
+  {
+   "id": "2026-10-16-30",
+   "topic": "Current Events",
+   "concept": "Shopify Shop MCP agent checkout (Oct 2026)",
+   "difficulty": "medium",
+   "question": "In October 2026, Shopify opened its catalog of over a billion product listings and Shop Pay checkout to compatible AI agents such as ChatGPT and Claude. According to Shopify's guidance, who remains responsible for fulfilment, returns and refunds on these agent-placed orders?",
+   "options": [
+    "The AI agent's provider, since the agent placed the order",
+    "The merchant, who remains the seller of record with its usual obligations",
+    "Shopify, since the order runs through Shop Pay",
+    "The shopper's card network, since the agent used tokenized payment"
+   ],
+   "rationales": [
+    "The agent places the order on the shopper's behalf, but it isn't the seller and doesn't take on returns.",
+    "Correct. Shopify's guidance says the merchant remains the seller, keeping fulfilment, return and refund duties.",
+    "Shop Pay processes payment, but Shopify doesn't become the seller of the goods.",
+    "Card networks handle payment credentials, not product fulfilment or returns."
+   ],
+   "answer": 1,
+   "explanation": "Coverage of the launch (Oct 13, 2026) reports Shopify's guidance that 'the merchant remains the seller', so existing fulfilment, return and refund obligations still apply, and orders show up in the merchant's Shopify admin like any other order. Shoppers also approve each purchase. For PMs, agentic commerce changes the discovery and checkout surface, not who owns the customer obligation.",
+   "interview_tip": "Agentic commerce comes up in interviews about AI strategy. Strong candidates discuss what changes for merchants (discovery, data access, opt-outs) and what doesn't (who owns the customer promise).",
+   "source": "https://mlq.ai/news/shopify-lets-shoppers-connect-more-ai-agents-to-its-catalog-and-shop-pay/"
+  }
+ ]
+}
