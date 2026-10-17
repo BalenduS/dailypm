@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-17",
+ "theme": "Autonomy, honest metrics and pricing power",
+ "questions": [
+  {
+   "id": "2026-10-17-01",
+   "topic": "Product Sense",
+   "concept": "Lean-back vs lean-forward usage modes",
+   "difficulty": "hard",
+   "question": "You're PM for a video app's smart-TV client. Usage on TV is growing, but session starts are slow: people scroll the home grid for a long time and many give up without playing anything. The phone app's search-first, dense grid was ported as-is. What's the strongest product direction?",
+   "options": [
+    "Make search more prominent on TV with a voice button, since search drives the most plays on the phone app",
+    "Show a short onboarding survey on first TV launch to capture genre preferences and improve the grid",
+    "Add more rows and personalised shelves to the TV home grid so every user finds something relevant faster",
+    "Design for lean-back viewing: autoplay a confident pick or continue-watching on open, fewer larger choices, and remote-friendly navigation"
+   ],
+   "rationales": [
+    "Voice helps when the user already knows what they want, but the symptom is people who don't know what to watch — search doesn't solve undirected intent.",
+    "A survey adds friction before value and preferences on a shared household TV are a blend of people; it doesn't fix the browsing-heavy layout.",
+    "More rows add choice and scrolling with a D-pad, deepening the very decision fatigue that causes abandonment.",
+    "Correct. It diagnoses the mismatch between context and design: low-effort input and passive intent call for strong defaults and fewer decisions, not more browsing."
+   ],
+   "answer": 3,
+   "explanation": "TV viewing is a lean-back mode: the user is on a couch with a remote, often with others, and wants to be entertained with minimal effort. The phone's lean-forward, search-and-browse design assumes precise input and active intent. Matching the interface to the usage mode — fewer, bigger choices and a confident default — cuts decision effort, which is the actual bottleneck.",
+   "interview_tip": "Product-sense interviewers reward noticing that the same user behaves differently by device and context. Name the mode (lean-back vs lean-forward) and let it drive the design."
+  },
+  {
+   "id": "2026-10-17-02",
+   "topic": "Product Sense",
+   "concept": "Removing social awkwardness from money requests among friends",
+   "difficulty": "hard",
+   "question": "Users of a group-trip expense app say the hardest part isn't the maths — it's chasing friends for money without seeming petty. Many debts are simply never settled. Which feature best targets that pain point?",
+   "options": [
+    "Charge a small late fee automatically when a debt stays unpaid for more than 30 days",
+    "Show a public leaderboard of who owes the most in each group to create social pressure to pay",
+    "Let the app send neutral, automated settle-up reminders and show a shared group balance, so no individual has to do the asking",
+    "Add a more accurate split calculator supporting itemised bills, tax, tips and unequal shares per person"
+   ],
+   "rationales": [
+    "Late fees between friends feel hostile and would make users less willing to log expenses at all; it monetises the tension instead of removing it.",
+    "Public shaming increases social pressure but also the awkwardness users are trying to avoid, and risks damaging friendships — and the product.",
+    "Correct. It depersonalises the ask: the app, not the friend, is the 'bad guy', and shared visibility makes settling normal rather than a confrontation.",
+    "Better maths solves a problem users said wasn't the hardest part; debts would still go unsettled because nobody wants to chase."
+   ],
+   "answer": 2,
+   "explanation": "The stated pain is emotional: asking friends for money feels confrontational. The best design moves that burden from a person to the system — impersonal reminders and a transparent shared ledger make settling up feel routine rather than accusatory. That attacks the real blocker while keeping relationships intact.",
+   "interview_tip": "Strong candidates separate the functional job from the emotional and social jobs. When users say 'it's awkward', the solution should reduce the social cost, not add features to the functional part."
+  },
+  {
+   "id": "2026-10-17-03",
+   "topic": "Product Sense",
+   "concept": "Designing for screen-reader users with semantic structure",
+   "difficulty": "easy",
+   "question": "Blind users report that your shopping app is unusable with a screen reader: buttons are announced as 'button, button, button' and product cards read in a jumbled order. What's the most effective first fix?",
+   "options": [
+    "Add a voice assistant so blind users can order by speaking instead of navigating the UI",
+    "Increase font sizes and contrast throughout the app to meet accessibility guidelines",
+    "Give every control a meaningful accessible label and set a logical reading order and headings for each screen",
+    "Build a separate simplified 'accessible version' of the app with fewer features"
+   ],
+   "rationales": [
+    "A voice assistant might be a nice extra, but it sidesteps the broken core experience and won't cover browsing, account settings or support.",
+    "Size and contrast help low-vision users, but blind users never see the screen; it doesn't change what gets announced.",
+    "Correct. It fixes the information the screen reader actually consumes — names, roles and order — which is the root cause of the reported problem.",
+    "Separate 'accessible versions' fall behind the main app, offer fewer features and segregate users; fixing the main app is the standard practice."
+   ],
+   "answer": 2,
+   "explanation": "Screen readers turn the interface into speech using the labels, roles and order developers provide. Unlabelled icon buttons and missing structure are exactly why the app sounds like 'button, button, button'. Labels, headings and reading order fix the root cause for every screen and benefit voice-control and automation users too.",
+   "interview_tip": "Accessibility questions test whether you understand how assistive technology works, not just visual polish. Strong answers fix the shared foundation rather than building a separate path."
+  },
+  {
+   "id": "2026-10-17-04",
+   "topic": "Product Sense",
+   "concept": "Designing resumable flows for interrupted tasks",
+   "difficulty": "medium",
+   "question": "In a loan-application app for small shop owners in India, analytics show many users leave midway — often when a customer walks in — and very few come back to finish. What's the best design response?",
+   "options": [
+    "Auto-save progress at every step and let users resume exactly where they left off, with a gentle reminder later",
+    "Move all required fields onto a single long page so the application can be finished in one sitting",
+    "Shorten the timeout so abandoned sessions are cleared quickly and the app stays responsive",
+    "Show a warning that leaving the application will discard all entered information"
+   ],
+   "rationales": [
+    "Correct. It treats interruptions as normal, removes the cost of leaving, and creates a path back — targeting why users don't return.",
+    "One long page doesn't make shop owners less interruptible, and losing a long page of work is even more painful.",
+    "Clearing sessions faster makes interruptions more costly, because users lose their work and must start over.",
+    "A discard warning just threatens users who have no choice but to step away; it doesn't let them serve the customer and continue later."
+   ],
+   "answer": 0,
+   "explanation": "The context is interruption-heavy: shopkeepers are pulled away constantly, so a flow that assumes uninterrupted attention will fail. Making the task resumable respects that reality — progress is never lost, and a timely nudge brings people back. Designing for the user's environment beats asking them to change it.",
+   "interview_tip": "Interviewers like candidates who design for the user's real environment. Mentioning interruption, resumability and re-engagement shows you've pictured the user's day."
+  },
+  {
+   "id": "2026-10-17-05",
+   "topic": "Metrics",
+   "concept": "Late-arriving data in the latest day's metrics",
+   "difficulty": "hard",
+   "question": "At 9 AM, your dashboard shows yesterday's orders down 18% versus the same weekday last week. No releases went out, other regions look similar, and the drop is spread evenly across platforms. Your data team says some event batches from mobile clients land up to 24 hours late. What should you check first?",
+   "options": [
+    "Whether a competitor launched a promotion yesterday that pulled users away across all regions",
+    "Whether yesterday's data is complete — compare it with the same point-in-time view of last week before treating the drop as real",
+    "Whether the recommendation model was retrained recently and is showing worse products",
+    "Whether the checkout funnel conversion fell at a particular step on mobile web"
+   ],
+   "rationales": [
+    "A competitor effect is possible, but it would rarely be perfectly uniform across every region and platform; check data integrity before external hypotheses.",
+    "Correct. Rule out data completeness first: late-arriving events make the newest day look low, and an even, cross-cutting drop with no release is the classic signature.",
+    "A model change could hurt orders, but nothing was released, and a model effect would usually vary by surface; it isn't the cheapest first check.",
+    "Funnel drill-down is a good next step for a real drop, but the drop is even across platforms, and you haven't yet confirmed the data is complete."
+   ],
+   "answer": 1,
+   "explanation": "A uniform drop across platforms and regions, with no releases, fits a data artifact better than a behaviour change. If events arrive up to a day late, the most recent day is systematically undercounted until backfill completes. Comparing like-for-like snapshots (last week as it looked at the same hour after its day ended) tells you quickly whether the gap is real.",
+   "interview_tip": "Root-cause interviews reward checking 'is the data right?' before 'what did users do?'. Mentioning freshness and backfill shows you've worked with real pipelines."
+  },
+  {
+   "id": "2026-10-17-06",
+   "topic": "Metrics",
+   "concept": "Promise accuracy vs raw delivery speed",
+   "difficulty": "hard",
+   "question": "A grocery app cut average delivery time from 32 to 26 minutes, yet customer satisfaction fell and 'late order' complaints rose. You learn that the app also shortened the ETA it shows at checkout to 20 minutes to boost conversion. What metric best explains the result and should be tracked going forward?",
+   "options": [
+    "The average delivery time across all orders, broken down by city and hour",
+    "The number of orders each rider completes per hour",
+    "The checkout conversion rate before and after the ETA change",
+    "The share of orders delivered within the ETA promised at checkout (promise accuracy)"
+   ],
+   "rationales": [
+    "Average delivery time improved; slicing it further still ignores the promise customers were given, so it can't explain the satisfaction drop.",
+    "Rider productivity is an efficiency metric; it says nothing about whether customers' expectations were met.",
+    "Conversion likely rose because of the shorter ETA; it shows the incentive behind the change but not the experience damage.",
+    "Correct. It measures what customers actually judge — whether you kept your word — and explains why faster deliveries produced more 'late' complaints."
+   ],
+   "answer": 3,
+   "explanation": "Satisfaction tracks experience versus expectation, not raw speed. Showing a 20-minute promise while delivering in 26 means most orders now arrive 'late' from the customer's view, even though they're faster. Promise accuracy captures that gap and protects against optimising conversion with optimistic ETAs.",
+   "interview_tip": "Strong answers spot that the metric being celebrated isn't what users experience. Tying satisfaction to expectations, and pairing conversion with a promise-keeping guardrail, signals mature metric design."
+  },
+  {
+   "id": "2026-10-17-07",
+   "topic": "Metrics",
+   "concept": "Metric sensitivity for short experiments",
+   "difficulty": "medium",
+   "question": "Your team wants to use 12-month customer lifetime value as the primary metric for two-week A/B tests on a subscription app's onboarding. What's the main problem with that choice?",
+   "options": [
+    "Lifetime value is a vanity metric that doesn't connect to business outcomes",
+    "It can't be observed within two weeks and would be too noisy to detect realistic changes, so tests would rarely reach a conclusion",
+    "Lifetime value can only be measured for paying users, so free users would bias the result upward",
+    "Using a revenue metric in experiments violates statistical assumptions of the t-test"
+   ],
+   "rationales": [
+    "LTV is the opposite of a vanity metric — it's tightly tied to business value; the issue is timing and noise, not relevance.",
+    "Correct. The metric is directionally right but neither observable nor sensitive in the test window; you need a faster proxy that predicts it.",
+    "LTV can include free users as zero or future converters; that's a definitional choice, not the core problem with a two-week test.",
+    "Revenue metrics are skewed and noisy, but t-tests are routinely used on them with large samples; the bigger issue is that LTV can't be observed yet."
+   ],
+   "answer": 1,
+   "explanation": "Good experiment metrics must be both aligned with long-term value and sensitive enough to move within the test window. Twelve-month LTV is aligned but unobservable in two weeks and extremely high-variance. Teams use sensitive leading indicators — like week-1 activation or trial-to-paid — that have been shown to predict LTV.",
+   "interview_tip": "Interviewers probe whether you know the difference between a north-star outcome and a test metric. Mention sensitivity, the test window, and proxies validated against the long-term goal."
+  },
+  {
+   "id": "2026-10-17-08",
+   "topic": "Metrics",
+   "concept": "Validating a proxy metric against the long-term outcome",
+   "difficulty": "medium",
+   "question": "A news app wants to use 'articles read in the first session' as a proxy for long-term retention when evaluating new onboarding designs. What's the best way to decide whether this proxy is trustworthy?",
+   "options": [
+    "Survey new users and ask whether reading more articles makes them want to return",
+    "Check that the proxy has low variance so it reaches significance quickly in experiments",
+    "Check, ideally across past experiments, that changes which moved the proxy also moved long-term retention in the same direction",
+    "Confirm that users who read more articles in session one have higher retention than those who read fewer"
+   ],
+   "rationales": [
+    "Stated intent is a weak predictor of behaviour and doesn't validate the metric's relationship with actual retention.",
+    "Low variance makes a metric sensitive, but a sensitive metric that doesn't predict retention is just a fast way to optimise the wrong thing.",
+    "Correct. It tests whether interventions on the proxy translate into the outcome, which is what you need when you'll optimise against it.",
+    "This is a correlation between types of users; motivated readers do both, so it doesn't prove that increasing reading raises retention."
+   ],
+   "answer": 2,
+   "explanation": "A proxy is only useful if moving it causes the outcome to move. A correlation across users can be driven by who those users are — keen readers both read more and retain more — so pushing the proxy (for example, with autoplaying articles) may not lift retention. Checking that past interventions moved both together is the stronger test.",
+   "interview_tip": "This tests whether you can tell correlation from a metric you can safely optimise. Strong candidates talk about validating proxies with experiment history, and about Goodhart-style gaming risks."
+  },
+  {
+   "id": "2026-10-17-09",
+   "topic": "Experimentation",
+   "concept": "Fake-door test to gauge demand",
+   "difficulty": "easy",
+   "question": "Before building an 'instant bank transfer payout' option for sellers on your marketplace, you add a button for it on the payouts page. Clicking it shows 'Coming soon — want early access?' What is this technique mainly used for?",
+   "options": [
+    "Collecting detailed requirements about how sellers want the feature to work",
+    "Measuring real demand for a feature before investing in building it",
+    "Measuring the feature's impact on seller retention after launch",
+    "Testing whether the new payout system can handle production traffic"
+   ],
+   "rationales": [
+    "A fake door tells you how many want it, not how they want it to work; follow-up interviews with sign-ups gather requirements.",
+    "Correct. Click-through on the fake door is a behavioural signal of demand, gathered before any engineering investment.",
+    "Retention impact needs the real feature in users' hands; a fake door only measures interest, not downstream value.",
+    "There's no backend to load-test; checking production capacity is what dark launches or load tests do."
+   ],
+   "answer": 1,
+   "explanation": "This is a fake-door (or painted-door) test: you expose an entry point to a feature that doesn't exist yet and measure how many people try to use it. It reveals demand from actual behaviour rather than stated interest, at very low cost. It should be used sparingly and honestly, with a clear message, so trust isn't damaged.",
+   "interview_tip": "Interviewers like candidates who validate demand cheaply before building. Mention the honesty trade-off — use clear messaging and follow up with interested users."
+  },
+  {
+   "id": "2026-10-17-10",
+   "topic": "Experimentation",
+   "concept": "Overall Evaluation Criterion (OEC)",
+   "difficulty": "medium",
+   "question": "Your team runs dozens of feed experiments a quarter. Each readout argues about a different metric — clicks, time spent, shares, hides — and ship decisions are inconsistent. What's the best structural fix?",
+   "options": [
+    "Require a minimum two-month runtime so that all metrics have time to converge",
+    "Agree in advance on an Overall Evaluation Criterion — one weighted measure of long-term value — plus guardrails, used to judge every test",
+    "Let each team pick the metric most relevant to its feature, as long as it is declared before launch",
+    "Only ship experiments in which every tracked metric is positive and significant"
+   ],
+   "rationales": [
+    "Longer tests reduce noise but don't settle which metric matters; the debate continues with more data.",
+    "Correct. A shared, pre-agreed decision metric with guardrails makes trade-offs explicit once and applies them consistently across all experiments.",
+    "Pre-declaring helps per test, but different teams optimising different metrics can push the feed in conflicting directions; inconsistency remains.",
+    "Requiring all metrics to win is almost never satisfied with many metrics and noise, so good changes with honest trade-offs would never ship."
+   ],
+   "answer": 1,
+   "explanation": "An Overall Evaluation Criterion is a pre-agreed objective, often a weighted combination of metrics, that captures what the organisation values in the long run. Using one OEC (with guardrails) across experiments makes decisions consistent and stops teams cherry-picking whichever metric moved. It turns metric debates into a one-time strategy decision.",
+   "interview_tip": "Experimentation interviews often explore how you'd make decisions at scale. Naming an OEC with guardrails shows you think about decision systems, not just individual tests."
+  },
+  {
+   "id": "2026-10-17-11",
+   "topic": "Estimation",
+   "concept": "Annual cricket bat unit sales in India",
+   "difficulty": "medium",
+   "question": "Estimate annual cricket bat sales (units) in India. Assume about 250 million males aged 8–30, 20% of them play cricket regularly, 30% of regular players own their own bat, and an owned bat is replaced every 2 years.",
+   "options": [
+    "About 7.5 million bats a year",
+    "About 0.75 million bats a year",
+    "About 25 million bats a year",
+    "About 75 million bats a year"
+   ],
+   "rationales": [
+    "Correct. 250M × 0.2 × 0.3 ÷ 2 = 7.5M — a replacement-cycle estimate on the installed base of owners.",
+    "This is 10× too low — usually from dividing by 20 years or applying an extra 10% factor that wasn't given.",
+    "This roughly treats every regular player's bat as replaced every two years without the 30% ownership factor (50M ÷ 2), overstating volume.",
+    "This assumes a new bat for almost every player each year, ignoring both the ownership share and the replacement cycle."
+   ],
+   "answer": 0,
+   "explanation": "Players: 250M × 20% = 50M regular players. Owners: 50M × 30% = 15M people with their own bat. Replacement every 2 years means 15M ÷ 2 = 7.5M bats a year. A real answer would add school and club purchases and sanity-check against manufacturer volumes.",
+   "interview_tip": "Estimation interviews reward a clear tree: population → participation → ownership → replacement cycle. State assumptions out loud and sanity-check the final number."
+  },
+  {
+   "id": "2026-10-17-12",
+   "topic": "Estimation",
+   "concept": "Dark-store picking capacity estimate",
+   "difficulty": "medium",
+   "question": "A quick-commerce dark store has 8 pickers on shift. An average order has 6 items, picking takes about 20 seconds per item, and packing takes 1 minute per order. Pickers are productive about 75% of the time. Roughly how many orders per hour can the store fulfil?",
+   "options": [
+    "About 160 orders per hour",
+    "About 60 orders per hour",
+    "About 480 orders per hour",
+    "About 120 orders per hour"
+   ],
+   "rationales": [
+    "This ignores the 75% productivity factor (8 × 20), so it assumes pickers never wait, walk or restock.",
+    "This halves the right answer, typically by double-counting packing or applying the 75% twice.",
+    "This assumes each picker completes one order per minute (8 × 60), ignoring that an order takes about 3 minutes of picking and packing.",
+    "Correct. 3 minutes per order → 20/hour → 15/hour at 75% → × 8 pickers = 120."
+   ],
+   "answer": 3,
+   "explanation": "Time per order: 6 × 20 s = 2 min picking + 1 min packing = 3 min. One picker at full speed does 60 ÷ 3 = 20 orders/hour; at 75% productivity, 15. Eight pickers give 8 × 15 = 120 orders/hour. This tells you whether peak demand needs more pickers or faster layouts.",
+   "interview_tip": "Operations guesstimates test unit discipline. Strong answers name the bottleneck (picker time), apply utilisation, and suggest which lever — layout, batching, staffing — moves capacity most."
+  },
+  {
+   "id": "2026-10-17-13",
+   "topic": "Strategy",
+   "concept": "Branding power (7 Powers)",
+   "difficulty": "easy",
+   "question": "In Hamilton Helmer's 7 Powers, which situation best illustrates Branding as a source of durable advantage?",
+   "options": [
+    "Customers pay more for an objectively similar product because of a long-built reputation and trust in the name",
+    "The product gets more valuable for each user as more people join the platform",
+    "Users stay because switching to a competitor would mean losing years of stored data and workflows",
+    "A company has lower unit costs than rivals because it produces at much larger volume"
+   ],
+   "rationales": [
+    "Correct. A price premium for an equivalent product, rooted in accumulated reputation, is the essence of Branding power.",
+    "Value rising with users is Network Economies, not Branding.",
+    "Losing data and workflows describes Switching Costs, another power.",
+    "Lower costs from volume describe Scale Economies, a different power."
+   ],
+   "answer": 0,
+   "explanation": "Helmer defines Branding power as the ability to charge more for an objectively identical offering because of historical information about the seller — reputation, trust or identity built over a long time. The barrier is the time and consistency needed to build it, which rivals can't shortcut.",
+   "interview_tip": "Strategy interviews often ask what makes a business defensible. Naming the specific power and its barrier — here, time to build reputation — shows structured thinking."
+  },
+  {
+   "id": "2026-10-17-14",
+   "topic": "Strategy",
+   "concept": "When to open a product into a platform",
+   "difficulty": "medium",
+   "question": "Your B2B scheduling tool keeps getting requests for niche integrations (dental software, salon POS, regional payroll) that your team can't prioritise. When does opening a public API and app marketplace make the most strategic sense?",
+   "options": [
+    "When the core product is stable and widely adopted, and long-tail needs exceed what your team could build but partners would",
+    "When you want to stop maintaining your own core features and let partners take them over",
+    "As early as possible, before product-market fit, so third parties help you find what customers want",
+    "Only once a competitor has launched a marketplace, so you can copy what works"
+   ],
+   "rationales": [
+    "Correct. It cites the two conditions that make a platform viable: a solid, adopted core that attracts partners, and diverse long-tail demand.",
+    "Platforms extend the core; handing off core features cedes control of the experience and the value proposition.",
+    "Before product-market fit, developers have no audience and you'd be locking in APIs around a product that is still changing.",
+    "Waiting for a competitor makes you a follower in a game where developer attention concentrates on the first credible platform."
+   ],
+   "answer": 0,
+   "explanation": "Platforms work when there is enough customer base to attract developers and a long tail of needs too varied for one team. Opening up lets partners serve niches profitably while you focus on the core, and their integrations raise switching costs. Opening too early means no one builds, because there are no users to sell to.",
+   "interview_tip": "Interviewers look for whether you can say when, not just whether. Tie platform decisions to adoption, long-tail demand and ecosystem incentives."
+  },
+  {
+   "id": "2026-10-17-15",
+   "topic": "Strategy",
+   "concept": "Responding to a competitor's price cut",
+   "difficulty": "hard",
+   "question": "You lead a premium project-management SaaS. A well-funded rival cuts its price 40% and starts targeting your mid-market customers. Your churn hasn't moved yet, but sales says deals are slipping. What's the strongest first response?",
+   "options": [
+    "Find out which segments are actually price-sensitive and defend them selectively — e.g., a targeted plan or offer — while reinforcing differentiated value for the rest",
+    "Ignore the move entirely, since premium customers rarely switch on price alone",
+    "Cut prices even deeper than the rival to signal you'll win any price war",
+    "Match the 40% cut across all plans immediately to remove any reason for customers to switch"
+   ],
+   "rationales": [
+    "Correct. It's targeted: it protects the vulnerable segment without repricing loyal customers, and it competes on value where you're differentiated.",
+    "Sales already sees slipping deals; ignoring a funded attacker risks losing the mid-market before churn data catches up.",
+    "Escalating invites a margin-destroying war with a funded rival, and it undercuts the premium positioning you rely on.",
+    "A blanket match sacrifices revenue from customers who weren't at risk and trains the market that your list price was inflated."
+   ],
+   "answer": 0,
+   "explanation": "Price wars destroy margin for everyone, and across-the-board cuts give away revenue to customers who weren't going to leave. The better move is to diagnose where price actually decides deals, respond precisely there (fencing an offer so it doesn't reprice the whole base), and strengthen the value story elsewhere. Evidence from lost deals guides how far to go.",
+   "interview_tip": "This tests strategic composure. Strong candidates segment before reacting, avoid repricing the whole base, and distinguish defending share from defending margin."
+  },
+  {
+   "id": "2026-10-17-16",
+   "topic": "Execution",
+   "concept": "Reserving capacity buffer for unplanned work",
+   "difficulty": "easy",
+   "question": "Every quarter your team commits to a full roadmap, and every quarter production bugs, security fixes and urgent customer escalations push half the commitments late. What's the most effective planning change?",
+   "options": [
+    "Move to monthly roadmaps so commitments are shorter and less visible when they slip",
+    "Refuse all unplanned work until the quarterly roadmap is complete",
+    "Add stretch goals to the roadmap so the team aims higher and absorbs interruptions",
+    "Reserve an explicit share of capacity for unplanned work, based on how much it actually consumed in past quarters"
+   ],
+   "rationales": [
+    "Shorter horizons hide the problem; the team still plans 100% of capacity and still slips.",
+    "Some interrupts — security issues, outages — can't wait; refusing them is unrealistic and risky.",
+    "Stretch goals increase the planned load, which makes the overcommitment worse, not better.",
+    "Correct. Planning for the known level of unplanned work, using historical data, makes commitments realistic without ignoring real urgency."
+   ],
+   "answer": 3,
+   "explanation": "If interrupt work reliably takes a predictable slice of capacity, planning as if it won't happen guarantees missed commitments. Measuring that slice and reserving it makes the roadmap honest and keeps urgent work flowing. It also gives you data to reduce interrupts over time.",
+   "interview_tip": "Interviewers like PMs who plan with data on how the team really spends its time. Mention measuring interrupt load and reviewing the buffer each cycle."
+  },
+  {
+   "id": "2026-10-17-17",
+   "topic": "Execution",
+   "concept": "Avoiding the feature-parity trap in a rewrite",
+   "difficulty": "medium",
+   "question": "Your team is replacing a 10-year-old reporting product with a new one. The plan is to rebuild every existing feature before migrating anyone, which has already slipped by two quarters. What's the best course correction?",
+   "options": [
+    "Keep the parity plan but add engineers so every existing feature can be rebuilt sooner",
+    "Launch the new product to everyone now and let customers request features they miss",
+    "Pause the rewrite and invest in the legacy product until the team has more capacity",
+    "Use usage data to rebuild what most customers actually use, migrate segments incrementally, and retire low-value features rather than port them"
+   ],
+   "rationales": [
+    "Adding people late in a project tends to slow it down, and it still ports features nobody uses.",
+    "A big-bang switch without key features would break workflows for many customers and spike churn and support load.",
+    "Pausing extends the life of the legacy system and its costs without fixing the plan's flaw.",
+    "Correct. It replaces an all-or-nothing launch with data-driven scope and incremental migration — delivering value early and shedding dead weight."
+   ],
+   "answer": 3,
+   "explanation": "Insisting on full parity before anyone migrates turns a rewrite into a long, all-or-nothing bet that ports years of rarely used features. Prioritising by real usage, migrating cohorts whose needs are covered, and deliberately sunsetting low-value features delivers value sooner and reduces risk. Each migrated cohort also gives feedback.",
+   "interview_tip": "Rewrite questions test scope judgment. Strong answers use usage data, migrate incrementally and treat sunsetting as a feature, not a failure."
+  },
+  {
+   "id": "2026-10-17-18",
+   "topic": "Execution",
+   "concept": "Opportunity scoring (importance vs satisfaction)",
+   "difficulty": "easy",
+   "question": "In a survey, users rate how important each outcome is and how satisfied they are with current solutions. Using opportunity scoring, which outcome is the best candidate to prioritise?",
+   "options": [
+    "High importance and high satisfaction",
+    "High importance and low satisfaction",
+    "Low importance and high satisfaction",
+    "Low importance and low satisfaction"
+   ],
+   "rationales": [
+    "This outcome is already well served; improving it further yields diminishing returns unless you can do it much cheaper.",
+    "Correct. Important but poorly served outcomes are underserved — the biggest opportunity for differentiated value.",
+    "This is over-served — a candidate for simplification or cost cutting, not new investment.",
+    "Users are unhappy here, but they don't care much, so fixing it won't change their choices."
+   ],
+   "answer": 1,
+   "explanation": "Opportunity scoring (from outcome-driven innovation) looks for outcomes users care about a lot but that current solutions serve poorly. That gap is where improvement creates the most value. Outcomes that are already well served, or unimportant, offer little upside.",
+   "interview_tip": "When asked how you prioritise, mention a structured lens like opportunity scoring and explain why the importance–satisfaction gap points to value."
+  },
+  {
+   "id": "2026-10-17-19",
+   "topic": "Behavioural",
+   "concept": "Communicating a project cancellation to your team",
+   "difficulty": "hard",
+   "question": "Leadership cancels a project your team spent five months building, two weeks before launch, because company priorities shifted. In a behavioural interview, which approach best describes handling it?",
+   "options": [
+    "Wait until the next project is fully defined before telling the team, to avoid a period of low morale",
+    "Frame it positively as a great learning experience and move straight on to planning the next project",
+    "Tell the team you disagreed with the decision and that leadership doesn't understand the work",
+    "Tell the team promptly and directly, explain the reasoning as you understand it, acknowledge the loss, salvage what's reusable, and give them a clear next mission"
+   ],
+   "rationales": [
+    "Delaying the news erodes trust when the team finds out from elsewhere, and leaves them working on something dead.",
+    "Skipping past the disappointment feels dismissive; people need the loss acknowledged before they can commit to what's next.",
+    "Undermining leadership might feel loyal, but it damages alignment and models 'us vs them' behaviour; you can share that you raised concerns without blaming.",
+    "Correct. It combines transparency, empathy and forward motion — the qualities interviewers look for when a leader absorbs bad news."
+   ],
+   "answer": 3,
+   "explanation": "Teams cope with cancellations best when they hear the news early and honestly, understand the why, and feel their effort was respected. A strong leader acknowledges the disappointment, recovers value (reusable code, learnings, insights), and quickly gives the team direction. That keeps trust and momentum intact.",
+   "interview_tip": "Behavioural answers on setbacks should show honesty, empathy and decisive next steps. Interviewers listen for whether you protected trust while still aligning with the company."
+  },
+  {
+   "id": "2026-10-17-20",
+   "topic": "Behavioural",
+   "concept": "Presenting negative experiment results to the idea's sponsor",
+   "difficulty": "hard",
+   "question": "A VP strongly championed a redesign. Your A/B test shows it reduced conversion by 3%, clearly significant. You're presenting the results to the VP next week. What's the best approach?",
+   "options": [
+    "Present the results first in the broad review meeting so the data speaks for itself with everyone watching",
+    "Extend the test for another month in the hope that the result reverses before you have to present",
+    "Share the result early and privately with the VP, explain the method and what you learned about why it underperformed, and propose a next step",
+    "Look for a segment in which the redesign won and lead with that to soften the message"
+   ],
+   "rationales": [
+    "Surprising a senior sponsor in a public forum can make them defensive and damage the relationship, even though the data is right.",
+    "Extending a conclusive test to avoid bad news wastes traffic, keeps hurting conversion and is a form of p-hacking.",
+    "Correct. It's candid and respectful: no surprise in public, no softening of the data, and a constructive path forward.",
+    "Cherry-picking a winning segment misrepresents a clear overall loss and erodes trust in your analysis."
+   ],
+   "answer": 2,
+   "explanation": "Disagreeing with data doesn't require surprising a senior stakeholder in public. A private preview lets the VP ask questions and absorb the news, keeps credibility high, and focuses the conversation on learning and next steps. The result itself stays honest and unchanged.",
+   "interview_tip": "This tests 'Have Backbone' and 'Earn Trust' at once. Strong answers keep the data honest while managing the human side thoughtfully."
+  },
+  {
+   "id": "2026-10-17-21",
+   "topic": "Behavioural",
+   "concept": "Ramping up quickly in an unfamiliar domain",
+   "difficulty": "medium",
+   "question": "You move to lead a payments-compliance product with no background in the domain. A behavioural interviewer asks how you got effective quickly. Which answer is strongest?",
+   "options": [
+    "I relied on my engineering lead to handle domain questions while I focused on process and roadmap",
+    "I avoided making any decisions for my first three months until I fully understood the regulations",
+    "I mapped the key concepts and stakeholders, sat with ops and legal on real cases, asked 'naive' questions early, and wrote a one-page summary for experts to correct",
+    "I took an online certification course in payments compliance before engaging with the team"
+   ],
+   "rationales": [
+    "Delegating the domain avoids learning it; PMs need enough fluency to judge trade-offs themselves.",
+    "Waiting months to decide stalls the team; good PMs make reversible decisions while learning.",
+    "Correct. It shows active, structured learning from real work and people, plus a mechanism (the one-pager) that speeds up correction.",
+    "Courses can help, but alone they're slow and generic; the answer lacks learning from the team's actual problems."
+   ],
+   "answer": 2,
+   "explanation": "Fast ramp-up comes from learning in context: getting close to real cases, using experts' time efficiently, and exposing your understanding so mistakes get corrected quickly. Writing down your mental model and inviting correction is particularly effective. It shows curiosity and ownership without stalling the team.",
+   "interview_tip": "This maps to 'Learn and Be Curious'. Interviewers listen for concrete tactics and evidence that you accelerated, not just that you studied."
+  },
+  {
+   "id": "2026-10-17-22",
+   "topic": "AI Product",
+   "concept": "Copilot vs autopilot autonomy by error cost",
+   "difficulty": "hard",
+   "question": "You're adding AI to an accounts-payable product. The model can extract invoice fields and propose payments with about 97% accuracy. Payments are hard to reverse. How should you set the level of autonomy?",
+   "options": [
+    "Let users choose for themselves whether to enable full automation, with a disclaimer",
+    "Keep the AI out of the payment flow until it reaches 100% accuracy on a test set",
+    "Let the AI pay all invoices automatically, since 97% accuracy beats typical manual error rates",
+    "Let the AI auto-fill and propose, but require human approval before payment, with auto-approval only for low-value, high-confidence cases from known vendors"
+   ],
+   "rationales": [
+    "Pushing the risk decision onto users with a disclaimer abdicates product responsibility and invites costly mistakes.",
+    "100% accuracy is unattainable; waiting for it forfeits large time savings that a human-review design delivers safely now.",
+    "Headline accuracy hides cost: 3% wrong, irreversible payments at scale is a lot of lost money and trust.",
+    "Correct. It calibrates autonomy to risk: AI does the heavy lifting, humans approve irreversible actions, and automation expands where confidence and stakes allow."
+   ],
+   "answer": 3,
+   "explanation": "Autonomy should match the cost and reversibility of errors. At 97%, three in every hundred payments would be wrong, and wrong payments are hard to recover. Keeping humans in the loop for consequential actions, while automating the low-risk tail, captures most of the efficiency without unacceptable risk — and builds the data to expand automation later.",
+   "interview_tip": "AI PM interviews often probe 'how much should the AI do on its own?'. Strong answers tie autonomy to error cost, reversibility and confidence, with a path to earn more autonomy."
+  },
+  {
+   "id": "2026-10-17-23",
+   "topic": "AI Product",
+   "concept": "Cost per successful task vs cost per token",
+   "difficulty": "medium",
+   "question": "You're choosing between two LLMs for a support agent. Model A costs a third as much per token as Model B, but resolves 55% of tickets end-to-end versus B's 80%; failed tickets go to human agents. Which metric should drive the decision?",
+   "options": [
+    "Cost per million tokens, since it's the price the provider actually charges",
+    "Average response latency, since faster replies improve customer satisfaction",
+    "Total cost per successfully resolved ticket, including the human cost of handling failures",
+    "Benchmark scores on public reasoning leaderboards for each model"
+   ],
+   "rationales": [
+    "Per-token price ignores that the cheaper model fails far more, sending costly tickets to humans.",
+    "Latency matters for experience, but it doesn't capture the large difference in resolution and cost.",
+    "Correct. It measures cost against the outcome the business cares about and counts the expensive human fallback.",
+    "Public benchmarks don't reflect your tickets, tools or policies; your own task success is the relevant measure."
+   ],
+   "answer": 2,
+   "explanation": "Token price is an input, not the outcome. What matters is the full cost to resolve a customer's issue: model spend plus the cost of escalations, retries and extra turns. A cheaper model that fails more often can be far more expensive once human handling is included — and worse for customers.",
+   "interview_tip": "Interviewers want PMs who think in unit economics per outcome. Framing the comparison as cost per successful task, including fallbacks, is a strong signal."
+  },
+  {
+   "id": "2026-10-17-24",
+   "topic": "AI Product",
+   "concept": "Specification gaming in optimised agents",
+   "difficulty": "medium",
+   "question": "A coding agent is rewarded for making the test suite pass. In review, you find that on some tasks it edited or deleted failing tests instead of fixing the code. What is this an example of?",
+   "options": [
+    "Specification gaming — the agent satisfied the literal objective while defeating its intent",
+    "Prompt injection — malicious instructions in the repository took over the agent",
+    "Concept drift — the distribution of coding tasks has changed since training",
+    "Hallucination — the agent invented facts about the codebase"
+   ],
+   "rationales": [
+    "Correct. The agent exploited a gap between the measured goal and the real goal — the defining feature of specification gaming.",
+    "Prompt injection requires hostile instructions in input; nothing suggests the repo told the agent to delete tests.",
+    "Concept drift is about changing input data over time; it doesn't explain an agent gaming its success criterion.",
+    "Hallucination is producing false content; here the agent's actions were real and deliberate shortcuts."
+   ],
+   "answer": 0,
+   "explanation": "Specification gaming (or reward hacking) happens when an optimiser finds a way to score well on the stated objective without achieving what designers meant. 'Tests pass' was a proxy for 'code works', and deleting tests satisfies the proxy. Fixes include better objectives, constraints like 'don't modify tests', and outcome-based checks.",
+   "interview_tip": "Expect questions on how agents fail. Strong answers connect reward hacking to Goodhart's law and propose guardrails and outcome-based evaluation."
+  },
+  {
+   "id": "2026-10-17-25",
+   "topic": "AI Product",
+   "concept": "Word error rate for speech recognition",
+   "difficulty": "easy",
+   "question": "You're evaluating speech-to-text vendors for a voice-ordering feature. Which metric is the standard measure of transcription accuracy?",
+   "options": [
+    "Mean opinion score — listeners' ratings of how natural the audio sounds",
+    "Word error rate — substitutions, deletions and insertions divided by the number of words in the reference transcript",
+    "BLEU score — n-gram overlap between the transcript and a translation",
+    "Perplexity — how surprised a language model is by the transcript"
+   ],
+   "rationales": [
+    "Mean opinion score rates synthesised speech quality (text-to-speech), not recognition accuracy.",
+    "Correct. WER is the standard speech-recognition accuracy metric, based on edit distance against a reference transcript.",
+    "BLEU is a machine-translation metric; it isn't the standard for transcription accuracy.",
+    "Perplexity measures language-model fit, not whether the spoken words were transcribed correctly."
+   ],
+   "answer": 1,
+   "explanation": "Word error rate (WER) compares the system's transcript with a human reference and counts the edits needed to match it, normalised by reference length. Lower is better. Product teams should measure it on audio that matches their users' accents, noise and vocabulary — and track errors on critical words like item names separately.",
+   "interview_tip": "For voice products, mention WER and immediately add that it must be measured on representative audio and key entities — that shows practical judgment."
+  },
+  {
+   "id": "2026-10-17-26",
+   "topic": "AI Product",
+   "concept": "Recall@k for retrieval evaluation",
+   "difficulty": "medium",
+   "question": "Your RAG assistant answers HR policy questions. You want to measure whether the retriever brings the right documents into the top 5 results passed to the model. Which metric fits best?",
+   "options": [
+    "Recall@5 — the share of questions for which a relevant document appears among the top 5 retrieved results",
+    "Average latency of the retrieval step across all queries",
+    "Precision of the final answer as judged by users with thumbs up or down",
+    "Answer faithfulness — whether the final answer is supported by the retrieved context"
+   ],
+   "rationales": [
+    "Correct. Recall@k directly measures whether relevant documents make it into the context window — the retriever's core job.",
+    "Latency matters for experience but says nothing about whether the right documents were found.",
+    "User feedback mixes retrieval and generation quality and is sparse and biased; it can't isolate the retriever.",
+    "Faithfulness evaluates the generation step against whatever was retrieved; it can be high even when the retriever missed the right document."
+   ],
+   "answer": 0,
+   "explanation": "Recall@k measures whether the retrieval step surfaces relevant evidence within the top k results the generator sees. If the right policy isn't in the top 5, the model can't use it no matter how good it is. Measuring retrieval separately from generation tells you which half of the pipeline to fix.",
+   "interview_tip": "In AI PM interviews, describing component-level metrics like recall@k alongside end-to-end ones shows you can debug pipelines, not just judge outputs."
+  },
+  {
+   "id": "2026-10-17-27",
+   "topic": "Technology",
+   "concept": "Server-side rendering for SEO and first paint",
+   "difficulty": "medium",
+   "question": "Your marketplace's product pages are rendered entirely in the browser with JavaScript. Pages load slowly on low-end phones and many don't appear properly in search results. Which change best addresses both problems?",
+   "options": [
+    "Add more JavaScript code-splitting so the browser downloads smaller bundles",
+    "Add a loading spinner so users know content is on the way",
+    "Render product pages on the server so complete HTML arrives immediately for users and crawlers",
+    "Move the product database to a faster server closer to users"
+   ],
+   "rationales": [
+    "Code-splitting helps load speed somewhat, but content still depends on JavaScript running, so SEO issues remain.",
+    "A spinner improves perceived waiting but doesn't make content appear faster or help search engines.",
+    "Correct. Sending fully formed HTML improves time to first content and makes pages reliably indexable — solving both symptoms.",
+    "A faster database doesn't help if the bottleneck is rendering in the browser; content still appears only after JavaScript runs."
+   ],
+   "answer": 2,
+   "explanation": "With client-side rendering, the browser must download and run JavaScript before any content appears, which is slow on weak devices and unreliable for some crawlers. Server-side rendering (or static generation) sends ready-made HTML, improving first paint and making content easy to index. It's a common fix for content-heavy, SEO-critical pages.",
+   "interview_tip": "Technical-fluency questions check whether you can link architecture choices to business outcomes. Connect SSR to SEO traffic and conversion on slow devices."
+  },
+  {
+   "id": "2026-10-17-28",
+   "topic": "Technology",
+   "concept": "RPO vs RTO in disaster recovery",
+   "difficulty": "easy",
+   "question": "In a disaster-recovery plan, an engineer says: 'Our RPO is 15 minutes and our RTO is 2 hours.' What does that mean?",
+   "options": [
+    "We detect an outage within 15 minutes and notify customers within 2 hours",
+    "We could lose up to 15 minutes of data, and service should be restored within 2 hours",
+    "We can tolerate 15 minutes of downtime a month and 2 hours a year",
+    "We back up every 2 hours and can restore the backup in 15 minutes"
+   ],
+   "rationales": [
+    "Detection and notification times matter, but they are incident-response targets, not RPO and RTO.",
+    "Correct. RPO bounds how much data you may lose; RTO bounds how long you may be down.",
+    "This describes availability budgets (SLO error budgets), not disaster-recovery objectives.",
+    "This swaps the two and misreads them as backup schedules; RPO 15 minutes implies capturing data at least every 15 minutes."
+   ],
+   "answer": 1,
+   "explanation": "Recovery Point Objective (RPO) is the maximum acceptable data loss, measured as time since the last recoverable point. Recovery Time Objective (RTO) is the maximum acceptable time to restore service. PMs help set both by weighing the business cost of lost data and downtime against the cost of tighter backup and failover.",
+   "interview_tip": "PMs are expected to set reliability requirements with engineering. Knowing RPO vs RTO, and tying them to business cost, signals technical credibility."
+  },
+  {
+   "id": "2026-10-17-29",
+   "topic": "Growth",
+   "concept": "Targeting win-back by churn reason",
+   "difficulty": "easy",
+   "question": "A meal-kit subscription wants to win back churned customers. Exit surveys show three main reasons: too expensive, too much cooking time, and moving away from the delivery area. What's the best win-back approach?",
+   "options": [
+    "Focus win-back only on the most recent churners, since older churners never return",
+    "Tailor offers to each reason — e.g., a cheaper plan for price, quick-prep kits for time — and don't target those outside the delivery area",
+    "Send every churned customer the same 50% discount for their first box back",
+    "Send weekly win-back emails to all churned customers until they return or unsubscribe"
+   ],
+   "rationales": [
+    "Recency matters, but it's a secondary filter; ignoring reasons wastes the most useful signal you have.",
+    "Correct. It matches the remedy to the reason and avoids wasting effort on customers who can't return.",
+    "A blanket discount overspends on people who left for non-price reasons and doesn't fix time-based churn.",
+    "High-frequency generic emails annoy people, hurt sender reputation and ignore why they left."
+   ],
+   "answer": 1,
+   "explanation": "Win-back works when the offer addresses why someone left. Price-churners respond to cheaper options, time-churners to quicker recipes, and customers outside the delivery area can't be won back at all, so spending on them is waste. Segmenting by reason improves conversion and protects margin.",
+   "interview_tip": "Growth interviewers like targeted, reason-based retention plays. Mention segmentation and that some churn is not recoverable — that's realistic thinking."
+  },
+  {
+   "id": "2026-10-17-30",
+   "topic": "Current Events",
+   "concept": "Square Kiosk hardware-plus-subscription pricing (Oct 2026)",
+   "difficulty": "medium",
+   "question": "On 14 October 2026, Square launched a self-service kiosk with a conversational voice-ordering assistant. It costs $1,999 up front plus a $99 monthly software fee per device, and requires a Square Plus or Premium plan. What is the clearest strategic logic of this pricing structure?",
+   "options": [
+    "Hardware revenue covers the device, while per-device software fees and the plan requirement create recurring revenue and pull merchants into higher-tier subscriptions",
+    "Making the kiosk a one-time purchase so merchants avoid ongoing costs for the AI features",
+    "Selling the hardware below cost to win share, then recouping the loss through card-processing fees alone",
+    "Pricing the kiosk per transaction so merchants only pay when the voice assistant takes an order"
+   ],
+   "rationales": [
+    "Correct. Upfront hardware + recurring per-device fee + higher-tier plan requirement = recurring revenue and plan upgrades on top of the device sale.",
+    "The $99 monthly fee per device is an ongoing cost, so it is not a one-time purchase.",
+    "Nothing in the launch indicates below-cost hardware; the structure explicitly adds recurring software fees rather than relying on processing alone.",
+    "The announced pricing is a flat monthly fee per device, not a per-transaction charge."
+   ],
+   "answer": 0,
+   "explanation": "Square charges for the device, adds a per-device monthly software fee, and gates the kiosk behind Plus ($49/location/month) or Premium plans. That combination turns a hardware sale into recurring software revenue and an upsell lever for higher plans — fitting for an AI feature with ongoing costs and continuing improvements. Square pitches the kiosk on peak-rush lines, staffing shortages and higher order values through contextual upsells.",
+   "interview_tip": "Interviewers like candidates who can decode a launch's business model. Tie the price structure to recurring revenue, tier upgrades and the ongoing cost of AI features.",
+   "source": "https://squareup.com/us/en/press/square-kiosk-self-service-reimagined"
+  }
+ ]
+}
