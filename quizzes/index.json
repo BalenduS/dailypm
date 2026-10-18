@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-18",
+   "theme": "Hybrid AI pricing, supply-side diagnosis and designing for bystanders",
+   "count": 30
+  },
+  {
    "date": "2026-10-17",
    "theme": "Autonomy, honest metrics and pricing power",
    "count": 30

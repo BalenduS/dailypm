@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-18",
+ "theme": "Hybrid AI pricing, supply-side diagnosis and designing for bystanders",
+ "questions": [
+  {
+   "id": "2026-10-18-01",
+   "topic": "Product Sense",
+   "concept": "Bystander consent for camera-based devices",
+   "difficulty": "hard",
+   "question": "You're PM for camera-equipped smart glasses. Owners love hands-free capture, but early press and social posts focus on people being filmed without knowing it, and some venues are banning the glasses. Which product direction best addresses the core problem?",
+   "options": [
+    "Blur all faces automatically in saved footage so that bystanders cannot be identified when owners share clips online later",
+    "Make capture visible and hard to hide for the people nearby: a bright, tamper-resistant recording light, an audible cue, and capture disabled if the light is covered",
+    "Partner with venues to offer a discount on the glasses so that staff become owners and grow comfortable with the device",
+    "Add a detailed privacy section to the owner's onboarding that explains local recording laws and asks owners to use the glasses responsibly"
+   ],
+   "rationales": [
+    "Wrong. Blurring helps after sharing, but the complaint is about being recorded without knowing; it also breaks the product for legitimate uses like filming friends.",
+    "Correct. It designs for the non-user stakeholder, gives them real-time awareness, and makes the safeguard hard to defeat, which is what venues and the public are reacting to.",
+    "Wrong. This tries to change attitudes through incentives rather than fixing the missing consent signal; the public and other venues still face the same issue.",
+    "Wrong. Owner education relies on the owners who cause the problem choosing to behave; bystanders still have no way to know they are being filmed."
+   ],
+   "answer": 1,
+   "explanation": "The person harmed here is not the user but the bystander, who has no app, no settings and no say. The strongest fix gives the bystander information at the moment of capture, which they need to object, walk away or consent. Making the signal tamper-resistant matters because the trust problem is about the worst owners, not the average one.",
+   "interview_tip": "Product-sense prompts about cameras, location or AI often hinge on stakeholders who aren't the user. Naming the bystander explicitly and designing a safeguard for them signals mature, responsible product thinking."
+  },
+  {
+   "id": "2026-10-18-02",
+   "topic": "Product Sense",
+   "concept": "Pause or skip as an alternative to cancelling",
+   "difficulty": "hard",
+   "question": "A meal-kit subscription in Bengaluru sees a cancellation spike every year around Diwali and in May. Exit surveys most often say 'travelling' or 'too busy this month', and many cancellers re-subscribe 6-8 weeks later at a high re-acquisition cost. What's the best product response?",
+   "options": [
+    "Move the cancellation option deeper into settings and require a phone call during festival months to reduce impulsive cancellations",
+    "Offer a prominent skip-a-week or pause-for-up-to-two-months option in the cancel flow and the weekly reminder, so temporary absences don't require cancelling",
+    "Add a retention discount of 30% for three months that is shown to every user who clicks cancel during these peak cancellation months",
+    "Launch a festive-season menu with special Diwali dishes so that subscribers have a reason to keep ordering during holidays"
+   ],
+   "rationales": [
+    "Wrong. Adding friction to cancel is a dark pattern that damages trust and invites regulatory complaints, and it doesn't address why people are leaving.",
+    "Correct. It solves the actual job (I'll be away for a while) with a lighter action than cancelling, and placing it where the decision happens maximizes its impact.",
+    "Wrong. A discount doesn't help someone who won't be home to eat the meals; it costs margin and teaches users to click cancel to get deals.",
+    "Wrong. A themed menu is a nice idea for engagement, but travelling users still can't receive deliveries, so it misses the stated reason."
+   ],
+   "answer": 1,
+   "explanation": "The research shows the need is temporary: users don't want to leave, they just won't be home. Cancellation is the only tool the product offers for a short absence, so users use it. A pause matches the real need, keeps the payment method and relationship, and avoids paying to re-acquire the same customer weeks later.",
+   "interview_tip": "Interviewers like churn prompts where the exit reason is temporary. Strong candidates read the qualitative signal, match the solution to the real job, and reject dark-pattern retention tactics out loud."
+  },
+  {
+   "id": "2026-10-18-03",
+   "topic": "Product Sense",
+   "concept": "Import tools to lower adoption cost from an incumbent",
+   "difficulty": "hard",
+   "question": "You're launching a new B2B project-management tool. Trials show prospects like the product, but most stall during setup: their projects, tasks and history live in an incumbent tool, and recreating them manually takes days. Sales says the product needs more features to win. What should you prioritize?",
+   "options": [
+    "A one-click importer from the main incumbents that maps projects, tasks, assignees and history, so a team can be working in the new tool on day one",
+    "A set of polished project templates so new teams can start fresh in the tool rather than bringing their old, messy projects across",
+    "A feature-by-feature gap analysis against the incumbent, closing the most-requested gaps first so prospects have fewer reasons to stay where they are",
+    "A longer free trial of 60 days so that teams have more time to set things up manually and discover the product's value at their own pace"
+   ],
+   "rationales": [
+    "Correct. It targets the observed point of failure (setup) and turns the incumbent's data lock-in into a quick transfer, shortening time to value.",
+    "Wrong. Templates help brand-new projects, but teams' live work and history are in the old tool, so they can't simply start fresh.",
+    "Wrong. Feature parity is a common trap; the trial data shows the product already appeals, and more features don't reduce the migration burden.",
+    "Wrong. More time doesn't make a manual migration cheaper; busy teams will still put it off, and trial-to-paid conversion usually doesn't improve."
+   ],
+   "answer": 0,
+   "explanation": "The evidence says the blocker is switching cost, not missing features: prospects like the product but can't afford days of migration. An importer removes the biggest barrier to the first value moment. This is why many challengers invest early in migration tools; the incumbent's moat is often the user's accumulated data, not its features.",
+   "interview_tip": "When a prompt says 'users like it but don't adopt', look for the cost of switching. Naming migration as the barrier, and resisting the 'add more features' instinct, shows strong diagnosis."
+  },
+  {
+   "id": "2026-10-18-04",
+   "topic": "Product Sense",
+   "concept": "Error messages that tell users how to recover",
+   "difficulty": "medium",
+   "question": "On a WhatsApp-commerce checkout flow, 9% of payment attempts fail and show 'Something went wrong. Please try again.' Most users who see it leave and never retry. Which change most directly improves recovery?",
+   "options": [
+    "Show specific, actionable messages by failure type, such as 'UPI app timed out — your money was not deducted' with a one-tap retry or a switch-method option",
+    "Send the user a reminder message an hour later asking them to complete their order, with a link back to the cart",
+    "Replace the error text with a friendlier, apologetic tone and a brand illustration so the failure feels less frustrating",
+    "Retry every failed payment automatically in the background three times before showing any message, so the user rarely sees an error"
+   ],
+   "rationales": [
+    "Correct. It removes the uncertainty (was I charged?) and gives a clear recovery path at the moment of failure, which is when users decide to stay or leave.",
+    "Wrong. A later reminder can recover some orders, but it misses the moment of intent and doesn't fix the confusing failure experience.",
+    "Wrong. A friendlier tone doesn't answer what happened or what to do, so the core reason for abandonment remains.",
+    "Wrong. Silent automatic payment retries risk double charges and long waits, and some failures (wrong PIN, insufficient balance) can't be fixed by retrying."
+   ],
+   "answer": 0,
+   "explanation": "A vague error leaves users unsure what happened, whether they were charged and what to do next, so they abandon. Good error states explain the problem in plain words, reassure about the money, and offer the next step right there. Differentiating by failure type also helps, since a bank timeout and a wrong PIN need different actions.",
+   "interview_tip": "Design questions often include a failure state. Calling out unhappy paths, such as errors, empty states and timeouts, and designing a clear next action shows attention to the full user journey."
+  },
+  {
+   "id": "2026-10-18-05",
+   "topic": "Metrics",
+   "concept": "Checking supply availability when marketplace demand falls",
+   "difficulty": "hard",
+   "question": "Food-delivery orders in Mumbai fell 14% yesterday versus the same weekday last week. App opens and restaurant searches are flat, but conversion from restaurant page to order dropped sharply. No release went out and other cities are normal. What should you check first?",
+   "options": [
+    "Supply-side availability in Mumbai: how many restaurants were online, delivery-partner availability, and quoted ETAs and delivery fees during the day",
+    "Whether a competitor launched a big discount campaign in Mumbai yesterday that drew price-sensitive users away from the app",
+    "Whether the tracking for the order-placed event broke on one platform, causing orders to be under-counted in the dashboard",
+    "Whether a recent change to the ranking algorithm has been showing users less relevant restaurants at the top of the list"
+   ],
+   "rationales": [
+    "Correct. The drop is localized and happens after intent is shown, which fits a supply shortfall that shows up as unavailable or unattractive options at the restaurant page.",
+    "Wrong. A competitor promotion would usually reduce app opens and searches too, since users would order elsewhere; here top-of-funnel is flat.",
+    "Wrong. Instrumentation is a fair check, but no release went out and the drop is limited to one city, which makes a city-specific real cause more likely.",
+    "Wrong. A ranking change would be a release and would affect all cities, yet nothing shipped and other cities are normal."
+   ],
+   "answer": 0,
+   "explanation": "Demand intent (opens, searches) is unchanged, but users who reach a restaurant aren't ordering, and only one city is affected. That pattern points to what users found when they got there: closed restaurants, no riders, long ETAs or surge fees, for example because of heavy rain or a local strike. In a marketplace, a demand-side metric often falls because the supply side couldn't serve it.",
+   "interview_tip": "Root-cause prompts in marketplace interviews reward candidates who ask about both sides. Using the funnel shape and the geographic scope to narrow down the cause before listing hypotheses signals structured thinking."
+  },
+  {
+   "id": "2026-10-18-06",
+   "topic": "Metrics",
+   "concept": "Notification success measured by downstream action and opt-outs",
+   "difficulty": "medium",
+   "question": "Your team launched a new 'price drop on your wishlist' push notification for a shopping app. Which success metric set is best?",
+   "options": [
+    "Daily active users of the app, since good notifications should bring more users back every day",
+    "Purchases of the notified item within 48 hours per notification sent, paired with push opt-out and app-uninstall rates as guardrails",
+    "Total notifications sent per week, since more price-drop alerts mean more value is being delivered to users",
+    "Notification open rate, since it directly shows how many users found the price-drop alert relevant enough to tap"
+   ],
+   "rationales": [
+    "Wrong. DAU is too broad and noisy to attribute to one notification type, and it can rise even while users grow annoyed.",
+    "Correct. It measures the intended outcome per send and protects the long-term health of the notification channel with guardrails.",
+    "Wrong. Volume is an input the team controls, not a measure of value; sending more is exactly what drives opt-outs.",
+    "Wrong. Open rate is easy to inflate with clickbait copy and says nothing about whether users bought anything or got annoyed."
+   ],
+   "answer": 1,
+   "explanation": "A notification exists to drive a valuable action, here buying the discounted item, so the primary metric should capture that outcome. Notifications also have a hidden cost: annoyed users turn off push or uninstall, which destroys the channel. Pairing outcome with opt-out guardrails keeps the team from optimizing volume at the channel's expense.",
+   "interview_tip": "Notification metrics come up often in Meta and Google loops. Strong answers tie the metric to the user action the notification is for and always add a channel-health guardrail."
+  },
+  {
+   "id": "2026-10-18-07",
+   "topic": "Metrics",
+   "concept": "Customer Effort Score vs CSAT",
+   "difficulty": "easy",
+   "question": "A B2B SaaS support team wants a survey metric that best predicts whether a customer will come back with the same issue or churn after a support interaction. Research suggests one question works especially well for this. Which metric is it?",
+   "options": [
+    "NPS: how likely are you to recommend the product to a colleague?",
+    "Customer Effort Score: how easy was it to get your issue resolved?",
+    "CSAT: how satisfied were you with the support agent today?",
+    "First-response time: how quickly did an agent first reply?"
+   ],
+   "rationales": [
+    "Wrong. NPS is a relationship metric about the overall product and brand, not a good gauge of one support interaction.",
+    "Correct. CES targets the friction of resolving the problem, which is strongly linked to repeat contacts and churn after support interactions.",
+    "Wrong. CSAT is useful but often reflects how friendly the agent was, even when the issue took several contacts to resolve.",
+    "Wrong. First-response time is an operational metric, not a survey, and a fast first reply doesn't mean the issue was resolved easily."
+   ],
+   "answer": 1,
+   "explanation": "Customer Effort Score asks how easy it was to resolve the issue. Research behind CES found that reducing effort predicts loyalty and repeat contact better than delighting customers. CSAT often measures how pleasant the agent was, and NPS measures overall brand sentiment, which are less tied to a single interaction's outcome.",
+   "interview_tip": "Knowing which survey metric fits which question (CSAT, CES, NPS) shows measurement maturity. Explaining what each actually captures is better than listing acronyms."
+  },
+  {
+   "id": "2026-10-18-08",
+   "topic": "Metrics",
+   "concept": "Marketplace liquidity metric",
+   "difficulty": "medium",
+   "question": "You run a home-services marketplace (plumbers, electricians) in Pune. Leadership asks for one metric that tells you whether the marketplace is healthy in a given neighbourhood. Which is best?",
+   "options": [
+    "The share of service requests that are accepted by a qualified pro and completed within the promised time window",
+    "The number of registered service pros in the neighbourhood, since more supply means customers have more choice",
+    "Average customer rating of completed jobs, since high ratings show the marketplace is serving people well",
+    "The number of service requests posted per week, since demand is what attracts pros to join the platform"
+   ],
+   "rationales": [
+    "Correct. Fill rate within the promised window captures whether demand meets available, reliable supply, which is the essence of marketplace health.",
+    "Wrong. Registered supply counts inactive and unavailable pros; a neighbourhood can have many sign-ups and still leave customers unserved.",
+    "Wrong. Ratings only cover completed jobs and miss requests that were never matched, which is where liquidity problems show up.",
+    "Wrong. Demand alone doesn't show whether requests are being served; high unfulfilled demand is a sign of an unhealthy market."
+   ],
+   "answer": 0,
+   "explanation": "Liquidity is the probability that a buyer or seller who shows up actually gets a successful match. Measuring the share of requests that are fulfilled on time captures supply and demand together. Counts of one side alone can look great while the marketplace fails, for example many registered pros who are inactive.",
+   "interview_tip": "For marketplace metric prompts, interviewers listen for a metric that captures both sides matching. Mentioning liquidity, or fill rate, and why one-sided counts mislead is a strong signal."
+  },
+  {
+   "id": "2026-10-18-09",
+   "topic": "Experimentation",
+   "concept": "Delta method for ratio-metric variance",
+   "difficulty": "medium",
+   "question": "Your experiment randomizes users, and the primary metric is click-through rate defined as total clicks divided by total page views. An analyst computes the standard error by treating every page view as an independent trial. What's the problem?",
+   "options": [
+    "Page views from the same user are correlated, so the naive formula underestimates variance and produces too many false positives; use the delta method or a user-level bootstrap",
+    "The formula overestimates variance because page views are numerous, which makes the test too conservative and hides real effects",
+    "Ratio metrics cannot be tested at all in an A/B test, so the team should switch the primary metric to total clicks per user",
+    "The analysis is fine as long as both groups have the same number of page views, since the randomization balances everything"
+   ],
+   "rationales": [
+    "Correct. It identifies the unit mismatch, the direction of the error (too-small variance, inflated false positives) and the standard fixes.",
+    "Wrong. The error goes the other way; ignoring correlation within users makes the variance look smaller, not larger.",
+    "Wrong. Ratio metrics are tested routinely; they just need the right variance method, and switching metrics may lose what the team cares about.",
+    "Wrong. Equal page-view counts don't fix the within-user correlation that makes the naive standard error wrong."
+   ],
+   "answer": 0,
+   "explanation": "When the randomization unit (user) differs from the analysis unit (page view), observations within a user are not independent. Treating them as independent shrinks the standard error, so the test looks significant more often than it should. The delta method or bootstrapping by user gives a correct variance estimate for the ratio.",
+   "interview_tip": "This comes up when interviewers probe metric choice for experiments. Mentioning that the randomization unit must match the variance calculation shows you can be trusted with experiment readouts."
+  },
+  {
+   "id": "2026-10-18-10",
+   "topic": "Experimentation",
+   "concept": "Running tests for full weekly cycles",
+   "difficulty": "easy",
+   "question": "A test on a food-ordering app reaches the planned sample size by Wednesday, three days after launching on a Monday. Weekend ordering behaviour is very different from weekday behaviour. What should the team do?",
+   "options": [
+    "Keep it running to at least one full week, ideally two, so every day of the week is represented in the result",
+    "Stop on Wednesday but re-weight the weekday data to estimate what weekend users would have done",
+    "Extend it only for the users who joined the test on Monday, so their behaviour can be observed over the weekend",
+    "Stop on Wednesday, since the planned sample size has been reached and running longer only adds cost"
+   ],
+   "rationales": [
+    "Correct. Full weeks cover day-of-week patterns, so the measured effect reflects how the change will perform in normal operation.",
+    "Wrong. You can't re-weight toward weekend behaviour you never observed; re-weighting only works with data from each segment.",
+    "Wrong. Following only Monday's joiners creates a biased cohort and still misses users who only order at weekends.",
+    "Wrong. Hitting the sample size early doesn't make the sample representative; the effect might be different, even reversed, at weekends."
+   ],
+   "answer": 0,
+   "explanation": "A sample-size target is necessary but not sufficient: the sample must also represent the population and time periods the decision applies to. If weekends behave differently, a Monday-to-Wednesday sample can't tell you the effect on weekends. Running full weekly cycles is a standard practice for this reason.",
+   "interview_tip": "Interviewers often ask how long you'd run a test. Saying 'at least one full business cycle, plus enough for power' shows you think about representativeness, not only sample size."
+  },
+  {
+   "id": "2026-10-18-11",
+   "topic": "Estimation",
+   "concept": "Annual cinema ticket sales for a city",
+   "difficulty": "medium",
+   "question": "Estimate the number of cinema tickets sold in Bengaluru in a year. Which is closest?",
+   "options": [
+    "About 2-3 million",
+    "About 80-90 million",
+    "About 250-300 million",
+    "About 25-30 million"
+   ],
+   "rationales": [
+    "Wrong. This implies fewer than one visit every five years per person, far below what a city with hundreds of screens sells.",
+    "Wrong. This assumes almost everyone goes about six times a year, which overstates both reach and frequency.",
+    "Wrong. This would be about 20 visits per resident every year, which is far above real moviegoing frequency.",
+    "Correct. Population x share who go x visits per year gives around 26 million, and the per-day sanity check holds up."
+   ],
+   "answer": 3,
+   "explanation": "Start from population: about 13-14 million. Assume roughly half go to cinemas at all, so about 6.5 million people. Among them, say an average of 4 visits a year (some go monthly, many only for big releases), which gives about 26 million tickets. Sanity check: 26 million a year is about 70,000 tickets a day, which is plausible for a few hundred screens.",
+   "interview_tip": "In guesstimates, state your segments and assumptions, then sanity-check the result from another angle, such as capacity per screen. The check is often what separates strong candidates."
+  },
+  {
+   "id": "2026-10-18-12",
+   "topic": "Estimation",
+   "concept": "Daily watch-hours estimate for a streaming app",
+   "difficulty": "medium",
+   "question": "A video-streaming app has about 20 million daily active users in India. Estimate the total hours of video watched on the app per day. Which is closest?",
+   "options": [
+    "About 800 million hours",
+    "About 13 million hours",
+    "About 130 million hours",
+    "About 1.3 million hours"
+   ],
+   "rationales": [
+    "Wrong. This is the total in minutes, not hours; the unit conversion was skipped.",
+    "Correct. 20M users x about 40 minutes = 800M minutes, divided by 60 is about 13M hours.",
+    "Wrong. This implies 6.5 hours per user every day, well above typical average watch time.",
+    "Wrong. This implies about 4 minutes per active user per day, too little for a streaming app where one episode is 20-40 minutes."
+   ],
+   "answer": 1,
+   "explanation": "Assume an average daily active user watches about 40 minutes: some binge for hours, many watch one short episode. 20 million x 40 minutes = 800 million minutes, which is about 13.3 million hours. A common trap is forgetting to convert minutes to hours, which gives 800 million.",
+   "interview_tip": "Interviewers watch for unit mistakes. Saying the units out loud at each step and checking the per-user result against your own experience is a simple way to show rigour."
+  },
+  {
+   "id": "2026-10-18-13",
+   "topic": "Strategy",
+   "concept": "Porter's generic strategies and being stuck in the middle",
+   "difficulty": "easy",
+   "question": "An Indian D2C skincare brand prices itself between mass-market brands and premium brands. It has neither the lowest costs nor a clear point of difference, and margins are shrinking. In Michael Porter's terms, what is the brand's problem?",
+   "options": [
+    "It has too narrow a focus and should expand into more product categories to grow its addressable market",
+    "It faces a network-effects disadvantage because bigger brands have more reviews and word of mouth",
+    "It is suffering from disruptive innovation, because cheap new entrants are slowly moving upmarket into its segment",
+    "It is stuck in the middle: it hasn't committed to either cost leadership or differentiation, so it loses to rivals that excel at one"
+   ],
+   "rationales": [
+    "Wrong. Expanding categories without a clear advantage would spread the same weak position across more products.",
+    "Wrong. Reviews matter, but skincare has weak network effects; the core issue is the lack of a cost or differentiation edge.",
+    "Wrong. Disruption describes a specific entrant dynamic; the question describes a positioning problem that exists regardless of entrants.",
+    "Correct. Mid-pricing without a cost or differentiation advantage is the classic stuck-in-the-middle position, which explains the margin squeeze."
+   ],
+   "answer": 3,
+   "explanation": "Porter argued that firms gain competitive advantage through cost leadership, differentiation, or focus on a niche. A firm that is 'stuck in the middle' lacks any of these and is squeezed by cheaper rivals on one side and more distinctive ones on the other. The fix is to choose: become meaningfully cheaper or meaningfully different for a defined customer.",
+   "interview_tip": "Classic strategy frameworks still come up in strategy rounds. Use them to name the problem quickly, then move to a concrete choice and what you'd give up."
+  },
+  {
+   "id": "2026-10-18-14",
+   "topic": "Strategy",
+   "concept": "Revenue predictability trade-off of usage-based pricing",
+   "difficulty": "medium",
+   "question": "A developer-tools SaaS is moving from per-seat plans to pure usage-based pricing (pay per API call). Usage is growing fast among small customers. What is the main new business risk the PM should plan for?",
+   "options": [
+    "Small customers will churn because usage-based pricing makes the product more expensive for low-volume users",
+    "Customers will be unable to understand the bill, because usage-based pricing is too complex for developers to estimate",
+    "Revenue becomes less predictable: it moves with customers' usage, so a few large customers cutting back or optimizing can cause sudden drops, making forecasting harder",
+    "Usage-based pricing always lowers average revenue per customer, since customers pay only for what they use"
+   ],
+   "rationales": [
+    "Wrong. Low-volume users usually pay less under usage pricing than under a fixed seat price, so this is backwards.",
+    "Wrong. Developers are generally comfortable with metered pricing; bill-shock tooling helps, but complexity isn't the main business risk.",
+    "Correct. Volatility and forecasting difficulty are the central trade-off of usage-based pricing, especially with concentrated revenue.",
+    "Wrong. Usage pricing can raise revenue from heavy users and expand naturally as usage grows; it doesn't always lower ARPU."
+   ],
+   "answer": 2,
+   "explanation": "Usage-based pricing aligns cost with value and lowers the barrier to start, but revenue fluctuates with customer activity. Seasonality, a customer optimizing calls, or a downturn shows up immediately in revenue. Teams often counter this with committed-spend contracts, minimums, or included usage tiers.",
+   "interview_tip": "Pricing questions reward naming the trade-off, not only the benefit. Mentioning mitigations like committed spend or minimums shows business judgment."
+  },
+  {
+   "id": "2026-10-18-15",
+   "topic": "Strategy",
+   "concept": "Regulatory licence as a barrier to entry",
+   "difficulty": "medium",
+   "question": "Your fintech startup has spent 18 months obtaining a payment-aggregator licence from the Reserve Bank of India. A well-funded consumer app wants to launch a competing checkout product. What strategic advantage does the licence most directly give you?",
+   "options": [
+    "A network effect, because every merchant on your platform makes the product more valuable to other merchants",
+    "A time-based barrier to entry: the competitor must either go through the same long approval process or partner with a licensed player, giving you a head start and partnership leverage",
+    "A cost advantage, because licensed aggregators pay lower transaction fees to banks than unlicensed players",
+    "A permanent monopoly on online checkout, since the regulator limits how many payment-aggregator licences it will issue"
+   ],
+   "rationales": [
+    "Wrong. A licence is a regulatory barrier, not a network effect; merchants don't directly benefit from each other's presence here.",
+    "Correct. It describes the licence realistically, as a delay and a source of partnership leverage, rather than an absolute moat.",
+    "Wrong. Holding a licence doesn't itself lower bank fees; scale and negotiation drive pricing.",
+    "Wrong. Licences are not capped in this way; many firms hold them, so it doesn't create a monopoly."
+   ],
+   "answer": 1,
+   "explanation": "Licences raise the cost and time of entry, which protects incumbents while they last. They are rarely permanent: determined rivals can get licensed or partner with licensed firms. The PM's job is to use the head start to build durable advantages, such as merchant relationships and integrations, before the barrier is crossed.",
+   "interview_tip": "In fintech or health strategy questions, regulation is often the hidden moat. Treating it as a head start to be used, not a permanent shield, signals realism."
+  },
+  {
+   "id": "2026-10-18-16",
+   "topic": "Execution",
+   "concept": "Error budgets to balance reliability and feature work",
+   "difficulty": "medium",
+   "question": "Your service has a 99.9% monthly availability SLO and an agreed error-budget policy. By the 12th of the month, incidents have already used up the whole error budget. Two feature launches are scheduled for next week. What does the policy imply?",
+   "options": [
+    "Launch as planned, since the error budget only applies to unplanned incidents and new features don't count against it",
+    "Launch the features but turn off alerting for the rest of the month so that the team isn't distracted by pages",
+    "Pause risky launches and shift engineering effort to reliability work until the budget recovers, unless leadership explicitly accepts the extra risk",
+    "Lower the SLO target to 99.5% for this month so that there is enough budget left to continue launching features"
+   ],
+   "rationales": [
+    "Wrong. Launches are a major source of incidents, so they are exactly what an exhausted budget is meant to slow down.",
+    "Wrong. Turning off alerting hides problems from the team without making the service more reliable, and increases risk.",
+    "Correct. This is what error-budget policies are for: an objective trigger to prioritize reliability, with a clear escalation path for exceptions.",
+    "Wrong. Moving the target mid-month defeats the purpose of having an SLO and breaks the promise made to users."
+   ],
+   "answer": 2,
+   "explanation": "An error budget is the amount of unreliability the SLO allows. When it's exhausted, the agreed policy usually freezes risky changes and redirects effort to reliability, because launches are a common cause of incidents. This turns the reliability-versus-velocity debate into a pre-agreed rule instead of an argument each time.",
+   "interview_tip": "Technical-PM interviews often probe how you trade off reliability and features. Referencing SLOs and error budgets shows you use agreed mechanisms rather than opinions."
+  },
+  {
+   "id": "2026-10-18-17",
+   "topic": "Execution",
+   "concept": "Weighted Shortest Job First (WSJF)",
+   "difficulty": "easy",
+   "question": "Using Weighted Shortest Job First, which item should the team do first? A: cost of delay 20, duration 4 weeks. B: cost of delay 30, duration 10 weeks. C: cost of delay 8, duration 1 week. D: cost of delay 12, duration 3 weeks.",
+   "options": [
+    "B, because it has the highest cost of delay of all four items",
+    "D, because it is the second-shortest job and has a mid-level cost of delay",
+    "A, because it balances a high cost of delay with a moderate duration",
+    "C, because its cost of delay divided by duration (8) is the highest"
+   ],
+   "rationales": [
+    "Wrong. B has the biggest cost of delay but takes 10 weeks, giving the lowest score (3); doing it first delays everything else.",
+    "Wrong. D scores 4; being short isn't enough when its cost of delay is modest.",
+    "Wrong. A scores 5, which is good but lower than C's 8.",
+    "Correct. 8 / 1 = 8 is the highest ratio, so doing C first delivers the most value per unit of time."
+   ],
+   "answer": 3,
+   "explanation": "WSJF ranks work by cost of delay divided by job duration (or size). The scores are A = 5, B = 3, C = 8, D = 4, so C goes first. The idea is that finishing short, valuable jobs first reduces the total cost of waiting across the whole queue.",
+   "interview_tip": "Prioritization frameworks come up in execution rounds. Showing the calculation quickly, then noting the method is only as good as the cost-of-delay estimates, signals practical judgment."
+  },
+  {
+   "id": "2026-10-18-18",
+   "topic": "Execution",
+   "concept": "Problem statement before solution in a spec",
+   "difficulty": "easy",
+   "question": "A stakeholder hands you a spec titled 'Build a chatbot for the help centre' that jumps straight into screens and integrations. What should you add first to make it a strong spec?",
+   "options": [
+    "A list of every chatbot feature competitors offer, so the team doesn't miss anything important",
+    "A detailed technical architecture for the chatbot, so engineering can estimate the work accurately",
+    "A clear problem statement: who is struggling, with what, how we know (data), and what outcome would show it's solved",
+    "A launch plan with marketing dates and announcement copy, so the go-to-market is ready in time"
+   ],
+   "rationales": [
+    "Wrong. Copying competitor features is solution-first thinking and doesn't establish what problem your users have.",
+    "Wrong. Architecture is important later, but designing the solution before agreeing on the problem risks building the wrong thing well.",
+    "Correct. A problem statement with evidence and a success measure is the foundation that every other section depends on.",
+    "Wrong. Launch planning comes after the team knows what it's building and why."
+   ],
+   "answer": 2,
+   "explanation": "Starting with the problem keeps the team focused on the outcome rather than a pre-chosen solution. It also lets engineers and designers propose better alternatives, such as fixing the help-centre search instead of building a chatbot. Most strong spec templates begin with the problem, evidence and success criteria.",
+   "interview_tip": "When asked how you write specs, lead with the problem and success criteria. It signals you avoid solution-first thinking, which interviewers watch for closely."
+  },
+  {
+   "id": "2026-10-18-19",
+   "topic": "Behavioural",
+   "concept": "Leading through a reorg mid-project",
+   "difficulty": "hard",
+   "question": "Halfway through a six-month project, a reorg moves half your engineers to another org and gives you a new manager who wasn't part of the original plan. The launch date is still on the external roadmap. Which response best shows ownership?",
+   "options": [
+    "Keep the original plan and ask the team to work extra hours, so the external commitment is met despite the reduced team",
+    "Escalate to the VP that the reorg makes the project impossible, and ask for the moved engineers to be returned to the team",
+    "Quickly re-plan with the remaining team, bring the new manager a clear choice of scope, date or staffing trade-offs with your recommendation, and update stakeholders before the date is missed",
+    "Wait for the new manager to settle in and set priorities, since the reorg changed the context and it isn't your call anymore"
+   ],
+   "rationales": [
+    "Wrong. Absorbing a halved team through overtime is unsustainable, hides the real trade-off from leadership, and usually ends in a late surprise.",
+    "Wrong. Fighting the reorg without options comes across as resistant, and it doesn't offer a path forward if the answer is no.",
+    "Correct. It takes initiative, uses data to frame trade-offs, involves the new manager as the decision-maker, and communicates proactively.",
+    "Wrong. Waiting gives up ownership at the moment the project most needs it; the new manager needs your input to decide."
+   ],
+   "answer": 2,
+   "explanation": "Ownership means acting on the new reality quickly rather than waiting or pretending nothing changed. The strongest response re-baselines the plan, frames concrete trade-offs for the decision-maker with a recommendation, and communicates early so no one is surprised. It respects the reorg's reasons while protecting the outcome.",
+   "interview_tip": "Amazon-style ownership questions reward a story where you re-plan quickly, bring options with a recommendation, and communicate early. Avoid stories where you either heroically overwork the team or wait to be told."
+  },
+  {
+   "id": "2026-10-18-20",
+   "topic": "Behavioural",
+   "concept": "Raising the hiring bar under headcount pressure",
+   "difficulty": "hard",
+   "question": "You're on the interview loop for a PM role on your team. The team is overloaded, and the hiring manager is pushing to make an offer to a candidate who interviewed well on communication but showed weak judgment in the product-sense and metrics rounds. What should you do?",
+   "options": [
+    "Support the offer, since the team badly needs help and the candidate's communication skills can make up for weaker judgment",
+    "Share specific evidence from your rounds in the debrief, explain why it's below the bar for the role, and suggest ways to relieve the workload that don't lower the bar",
+    "Vote no without explanation, since your role is only to give a hire or no-hire signal and the details are confidential",
+    "Stay quiet in the debrief, since the hiring manager owns the decision, and raise your concerns privately later if problems appear"
+   ],
+   "rationales": [
+    "Wrong. Weak judgment is hard to coach in a PM, and a poor hire usually adds to the team's load rather than relieving it.",
+    "Correct. It's evidence-based, honest and constructive, and it addresses the real pressure driving the push without compromising the bar.",
+    "Wrong. An unexplained vote isn't useful to the decision-maker; debriefs work through specific evidence.",
+    "Wrong. Withholding concerns in the debrief defeats the purpose of the loop; raising them later is too late to help."
+   ],
+   "answer": 1,
+   "explanation": "A hire lasts years, while workload pressure is temporary, so lowering the bar to relieve short-term pain is a costly trade. A strong interviewer gives concrete, evidence-based feedback and helps the manager with the underlying problem, such as contractors, re-prioritization or borrowing help. This is what Amazon calls 'Hire and Develop the Best'.",
+   "interview_tip": "Behavioural questions about hiring test whether you hold standards under pressure. Strong answers show courage plus empathy: specific evidence, and help with the manager's real problem."
+  },
+  {
+   "id": "2026-10-18-21",
+   "topic": "Behavioural",
+   "concept": "Stabilising requirements with a churning stakeholder",
+   "difficulty": "hard",
+   "question": "A sales VP keeps changing the requirements for a feature their top accounts asked for: three times in four weeks, each time after a new customer call. Engineering is frustrated and has rebuilt parts twice. What's the best approach?",
+   "options": [
+    "Ask engineering to build a highly configurable version so it can handle any of the VP's future requirement changes",
+    "Meet the VP to agree the underlying customer problem and success criteria, show the cost of each change, and set a clear change process with a decision deadline before build continues",
+    "Accept every change, since the VP is closest to the customers and keeping big accounts happy outweighs engineering frustration",
+    "Freeze the requirements and tell the VP no further changes will be accepted, since engineering has already rebuilt the feature twice"
+   ],
+   "rationales": [
+    "Wrong. Over-configurability is costly and complex, and it avoids deciding what customers actually need.",
+    "Correct. It addresses the root cause (no shared problem definition), keeps the stakeholder as a partner, and creates a sustainable way to handle changes.",
+    "Wrong. Accepting every change keeps wasting engineering time and suggests the PM isn't owning the product decision.",
+    "Wrong. A hard freeze damages the relationship and may lock in a solution that doesn't meet customers' needs."
+   ],
+   "answer": 1,
+   "explanation": "Repeated changes usually mean the team agreed on a solution without agreeing on the problem. Aligning on the problem and success criteria gives a stable anchor, while making the cost of change visible and adding a lightweight change process keeps the VP involved without constant churn. Talking to the customers directly can also help.",
+   "interview_tip": "For stakeholder-churn stories, interviewers look for diagnosing why requirements keep changing, not just enforcing a freeze. Showing how you made trade-offs visible is a strong signal."
+  },
+  {
+   "id": "2026-10-18-22",
+   "topic": "AI Product",
+   "concept": "Slice-level eval metrics hiding regressions",
+   "difficulty": "hard",
+   "question": "Your team upgrades the model behind a multilingual support assistant. The overall eval pass rate improves from 86% to 89%, and the team wants to ship. What should you check before approving?",
+   "options": [
+    "Whether the improvement is statistically significant across the whole eval set, since a 3-point gain might be noise",
+    "Whether the new model's latency is lower, since a higher pass rate with lower latency would make the decision clear",
+    "Pass rates by key slice, such as language, intent and customer tier, since gains in large slices can hide a regression in a small but important one like Hindi or refund requests",
+    "Whether the eval set is larger than last time, since a bigger eval set makes the overall pass rate more trustworthy"
+   ],
+   "rationales": [
+    "Wrong. Significance is worth checking, but even a real overall gain can include a meaningful regression in one slice.",
+    "Wrong. Latency matters, but it doesn't tell you whether quality got worse for certain users.",
+    "Correct. Slice-level analysis finds regressions the average hides, and important slices often carry outsized business or user risk.",
+    "Wrong. A bigger set helps precision, but it can still hide slice regressions inside the overall number."
+   ],
+   "answer": 2,
+   "explanation": "An aggregate score is a weighted average, so a big improvement in English or common intents can mask a drop in smaller slices. Those slices can matter disproportionately, such as a key market or high-risk refunds. Reporting results by slice and setting no-regression rules for critical slices is standard practice for model launches.",
+   "interview_tip": "AI PM interviews often ask how you'd decide to ship a model upgrade. Mentioning slice-level evals and protecting critical segments shows depth beyond a single headline score."
+  },
+  {
+   "id": "2026-10-18-23",
+   "topic": "AI Product",
+   "concept": "Suggested prompts to solve the blank-canvas problem",
+   "difficulty": "medium",
+   "question": "A new AI writing assistant inside a B2B CRM has strong satisfaction among users who try it, but most users open the panel, see an empty text box, and close it without typing. What's the best first fix?",
+   "options": [
+    "Show the assistant automatically on every page in a larger panel, so more users notice it and start typing",
+    "Make the model more capable by upgrading to a larger model, so the first response impresses users who do type",
+    "Show a few context-aware suggested actions based on what the user is viewing, like 'Draft a follow-up to this lead' or 'Summarize this account's last 5 calls'",
+    "Add a tutorial video in the panel that explains how large language models work and how to write good prompts"
+   ],
+   "rationales": [
+    "Wrong. More visibility increases exposure but still leaves users facing an empty box, and can feel intrusive.",
+    "Wrong. Quality isn't the issue, since users who try it are satisfied; the drop-off happens before any response.",
+    "Correct. It removes the blank-canvas barrier with relevant, one-click starting points tied to the user's current work.",
+    "Wrong. Education about LLMs adds effort and most users won't watch; the problem is not knowing what to ask, not how models work."
+   ],
+   "answer": 2,
+   "explanation": "An empty prompt box puts the burden on users to imagine what the AI can do and how to ask. Context-aware suggestions show concrete, relevant capabilities and make the first action a single click. That addresses the activation problem directly, since users who try it already like it.",
+   "interview_tip": "AI product-sense questions often hide an activation problem. Recognizing the blank-canvas issue and designing contextual starting points shows you understand AI UX, not just models."
+  },
+  {
+   "id": "2026-10-18-24",
+   "topic": "AI Product",
+   "concept": "Output tokens cost more than input tokens",
+   "difficulty": "easy",
+   "question": "Your AI feature's monthly bill is higher than forecast. Prompts are short, but the feature generates long, detailed answers. Under typical LLM API pricing, why does this matter most?",
+   "options": [
+    "Input tokens are usually priced higher than output tokens, so the short prompts are actually the main cost driver",
+    "LLM APIs charge per request rather than per token, so response length doesn't affect cost at all",
+    "Longer outputs are cached automatically by the provider, so they become cheaper the more the feature is used",
+    "Output tokens are usually priced several times higher than input tokens, so long responses drive cost much more than short prompts"
+   ],
+   "rationales": [
+    "Wrong. It's the other way around for most providers; output tokens are the more expensive ones.",
+    "Wrong. Major LLM APIs price per token, so longer responses cost more.",
+    "Wrong. Prompt caching applies to repeated input context, not to generated output.",
+    "Correct. Output pricing is typically a multiple of input pricing, so verbose responses dominate the bill."
+   ],
+   "answer": 3,
+   "explanation": "Most LLM APIs charge separately for input and output tokens, and output tokens commonly cost several times more because they are generated one at a time. For a feature with short prompts and long answers, output length is the main cost lever. Limiting length, tightening formats or offering 'show more' can cut cost a lot.",
+   "interview_tip": "AI PMs are expected to reason about unit economics. Knowing input versus output pricing and naming concrete levers like response length shows practical cost fluency."
+  },
+  {
+   "id": "2026-10-18-25",
+   "topic": "AI Product",
+   "concept": "Re-embedding the corpus when changing embedding models",
+   "difficulty": "medium",
+   "question": "Your RAG-based help assistant uses one embedding model for 2 million documents. The team wants to switch to a newer embedding model for better retrieval and plans to use it only for new user queries. What's wrong with this plan?",
+   "options": [
+    "Embeddings from different models live in different vector spaces, so queries embedded with the new model can't be meaningfully compared with documents embedded by the old one; the corpus must be re-embedded",
+    "Nothing; embedding models are standardized, so vectors from any model can be compared as long as they have the same number of dimensions",
+    "The new model will only work if the documents are also rewritten in a simpler format, so the team must edit the content first",
+    "The plan works, but the team should lower the similarity threshold because newer models produce higher similarity scores"
+   ],
+   "rationales": [
+    "Correct. Query and document vectors must come from the same model to be comparable, so the whole index needs re-embedding.",
+    "Wrong. Matching dimensions doesn't mean matching meaning; each model's vector space is different.",
+    "Wrong. Content format isn't the issue; the problem is the mismatch between the two models' vector spaces.",
+    "Wrong. Adjusting thresholds can't fix comparisons between incompatible vector spaces."
+   ],
+   "answer": 0,
+   "explanation": "Each embedding model learns its own mapping from text to vectors. Even with the same dimensions, a vector from model A and one from model B aren't in a shared space, so similarity scores between them are meaningless. Switching models requires re-embedding the corpus, which has cost and time implications the PM should plan, often by building a parallel index and cutting over.",
+   "interview_tip": "Interviewers like to test whether AI PMs understand the hidden costs of model changes. Mentioning re-indexing, a parallel index and a cutover plan signals real-world RAG experience."
+  },
+  {
+   "id": "2026-10-18-26",
+   "topic": "AI Product",
+   "concept": "Validating LLM-generated SQL before execution",
+   "difficulty": "medium",
+   "question": "You're building a natural-language analytics feature in a B2B SaaS product: users ask a question, the LLM writes SQL, and the system runs it on the customer's data. Which safeguard matters most before running the query?",
+   "options": [
+    "Show the generated SQL to every user and require them to approve it before it runs, since they know their data best",
+    "Ask the LLM to double-check its own SQL for mistakes before running it, since self-review catches most errors",
+    "Use the largest available model for SQL generation, since stronger models rarely write harmful or incorrect queries",
+    "Run generated SQL through a read-only, tenant-scoped role and validate it (allowed tables, no writes, row and time limits) before execution"
+   ],
+   "rationales": [
+    "Wrong. Most business users can't read SQL, so approval becomes a rubber stamp; it also adds friction without real protection.",
+    "Wrong. Self-review can catch some errors, but it's not a reliable security control, especially against prompt injection.",
+    "Wrong. Better models make fewer mistakes, but none are guaranteed safe; security can't depend on model behaviour alone.",
+    "Correct. Deterministic guardrails at the permission and validation layer protect data and systems even when the model makes mistakes or is manipulated."
+   ],
+   "answer": 3,
+   "explanation": "LLM-generated code must be treated as untrusted input. Enforcing safety outside the model, with read-only, tenant-scoped database permissions plus validation and limits, prevents data leaks across customers, destructive writes and runaway queries no matter what the model produces. Model quality and self-review help accuracy but aren't guarantees.",
+   "interview_tip": "For AI features that take actions, interviewers look for safeguards outside the model. Saying 'treat model output as untrusted input' is a strong, memorable signal."
+  },
+  {
+   "id": "2026-10-18-27",
+   "topic": "Technology",
+   "concept": "Exponential backoff with jitter for retries",
+   "difficulty": "medium",
+   "question": "After a brief outage of your payments API, all 50,000 mobile clients retry failed requests every 2 seconds at exactly the same time, and the recovering service crashes again. What's the standard fix in the clients?",
+   "options": [
+    "Increase the retry interval to a fixed 30 seconds for every client, so the service gets more time to recover",
+    "Remove retries entirely and show an error, since retries are what caused the second outage",
+    "Retry immediately and continuously until the request succeeds, so users see their payment go through as quickly as possible",
+    "Retry with exponential backoff plus random jitter, so retries spread out over time instead of arriving in synchronized waves"
+   ],
+   "rationales": [
+    "Wrong. A fixed interval still synchronizes clients, so they'd all hit the service together every 30 seconds.",
+    "Wrong. Retries are useful for transient failures; removing them hurts users when the problem is just how they are timed.",
+    "Wrong. Constant immediate retries make the overload worse and keep the service down longer.",
+    "Correct. Backoff reduces retry volume over time, and jitter breaks the synchronization that causes waves of load."
+   ],
+   "answer": 3,
+   "explanation": "Synchronized retries create a 'thundering herd' that overloads a service just as it recovers. Exponential backoff increases the wait after each failure, and jitter adds randomness so clients don't retry at the same instant. Together they let the service recover while still completing most requests automatically.",
+   "interview_tip": "Reliability basics come up in technical-PM screens. Explaining why a fix works (spreading load) matters more than naming it."
+  },
+  {
+   "id": "2026-10-18-28",
+   "topic": "Technology",
+   "concept": "Blue-green deployment",
+   "difficulty": "easy",
+   "question": "Your team keeps two identical production environments. The new version is deployed to the idle one, tested, and then all traffic is switched to it; if anything breaks, traffic is switched back. What is this approach called, and what's its main benefit?",
+   "options": [
+    "Canary release; it exposes the new version to a small percentage of users first to limit the impact of bugs",
+    "Feature flagging; it lets product managers turn individual features on or off without a deployment",
+    "Blue-green deployment; it allows near-instant rollback by switching traffic back to the previous environment",
+    "Dark launching; it runs new code in production without exposing any of its results to users"
+   ],
+   "rationales": [
+    "Wrong. A canary sends a small share of traffic to the new version gradually, rather than switching everything between two environments.",
+    "Wrong. Feature flags control features inside one deployment, not which whole environment serves traffic.",
+    "Correct. It describes two environments with a full traffic switch, and fast rollback is the key benefit.",
+    "Wrong. Dark launching runs code without showing users its results; here users are fully switched to the new version."
+   ],
+   "answer": 2,
+   "explanation": "Blue-green deployment keeps two full environments, one live and one idle. You deploy and verify on the idle one, then switch all traffic at once. Because the old environment is still running, rollback is just switching back, which makes releases low-risk and fast to undo.",
+   "interview_tip": "Knowing release strategies helps you discuss launch risk with engineering. Being able to say when you'd use blue-green versus canary shows technical fluency."
+  },
+  {
+   "id": "2026-10-18-29",
+   "topic": "Growth",
+   "concept": "Annual-plan discounts to reduce churn and improve cash flow",
+   "difficulty": "easy",
+   "question": "A consumer subscription app offers only monthly plans and sees high churn in months two and three. The team considers adding an annual plan at roughly a 30% discount. What is the main business benefit?",
+   "options": [
+    "The annual plan raises average revenue per user, since annual subscribers always pay more than monthly ones over a year",
+    "Annual plans remove the need for payment retries and dunning, since there's only one charge per year",
+    "The discount attracts new users who wouldn't otherwise try the app, making it mainly an acquisition channel",
+    "Annual subscribers commit upfront, which removes eleven monthly cancellation points and brings cash in earlier, often improving retention and cash flow"
+   ],
+   "rationales": [
+    "Wrong. With a 30% discount, an annual subscriber pays less per month than a monthly one; revenue gains come from retention, not price.",
+    "Wrong. Annual renewals can still fail, so payment recovery is still needed, just less often.",
+    "Wrong. Annual plans mostly convert existing or high-intent users; they're a weak tool for first-time acquisition.",
+    "Correct. Commitment and upfront payment are the core benefits, especially when churn clusters in the early months."
+   ],
+   "answer": 3,
+   "explanation": "Monthly plans give users a decision point every month, which is when churn happens. An annual plan trades a discount for commitment and upfront cash, which can fund growth. The PM should still track renewal rates at the one-year mark and make sure annual plans don't simply discount users who would have stayed anyway.",
+   "interview_tip": "Monetization questions reward naming both the benefit and the risk. Mentioning cannibalization and renewal-cliff risks shows you think beyond the obvious win."
+  },
+  {
+   "id": "2026-10-18-30",
+   "topic": "Current Events",
+   "concept": "Atlassian seat-price rise with metered Rovo AI credits (Oct 2026)",
+   "difficulty": "medium",
+   "question": "On October 13, 2026, Atlassian raised most Cloud list prices by 3-10%. It also announced that from December 3, 2026, selected Rovo AI interactions will consume credits beyond monthly plan allowances, while search, summaries and inline suggestions remain free. What's the most likely product rationale for this hybrid design?",
+   "options": [
+    "Keep cheap, high-frequency AI features free to drive habit and adoption, while metering costly, variable interactions beyond an allowance so price tracks inference cost",
+    "Comply with EU AI Act rules that require AI search and summary features to be offered free of charge to business customers",
+    "Discourage customers from using AI features at all, since Atlassian wants to reduce the infrastructure cost of serving them",
+    "Move all customers fully to usage-based pricing, so seat prices can be phased out and every feature is billed by consumption"
+   ],
+   "rationales": [
+    "Correct. It reflects the verified design: seat price plus free everyday AI, plus credit-metered heavier interactions beyond an allowance.",
+    "Wrong. The EU AI Act sets risk and transparency obligations; it doesn't require AI features to be free.",
+    "Wrong. Keeping several AI features free and bundling allowances signals Atlassian wants adoption, not less usage.",
+    "Wrong. Seat prices went up, not away; the new model adds a usage layer on top of seats rather than replacing them."
+   ],
+   "answer": 0,
+   "explanation": "Atlassian kept seat pricing (and raised it, citing its AI investment), while adding included AI allowances with metered extra usage. Light, frequent features like search and summaries build everyday habit and are relatively cheap to serve. Heavier interactions vary widely in cost, so an allowance plus overage keeps bills predictable for most customers while protecting margins on heavy use.",
+   "interview_tip": "Expect AI pricing questions at every company. Being able to explain a real hybrid model (seats, included allowance, metered overage) and why each part exists shows current, practical commercial judgment.",
+   "source": "https://www.valiantys.com/en/resources/planning-for-atlassian-clouds-october-2026-pricing-update-a-customer-guide"
+  }
+ ]
+}
