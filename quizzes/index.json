@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-19",
+   "theme": "Second-order effects, hidden biases & agentic commerce",
+   "count": 30
+  },
+  {
    "date": "2026-10-18",
    "theme": "Hybrid AI pricing, supply-side diagnosis and designing for bystanders",
    "count": 30

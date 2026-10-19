@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-19",
+ "theme": "Second-order effects, hidden biases & agentic commerce",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Balancing teen autonomy and parental oversight",
+   "difficulty": "hard",
+   "question": "You're the PM for a messaging app adding a 'family supervision' mode for users aged 13-17. Parents want to read their teen's chats; teens say they'll switch apps if that ships. Which design best serves the product's long-term goal of keeping families safe on the platform?",
+   "options": [
+    "Give parents full read access to all chats, since parents are the account's legal guardians",
+    "Show parents who the teen talks to and screen time, plus alerts on high-risk signals, without message content",
+    "Let teens opt in to supervision entirely by themselves, with no parent-initiated option at all",
+    "Ship two separate apps, one for parents and one for teens, so each group's needs never conflict"
+   ],
+   "answer": 1,
+   "explanation": "The goal is safety that actually happens on your platform. If supervision is so invasive that teens leave for an unsupervised app, safety falls. Giving parents metadata (contacts, time spent) and alerts on high-risk signals, while keeping message content private, meets the parents' core need (knowing their child is safe) and keeps the teen's sense of autonomy. Good product sense means finding the design both sides can accept, not picking one side.",
+   "rationales": [
+    "Wrong: meets the parent's stated ask, but teens move to apps with no supervision, so real-world safety gets worse.",
+    "Correct: covers the parent's underlying need (risk visibility) and protects the teen's privacy, so both sides stay on the platform.",
+    "Wrong: teens who most need supervision are the least likely to opt in, so the feature fails the parents it was built for.",
+    "Wrong: splitting the product doesn't remove the conflict, because parents still have to see the teen's activity somehow, and it doubles the build cost."
+   ],
+   "interview_tip": "Meta and Google often ask about products with two user groups whose goals conflict. Strong candidates name the tension, go back to the shared goal, and look for a design both groups will accept instead of just picking a winner."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Second-order effects of a feature on another marketplace side",
+   "difficulty": "hard",
+   "question": "A food-delivery app launches 'schedule your order for later'. Customer conversion goes up, but two weeks later restaurant cancellation rates for scheduled orders are 3x higher than for on-demand ones. What is the most likely product gap?",
+   "options": [
+    "Customers are scheduling orders they never intended to complete, so the scheduling flow needs a deposit",
+    "The feature was designed for customers, but restaurants get scheduled orders with no prep-time controls or capacity limits",
+    "Scheduled orders are bigger on average, so restaurants run out of ingredients more often than before",
+    "Riders aren't available at the scheduled times, so restaurants cancel because nobody will pick up the order"
+   ],
+   "answer": 1,
+   "explanation": "Features on one side of a marketplace create work for the other sides. Scheduling moves demand into peak slots that restaurants can't see ahead of time or limit, so they cancel when they're overbooked. The fix is supply-side tools: let restaurants see orders in advance, cap scheduled orders per slot, and set lead times. Strong PMs check the second-order effect on every side before and after launch.",
+   "rationales": [
+    "Wrong: these are restaurant cancellations, not customer no-shows, so a customer deposit targets the wrong side.",
+    "Correct: the restaurant side had no way to plan for or cap scheduled demand, so cancellations follow directly from that gap.",
+    "Wrong: possible, but nothing in the data points to basket size. It's a guess that skips the more structural cause.",
+    "Wrong: rider shortages would hit on-demand orders too and would show up as delivery failures, not restaurant cancellations."
+   ],
+   "interview_tip": "In product-sense rounds, interviewers reward candidates who point out on their own how a feature affects the other side of a marketplace. Mention supply-side tools and a guardrail metric for that side."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Comparison views for high-consideration choices",
+   "difficulty": "medium",
+   "question": "Users of an Indian insurance marketplace open five or six policy pages, switch between tabs, and often leave without buying. Interviews show they can't remember which policy had which waiting period or co-pay. What is the best first solution to test?",
+   "options": [
+    "Add more detail to each policy page so users have all the information in one place",
+    "Let users shortlist policies and view them side by side on the attributes that matter most",
+    "Show a single 'recommended for you' policy at the top and hide the rest behind a link",
+    "Offer a discount to users who buy within ten minutes of first opening a policy page"
+   ],
+   "answer": 1,
+   "explanation": "The pain is comparing options, not missing information. Users are using tabs and their own memory as a makeshift comparison tool. A shortlist with a side-by-side view of the key attributes (premium, cover, waiting period, co-pay) does that work for them and makes the trade-offs clear. In high-consideration purchases, lowering the effort of comparing usually beats pushing for a faster decision.",
+   "rationales": [
+    "Wrong: longer pages make it harder to remember details across policies, so the comparison problem gets worse.",
+    "Correct: fixes the observed pain directly by putting the attributes users care about next to each other.",
+    "Wrong: for a high-stakes purchase, users won't trust one pick without seeing alternatives, and hiding options feels pushy.",
+    "Wrong: time pressure on a high-stakes financial product erodes trust and doesn't fix the confusion that stops people buying."
+   ],
+   "interview_tip": "Pointing to the observed behaviour (tab-switching) as evidence of the real job shows you design from research, not from feature ideas."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Peak-end rule in experience design",
+   "difficulty": "easy",
+   "question": "A ride-hailing app has a limited design budget for improving how riders remember a trip. According to the peak-end rule, where should the investment go?",
+   "options": [
+    "Spread small improvements evenly across every step of the trip",
+    "The most intense moment of the trip and how the trip ends",
+    "The first screen of the app, because first impressions matter most",
+    "The longest step of the trip, since users spend the most time there"
+   ],
+   "answer": 1,
+   "explanation": "The peak-end rule (Kahneman) says people judge an experience mostly by its most intense moment and its ending, not by the average of every moment. For a ride, that might be the pickup moment (the peak of anxiety) and arrival plus payment (the end). Improving those moments shifts how the trip is remembered more than spreading effort thinly.",
+   "rationales": [
+    "Wrong: even improvements across all steps barely change memory, which is weighted toward the peak and the end.",
+    "Correct: the peak and the ending drive how the experience is remembered and whether people come back.",
+    "Wrong: first impressions matter for acquisition, but the peak-end rule is about how a finished experience is remembered.",
+    "Wrong: duration has surprisingly little effect on remembered experience, which is known as duration neglect."
+   ],
+   "interview_tip": "Naming a behavioural principle like peak-end and applying it to a specific moment (for example a smooth payment at drop-off) shows design judgement beyond feature lists."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Lower-intent signups after removing friction",
+   "difficulty": "hard",
+   "question": "A B2B SaaS team removes email verification from signup. Signups rise 30% the next month, but the number of newly activated accounts stays flat. Leadership celebrates the signup win. What is the best interpretation?",
+   "options": [
+    "The activation flow broke at the same time, so engineering should check the onboarding logs",
+    "The extra signups are mostly low-intent users, so real acquisition hasn't improved and activation rate has fallen",
+    "Activation takes longer than a month, so the extra signups will show up as activated accounts next quarter",
+    "Verification was hurting activation, so the team should also remove other onboarding steps"
+   ],
+   "answer": 1,
+   "explanation": "If activated accounts stay flat while signups jump, the friction you removed was filtering out people who were never going to activate. The output that matters (activated accounts) hasn't moved; only the top-of-funnel number has. Activation rate has dropped, and there may be new costs: fake or spam accounts, and support or sales time spent on them. The signup 'win' is a vanity gain unless downstream metrics move.",
+   "rationales": [
+    "Wrong: possible, but a coincidental break is less likely than the obvious explanation, and you'd see activated counts fall, not stay flat.",
+    "Correct: flat activations plus 30% more signups means the extra signups are low intent, and the downstream metric is what counts.",
+    "Wrong: some lag is possible, but you'd still expect early activations from the extra cohort. Waiting a quarter without checking is wishful.",
+    "Wrong: the data shows removing friction didn't increase activations, so removing more steps isn't supported."
+   ],
+   "interview_tip": "Interviewers like candidates who question a celebrated top-of-funnel win by asking 'did the outcome we care about move?' Mention possible spam or fraud as a hidden cost too."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Defining an active user by a meaningful action",
+   "difficulty": "medium",
+   "question": "A personal finance app counts a user as 'monthly active' if they open the app at least once in a month. A new push notification campaign raises MAU by 20%, but revenue from premium upgrades is flat. What change to the metric would best fix this?",
+   "options": [
+    "Count users as active only after two app opens in a month instead of one",
+    "Define active as completing a core value action, such as reviewing a budget or categorising transactions",
+    "Exclude users who opened the app from a push notification in that month",
+    "Switch from monthly to daily active users so the metric is more sensitive"
+   ],
+   "answer": 1,
+   "explanation": "An 'active' definition should reflect users getting value, not just touching the app. Opens are easy to inflate with notifications. Tying active status to a core value action (reviewing a budget, categorising spend) ties the metric to the behaviour that predicts retention and upgrades, so campaigns can't game it with empty opens.",
+   "rationales": [
+    "Wrong: raising the open threshold is still gameable by sending two notifications and still doesn't measure value.",
+    "Correct: anchoring 'active' on a value action makes the metric track real engagement that leads to outcomes like upgrades.",
+    "Wrong: some users who arrive from a push go on to get real value. Excluding them throws away real engagement instead of measuring it properly.",
+    "Wrong: a finance app's natural usage isn't daily, and changing the time window doesn't fix the meaningless action being counted."
+   ],
+   "interview_tip": "When asked to define success metrics, strong candidates define 'active' around the core value action and explain why raw opens or logins can be gamed."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Last-touch attribution undervaluing upper-funnel channels",
+   "difficulty": "medium",
+   "question": "A D2C skincare brand uses last-click attribution. YouTube creator campaigns show almost no attributed sales, while branded search shows huge ROAS. The CMO proposes moving the YouTube budget into branded search. What is the main risk?",
+   "options": [
+    "Branded search costs will rise because competitors will bid on the brand's name",
+    "YouTube may be creating the demand that branded search then captures, so cutting it could shrink search sales too",
+    "YouTube's attributed sales are low because creators have smaller audiences than search engines",
+    "Moving budget mid-quarter will reset the ad platforms' learning and lower efficiency for a few weeks"
+   ],
+   "answer": 1,
+   "explanation": "Last-click gives all credit to the final touchpoint. People often see a creator video, then later search the brand name and buy. Branded search gets the credit, but YouTube created the intent. Cutting YouTube can make branded search volume fall. The fix is to measure incrementality (geo holdouts, lift tests) before moving budget.",
+   "rationales": [
+    "Wrong: competitor bidding is a real but separate issue, and it doesn't explain why YouTube looks weak.",
+    "Correct: last-click credits the channel that captures demand, not the one that created it, so cutting upper-funnel spend can hurt the 'winners'.",
+    "Wrong: audience size isn't the issue. Video viewers rarely click straight through, so last-click undercounts them by design.",
+    "Wrong: learning-phase resets are a short-term operational cost, minor next to misreading which channel drives demand."
+   ],
+   "interview_tip": "When marketing metrics come up, mention attribution bias and suggest an incrementality test. That shows you won't move money based on a misleading dashboard."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "ARPU vs ARPPU",
+   "difficulty": "easy",
+   "question": "A mobile game has 1,000,000 monthly users, of whom 20,000 pay, generating $400,000 in a month. What are ARPU and ARPPU?",
+   "options": [
+    "ARPU $20 and ARPPU $0.40",
+    "ARPU $0.40 and ARPPU $20",
+    "ARPU $0.40 and ARPPU $0.40",
+    "ARPU $2.00 and ARPPU $20"
+   ],
+   "answer": 1,
+   "explanation": "ARPU (average revenue per user) divides revenue by all users: $400,000 / 1,000,000 = $0.40. ARPPU (average revenue per paying user) divides by payers only: $400,000 / 20,000 = $20. The gap between them reflects the paying conversion rate (2%). Tracking both tells you whether revenue growth comes from more payers or from payers spending more.",
+   "rationales": [
+    "Wrong: these are swapped. ARPU uses all users as the denominator, so it must be the smaller number.",
+    "Correct: $400k / 1M users = $0.40 ARPU; $400k / 20k payers = $20 ARPPU.",
+    "Wrong: ARPPU only counts paying users, so it can't equal ARPU when just 2% of users pay.",
+    "Wrong: $2.00 would need $2M in revenue across 1M users. The ARPU calculation is off by a factor of five."
+   ],
+   "interview_tip": "Breaking revenue into users × payer conversion × ARPPU is a standard move in metric-diagnosis questions about monetisation."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Conditioning on a post-treatment variable",
+   "difficulty": "hard",
+   "question": "An A/B test changes the onboarding flow. The analyst reports: 'Among users who completed onboarding, treatment users had 15% higher 30-day retention.' Treatment's onboarding completion rate was much lower than control's. Why is this result unreliable?",
+   "options": [
+    "The test probably didn't run long enough to measure 30-day retention properly",
+    "Filtering on completion, which the treatment itself changed, compares different kinds of users, not like with like",
+    "Retention is a lagging metric, so it shouldn't be the primary metric for an onboarding test",
+    "The lower completion rate means the sample is too small to reach statistical significance"
+   ],
+   "answer": 1,
+   "explanation": "Randomisation makes the two arms comparable only at the point of assignment. Completing onboarding happened after treatment and was affected by it. If the new flow is harder, only the most motivated treatment users finish, so those 'completers' were always going to retain better. Comparing completers to completers breaks randomisation. Analyse everyone assigned (intent-to-treat) instead.",
+   "rationales": [
+    "Wrong: duration may matter, but even a long test would have the same selection bias in this analysis.",
+    "Correct: the filter is on an outcome the treatment changed, so the subgroups differ in motivation and the comparison is biased.",
+    "Wrong: retention can be a fine onboarding metric. The problem is the filtered population, not which metric was chosen.",
+    "Wrong: sample size affects precision, but the bigger issue is bias, which more data won't fix."
+   ],
+   "interview_tip": "This trap appears often in Meta and Google analytics rounds. Saying 'analyse by intent-to-treat, never filter on a post-treatment behaviour' signals real experimentation depth."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "One-tailed vs two-tailed tests",
+   "difficulty": "easy",
+   "question": "A PM wants to switch the experiment to a one-tailed test 'because we only care if the new checkout is better'. What is the main problem with this?",
+   "options": [
+    "One-tailed tests need a much larger sample size than two-tailed tests",
+    "It can't detect a harmful effect, and choosing it mid-test to reach significance inflates false positives",
+    "One-tailed tests can only be used for ratio metrics, not conversion rates",
+    "It makes the confidence interval wider, so the result becomes less precise"
+   ],
+   "answer": 1,
+   "explanation": "A one-tailed test puts all the significance threshold on one direction, so it reaches significance more easily but can't tell you if the change made things worse. A new checkout could hurt conversion, which you need to know. Switching to one-tailed after seeing data is a form of p-hacking. Most product teams default to two-tailed tests.",
+   "rationales": [
+    "Wrong: it's the reverse. One-tailed tests need a slightly smaller sample for the same power in one direction.",
+    "Correct: you lose the ability to detect harm, and switching after peeking turns a borderline result into a false 'win'.",
+    "Wrong: the tail choice applies to any metric type. It isn't limited to ratio metrics.",
+    "Wrong: one-tailed tests make it easier, not harder, to reach significance in the chosen direction."
+   ],
+   "interview_tip": "If asked about stats pitfalls, mention that you decide test design (tails, primary metric, duration) before launch, and why a product team needs to see harm too."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Weather-driven seasonal product sizing (umbrellas)",
+   "difficulty": "medium",
+   "question": "Estimate the number of umbrellas sold in Mumbai in a year. Which figure is closest to a reasonable estimate?",
+   "options": [
+    "About 75 thousand",
+    "About 750 thousand",
+    "About 7.5 million",
+    "About 75 million"
+   ],
+   "answer": 2,
+   "explanation": "Method: Mumbai metro population ≈ 20 million, so about 5 million households (4 per household). Monsoon is heavy and long, so most people who commute need an umbrella. Assume about 1.5 umbrellas bought per household per year, since umbrellas break, get lost and are replaced each monsoon. That gives ≈ 7.5 million. A cross-check per person (~0.35 a year) gives the same order of magnitude. Commuter replacement and loss drive the number, not first-time ownership.",
+   "rationales": [
+    "Wrong: that's under 1% of households buying in a year, far too low for a city with a four-month monsoon.",
+    "Wrong: implies only about 15% of households buy an umbrella a year, which ignores how often umbrellas break and get lost.",
+    "Correct: about 5 million households × ~1.5 umbrellas a year ≈ 7.5 million.",
+    "Wrong: would mean roughly four umbrellas per person a year, well beyond realistic replacement rates."
+   ],
+   "interview_tip": "Interviewers care more about your method (population → households → replacement rate) and a quick sanity check than the exact number. Calling out the seasonal replacement cycle shows real-world thinking."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "GPU capacity estimate for LLM serving",
+   "difficulty": "medium",
+   "question": "An AI assistant handles 10 million requests a day, averaging 1,000 output tokens each. Assume peak traffic is 2x the daily average and each GPU can generate about 2,000 output tokens per second under batching. Roughly how many GPUs are needed for peak output generation?",
+   "options": [
+    "About 12",
+    "About 120",
+    "About 1,200",
+    "About 12,000"
+   ],
+   "answer": 1,
+   "explanation": "Daily output tokens = 10M × 1,000 = 10 billion. Divided by 86,400 seconds ≈ 116,000 tokens/sec on average. Peak at 2x ≈ 232,000 tokens/sec. Divided by 2,000 tokens/sec per GPU ≈ 116, so about 120 GPUs (before headroom for redundancy and input-token processing). Converting a daily volume to a per-second peak rate is the core move.",
+   "rationales": [
+    "Wrong: out by 10x. Probably the peak multiplier was missed and a zero dropped from the token total.",
+    "Correct: 10B tokens / 86,400s ≈ 116k tok/s; ×2 peak ≈ 232k; ÷ 2,000 ≈ 116 GPUs.",
+    "Wrong: 10x too high. Probably the per-GPU throughput was taken as 200 tokens/sec instead of 2,000.",
+    "Wrong: 100x too high. This usually means treating every request as needing its own GPU at the same moment."
+   ],
+   "interview_tip": "AI PM interviews increasingly include capacity and cost estimates. Walking clearly from requests to tokens to tokens per second to GPUs, then adding headroom, shows technical fluency."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Disintermediation in service marketplaces",
+   "difficulty": "easy",
+   "question": "A home-tutoring marketplace takes a 25% commission. After the first lesson, many parents and tutors swap phone numbers and continue off-platform. Which response best addresses the root cause?",
+   "options": [
+    "Block phone numbers and emails in chat and ban users who share contact details",
+    "Add ongoing value for both sides, such as scheduling, payments, progress reports and protections, and review the take rate",
+    "Raise the commission to make up for the revenue lost to off-platform lessons",
+    "Stop showing tutor profiles until the parent has paid for a package of ten lessons"
+   ],
+   "answer": 1,
+   "explanation": "Leakage happens when the platform's value ends once the match is made, so the commission feels like a tax on repeat lessons. The lasting fix is to keep adding value after matching (payments, scheduling, reviews, guarantees, progress tracking) and to set a take rate that's worth paying. Policing helps a little but can't stop people who've already met.",
+   "rationales": [
+    "Wrong: blocking contact details is easy to get around once parents and tutors meet in person, and it doesn't make the platform worth staying on.",
+    "Correct: gives both sides reasons to stay after the match and fixes a take rate that's too high for the value delivered.",
+    "Wrong: a higher commission increases the incentive to leave and speeds up leakage.",
+    "Wrong: forcing a big upfront commitment before trust exists cuts conversion without solving leakage."
+   ],
+   "interview_tip": "Disintermediation comes up for any services marketplace (tutors, cleaners, freelancers). Strong answers connect the take rate to value delivered after the match."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "First-party vs third-party inventory model",
+   "difficulty": "medium",
+   "question": "An Indian e-commerce startup sells only inventory it buys and holds (first-party). It wants to add third-party sellers on its platform. What is the main strategic trade-off?",
+   "options": [
+    "Third-party sellers always mean lower revenue, because the company only earns commission",
+    "Faster selection growth with less capital, but weaker control over price, quality and delivery experience",
+    "Third-party models are illegal for foreign-funded companies in India, so the move isn't possible",
+    "First-party inventory always gives higher margins, so adding sellers will lower overall profitability"
+   ],
+   "answer": 1,
+   "explanation": "Third-party marketplaces grow selection quickly without the platform tying up working capital in inventory, but the platform gives up direct control over pricing, authenticity and fulfilment quality. First-party gives control and a consistent experience but scales slowly and carries inventory risk. Many players mix both, using first-party for key categories and third-party for the long tail.",
+   "rationales": [
+    "Wrong: reported revenue is lower (commission vs full sale value), but contribution margin can be higher, so 'lower revenue' isn't the trade-off that matters.",
+    "Correct: the core trade-off is scale and capital efficiency against control of the customer experience.",
+    "Wrong: it's the reverse. Indian FDI rules restrict inventory-based models for foreign-funded firms and allow marketplace models.",
+    "Wrong: first-party margins are often thin after inventory costs and markdowns, so 'always higher' is false."
+   ],
+   "interview_tip": "In strategy rounds, frame 1P vs 3P (or hybrid) as a trade-off between control and scale, and mention capital efficiency. Interviewers look for balanced reasoning, not absolutes."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Why-now analysis for market entry",
+   "difficulty": "medium",
+   "question": "Your VP asks you to evaluate an AI-powered bookkeeping product for small shops, an idea that has failed many times before. What question most sharpens the case for entering now?",
+   "options": [
+    "How many competitors have already tried and failed in this market",
+    "What has changed, such as tech, regulation or behaviour, that removes the reason earlier attempts failed",
+    "How large the total addressable market is in terms of small shops",
+    "Whether the team has the engineering capacity to build a first version"
+   ],
+   "answer": 1,
+   "explanation": "'Why now?' asks what has changed to make an old idea work. If earlier attempts failed because data entry was too manual, cheap LLMs that read receipts and UPI statements might remove that barrier. Without a clear change, you're likely to repeat past failures. Market size, competitors and capacity matter, but they don't explain why this time is different.",
+   "rationales": [
+    "Wrong: useful context, but counting past failures doesn't tell you whether the blocker that killed them is now gone.",
+    "Correct: tying entry to a specific change that removes the earlier blocker is the strongest reason to try again now.",
+    "Wrong: a large market was probably there before too, so size alone doesn't explain why it'd work now.",
+    "Wrong: capacity is an execution question. It doesn't test whether the market is ready."
+   ],
+   "interview_tip": "In strategy or 'should we build X' questions, adding a 'why now' point shows investor-style thinking that top companies value."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Contract-first API design to unblock parallel work",
+   "difficulty": "medium",
+   "question": "Your mobile team is blocked waiting for the backend team's new payments API, which won't be ready for three weeks. What is the best way to unblock delivery?",
+   "options": [
+    "Ask the mobile team to build other backlog items until the API is fully finished",
+    "Agree the API contract (endpoints, schemas, errors) now and have mobile build against a mock",
+    "Have the mobile engineers build the payments backend themselves to save time",
+    "Push the launch date back three weeks to match the backend schedule"
+   ],
+   "answer": 1,
+   "explanation": "Agreeing the API contract first lets both teams work in parallel. Once endpoints, request and response shapes, and error cases are agreed, mobile can build against a mock server while backend builds the real thing. Integration then becomes a check against a shared spec. It also surfaces design disagreements early, when they're cheap to fix.",
+   "rationales": [
+    "Wrong: keeps people busy but leaves the critical path waiting, so the launch still slips.",
+    "Correct: a shared contract plus mocks removes the wait and surfaces design issues early.",
+    "Wrong: duplicates ownership of a sensitive system and creates a security and maintenance mess.",
+    "Wrong: accepts the delay without trying an obvious way to work in parallel."
+   ],
+   "interview_tip": "In execution questions about dependencies, name a concrete technique like contract-first with mocks. It shows you can speed delivery without just escalating."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Matching spec depth to uncertainty",
+   "difficulty": "easy",
+   "question": "Which feature most justifies writing a detailed PRD with edge cases, rather than a short one-pager?",
+   "options": [
+    "Changing a button's label from 'Submit' to 'Continue'",
+    "Adding a refund flow that touches payments, inventory and customer notifications",
+    "Running a two-week fake-door test to see if users click a new menu item",
+    "Updating the colour of the app's loading spinner for a brand refresh"
+   ],
+   "answer": 1,
+   "explanation": "How much you write should match risk and complexity. A refund flow involves money, several systems and customer communication, with many edge cases (partial refunds, failed payouts, restocking). Mistakes there are costly, so a detailed spec pays off. Small UI tweaks and quick experiments need only a few lines.",
+   "rationales": [
+    "Wrong: low-risk and easy to reverse, so a ticket or one line is enough.",
+    "Correct: high risk, many systems and many edge cases justify a detailed PRD.",
+    "Wrong: a fake-door test is designed to be cheap. A heavy spec defeats its purpose.",
+    "Wrong: a cosmetic, easily reversed change needs no PRD."
+   ],
+   "interview_tip": "When asked how you write specs, say you scale depth to risk and reversibility. That signals judgement over process for its own sake."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Impact-effort matrix",
+   "difficulty": "easy",
+   "question": "Using an impact-effort 2x2, which quadrant should a team usually tackle first?",
+   "options": [
+    "High impact, high effort",
+    "High impact, low effort",
+    "Low impact, low effort",
+    "Low impact, high effort"
+   ],
+   "answer": 1,
+   "explanation": "High-impact, low-effort items ('quick wins') give the most value per unit of work and build momentum. High-impact, high-effort items are big bets that need planning. Low-impact, low-effort items are fill-ins, and low-impact, high-effort items should usually be dropped. The matrix is a quick first pass, not a substitute for strategy.",
+   "rationales": [
+    "Wrong: these are big bets worth doing, but usually planned after the quick wins.",
+    "Correct: quick wins give the most value per unit of effort.",
+    "Wrong: fill-in work. Fine for spare time, but it shouldn't come first.",
+    "Wrong: this is the 'time sink' quadrant that teams should usually avoid."
+   ],
+   "interview_tip": "Mention the 2x2 as a quick first pass, then add nuance (strategic fit, dependencies) to show you don't apply frameworks mechanically."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Learning context before changing an inherited roadmap",
+   "difficulty": "hard",
+   "question": "You've just joined as PM and inherited a roadmap you think is focused on the wrong problems. The team is mid-quarter and executing well. In a behavioural interview, which approach best shows good judgement?",
+   "options": [
+    "Rewrite the roadmap in week one, since early change is easier than late change",
+    "Spend the first weeks learning why choices were made, test your hypothesis with data, then propose changes for next cycle",
+    "Follow the existing roadmap without question, since the team chose it before you arrived",
+    "Go directly to leadership with your concerns so they can decide before the team wastes more effort"
+   ],
+   "answer": 1,
+   "explanation": "A new PM often lacks context: constraints, commitments and past learnings that shaped the plan. The strongest approach is to learn first (talk to people, read past docs), test your hypothesis with data, and propose changes at a natural planning point with evidence. This builds trust with a team that's already executing and avoids throwing work away on a hunch.",
+   "rationales": [
+    "Wrong: acting before you understand the context risks undoing good decisions and damages trust with the team.",
+    "Correct: learn, validate, then influence at the right time with evidence. That shows ownership and humility.",
+    "Wrong: passive acceptance skips the PM's job of making sure the team works on the right problems.",
+    "Wrong: going around the team to leadership without data or context damages relationships and credibility."
+   ],
+   "interview_tip": "Amazon's 'Earn Trust' and 'Are Right, A Lot' show up here. Strong stories describe a deliberate learning period and a data-backed proposal that changed the plan."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Handling dismissive pushback in a group setting",
+   "difficulty": "hard",
+   "question": "In a planning meeting, a senior engineer says 'user research is a waste of time, we know what users want' while you present interview findings. Others go quiet. What is the best response?",
+   "options": [
+    "Argue the point in the meeting until the engineer concedes that research is valuable",
+    "Acknowledge the concern, tie the findings to a decision the team faces, then follow up 1:1 to understand the objection",
+    "Drop the research findings for now and come back once you have more interviews",
+    "Escalate to the engineering manager after the meeting about the engineer's attitude"
+   ],
+   "answer": 1,
+   "explanation": "The goal is to keep the decision moving and keep the relationship. Acknowledging the concern lowers tension. Connecting the findings to a concrete decision ('this changes whether we build A or B') shows their value without a debate. A private 1:1 afterwards uncovers the real objection, perhaps past research that was slow or ignored, and turns a critic into a partner.",
+   "rationales": [
+    "Wrong: a public argument puts the engineer on the defensive and turns a decision into a contest of status.",
+    "Correct: calms the moment, shows the research's value through a decision, and fixes the relationship privately.",
+    "Wrong: backing down teaches the team that evidence can be dismissed by whoever is most senior.",
+    "Wrong: escalating before talking to the engineer directly damages trust and looks like you can't handle conflict yourself."
+   ],
+   "interview_tip": "Behavioural rounds test whether you can handle conflict without needing authority. Describe defusing in public, resolving in private, and the outcome you reached together."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Balancing a quick win with a larger bet",
+   "difficulty": "hard",
+   "question": "Your manager asks for a quick feature to hit this quarter's target. You believe a larger rework would create far more long-term value but would miss the quarter. How should you handle it?",
+   "options": [
+    "Quietly build the larger rework instead, since the long-term value is clearly greater",
+    "Deliver the quick win while making a written case for the larger bet, with costs and milestones, for leadership to decide",
+    "Build the quick win and drop the larger idea, since the manager has set the priority",
+    "Refuse the quick feature and explain that short-term targets lead to bad product decisions"
+   ],
+   "answer": 1,
+   "explanation": "Strong PMs deliver on commitments and push for bigger bets through the proper channel. Shipping the quick win keeps trust. A written case with costs, risks and staged milestones lets leadership make an informed call on the larger bet. This combines Amazon's 'Deliver Results' and 'Think Big' instead of trading one for the other.",
+   "rationales": [
+    "Wrong: going against an agreed priority without telling anyone breaks trust, even if you're right.",
+    "Correct: meets the short-term commitment and makes the long-term opportunity visible for an informed decision.",
+    "Wrong: silently dropping a high-value idea means the company never gets to weigh it.",
+    "Wrong: flat refusal comes across as rigid and ignores the business pressure behind the target."
+   ],
+   "interview_tip": "Questions about conflicting priorities reward 'yes, and' answers. Show that you delivered and also influenced a larger decision with data."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Instruction hierarchy (system vs user prompts)",
+   "difficulty": "easy",
+   "question": "In an LLM-powered support bot, where should rules like 'never reveal other customers' data' and 'always answer in the brand's tone' go?",
+   "options": [
+    "In each user's message, so the model sees the rules alongside every question",
+    "In the system prompt, which sets persistent rules that should take priority over user messages",
+    "In the retrieved documents, so the rules sit alongside the knowledge base",
+    "In the model's fine-tuning data only, since prompts can't enforce rules"
+   ],
+   "answer": 1,
+   "explanation": "The system prompt is where developers set persistent instructions, persona and constraints. Models are trained to prioritise it over user turns (an instruction hierarchy). Rules there apply to every conversation and are harder for users to override. Prompts alone aren't a guarantee, so critical safeguards like data access controls should also be enforced in code.",
+   "rationales": [
+    "Wrong: users control their own messages, so putting rules there is unreliable and easy to tamper with.",
+    "Correct: system prompts carry persistent developer instructions that the model weights above user input.",
+    "Wrong: retrieved content is treated as reference material, not authoritative instructions, and may change.",
+    "Wrong: fine-tuning can help with tone, but system prompts are an effective, standard way to set rules."
+   ],
+   "interview_tip": "Explaining the system/user split, and adding that sensitive rules also need enforcement outside the model, shows practical AI product knowledge."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Knowledge cutoff and tool-based grounding",
+   "difficulty": "easy",
+   "question": "Users of your AI travel assistant complain it gives outdated visa rules and flight prices. What is the most effective fix?",
+   "options": [
+    "Fine-tune the model monthly on the latest travel news",
+    "Give the model tools to fetch current information, such as search and pricing APIs, and cite the sources",
+    "Add 'always use up-to-date information' to the system prompt",
+    "Switch to a larger model, which will know more recent facts"
+   ],
+   "answer": 1,
+   "explanation": "LLMs only know what was in their training data up to a cutoff date. For fast-changing facts like prices and visa rules, the model should fetch current data at query time through tools or retrieval, and show the source. Fine-tuning is slow, costly and still stale, and prompt instructions can't create knowledge the model doesn't have.",
+   "rationales": [
+    "Wrong: fine-tuning is expensive, lags behind real-time changes, and isn't reliable for teaching precise facts.",
+    "Correct: fetching live data at query time solves staleness and lets users check sources.",
+    "Wrong: an instruction can't give the model facts it never learned, and may make it state wrong facts more confidently.",
+    "Wrong: model size doesn't move the training cutoff. A bigger model is still frozen at a date."
+   ],
+   "interview_tip": "Mentioning knowledge cutoff and grounding through tools or RAG for time-sensitive data is a basic signal of AI fluency."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Semantic caching of LLM responses",
+   "difficulty": "medium",
+   "question": "To cut costs, an engineer proposes semantic caching: if a new question is similar enough to a past one, return the cached answer. Which use case is the riskiest for this?",
+   "options": [
+    "A help-centre bot answering 'how do I reset my password' and its many rephrasings",
+    "A banking assistant answering 'what's my account balance' and 'what was my last transaction'",
+    "An FAQ bot for a store's opening hours and return policy",
+    "A product bot explaining what each pricing plan includes"
+   ],
+   "answer": 1,
+   "explanation": "Semantic caching returns stored answers for questions that are close in meaning. That works for general, stable answers (FAQs, how-tos). It's dangerous when the answer depends on the user or on changing data. Two people asking 'what's my balance' phrase it the same way but need different answers, so a cache hit could leak one customer's data or show a stale number. Scope caches per user or exclude personal queries.",
+   "rationales": [
+    "Wrong: a stable, shared answer with many rephrasings is the best case for semantic caching.",
+    "Correct: personalised, real-time answers can be wrong or leak data when served from another user's cache entry.",
+    "Wrong: opening hours and policies are shared and change rarely, so they're good to cache (with expiry).",
+    "Wrong: plan descriptions are the same for everyone and change rarely, so caching is low risk."
+   ],
+   "interview_tip": "When cost cutting comes up, show you can weigh savings against correctness and privacy risks. Saying when not to cache is the strong signal."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Using a small classifier instead of an LLM for narrow tasks",
+   "difficulty": "medium",
+   "question": "Your team uses a frontier LLM to label 50 million support tickets a day into one of 12 categories. Accuracy is good but costs and latency are high. What is the best next step?",
+   "options": [
+    "Shorten the prompt so each call uses fewer tokens",
+    "Train a small classification model on the LLM's labels and use the LLM only for low-confidence cases",
+    "Batch all tickets into one daily call to reduce the number of requests",
+    "Drop the categories down to five so the LLM finds the task easier"
+   ],
+   "answer": 1,
+   "explanation": "For a narrow, high-volume task with fixed labels, a small classifier trained on good labels (here, the LLM's own output plus some human checks) can match accuracy at a fraction of the cost and latency. Keeping the LLM for low-confidence or new cases preserves quality. The pattern is to use the big model to bootstrap and handle the hard cases, and the cheap model for the bulk.",
+   "rationales": [
+    "Wrong: helps a little, but every ticket still pays frontier-model prices. It's a tweak, not a fix.",
+    "Correct: a small model handles the bulk cheaply and quickly, and the LLM handles the uncertain cases.",
+    "Wrong: one call can't hold 50M tickets, and once-a-day batching adds a day of delay for support routing.",
+    "Wrong: changes the product requirement to suit the tool and loses useful routing detail."
+   ],
+   "interview_tip": "AI PMs are expected to pick the right tool for the job. Explaining when a classic ML model beats an LLM on cost and latency shows maturity."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Overfitting prompts to the eval set",
+   "difficulty": "hard",
+   "question": "Over two months, your team iterated 80 prompt versions, keeping whichever scored highest on a fixed 300-example eval set. Eval score rose from 72% to 91%, but production satisfaction barely changed. What most likely happened?",
+   "options": [
+    "The eval examples were labelled incorrectly from the start",
+    "The prompt was tuned to quirks of those 300 examples, so gains don't carry over; a held-out set was needed",
+    "Users don't notice quality improvements below 20 percentage points",
+    "The production model version is different from the one used in evaluation"
+   ],
+   "answer": 1,
+   "explanation": "Picking the best of 80 variants on the same small set is a form of overfitting: you optimise for that set's quirks. The score improves but real-world quality doesn't. The fix mirrors ML practice: keep a held-out test set you rarely look at, refresh evals with new production samples, and confirm wins online.",
+   "rationales": [
+    "Wrong: bad labels would hurt scores and alignment from the start, but don't explain a rising score that doesn't help production.",
+    "Correct: repeated selection on one fixed set inflates its score. A held-out set would show the real gain.",
+    "Wrong: no basis for this. A real 19-point quality improvement would usually be noticeable.",
+    "Wrong: possible, but it wouldn't explain the gradual rise over months on the eval itself."
+   ],
+   "interview_tip": "Talking about held-out eval splits and refreshing evals from production signals that you treat AI quality with scientific discipline, which is a key bar at OpenAI and Google."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Debouncing search-as-you-type requests",
+   "difficulty": "easy",
+   "question": "Your search box sends an API request on every keystroke, overloading the backend. What is the standard fix?",
+   "options": [
+    "Debounce input so a request is sent only after the user pauses typing briefly",
+    "Increase the number of backend servers until the load is manageable",
+    "Require users to press Enter before any search runs",
+    "Cache every search result permanently in the user's browser"
+   ],
+   "answer": 0,
+   "explanation": "Debouncing waits until the user stops typing for a short interval (around 200-300 ms) before sending a request. 'shoes' becomes one request instead of five. It cuts backend load sharply while keeping the instant feel. It's often combined with cancelling stale requests and short-lived caching.",
+   "rationales": [
+    "Correct: collapses bursts of keystrokes into one request with little visible delay.",
+    "Wrong: scaling servers pays to handle requests that are wasted anyway.",
+    "Wrong: removes the instant-search experience users expect.",
+    "Wrong: permanent caching gives stale results and doesn't help queries the user hasn't searched before."
+   ],
+   "interview_tip": "Small technical fixes like debouncing show you can collaborate with engineers on performance without over-engineering."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Expand-and-contract schema migrations",
+   "difficulty": "medium",
+   "question": "Engineering needs to rename a database column used by a live app without downtime. What is the safe approach?",
+   "options": [
+    "Rename the column during low traffic and deploy the new app code immediately after",
+    "Add the new column, write to both, backfill, switch reads, then drop the old column later",
+    "Take the app offline for a short scheduled maintenance window to make the change",
+    "Create a new database with the renamed column and switch all traffic over at once"
+   ],
+   "answer": 1,
+   "explanation": "The expand-and-contract pattern makes schema changes backward compatible. Add the new column (expand), have the app write to both, backfill old data, move reads to the new column, and only then remove the old one (contract). At every step both old and new app versions keep working, so deployment needs no downtime and can be rolled back.",
+   "rationales": [
+    "Wrong: between the rename and the deploy, old code queries a column that no longer exists, so requests fail.",
+    "Correct: each step stays compatible with running code, so there's no downtime and rollback is possible.",
+    "Wrong: works, but doesn't meet the no-downtime requirement.",
+    "Wrong: a big-bang cutover risks data loss and can't easily be rolled back."
+   ],
+   "interview_tip": "PMs who understand why migrations take several releases set realistic timelines and don't push for risky shortcuts."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Choosing the free-tier limit on a value metric",
+   "difficulty": "medium",
+   "question": "A freemium design tool wants more free users to upgrade. Which free-tier limit is best?",
+   "options": [
+    "Limit free users to 3 logins per week",
+    "Limit the number of active projects or exports, which grow as users get more value",
+    "Show ads in the editor for free users",
+    "Limit the free plan to 14 days, then delete projects"
+   ],
+   "answer": 1,
+   "explanation": "The best free-tier limits sit on a value metric, something that grows as users get more out of the product (projects, exports, collaborators). Users hit the limit just when they've seen enough value to pay. Arbitrary limits like logins frustrate users before they've seen the value, and deleting work destroys trust.",
+   "rationales": [
+    "Wrong: limiting logins blocks engagement itself, so users churn before they reach value.",
+    "Correct: the limit scales with value received, so upgrade prompts arrive when willingness to pay is highest.",
+    "Wrong: ads in a creative tool degrade the experience and earn little, with a weak link to upgrades.",
+    "Wrong: that's a time-limited trial, not freemium, and deleting users' work breaks trust."
+   ],
+   "interview_tip": "When discussing monetisation, strong candidates tie the paywall to a value metric and explain why the timing of the upgrade prompt matters."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Google Universal Cart cross-retailer agentic checkout (Oct 2026)",
+   "difficulty": "medium",
+   "question": "On 15 October 2026 Google launched Universal Cart in the US. It lets users save products from multiple retailers in Search and the Gemini app, get price-drop and restock alerts, and check out through Google's open Universal Commerce Protocol (UCP). For a D2C brand's PM, what is the main strategic implication?",
+   "options": [
+    "Brand websites will soon be unnecessary, since Google will sell all products directly",
+    "More purchase intent may be captured by the AI layer, so structured catalogues and UCP-ready checkout become key",
+    "Only marketplaces like Amazon are affected, because Universal Cart doesn't support independent retailers",
+    "Prices will rise, since Google charges shoppers a fee for using Universal Cart"
+   ],
+   "answer": 1,
+   "explanation": "Universal Cart moves comparison, saving and checkout into Google's AI surfaces, joining similar agentic shopping features from Amazon and OpenAI. For brands, being discoverable and purchasable by agents (clean product data, live pricing and stock, protocol-compatible checkout) becomes as important as their own storefront. It's aggregation in action: whoever owns the intent layer gains leverage.",
+   "rationales": [
+    "Wrong: Google is aggregating carts across retailers, not becoming the seller. Brands still fulfil orders.",
+    "Correct: discovery and checkout are moving to AI surfaces, so being readable by agents is a strategic priority.",
+    "Wrong: Universal Cart gathers items across multiple retailers via an open protocol. It isn't limited to big marketplaces.",
+    "Wrong: no shopper fee was reported. The launch coverage doesn't mention fees."
+   ],
+   "interview_tip": "Linking a recent launch to a strategy concept (aggregation, agentic commerce) shows you follow the industry and can reason about second-order effects.",
+   "source": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/"
+  }
+ ]
+}
