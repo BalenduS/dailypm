@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-20",
+ "theme": "Model deprecations, quiet dissent & designing for the moment of need",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Avoiding the vocal power-user trap in prioritization",
+   "difficulty": "hard",
+   "question": "You're the PM for a note-taking app. The loudest feedback comes from the top 5% of users, who want scripting, custom databases and API access. Meanwhile, data shows 60% of new signups never create a second note and churn in week one. Leadership asks what to build next. What's the strongest recommendation?",
+   "options": [
+    "Ship the power-user features first, because these users are the most engaged and the likeliest to pay",
+    "Focus on new-user activation first, and serve power users later with a low-cost extensibility path",
+    "Split the team evenly between power-user features and onboarding so neither group feels ignored",
+    "Survey the entire user base and build whichever feature gets the most votes"
+   ],
+   "answer": 1,
+   "explanation": "Vocal power users are a small, already-retained segment. The week-one leak among new users caps growth for the whole product. Fixing activation compounds, because every later cohort benefits. Power users still matter, but a cheap extensibility layer (an API or plugins) can serve them without making the core product harder for newcomers.",
+   "rationales": [
+    "Wrong: engagement and loudness aren't the same as impact. These users already stay, and more advanced features can make the product harder for new users.",
+    "Correct: it targets the biggest constraint on growth (week-one churn) while keeping a path open for power users.",
+    "Wrong: an even split isn't a strategy. It under-invests in the biggest problem just to avoid hard choices.",
+    "Wrong: churned new users rarely answer surveys, so the vote over-represents engaged users. Feature votes also hide the underlying problem."
+   ],
+   "interview_tip": "Interviewers listen for whether you pick a segment for a reason (size of the problem, effect on the goal) rather than whoever is loudest. Naming the trap explicitly is a strong signal."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Safety features at the moment of risk for in-person meetups",
+   "difficulty": "medium",
+   "question": "A local second-hand marketplace connects buyers and sellers, who then meet in person to complete the deal. Women users report feeling unsafe at these meetups, and some stop listing. Which product approach most directly addresses the problem?",
+   "options": [
+    "Add a detailed safety-guidelines page to onboarding and require users to accept it before they can list",
+    "Ban in-person meetups and require every transaction to go through shipping",
+    "Add in-chat tools when a meetup is being arranged: suggest public spots, share plans with a trusted contact, and show verified badges",
+    "Require government ID verification from every user at signup before they can browse"
+   ],
+   "answer": 2,
+   "explanation": "Safety interventions work best at the moment of risk: when a meetup is being arranged, not at signup. Suggesting busy public meeting points, one-tap sharing of meetup details with a trusted contact, and visible verification signals all reduce real and perceived risk. They don't add friction for everyone else.",
+   "rationales": [
+    "Wrong: onboarding text is read once and forgotten. It does nothing when the user is actually arranging the meetup.",
+    "Wrong: it removes the core value of a local marketplace (fast, cash, no shipping) to solve a problem that targeted tools can reduce.",
+    "Correct: the help shows up at the decision point and targets the specific fear, while the core flow stays intact.",
+    "Wrong: mandatory ID before browsing adds heavy friction for every user, including buyers who never meet anyone. Optional verification badges get most of the trust benefit."
+   ],
+   "interview_tip": "In product-sense rounds, tie your solution to when and where the pain happens. Interviewers reward solutions that target the moment of need over blanket policies."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Structured address capture in WhatsApp checkout",
+   "difficulty": "medium",
+   "question": "An Indian D2C skincare brand sells through WhatsApp chat. Analytics show the biggest drop-off happens when the bot asks shoppers to type their full delivery address as a free-text message. Many addresses that do get submitted are also incomplete, causing failed deliveries. What's the best fix?",
+   "options": [
+    "Ask for the address at the very start of the chat, before showing products",
+    "Send an automated reminder message an hour later to anyone who stopped at the address step",
+    "Make cash on delivery the default payment method to reduce overall checkout anxiety",
+    "Replace free text with a structured in-chat form: pincode-based autofill, saved addresses for repeat buyers, and an option to share a location pin"
+   ],
+   "answer": 3,
+   "explanation": "The pain is the effort and error-proneness of typing a long address on a phone keyboard. A structured form with pincode autofill (city and state filled in), saved addresses and a location pin cuts typing and validates the fields, which raises completion and delivery success at the same time.",
+   "rationales": [
+    "Wrong: moving the step earlier doesn't make it easier. It just adds friction before the shopper is committed.",
+    "Wrong: reminders may recover a few users, but they don't fix the reason people drop off or the incomplete-address problem.",
+    "Wrong: COD addresses payment anxiety, not the address step. It can also raise return-to-origin costs.",
+    "Correct: it removes the effort and the errors at the exact step where users drop off, fixing both conversion and delivery quality."
+   ],
+   "interview_tip": "Show that you've diagnosed why a step fails (effort, errors, trust) before proposing fixes. Solving two problems with one change (conversion and delivery quality) is a strong signal."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Cross-device continuity for multi-session journeys",
+   "difficulty": "easy",
+   "question": "Research on a furniture e-commerce site shows most buyers browse on their phones during commutes over several days, then buy on a laptop at home. Many say they 'lost' items they had found earlier. What's the most useful feature to build?",
+   "options": [
+    "A synced shortlist and cart across logged-in devices, with a 'continue where you left off' prompt",
+    "A mobile-only discount that encourages users to complete the purchase on their phone",
+    "A daily push notification listing new arrivals in the categories the user browsed",
+    "A redesigned laptop homepage with larger product images and more filters"
+   ],
+   "answer": 0,
+   "explanation": "The journey naturally spans several sessions and devices. The pain is losing context between them. Syncing shortlists and carts across devices, and offering to resume, supports the user's real behaviour rather than fighting it.",
+   "rationales": [
+    "Correct: it directly solves the lost-context pain across sessions and devices.",
+    "Wrong: it fights natural behaviour (people prefer large screens for big purchases) instead of supporting it.",
+    "Wrong: new arrivals don't help users find the items they already picked, and daily pushes risk opt-outs.",
+    "Wrong: a nicer laptop page doesn't bring back items found on the phone."
+   ],
+   "interview_tip": "Mapping the real user journey (devices, sessions, context) before designing is what interviewers look for in product-sense answers."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Ad-load displacement behind engagement-up, revenue-down",
+   "difficulty": "hard",
+   "question": "After a feed ranking change on a social app, time spent per DAU rose 6%, but ad revenue per DAU fell 4%. Ad prices (CPMs) and ad click-through rates are flat. What's the most likely explanation to investigate first?",
+   "options": [
+    "Advertisers cut budgets this week, so fewer ads were available to show",
+    "The extra time went to formats or surfaces with fewer ad slots, such as long videos, so ad impressions per minute fell",
+    "The time-spent gain is a novelty effect and will fade, which will bring revenue back up",
+    "Users are seeing ads but ignoring them more, because the feed is now more engaging"
+   ],
+   "answer": 1,
+   "explanation": "Revenue = time × ad impressions per minute × price per impression. With price and CTR flat, the drop must come from fewer impressions per unit of time. That happens when engagement shifts toward content where ads are shown less often. Decompose revenue by surface and format to confirm.",
+   "rationales": [
+    "Wrong: a budget cut would usually lower CPMs or fill rates across the board, and CPMs are flat.",
+    "Correct: a mix shift toward formats with less ad inventory explains more time with less revenue, while prices and CTR stay flat.",
+    "Wrong: novelty might explain the time gain, but not why revenue per user fell.",
+    "Wrong: if users ignored ads more, CTR would fall, but CTR is flat."
+   ],
+   "interview_tip": "Write the metric as a product of components and check which one moved. Interviewers love seeing you rule out causes using the data given."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Bunching at a free-shipping threshold",
+   "difficulty": "medium",
+   "question": "An online grocery store raised its free-shipping minimum from ₹499 to ₹699. A week later, average order value is up 12% and order count is down 9%. The growth lead calls it a win. What's the best response?",
+   "options": [
+    "Agree: AOV is the key revenue metric, and a 12% gain outweighs a 9% drop in orders",
+    "Disagree: any drop in orders is unacceptable, so revert the change immediately",
+    "Look at revenue and contribution margin per visitor, plus repeat rate, because AOV rises mechanically when small orders disappear",
+    "Wait a full quarter before looking at any metrics, so the new threshold has time to settle"
+   ],
+   "answer": 2,
+   "explanation": "Raising the threshold removes small orders and pushes others to bunch just above ₹699, so AOV rises almost automatically. That doesn't mean the business is better off. Judge the change by total revenue and margin per visitor (net of shipping costs) and by whether lost customers come back.",
+   "rationales": [
+    "Wrong: AOV is a ratio that rises when the low end drops out. On its own it says nothing about total value.",
+    "Wrong: fewer orders may be fine if margin per visitor rose. Reverting without the full picture is just as hasty.",
+    "Correct: it measures the outcome the business cares about and checks for long-term harm to retention.",
+    "Wrong: a quarter of waiting delays a decision that the right metrics can inform within weeks."
+   ],
+   "interview_tip": "Point out when a ratio metric moves because of who drops out. Proposing the metric that captures total value shows mature analytical thinking."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Share of creators above an earnings threshold",
+   "difficulty": "medium",
+   "question": "A short-video app launches a creator monetisation programme to help mid-tier creators earn a living. Which success metric best reflects that goal?",
+   "options": [
+    "Total payouts to all creators per month",
+    "Number of creators enrolled in the programme",
+    "Average monthly earnings per enrolled creator",
+    "Number of creators earning above a meaningful monthly threshold, such as ₹25,000"
+   ],
+   "answer": 3,
+   "explanation": "Creator earnings are highly skewed: a few top creators take most of the money. Totals and averages can rise while mid-tier creators gain nothing. Counting creators above a meaningful threshold measures how many actually get a livelihood, which is the stated goal.",
+   "rationales": [
+    "Wrong: totals can be driven by a handful of top creators and hide whether the mid-tier benefits.",
+    "Wrong: enrolment measures sign-ups, not whether anyone earns enough.",
+    "Wrong: averages are pulled up by outliers in skewed distributions.",
+    "Correct: a threshold count measures how broadly the goal (a living for mid-tier creators) is being reached."
+   ],
+   "interview_tip": "Matching the metric to the exact goal, and noticing a skewed distribution, signals strong metric design. Say why totals or averages mislead here."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "North Star for a language-learning app",
+   "difficulty": "easy",
+   "question": "Which is the best North Star metric for a language-learning app whose mission is to help people actually become fluent?",
+   "options": [
+    "Total app downloads per month",
+    "Weekly active learners who complete at least three lessons",
+    "Average minutes spent in the app per session",
+    "Monthly subscription revenue"
+   ],
+   "answer": 1,
+   "explanation": "A good North Star captures the value users get and predicts long-term success. Regular, repeated lesson completion is the behaviour most tied to learning progress and retention. Revenue and downloads follow from it.",
+   "rationales": [
+    "Wrong: downloads measure acquisition, not whether anyone learns.",
+    "Correct: consistent weekly practice reflects delivered value and drives retention and revenue.",
+    "Wrong: time in app can grow through distraction or confusing UX, not learning.",
+    "Wrong: revenue is an outcome of value. It's important but lags behind it, and it's a poor guide for daily product decisions."
+   ],
+   "interview_tip": "Explain why your North Star reflects user value and leads business outcomes. Contrast it briefly with a vanity alternative."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Pooling data across unequal ramp stages",
+   "difficulty": "hard",
+   "question": "You ramped a checkout test from 5% to 50% treatment over two weeks. Conversion for all users rose in week two because of a festival sale. An analyst pooled all the data and reports a +3% lift. Why is this estimate suspect, and what should you do?",
+   "options": [
+    "It's fine, because randomisation guarantees the groups are comparable no matter how the data is pooled",
+    "It's suspect only because the sample is too small; just run the test longer",
+    "It's suspect because the festival sale is a novelty effect; exclude week two entirely",
+    "It's suspect because treatment is over-represented in the high-conversion week; compare within each stage at a fixed split, then combine"
+   ],
+   "answer": 3,
+   "explanation": "When the treatment share changes over time and the baseline also changes, pooling mixes the two. Treatment users are concentrated in the festival week, which inflates their apparent conversion. That's Simpson's paradox. Estimate the effect within each period at a constant allocation, then combine those estimates with weights.",
+   "rationales": [
+    "Wrong: randomisation holds within each stage. Pooling across stages with different splits breaks the comparison.",
+    "Wrong: more data doesn't remove a bias built into how the data was combined.",
+    "Wrong: the festival is a time effect, not a novelty effect. Dropping the week throws away valid data you can analyse correctly.",
+    "Correct: comparing within stages at a fixed split removes the bias from treatment being over-represented in the festival week."
+   ],
+   "interview_tip": "Spotting a hidden confound in a pooled readout is a strong analytical signal. Explain the mechanism, not just that it's biased."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Intention-to-treat analysis for opt-in features",
+   "difficulty": "medium",
+   "question": "In an A/B test, the treatment group is offered a new 'smart budget' feature, and only 30% of them turn it on. An analyst compares those opt-in users with the control group and reports a 20% lift in retention. What's the correct way to measure the feature's effect?",
+   "options": [
+    "Compare everyone assigned to treatment with everyone in control, then scale by the opt-in rate if you need the effect on adopters",
+    "Keep the analyst's comparison, because only opt-in users actually experienced the feature",
+    "Compare opt-in users with treatment users who didn't opt in, because they saw the same offer",
+    "Rerun the test and force the feature on for everyone in treatment so that opt-in can't bias it"
+   ],
+   "answer": 0,
+   "explanation": "People who opt in are self-selected and probably more engaged already, so comparing them with control mixes the feature's effect with who chooses it. Intention-to-treat compares the randomised groups as assigned, which keeps the comparison fair. Dividing that effect by the uptake rate estimates the effect on those who adopted it.",
+   "rationales": [
+    "Correct: it preserves randomisation, and scaling by uptake gives an unbiased estimate of the effect on adopters.",
+    "Wrong: opt-in users differ from control in motivation, so the 20% includes selection bias.",
+    "Wrong: opt-in and non-opt-in users differ by self-selection, so this comparison is also biased.",
+    "Wrong: forcing the feature on tests a different product (mandatory) and may not reflect how it'll actually ship."
+   ],
+   "interview_tip": "Interviewers test whether you notice self-selection. Naming intention-to-treat and how to recover the effect on adopters is a strong answer."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual gym membership market in Mumbai",
+   "difficulty": "medium",
+   "question": "Estimate the annual market size of paid gym memberships in Mumbai. Which is closest?",
+   "options": [
+    "About ₹80 crore",
+    "About ₹800 crore",
+    "About ₹8,000 crore",
+    "About ₹80,000 crore"
+   ],
+   "answer": 1,
+   "explanation": "Mumbai metro population ≈ 2 crore. Adults aged 18–60 ≈ 65%, so ≈ 1.3 crore. Assume about 4% hold a paid gym membership in a big Indian metro: ≈ 5 lakh members. At an average of ≈ ₹15,000 a year (budget chains to premium gyms), that's 5 lakh × ₹15,000 ≈ ₹750 crore, so about ₹800 crore. State each assumption and sanity-check it, for example the number of gyms × members per gym.",
+   "rationales": [
+    "Wrong: that implies about 50,000 members at ₹15,000, which is far too low for a city of 2 crore people.",
+    "Correct: a reasonable population × penetration × price chain gives about ₹750–800 crore.",
+    "Wrong: it would need roughly 40% of adults paying, or fees of ₹1.5 lakh a year, both unrealistic.",
+    "Wrong: off by 100×. It's larger than India's entire organised fitness market."
+   ],
+   "interview_tip": "Structure (population → target segment → penetration → price) and a sanity check matter more than the exact number. Say your assumptions out loud."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual wedding-invitation cards printed in India",
+   "difficulty": "easy",
+   "question": "Roughly how many printed wedding-invitation cards are produced in India each year?",
+   "options": [
+    "About 3 crore",
+    "About 30 crore",
+    "About 300 crore",
+    "About 3,000 crore"
+   ],
+   "answer": 2,
+   "explanation": "India has roughly 1 crore weddings a year. Typical Indian weddings invite a few hundred households; assume about 300 printed cards per wedding (some small or digital-only weddings, some very large ones). That gives 1 crore × 300 ≈ 300 crore cards a year.",
+   "rationales": [
+    "Wrong: that would be only about 3 cards per wedding.",
+    "Wrong: about 30 cards per wedding is far below typical Indian guest lists.",
+    "Correct: about 1 crore weddings × about 300 cards gives roughly 300 crore.",
+    "Wrong: about 3,000 cards per wedding would be wildly high, even for very large weddings."
+   ],
+   "interview_tip": "Anchor on a known number (weddings per year), then apply a per-unit assumption. Mention the variation (digital invites, large weddings) to show judgement."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Complementary assets determine who captures value from innovation",
+   "difficulty": "medium",
+   "question": "A startup builds a clearly better AI meeting-notes feature. Within six months, a large video-calling incumbent ships a similar 'good enough' version, bundled free for its hundreds of millions of users, and the startup's growth stalls. Which concept best explains this outcome?",
+   "options": [
+    "First-mover advantage: the startup should have launched earlier",
+    "Network effects: the incumbent's users invite each other more often",
+    "Complementary assets: when a feature is easy to copy, whoever owns distribution and the core workflow captures most of the value",
+    "Disruptive innovation: the incumbent moved downmarket to serve overlooked customers"
+   ],
+   "answer": 2,
+   "explanation": "Teece's framework says innovators capture value only when imitation is hard or they control the complementary assets: distribution, brand, and the workflow where the feature is used. Here the feature was easy to copy, and the incumbent owned the meeting surface itself, so it captured the value.",
+   "rationales": [
+    "Wrong: the startup did move first. Being first didn't protect it, because the feature was easy to copy.",
+    "Wrong: network effects aren't the mechanism here. The incumbent won through distribution and owning the workflow.",
+    "Correct: easy imitation plus control of distribution and the workflow lets the incumbent capture the value.",
+    "Wrong: disruption describes entrants attacking from below. Here an incumbent copied an entrant."
+   ],
+   "interview_tip": "When discussing AI startups versus incumbents, naming who owns distribution and the workflow shows strategic depth."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "When to spin a feature out into a standalone app",
+   "difficulty": "medium",
+   "question": "A super-app's bill-payments feature is hidden three taps deep. Usage data shows it serves a distinct, high-frequency job for a different set of users than the core app. Leadership is considering launching it as a standalone app. What's the strongest argument, and the main risk?",
+   "options": [
+    "For: a distinct, frequent job can deserve its own focused entry point. Risk: you lose the super-app's built-in distribution",
+    "For: standalone apps always get higher ratings. Risk: none, as long as the brand stays the same",
+    "For: it cuts engineering costs by splitting codebases. Risk: users might download both apps",
+    "For: it hides the feature from users who don't need it. Risk: the core app's DAU will rise too quickly"
+   ],
+   "answer": 0,
+   "explanation": "Spinning out makes sense when a use case is frequent, distinct, and held back by the host app's navigation. The big cost is giving up the host's free distribution: users must download a new app. Teams often reduce this by keeping deep links or entry points in the parent app.",
+   "rationales": [
+    "Correct: it names the real reason to spin out (a distinct, frequent job) and the real cost (losing distribution).",
+    "Wrong: standalone apps don't automatically rate higher, and the risk of losing distribution is real.",
+    "Wrong: splitting codebases usually adds engineering cost, and installing both apps isn't the main risk.",
+    "Wrong: hiding the feature is easier without a new app, and a fast-rising DAU isn't a risk."
+   ],
+   "interview_tip": "Strong strategy answers name both the upside and the binding cost. Mentioning how to soften that cost (deep links from the parent app) shows execution sense."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "System of record as a moat against AI-native challengers",
+   "difficulty": "hard",
+   "question": "You're the PM for an established B2B CRM. AI-native startups are building agents that sit on top of your CRM, and some pitch customers on eventually replacing you. What's the strongest strategic response?",
+   "options": [
+    "Restrict API access so outside agents can't read or write CRM data",
+    "Rebuild the product as a chat-only interface and retire the existing UI",
+    "Undercut the startups on price by bundling a basic AI assistant at no charge",
+    "Become the trusted layer agents work through (APIs, permissions, audit trails) while shipping native agents on your own data"
+   ],
+   "answer": 3,
+   "explanation": "An incumbent system of record owns the data, permissions, workflows and audit trail that agents need to act safely. Leaning into that (agent-friendly APIs, governance, native agents) turns challengers into ecosystem partners and keeps you central. Locking data down invites customer backlash and pushes them toward replacement.",
+   "rationales": [
+    "Wrong: blocking access angers customers who own the data and gives them a reason to migrate.",
+    "Wrong: throwing away proven workflows bets everything on one interface and gives up your own strengths.",
+    "Wrong: a free basic assistant doesn't defend the core moat, and a price war doesn't address the platform shift.",
+    "Correct: it uses the real moat (data, permissions, trust) and stays central as agents take over the work."
+   ],
+   "interview_tip": "On AI-disruption questions, interviewers look for you to find the incumbent's real asset and turn it into leverage, not just respond defensively."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Accountable vs Responsible in RACI",
+   "difficulty": "easy",
+   "question": "In a RACI chart for a pricing-page redesign, what's the difference between 'Accountable' and 'Responsible'?",
+   "options": [
+    "Accountable is whoever does the most work; Responsible is whoever reviews it",
+    "Accountable is one person who owns the outcome and signs off; Responsible is whoever does the work",
+    "They mean the same thing, and teams use them interchangeably",
+    "Accountable must be informed of progress; Responsible must be consulted before decisions"
+   ],
+   "answer": 1,
+   "explanation": "In RACI, Responsible means the people doing the work (there can be several). Accountable is the single person who owns the outcome and has final approval. Having exactly one Accountable avoids diffused ownership.",
+   "rationales": [
+    "Wrong: it reverses the roles. Doing the work is Responsible.",
+    "Correct: one owner signs off, and others carry out the work.",
+    "Wrong: the distinction is the whole point. Merging them blurs who owns the decision.",
+    "Wrong: that describes Informed and Consulted, the other two RACI roles."
+   ],
+   "interview_tip": "Mention RACI or similar tools briefly when discussing cross-functional clarity, and stress having one accountable owner."
+  },
+  {
+   "topic": "Execution",
+   "concept": "User story mapping to slice an MVP",
+   "difficulty": "easy",
+   "question": "Your team has a 120-item backlog for a new appointment-booking product and can't agree on what goes into the first release. Which technique best helps define a thin but usable first version?",
+   "options": [
+    "Sort the backlog by estimated effort and ship the 20 smallest items first",
+    "Let each engineer pick the stories they find most interesting for the first sprint",
+    "Map the user's journey steps left to right, then slice horizontally to take the simplest version of every step",
+    "Ship the backlog in the order stakeholders requested items"
+   ],
+   "answer": 2,
+   "explanation": "Story mapping lays out the user's journey (search, pick a slot, book, pay, get reminders) as a backbone, with detail stacked underneath. Cutting a horizontal slice gives a walking skeleton: the simplest version of every step, so users can complete the whole journey end to end.",
+   "rationales": [
+    "Wrong: the smallest items may not add up to a usable journey, since some steps would be missing.",
+    "Wrong: engineer interest isn't a basis for what users need first.",
+    "Correct: a horizontal slice ensures the first release covers the whole journey, at minimal depth.",
+    "Wrong: request order reflects who asked first, not what makes a coherent product."
+   ],
+   "interview_tip": "When asked how you'd scope an MVP, describing an end-to-end thin slice shows you think in user journeys, not feature lists."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Customer communication cadence during an outage",
+   "difficulty": "medium",
+   "question": "Your B2B payroll SaaS is down for some customers. Engineers don't know the cause yet. As PM, you're helping with customer communication. What's the best approach?",
+   "options": [
+    "Wait until the root cause is confirmed, so the first message is accurate and complete",
+    "Post on the status page only after the fix is deployed, so customers don't worry",
+    "Share the engineers' current theory about the cause, so customers can see progress",
+    "Acknowledge the issue quickly, describe the impact, and commit to a regular update cadence even when there's no new news"
+   ],
+   "answer": 3,
+   "explanation": "During incidents, silence erodes trust faster than bad news. Acknowledge quickly, say who is affected and how, give a workaround if one exists, and promise the next update at a fixed time (say, every 30 minutes). Save root-cause details for the postmortem, once they're confirmed.",
+   "rationales": [
+    "Wrong: waiting for the root cause leaves customers in the dark. They may make costly decisions, like running payroll twice.",
+    "Wrong: hiding an ongoing outage damages trust once customers find out, and they usually already know.",
+    "Wrong: sharing unconfirmed theories risks having to retract them and causing confusion.",
+    "Correct: prompt, honest, regular updates keep trust even before a fix exists."
+   ],
+   "interview_tip": "Incident questions test calm ownership and customer empathy. Stating a concrete update cadence is a crisp, strong detail."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Owning a launch that hurt a partner team's metric",
+   "difficulty": "hard",
+   "question": "Your new in-checkout upsell beat its target: add-on revenue is up 8%. But the payments team reports that checkout completion fell 1.5% in the same period, and they suspect your launch. What's the best response?",
+   "options": [
+    "Defend the launch, since you hit your goal and the payments team should optimise their own metric",
+    "Proactively dig in with the payments team, measure the net effect on company revenue, and roll back or fix if it's net negative",
+    "Escalate to leadership right away and ask them to decide which team's metric matters more",
+    "Quietly make the upsell less prominent, without telling anyone, to reduce the impact"
+   ],
+   "answer": 1,
+   "explanation": "Ownership means caring about the company outcome, not just your own team's metric. Investigate jointly, measure the net impact (add-on revenue against lost orders), and own the fix or rollback. This builds trust with the partner team and shows judgement.",
+   "rationales": [
+    "Wrong: hitting a local goal while hurting the overall outcome isn't success. This damages the relationship.",
+    "Correct: it takes ownership, uses data to find the net effect, and commits to acting on it.",
+    "Wrong: escalating before you've gathered facts with the other team is premature, and the data can likely settle it.",
+    "Wrong: secret changes skip proper measurement and erode trust if they're discovered."
+   ],
+   "interview_tip": "Amazon's 'Ownership' principle and Meta's collaboration bar both reward answers that put the company's outcome above your own team's metric. Quantify the net impact in your story."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Drawing out quiet dissent before a decision",
+   "difficulty": "hard",
+   "question": "In design reviews, a senior engineer stays silent while you present. A week later, you hear they have serious doubts about scalability but didn't want to 'derail' the meeting. What's the best way to handle this, now and in future?",
+   "options": [
+    "Assume silence means agreement, and keep running reviews as before",
+    "Call on them by name in the next meeting and ask them to explain their concerns to the group",
+    "Escalate to their manager that they aren't speaking up in reviews",
+    "Meet them one-on-one to understand the concern, then add a written pre-read with a comment period or a pre-mortem so dissent has a safe channel"
+   ],
+   "answer": 3,
+   "explanation": "Valuable dissent gets lost when the meeting format discourages it. First understand and address this concern privately. Then change the process (written pre-reads with comments, pre-mortems, asking 'what would make this fail?') so concerns surface before decisions are locked.",
+   "rationales": [
+    "Wrong: you now know silence didn't mean agreement, and ignoring that risks a costly failure.",
+    "Wrong: putting someone on the spot in public can backfire and make people less willing to share.",
+    "Wrong: escalating something you can solve directly harms trust and isn't proportionate.",
+    "Correct: it resolves this concern and fixes the system, so future dissent comes out early."
+   ],
+   "interview_tip": "Strong behavioural answers fix both the immediate issue and the underlying process. Mentioning psychological safety and a concrete mechanism stands out."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Disagreeing with your manager's prioritisation",
+   "difficulty": "hard",
+   "question": "Your manager wants the team to spend next month polishing a feature for an upcoming exec demo. Your data shows a reliability issue is causing 4% weekly churn among paying customers. How do you handle it?",
+   "options": [
+    "Follow the manager's direction without comment, since they set priorities",
+    "Quietly assign half the team to reliability without telling your manager",
+    "Talk to your manager privately: ask what's behind the demo's importance, share the churn data, and propose options with their trade-offs",
+    "Raise the churn data in the next leadership meeting to show the demo is the wrong priority"
+   ],
+   "answer": 2,
+   "explanation": "Your manager may have context you lack (the demo could unlock funding or a strategic deal). Start by understanding it, then make the cost of delaying reliability concrete and offer options, such as a smaller demo scope plus a reliability sprint. This respects their role and puts the trade-off in front of the decision-maker.",
+   "rationales": [
+    "Wrong: staying silent when you have important data is a failure of ownership.",
+    "Wrong: going around your manager in secret breaks trust and undermines alignment.",
+    "Correct: you seek context, bring data, and frame options, so a good decision can be made together.",
+    "Wrong: taking a disagreement with your manager to a public forum first blindsides them and damages trust."
+   ],
+   "interview_tip": "Interviewers look for respectful disagreement backed by data and options, plus curiosity about the other person's context. Show you'd commit once a decision is made."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Active learning to prioritise labelling",
+   "difficulty": "easy",
+   "question": "You're improving an AI classifier that routes support tickets, but you can afford to label only 2,000 new examples this month. Which examples give the most improvement per label?",
+   "options": [
+    "A random sample of tickets from the past month",
+    "The tickets the model is most confident about, to confirm it's right",
+    "The newest 2,000 tickets, since they're the most recent",
+    "The tickets the model is least confident about, plus a small random sample for checks"
+   ],
+   "answer": 3,
+   "explanation": "Active learning targets labelling where the model is uncertain, because those examples are near its decision boundary and teach it the most. Adding a small random sample guards against blind spots and keeps your evaluation unbiased.",
+   "rationales": [
+    "Wrong: random sampling works but wastes many labels on cases the model already handles.",
+    "Wrong: confident cases teach the model little, since it's probably already right.",
+    "Wrong: recency doesn't target the model's weaknesses, though it can help with drift.",
+    "Correct: uncertain examples improve the model most per label, and a random slice keeps the evaluation honest."
+   ],
+   "interview_tip": "Mentioning active learning shows you think about data cost and ROI in ML products, which AI PM interviewers value."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Tool overload degrading agent tool selection",
+   "difficulty": "medium",
+   "question": "Your company's internal AI agent now has 120 tools connected. Since the last 60 were added, it picks the wrong tool much more often. What's the most effective fix?",
+   "options": [
+    "Switch to a model with a larger context window so all tool descriptions fit comfortably",
+    "Raise the sampling temperature so the agent explores more tools",
+    "Retrieve only the tools relevant to each request, and merge overlapping tools with clearer descriptions",
+    "Paste every tool's full documentation into the system prompt for more detail"
+   ],
+   "answer": 2,
+   "explanation": "Too many similar options confuse tool selection, even when they all fit in context. Showing the agent only a relevant subset per task (tool search or routing), merging duplicates, and writing distinct descriptions reduce confusion and save tokens.",
+   "rationales": [
+    "Wrong: fitting more tools in context doesn't fix confusion between them.",
+    "Wrong: more randomness makes tool choice less reliable, not more.",
+    "Correct: fewer, clearer and relevant options improve selection accuracy and cut cost.",
+    "Wrong: more text adds noise and cost. The problem is too many choices, not too little detail."
+   ],
+   "interview_tip": "Discussing context engineering (what the model sees, and when) signals hands-on agent experience."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "No training on enterprise customer data by default",
+   "difficulty": "medium",
+   "question": "Large enterprise prospects keep asking your AI writing-assistant team: 'Will our documents be used to train your models?' Sales says this is blocking deals. What policy should you, as PM, push for?",
+   "options": [
+    "Train on customer data by default, because it improves the product for every customer",
+    "Don't train on enterprise data by default; back that with contract terms and clear retention controls, and offer an opt-in programme",
+    "Anonymise the data and train on it without mentioning it, since anonymised data carries no risk",
+    "Keep the training policy vague in the terms of service so you have flexibility later"
+   ],
+   "answer": 1,
+   "explanation": "For B2B AI, data control is a buying criterion. Enterprises need assurance their confidential data won't leak into shared models. Not training by default, with contractual guarantees and retention settings, removes the blocker. An explicit opt-in still lets willing customers contribute data.",
+   "rationales": [
+    "Wrong: default training on confidential data is a deal-breaker for most enterprises and a legal risk.",
+    "Correct: it meets enterprise trust requirements while keeping a consent-based path to improvement.",
+    "Wrong: anonymisation is often reversible, and training without disclosure destroys trust if discovered.",
+    "Wrong: vague terms are exactly what procurement and security teams reject."
+   ],
+   "interview_tip": "AI PM interviews often probe trust and data governance. Tying the policy to revenue (unblocking deals) shows business judgement."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Embedding AI inline in the workflow vs a separate chat panel",
+   "difficulty": "medium",
+   "question": "Your spreadsheet product launched an AI chat sidebar. Few people use it after the first week, even though people who try it rate the answers well. What's the most promising next step?",
+   "options": [
+    "Upgrade to a more capable model so the answers become impressive enough to drive repeat use",
+    "Bring AI into the workflow at moments of need, such as suggesting a formula as the user types or offering to clean a messy column",
+    "Run an email campaign reminding users that the AI sidebar exists",
+    "Add more example prompts inside the sidebar so users know what to ask"
+   ],
+   "answer": 1,
+   "explanation": "Quality isn't the issue: users rate the answers well. The problem is that a separate chat panel makes users switch context and think up a prompt. Contextual, inline suggestions put AI where the work happens, which tends to drive far more repeat use.",
+   "rationales": [
+    "Wrong: answer quality is already rated well, so a better model doesn't fix the adoption barrier.",
+    "Correct: inline help at the moment of need removes the context switch and the blank-prompt problem.",
+    "Wrong: awareness isn't the problem. People tried it and didn't come back.",
+    "Wrong: example prompts help a little, but users still have to leave their work to use the panel."
+   ],
+   "interview_tip": "Diagnosing why AI features go unused (workflow fit, not model quality) is a common AI PM question. Use the data given to rule out causes."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Single-agent vs multi-agent architecture trade-off",
+   "difficulty": "hard",
+   "question": "An engineer proposes six specialised AI agents (planner, researcher, writer, critic, formatter, router) that pass messages to each other to answer customer support tickets. A single agent with tools hasn't been tried yet. What's the best PM response?",
+   "options": [
+    "Approve it: specialised agents always beat a single generalist agent",
+    "Reject multi-agent designs entirely, because they're too risky for customer-facing products",
+    "Ask for a single agent with tools as the baseline, and add agents only where evals show parallelism or specialisation gains outweigh the added cost, latency and handoff errors",
+    "Approve it, but give each agent its own separate model provider to spread the risk"
+   ],
+   "answer": 2,
+   "explanation": "Multi-agent systems add coordination overhead: more tokens, more latency, and information lost at each handoff. They pay off for parallel or clearly separable work, such as broad research. Start with the simplest design that could work, measure it, and add complexity only when evals show it helps.",
+   "rationales": [
+    "Wrong: 'always' is false. Multi-agent designs often cost more and lose context between agents.",
+    "Wrong: a blanket ban ignores the cases where parallel agents help.",
+    "Correct: it sets a simple baseline and requires evidence before adding complexity.",
+    "Wrong: multiple providers add integration complexity and don't address whether the design is needed."
+   ],
+   "interview_tip": "Interviewers value 'start simple, measure, then add complexity'. Naming the specific costs (tokens, latency, handoff loss) shows depth."
+  },
+  {
+   "topic": "Technology",
+   "concept": "GraphQL to reduce over-fetching across endpoints",
+   "difficulty": "easy",
+   "question": "A mobile app's home screen makes seven REST calls, and each returns many fields the screen doesn't use. This slows the app on poor networks. Which approach most directly addresses both problems?",
+   "options": [
+    "A GraphQL endpoint, where the client requests exactly the fields it needs in a single query",
+    "Increasing the server's CPU and memory so each REST call responds faster",
+    "Adding more REST endpoints, one for each field the client might need",
+    "Switching the database from relational to a document store"
+   ],
+   "answer": 0,
+   "explanation": "GraphQL lets the client describe exactly the data it needs, across multiple resources, in one request. That removes both the extra round trips and the unused fields. A dedicated aggregation endpoint (backend-for-frontend) is a similar alternative.",
+   "rationales": [
+    "Correct: one request, only the needed fields. It fixes both round trips and payload size.",
+    "Wrong: faster servers don't reduce network round trips or payload size on slow mobile networks.",
+    "Wrong: more endpoints means more round trips, which makes the problem worse.",
+    "Wrong: the database type doesn't change what the API sends to the client."
+   ],
+   "interview_tip": "Technical-fluency questions reward linking the technology to the user problem (slow screens on poor networks), not just defining terms."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Soft delete vs hard delete for erasure requests",
+   "difficulty": "medium",
+   "question": "Users of your Indian fintech app can now request account deletion under the DPDP Act. Engineering proposes setting an 'is_deleted' flag on the user record. What's the main issue a PM should raise?",
+   "options": [
+    "None: a deletion flag is the industry standard and fully meets erasure requirements",
+    "The flag adds a column, which will noticeably slow every database query",
+    "Users won't be able to log back in, so the team should keep the account active instead",
+    "A soft delete keeps the personal data, so you also need real deletion or anonymisation across systems, keeping only what the law requires you to retain"
+   ],
+   "answer": 3,
+   "explanation": "Soft delete hides a record but keeps the data, which doesn't satisfy an erasure request. You need hard deletion or anonymisation across primary databases, analytics copies, and third-party processors, with backups expiring on schedule. Data you're legally required to keep (such as financial transaction records) should be documented and retained only as long as required.",
+   "rationales": [
+    "Wrong: a flag hides data but doesn't erase it, so it doesn't satisfy erasure obligations on its own.",
+    "Wrong: one boolean column has negligible performance impact. That isn't the real issue.",
+    "Wrong: ignoring a valid deletion request isn't an option. Not being able to log back in is the intended outcome.",
+    "Correct: it separates hiding data from erasing it and accounts for both copies of the data and legal retention."
+   ],
+   "interview_tip": "Raising privacy-by-design and data-lifecycle questions unprompted signals maturity, especially for fintech and regulated products."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Channel-product fit",
+   "difficulty": "easy",
+   "question": "A self-serve invoicing tool for freelancers costs ₹499 a month. A new growth hire proposes hiring a field sales team to sign up users door to door. What's the main problem with this plan?",
+   "options": [
+    "Field sales only works for consumer products, not B2B tools",
+    "Freelancers prefer email marketing, so any other channel will fail",
+    "The revenue per customer can't cover field-sales acquisition costs; the channel must fit the product's price and model",
+    "Field sales would grow too fast for the support team to handle"
+   ],
+   "answer": 2,
+   "explanation": "Channel-product fit means the acquisition channel must match the product's economics and buying motion. A ₹499-a-month tool can't support the cost of in-person sales. It needs low-cost, scalable channels like SEO, referrals, or partnerships with freelancer platforms.",
+   "rationales": [
+    "Wrong: field sales is common in B2B, but for high-value deals.",
+    "Wrong: overgeneralising one channel preference doesn't address the real economic mismatch.",
+    "Correct: acquisition cost has to stay well below customer lifetime value, which field sales can't do at this price.",
+    "Wrong: growing too fast isn't the realistic risk. Losing money on each customer is."
+   ],
+   "interview_tip": "In growth questions, checking channel economics against price (CAC vs LTV) quickly shows commercial judgement."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "OpenAI GPT-4o and GPT-4.1 API shutdown notice (Oct 2026)",
+   "difficulty": "medium",
+   "question": "On 14 October 2026, OpenAI announced that GPT-4o, GPT-4o mini, GPT-4.1 and GPT-4.1 mini will be removed from its API on 14 January 2027, with gpt-6-luna as the recommended replacement. Your product's support bot runs on a fine-tuned GPT-4.1 mini. What should you do?",
+   "options": [
+    "Nothing yet: fine-tuned models are exempt from base-model shutdowns",
+    "Swap the model name to gpt-6-luna in production the week before the deadline",
+    "Ask OpenAI for an extension and plan the migration once a final date is confirmed",
+    "Start now: run your eval set against gpt-6-luna and alternatives, re-tune or re-prompt, and ship through a staged rollout well before 14 January"
+   ],
+   "answer": 3,
+   "explanation": "OpenAI's deprecations page says fine-tuned models follow their base model's shutdown schedule, so the bot will stop working on 14 January 2027. A model swap changes behaviour, so treat it like a launch: benchmark replacements on your evals, re-tune or adjust prompts, check cost and latency, and roll out in stages with time to fix regressions.",
+   "rationales": [
+    "Wrong: OpenAI states fine-tuned versions follow the same shutdown schedule as their base models.",
+    "Wrong: a last-minute swap without evals risks quality regressions and leaves no time to fix them.",
+    "Wrong: the shutdown date has been announced, and waiting wastes the migration window.",
+    "Correct: it treats the deprecation as a planned migration with evals and a staged rollout, well before the deadline."
+   ],
+   "interview_tip": "AI PM interviewers increasingly ask how you manage model dependencies. Talk about evals, pinned versions and migration plans, not just 'upgrade to the newest model'.",
+   "source": "https://developers.openai.com/api/docs/deprecations"
+  }
+ ]
+}

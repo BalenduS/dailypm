@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-20",
+   "theme": "Model deprecations, quiet dissent & designing for the moment of need",
+   "count": 30
+  },
+  {
    "date": "2026-10-19",
    "theme": "Second-order effects, hidden biases & agentic commerce",
    "count": 30
