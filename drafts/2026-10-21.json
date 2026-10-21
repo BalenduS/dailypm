@@ -1,0 +1,498 @@
+{"date": "2026-10-21", "theme": "Risk-adaptive agents, all-in pricing & mechanisms over one-offs", "questions": [
+ {"topic": "Product Sense", "concept": "Solving the end-to-end journey beyond the core transaction", "difficulty": "hard",
+  "question": "You're the PM for a navigation app in Indian metros. Research shows drivers reach the destination on time but then spend 15-20 minutes hunting for parking, and many blame the app for 'wrong ETAs'. Leadership asks for one bet to improve satisfaction. What's the strongest direction?",
+  "options": [
+   "Extend the journey past arrival: factor parking time into ETAs and route users to likely parking near the destination",
+   "Improve traffic-prediction accuracy so the drive-time portion of the ETA becomes even more precise than it already is",
+   "Add a post-trip rating prompt so the team collects more structured data about why users are dissatisfied with ETAs",
+   "Partner with ride-hailing apps so users who dislike parking can switch to a cab from inside the navigation flow"
+  ],
+  "answer": 0,
+  "explanation": "The user's job isn't 'drive to the pin'. It's 'get to my appointment on time', and the journey ends when they're parked and walking in. The pain sits just past where the product thinks its job ends. Extending the ETA and routing to cover parking fixes the real gap, and it uses data the app is well placed to gather (where trips actually end and how long people circle).",
+  "rationales": [
+   "Correct: it redefines the product's boundary around the user's real goal and attacks the 15-20 minute gap that drives the complaints.",
+   "Wrong: the drive-time ETA is already accurate. Making it more precise optimises the part that works and ignores where the time is lost.",
+   "Wrong: the research already names the cause. More feedback delays action without changing the experience.",
+   "Wrong: it sends users out of the product for a problem the product can address, and many people chose to drive for reasons a cab doesn't meet."
+  ],
+  "interview_tip": "In product-sense rounds, map the full journey and look just past the step the product owns. Strong candidates reframe the user's goal ('arrive on time') before they brainstorm."},
+ {"topic": "Product Sense", "concept": "All-in pricing vs drip pricing at checkout", "difficulty": "medium",
+  "question": "An Indian D2C skincare brand shows a low product price, then adds shipping, a COD fee and a 'platform fee' on the final checkout step. Cart abandonment at that step is 70%. Which change is most likely to reduce abandonment without simply cutting margin?",
+  "options": [
+   "Show the all-in price, including likely fees, on the product page and in the cart before the final step",
+   "Keep the fees but move them into smaller grey text so the final total feels less jarring to the buyer",
+   "Add a countdown timer on the checkout page so buyers feel urgency and complete the order before reconsidering",
+   "Remove every fee and absorb all of the cost, since any visible fee will always cause buyers to abandon the cart"
+  ],
+  "answer": 0,
+  "explanation": "Abandonment at the last step is often driven less by the price itself than by a surprise: the total breaks the expectation set earlier and feels like a bait-and-switch. Showing the all-in price early lets buyers decide with accurate information, so the ones who reach checkout already accept the total. It protects margin and trust, and drip pricing is increasingly treated as a dark pattern by regulators, including India's guidelines on dark patterns.",
+  "rationales": [
+   "Correct: removing the surprise fixes the cause of last-step abandonment while keeping the fees that fund delivery and COD.",
+   "Wrong: hiding fees makes the surprise worse when buyers notice, and it moves further toward a deceptive pattern.",
+   "Wrong: false urgency doesn't fix the broken expectation. It adds pressure and may increase post-purchase regret and returns.",
+   "Wrong: it confuses the cause with the cost. Buyers accept fees they see upfront, so absorbing everything gives away margin unnecessarily."
+  ],
+  "interview_tip": "Interviewers like candidates who separate 'price too high' from 'expectation violated'. Mentioning trust and regulatory risk shows mature judgement."},
+ {"topic": "Product Sense", "concept": "Verification signals to build trust in user-generated listings", "difficulty": "hard",
+  "question": "A rental-housing marketplace finds that renters often don't contact listings because they suspect fake photos and broker spam. Landlords are frustrated by low inquiries. Which solution best addresses the core problem?",
+  "options": [
+   "Verify listings (owner ID and in-app or on-site photo capture), show a clear 'verified' badge, and rank verified listings higher",
+   "Let renters message landlords anonymously so they feel safer reaching out to any listing, verified or not",
+   "Require every renter to pay a small fee before contacting a listing, so landlords only receive serious inquiries",
+   "Run a brand campaign telling renters the platform takes fraud seriously and encouraging them to report fakes"
+  ],
+  "answer": 0,
+  "explanation": "The constraint is renter trust: the demand side doesn't believe what it sees, so it won't act. Verification creates a credible signal at the point of decision. Ranking verified listings higher also gives landlords a reason to get verified, so supply quality improves over time. Good trust solutions make the signal costly to fake and visible where users decide.",
+  "rationales": [
+   "Correct: it creates a hard-to-fake trust signal where renters decide, and it rewards landlords for verifying.",
+   "Wrong: anonymity reduces renters' exposure, but it doesn't make listings more believable, which is the actual blocker.",
+   "Wrong: it adds friction for the side that's already hesitant and would reduce inquiries further. It filters renters, not fake listings.",
+   "Wrong: claims without a visible mechanism don't change what renters believe, and reporting puts the burden on victims after the fact."
+  ],
+  "interview_tip": "For marketplace prompts, name which side's trust is the bottleneck. A strong answer designs a signal that's costly to fake and builds in an incentive for supply to adopt it."},
+ {"topic": "Product Sense", "concept": "Small-group accountability over public leaderboards", "difficulty": "medium",
+  "question": "A fitness app wants to improve week-4 retention for beginners. The team proposes a public global leaderboard. Research shows beginners feel intimidated comparing themselves with experienced users. What's the better social mechanic?",
+  "options": [
+   "Small accountability groups or buddies at a similar level who see each other's check-ins and nudge each other",
+   "A global leaderboard that shows only the top 100 users, so beginners aren't shown how far behind they are",
+   "Badges for daily streaks shown privately to each user, with no social element in order to avoid comparison",
+   "A public feed of everyone's workouts so beginners can draw inspiration from what advanced users achieve"
+  ],
+  "answer": 0,
+  "explanation": "Social motivation works when the comparison feels attainable and the relationship feels personal. Small peer groups create mutual commitment ('my buddy will notice if I skip') without the discouragement of an unbeatable leaderboard. Matching people by level keeps the comparison fair, which matters most for beginners.",
+  "rationales": [
+   "Correct: personal accountability at a similar level motivates beginners without intimidating them.",
+   "Wrong: it hides the gap but still frames the experience as competing with elites, which offers beginners nothing to aim for.",
+   "Wrong: private streaks avoid intimidation but drop the social accountability that tends to drive retention.",
+   "Wrong: it showcases exactly the comparison research says intimidates beginners."
+  ],
+  "interview_tip": "When a prompt offers 'add social', segment the user first. Showing you'd design differently for beginners than for power users signals strong product sense."},
+ {"topic": "Metrics", "concept": "Step-wise vs cumulative funnel conversion", "difficulty": "easy",
+  "question": "A signup funnel has 10,000 visitors, 4,000 who start signup, 3,000 who verify their phone and 1,500 who finish onboarding. What is the step conversion from phone verification to finished onboarding?",
+  "options": ["50%", "15%", "37.5%", "75%"],
+  "answer": 0,
+  "explanation": "Step conversion divides a step by the step immediately before it: 1,500 / 3,000 = 50%. Cumulative (top-of-funnel) conversion divides by the first step: 1,500 / 10,000 = 15%. Both are useful. Step rates show where the leak is, and cumulative rates show the overall yield. Mixing them up in a review leads to wrong conclusions about which step to fix.",
+  "rationales": [
+   "Correct: 1,500 finished out of the 3,000 who verified.",
+   "Wrong: 15% is the cumulative conversion from visitor to finished onboarding, not the step rate.",
+   "Wrong: 37.5% is finished onboarding divided by signup starts (1,500 / 4,000), which skips the verification step.",
+   "Wrong: 75% is the step rate from signup start to phone verification (3,000 / 4,000)."
+  ],
+  "interview_tip": "State the denominator out loud whenever you quote a conversion rate. Interviewers notice candidates who are precise about step versus cumulative rates."},
+ {"topic": "Metrics", "concept": "Normalising a count metric by exposure", "difficulty": "medium",
+  "question": "After a festive-sale launch, support tickets about payments jumped 40% week over week. The payments lead wants to roll back the new checkout. Orders also rose 60% that week. What should you look at first?",
+  "options": [
+   "Payment tickets per 1,000 orders (or per payment attempt), compared with the prior weeks",
+   "Total ticket volume across all categories, to see whether payments tickets are part of a wider spike",
+   "Customer satisfaction scores on resolved payment tickets, to see whether support handled them well",
+   "Ticket counts from the five largest merchants, since big accounts are most likely to escalate issues"
+  ],
+  "answer": 0,
+  "explanation": "A raw count grows when exposure grows. With orders up 60% and tickets up 40%, tickets per order actually fell (1.4 / 1.6 ≈ 0.875, about 12% lower). Normalising by exposure separates 'more activity' from 'worse experience' before anyone makes a costly rollback call.",
+  "rationales": [
+   "Correct: the rate shows whether the experience got worse. Here it suggests checkout may have improved.",
+   "Wrong: total volume is still an unnormalised count, so it can't tell you whether payments got worse per order.",
+   "Wrong: CSAT measures support handling, not whether the new checkout creates more problems per order.",
+   "Wrong: a segment cut can help later, but without normalising, big merchants' counts are just as misleading."
+  ],
+  "interview_tip": "In root-cause questions, ask 'what's the denominator?' before you diagnose. It's one of the fastest ways to show analytical maturity."},
+ {"topic": "Metrics", "concept": "Non-response bias in optional ratings", "difficulty": "hard",
+  "question": "A food-delivery app changed post-order ratings from a mandatory prompt to an optional one. The average rating rose from 4.1 to 4.5 and the ops team is celebrating improved quality. What's the most likely explanation, and what should you check?",
+  "options": [
+   "The respondent pool changed, since fewer and more self-selected users rate now. Check the response rate and compare complaints and refunds per order",
+   "Customers are happier because removing the mandatory prompt reduced annoyance, so the 4.5 reflects real satisfaction gains",
+   "Restaurants improved their quality during the same period, so compare the average prep time before and after the change",
+   "The rating scale is now more lenient, so recalibrate it by subtracting 0.4 from all ratings collected after the change"
+  ],
+  "answer": 0,
+  "explanation": "When responding becomes optional, who answers changes. The average now reflects a different, self-selected group, often the very satisfied or very motivated. The change in the metric may come entirely from the change in measurement. Check the response rate and validate with metrics that didn't change definition, such as complaints, refunds or reorder rate per order.",
+  "rationales": [
+   "Correct: it identifies the change in sample composition and checks quality with measures whose definition stayed the same.",
+   "Wrong: it treats a measurement change as a behaviour change without evidence, which is the trap the question sets.",
+   "Wrong: possible in principle, but prep time is only a partial proxy, and it ignores the obvious confounder that coincided with the jump.",
+   "Wrong: an arbitrary offset assumes the bias is constant and known. You need to validate against independent metrics instead."
+  ],
+  "interview_tip": "When a metric jumps right after a change in how it's collected, suspect the measurement first. Naming selection or non-response bias and an independent validation metric is a strong signal."},
+ {"topic": "Metrics", "concept": "Revenue per visitor combines conversion and order value", "difficulty": "medium",
+  "question": "A Shopify store tests free shipping above ₹999. Conversion falls from 3.0% to 2.8%, while average order value rises from ₹800 to ₹950. Which single metric best captures whether the change made money per unit of traffic?",
+  "options": [
+   "Revenue per visitor (conversion × AOV), which moves from ₹24.0 to ₹26.6",
+   "Conversion rate, because fewer buyers means the change hurt the business",
+   "Average order value, because the threshold was designed to lift basket size",
+   "Number of orders above ₹999, since that's the behaviour the change targets"
+  ],
+  "answer": 0,
+  "explanation": "Conversion and AOV can move in opposite directions, so judging either alone misleads. Revenue per visitor combines them: 3.0% × ₹800 = ₹24.0 versus 2.8% × ₹950 = ₹26.6, an 11% gain. For profit you'd also subtract the shipping cost you now absorb (contribution per visitor), but RPV is the right first composite.",
+  "rationales": [
+   "Correct: it combines both effects per visitor and shows a net gain of about 11%.",
+   "Wrong: conversion ignores that each buyer now spends more, so it calls a revenue-positive change a loss.",
+   "Wrong: AOV ignores the lost buyers. It would look good even if conversion collapsed.",
+   "Wrong: it measures whether the mechanism works, not whether the business outcome improved."
+  ],
+  "interview_tip": "When two metrics move in opposite directions, propose the composite that reflects the business goal. Mentioning contribution margin as a next step shows depth."},
+ {"topic": "Experimentation", "concept": "Balanced 50/50 split maximises statistical power", "difficulty": "medium",
+  "question": "You have 200,000 eligible users for a two-arm test and want the most statistical power in a fixed time. A stakeholder wants a 90/10 split, with 10% in treatment, 'to reduce risk'. If the change is low-risk, what's the right guidance?",
+  "options": [
+   "Use 50/50: with a fixed total sample, a balanced split minimises the variance of the difference and gives the most power",
+   "Use 90/10: a smaller treatment group always gives more precise estimates because there's less noise to measure",
+   "Use 90/10: power depends only on the total sample size, so the split between arms doesn't matter",
+   "Use 70/30: an unbalanced split gives a better estimate of the control baseline, which raises power"
+  ],
+  "answer": 0,
+  "explanation": "The standard error of the difference depends on 1/n_control + 1/n_treatment. For a fixed total, that sum is smallest when the arms are equal. A 90/10 split behaves like a much smaller balanced test. Small treatment allocations make sense for risky changes during a ramp. For a low-risk change, they just make the test take longer.",
+  "rationales": [
+   "Correct: equal arms minimise the variance of the difference for a fixed total sample.",
+   "Wrong: smaller groups have more sampling noise, not less, so the estimate gets less precise.",
+   "Wrong: power depends on both arms. The smaller arm dominates the standard error.",
+   "Wrong: a very precise control baseline doesn't help if the treatment estimate is noisy. Balance is optimal."
+  ],
+  "interview_tip": "Interviewers test whether you can trade risk against speed. Say when you'd ramp with an unequal split (risky change) and when you'd go 50/50 (low risk, need power)."},
+ {"topic": "Experimentation", "concept": "Winsorizing heavy-tailed revenue metrics", "difficulty": "hard",
+  "question": "A B2B marketplace's test shows +9% revenue per user in treatment, but the confidence interval is huge. Analysis finds three wholesale buyers placed very large orders, and all three happen to be in treatment. What's the soundest next step?",
+  "options": [
+   "Re-analyse with a pre-registered cap (winsorizing at, say, the 99.9th percentile) and confirm the result holds without the outliers",
+   "Delete the three buyers from the dataset and report the remaining lift as the true effect of the change",
+   "Ship it: large buyers in treatment show the change attracts high-value customers, which is the goal",
+   "Discard revenue as a metric for this test and use only order counts, which are never affected by outliers"
+  ],
+  "answer": 0,
+  "explanation": "Revenue is heavy-tailed, so a few whales can create or hide a 'lift' by chance and inflate variance. Capping extreme values (winsorizing) at a threshold set in advance cuts variance and makes the estimate robust, while still counting those users. If the lift disappears once the outliers are capped, it was noise. Defining the rule ahead of time avoids cherry-picking after you've seen the data.",
+  "rationales": [
+   "Correct: a principled, pre-set cap reduces variance and tests whether the result depends on a few whales.",
+   "Wrong: deleting chosen users after seeing results is data dredging and can bias the estimate in either direction.",
+   "Wrong: with three users, landing in treatment is far more plausibly randomisation luck than a causal effect.",
+   "Wrong: order counts can help as a secondary metric, but dropping revenue entirely gives up the metric you care about."
+  ],
+  "interview_tip": "Mention variance reduction for skewed metrics (winsorizing, CUPED) and pre-registration. It shows you can tell a real lift from a whale-driven one."},
+ {"topic": "Estimation", "concept": "Installed-base service market sizing (elevator maintenance)", "difficulty": "medium",
+  "question": "Estimate the annual market for elevator maintenance contracts in residential buildings in the Mumbai metro area. Which order of magnitude is most reasonable?",
+  "options": ["About ₹25 crore", "About ₹250 crore", "About ₹2,500 crore", "About ₹25,000 crore"],
+  "answer": 1,
+  "explanation": "Mumbai metro has about 2 crore people, or about 45 lakh households at roughly 4.5 people each. Assume about half live in buildings with lifts: roughly 22 lakh households. At about 30 households per lift, that's about 75,000 lifts. An annual maintenance contract is roughly ₹30,000-40,000 per lift, so 75,000 × ₹35,000 ≈ ₹260 crore. The method matters: start from the installed base, apply a service rate and a price.",
+  "rationales": [
+   "Wrong: this implies under 10,000 lifts, far too few for a metro where much of the population lives in high-rises.",
+   "Correct: installed base (~75,000 lifts) × annual contract (~₹35,000) gives about ₹250 crore.",
+   "Wrong: this needs about 7 lakh lifts or ₹3.5 lakh per contract. Both are implausible for residential maintenance.",
+   "Wrong: this implies about 70 lakh lifts, more than one per household in the whole metro, which is impossible."
+  ],
+  "interview_tip": "For service markets, size the installed base first, then multiply by service frequency and price. Say your assumptions out loud and sanity-check the final number."},
+ {"topic": "Estimation", "concept": "Daily coffee sales at a major airport", "difficulty": "easy",
+  "question": "Estimate the number of cups of coffee sold per day across all outlets at Bengaluru's Kempegowda International Airport, which handles roughly 40 million passengers a year. Which is closest?",
+  "options": ["About 1,500", "About 12,000", "About 120,000", "About 500,000"],
+  "answer": 1,
+  "explanation": "40 million a year is about 110,000 passengers a day, roughly half of them departing (~55,000). Departing passengers have dwell time; assume about 20% buy coffee, so about 11,000 cups. Add a little for arriving passengers, people meeting arrivals and staff, and you land around 12,000-15,000 a day.",
+  "rationales": [
+   "Wrong: that's under 3% of departing passengers, far too low for a busy airport with long dwell times.",
+   "Correct: about 55,000 departures × about 20% buying, plus a small add-on for others, gives about 12,000.",
+   "Wrong: that's more than one cup per passenger per day, counting arrivals.",
+   "Wrong: that's more than four times the total daily passenger count."
+  ],
+  "interview_tip": "Use a known anchor (annual passengers) and split it into the segment that actually buys. Interviewers reward a clear funnel over a precise final number."},
+ {"topic": "Strategy", "concept": "Network effects saturate beyond a density threshold", "difficulty": "medium",
+  "question": "A ride-hailing app already has an average pickup time of 3 minutes in central Bengaluru. The team argues that adding 30% more drivers there will deepen its moat through network effects. What's the best critique?",
+  "options": [
+   "Network effects diminish beyond a density threshold; past ~3-minute pickups riders barely notice, so new supply adds little value",
+   "Network effects always grow linearly with users, so the 30% increase will produce a 30% stronger moat",
+   "Network effects only apply to social networks, so a ride-hailing marketplace can't benefit from them",
+   "More drivers will always reduce prices, so riders will switch to the app regardless of pickup times"
+  ],
+  "answer": 0,
+  "explanation": "Many marketplace network effects are asymptotic. Once supply density gives a good enough experience, more supply produces little extra user value, while drivers earn less because they're idle more. Competitors who reach the same threshold can match the experience, so the moat is shallower than it looks. Better bets are usually new zones still below the threshold, or other sources of advantage.",
+  "rationales": [
+   "Correct: it recognises that the value curve flattens once the experience is good enough, and that oversupply hurts drivers.",
+   "Wrong: value doesn't scale linearly here; marginal gains shrink once wait times are already short.",
+   "Wrong: marketplaces have strong cross-side network effects. The issue is saturation, not absence.",
+   "Wrong: price isn't automatically set by driver count, and idle drivers churn if their earnings fall."
+  ],
+  "interview_tip": "Strong strategy answers say not just 'network effects' but what shape they take: local vs global, saturating vs compounding. That nuance separates senior candidates."},
+ {"topic": "Strategy", "concept": "Jevons paradox in falling inference prices", "difficulty": "medium",
+  "question": "Model providers cut API prices by half. Your CFO expects the company's LLM bill to halve next quarter. Your AI features are popular but heavily rate-limited by cost. What's the most likely outcome to plan for?",
+  "options": [
+   "Total spend may stay flat or rise, because cheaper tokens unlock more usage, richer features and lifted limits",
+   "Spend will fall by exactly half, because the number of tokens used doesn't depend on price",
+   "Spend will fall by more than half, because cheaper models are also more efficient per token",
+   "Spend is unpredictable, so the team should freeze AI feature work until prices stabilise"
+  ],
+  "answer": 0,
+  "explanation": "This is the Jevons paradox: when a resource gets cheaper to use, total consumption often rises enough to offset the savings. If your features are limited by cost, a price cut lets you raise limits, use bigger contexts or add agentic steps, so total spend can stay flat or grow, ideally alongside more value. Plan the budget around unit economics (cost per successful task) and decide deliberately where to reinvest the savings.",
+  "rationales": [
+   "Correct: falling unit prices tend to expand usage, especially where demand was held back by cost.",
+   "Wrong: it assumes usage is fixed, but you're already rate-limiting precisely because of cost.",
+   "Wrong: price per token and efficiency per token are separate. There's no reason the bill would shrink further.",
+   "Wrong: freezing work forfeits the opportunity. The right move is to plan where the cheaper capacity goes."
+  ],
+  "interview_tip": "AI strategy rounds increasingly ask about cost curves. Naming Jevons and tying it to unit economics shows you think beyond the headline price."},
+ {"topic": "Strategy", "concept": "Managed marketplace vs open listing model", "difficulty": "medium",
+  "question": "You're launching a home-cleaning marketplace in Indian cities. Quality is inconsistent, jobs happen inside customers' homes, and customers judge the brand on every visit. Which marketplace model fits best at launch?",
+  "options": [
+   "A managed marketplace: vet and train workers, standardise pricing and quality, and take a higher share",
+   "An open listing site: let any worker list themselves and let customers browse profiles and choose",
+   "A classifieds model: charge workers a flat monthly fee to appear, with no involvement in transactions",
+   "A pure lead-generation model: sell customer contacts to cleaning agencies, who handle everything else"
+  ],
+  "answer": 0,
+  "explanation": "When quality varies widely, stakes are high (strangers in your home) and customers can't easily judge providers upfront, a managed model creates value by guaranteeing outcomes. That justifies a higher take rate and builds a brand that's harder to bypass. Open or lead-gen models suit low-risk, easy-to-evaluate services where curation adds little.",
+  "rationales": [
+   "Correct: curation and standardisation solve the trust and quality problem that defines this category.",
+   "Wrong: open listing pushes quality judgement onto customers, which fails when the provider is hard to evaluate and the stakes are high.",
+   "Wrong: it earns money without improving outcomes, so customers blame the platform for bad visits it doesn't control.",
+   "Wrong: it gives away the customer relationship and quality control, leaving no defensible position."
+  ],
+  "interview_tip": "Link the marketplace model to the characteristics of the service: risk, variance and how easy it is to evaluate. That shows structured strategic thinking rather than copying a well-known company."},
+ {"topic": "Execution", "concept": "Avoiding committed dates on an external roadmap", "difficulty": "medium",
+  "question": "Your B2B SaaS sales team wants a public roadmap with exact quarter-by-quarter delivery dates for 20 features so they can close deals. Engineering estimates are rough beyond the next 6 weeks. What's the best approach?",
+  "options": [
+   "Share themes and problems grouped by Now / Next / Later, commit dates only for near-term, high-confidence work, and label the rest as direction",
+   "Publish all 20 dates as requested, since sales needs certainty and engineering can adjust its plans to hit them later",
+   "Refuse to share any roadmap externally, because any forward-looking information creates a commitment risk",
+   "Publish dates padded by 50%, so the team has a buffer and customers aren't disappointed if work slips"
+  ],
+  "answer": 0,
+  "explanation": "External roadmaps turn into contractual promises in customers' minds. Dating uncertain work locks the team in and destroys trust when the dates slip. Communicating direction by horizon, with firm dates only where confidence is high, gives sales a credible story while keeping room to learn. It's honest about uncertainty without leaving sales empty-handed.",
+  "rationales": [
+   "Correct: it matches the level of commitment to confidence and still gives sales something useful.",
+   "Wrong: it creates promises the team can't reliably keep and turns the roadmap into a source of churn.",
+   "Wrong: it leaves sales with nothing and hurts deals. A roadmap that sets the right expectations is valuable.",
+   "Wrong: padded dates are still false precision. They mislead customers and can lead to missed or slowed work."
+  ],
+  "interview_tip": "Show you can serve sales without overcommitting. Phrases like 'match commitment to confidence' and 'roadmap as direction, not contract' land well."},
+ {"topic": "Execution", "concept": "Code freeze before a major launch", "difficulty": "easy",
+  "question": "A week before a big festive-sale launch, the team declares a code freeze. What's the main purpose?",
+  "options": [
+   "Stop non-critical changes so the release can be stabilised and tested, lowering the risk of new bugs at launch",
+   "Stop all engineering work so the team can rest before the high-traffic launch period begins",
+   "Ensure no bug fixes are made, even critical ones, so the tested build is exactly what ships",
+   "Give marketing time to finalise the launch campaign while engineering waits for their sign-off"
+  ],
+  "answer": 0,
+  "explanation": "A code freeze limits changes to the release branch, usually allowing only critical fixes through an approval path. Fewer changes mean fewer chances to introduce regressions just before a high-stakes, high-traffic moment, and testing time goes to the build that will actually ship.",
+  "rationales": [
+   "Correct: it reduces change-related risk and focuses testing on the shipping build.",
+   "Wrong: engineers keep working on testing, fixes and readiness. A freeze isn't a pause in work.",
+   "Wrong: critical fixes still go in, through an approval process. Blocking them would be more dangerous.",
+   "Wrong: a freeze is about software stability, not marketing timelines."
+  ],
+  "interview_tip": "Launch questions often probe risk management. Mentioning freezes, exception paths and rollback plans shows you've shipped at scale."},
+ {"topic": "Execution", "concept": "Decision log to prevent relitigating decisions", "difficulty": "easy",
+  "question": "Your distributed team keeps reopening decisions from three weeks ago (for example, 'why did we choose a web-first launch?'), which slows execution. What's the simplest effective fix?",
+  "options": [
+   "Keep a shared decision log recording each decision, its rationale, the options considered, the owner and the date",
+   "Hold a weekly all-hands meeting where every past decision is reviewed again to make sure everyone agrees",
+   "Ask the most senior person to approve every decision so nobody feels comfortable questioning them later",
+   "Stop documenting decisions, since documents go stale and people should simply trust the team's memory"
+  ],
+  "answer": 0,
+  "explanation": "Decisions get reopened when the context behind them is lost, especially across time zones and with new team members. A lightweight decision log captures what was decided, why, what was rejected and who owns it, so people can understand the reasoning and only reopen a decision when new information appears.",
+  "rationales": [
+   "Correct: preserving the rationale lets people understand decisions without re-debating them.",
+   "Wrong: re-reviewing every decision institutionalises the problem and wastes time.",
+   "Wrong: authority suppresses questions rather than answering them, and it bottlenecks decisions.",
+   "Wrong: memory is exactly what fails in distributed teams. Lightweight docs are the cure, not the problem."
+  ],
+  "interview_tip": "Execution answers that mention lightweight mechanisms (decision logs, DACI) show you can scale clarity without adding bureaucracy."},
+ {"topic": "Behavioural", "concept": "Fixing a recurring problem with a mechanism, not a one-off", "difficulty": "hard",
+  "question": "In an Amazon-style interview you're asked: 'Tell me about a time you solved a problem.' Your story: sales kept promising unbuilt features to customers. Which ending makes the answer strongest?",
+  "options": [
+   "You built a lightweight intake process with sales leadership: a request form, weekly triage and a committed-features list sales can quote. Promises of unbuilt features fell sharply the next quarter",
+   "You personally called each affected customer to apologise and explain the real timeline, which saved the accounts that quarter",
+   "You escalated to your VP, who told the sales team to stop making promises, and the issue went away for a while",
+   "You asked engineering to work extra sprints to build the promised features, so no customer was let down"
+  ],
+  "answer": 0,
+  "explanation": "Interviewers listening for ownership and 'insist on the highest standards' want to see that you fixed the system, not just the symptom. A mechanism (intake, triage, a quotable list) changes behaviour durably, works without you, and comes with a measurable result. Heroics or escalation solve the instance but leave the cause in place.",
+  "rationales": [
+   "Correct: it addresses the root cause with a repeatable mechanism built with the stakeholders, and it quantifies the outcome.",
+   "Wrong: admirable, but a one-off fix. The same problem recurs next quarter, which interviewers will probe.",
+   "Wrong: it outsources the solution to authority, the effect fades, and it shows little influence on your part.",
+   "Wrong: it rewards the bad behaviour, burns out the team and doesn't stop future overpromising."
+  ],
+  "interview_tip": "Amazon interviewers often ask 'what mechanism did you put in place?'. Ending stories with a durable system and a metric signals senior-level ownership."},
+ {"topic": "Behavioural", "concept": "Facilitating a technical disagreement with decision criteria", "difficulty": "hard",
+  "question": "Two senior engineers disagree strongly: one wants to build on the existing monolith, the other wants a new microservice. Both are technically credible and the debate has stalled for two weeks. As the PM, what's the best move?",
+  "options": [
+   "Get agreement on decision criteria first (time to ship, reliability, team ownership, reversibility), compare both options against them, and name a decision owner and a deadline",
+   "Pick the option you personally find more convincing, since the PM owns the product and must break ties quickly",
+   "Escalate to the engineering director right away and let them decide, since technical architecture is outside the PM's remit",
+   "Ask each engineer to build a full prototype of their approach over the next month and then compare the two"
+  ],
+  "answer": 0,
+  "explanation": "Debates between two credible options often stall because people are optimising for different unstated goals. Agreeing criteria first turns a clash of opinions into a structured comparison. The PM brings product context (deadlines, customer impact, reversibility), and naming an owner and a date ensures the decision actually gets made. The PM doesn't need to be the technical decider to unblock the team.",
+  "rationales": [
+   "Correct: it surfaces the underlying trade-offs, uses the PM's product context, and forces a timely decision with a clear owner.",
+   "Wrong: it overreaches on a technical call the PM isn't best placed to make and can damage trust with both engineers.",
+   "Wrong: escalating may be needed eventually, but doing it first skips the facilitation that usually resolves the deadlock.",
+   "Wrong: a month of double work is costly. Time-boxed spikes on the key unknowns would be more proportionate."
+  ],
+  "interview_tip": "Show you can lead without authority on technical decisions: frame the criteria, add product context, and make sure an owner decides by a set date."},
+ {"topic": "Behavioural", "concept": "Reflecting on lessons learned in behavioural answers", "difficulty": "hard",
+  "question": "After you tell a story about a successful launch, the interviewer asks: 'What would you do differently?' Which response is strongest?",
+  "options": [
+   "Name a specific decision you'd change (for example, involving support two weeks earlier), explain its cost, and say how you've applied that lesson since",
+   "Say you wouldn't change anything, since the launch hit its goals and that shows confidence in your judgement",
+   "Say you'd have worked harder and longer hours to reduce the last-minute stress the team felt before launch",
+   "Mention that other teams caused the delays, and say you'd push them harder next time to deliver on schedule"
+  ],
+  "answer": 0,
+  "explanation": "This question tests self-awareness and whether you learn. A strong answer is specific, admits a real cost, and shows the lesson turned into changed behaviour on later work. Generic answers ('work harder') or deflection signal low reflection, and 'nothing' can come across as a lack of self-awareness.",
+  "rationales": [
+   "Correct: a specific decision, a candid cost and evidence that you applied the lesson shows growth.",
+   "Wrong: even successful projects have lessons. Claiming none reads as defensive or unreflective.",
+   "Wrong: effort isn't a lesson about judgement or process, and it hints at an unsustainable way of working.",
+   "Wrong: blaming others undercuts ownership, which is exactly what the follow-up is probing."
+  ],
+  "interview_tip": "Prepare one concrete 'what I'd change' for each story you plan to tell. Interviewers at Amazon and Meta almost always probe this, and a specific answer shows real ownership."},
+ {"topic": "AI Product", "concept": "Non-determinism at temperature zero", "difficulty": "medium",
+  "question": "Your team set temperature to 0 for an LLM feature that classifies support tickets, expecting identical outputs for identical inputs. QA still sees occasional different labels for the same ticket. What's the best explanation and response?",
+  "options": [
+   "Temperature 0 reduces randomness but doesn't guarantee determinism (batching, floating-point and backend changes can vary outputs); design for it with evals, constrained outputs and tolerance",
+   "The model must be broken, because temperature 0 always guarantees identical outputs; file a bug with the provider",
+   "QA is sending slightly different inputs without realising; once the inputs are identical the outputs will always match",
+   "Raise the temperature, because a higher temperature makes the model's outputs more stable across repeated calls"
+  ],
+  "answer": 0,
+  "explanation": "Greedy decoding at temperature 0 is close to deterministic, but in practice serving infrastructure (batching, parallel floating-point arithmetic, model or hardware updates) can still produce occasional differences, especially on borderline cases. Product teams should treat outputs as probabilistic: constrain them to a fixed label set, measure consistency in evals, and route low-confidence cases to review.",
+  "rationales": [
+   "Correct: it explains the real-world sources of variance and offers product-level ways to manage them.",
+   "Wrong: it's a common misconception. Temperature 0 isn't a hard guarantee of determinism in hosted serving.",
+   "Wrong: it assumes the variance must come from inputs, which skips the known infrastructure-level causes.",
+   "Wrong: higher temperature increases randomness and makes outputs less stable."
+  ],
+  "interview_tip": "AI PM interviews check whether you treat LLMs as probabilistic systems. Talking about consistency metrics and fallbacks signals production experience."},
+ {"topic": "AI Product", "concept": "Permission-aware retrieval in enterprise RAG", "difficulty": "hard",
+  "question": "You're launching an internal AI assistant that answers questions from the company's documents. In beta, an intern's question surfaced a summary of a confidential HR document they couldn't normally open. What's the right fix?",
+  "options": [
+   "Enforce document-level access controls at retrieval time, so only chunks the asking user is allowed to see are retrieved and passed to the model",
+   "Add a system prompt instructing the model never to reveal confidential information to users without the right access",
+   "Remove all HR documents from the index permanently, since HR is the only department with sensitive information",
+   "Show a disclaimer that answers may contain confidential data and ask users to report any leaks they notice"
+  ],
+  "answer": 0,
+  "explanation": "If confidential content reaches the model's context, no prompt can reliably stop it leaking. The fix belongs at retrieval: filter the index by the user's existing permissions (synced from the source systems) so the model only sees what that user could already access. That makes the assistant respect the organisation's existing access model by construction.",
+  "rationales": [
+   "Correct: it prevents unauthorised content from ever reaching the model, which is the only robust control.",
+   "Wrong: prompts are soft guidance. The model can't know who is allowed to see what, and the instruction can be bypassed.",
+   "Wrong: it's overly blunt and incomplete. Finance, legal and leadership documents carry the same risk.",
+   "Wrong: it makes users responsible for a security failure and leaves the leak in place."
+  ],
+  "interview_tip": "For enterprise AI, interviewers want to hear that security is enforced in the system architecture, not in prompts. 'Retrieve only what the user is allowed to see' is the key phrase."},
+ {"topic": "AI Product", "concept": "Progress visibility for long-running agent tasks", "difficulty": "easy",
+  "question": "Your AI research agent takes 3-5 minutes to finish a task. Many users abandon it after about 40 seconds, thinking it has frozen. What's the best first fix?",
+  "options": [
+   "Show live progress: the steps the agent is taking, sources it has found, and a rough time estimate",
+   "Show a generic spinner with the message 'Please wait, this may take a while' until the task finishes",
+   "Cut the agent's steps so it always finishes within 40 seconds, even if answer quality drops a lot",
+   "Send an email when the task is complete and hide the agent's work from users until then"
+  ],
+  "answer": 0,
+  "explanation": "When work is invisible, waiting feels longer and users assume something failed. Showing the agent's steps (searching, reading three sources, drafting) makes the wait legible, builds trust in the result and lets users step in if it's going off track. It keeps the quality that justifies the longer runtime.",
+  "rationales": [
+   "Correct: visible progress reduces perceived wait time and shows the agent is doing real work.",
+   "Wrong: a static spinner gives no evidence of progress, which is why users assume it has frozen.",
+   "Wrong: it sacrifices the quality users came for in order to fix a perception problem.",
+   "Wrong: it can complement visible progress but hides the work, and many users want to watch or redirect the agent."
+  ],
+  "interview_tip": "Agent UX questions are common now. Mention transparency, interruptibility and expectation-setting to show you design for long-running AI work."},
+ {"topic": "AI Product", "concept": "Session-level success metrics for multi-turn assistants", "difficulty": "medium",
+  "question": "Your AI shopping assistant's turn-level metric (the share of responses rated helpful) is 85%. Yet only 30% of conversations end with the user finding what they wanted. What's the best measurement change?",
+  "options": [
+   "Make a session-level outcome (did the user complete their goal?) the primary metric, and keep turn-level quality as a diagnostic",
+   "Keep the turn-level metric as primary, since a high share of helpful responses must eventually produce good outcomes",
+   "Track the number of turns per conversation and aim to increase it, since longer conversations mean more engagement",
+   "Focus on raising the turn-level rating from 85% to 95%, since that will mechanically raise the session success rate"
+  ],
+  "answer": 0,
+  "explanation": "Users judge an assistant on whether it got them to their goal. Each turn can look fine while the conversation as a whole fails: it loops, misses context or never converges. Session-level success (task completion, purchase, resolved query) captures that. Turn-level ratings stay useful for finding which kinds of turns break down.",
+  "rationales": [
+   "Correct: it aligns the primary metric with the user's goal while keeping turn metrics as diagnostics.",
+   "Wrong: the 85% versus 30% gap is the evidence that good turns don't add up to good outcomes.",
+   "Wrong: more turns may mean the assistant is struggling. It isn't evidence of success.",
+   "Wrong: improving individual turns won't necessarily fix failures that live in the flow of the conversation."
+  ],
+  "interview_tip": "For AI assistant metrics, distinguish turn-level quality from task-level success. Choosing an outcome metric as primary is what interviewers look for."},
+ {"topic": "AI Product", "concept": "Warm handoff from AI to human support", "difficulty": "easy",
+  "question": "A WhatsApp support bot for an Indian D2C brand escalates to a human agent when it can't help. Customers complain they have to repeat everything. What's the best fix?",
+  "options": [
+   "Pass the conversation history, a short AI-written summary and order details to the agent, so they can pick up immediately",
+   "Make the bot try harder before escalating, so fewer customers reach human agents in the first place",
+   "Ask customers to summarise their problem again in one message when they reach the human agent",
+   "Give human agents a script reminding them to apologise for making customers repeat their issue"
+  ],
+  "answer": 0,
+  "explanation": "A good AI-to-human handoff carries context with it. Giving the agent the transcript, a summary and the relevant order data removes the most frustrating part of escalation and shortens handling time. The AI adds value even when it can't solve the issue itself.",
+  "rationales": [
+   "Correct: it removes the need for customers to repeat themselves and speeds up resolution.",
+   "Wrong: delaying escalation for issues the bot can't solve just adds frustration before the same repetition.",
+   "Wrong: it formalises the exact complaint customers are making.",
+   "Wrong: apologising doesn't fix the cause. Customers still have to repeat everything."
+  ],
+  "interview_tip": "When designing AI support, show you think about the failure path: what happens when the AI can't help is often what decides overall satisfaction."},
+ {"topic": "Technology", "concept": "SQL injection and parameterized queries", "difficulty": "easy",
+  "question": "A security review finds that your search feature builds database queries by pasting user input directly into the SQL string. What's the standard fix?",
+  "options": [
+   "Use parameterized queries (prepared statements), so user input is always treated as data rather than as SQL code",
+   "Hide the search box from users who aren't logged in, so only trusted customers can submit queries",
+   "Encrypt the database at rest, so attackers can't read data even if they manage to inject queries",
+   "Limit search input to 20 characters, so attackers don't have enough room to write a malicious query"
+  ],
+  "answer": 0,
+  "explanation": "SQL injection happens when input is mixed into query code, letting attackers change what the query does. Parameterized queries separate the code from the data, so input can never be executed as SQL. It's the standard defence, and it sits alongside input validation and least-privilege database accounts.",
+  "rationales": [
+   "Correct: it removes the vulnerability at its root by never treating input as code.",
+   "Wrong: logged-in users can still be attackers, and the vulnerability remains.",
+   "Wrong: encryption at rest protects stolen disks, not queries run through the live application.",
+   "Wrong: short payloads can still be dangerous, and length limits are trivial to work around."
+  ],
+  "interview_tip": "You don't need to code, but naming the standard fix for common vulnerabilities shows the technical fluency that helps PMs earn engineers' trust."},
+ {"topic": "Technology", "concept": "Atomic database transactions", "difficulty": "medium",
+  "question": "In a wallet app, transferring money debits the sender and credits the receiver in two steps. A server crash occasionally debits the sender without crediting the receiver. What's the right technical fix to request?",
+  "options": [
+   "Wrap both steps in a single atomic transaction, so either both changes commit or neither does",
+   "Add a nightly job that finds missing credits and fixes them by adding money to the receiver's account",
+   "Credit the receiver first and debit the sender second, so the customer complaints fall on the sender instead",
+   "Add more servers behind the load balancer so crashes become less likely to interrupt a transfer"
+  ],
+  "answer": 0,
+  "explanation": "Atomicity (the 'A' in ACID) guarantees that a group of operations succeeds or fails as a unit. For a transfer, a database transaction ensures there's never a state where money has left one account without arriving in the other. Reconciliation jobs are a useful safety net but don't stop the inconsistent state.",
+  "rationales": [
+   "Correct: atomic transactions remove the half-finished state entirely.",
+   "Wrong: it cleans up after the fact, leaving hours of wrong balances, and it's error-prone.",
+   "Wrong: it just moves the inconsistency, which could now create money out of nothing.",
+   "Wrong: crashes still happen; reducing their frequency doesn't remove the partial-write bug."
+  ],
+  "interview_tip": "For fintech or commerce products, know ACID basics. Explaining why atomicity matters for money shows you understand the stakes of data correctness."},
+ {"topic": "Growth", "concept": "Product-embedded virality via 'Made with' attribution", "difficulty": "easy",
+  "question": "A free tool for building WhatsApp catalogs and order pages for small businesses wants low-cost acquisition. Every customer of those businesses sees the order page. Which growth tactic best fits?",
+  "options": [
+   "Add a subtle 'Made with [tool]' link on free-tier pages, so every buyer exposure doubles as a chance to acquire another merchant",
+   "Buy search ads on generic keywords like 'online store', since paid search reliably scales for every product",
+   "Offer every new merchant a cash bonus for signing up, funded from the marketing budget for the year",
+   "Run a brand campaign on television to build awareness among small-business owners across India"
+  ],
+  "answer": 0,
+  "explanation": "When the product's output is seen by people outside the user base, the output itself can be a distribution channel. Attribution on free-tier pages turns each merchant's customers, some of whom run businesses themselves, into potential acquisitions at almost no cost. This is how products like Calendly and Typeform grew. Keeping it on the free tier also gives merchants a reason to upgrade.",
+  "rationales": [
+   "Correct: it uses the product's natural exposure to new audiences as a near-free acquisition loop.",
+   "Wrong: generic keywords are expensive and competitive, and they ignore the built-in channel the product already has.",
+   "Wrong: cash bonuses attract low-intent signups and don't create a loop that compounds.",
+   "Wrong: TV is expensive and poorly targeted for an early-stage tool with a natural viral channel."
+  ],
+  "interview_tip": "In growth questions, look for loops built into how the product is used before reaching for paid channels. Naming the loop and the incentive to upgrade is a strong signal."},
+ {"topic": "Current Events", "concept": "Risk-adaptive permissions for enterprise AI agents (Microsoft, Oct 2026)", "difficulty": "medium",
+  "question": "On 19 October 2026, Microsoft announced new controls for Microsoft 365 E7 that extend Project Perception to the AI agents companies run internally, scoring each agent for risk and adjusting its access. Which design principle best describes the approach?",
+  "options": [
+   "Graduated responses tied to risk: grant permissions per task, drop to read-only or require human approval as risk rises, and halt the agent at high risk",
+   "Give each agent the full permissions of the employee who created it, so agents never get blocked in the middle of their work",
+   "Require human approval for every action every agent takes, regardless of the agent's risk score or the task at hand",
+   "Block all internally built agents by default until a central security team manually certifies each one"
+  ],
+  "answer": 0,
+  "explanation": "As reported, the controls give agents minimal permissions by default, grant access per task and remove it when the task ends, and respond to rising risk scores with graduated steps: scaling back permissions, allowing reads but blocking writes, requiring human approval for consequential actions and, at high risk, isolating or halting the agent. The product lesson: a binary allow-or-block model doesn't fit autonomous agents. Proportionate, dynamic controls keep low-risk work moving while containing dangerous actions.",
+  "rationales": [
+   "Correct: it matches the reported design of least privilege by default plus proportionate responses to risk.",
+   "Wrong: inheriting full user permissions is the over-privileged pattern these controls are designed to prevent.",
+   "Wrong: approval for everything would make agents useless. Approval is reserved for consequential actions.",
+   "Wrong: the approach is dynamic and risk-based, not a blanket manual-certification gate."
+  ],
+  "interview_tip": "Agent governance is a live topic in AI PM interviews. Describing graduated, risk-based autonomy (not allow or block) shows you can design agents enterprises will trust.",
+  "source": "https://www.securityweek.com/microsoft-targets-rogue-ai-agents-with-dynamic-permissions-risk-scoring/"}
+]}
