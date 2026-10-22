@@ -1,0 +1,633 @@
+{"date": "2026-10-22", "theme": "Designing for graduation, one-way doors & pay-as-you-go cloud play", "questions": [
+{
+ "topic": "Product Sense",
+ "concept": "Designing for user graduation in outcome-based products",
+ "difficulty": "hard",
+ "question": "You're the PM for a job-search app for fresh graduates in India. Users who land a job uninstall within a week, and leadership worries because monthly actives fall every placement season. They ask you to 'fix retention'. What's the strongest product direction?",
+ "options": [
+  "Treat getting hired as success: measure placements, then design a graceful exit that keeps alumni as referrers and returning job-switchers",
+  "Add a content feed of career tips and industry news so placed users have a reason to keep opening the app every day",
+  "Delay the 'You're hired' confirmation step so that placed users stay in the active-user count for a few more weeks",
+  "Push more notifications to placed users with new openings so they keep browsing even after accepting an offer"
+ ],
+ "answer": 0,
+ "explanation": "In outcome-based products (job search, dating, home buying), a user leaving after success is the product working. The right move is to change what 'good' means: count successful outcomes, and design the exit so graduates become referrers, reviewers of employers, and returning users when they switch jobs in 2-3 years. Forcing engagement from people whose job is done adds noise and erodes trust.",
+ "rationales": [
+  "Correct: it aligns the metric with the user's goal and turns churn-after-success into referrals and future re-activation.",
+  "Wrong: it adds engagement unrelated to the job users hired the app for, and diverts effort from the core outcome.",
+  "Wrong: it games the metric without changing user value, and hides the real outcome from the team.",
+  "Wrong: pushing openings at people who just accepted offers feels tone-deaf and drives notification opt-outs and uninstalls."
+ ],
+ "interview_tip": "When an interviewer hands you a 'retention problem', first ask whether leaving is actually the success state. Reframing the goal before solutioning is a strong product-sense signal."
+},
+{
+ "topic": "Product Sense",
+ "concept": "Thumb-zone layout for one-handed phone use",
+ "difficulty": "easy",
+ "question": "Usage research on a food-delivery app shows most orders are placed one-handed on large phones, often while commuting. The primary 'Place order' button sits at the top right. What's the best design change?",
+ "options": [
+  "Move the primary action to a full-width button at the bottom of the screen, within easy reach of the thumb",
+  "Keep the button at the top right but make it larger and a brighter colour so it stands out more clearly",
+  "Add a tutorial on first launch that shows users where the order button is located on each screen",
+  "Add a swipe-down gesture from the top edge that places the order, as a faster alternative for experts"
+ ],
+ "answer": 0,
+ "explanation": "On large phones the top corners are hardest to reach with one thumb, so primary actions belong in the bottom 'thumb zone'. Placing the key action where the hand naturally rests reduces effort and accidental taps, which matters most in one-handed, on-the-go contexts.",
+ "rationales": [
+  "Correct: it fits how the product is actually held and used, putting the most important action in the easiest reach.",
+  "Wrong: visibility isn't the problem. A bigger button in the top corner is still hard to reach one-handed.",
+  "Wrong: a tutorial explains the friction instead of removing it, and most users skip tutorials.",
+  "Wrong: a hidden gesture for a payment action is undiscoverable and risks accidental orders."
+ ],
+ "interview_tip": "Product-sense answers get stronger when you ground design choices in the context of use (one hand, moving, distracted). Mentioning ergonomic constraints shows you think about real users, not mock-ups."
+},
+{
+ "topic": "Product Sense",
+ "concept": "Back-in-stock alerts to capture deferred demand",
+ "difficulty": "medium",
+ "question": "An Indian D2C skincare brand sells out of its best-selling sunscreen every few weeks. Visitors who land on the out-of-stock page mostly bounce. What's the best first improvement?",
+ "options": [
+  "Offer a one-tap 'Notify me on WhatsApp when it's back' option and message those users the moment stock returns",
+  "Hide out-of-stock products from the catalogue and search so visitors only ever see items available to buy",
+  "Show a pop-up discount code on the out-of-stock page to push visitors toward buying any other product now",
+  "Let visitors pre-pay for the sunscreen now with no delivery date, so the sale is captured before they leave"
+ ],
+ "answer": 0,
+ "explanation": "A visitor on a sold-out best-seller page has high, specific intent that's only deferred. Capturing a low-effort, opt-in alert on the channel they actually read (WhatsApp in India) converts that intent when stock returns, and the sign-up count doubles as a demand signal for inventory planning.",
+ "rationales": [
+  "Correct: it keeps high intent alive with minimal friction and also tells operations how much demand they're missing.",
+  "Wrong: hiding the product loses the demand entirely and breaks links from ads, reviews and search.",
+  "Wrong: the user wanted a specific product. A generic discount rarely substitutes and trains users to expect coupons.",
+  "Wrong: open-ended pre-payment with no date adds risk and refund disputes, so few users will take it."
+ ],
+ "interview_tip": "Look for moments where intent is high but blocked. Interviewers like answers that recover demand and also generate data the business can act on."
+},
+{
+ "topic": "Product Sense",
+ "concept": "Structured intake to make scarce expert time efficient",
+ "difficulty": "hard",
+ "question": "You run a telemedicine app serving tier-2 and tier-3 towns. Doctors are the bottleneck: wait times are 40 minutes, and doctors say half of each 10-minute consult goes on basic history-taking. What's the strongest lever?",
+ "options": [
+  "Collect symptoms, history and photos through a guided, vernacular pre-consult form, and show the doctor a one-screen summary",
+  "Shorten every consult to five minutes so that each doctor can see twice as many patients per hour",
+  "Recruit more doctors by raising pay per consult, accepting a lower margin until wait times come down",
+  "Add a live wait-time counter and queue position so that patients feel less anxious while they wait"
+ ],
+ "answer": 0,
+ "explanation": "When an expert's time is the constraint, move everything that doesn't need the expert to before the session. A guided intake in the patient's language captures history asynchronously, so the doctor spends the consult on diagnosis. That can nearly double throughput without hurting care quality, and the structured data improves later triage.",
+ "rationales": [
+  "Correct: it removes non-expert work from the bottleneck, raising capacity while protecting consult quality.",
+  "Wrong: cutting time without removing work squeezes diagnosis, which hurts quality and patient trust.",
+  "Wrong: it may help eventually, but it's slow and expensive and leaves half of each consult wasted.",
+  "Wrong: transparency eases waiting anxiety but doesn't shorten the wait or fix the bottleneck."
+ ],
+ "interview_tip": "Identify the scarce resource first, then ask what work can move off it. Showing constraint thinking in a product-sense round signals operational maturity."
+},
+{
+ "topic": "Metrics",
+ "concept": "Acquisition channel mix change driving cohort retention drop",
+ "difficulty": "hard",
+ "question": "Day-30 retention for a fintech app's newest cohorts fell from 32% to 24%. Nothing shipped in the product, and retention within each acquisition channel is flat. What's the most likely explanation?",
+ "options": [
+  "The share of new users from a lower-retaining channel, such as cashback-led paid installs, grew, pulling the blended rate down",
+  "A bug in the latest app release is crashing the app for some users, which is causing them to churn early",
+  "Users are getting bored of the product after the novelty wears off, so retention is declining for everyone",
+  "Competitors launched better features, so existing users from every channel are switching to their apps"
+ ],
+ "answer": 0,
+ "explanation": "If every channel's retention is flat but the blended number falls, the mix changed. A growing share of users from a low-intent channel (often incentive-driven installs) lowers the average without anyone's behaviour changing. The fix is a marketing-mix and channel-quality decision, not a product fix.",
+ "rationales": [
+  "Correct: flat within-channel retention plus a falling total is the signature of a mix shift.",
+  "Wrong: a crash bug would lower retention inside channels too, and nothing shipped.",
+  "Wrong: a broad novelty decline would show up within each channel, which it doesn't.",
+  "Wrong: competitive switching would also hit within-channel retention, not just the blend."
+ ],
+ "interview_tip": "In root-cause questions, always segment by acquisition source before blaming the product. Spotting a mix effect quickly is what separates strong execution-round answers."
+},
+{
+ "topic": "Metrics",
+ "concept": "First-contact resolution over average handle time",
+ "difficulty": "medium",
+ "question": "A support team is told to cut average handle time (AHT). AHT falls 25%, but CSAT drops and total tickets rise. Which metric would have better captured what the business wants?",
+ "options": [
+  "First-contact resolution: the share of issues fully solved in the first interaction",
+  "Number of tickets closed per agent per day, tracked across the whole support team",
+  "Average speed of first reply, measured from ticket creation to the first agent response",
+  "Average number of messages exchanged per ticket before the ticket is marked closed"
+ ],
+ "answer": 0,
+ "explanation": "Pushing AHT down encourages agents to close tickets fast rather than solve them, so customers come back and tickets multiply. First-contact resolution measures the real goal, a solved problem, and naturally reduces repeat contacts and total cost. AHT is still useful as a secondary efficiency metric.",
+ "rationales": [
+  "Correct: it measures whether the customer's problem was actually solved, which is what drives CSAT and lower volume.",
+  "Wrong: tickets closed per agent rewards the same rushed closing that AHT did.",
+  "Wrong: fast first replies are nice, but a quick reply that doesn't solve the issue still generates repeats.",
+  "Wrong: fewer messages can mean either efficiency or abandoned customers, so it doesn't measure resolution."
+ ],
+ "interview_tip": "Interviewers like candidates who notice when an efficiency metric undermines the outcome. Name the outcome metric and keep the efficiency metric as a guardrail."
+},
+{
+ "topic": "Metrics",
+ "concept": "Monthly churn rate uses the start-of-period customer base",
+ "difficulty": "easy",
+ "question": "A B2B SaaS product started March with 1,000 customers, lost 50 during March, and added 200 new customers. What is March's customer churn rate?",
+ "options": [
+  "5%, because 50 churned out of the 1,000 customers at the start of the month",
+  "4%, because 50 churned out of the 1,150 customers at the end of the month",
+  "4.2%, because 50 churned out of the 1,200 customers active at any point in March",
+  "-15%, because the customer count grew by 150 during the month despite the losses"
+ ],
+ "answer": 0,
+ "explanation": "Standard churn rate divides customers lost by customers at the start of the period. New customers added mid-month weren't at risk for the full month, so including them dilutes churn and makes it look better than it is. Net growth is a different metric from churn.",
+ "rationales": [
+  "Correct: 50 ÷ 1,000 = 5%, using the base that was at risk all month.",
+  "Wrong: the end-of-period base includes new customers, which understates churn.",
+  "Wrong: adding everyone ever active also dilutes the rate with customers who were barely exposed.",
+  "Wrong: that's net growth, which mixes acquisition with churn and hides the 50 losses."
+ ],
+ "interview_tip": "Be precise about numerators and denominators. Interviewers often test whether you can separate churn from net growth."
+},
+{
+ "topic": "Metrics",
+ "concept": "Right-censoring when comparing young and mature cohorts",
+ "difficulty": "medium",
+ "question": "An analyst shows that users acquired in the last two weeks have 60% lower average revenue per user than users acquired a year ago, and concludes acquisition quality has collapsed. What's the main flaw?",
+ "options": [
+  "Recent users have had far less time to generate revenue; compare cohorts at the same age, such as revenue in the first 14 days",
+  "The sample of recent users is too small to compute an average, so the comparison needs a full year of data",
+  "Revenue per user is a vanity metric and should be replaced with total revenue across all the cohorts",
+  "Older users were acquired when prices were lower, so their revenue is understated, not the new cohort's"
+ ],
+ "answer": 0,
+ "explanation": "Lifetime metrics for young cohorts are right-censored: they haven't had time to accumulate. Comparing a 2-week-old cohort's lifetime revenue to a 1-year-old cohort's will always look bad. The fair comparison aligns cohorts by age (revenue in days 0-14 for every cohort).",
+ "rationales": [
+  "Correct: aligning cohorts by age removes the time advantage of older cohorts.",
+  "Wrong: two weeks of users can be a large sample. The issue is exposure time, not sample size.",
+  "Wrong: revenue per user is meaningful. Total revenue would make the comparison even more confounded by cohort size.",
+  "Wrong: lower historical prices would make the old cohort look worse, not explain the new cohort's low number."
+ ],
+ "interview_tip": "Whenever you compare cohorts, say 'at the same age'. It's a quick signal of analytical rigour."
+},
+{
+ "topic": "Experimentation",
+ "concept": "Differential attrition biasing a test readout",
+ "difficulty": "hard",
+ "question": "A test adds a mandatory phone-verification step after sign-up. Among users who finish onboarding, treatment shows 15% higher week-2 activity than control. Treatment also had 20% fewer users complete onboarding. How should you read the result?",
+ "options": [
+  "It's biased: the step filtered out lower-intent users, so compare all randomised users, including those who dropped out",
+  "It's a clear win: the users who remain are more active, which is exactly what verification is meant to achieve",
+  "It's invalid: the drop in onboarding completion means the randomisation itself must have been broken",
+  "It's inconclusive: a 20% difference in group sizes means the test lacks power, so it should simply be extended"
+ ],
+ "answer": 0,
+ "explanation": "When treatment changes who remains in the analysed group, comparing survivors is biased. The verification step removed lower-intent users, so the remaining treatment users look more active even if no one's behaviour changed. Analyse every randomised user (intention-to-treat): total active users per assigned user, which captures both the lost sign-ups and any real engagement gain.",
+ "rationales": [
+  "Correct: differential attrition creates a selection effect, and analysing all randomised users fixes it.",
+  "Wrong: higher activity among survivors can be pure selection. The step may have lost more active users in total.",
+  "Wrong: randomisation can be fine. The treatment itself caused the drop-off, which is a real effect to measure.",
+  "Wrong: power isn't the issue. Extending a biased comparison just gives a more confident wrong answer."
+ ],
+ "interview_tip": "When a treatment changes who reaches the measured step, flag selection bias and analyse at the randomisation unit. Interviewers use this to test experiment rigour."
+},
+{
+ "topic": "Experimentation",
+ "concept": "Interleaving for ranking experiments",
+ "difficulty": "medium",
+ "question": "A search team has many candidate ranking models and limited traffic. Standard A/B tests take three weeks each to detect differences. Which method lets them compare two rankers with far less traffic?",
+ "options": [
+  "Interleaving: merge both rankers' results into one list for each user and see which ranker's items get clicked more",
+  "Running both rankers on the same users on alternate days, then comparing the daily averages across the two",
+  "Showing each ranker's results to internal employees and asking them to rate which list looks better overall",
+  "Lowering the significance threshold to 0.2 so that standard A/B tests reach a conclusion much sooner"
+ ],
+ "answer": 0,
+ "explanation": "Interleaving shows each user a blended list (for example, team-draft interleaving), so every user acts as their own control. Because user-to-user variance is removed, it detects ranking preferences with far less traffic than an A/B test. It's typically used to screen candidates, with a final A/B test on the winner for business metrics.",
+ "rationales": [
+  "Correct: within-user comparison sharply cuts variance, making interleaving much more sensitive for rankers.",
+  "Wrong: alternating days adds day-of-week and carryover noise, and doesn't reduce variance the way interleaving does.",
+  "Wrong: employee ratings aren't representative of real users and don't measure actual behaviour.",
+  "Wrong: loosening the threshold just raises false positives. It doesn't make the test more sensitive."
+ ],
+ "interview_tip": "For search and recommendation roles, knowing interleaving shows depth. Mention that it screens candidates quickly and an A/B test confirms the impact on business metrics."
+},
+{
+ "topic": "Estimation",
+ "concept": "Annual pressure-cooker unit sales in India",
+ "difficulty": "medium",
+ "question": "Estimate the number of pressure cookers sold in India each year. Which is most reasonable?",
+ "options": [
+  "About 30 lakh",
+  "About 3 crore",
+  "About 15 crore",
+  "About 50 crore"
+ ],
+ "answer": 1,
+ "explanation": "India has about 31 crore households. Assume about 65% own a pressure cooker: roughly 20 crore. A cooker lasts about 7-8 years, so replacements are about 20 ÷ 7.5 ≈ 2.7 crore a year. Add new households, first-time buyers and second cookers (about 0.3-0.5 crore) to get about 3 crore units a year. Installed base ÷ lifespan, plus new demand, is the method.",
+ "rationales": [
+  "Wrong: that implies a cooker is replaced only every 60+ years, far longer than its real lifespan.",
+  "Correct: about 20 crore owning households ÷ ~7.5-year life, plus new buyers, gives about 3 crore.",
+  "Wrong: that would mean three-quarters of owning households buy a new cooker every year.",
+  "Wrong: that's more than one cooker per household per year across the whole country."
+ ],
+ "interview_tip": "For durable goods, size the installed base and divide by replacement cycle, then add first-time demand. Interviewers reward the structure and a sanity check against household counts."
+},
+{
+ "topic": "Estimation",
+ "concept": "Daily OTP SMS volume for a large bank",
+ "difficulty": "easy",
+ "question": "A large Indian bank has about 10 crore customers. Estimate how many OTP SMS messages it sends per day. Which is closest?",
+ "options": [
+  "About 8 lakh",
+  "About 80 lakh",
+  "About 8 crore",
+  "About 40 crore"
+ ],
+ "answer": 1,
+ "explanation": "Assume about 40% of customers (4 crore) are digitally active in a month. Each triggers about 6 OTPs a month (new-device logins, card payments online, payee additions, password resets): about 24 crore a month, or roughly 80 lakh a day. Start from the customer base, filter to the active segment, multiply by frequency.",
+ "rationales": [
+  "Wrong: that's under one OTP per customer per year on average, too low for routine online card payments and logins.",
+  "Correct: 4 crore active × ~6 OTPs a month ÷ 30 gives about 80 lakh a day.",
+  "Wrong: that's almost one OTP per customer every day, including the many who rarely bank digitally.",
+  "Wrong: that's four OTPs per customer per day, far above any realistic usage."
+ ],
+ "interview_tip": "Filter the base to the active segment before applying a frequency. Calling out which actions trigger the event makes the estimate credible."
+},
+{
+ "topic": "Strategy",
+ "concept": "Customer concentration risk in B2B revenue",
+ "difficulty": "medium",
+ "question": "A B2B logistics-software startup gets 45% of its revenue from one large e-commerce customer, which now asks for a custom feature set and a 30% price cut. What's the core strategic risk the founders should weigh?",
+ "options": [
+  "Customer concentration hands that buyer strong bargaining power and pulls the roadmap toward one company's needs",
+  "Building custom features for a big customer will make the product too complex for any other buyer to adopt",
+  "A 30% discount will set off a price war with competitors who will then match it across the whole market",
+  "Large customers always churn within a year, so the revenue should be treated as temporary and not planned on"
+ ],
+ "answer": 0,
+ "explanation": "When one customer is a large share of revenue, that buyer has outsized leverage on price and roadmap, and losing them threatens the company. The strategic response is to diversify the customer base, negotiate the custom work into the core product where it generalises, and avoid concessions that make the business permanently dependent.",
+ "rationales": [
+  "Correct: concentration creates buyer power over both price and product direction, which is the central risk.",
+  "Wrong: complexity can be a consequence, but the root issue is the leverage one buyer holds.",
+  "Wrong: a private discount to one customer doesn't automatically trigger a market-wide price war.",
+  "Wrong: large customers don't always churn quickly. The risk is dependence, not a guaranteed loss."
+ ],
+ "interview_tip": "In strategy questions, name the structural force (buyer power) before the tactic. It shows you reason from frameworks like Porter's Five Forces, not just instinct."
+},
+{
+ "topic": "Strategy",
+ "concept": "Loss-leader pricing to grow basket size",
+ "difficulty": "easy",
+ "question": "A quick-commerce app sells milk and bread at or below cost. Margin on those items is negative, yet leadership keeps the policy. What's the most likely strategic logic?",
+ "options": [
+  "They're loss leaders: cheap staples bring frequent visits, and the profit comes from higher-margin items added to the same basket",
+  "The app is required by regulation to sell essential food items below cost in all of its operating cities",
+  "Losing money on staples signals to investors that the app is prioritising growth over near-term profitability",
+  "Low staple prices reduce food wastage because items sell faster, which makes up for the negative margin"
+ ],
+ "answer": 0,
+ "explanation": "A loss leader is a product priced at a loss to drive traffic and habit, with the business earning on the rest of the basket. Staples are bought often and price-compared, so they're ideal hooks. The strategy works only if enough customers add profitable items, so basket mix and attach rate are the metrics to watch.",
+ "rationales": [
+  "Correct: frequent, price-sensitive staples drive visits, and margin comes from what else goes in the cart.",
+  "Wrong: no such general rule requires selling staples below cost.",
+  "Wrong: signalling to investors isn't a sustainable reason to keep a structural loss on every order.",
+  "Wrong: faster turnover helps a little, but it can't offset selling below cost on its own."
+ ],
+ "interview_tip": "When a pricing move looks irrational, look for the cross-subsidy. Naming the metric that makes it work (basket attach) shows business sense."
+},
+{
+ "topic": "Strategy",
+ "concept": "Surge pricing to balance marketplace supply and demand",
+ "difficulty": "medium",
+ "question": "A ride-hailing app in Mumbai sees requests triple during monsoon downpours while few drivers are on the road. Surge pricing is in place but triggers public backlash. What's the strongest case for keeping some form of it?",
+ "options": [
+  "Higher prices pull more drivers onto the road and ration rides to the most urgent trips, so rides stay available at all",
+  "Surge pricing maximises revenue per ride, which lets the company show better quarterly margins to investors",
+  "Riders who pay surge prices are less price-sensitive, so the company can safely raise base fares for everyone",
+  "Surge pricing discourages riders from using the app in bad weather, which reduces the risk of accidents"
+ ],
+ "answer": 0,
+ "explanation": "Dynamic pricing is a balancing mechanism: it raises supply (drivers come online for higher earnings) and dampens low-urgency demand, so rides remain available. Without it, the app runs out of cars and nobody gets a ride. The PM work is in fairness design: caps, transparent pricing up front, and protections for essential trips.",
+ "rationales": [
+  "Correct: it addresses both sides of the market, which is the core economic reason for surge.",
+  "Wrong: revenue is a side effect. Defending surge on margins alone deepens the backlash.",
+  "Wrong: willingness to pay during a downpour says little about everyday price sensitivity.",
+  "Wrong: the purpose is to match supply and demand, not to keep riders off the road."
+ ],
+ "interview_tip": "For pricing questions in marketplaces, explain how price affects both supply and demand, then address fairness. Balancing economics with trust is what interviewers look for."
+},
+{
+ "topic": "Execution",
+ "concept": "Outcome-based roadmap themes instead of feature lists",
+ "difficulty": "medium",
+ "question": "Your roadmap is a list of 25 features with dates. Leadership keeps asking 'why these?' and the team keeps reshuffling items. What change would most improve how the roadmap guides decisions?",
+ "options": [
+  "Group work under a few outcome themes, each with a target metric, so features are candidates for achieving an outcome",
+  "Add more detail to each feature, including effort estimates and owners, so the list looks more rigorous and complete",
+  "Commit to firm dates for every feature for the next four quarters so the team stops reshuffling the order",
+  "Remove the roadmap from leadership reviews and share it only with the engineering team to reduce churn"
+ ],
+ "answer": 0,
+ "explanation": "A feature list answers 'what' but not 'why', so every request looks equally valid and priorities drift. Organising by outcomes (for example, 'cut first-order drop-off by 20%') makes the reasoning visible, lets the team swap features that don't move the metric, and gives leadership a clear basis for trade-offs.",
+ "rationales": [
+  "Correct: outcomes make the rationale explicit and give a stable basis for prioritisation.",
+  "Wrong: more detail on the same list still doesn't explain why these features matter.",
+  "Wrong: locking dates adds false precision and makes it harder to respond to learning.",
+  "Wrong: hiding the roadmap destroys alignment instead of fixing the lack of rationale."
+ ],
+ "interview_tip": "When asked how you build roadmaps, lead with outcomes and how you'd measure them. It signals you manage for impact, not output."
+},
+{
+ "topic": "Execution",
+ "concept": "Watermelon status reports (green outside, red inside)",
+ "difficulty": "medium",
+ "question": "A cross-team programme has reported 'green' every week for two months. Two weeks before launch, it suddenly goes 'red' with a six-week slip. What's the best way to prevent this next time?",
+ "options": [
+  "Report status against concrete milestones and leading signals, such as integration tests passing, and make it safe to flag amber early",
+  "Increase status meetings from weekly to daily so that leadership can watch progress across every team more closely",
+  "Penalise teams that report red so that they feel more accountable for hitting the dates they committed to",
+  "Ask each team to add a confidence percentage to its green status so that leadership can judge the real risk"
+ ],
+ "answer": 0,
+ "explanation": "'Watermelon' status (green outside, red inside) happens when status reflects feelings rather than evidence, and when reporting red feels risky. Tying status to verifiable milestones and leading indicators exposes slippage early, and rewarding early amber flags changes the incentive to hide problems.",
+ "rationales": [
+  "Correct: evidence-based status plus psychological safety surfaces risk while there's still time to act.",
+  "Wrong: more meetings without better signals just repeat the same optimistic reports more often.",
+  "Wrong: punishing red makes teams hide problems longer, which is the cause of the late surprise.",
+  "Wrong: a self-reported confidence number is still subjective and can be just as optimistic."
+ ],
+ "interview_tip": "Interviewers probe how you keep programmes honest. Talk about leading indicators and making it safe to raise risk early."
+},
+{
+ "topic": "Execution",
+ "concept": "Post-launch review against pre-set hypotheses",
+ "difficulty": "easy",
+ "question": "Your team launched a new checkout flow six weeks ago and has moved on to the next project. What's the most valuable next step?",
+ "options": [
+  "Run a post-launch review comparing results to the hypotheses and success criteria set before launch, and record what you learned",
+  "Send a celebratory launch email to the company summarising the features shipped and thanking the team",
+  "Wait until the end of the year and include the checkout results in the annual product review",
+  "Start the next checkout iteration immediately, since any problems will show up in customer complaints"
+ ],
+ "answer": 0,
+ "explanation": "A launch is a bet, and the learning only happens if you check the result against what you predicted. A post-launch review closes the loop: did the metric move, why or why not, and what does that change about the next bet? Without it, teams repeat mistakes and can't tell impact from activity.",
+ "rationales": [
+  "Correct: comparing outcomes to the original hypothesis turns the launch into learning and guides what comes next.",
+  "Wrong: celebrating is fine, but it records output, not whether the launch worked.",
+  "Wrong: waiting months loses context and delays decisions that the data could inform now.",
+  "Wrong: relying on complaints misses silent drop-off and gives no read on the intended impact."
+ ],
+ "interview_tip": "When describing a launch, interviewers want to hear what happened after: the result versus the goal and what you changed. Closing the loop signals ownership."
+},
+{
+ "topic": "Behavioural",
+ "concept": "Countering not-invented-here bias on your team",
+ "difficulty": "hard",
+ "question": "A competitor's onboarding flow is clearly converting better than yours, and users mention it in interviews. Your design lead dismisses it: 'We don't copy; our approach is more original.' What's the strongest response?",
+ "options": [
+  "Reframe around the user problem: study why their flow works, test the underlying principle in your own design, and let the data decide",
+  "Defer to the design lead, since design decisions are theirs to make and challenging them would hurt the relationship",
+  "Escalate to your director and ask for a decision that the team must replicate the competitor's onboarding flow",
+  "Quietly ask an engineer to build a copy of the competitor's flow and launch it as an experiment without the design lead"
+ ],
+ "answer": 0,
+ "explanation": "Not-invented-here bias protects pride at the user's expense. The strongest move shifts the conversation from 'copy vs original' to 'what problem does their flow solve that ours doesn't?' Learning the principle and testing it in your own design respects the designer's craft and keeps decisions grounded in evidence.",
+ "rationales": [
+  "Correct: it depersonalises the disagreement, focuses on the user, and lets an experiment settle it.",
+  "Wrong: avoiding the conflict leaves users with a worse experience and abdicates your ownership of outcomes.",
+  "Wrong: escalating before trying to align damages trust and imposes a solution instead of a learning.",
+  "Wrong: going around a partner destroys trust and makes future collaboration much harder."
+ ],
+ "interview_tip": "Amazon's 'Learn and Be Curious' and 'Customer Obsession' come up here. Strong answers turn ego conflicts into shared questions about the user and resolve them with evidence."
+},
+{
+ "topic": "Behavioural",
+ "concept": "Slowing down for an irreversible (one-way door) decision",
+ "difficulty": "hard",
+ "question": "Your team wants to migrate all customers to a new data model this sprint to unblock features. Rolling back would mean data loss for some customers. Leadership praises your team's speed. What should you do?",
+ "options": [
+  "Treat it as a one-way door: slow down, pressure-test the plan with experts, run a staged migration with backups, then commit",
+  "Move ahead this sprint, since leadership values speed and the team has already done most of the design work",
+  "Postpone the migration indefinitely until the team is fully certain that no customer could ever be affected by it",
+  "Let each engineer decide on the approach for the part of the migration they own, so the work can move in parallel"
+ ],
+ "answer": 0,
+ "explanation": "Speed is right for reversible decisions, but an irreversible change with data-loss risk deserves deliberate review. Treating it as a one-way door means extra scrutiny, a staged rollout and tested backups, then a firm commitment. Showing you can tell the two kinds of decisions apart is the judgement interviewers want.",
+ "rationales": [
+  "Correct: it matches the level of care to irreversibility while still driving to a decision.",
+  "Wrong: moving fast on an irreversible, data-loss-risking change confuses speed with good judgement.",
+  "Wrong: demanding certainty stalls the work. One-way doors need care, not indefinite delay.",
+  "Wrong: fragmenting ownership on a high-risk migration increases the chance of inconsistent, unrecoverable mistakes."
+ ],
+ "interview_tip": "Bezos's one-way vs two-way door framing is common in Amazon loops. Strong candidates show they move fast on reversible choices and slow down on irreversible ones."
+},
+{
+ "topic": "Behavioural",
+ "concept": "Surfacing a teammate's misreported metric",
+ "difficulty": "hard",
+ "question": "You discover that a launch metric your team reported to leadership last quarter was overstated because an analyst double-counted some users. The analyst asks you not to raise it, since the project has moved on. What do you do?",
+ "options": [
+  "Talk with the analyst first, then correct the number with leadership promptly, explain the fix, and add a check to stop it recurring",
+  "Leave it alone, since the project is finished and correcting old numbers would only embarrass the analyst",
+  "Report the analyst's mistake to their manager and let them handle the correction with leadership",
+  "Quietly use the corrected number in future reports without mentioning that the earlier figure was wrong"
+ ],
+ "answer": 0,
+ "explanation": "Leadership may be making decisions on the wrong number, so it must be corrected. The way you do it matters: involve the analyst, own it as a team, correct it plainly, and add a mechanism (a review or automated check) so it doesn't happen again. That protects trust in the team's data and treats the colleague fairly.",
+ "rationales": [
+  "Correct: it fixes the record, treats the analyst with respect, and prevents a repeat.",
+  "Wrong: decisions may still rest on the inflated number, and hiding it erodes trust in all your data.",
+  "Wrong: it pushes ownership away and turns a team error into blame on one person.",
+  "Wrong: a silent change creates confusion and is still a failure to be transparent with leadership."
+ ],
+ "interview_tip": "This tests 'Earn Trust' and integrity. Interviewers want to hear that you correct the record promptly, without blame, and fix the process."
+},
+{
+ "topic": "AI Product",
+ "concept": "Verbosity bias in LLM-as-judge evaluations",
+ "difficulty": "medium",
+ "question": "Your team uses an LLM judge to compare two prompt versions for a customer-support bot. Version B wins 70% of comparisons, but agents reviewing real chats prefer version A. B's answers are about twice as long. What's the most likely issue?",
+ "options": [
+  "LLM judges tend to favour longer answers; control for length in the rubric and check the judge against human preferences",
+  "Version B is genuinely better, and the human agents prefer A only because it is more familiar to them",
+  "The LLM judge is using too low a temperature, which makes its preferences overly consistent between runs",
+  "The comparison sample is too small, so the 70% win rate is most likely random noise in the evaluation"
+ ],
+ "answer": 0,
+ "explanation": "LLM judges show known biases, including preferring longer, more elaborate answers even when a concise answer is better for the user. When judge results diverge from human judgement and the winner is much longer, suspect verbosity bias. Fix it with explicit rubric criteria (conciseness, resolving the issue), length-controlled comparisons and regular agreement checks against human labels.",
+ "rationales": [
+  "Correct: length difference plus disagreement with humans is the classic sign of verbosity bias.",
+  "Wrong: dismissing human reviewers ignores the ground truth the judge is meant to approximate.",
+  "Wrong: low temperature affects consistency, not a systematic preference for long answers.",
+  "Wrong: noise wouldn't explain a consistent preference that lines up with answer length."
+ ],
+ "interview_tip": "AI PM interviews often probe how you trust automated evals. Naming judge biases and validating against human labels shows eval maturity."
+},
+{
+ "topic": "AI Product",
+ "concept": "Delegating exact arithmetic to a code tool",
+ "difficulty": "easy",
+ "question": "Your finance assistant answers questions about users' spending. It sometimes gets totals wrong when summing dozens of transactions. What's the most reliable fix?",
+ "options": [
+  "Have the model call a calculator or code tool for the arithmetic and use the tool's result in its answer",
+  "Add 'double-check your maths carefully' to the system prompt so the model pays closer attention to totals",
+  "Switch to a larger model, since bigger models can always add up long lists of numbers exactly without error",
+  "Lower the temperature to zero so that the model always produces the same total for the same transactions"
+ ],
+ "answer": 0,
+ "explanation": "LLMs predict tokens rather than compute, so long exact arithmetic is error-prone. The reliable pattern is to let the model decide what to calculate and hand the calculation to deterministic code. This makes totals exact and auditable while the model handles understanding and explanation.",
+ "rationales": [
+  "Correct: deterministic tools give exact results, which a finance product needs.",
+  "Wrong: prompting may help slightly but doesn't make token prediction exact.",
+  "Wrong: larger models are better but still not guaranteed exact over long sums.",
+  "Wrong: zero temperature makes the wrong answer consistent, not correct."
+ ],
+ "interview_tip": "Knowing what LLMs are bad at, and pairing them with tools, is a core AI PM skill. Say 'the model decides, the tool computes'."
+},
+{
+ "topic": "AI Product",
+ "concept": "Disclosing AI-generated content to users",
+ "difficulty": "easy",
+ "question": "A real-estate marketplace adds AI-generated descriptions to listings. Which approach best protects user trust?",
+ "options": [
+  "Label descriptions as AI-generated, let sellers review and edit them before publishing, and keep the key facts sourced from the listing data",
+  "Present the descriptions as if the sellers wrote them, since labelling AI content tends to reduce buyer engagement",
+  "Show the descriptions only to users who opt in through account settings, and hide them from everyone else",
+  "Add a general note to the terms of service saying that some content on the site may be generated by AI"
+ ],
+ "answer": 0,
+ "explanation": "Buyers make expensive decisions based on listings, so they deserve to know what's AI-written, and sellers should stay accountable for accuracy. A clear label, seller review and facts drawn from structured data reduce the risk of misleading text and keep trust in the marketplace.",
+ "rationales": [
+  "Correct: it combines transparency, human accountability and grounding in real data.",
+  "Wrong: hiding AI authorship risks misleading buyers and damages trust if discovered.",
+  "Wrong: an opt-in toggle buries a useful feature and still doesn't address accuracy.",
+  "Wrong: a line in the terms isn't meaningful disclosure at the point where users read the content."
+ ],
+ "interview_tip": "Expect questions on responsible AI UX. Strong answers pair disclosure with a human in the loop where the stakes are high."
+},
+{
+ "topic": "AI Product",
+ "concept": "Simulated users to evaluate multi-turn assistants",
+ "difficulty": "hard",
+ "question": "You're shipping a travel-booking assistant that handles 10-15 turn conversations. Your eval set has single question-answer pairs, and offline scores look great, but users abandon mid-conversation. What's the best way to improve evaluation before the next release?",
+ "options": [
+  "Use an LLM to role-play users with varied goals and behaviours, run full conversations, and score whether each task was completed",
+  "Add more single-turn questions to the existing eval set so that it covers a wider range of travel destinations",
+  "Measure the average response time per turn, since abandonment in long conversations is mostly caused by latency",
+  "Ask the model to rate its own conversations at the end of each session and use those scores as the eval"
+ ],
+ "answer": 0,
+ "explanation": "Single-turn evals can't catch failures that emerge over a conversation: losing track of constraints, repeating questions, or getting stuck. Simulated users (an LLM playing personas with goals, changes of mind and ambiguity) let you run many full conversations offline and score task completion. Calibrate the simulator against real transcripts so it behaves like actual users.",
+ "rationales": [
+  "Correct: it tests the multi-turn behaviour where the real failures happen and measures task success.",
+  "Wrong: more single-turn coverage still misses errors that only appear across turns.",
+  "Wrong: latency may matter, but it doesn't explain or measure conversational failures.",
+  "Wrong: self-grading is biased and doesn't test the model against realistic user behaviour."
+ ],
+ "interview_tip": "For agent and assistant roles, interviewers want evals that match how the product is really used. Mentioning simulated users and calibrating them to real data signals depth."
+},
+{
+ "topic": "AI Product",
+ "concept": "Parameter-efficient fine-tuning (LoRA) for per-customer adapters",
+ "difficulty": "medium",
+ "question": "A B2B writing tool wants each enterprise customer's outputs to follow that company's tone and formatting. Fully fine-tuning a separate model per customer is too expensive to train and host. What approach best fits?",
+ "options": [
+  "Train small adapter weights per customer (such as LoRA) on a shared base model and load the right adapter at request time",
+  "Fully fine-tune one model on all customers' data combined so that it learns every company's style together",
+  "Retrain the base model from scratch each quarter on the latest writing samples from all enterprise customers",
+  "Ask each customer to paste their full style guide and hundreds of examples into every prompt they send"
+ ],
+ "answer": 0,
+ "explanation": "Parameter-efficient methods like LoRA train a small set of extra weights instead of the whole model. Each customer's adapter is cheap to train and store, and many adapters can be served on one shared base model. That makes per-customer style customisation affordable. Prompting with a short style guide is a reasonable first step; adapters help when prompting isn't consistent enough.",
+ "rationales": [
+  "Correct: small per-customer adapters on a shared base deliver customisation at low training and serving cost.",
+  "Wrong: one combined model blends styles and can leak one customer's patterns into another's outputs.",
+  "Wrong: training from scratch is vastly more expensive and unnecessary for style.",
+  "Wrong: huge prompts on every call add cost and latency and may still be inconsistent."
+ ],
+ "interview_tip": "You don't need to know the maths, but knowing that adapters make per-customer tuning cheap shows you can reason about AI cost and architecture trade-offs."
+},
+{
+ "topic": "Technology",
+ "concept": "Dead-letter queues for failed messages",
+ "difficulty": "medium",
+ "question": "Your order system processes payments from a message queue. A few malformed messages fail every retry, blocking or repeatedly slowing the queue. What's the standard fix?",
+ "options": [
+  "After a set number of retries, move the failing message to a dead-letter queue for inspection, and keep processing the rest",
+  "Keep retrying each failing message forever so that no payment message is ever lost from the system",
+  "Delete any message that fails to process the first time so that the queue can never become blocked",
+  "Pause the whole queue whenever a message fails until an engineer fixes it, so processing stays in order"
+ ],
+ "answer": 0,
+ "explanation": "A dead-letter queue (DLQ) holds messages that repeatedly fail. Healthy messages keep flowing, nothing is lost, and the team can inspect, fix and replay the bad messages. For payments, alerting on DLQ growth is an important operational signal.",
+ "rationales": [
+  "Correct: it isolates poison messages without losing them or blocking the queue.",
+  "Wrong: infinite retries keep wasting capacity and can block or slow processing indefinitely.",
+  "Wrong: deleting failed payment messages loses real transactions, which is unacceptable.",
+  "Wrong: pausing everything for one bad message turns a small issue into an outage."
+ ],
+ "interview_tip": "Technical PM interviews reward knowing reliability patterns. Mention alerts on the DLQ and a replay process to show operational thinking."
+},
+{
+ "topic": "Technology",
+ "concept": "WebSockets for real-time client updates",
+ "difficulty": "easy",
+ "question": "A food-delivery app shows the rider's live location. The app currently asks the server for updates every 2 seconds, which drains battery and loads the servers. What's the better approach?",
+ "options": [
+  "Keep a persistent connection, such as a WebSocket, so the server pushes location updates as they happen",
+  "Increase the polling interval to 30 seconds so the app makes far fewer requests to the server",
+  "Send each location update as an SMS to the customer's phone so the app doesn't need to request it",
+  "Cache the rider's last location on the phone and only refresh it when the user reopens the app"
+ ],
+ "answer": 0,
+ "explanation": "Frequent polling makes many requests that often return nothing new. A persistent connection like a WebSocket lets the server push updates only when the location changes, cutting overhead and latency. It's the standard pattern for live tracking, chat and collaborative editing.",
+ "rationales": [
+  "Correct: push over a persistent connection gives real-time updates with less overhead.",
+  "Wrong: slower polling saves resources but makes live tracking feel stale.",
+  "Wrong: SMS is slow, costly and not designed for continuous location streams.",
+  "Wrong: caching without refresh defeats the purpose of live tracking."
+ ],
+ "interview_tip": "Know when to poll and when to push. Tying the choice to user experience and cost shows practical technical fluency."
+},
+{
+ "topic": "Growth",
+ "concept": "Streak freezes to protect habit retention",
+ "difficulty": "medium",
+ "question": "A language-learning app finds that users who break a long daily streak are far more likely to churn within a week. What's the best product response?",
+ "options": [
+  "Offer streak freezes or repairs so one missed day doesn't wipe out progress, keeping the habit and motivation intact",
+  "Remove streaks entirely, since they create pressure that makes users feel bad when they miss a day",
+  "Send several reminder notifications each evening to users who haven't completed a lesson that day",
+  "Reset streaks more harshly to raise the stakes, so users try harder never to miss a day"
+ ],
+ "answer": 0,
+ "explanation": "A streak is a strong motivator until it breaks, when the loss makes users give up ('what's the point now?'). A freeze or repair option softens a single slip, so users stay in the habit. It keeps the motivation of streaks while removing the cliff where many users churn.",
+ "rationales": [
+  "Correct: it protects the habit at the exact moment users are most at risk of leaving.",
+  "Wrong: streaks drive retention for many users. Removing them loses that motivation for everyone.",
+  "Wrong: more notifications cause fatigue and opt-outs without addressing the post-break churn.",
+  "Wrong: harsher resets make the loss more painful and increase churn after a missed day."
+ ],
+ "interview_tip": "For retention questions, find the moment users drop off and design for it. Interviewers like answers that target a specific churn trigger."
+},
+{
+ "topic": "Current Events",
+ "concept": "Xbox Cloud Gaming pay-as-you-go playtime packs (Oct 2026)",
+ "difficulty": "medium",
+ "question": "On 21 October 2026, Microsoft began previewing Xbox Cloud Gaming for Xbox Insiders without Game Pass: playtime packs of 10 hours for $3.99, 25 hours for $7.99 and 50 hours for $11.99, with hours that don't expire and a wider rollout planned for November. What's the strongest product rationale for adding this alongside the subscription?",
+ "options": [
+  "Reach occasional players who won't subscribe by pricing on usage, while the subscription stays the better deal for heavy players",
+  "Replace the subscription over time, since pay-as-you-go always earns more revenue per player than a monthly plan",
+  "Reduce load on cloud servers by making streaming more expensive per hour than playing through a subscription",
+  "Push players toward buying consoles by making cloud streaming feel limited and inconvenient without a subscription"
+ ],
+ "answer": 0,
+ "explanation": "Metered packs open a lower-commitment entry point for players who play rarely and would never take a monthly plan. Volume discounts (about $0.40 an hour falling to about $0.24) and non-expiring hours make it fair for light users, while heavy players still get better value from a subscription. It segments customers by usage intensity and widens the funnel into the ecosystem.",
+ "rationales": [
+  "Correct: it's usage-based price discrimination that adds a new segment without cannibalising heavy subscribers.",
+  "Wrong: the packs are positioned alongside the subscription, and pay-as-you-go doesn't always earn more per player.",
+  "Wrong: the goal is to widen access, not to discourage streaming.",
+  "Wrong: the move expands cloud access without a subscription, the opposite of making it inconvenient."
+ ],
+ "interview_tip": "Pricing questions often ask how to add a tier without cannibalising the core plan. Explaining segmentation by usage intensity, using a live example, shows you follow the industry.",
+ "source": "https://windowsreport.com/microsoft-launches-xbox-cloud-gaming-for-3-99-no-game-pass-needed/"
+}
+]}
