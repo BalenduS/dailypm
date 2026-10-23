@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-23",
+ "theme": "Memorial accounts, mixed bundles & agents that see sale prices",
+ "questions": [
+  {
+   "id": "2026-10-23-01",
+   "topic": "Product Sense",
+   "concept": "Designing for deceased users' accounts (memorialization)",
+   "difficulty": "hard",
+   "question": "You're a PM on a large social network. Grieving families report painful moments: birthday reminders and 'memories' resurfacing for people who have died, and no way to manage the account. Which approach best serves the users involved?",
+   "options": [
+    "Add a 'hide this person' option to birthday reminders, so friends who find them painful can turn them off for themselves one profile at a time",
+    "Let a verified family member memorialize the account: stop reminders and suggestions, keep the profile as a tribute, and offer a pre-chosen legacy contact or deletion",
+    "Give any family member who submits a death certificate full login access to the account, so they can read messages and manage the profile directly",
+    "Automatically delete accounts after 12 months of inactivity, so that deceased users' profiles stop surfacing in reminders and in friend suggestions"
+   ],
+   "rationales": [
+    "Wrong: it puts the burden on each grieving friend, one profile at a time, instead of fixing the system's wrong assumption that the person is active.",
+    "Correct: it covers every group involved, stops the painful automated surfaces, and respects the person's own wishes chosen while they were alive.",
+    "Wrong: handing over full access breaks the deceased person's privacy (their private messages involve other people) and invites abuse.",
+    "Wrong: inactivity isn't death, so this deletes living users' accounts, and it destroys a tribute families often want to keep."
+   ],
+   "answer": 1,
+   "explanation": "Several user groups are involved: the deceased (whose privacy and wishes still matter), the family (who want control and closure), and friends (who want to grieve without unwelcome surprises). A memorialized state stops the system from treating the person as active, keeps the profile as a place to remember them, and respects the user's wishes through a legacy contact or deletion chosen in advance. Verification stops abuse by people falsely claiming someone has died.",
+   "interview_tip": "Sensitive-moment prompts test empathy and whether you can map every stakeholder, including someone who can no longer speak for themselves. Naming abuse risks, such as fake death reports, shows mature judgement."
+  },
+  {
+   "id": "2026-10-23-02",
+   "topic": "Product Sense",
+   "concept": "Bootstrapping trust for new listings without reviews",
+   "difficulty": "hard",
+   "question": "On your home-cooked-meal marketplace, new cooks with zero reviews get almost no orders, so many quit within two weeks, while established cooks keep winning. What's the best way to break this cycle without misleading buyers?",
+   "options": [
+    "Label new cooks clearly, give them limited exposure to first-order buyers with a satisfaction guarantee, and use verified signals such as a kitchen-hygiene check",
+    "Show newly joined cooks with an estimated 4.5-star rating until they earn ten real reviews, so they can compete fairly on equal terms with established cooks",
+    "Rank every cook strictly by review count, since buyers trust volume and new cooks will eventually earn reviews if they keep listing their meals",
+    "Ask new cooks to get reviews from friends and family in their first week, so their profiles look established before strangers start seeing them"
+   ],
+   "rationales": [
+    "Correct: it creates exposure, removes the buyer's risk through a guarantee, and adds honest trust signals.",
+    "Wrong: a made-up rating deceives buyers and destroys trust in every rating on the platform once people notice.",
+    "Wrong: that locks in the cycle you're trying to break, because cooks without reviews never get the orders that would earn them.",
+    "Wrong: friends-and-family reviews are biased and break the review system's integrity, which ends up hurting good cooks as well."
+   ],
+   "answer": 0,
+   "explanation": "The problem is cold start: no reviews means no orders, which means no reviews. The fix is to lower the buyer's risk honestly. Clearly labelled new-cook placement creates some exposure, a guarantee moves the risk from the buyer to the platform, and verified signals give buyers real evidence before any reviews exist. Exposure stays limited so a bad new cook can't hurt many buyers.",
+   "interview_tip": "Marketplace prompts often hide a cold-start loop. Strong candidates name the loop, then reduce risk for the person deciding rather than faking signals."
+  },
+  {
+   "id": "2026-10-23-03",
+   "topic": "Product Sense",
+   "concept": "Digitising an informal workflow without breaking its social norms",
+   "difficulty": "hard",
+   "question": "Kirana (neighbourhood grocery) owners in India track customer credit in a paper khata book. Your app digitises it, but adoption stalls: owners say regular customers feel insulted by automatic payment-reminder messages. What should you change first?",
+   "options": [
+    "Add stronger automated reminders with late-payment fees, since the owners clearly need more help collecting money from customers who owe them",
+    "Run a TV campaign explaining the benefits of digital ledgers to kirana owners, since the stalled adoption shows they don't yet see the value",
+    "Remove the reminder feature entirely and focus only on monthly reports, since reminders are the one part of the product that owners have complained about",
+    "Make reminders owner-triggered with polite, editable WhatsApp templates, and keep the ledger quick to update at the counter like the paper book"
+   ],
+   "rationales": [
+    "Wrong: harsher automation makes the very problem owners described worse and could cost them loyal customers.",
+    "Wrong: owners already see the value; the problem is that the design clashes with how they deal with customers, not awareness.",
+    "Wrong: reminders are likely the main value. Owners object to how they're sent, so redesign them rather than remove them.",
+    "Correct: it keeps the owner in control of the social relationship and still delivers the value of going digital."
+   ],
+   "answer": 3,
+   "explanation": "The khata runs on relationships: owners extend credit to people they know and choose when, and how gently, to ask for payment. Automatic reminders take that judgement away from the owner. Owner-triggered, editable messages keep the digital benefit (faster collection, a clear record) while respecting the relationship. Matching the speed of the paper book at the counter removes the other barrier to adoption.",
+   "interview_tip": "India-focused product prompts reward candidates who respect existing behaviours. Saying 'fit the workflow, don't fight it' and backing it with specifics signals strong user empathy."
+  },
+  {
+   "id": "2026-10-23-04",
+   "topic": "Product Sense",
+   "concept": "Recognition over recall in interface design",
+   "difficulty": "easy",
+   "question": "Users of a photo-editing app rarely use its powerful filters, which are applied by typing filter names into a command box. Which design change best applies the 'recognition over recall' principle?",
+   "options": [
+    "Add autocomplete to the command box once users have typed the first three letters of a filter's name",
+    "Publish a full filter glossary in the help centre, so users can look up the exact name of each filter",
+    "Show a visual strip of filter thumbnails previewing the user's own photo, so they can pick by sight",
+    "Run an onboarding tutorial on the first launch that teaches users the name of each of the filters"
+   ],
+   "rationales": [
+    "Wrong: autocomplete helps, but it still requires users to remember the first letters of a name they may never have known.",
+    "Wrong: a glossary still depends on recall and adds a trip out of the app.",
+    "Correct: users recognise the effect they want by sight, with no need to remember a name.",
+    "Wrong: a tutorial asks users to memorise names, which is the recall burden the principle tries to remove."
+   ],
+   "answer": 2,
+   "explanation": "Recognition over recall means showing options so users can spot what they want, instead of making them remember names. Live thumbnails go further: users see the result on their own photo before choosing, so they need no vocabulary at all. Recognising something takes far less mental effort than recalling it, which is why menus and previews beat command lines for most users.",
+   "interview_tip": "Quoting a usability heuristic and tying it to a specific design change shows design fluency. Interviewers like candidates who can explain why a design works, not just say it feels better."
+  },
+  {
+   "id": "2026-10-23-05",
+   "topic": "Metrics",
+   "concept": "Value-weighted fraud loss metric (basis points of GMV)",
+   "difficulty": "medium",
+   "question": "A payments team reports that its new fraud model cut the number of fraudulent transactions by 30%. Which metric best tells you whether the business is better off?",
+   "options": [
+    "Fraud losses as basis points of payment volume, alongside the false-decline rate on good transactions",
+    "The number of fraudulent transactions caught per day, compared with the same daily count under the old model",
+    "The share of all transactions flagged for manual review by the fraud operations team in the last week",
+    "The model's accuracy on a labelled test set, since accuracy covers both fraud caught and good orders passed"
+   ],
+   "rationales": [
+    "Correct: it weights fraud by money lost and pairs it with the cost of turning away good customers.",
+    "Wrong: counts ignore size, and the model may be catching many small frauds while missing a few large ones.",
+    "Wrong: the review rate measures operational load, not whether losses or customer friction improved.",
+    "Wrong: fraud is rare, so accuracy stays high even for a useless model that approves everything."
+   ],
+   "answer": 0,
+   "explanation": "Fraud is heavy-tailed: a few large frauds can outweigh many small ones, so counts can fall while losses rise. Measuring losses in basis points of volume normalises for growth and weights each fraud by its cost. Pairing it with the false-decline rate captures the hidden cost of blocking good customers, which is often bigger than fraud itself.",
+   "interview_tip": "Fintech metric questions check whether you weight outcomes by value and remember the cost of false positives. Naming both sides of the trade-off is the mark of a strong answer."
+  },
+  {
+   "id": "2026-10-23-06",
+   "topic": "Metrics",
+   "concept": "Mutual-reply rate as a two-sided match quality metric",
+   "difficulty": "medium",
+   "question": "You're defining the primary success metric for a dating app's new matching algorithm. Which metric best captures whether matches are actually good?",
+   "options": [
+    "The share of matches in which both people send at least one message within a few days",
+    "The total number of right swipes per user per day across all users who open the app",
+    "The average time a user spends swiping in the app each session after the launch",
+    "The total number of matches created each day across the whole platform and markets"
+   ],
+   "rationales": [
+    "Correct: it requires both sides to engage, which is the real sign of a good match.",
+    "Wrong: swipes measure one person's activity and can rise when the matches get worse.",
+    "Wrong: more swiping time can mean users are struggling to find good matches, not that matching improved.",
+    "Wrong: raw matches can grow while most of them go nowhere, so they reward quantity over quality."
+   ],
+   "answer": 0,
+   "explanation": "A good match needs interest from both sides, so the metric must reflect two-way engagement. Mutual reply shows both people found the match worth acting on. Swipes and raw matches can rise from a looser algorithm or from users swiping indiscriminately, and long swiping sessions may mean users can't find anyone worth talking to.",
+   "interview_tip": "For two-sided products, interviewers look for metrics that need both sides to succeed. Explaining why one-sided activity metrics can be gamed shows good metric judgement."
+  },
+  {
+   "id": "2026-10-23-07",
+   "topic": "Metrics",
+   "concept": "Segmenting a metric drop by new vs existing users",
+   "difficulty": "hard",
+   "question": "Weekly orders on a grocery app are down 8%. Order rates among users who joined more than 90 days ago are flat, while orders from users in their first 30 days are down sharply. What's the most useful next step?",
+   "options": [
+    "Wait another two weeks to see whether the drop recovers before investing any analysis time in finding its cause",
+    "Investigate what changed for new users: acquisition channels, onboarding, first-order offers and the first-session experience",
+    "Run a win-back campaign for long-standing users, since they place most orders and protecting them should come first",
+    "Roll back every release from the past month, since a recent product change must be what caused the overall drop"
+   ],
+   "rationales": [
+    "Wrong: an 8% drop concentrated in one segment is a clear signal, so waiting wastes time and lets losses build.",
+    "Correct: the segmentation points to the new-user journey, so investigate what changed there.",
+    "Wrong: long-standing users are flat, so targeting them ignores the segment that's actually falling.",
+    "Wrong: mass rollbacks are costly and unfocused, and the cause may not be a release at all (it could be marketing or an offer)."
+   ],
+   "answer": 1,
+   "explanation": "Splitting by user tenure localises the problem: existing users are behaving as before, so the cause is something new users meet. The usual suspects are changes in acquisition mix (lower-intent users), onboarding or sign-up changes, a removed or cut first-order discount, or a bug in the first session. Narrowing the search like this is faster than broad rollbacks.",
+   "interview_tip": "Root-cause questions reward systematic segmentation. Saying what each split rules out ('existing users are fine, so it's not the core experience') shows clear thinking."
+  },
+  {
+   "id": "2026-10-23-08",
+   "topic": "Metrics",
+   "concept": "Share of wallet as a growth metric",
+   "difficulty": "easy",
+   "question": "Your grocery delivery app has strong customer retention, but leadership wants to know how much more revenue can come from existing customers. Which metric directly answers this?",
+   "options": [
+    "Monthly active users who have placed at least one order in the past thirty days on the app",
+    "Customer acquisition cost across all paid marketing channels over the past full quarter",
+    "Share of wallet: the portion of each customer's total grocery spending that goes through your app",
+    "Net Promoter Score from a survey of customers who ordered in the last month on the app"
+   ],
+   "rationales": [
+    "Wrong: active users show reach, not how much more each customer could spend with you.",
+    "Wrong: acquisition cost is about winning new customers, not growing revenue from existing ones.",
+    "Correct: it measures how much of each customer's category spending you already capture, and so how much is left.",
+    "Wrong: NPS measures sentiment, not the size of the untapped spending."
+   ],
+   "answer": 2,
+   "explanation": "Share of wallet compares what a customer spends with you against what they spend in the whole category. A retained customer who buys only 20% of their groceries with you has a lot of headroom. It points to growth from deeper use — more categories, more frequent orders — rather than from new customers.",
+   "interview_tip": "Growth questions often hinge on knowing that existing customers are a growth lever. Mentioning share of wallet shows business sense beyond engagement metrics."
+  },
+  {
+   "id": "2026-10-23-09",
+   "topic": "Experimentation",
+   "concept": "Cross-device contamination when randomizing by device",
+   "difficulty": "medium",
+   "question": "A shopping site randomizes a new checkout design by browser cookie. Many users browse on mobile and buy on desktop. What's the main problem with this setup?",
+   "options": [
+    "Cookie-based assignment means the test needs to run for twice as long to reach the same statistical significance",
+    "Desktop users always convert better, so the test will show a false positive for whichever design they happen to see",
+    "The same person can see both designs on different devices, mixing the groups and shrinking the measured effect",
+    "Cookies are deleted when users clear their browser, so the results simply can't be analysed at all after the test"
+   ],
+   "rationales": [
+    "Wrong: the issue is bias in the result, not just how long the test needs to run.",
+    "Wrong: randomization spreads desktop users evenly across both groups, so device mix alone doesn't favour one design.",
+    "Correct: the groups contaminate each other, so the true effect gets diluted.",
+    "Wrong: cookie loss adds noise and some reassignment, but the results can still be analysed. The bigger issue is contamination."
+   ],
+   "answer": 2,
+   "explanation": "When the unit of randomization (the device) is smaller than the unit that decides (the person), one person can be in both groups. Their behaviour then reflects a mix of both designs, which blurs the difference between the groups and biases the measured effect towards zero. Randomizing by logged-in user ID, where possible, fixes this.",
+   "interview_tip": "Interviewers like candidates who check that the randomization unit matches the decision-maker. Suggesting user-ID randomization, and noting its coverage limits, shows practical experimentation skill."
+  },
+  {
+   "id": "2026-10-23-10",
+   "topic": "Experimentation",
+   "concept": "Shared budget interference in ad A/B tests",
+   "difficulty": "hard",
+   "question": "An ads team tests a new bidding algorithm by splitting each advertiser's campaigns 50/50 between the old and new algorithms, both drawing on the same daily budget. The new algorithm shows 15% more conversions. Why might this result overstate the real effect?",
+   "options": [
+    "The new algorithm may spend the shared budget early, starving the control, so the gap partly reflects budget taken from it",
+    "Advertisers in the test are aware of the experiment, so they change their bids in ways that happen to favour the newer algorithm",
+    "A 50/50 split gives lower statistical power than a 90/10 split, so the 15% lift is very likely just random noise in the data",
+    "Conversions are a lagging metric, so the test should have used click-through rate as its primary success metric instead"
+   ],
+   "rationales": [
+    "Correct: the groups interfere through a shared budget, so the lift partly comes from the control rather than from new value.",
+    "Wrong: there's no reason to think advertisers know about the test or change their bids to favour one group.",
+    "Wrong: a 50/50 split is actually the most powerful split for a fixed sample size.",
+    "Wrong: click-through rate is a weaker proxy, and switching metrics wouldn't fix the interference."
+   ],
+   "answer": 0,
+   "explanation": "When both groups compete for one budget, they aren't independent. If the new algorithm bids more aggressively, it takes impressions and budget the control would otherwise have used. Part of the treatment's 'win' is then simply the control's loss, and the effect disappears when the algorithm is rolled out to everyone. Fixes include splitting the budget per group or randomizing at the advertiser or campaign level.",
+   "interview_tip": "Ads and marketplace interviews often probe interference through shared resources. Spotting that the groups aren't independent shows you understand the assumptions that make a test valid."
+  },
+  {
+   "id": "2026-10-23-11",
+   "topic": "Estimation",
+   "concept": "Annual parking revenue for a mall",
+   "difficulty": "medium",
+   "question": "Estimate the annual parking revenue of a large city mall with 1,000 parking slots. Assume the car park runs 12 hours a day, slots are occupied 60% of that time on average, the average stay is 3 hours, and each visit pays a flat ₹60.",
+   "options": [
+    "About ₹50 crore",
+    "About ₹50 lakh",
+    "About ₹5 crore",
+    "About ₹15 crore"
+   ],
+   "rationales": [
+    "Wrong: this is about ten times too high, as if every slot turned over every hour.",
+    "Wrong: this is about ten times too low, as if you had counted only about 240 visits a day.",
+    "Correct: 2,400 visits a day × ₹60 × 365 days ≈ ₹5.3 crore.",
+    "Wrong: this assumes about three times too many visits, for example by ignoring the 60% occupancy."
+   ],
+   "answer": 2,
+   "explanation": "Occupied slot-hours per day = 1,000 × 12 × 0.6 = 7,200. Divide by a 3-hour average stay to get 2,400 visits a day. At ₹60 each, that's ₹1.44 lakh a day. Over 365 days: ₹1.44 lakh × 365 ≈ ₹5.3 crore. The key step is turning capacity into visits through occupancy and length of stay.",
+   "interview_tip": "Interviewers watch for a clear chain from capacity to utilisation to turnover to price. Stating each assumption and sanity-checking the result (₹1.4 lakh a day sounds plausible) is what earns credit."
+  },
+  {
+   "id": "2026-10-23-12",
+   "topic": "Estimation",
+   "concept": "Daily token volume for an internal coding assistant",
+   "difficulty": "medium",
+   "question": "A company with 2,000 engineers rolls out an AI coding assistant. Assume 60% use it on a given workday, each makes 40 requests, and each request sends about 8,000 input tokens and gets about 500 output tokens. Roughly how many tokens are processed per workday?",
+   "options": [
+    "About 4 billion tokens",
+    "About 4 million tokens",
+    "About 400 million tokens",
+    "About 40 million tokens"
+   ],
+   "rationales": [
+    "Wrong: this is ten times too high, for example from counting all 2,000 engineers as making 100 requests each.",
+    "Wrong: this is a hundred times too low, as if you had counted output tokens only and forgotten the large input context.",
+    "Correct: 48,000 requests × 8,500 tokens ≈ 408 million.",
+    "Wrong: this is ten times too low, for example from dropping a zero from the context size."
+   ],
+   "answer": 2,
+   "explanation": "Daily users = 2,000 × 0.6 = 1,200. Requests = 1,200 × 40 = 48,000. Tokens per request = 8,000 + 500 = 8,500. Total = 48,000 × 8,500 ≈ 408 million tokens. Note that input tokens dominate because coding assistants send large chunks of code as context, which is why prompt caching matters so much for cost.",
+   "interview_tip": "AI-product interviews increasingly include cost estimates. Noticing that input context dominates and linking it to caching or context pruning turns a calculation into product insight."
+  },
+  {
+   "id": "2026-10-23-13",
+   "topic": "Strategy",
+   "concept": "Channel conflict when a brand launches direct-to-consumer",
+   "difficulty": "medium",
+   "question": "A snack brand sells mainly through supermarkets and now wants to launch its own D2C website. Supermarket partners threaten to cut its shelf space. What's the strongest way to grow D2C while managing this conflict?",
+   "options": [
+    "Shift all marketing spend to the website immediately, so customers move online before supermarkets can react to the change",
+    "Use D2C for things retail can't offer, such as subscriptions, exclusive flavours and bundles, while keeping retail prices consistent",
+    "Undercut supermarket prices by 20% on the website, since selling direct removes the retailer's margin and customers will switch",
+    "Delay the D2C launch indefinitely, since the supermarket relationships are worth more than any online channel could ever be"
+   ],
+   "rationales": [
+    "Wrong: an abrupt shift risks losing shelf space before the online channel can replace that volume.",
+    "Correct: it differentiates the channels instead of having them compete on price, which protects the retail business.",
+    "Wrong: undercutting invites retaliation that could cost far more retail volume than the website gains.",
+    "Wrong: giving up D2C forgoes customer data and new revenue. Complementary positioning can capture both."
+   ],
+   "answer": 1,
+   "explanation": "Channel conflict arises when a new channel competes head-on with existing partners. The way through is to make D2C complementary: offer what shelves can't (subscriptions, exclusives, customisation, first-party data) and avoid undercutting partners on price. That captures the strategic benefits of D2C, such as customer data and higher margins on new products, without provoking retaliation from the channel that still drives most sales.",
+   "interview_tip": "Strategy questions about new channels test whether you protect the core business while building the new one. Indian D2C examples show you understand real trade-offs in that market."
+  },
+  {
+   "id": "2026-10-23-14",
+   "topic": "Strategy",
+   "concept": "Mixed bundling to capture varied willingness to pay",
+   "difficulty": "medium",
+   "question": "A productivity suite sells a document editor and a spreadsheet tool. Some customers value only one, while others value both. Which pricing structure typically captures the most value across these segments?",
+   "options": [
+    "Sell each product only on its own at the same price, with no bundle",
+    "Sell only the bundle, so every customer pays for both products at once",
+    "Give away one product for free so that customers buy the other one",
+    "Sell each product on its own and also offer a discounted bundle of both"
+   ],
+   "rationales": [
+    "Wrong: separate-only pricing misses customers who'd buy both with a modest discount.",
+    "Wrong: pure bundling loses customers who value only one product enough to buy it alone.",
+    "Wrong: giving one away sacrifices revenue from people who value it, without a clear strategic reason.",
+    "Correct: it serves single-product buyers and also turns people who want both into bundle buyers."
+   ],
+   "answer": 3,
+   "explanation": "Mixed bundling lets customers sort themselves. Those who value only one product buy it alone at full price, while those who value both take the discounted bundle, which captures more of their combined willingness to pay than separate purchases would. Pure bundling loses single-product buyers who won't pay for both, and selling only separately leaves money on the table from people who would buy both at a slight discount.",
+   "interview_tip": "Pricing interviews reward explaining why a structure works using customer segments. Describing how customers self-select into the option that suits them shows economic intuition."
+  },
+  {
+   "id": "2026-10-23-15",
+   "topic": "Strategy",
+   "concept": "Interoperability mandates weakening messaging lock-in",
+   "difficulty": "medium",
+   "question": "The EU's Digital Markets Act requires designated gatekeeper messaging services, such as WhatsApp, to interoperate with rival messengers on request. You lead strategy at a small privacy-focused messenger. What's the main strategic implication?",
+   "options": [
+    "Your app no longer needs any growth marketing, since every WhatsApp user in the EU will automatically become one of your users",
+    "Network effects no longer matter at all in messaging, so the most important factor in competing will now be pricing",
+    "Interoperability mainly benefits WhatsApp, since it can now copy your features, so you should avoid connecting to it at all",
+    "Users can reach WhatsApp contacts without them switching, so you can compete on privacy and features rather than on network size"
+   ],
+   "rationales": [
+    "Wrong: interoperability makes switching possible; it doesn't move anyone automatically. You still need to win users.",
+    "Wrong: network effects are weakened, not eliminated, and pricing isn't the main lever in free messaging.",
+    "Wrong: refusing to connect gives up the one change that most helps challengers reach users.",
+    "Correct: interoperability lowers the switching barrier, so differentiation matters more than network size."
+   ],
+   "answer": 3,
+   "explanation": "In messaging, the biggest barrier for a challenger is that people stay where their contacts are. Interoperability lets a challenger's users message gatekeeper users without everyone switching, which weakens that network-effect lock-in. Competition then shifts towards product differentiation such as privacy, design or features. The challenger still has to win and keep users, and must manage the security and encryption trade-offs of connecting.",
+   "interview_tip": "Regulatory-shift questions test whether you can trace how a rule changes the structure of competition. Linking it to a specific moat, here network effects, shows strategic depth."
+  },
+  {
+   "id": "2026-10-23-16",
+   "topic": "Execution",
+   "concept": "Removing stale feature flags (flag debt)",
+   "difficulty": "easy",
+   "question": "Your codebase has over 400 feature flags, many for features rolled out to 100% months ago. Engineers say testing is slow and bugs come from unexpected flag combinations. What's the best practice to adopt?",
+   "options": [
+    "Keep every flag indefinitely, since flags give the most flexibility to turn features off at any time",
+    "Stop using feature flags for new features, since they're clearly what's causing the engineering problems",
+    "Give each release flag an owner and an expiry date, then remove it once the rollout is complete",
+    "Turn all flags off at once during a quiet week to see which features still work without them"
+   ],
+   "rationales": [
+    "Wrong: keeping every flag piles up complexity and testing cost, which is exactly the current problem.",
+    "Wrong: flags are valuable for safe rollouts. The problem is not cleaning them up, not using them.",
+    "Correct: ownership and expiry turn flags into a managed lifecycle instead of permanent clutter.",
+    "Wrong: switching everything off at once could break production and doesn't create a lasting process."
+   ],
+   "answer": 2,
+   "explanation": "Release flags are meant to be temporary. Each one left behind adds code paths, multiplies the combinations to test, and creates the risk of something being switched off by accident. Assigning an owner and an expiry date, then removing the flag and the dead code after full rollout, keeps the benefits of flags without the build-up of debt. Long-lived operational flags, such as kill switches, should be kept deliberately.",
+   "interview_tip": "Execution questions sometimes probe engineering hygiene. Showing you'd make tech-debt clean-up part of the launch process signals strong partnership with engineering."
+  },
+  {
+   "id": "2026-10-23-17",
+   "topic": "Execution",
+   "concept": "Pre-set kill criteria for an exploratory bet",
+   "difficulty": "medium",
+   "question": "You're starting a six-month exploratory bet on a new B2B product line. Past bets at your company dragged on for years because nobody wanted to admit they weren't working. What should you set up at the start?",
+   "options": [
+    "Commit publicly to the full six months regardless of results, so that the team feels secure and can take bigger risks",
+    "Agree with leadership on specific signals and checkpoints that would trigger stopping, such as no paying pilots by month four",
+    "Keep the bet's goals deliberately vague, so the team can adjust to whatever it learns without being judged against targets",
+    "Wait until the end of the six months to define success, once the team has enough data to know what's realistic"
+   ],
+   "rationales": [
+    "Wrong: an unconditional commitment repeats the company's pattern of bets that drag on.",
+    "Correct: agreed stopping signals take the emotion out of the decision and make the team focus on the riskiest questions.",
+    "Wrong: vague goals make it impossible to tell success from failure, so bets never end.",
+    "Wrong: defining success afterwards invites rationalisation, because any result can be framed as progress."
+   ],
+   "answer": 1,
+   "explanation": "Kill criteria set in advance make it much easier to stop a failing bet, because the decision is made before sunk costs and emotional attachment grow. Concrete checkpoints, such as pilot sign-ups or a measure of willingness to pay, also focus the team on learning what matters most. Leaders agree to the criteria up front, so stopping is seen as discipline rather than failure.",
+   "interview_tip": "Interviewers value PMs who can stop things. Describing kill criteria set before results are known shows judgement and resistance to sunk-cost thinking."
+  },
+  {
+   "id": "2026-10-23-18",
+   "topic": "Execution",
+   "concept": "Forced ranking when every item is labelled P0",
+   "difficulty": "easy",
+   "question": "Your team's quarterly backlog has 14 items, and stakeholders have labelled 11 of them 'P0'. The team can deliver about five. What's the most effective next step?",
+   "options": [
+    "Force-rank all items in a single ordered list against the quarter's goals, and agree the cut line with stakeholders",
+    "Accept all 11 P0 items and ask engineers to work weekends, since stakeholders have said that they're all critical",
+    "Work on the P0 items in the order they were submitted, since that is the fairest way to decide between stakeholders",
+    "Split the team across all 11 P0 items at the same time, so every stakeholder sees some progress on their own request"
+   ],
+   "rationales": [
+    "Correct: forced ranking brings back real prioritisation and makes the trade-offs explicit.",
+    "Wrong: more than doubling the planned work through overtime isn't sustainable and hurts quality.",
+    "Wrong: submission order has nothing to do with impact, so it's arbitrary rather than fair.",
+    "Wrong: spreading the team thin means most items finish late or not at all."
+   ],
+   "answer": 0,
+   "explanation": "When almost everything is P0, the labels have stopped carrying information. A single ranked list forces real trade-offs, because no two items can share a position. Ranking against the quarter's goals makes the reasoning visible, and agreeing the cut line with stakeholders turns a fight over labels into a shared decision about what fits the capacity.",
+   "interview_tip": "Prioritisation questions test whether you can say no clearly and fairly. A single ranked list tied to goals is a simple tool that interviewers like to hear."
+  },
+  {
+   "id": "2026-10-23-19",
+   "topic": "Behavioural",
+   "concept": "Handling a customer escalation that reached the CEO",
+   "difficulty": "hard",
+   "question": "A major customer emails your CEO directly, complaining that a bug your team deprioritised has blocked their finance close for two weeks. The CEO forwards it to you with one word: 'Thoughts?'. What's the strongest response?",
+   "options": [
+    "Ask the engineering lead to reply to the CEO directly, since they made the technical call on how the bug was prioritised",
+    "Call the customer the same day, offer a workaround, commit to a fix date, and send the CEO a short note on cause, plan and how triage missed it",
+    "Explain to the CEO that the bug was correctly deprioritised by your framework and that one escalation shouldn't override the roadmap",
+    "Immediately move the whole team onto the bug and pause the roadmap until it's fixed, so that the CEO sees full commitment"
+   ],
+   "rationales": [
+    "Wrong: handing it off avoids ownership. As PM, you own the prioritisation decision and the reply.",
+    "Correct: it fixes the customer's problem quickly, owns the triage gap, and keeps the CEO briefly informed.",
+    "Wrong: defending the process ignores that a two-week block of a customer's finance close shows the triage process missed real severity.",
+    "Wrong: stopping all work is an overreaction. A focused fix with a workaround solves the problem without derailing the roadmap."
+   ],
+   "answer": 1,
+   "explanation": "A strong answer shows customer obsession, ownership and clear communication upward. Contacting the customer quickly with a workaround and a date addresses their pain directly. The note to the CEO is short and owns the miss: what happened, what's being done, and what will change in triage (for example, weighing severity for high-value accounts). It neither ignores the escalation nor overreacts to it.",
+   "interview_tip": "Amazon-style questions on customer obsession and ownership reward answers that fix the customer's pain fast and then fix the process. Owning the miss without being defensive is the key signal."
+  },
+  {
+   "id": "2026-10-23-20",
+   "topic": "Behavioural",
+   "concept": "Accepting extra scope while protecting an at-risk commitment",
+   "difficulty": "hard",
+   "question": "Your manager asks you to take over a second team's product area starting next week. Your own team's launch is three weeks away and already at risk. How should you respond?",
+   "options": [
+    "Decline outright because your launch is at risk, and suggest the manager find someone else who has more capacity right now",
+    "Accept it and quietly delay your own launch by a month without mentioning it, so you can give the new area full attention",
+    "Accept immediately without raising concerns, since turning down extra responsibility could look bad and might hurt your career",
+    "Say you're keen, explain the launch risk, and propose options: a later start, a short interim plan, or dropping some of your lower-priority work"
+   ],
+   "rationales": [
+    "Wrong: a flat refusal ignores the organisation's need and misses the chance to find a workable plan.",
+    "Wrong: quietly slipping a commitment breaks trust with your manager and your stakeholders.",
+    "Wrong: accepting without mentioning the risk sets up both commitments to fail.",
+    "Correct: it's honest about capacity, shows willingness, and offers options so the decision is made jointly."
+   ],
+   "answer": 3,
+   "explanation": "The strong answer shows ownership of both commitments and treats the manager as a partner in the trade-off. Being open about the launch risk and offering concrete options lets the manager make an informed decision. It shows ambition without overpromising, and it avoids both quietly failing at two things and refusing to help.",
+   "interview_tip": "Questions about competing priorities test judgement and honesty with your manager. Offering clear trade-off options, rather than a plain yes or no, shows senior-level ownership."
+  },
+  {
+   "id": "2026-10-23-21",
+   "topic": "Behavioural",
+   "concept": "Proportioning STAR answers toward actions and results",
+   "difficulty": "easy",
+   "question": "In a mock interview, a candidate's three-minute answer to 'Tell me about a time you influenced a decision' spends two minutes on background and only a few seconds on what they did. What's the most useful feedback?",
+   "options": [
+    "Focus the answer on what the team achieved together, since talking about your own actions can come across as arrogant",
+    "Keep the situation to a few sentences and spend most of the time on your own actions, reasoning and measurable result",
+    "Add even more background detail, so the interviewer fully understands how complex the organisation was at that time",
+    "Shorten the whole answer to under one minute, since interviewers prefer brief answers to every behavioural question"
+   ],
+   "rationales": [
+    "Wrong: interviewers need your individual contribution. Describing only the team's work makes it hard to assess you.",
+    "Correct: it moves the time to the actions and results that interviewers actually score.",
+    "Wrong: more background squeezes the actions further and hides the evidence.",
+    "Wrong: answers that are too short lack the detail interviewers need, so the fix is the balance, not the length."
+   ],
+   "answer": 1,
+   "explanation": "Behavioural interviews assess what you did and how you think. Background is only there to frame the stakes, so it should be brief. Most of the answer should cover your actions (what you did, why, and how you handled pushback) and a concrete result, ideally measured, plus what you learned. That's where interviewers find evidence for the competency they're scoring.",
+   "interview_tip": "A common rule is to spend most of a STAR answer on Action and Result. Practising with a timer helps you keep the situation short."
+  },
+  {
+   "id": "2026-10-23-22",
+   "topic": "AI Product",
+   "concept": "Speculative decoding to reduce generation latency",
+   "difficulty": "easy",
+   "question": "Your engineering team proposes 'speculative decoding' to speed up your AI assistant's responses. What does this technique do?",
+   "options": [
+    "The system returns cached answers to questions that look similar to earlier ones, skipping the model call altogether",
+    "The large model is compressed to lower numerical precision so that each step of generation runs faster on the GPU",
+    "A small, fast draft model proposes several tokens, and the large model checks them in one pass, keeping those it agrees with",
+    "The model guesses the user's next question and generates an answer in advance, before the user has even typed it"
+   ],
+   "rationales": [
+    "Wrong: that's semantic caching, which reuses old answers rather than speeding up new ones.",
+    "Wrong: that's quantization, a separate way to reduce cost and latency that can affect quality.",
+    "Correct: a draft model proposes tokens and the large model verifies them, which speeds up generation without lowering quality.",
+    "Wrong: that describes predicting a user's next request, which is a different idea."
+   ],
+   "answer": 2,
+   "explanation": "Large models generate text one token at a time, which is slow. With speculative decoding, a cheap draft model guesses a short run of tokens, and the large model verifies the whole run in a single step. When the guesses are right, several tokens are produced for the cost of one step of the large model. Because the large model checks everything, the output quality doesn't change; only the speed does.",
+   "interview_tip": "AI PM interviews check that you know the main levers for latency and how they differ. Telling apart methods that keep quality, like speculative decoding, from ones that trade it away shows technical fluency."
+  },
+  {
+   "id": "2026-10-23-23",
+   "topic": "AI Product",
+   "concept": "Query rewriting for follow-up questions in conversational RAG",
+   "difficulty": "medium",
+   "question": "Your help-centre chatbot uses retrieval-augmented generation. First questions get good answers, but follow-ups like 'what about for annual plans?' often retrieve irrelevant articles. What's the most likely fix?",
+   "options": [
+    "Switch to a larger language model, since a smarter model will be better at answering follow-up questions in the chat",
+    "Rewrite each follow-up into a standalone query using the conversation so far, such as 'refund policy for annual plans', before retrieval",
+    "Increase the number of retrieved articles from five to fifty, so the right article is more likely to be included somewhere",
+    "Fine-tune the embedding model on help-centre articles, so the search understands the product's vocabulary better"
+   ],
+   "rationales": [
+    "Wrong: the failure is in retrieval, so a bigger model can't fix articles that were never retrieved.",
+    "Correct: it gives the retriever the missing context, which is why follow-ups are failing.",
+    "Wrong: retrieving more articles adds noise and cost and still searches with an ambiguous query.",
+    "Wrong: better embeddings won't help when the query itself is missing the key information."
+   ],
+   "answer": 1,
+   "explanation": "Follow-ups rely on context from earlier turns; 'what about for annual plans?' doesn't say what 'what' refers to. If that text is sent straight to the search step, it can't find the right article. Rewriting it into a standalone query that brings in the earlier context (here, refunds) gives the retriever something it can match. It's a cheap fix aimed at the step that's actually failing.",
+   "interview_tip": "RAG questions reward finding which step is failing before proposing fixes. Noticing that only follow-ups fail and pointing to query rewriting shows sharp debugging."
+  },
+  {
+   "id": "2026-10-23-24",
+   "topic": "AI Product",
+   "concept": "Computer-use (GUI) agents vs API integrations",
+   "difficulty": "medium",
+   "question": "Your AI agent needs to update records in customers' business software. Some tools have APIs; others, like an old desktop accounting app, don't. When is a computer-use agent, which operates the screen like a person, the right choice?",
+   "options": [
+    "For tools without a usable API, accepting slower and less reliable runs, while using APIs wherever they exist",
+    "For every tool, since operating the screen like a person works everywhere and avoids building integrations",
+    "Only for tools with APIs, since the agent can then fall back to the API whenever operating the screen fails",
+    "Never, since screen-operating agents are an experimental research idea that isn't ready for any real product"
+   ],
+   "rationales": [
+    "Correct: it uses each method where it works best, with APIs first and the screen agent filling the gaps.",
+    "Wrong: using screen agents everywhere gives up the speed and reliability of APIs where they're available.",
+    "Wrong: this gets it backwards. Where an API exists you should simply use it; the screen agent is for tools without one.",
+    "Wrong: computer-use agents are in real products today. The point is to use them where they fit."
+   ],
+   "answer": 0,
+   "explanation": "APIs are faster, cheaper and more reliable because they return structured data and don't break when a screen layout changes. Computer-use agents are useful where no API exists, such as legacy or closed apps, because they can work with anything a person can see. The right design uses APIs first and computer use as a fallback for gaps, with extra checks because screen-based actions fail more often.",
+   "interview_tip": "Agent-architecture questions test whether you can pick the right tool for the job. Explaining reliability and cost trade-offs, plus a fallback plan, shows product and technical judgement."
+  },
+  {
+   "id": "2026-10-23-25",
+   "topic": "AI Product",
+   "concept": "Endpointing (end-of-turn detection) in voice agents",
+   "difficulty": "medium",
+   "question": "Users of your voice ordering agent complain that it interrupts them mid-sentence when they pause to think, for example 'I'd like a large… um… pepperoni'. Which change best addresses this?",
+   "options": [
+    "Detect the end of a turn from meaning and tone, not just silence, so the agent waits when a sentence sounds unfinished",
+    "Use a larger language model for generating responses, so that the replies themselves are more accurate and helpful",
+    "Require users to press a button whenever they finish speaking, so the agent knows exactly when its turn has started",
+    "Make the agent always wait five full seconds of silence before replying, so it never cuts off a user in mid-thought"
+   ],
+   "rationales": [
+    "Correct: context-aware turn detection handles thinking pauses without making every reply slow.",
+    "Wrong: response quality isn't the problem. The agent is starting to speak at the wrong time.",
+    "Wrong: a button takes away the hands-free, natural feel that is the reason to use voice at all.",
+    "Wrong: a long fixed wait makes every exchange sluggish, and conversation speed matters a lot in voice."
+   ],
+   "answer": 0,
+   "explanation": "Endpointing is how a voice agent decides that the user has finished speaking. A fixed silence threshold is a poor guide: short pauses cut people off, and long ones make the agent feel slow. Using context (an unfinished sentence, filler words like 'um', a rising tone) lets the agent wait during thinking pauses and still reply quickly when the user is done.",
+   "interview_tip": "Voice-AI questions often turn on conversational timing. Talking about the trade-off between speed and interruptions, and the signals beyond silence, shows real product depth."
+  },
+  {
+   "id": "2026-10-23-26",
+   "topic": "AI Product",
+   "concept": "Designing for rapidly improving model capabilities",
+   "difficulty": "hard",
+   "question": "Your team plans to spend six months building a complex pipeline of hand-written rules and prompt chains to make today's model handle long legal documents reliably. Model capability in this area has improved noticeably every few months. What's the wisest product approach?",
+   "options": [
+    "Pause the product entirely until future models can handle long documents without any extra engineering work required",
+    "Build the full six-month pipeline now, since a working product today matters more than any guesses about future models",
+    "Train your own legal model from scratch, so that the product no longer depends on the pace of outside providers",
+    "Build the thinnest version that delivers value now, invest in evals and workflow, and re-test new models before adding scaffolding"
+   ],
+   "rationales": [
+    "Wrong: waiting gives the market to competitors and gives up learning from real users.",
+    "Wrong: a large investment in workarounds for today's model may be overtaken by the next release.",
+    "Wrong: training from scratch is costly and slow, and is unlikely to keep pace with frontier progress for most teams.",
+    "Correct: it delivers value now and puts effort into lasting assets rather than workarounds that may soon be obsolete."
+   ],
+   "answer": 3,
+   "explanation": "When models improve quickly, heavy scaffolding built around today's weaknesses may become unnecessary, or even harmful, within months. The more durable investments are evals that show what a new model can do, integration into users' workflows, and domain data, which keep their value whatever the model. Shipping a thin version now gets value and feedback to users, and re-testing each new model before building more avoids wasted work.",
+   "interview_tip": "AI strategy questions test whether you plan for fast-moving technology. Separating lasting investments (evals, workflow, data) from temporary ones shows mature AI product thinking."
+  },
+  {
+   "id": "2026-10-23-27",
+   "topic": "Technology",
+   "concept": "Optimistic UI updates with rollback",
+   "difficulty": "easy",
+   "question": "In your chat app, tapping 'like' on a message waits for the server to confirm before the heart turns red, which takes up to a second on slow networks. What does an 'optimistic UI update' change?",
+   "options": [
+    "The heart turns red instantly, and the app quietly reverses it and tells the user if the server request fails",
+    "The like button is hidden on slow networks, so users never see the delay and don't get frustrated by the app",
+    "The app waits until the network connection is fast before sending any likes, then sends them all at once in a batch",
+    "The app sends the like request twice in parallel, so at least one of the requests reaches the server more quickly"
+   ],
+   "rationales": [
+    "Correct: the screen updates instantly, with a rollback if the request fails.",
+    "Wrong: hiding the feature removes value instead of fixing the delay.",
+    "Wrong: delaying the request makes the experience feel even slower.",
+    "Wrong: duplicate requests waste resources and could cause double-counting without making anything faster."
+   ],
+   "answer": 0,
+   "explanation": "An optimistic update assumes the action will succeed, which it usually does, and updates the screen immediately while the request runs in the background. If the request fails, the app reverses the change and lets the user know. It's ideal for frequent, low-risk actions like likes. It's a poor fit for high-stakes actions like payments, where showing success before it's confirmed would be misleading.",
+   "interview_tip": "Technical-fluency questions often link engineering patterns to user experience. Saying when optimistic updates are safe, and when they're not, shows good judgement."
+  },
+  {
+   "id": "2026-10-23-28",
+   "topic": "Technology",
+   "concept": "Saga pattern for multi-service transactions",
+   "difficulty": "medium",
+   "question": "A travel app books a flight, a hotel and a car through three separate services. If the car booking fails after the flight and hotel succeed, the customer is left with a partial trip. Which design best handles this?",
+   "options": [
+    "Retry the car booking forever until it succeeds, since the flight and hotel have already been booked for the trip",
+    "A single database transaction that spans all three services, so everything commits or rolls back together automatically",
+    "Book all three at the same moment and hope they succeed, then email customers individually when any one fails",
+    "A saga: run each booking step in order, and if a later step fails, run compensating actions that cancel the earlier bookings"
+   ],
+   "rationales": [
+    "Wrong: endless retries can hang forever and may never succeed if the car is sold out.",
+    "Wrong: independent and third-party services can't usually take part in one shared database transaction.",
+    "Wrong: firing off all the bookings and fixing failures by hand doesn't scale and leaves customers stranded.",
+    "Correct: compensating actions bring the overall booking back to a consistent state when one step fails."
+   ],
+   "answer": 3,
+   "explanation": "Separate services usually can't share one database transaction, especially when some are external partners. A saga breaks the process into steps, each with a 'compensating' action that undoes it (such as cancelling the hotel). If a step fails, the completed ones are undone in reverse order, so the overall booking ends either complete or fully reversed. PMs should also define what the customer sees during this process and what happens with any cancellation fees.",
+   "interview_tip": "System-design basics for PMs include handling partial failure. Mentioning compensating actions, and how the customer experiences them, shows you think about both reliability and UX."
+  },
+  {
+   "id": "2026-10-23-29",
+   "topic": "Growth",
+   "concept": "Endowed progress effect in onboarding checklists",
+   "difficulty": "easy",
+   "question": "Your B2B tool's five-step setup checklist has low completion. A designer suggests counting 'Create account' as step one, already ticked, so new users start at 1 of 6 done. Why might this raise completion?",
+   "options": [
+    "Ticking the first step automatically sends a reminder email that brings users back to finish it",
+    "A longer checklist makes the product seem more powerful, so users explore more of the features",
+    "More steps make each step smaller and quicker, so users get through the whole setup much faster",
+    "People who feel they've already made progress towards a goal are more motivated to finish it"
+   ],
+   "rationales": [
+    "Wrong: ticking a step doesn't trigger emails here. The effect is psychological.",
+    "Wrong: the effect comes from feeling progress, not from the product seeming bigger.",
+    "Wrong: the real steps don't change, so setup isn't any quicker.",
+    "Correct: a sense of progress already made increases motivation to finish."
+   ],
+   "answer": 3,
+   "explanation": "The endowed progress effect is a well-documented finding: people are more likely to complete a goal when they feel they've already started, even when the starting progress is artificial. Showing the first step as done makes the checklist feel underway rather than a fresh task. It works best when the remaining steps still deliver real value, so users reach the 'aha' moment.",
+   "interview_tip": "Growth interviews like behavioural-science levers tied to concrete flows. Citing a named effect and saying when it backfires (if the steps add no value) shows depth."
+  },
+  {
+   "id": "2026-10-23-30",
+   "topic": "Current Events",
+   "concept": "Shopify Catalog API list_price for AI agents (Oct 2026)",
+   "difficulty": "medium",
+   "question": "On 9 October 2026, Shopify's Catalog API started returning a merchant's compare-at price as `list_price`, so AI shopping agents can tell when a product is marked down. It's shared by default for most stores, but Shopify turns it off for stores that use compare-at for MSRP or another reference price. Why is that exception a sound product decision?",
+   "options": [
+    "Stores that use compare-at prices for MSRP references have far too many products for the Catalog API to process reliably",
+    "Agents would present those reference prices as real discounts, misleading shoppers and exposing merchants to pricing-rule risks",
+    "AI shopping agents cannot read reference prices at all, so sharing them would simply waste bandwidth for both sides",
+    "MSRP references are confidential deals between brands and retailers, so sharing them would break supplier contracts"
+   ],
+   "rationales": [
+    "Wrong: the exception is about what the field means, not about how many products a store has.",
+    "Correct: it stops agents from presenting reference prices as real markdowns, which would mislead buyers.",
+    "Wrong: agents can read the field; the concern is how they'd interpret and present it.",
+    "Wrong: MSRPs are usually public, and confidentiality isn't the reason Shopify gives for the setting."
+   ],
+   "answer": 1,
+   "explanation": "An agent sees `list_price` above `price` and naturally describes it as a sale. If the higher figure is only a manufacturer's suggested price the shop never charged, the agent would be advertising a fake discount, which harms shoppers' trust and can break reference-pricing rules. Shopify also returns `list_price` only when it's above the current price, and not to EEA buyers when the store hides compare-at prices there. The principle: when machines repeat your data to users, the meaning of each field must be unambiguous.",
+   "interview_tip": "Agentic-commerce questions increasingly ask how data shown to AI agents should be designed. Explaining that agents repeat fields literally, so meaning and defaults matter, shows you're thinking ahead.",
+   "source": "https://shopify.dev/changelog/catalog-api-now-returns-compare-at-prices-as-list_price"
+  }
+ ]
+}
