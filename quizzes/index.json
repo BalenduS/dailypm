@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-24",
+   "theme": "Non-users, warning fatigue & who picks the model",
+   "count": 30
+  },
+  {
    "date": "2026-10-23",
    "theme": "Memorial accounts, mixed bundles & agents that see sale prices",
    "count": 30

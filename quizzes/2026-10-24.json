@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-24",
+ "theme": "Non-users, warning fatigue & who picks the model",
+ "questions": [
+  {
+   "id": "2026-10-24-01",
+   "topic": "Product Sense",
+   "concept": "Designing for participants who won't install the app",
+   "difficulty": "hard",
+   "question": "You're the PM for a restaurant waitlist app used by hosts on a tablet. Diners join the queue at the door, but only about 10% have the app installed, and no-shows when tables are ready are high. Which solution best addresses the problem?",
+   "options": [
+    "Send diners an SMS or WhatsApp link with a live queue position and a one-tap 'I'm coming' or 'Cancel' reply",
+    "Offer diners a ₹100 discount on their bill if they download the app before they are seated",
+    "Add a large live-queue display screen inside the restaurant entrance so waiting diners can see where they are",
+    "Require every diner to download the app and sign in before they are allowed to join the waitlist"
+   ],
+   "rationales": [
+    "Correct: it reaches 100% of diners in a channel they already use and lets them confirm or release the table in one tap.",
+    "Wrong: a discount might lift installs a little, but most one-time diners won't bother, and it costs margin without fixing the no-show loop.",
+    "Wrong: a screen only helps diners who stay at the entrance; people who wander off are exactly the ones who miss their table.",
+    "Wrong: forcing installs adds friction at the door, and many diners will just walk to the next restaurant."
+   ],
+   "answer": 0,
+   "explanation": "The diner is a participant in the flow who has no reason to install an app for one visit. The best design meets them in a channel they already have (SMS or WhatsApp), works without installation, and gives them a low-effort way to confirm or cancel, which is exactly what reduces no-shows. Installs are a means, not the goal: design the flow so the non-user can still do their part.",
+   "interview_tip": "Multi-party product questions often hide a participant who isn't your user. Calling out the non-user and designing for their constraints signals mature product sense."
+  },
+  {
+   "id": "2026-10-24-02",
+   "topic": "Product Sense",
+   "concept": "Warning fatigue from over-frequent alerts",
+   "difficulty": "hard",
+   "question": "A payments app shows a full-screen 'This may be a scam' warning before about 30% of transfers to new payees. Users now tap through it in under a second, and scam losses haven't fallen. What is the best next step?",
+   "options": [
+    "Make the warning text larger and red, and add a mandatory 5-second countdown before the user can continue",
+    "Show warnings only on high-risk transfers, make them specific to the scam pattern detected, and add friction just for those",
+    "Show the same warning on every single transfer, so that users can no longer predict when it will appear",
+    "Remove the warning completely, since users have clearly learned to ignore it and it slows down every transfer"
+   ],
+   "rationales": [
+    "Wrong: louder warnings and timers still fire on 30% of transfers, so users keep habituating, now with more annoyance.",
+    "Correct: targeting high-risk cases and being specific restores the warning's signal value.",
+    "Wrong: showing it on everything maximises habituation and makes the problem worse.",
+    "Wrong: removing it gives up a safety tool instead of fixing why it's ignored."
+   ],
+   "answer": 1,
+   "explanation": "Warnings shown too often teach users that they're noise (habituation), so the real ones get ignored too. The fix is to raise the signal: warn rarely, only when risk is high, explain the specific pattern ('this payee was reported for fake job offers'), and add friction only there. Rarity and specificity are what make a warning work.",
+   "interview_tip": "Trust-and-safety design questions test whether you see the human factors. Naming habituation and fixing signal-to-noise is stronger than adding more friction everywhere."
+  },
+  {
+   "id": "2026-10-24-03",
+   "topic": "Product Sense",
+   "concept": "Near-term feedback for long-horizon goals",
+   "difficulty": "hard",
+   "question": "A retirement-savings app sees most new users stop contributing within three months. Interviews show they feel nothing happens: their balance barely moves and retirement is 30 years away. Which feature most directly addresses this?",
+   "options": [
+    "A monthly educational newsletter explaining how compound interest builds wealth over long periods",
+    "Higher interest rates for users who keep contributing every month for at least one full year",
+    "Short-term milestones and streaks, such as 'You've saved for 8 weeks — that's your first ₹10,000'",
+    "A projected retirement balance chart that shows how large the account could grow by age 60"
+   ],
+   "rationales": [
+    "Wrong: knowing about compounding doesn't create the felt sense of progress users said was missing.",
+    "Wrong: the rate boost only arrives after a year, so it doesn't help users drop off in the first three months.",
+    "Correct: frequent, visible progress makes the reward feel immediate and keeps people contributing.",
+    "Wrong: a far-future projection is useful context, but it keeps the reward 30 years away, which is the very problem."
+   ],
+   "answer": 2,
+   "explanation": "The problem is the gap between effort now and reward decades away. People need frequent, near-term feedback that their effort is working. Milestones and streaks give that feeling every few weeks. A 30-year projection is still abstract, and education explains the payoff without making it feel any closer.",
+   "interview_tip": "For health, savings or learning products, interviewers look for you to spot the delayed-reward problem and design near-term feedback loops."
+  },
+  {
+   "id": "2026-10-24-04",
+   "topic": "Product Sense",
+   "concept": "Hidden gestures lacking discoverability",
+   "difficulty": "easy",
+   "question": "An email app lets users archive a message by swiping left, but analytics show only 4% of users have ever done it, while many archive using a three-tap menu. What is the most likely issue?",
+   "options": [
+    "Users on smaller phone screens are physically unable to perform swipe gestures",
+    "Most users don't actually want to archive messages and prefer to keep them in the inbox",
+    "The swipe gesture has no visible cue, so most users never find out that it exists",
+    "The swipe gesture is too fast, so users worry they might archive the wrong email"
+   ],
+   "rationales": [
+    "Wrong: swipes work on small screens; screen size isn't the barrier.",
+    "Wrong: the menu usage shows users do want to archive.",
+    "Correct: gestures are invisible, so discoverability, not demand, is the issue.",
+    "Wrong: possible for a few, but it doesn't explain why 96% never tried it once."
+   ],
+   "answer": 2,
+   "explanation": "Many users archive via the slow menu, so the need is real. A swipe has no visible signifier, so users can't discover it unless they're told or stumble on it. Fixes include a one-time hint, an animated peek on first use, or a tip after the third menu archive.",
+   "interview_tip": "When a shortcut has low adoption but the slow path is popular, say 'discoverability' and propose contextual hints. It shows you read usage data against intent."
+  },
+  {
+   "id": "2026-10-24-05",
+   "topic": "Metrics",
+   "concept": "Bounded vs unbounded retention",
+   "difficulty": "medium",
+   "question": "A meditation app reports 'Day-30 retention' of 45%. A teammate says it's counting anyone who opened the app on day 30 or any day after. Why does that definition matter?",
+   "options": [
+    "It always produces exactly the same number as bounded retention, just calculated more slowly",
+    "It counts users who returned on any later day, so it will read higher than the share active on exactly day 30",
+    "It excludes users who churned and came back later, so it will understate true retention",
+    "It counts only users active on exactly day 30, so it will understate retention for weekly users"
+   ],
+   "rationales": [
+    "Wrong: the two definitions differ; unbounded includes later returns.",
+    "Correct: 'day 30 or later' is unbounded retention, which is always greater than or equal to bounded retention.",
+    "Wrong: unbounded retention includes people who came back later; it doesn't exclude them.",
+    "Wrong: that describes bounded retention, not the definition your teammate gave."
+   ],
+   "answer": 1,
+   "explanation": "Bounded (N-day) retention counts users active on day N (or in a window around it). Unbounded (rolling) retention counts users active on day N or any later day, so it's always at least as high and keeps rising as more data arrives. Neither is wrong, but comparing them across teams or against benchmarks is misleading if you don't know which is used.",
+   "interview_tip": "When quoting a retention number in an interview, say how it's defined. Clarifying bounded vs unbounded signals analytical care."
+  },
+  {
+   "id": "2026-10-24-06",
+   "topic": "Metrics",
+   "concept": "Incentive design causing supply-side cherry-picking",
+   "difficulty": "hard",
+   "question": "A ride-hailing app launched a bonus paying drivers for each completed trip during peak hours. Peak completed trips rose 6%, but rider cancellations caused by 'driver not moving' doubled, mostly on short trips. What is the most likely cause?",
+   "options": [
+    "A GPS bug in the new app version made drivers appear stationary to riders on short trips",
+    "Peak demand rose so sharply that drivers simply couldn't reach riders in time on short trips",
+    "Riders started booking more short trips during peak hours because prices fell at the same time",
+    "Drivers accept requests, then stall short low-value trips so riders cancel, freeing them for longer ones"
+   ],
+   "rationales": [
+    "Wrong: a bug is worth ruling out, but it wouldn't line up with trip length and the bonus launch.",
+    "Wrong: higher demand would slow pickups on all trips, not specifically short ones.",
+    "Wrong: nothing suggests prices fell, and more short bookings wouldn't explain drivers not moving.",
+    "Correct: the incentive rewards completions without penalising stalls on low-value trips, so drivers cherry-pick."
+   ],
+   "answer": 3,
+   "explanation": "The bonus pays per completed trip, but short trips earn little, so drivers have an incentive to accept (to protect acceptance rate) and then wait for the rider to cancel. The pattern — concentrated on short trips, starting with the incentive, 'driver not moving' — points to supply-side gaming. Check it by comparing cancellation by trip length and driver before and after the bonus.",
+   "interview_tip": "Root-cause questions reward asking 'what did we just incentivise?' Linking the timing and the segment to the incentive is the strongest move."
+  },
+  {
+   "id": "2026-10-24-07",
+   "topic": "Metrics",
+   "concept": "AARRR pirate metrics stages",
+   "difficulty": "easy",
+   "question": "In the AARRR ('pirate metrics') framework, which stage does 'percentage of new sign-ups who create their first project within 24 hours' measure?",
+   "options": [
+    "Referral",
+    "Acquisition",
+    "Retention",
+    "Activation"
+   ],
+   "rationales": [
+    "Wrong: referral measures users bringing in other users.",
+    "Wrong: acquisition is about getting users to arrive or sign up, which has already happened here.",
+    "Wrong: retention measures returning over time, not the first action.",
+    "Correct: a first meaningful action soon after sign-up is the classic activation metric."
+   ],
+   "answer": 3,
+   "explanation": "AARRR stands for Acquisition, Activation, Retention, Referral and Revenue. Activation is the moment a new user first gets real value, such as creating their first project. Acquisition is getting them to arrive or sign up; retention is them coming back over time.",
+   "interview_tip": "Funnel frameworks are a quick way to structure a metrics answer. Mapping each metric to a stage shows you think end to end."
+  },
+  {
+   "id": "2026-10-24-08",
+   "topic": "Metrics",
+   "concept": "Adoption breadth vs depth (reach, frequency, intensity)",
+   "difficulty": "medium",
+   "question": "Your team launched 'Saved Replies' in a B2B help-desk tool. Weekly users of the feature rose from 8% to 20% of agents. Your VP asks if it's a success. What's the best additional cut to look at?",
+   "options": [
+    "The share of agents who saw the in-app announcement banner promoting Saved Replies after launch",
+    "How often adopters use it and what share of their replies it covers, plus whether that holds weekly",
+    "The number of support tickets customers have filed about the Saved Replies feature since launch",
+    "The total number of Saved Replies created across all accounts since the feature launched"
+   ],
+   "rationales": [
+    "Wrong: announcement views measure awareness, not adoption.",
+    "Correct: frequency, intensity and stickiness show whether adoption is deep and lasting.",
+    "Wrong: ticket counts tell you about problems, not about how much value the feature delivers.",
+    "Wrong: a cumulative total always rises and mixes a few heavy users with many one-time tries."
+   ],
+   "answer": 1,
+   "explanation": "Reach (who uses it) is only one dimension of adoption. Frequency (how often) and intensity (what share of their work it covers), plus whether usage is sustained, tell you whether the feature has become part of the workflow. A 20% reach with one use a week is very different from 20% using it on half their replies.",
+   "interview_tip": "When asked if a feature succeeded, break adoption into reach, frequency, intensity and retention. Interviewers like the structure."
+  },
+  {
+   "id": "2026-10-24-09",
+   "topic": "Experimentation",
+   "concept": "Halving the MDE needs about four times the sample",
+   "difficulty": "medium",
+   "question": "Your test needs 200,000 users per arm to detect a 2% relative lift at 80% power. The PM wants to detect a 1% lift instead, keeping everything else the same. Roughly how many users per arm will you need?",
+   "options": [
+    "About 283,000",
+    "About 400,000",
+    "About 800,000",
+    "About 100,000"
+   ],
+   "rationales": [
+    "Wrong: that's 200,000 × √2, which treats sample size as scaling with 1/MDE rather than 1/MDE².",
+    "Wrong: doubling assumes a linear relationship, but the relationship is quadratic.",
+    "Correct: halving the MDE requires about four times the sample (200,000 × 4).",
+    "Wrong: detecting a smaller effect needs more users, not fewer."
+   ],
+   "answer": 2,
+   "explanation": "Required sample size scales with 1 / MDE². Halving the minimum detectable effect from 2% to 1% multiplies the sample by (2/1)² = 4, so 200,000 × 4 = 800,000 per arm. That's why chasing tiny effects quickly becomes expensive in traffic and time.",
+   "interview_tip": "Knowing that sample size scales with 1/MDE² lets you push back on 'just detect 0.5%' with real numbers. It's a frequent follow-up in experimentation rounds."
+  },
+  {
+   "id": "2026-10-24-10",
+   "topic": "Experimentation",
+   "concept": "Fairness risk in individual-level price tests",
+   "difficulty": "hard",
+   "question": "A grocery delivery app wants to test raising the delivery fee from ₹29 to ₹39. Randomising by user means neighbours and family members may see different fees for the same order. What is the best test design?",
+   "options": [
+    "Randomise by user anyway, because it gives the most statistical power and users rarely compare prices",
+    "Randomise by city or time period (geo or switchback), so everyone in a unit sees the same fee at the same time",
+    "Run a user-level test but hide the fee until the final payment step, so users don't notice the difference",
+    "Skip testing and launch the new fee to everyone, since a fee change is too small to need an experiment"
+   ],
+   "rationales": [
+    "Wrong: people do compare delivery fees, especially within households, and the trust cost can outweigh the power gain.",
+    "Correct: geo or time-based randomisation keeps prices consistent where users can compare, avoiding fairness backlash.",
+    "Wrong: hiding fees until payment is a dark pattern and would itself distort the result.",
+    "Wrong: fee changes can shift order frequency a lot, so you still want causal evidence."
+   ],
+   "answer": 1,
+   "explanation": "User-level price tests can create perceived unfairness when people compare notes, plus support load and trust damage. Testing at a coarser unit (city, zone or time window) keeps prices consistent for everyone who can compare, at the cost of fewer units and noisier results. Pair it with pre-period data or difference-in-differences to handle that noise.",
+   "interview_tip": "Price-testing questions check whether you weigh trust and ethics alongside statistics. Proposing geo or switchback designs and naming the power trade-off is a strong answer."
+  },
+  {
+   "id": "2026-10-24-11",
+   "topic": "Estimation",
+   "concept": "Capacity-based ridership estimate for a metro line",
+   "difficulty": "easy",
+   "question": "Estimate daily riders on a metro line. Trains run every 5 minutes in each direction for 18 hours a day. Each train holds 1,800 people, is 40% full on average, and each seat or standing spot turns over about twice per end-to-end run. Roughly how many riders per day?",
+   "options": [
+    "About 6 lakh",
+    "About 25 lakh",
+    "About 3 lakh",
+    "About 60,000"
+   ],
+   "rationales": [
+    "Correct: 432 runs × 720 on board × 2 turnover ≈ 6.2 lakh riders.",
+    "Wrong: this overstates the load; even full trains with turnover of 2 give only about 15 lakh.",
+    "Wrong: this forgets either the second direction or the turnover factor.",
+    "Wrong: this is about ten times too low, the kind of result you get by counting only one or two hours of service."
+   ],
+   "answer": 0,
+   "explanation": "Train runs: 12 per hour × 18 hours = 216 per direction, so 432 total. Average load: 1,800 × 40% = 720 people on board. With turnover of 2, each run carries about 1,440 riders. 432 × 1,440 ≈ 622,000, or about 6 lakh riders a day. The method is supply-side: frequency × capacity × load factor × turnover.",
+   "interview_tip": "Estimating from supply capacity is a useful alternative to population-based sizing. State each assumption and sanity-check against a known number, like a big city's metro ridership."
+  },
+  {
+   "id": "2026-10-24-12",
+   "topic": "Estimation",
+   "concept": "Hardware rental revenue estimate (payment soundboxes)",
+   "difficulty": "medium",
+   "question": "Estimate annual rental revenue for one payment soundbox provider in India. Assume 6 crore small merchants accept UPI QR payments, 40% of them use a soundbox, this provider has 30% share, and rent is ₹125 per month.",
+   "options": [
+    "About ₹108 crore",
+    "About ₹1,080 crore",
+    "About ₹4,320 crore",
+    "About ₹360 crore"
+   ],
+   "rationales": [
+    "Wrong: this is off by a factor of ten, usually from slipping a zero when converting lakh to crore.",
+    "Correct: 72 lakh devices × ₹1,500 a year ≈ ₹1,080 crore.",
+    "Wrong: this assumes the provider has all soundbox users instead of a 30% share.",
+    "Wrong: this uses only four months of rent, or drops the 40% penetration in a different way."
+   ],
+   "answer": 1,
+   "explanation": "Soundbox users: 6 crore × 40% = 2.4 crore. Provider's devices: 2.4 crore × 30% = 72 lakh. Annual rent per device: ₹125 × 12 = ₹1,500. Revenue: 72 lakh × ₹1,500 = ₹1,080 crore. Bottom-up: base × penetration × share × price × frequency.",
+   "interview_tip": "Indian-market estimates test comfort with lakh and crore. Writing units at every step avoids the most common factor-of-ten slip."
+  },
+  {
+   "id": "2026-10-24-13",
+   "topic": "Strategy",
+   "concept": "Crossing the chasm to the early majority",
+   "difficulty": "medium",
+   "question": "A developer-tools startup has strong adoption among enthusiastic early adopters, but sales stall when they pitch large, conservative enterprises. According to 'Crossing the Chasm', what should they do next?",
+   "options": [
+    "Keep targeting early adopters in new markets, since they're the customers who already love it",
+    "Dominate one niche of pragmatic buyers with a complete 'whole product', then expand from there",
+    "Cut prices sharply so that conservative enterprises see less risk in trying the product",
+    "Add as many new features as possible so the product can beat every competitor on capability"
+   ],
+   "rationales": [
+    "Wrong: staying with early adopters avoids the chasm rather than crossing it.",
+    "Correct: winning one niche with a whole product creates the references pragmatic buyers need.",
+    "Wrong: pragmatists care more about risk, references and support than price.",
+    "Wrong: pragmatists want a complete, reliable solution, not the longest feature list."
+   ],
+   "answer": 1,
+   "explanation": "Geoffrey Moore's 'chasm' is the gap between early adopters, who buy vision, and the early majority, who buy proven, complete solutions and references from peers. The advice is to pick one narrow segment, deliver the whole product (integrations, support, docs, compliance), win it decisively, and use it as a reference base to expand.",
+   "interview_tip": "Market-entry questions often hinge on 'who's the next segment'. Using the chasm framing to explain why enterprise needs a different offer shows strategic depth."
+  },
+  {
+   "id": "2026-10-24-14",
+   "topic": "Strategy",
+   "concept": "Cash cow in the BCG growth-share matrix",
+   "difficulty": "easy",
+   "question": "In the BCG growth-share matrix, a product with high market share in a slow-growing market is called what, and what is its usual strategic role?",
+   "options": [
+    "A star — invest heavily so it keeps growing faster than the market",
+    "A question mark — run small experiments to decide whether to invest or exit",
+    "A cash cow — harvest steady cash to fund newer, higher-growth bets",
+    "A dog — divest or shut it down quickly to free up resources for others"
+   ],
+   "rationales": [
+    "Wrong: a star has high share in a high-growth market.",
+    "Wrong: a question mark has low share in a high-growth market.",
+    "Correct: high share plus low growth is a cash cow, used to fund other bets.",
+    "Wrong: a dog has low share in a low-growth market."
+   ],
+   "answer": 2,
+   "explanation": "High share in a low-growth market is a cash cow. It generates more cash than it needs to defend its position, so the usual role is to maintain it efficiently and use its cash to fund stars and question marks. Stars have high share in high-growth markets; dogs have low share in low-growth markets.",
+   "interview_tip": "Portfolio frameworks come up in strategy rounds about mature products. Saying a cash cow funds new bets, without starving it, shows balanced judgement."
+  },
+  {
+   "id": "2026-10-24-15",
+   "topic": "Strategy",
+   "concept": "Threat of substitutes (Porter's Five Forces)",
+   "difficulty": "medium",
+   "question": "A cinema chain faces almost no new competing chains in its cities, yet it can't raise ticket prices without losing attendance. Which of Porter's Five Forces best explains this?",
+   "options": [
+    "High threat of new entrants into the cinema market",
+    "Strong bargaining power of film distributors and studios",
+    "High threat of substitutes such as streaming at home",
+    "High rivalry among existing cinema chains in each city"
+   ],
+   "rationales": [
+    "Wrong: no new chains are entering, so entry isn't the force at work.",
+    "Wrong: supplier power squeezes costs and margins, but it doesn't explain customers leaving when prices rise.",
+    "Correct: substitutes for the same job limit pricing power even without direct rivals.",
+    "Wrong: the question says there are almost no competing chains."
+   ],
+   "answer": 2,
+   "explanation": "Substitutes are different products that do the same job for the customer — here, an evening's entertainment. Streaming, gaming and eating out cap what the cinema can charge, even with no direct rivals. That's why you define competition by the job, not the category.",
+   "interview_tip": "When a business with few competitors still lacks pricing power, name the substitutes. Interviewers like candidates who look beyond the obvious category."
+  },
+  {
+   "id": "2026-10-24-16",
+   "topic": "Execution",
+   "concept": "Dogfooding before external beta",
+   "difficulty": "easy",
+   "question": "Your team has built a new calendar scheduling feature. Before opening a beta to customers, what is the main benefit of having all employees use it daily ('dogfooding') for two weeks?",
+   "options": [
+    "It replaces the need for a customer beta, since employees represent all customer types",
+    "It lets you announce the launch internally and build excitement before the public release",
+    "It finds obvious bugs and rough edges cheaply, in real daily use, before customers see them",
+    "It proves the feature will drive revenue, since employees behave just like paying customers"
+   ],
+   "rationales": [
+    "Wrong: employees are not representative of customers, so you still need an external beta.",
+    "Wrong: internal buzz is a side effect, not the main purpose.",
+    "Correct: dogfooding catches obvious issues cheaply before customers hit them.",
+    "Wrong: employees' usage can't validate willingness to pay or revenue impact."
+   ],
+   "answer": 2,
+   "explanation": "Dogfooding exposes the product to real, daily use by people who will report problems, at low risk and cost. It catches crashes, confusing flows and edge cases before customers are affected. Employees aren't representative users, though, so it complements a customer beta rather than replacing it.",
+   "interview_tip": "Launch-plan answers are stronger when they sequence risk: dogfood, then beta, then staged rollout. Noting the limits of dogfooding shows good judgement."
+  },
+  {
+   "id": "2026-10-24-17",
+   "topic": "Execution",
+   "concept": "Roll back first, then fix forward",
+   "difficulty": "medium",
+   "question": "An hour after a release, checkout errors on Android jump from 0.2% to 3%. The engineer says she can probably write and ship a fix in about two hours. The release can be rolled back in 10 minutes. What should you do?",
+   "options": [
+    "Wait for the fix, since rolling back would undo the other improvements shipped in the release",
+    "Roll back now to stop customer impact, then ship a tested fix in the next release",
+    "Ask the data team to confirm the error spike over the next 24 hours before taking any action",
+    "Keep the release live and show Android users a banner suggesting they check out on the web"
+   ],
+   "rationales": [
+    "Wrong: the other improvements can ship again; failed checkouts lose revenue and trust now.",
+    "Correct: rollback stops the bleeding fastest; a calm fix comes after.",
+    "Wrong: a 15× error jump right after a release is a clear signal; waiting a day multiplies the damage.",
+    "Wrong: a banner shifts the burden to users and most won't switch devices."
+   ],
+   "answer": 1,
+   "explanation": "When a quick, safe rollback exists and customers are being hurt, restoring service comes first. A 'probable' two-hour fix risks another bad deploy under pressure, while thousands of checkouts fail. Roll back, find the root cause calmly, and ship a tested fix forward.",
+   "interview_tip": "Incident questions test whether you minimise customer impact first. 'Mitigate, then fix' is the principle interviewers listen for."
+  },
+  {
+   "id": "2026-10-24-18",
+   "topic": "Execution",
+   "concept": "Sequencing work to retire the riskiest assumption first",
+   "difficulty": "medium",
+   "question": "You're planning a six-month project to let small shops sell via WhatsApp with AI-written product listings. The biggest unknown is whether shop owners will trust AI to write listings. How should you sequence the work?",
+   "options": [
+    "Start with a cheap test of the AI listing step with real shop owners, before building the rest",
+    "Build the full checkout and payments flow first, since it's the most engineering work",
+    "Build all components in parallel so they're finished at the same time for a single launch",
+    "Do the marketing website and launch plan first, so you can begin building demand early"
+   ],
+   "rationales": [
+    "Correct: testing the riskiest assumption first protects the rest of the investment.",
+    "Wrong: building the largest piece first spends the most money before the key risk is known.",
+    "Wrong: parallel building delays learning until everything is done.",
+    "Wrong: generating demand before knowing the core value works can waste effort and trust."
+   ],
+   "answer": 0,
+   "explanation": "Sequence work to reduce the biggest risk earliest. If shop owners won't trust AI listings, the rest of the project fails regardless of how good checkout is. A quick prototype or concierge test with real users answers that question in weeks, before months of engineering are spent.",
+   "interview_tip": "When asked how you'd plan a project, start with 'what has to be true' and test that first. It signals you manage risk, not just tasks."
+  },
+  {
+   "id": "2026-10-24-19",
+   "topic": "Behavioural",
+   "concept": "Saying 'I don't know' in an exec review",
+   "difficulty": "medium",
+   "question": "In a quarterly review, an SVP asks why enterprise trial conversion fell last month. You don't know; your analyst is still investigating. What's the best response?",
+   "options": [
+    "Say the analytics team owns that metric, so the question should really go to them",
+    "Say the data is probably wrong and that you're not sure the drop is even real",
+    "Give your best guess confidently, since leaders expect PMs to always have an answer ready",
+    "Say you don't know yet, share what you've ruled out, and commit to an answer by a set date"
+   ],
+   "rationales": [
+    "Wrong: it's your product's metric; deflecting signals weak ownership.",
+    "Wrong: doubting the data without evidence sounds defensive.",
+    "Wrong: a confident wrong answer damages credibility more than an honest 'not yet'.",
+    "Correct: honesty plus progress and a clear follow-up builds trust."
+   ],
+   "answer": 3,
+   "explanation": "Admitting you don't know, while showing what you've already checked and committing to a date, builds trust. Guessing confidently risks being wrong in front of leadership, dismissing the data looks defensive, and deflecting to another team avoids ownership. This reflects 'Earn Trust' and 'Ownership'.",
+   "interview_tip": "Behavioural answers about exec moments should show candour and follow-through. Mention the date you committed to and that you met it."
+  },
+  {
+   "id": "2026-10-24-20",
+   "topic": "Behavioural",
+   "concept": "Advocating a customer-friendly change that cuts short-term revenue",
+   "difficulty": "hard",
+   "question": "You find that 18% of a subscription app's revenue comes from users who haven't opened it in 90+ days and likely forgot they're paying. Finance worries about the revenue hit of reminders. What's the strongest approach?",
+   "options": [
+    "Quietly add a cancellation link to the footer of the monthly receipt email",
+    "Escalate to the CEO immediately and argue that the finance team is behaving unethically",
+    "Propose usage reminders with easy pause or cancel, modelling short-term loss against trust, refunds and churn",
+    "Leave it alone, since these users chose to subscribe and it's their job to cancel"
+   ],
+   "rationales": [
+    "Wrong: a buried link is a token gesture that doesn't change outcomes for users.",
+    "Wrong: jumping to the CEO and labelling colleagues damages relationships before you've made the case.",
+    "Correct: it puts the customer first while giving finance a quantified, testable plan.",
+    "Wrong: profiting from forgotten subscriptions erodes trust and invites regulatory and reputation risk."
+   ],
+   "answer": 2,
+   "explanation": "Customer obsession means acting for the customer even at short-term cost, but you still need to bring finance along. Quantify the revenue at risk, but also the hidden costs (chargebacks, refund requests, bad reviews, regulatory risk) and possible benefits (paused users returning, better retention). Propose a reversible test so the decision rests on data.",
+   "interview_tip": "Amazon-style 'Customer Obsession' stories land best when you show the trade-off, the numbers, and how you won over sceptics."
+  },
+  {
+   "id": "2026-10-24-21",
+   "topic": "Behavioural",
+   "concept": "Raising a privacy concern about repurposing user data",
+   "difficulty": "hard",
+   "question": "Your VP asks you to use customers' uploaded support chat transcripts to train a new sales-lead scoring model. The privacy policy says transcripts are used 'to resolve your support request'. What do you do?",
+   "options": [
+    "Raise the gap between the stated purpose and the new use, involve privacy and legal, and propose options",
+    "Strip out customer names, then proceed, since anonymised data can be used for any purpose",
+    "Refuse to work on the project and tell your team the VP is asking you to break the law",
+    "Go ahead, since the data is already stored internally and the model is for internal use only"
+   ],
+   "rationales": [
+    "Correct: it raises the issue through the right channels and keeps the project moving with options.",
+    "Wrong: removing names isn't full anonymisation, and transcripts often contain other personal details.",
+    "Wrong: refusing and accusing your VP to the team escalates conflict instead of solving it.",
+    "Wrong: internal storage doesn't make a new purpose acceptable; purpose limitation still applies."
+   ],
+   "answer": 0,
+   "explanation": "Using data beyond the purpose users were told about can break trust and laws such as India's DPDP Act or GDPR. The right move is to flag the purpose gap, bring in privacy and legal, and offer workable paths: consent for the new use, a different data source, or properly aggregated data. You stay constructive while holding the line.",
+   "interview_tip": "Ethics questions test whether you can hold a line while staying a partner. Show that you raised it early, brought in experts, and offered alternatives."
+  },
+  {
+   "id": "2026-10-24-22",
+   "topic": "AI Product",
+   "concept": "Intrinsic vs extrinsic hallucination",
+   "difficulty": "medium",
+   "question": "Your AI meeting summariser has two failure types: (1) it says 'Priya approved the budget' when the transcript shows she rejected it; (2) it adds 'the project is due in Q3', which never came up. How are these classified?",
+   "options": [
+    "(1) is intrinsic — it contradicts the source; (2) is extrinsic — it adds unsupported content",
+    "(1) is extrinsic — it adds new content; (2) is intrinsic — it contradicts the source",
+    "(1) is a retrieval failure and (2) is a formatting failure",
+    "Both are extrinsic hallucinations, since both statements are false"
+   ],
+   "rationales": [
+    "Correct: contradiction is intrinsic; unsupported additions are extrinsic.",
+    "Wrong: the labels are swapped.",
+    "Wrong: there's no retrieval step in summarising a given transcript, and neither is a formatting issue.",
+    "Wrong: only (2) adds new content; (1) contradicts the source."
+   ],
+   "answer": 0,
+   "explanation": "An intrinsic hallucination contradicts the source (approved vs rejected). An extrinsic hallucination adds information the source doesn't contain (a Q3 deadline). The distinction matters because the fixes and evals differ: intrinsic errors need better faithfulness to the source, while extrinsic ones need stricter grounding and abstention.",
+   "interview_tip": "Classifying hallucinations precisely helps you design targeted evals. It signals you've worked on real AI quality problems."
+  },
+  {
+   "id": "2026-10-24-23",
+   "topic": "AI Product",
+   "concept": "pass@k for code generation",
+   "difficulty": "medium",
+   "question": "A coding assistant reports pass@1 = 45% and pass@5 = 78% on a benchmark. Your product shows users a single suggestion. Which number better predicts user experience?",
+   "options": [
+    "pass@5, since it shows the model's true capability on the benchmark",
+    "pass@1, since users see one suggestion, and it measures how often that one passes",
+    "The average of the two, since it balances single and multiple attempts",
+    "Neither, since pass@k only applies when tests are run on multiple languages"
+   ],
+   "rationales": [
+    "Wrong: pass@5 assumes five tries and a way to pick the passing one, which users don't get.",
+    "Correct: the metric should match how outputs reach users — here, one at a time.",
+    "Wrong: averaging two metrics with different meanings doesn't describe any real experience.",
+    "Wrong: pass@k is about number of samples, not languages."
+   ],
+   "answer": 1,
+   "explanation": "pass@k is the probability that at least one of k generated samples passes the tests. If users see one suggestion, pass@1 matches their experience. pass@5 matters only if you generate several and can pick the right one automatically (for example, by running tests), which is a product design choice with cost and latency trade-offs.",
+   "interview_tip": "AI PM interviews probe whether your eval metric matches the product surface. Tying pass@k to how many outputs users see is a sharp answer."
+  },
+  {
+   "id": "2026-10-24-24",
+   "topic": "AI Product",
+   "concept": "Parallel tool calls to cut agent latency",
+   "difficulty": "medium",
+   "question": "A travel agent bot answers 'Plan my weekend in Goa' by calling flights, hotels and weather APIs one after another, taking 9 seconds. None of the calls depends on another. What's the most effective way to cut latency?",
+   "options": [
+    "Have the model issue the three independent tool calls in parallel and combine the results",
+    "Cache weather results for every city so the weather call can be skipped for most users",
+    "Shorten the final written answer so that the user receives the itinerary text sooner",
+    "Switch to a larger, more capable model so that it can reason about the plan more quickly"
+   ],
+   "rationales": [
+    "Correct: parallel calls turn a sum of latencies into roughly the maximum of them.",
+    "Wrong: caching one of three calls helps a little but leaves the serial structure in place.",
+    "Wrong: answer length affects only generation time, not the 9 seconds of serial calls.",
+    "Wrong: larger models are typically slower, and the delay is in the tool calls."
+   ],
+   "answer": 0,
+   "explanation": "When tool calls are independent, running them in parallel makes total wait close to the slowest call instead of the sum of all three. Most modern model APIs support parallel tool calls. Larger models are usually slower, shorter answers trim only the generation part, and caching helps one call only.",
+   "interview_tip": "Agent-latency questions reward identifying where time actually goes. Separating tool time from model time shows technical fluency."
+  },
+  {
+   "id": "2026-10-24-25",
+   "topic": "AI Product",
+   "concept": "Automation bias in human review of AI outputs",
+   "difficulty": "hard",
+   "question": "An insurer uses AI to flag claims as 'approve' or 'deny', with a human reviewer signing off. Reviewers now agree with the AI 99.5% of the time and spend 8 seconds per claim. An audit finds many wrong AI denials that reviewers approved. What's the best fix?",
+   "options": [
+    "Route high-risk cases to review with the AI's reasoning hidden at first, and seed known errors to check vigilance",
+    "Retrain the AI model so its accuracy is higher and reviewers have fewer errors to miss",
+    "Remove human review entirely, since reviewers add cost without catching errors",
+    "Tell reviewers to slow down and be more careful, and add a mandatory 30-second timer"
+   ],
+   "rationales": [
+    "Correct: targeted review, independent judgement and seeded errors make oversight real and measurable.",
+    "Wrong: higher accuracy is welcome, but the rubber-stamping problem will remain for the errors that do occur.",
+    "Wrong: removing oversight on denial decisions raises fairness and regulatory risk.",
+    "Wrong: timers and reminders don't change the underlying reliance on the AI."
+   ],
+   "answer": 0,
+   "explanation": "This is automation bias: when AI is usually right, people stop checking. Making review meaningful means focusing human time on risky or uncertain cases, having reviewers form their own view before seeing the AI's answer, and inserting known test cases to measure whether reviewers catch mistakes. Better models help but don't fix the human-factors problem.",
+   "interview_tip": "Human-in-the-loop is not a safety plan by itself. Naming automation bias and proposing ways to measure reviewer vigilance stands out."
+  },
+  {
+   "id": "2026-10-24-26",
+   "topic": "AI Product",
+   "concept": "Clear tool descriptions drive correct agent tool use",
+   "difficulty": "easy",
+   "question": "Your support agent has two tools named 'lookup' and 'search' with one-line descriptions. It often calls 'search' (help articles) when it should call 'lookup' (order status). What's the cheapest first fix?",
+   "options": [
+    "Rename the tools clearly and write descriptions stating when to use each, with examples",
+    "Fine-tune the model on thousands of examples of correct tool choices",
+    "Switch to a larger model, since tool selection is a sign of weak reasoning",
+    "Merge both tools into a single tool so the model never has to choose between them"
+   ],
+   "rationales": [
+    "Correct: better names and descriptions directly fix the model's information gap.",
+    "Wrong: fine-tuning is expensive and slow when the cause is unclear tool definitions.",
+    "Wrong: a bigger model costs more and still has to guess between ambiguous tools.",
+    "Wrong: merging hides two different jobs inside one tool and makes it harder to use correctly."
+   ],
+   "answer": 0,
+   "explanation": "The model chooses tools based on their names and descriptions. Vague names make mistakes likely. Clear names (get_order_status, search_help_articles) and descriptions that say when to use each are the fastest, cheapest fix, and should be tried before fine-tuning or changing models.",
+   "interview_tip": "Treat tool definitions like an API you design for a new teammate. Fixing the interface before the model signals practical AI product sense."
+  },
+  {
+   "id": "2026-10-24-27",
+   "topic": "Technology",
+   "concept": "Server-driven config to change mobile behaviour without an app release",
+   "difficulty": "medium",
+   "question": "Your marketing team wants to change the home-screen banner order on your mobile app every few days. Each app release takes a week to roll out through app stores and user updates. What's the best technical approach?",
+   "options": [
+    "Move the entire app into a web view so that every screen loads from the website",
+    "Ship a new app version every few days with the updated banner order hard-coded",
+    "Ask users to clear the app's cache whenever the marketing team changes the banners",
+    "Have the app fetch the banner layout from the server as config, so it can change without a release"
+   ],
+   "rationales": [
+    "Wrong: a full web view sacrifices native performance and feel just to change banners.",
+    "Wrong: releases are slow, and many users won't update for weeks.",
+    "Wrong: users won't do that, and the order is still hard-coded in the app.",
+    "Correct: remote config decouples content changes from app releases."
+   ],
+   "answer": 3,
+   "explanation": "Server-driven config (or remote config) lets the app download layout or content settings at launch, so teams can change them instantly without an app-store release. The app needs safe defaults if the fetch fails, and rules for which app versions can show which configs.",
+   "interview_tip": "Mobile PMs are expected to know what can change server-side vs what needs a release. It shapes how fast you can experiment."
+  },
+  {
+   "id": "2026-10-24-28",
+   "topic": "Technology",
+   "concept": "Monolith vs microservices for a small team",
+   "difficulty": "easy",
+   "question": "A six-engineer startup is building its first product. An advisor suggests splitting it into 12 microservices from day one 'so it can scale'. What's the usual best choice?",
+   "options": [
+    "Avoid any backend and build the whole product as a static website instead",
+    "Use 12 microservices but deploy them all on one server to save on hosting cost",
+    "Follow the advice, since microservices are always faster to build and change",
+    "Start with a well-structured monolith and split out services later where scaling or team needs demand it"
+   ],
+   "rationales": [
+    "Wrong: most products need a backend; this ignores the actual requirements.",
+    "Wrong: this keeps all the complexity of microservices without the independence benefits.",
+    "Wrong: microservices usually slow small teams down because of operational overhead.",
+    "Correct: a modular monolith keeps speed now and leaves room to split later."
+   ],
+   "answer": 3,
+   "explanation": "Microservices add overhead: network calls, separate deployments, monitoring and data consistency. For a small team still finding product-market fit, a modular monolith is faster to build and change. Split out services later when a specific part needs independent scaling or a separate team owns it.",
+   "interview_tip": "System design questions for PMs reward matching architecture to stage and team size, not picking the trendiest option."
+  },
+  {
+   "id": "2026-10-24-29",
+   "topic": "Growth",
+   "concept": "Growth quick ratio",
+   "difficulty": "easy",
+   "question": "Last month a consumer app gained 50,000 new users and 10,000 resurrected users, and lost 40,000 churned users. What is its growth quick ratio?",
+   "options": [
+    "0.67",
+    "1.25",
+    "20,000",
+    "1.5"
+   ],
+   "rationales": [
+    "Wrong: this inverts the ratio (churned ÷ gained).",
+    "Wrong: this leaves out resurrected users (50,000 ÷ 40,000).",
+    "Wrong: 20,000 is the net change in users, not the ratio.",
+    "Correct: 60,000 gained ÷ 40,000 lost = 1.5."
+   ],
+   "answer": 3,
+   "explanation": "Quick ratio = (new + resurrected) ÷ churned = (50,000 + 10,000) ÷ 40,000 = 1.5. The app is growing, but it loses two users for every three it gains. Consumer products are often considered healthy above about 1.5, and fast-growing ones far higher; a low ratio means growth depends on constant acquisition.",
+   "interview_tip": "Quick ratio shows how efficient growth is, not just whether it's positive. Mentioning it signals you look at churn alongside acquisition."
+  },
+  {
+   "id": "2026-10-24-30",
+   "topic": "Current Events",
+   "concept": "Notion Standard vs Select AI credits (Oct 2026)",
+   "difficulty": "medium",
+   "question": "On 19 October 2026, Notion gave Business and Enterprise seats 1,500 monthly 'Standard' credits for work where Notion's Auto router picks the model, and 500 'Select' credits for work where users pick the model or run Custom Agents. Why split credits by who chooses the model?",
+   "options": [
+    "Notion is required by its model providers to sell their models in separately metered pools",
+    "User-chosen models are always lower quality, so Notion offers fewer credits to discourage using them",
+    "Separate pools make it easier for users to see which agents they ran last month and why",
+    "When Notion controls the cost driver (model choice) it can route cheaply and give more, so pricing follows who sets the cost"
+   ],
+   "rationales": [
+    "Wrong: Notion's post gives no such requirement; the split is its own pricing design.",
+    "Wrong: users often pick top models; the issue is cost predictability, not quality.",
+    "Wrong: visibility is a side benefit, and Notion says usage dashboards are coming separately in its AI Command Center.",
+    "Correct: the split follows who controls model choice, which is what drives inference cost."
+   ],
+   "answer": 3,
+   "explanation": "Notion says Auto sends simple requests to fast, efficient models and achieved results similar to top models at about 90% lower average cost across 20+ use cases. When Notion picks the model it can manage cost, so it can include more credits. When users pick expensive models or run their own agents, cost is less predictable, so that pool is smaller. The pricing principle: tie allowances to whoever controls the main cost driver.",
+   "interview_tip": "AI pricing questions often ask how to pass variable inference cost to customers. Explaining that allowances should follow who controls the cost driver is a crisp, modern answer.",
+   "source": "https://www.notion.com/blog/notion-ai-more-for-less"
+  }
+ ]
+}
