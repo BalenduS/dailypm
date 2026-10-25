@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-25",
+   "theme": "Who gets asked, who decides & tail latency",
+   "count": 30
+  },
+  {
    "date": "2026-10-24",
    "theme": "Non-users, warning fatigue & who picks the model",
    "count": 30

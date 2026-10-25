@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-25",
+ "theme": "Who gets asked, who decides & tail latency",
+ "questions": [
+  {
+   "id": "2026-10-25-01",
+   "topic": "Product Sense",
+   "concept": "Collaborative shopping lists for multi-member households",
+   "difficulty": "medium",
+   "question": "A quick-commerce app in India finds that in joint-family homes, three or four people message one 'buyer' on WhatsApp with items to order, and the buyer often forgets things. What is the best first product bet?",
+   "options": [
+    "Add a WhatsApp chatbot that the buyer forwards family messages to for parsing",
+    "Let each family member place a separate order so nobody has to coordinate",
+    "A shared household list that anyone can add to, which the buyer checks out in one tap",
+    "Send the buyer daily push reminders listing the items they usually reorder"
+   ],
+   "rationales": [
+    "Wrong: forwarding still relies on the buyer copying each message; it automates the symptom, not the coordination.",
+    "Wrong: separate orders mean multiple delivery fees and break the family's norm of one person managing spending.",
+    "Correct: it fixes the lost-request problem while keeping one buyer who pays and checks out.",
+    "Wrong: reminders about past orders don't capture new requests from other family members, which is the actual gap."
+   ],
+   "answer": 2,
+   "explanation": "The pain is coordination: requests scattered across chats get lost before reaching one payer. A shared list keeps the buyer as the decision-maker and payer, but lets everyone add items where the order actually happens. It keeps the existing social roles and removes the copying step.",
+   "interview_tip": "In product-sense rounds, name the real job (coordinating many requesters and one payer) before solutioning. Strong answers keep existing social roles instead of fighting them."
+  },
+  {
+   "id": "2026-10-25-02",
+   "topic": "Product Sense",
+   "concept": "Not relying on colour alone to convey status",
+   "difficulty": "easy",
+   "question": "A B2B dashboard shows healthy, warning and failing services as green, amber and red dots only. Several customers say they 'can't tell which service is down'. What is the most direct fix?",
+   "options": [
+    "Make the dots larger and use brighter shades of the same three colours",
+    "Move failing services to a separate page so the main list shows only healthy ones",
+    "Add a legend at the top of the page explaining what each colour means",
+    "Add a text label or distinct icon shape to each status alongside its colour"
+   ],
+   "rationales": [
+    "Wrong: brighter red and green are still hard to tell apart for users with red-green colour deficiency.",
+    "Wrong: hiding failures on another page makes the most important status harder to find.",
+    "Wrong: a legend explains the colours but doesn't help users who can't distinguish them.",
+    "Correct: a second cue like a label or shape works regardless of how users perceive colour."
+   ],
+   "answer": 3,
+   "explanation": "About 1 in 12 men have some colour vision deficiency, and red/green are the hardest to tell apart. Status should be conveyed by at least two cues, such as colour plus a label or icon shape. This is a basic accessibility rule (WCAG 'use of colour') that also helps everyone scan faster.",
+   "interview_tip": "Accessibility often appears as a follow-up in design questions. Mentioning 'never encode meaning in colour alone' shows you design for all users by default."
+  },
+  {
+   "id": "2026-10-25-03",
+   "topic": "Product Sense",
+   "concept": "Closing the loop for job applicants on status",
+   "difficulty": "hard",
+   "question": "You're the PM for a jobs marketplace. Research shows candidates' top complaint is 'ghosting': they never hear back after applying. Recruiters say they're too busy to reply to hundreds of applicants. What's the strongest solution?",
+   "options": [
+    "Let recruiters close a job in one action that sends every unreviewed applicant a status update",
+    "Send candidates a weekly email suggesting new jobs so they feel engaged while waiting",
+    "Show candidates a 'response rate' badge on each recruiter so they avoid unresponsive ones",
+    "Cap applications per job at 50 so recruiters have time to answer everyone personally"
+   ],
+   "rationales": [
+    "Correct: it attaches closure to a step recruiters already do, so the loop closes at almost no cost to them.",
+    "Wrong: more job suggestions don't tell candidates what happened to their application, which is the actual pain.",
+    "Wrong: badges may shift behaviour slowly but leave most candidates still unanswered and can punish busy recruiters.",
+    "Wrong: a hard cap hurts both sides: recruiters lose good candidates and applicants lose access to jobs."
+   ],
+   "answer": 0,
+   "explanation": "The constraint is recruiter effort, so the solution must make closing the loop nearly free for them. Tying a bulk status update to an action recruiters already take (closing or filling a role) gives candidates closure without new work. Badges and caps push the problem onto one side instead of removing the effort.",
+   "interview_tip": "Marketplace design questions test whether you respect both sides' constraints. Strong answers find a change that costs the busy side almost nothing while solving the other side's pain."
+  },
+  {
+   "id": "2026-10-25-04",
+   "topic": "Product Sense",
+   "concept": "Timing in-app review prompts after a success moment",
+   "difficulty": "medium",
+   "question": "A ride-hailing app asks for an app-store review on app launch, and its store rating sits at 3.6 even though in-app ride ratings average 4.7. Where should the review prompt appear?",
+   "options": [
+    "Immediately after a cancelled ride, to collect feedback while the experience is fresh",
+    "Right after a completed ride the user rated four or five stars",
+    "Inside the help section, so only engaged users who look for it will leave reviews",
+    "On every fifth app launch so more users see it and the sample gets larger"
+   ],
+   "rationales": [
+    "Wrong: a cancellation is a failure moment; prompting there would push the store rating even lower.",
+    "Correct: it asks right after value is delivered, when the user just told you they were satisfied.",
+    "Wrong: almost nobody visits help to leave a review, and those who do are often having problems.",
+    "Wrong: more launch prompts still interrupt users mid-task and keep the same negative bias."
+   ],
+   "answer": 1,
+   "explanation": "Asking at launch catches users mid-task and annoyed, which biases ratings down. Prompting right after a successful, positively rated ride reaches users at a moment of delivered value. Platforms also limit how often the prompt can show, so it should be spent on the best moment.",
+   "interview_tip": "Interviewers like 'moment' questions because they test empathy for user context. Tie the timing to a success moment and mention rate limits on the prompt."
+  },
+  {
+   "id": "2026-10-25-05",
+   "topic": "Metrics",
+   "concept": "Choosing an inactivity threshold to define churn without subscriptions",
+   "difficulty": "medium",
+   "question": "A free food-delivery app wants to report 'churned users', but users never cancel anything. How should the team define churn?",
+   "options": [
+    "Any user whose order count this month fell below their own average order count",
+    "Any user who didn't order in the last 7 days, since weekly is a common reporting cadence",
+    "Any user who uninstalled the app, since that's the only explicit signal of leaving",
+    "Users past an inactivity window chosen where very few of them ever return to order again"
+   ],
+   "rationales": [
+    "Wrong: that measures declining engagement, not leaving; a user ordering less is still active.",
+    "Wrong: many healthy users order every 2-3 weeks, so a 7-day window would count them as churned.",
+    "Wrong: many inactive users never uninstall, so uninstalls badly undercount churn and are hard to track.",
+    "Correct: a data-driven window separates natural gaps from users who have really left."
+   ],
+   "answer": 3,
+   "explanation": "Without a cancel event, churn has to be inferred from inactivity. The right window comes from data: plot the chance of returning by days inactive, and pick the point where return rates flatten near zero. Too short a window labels normal gaps as churn; too long hides it.",
+   "interview_tip": "Defining metrics for non-subscription products is a common follow-up. Saying you'd pick the window from return-probability curves shows rigour, not guesswork."
+  },
+  {
+   "id": "2026-10-25-06",
+   "topic": "Metrics",
+   "concept": "Sampling change in who is asked behind a rating drop",
+   "difficulty": "hard",
+   "question": "A food-delivery app's average order rating fell from 4.6 to 4.3 the week after it started asking every customer to rate, instead of only those who opened the 'rate order' screen. Complaints and refunds are flat. What is the most likely explanation?",
+   "options": [
+    "Customers are annoyed by the new prompt and are punishing the app with low ratings",
+    "Who is rating changed: the old ratings came mostly from happy volunteers, the new ones from everyone",
+    "Food quality dropped across restaurants that week, and the new prompt simply caught it",
+    "The new prompt has a UI bug that is recording ratings one star lower than tapped"
+   ],
+   "rationales": [
+    "Wrong: annoyance can play a part, but the main effect is mathematical: a broader sample includes less-satisfied raters.",
+    "Correct: the change in who is asked explains the drop while other quality signals stay flat.",
+    "Wrong: a real quality drop would usually show up in complaints and refunds too, which are flat.",
+    "Wrong: possible to check, but a uniform bug is less likely than the obvious sample change made the same week."
+   ],
+   "answer": 1,
+   "explanation": "When you change who is asked, you change the sample. Before, mainly delighted users chose to rate; now lukewarm users rate too, so the average falls even if experience is unchanged. Flat complaints and refunds support this. Compare like with like, such as ratings from users who would have opted in before.",
+   "interview_tip": "Root-cause questions reward checking 'did the measurement change?' before 'did the product change?'. Naming selection effects and a like-for-like comparison is a strong signal."
+  },
+  {
+   "id": "2026-10-25-07",
+   "topic": "Metrics",
+   "concept": "Appeal overturn rate as a moderation precision signal",
+   "difficulty": "medium",
+   "question": "A marketplace uses an automated system to remove listings that break its rules. Which metric best tells you whether it is removing too many legitimate listings?",
+   "options": [
+    "Average time between a listing going live and being removed",
+    "Share of appealed removals that human reviewers overturn",
+    "Total number of listings removed per day by the system",
+    "Number of user reports filed against listings each day"
+   ],
+   "rationales": [
+    "Wrong: speed matters for harm reduction but says nothing about whether removals were correct.",
+    "Correct: overturned appeals directly measure removals that were wrong, a precision signal.",
+    "Wrong: removals could rise because of more violations or more mistakes; the count can't separate the two.",
+    "Wrong: reports measure how much bad content users see, closer to recall, not wrongful removals."
+   ],
+   "answer": 1,
+   "explanation": "Overturned appeals are cases where the system removed something it should not have, so the overturn rate approximates false positives. Track it alongside how many sellers appeal, since many wrongly removed sellers never bother. Raw removal counts can't tell good removals from bad.",
+   "interview_tip": "Trust and safety metric questions test precision vs recall thinking. Pairing a 'missed harm' metric with a 'wrongful action' metric like overturn rate is what interviewers look for."
+  },
+  {
+   "id": "2026-10-25-08",
+   "topic": "Metrics",
+   "concept": "Simple LTV formula from margin and churn",
+   "difficulty": "easy",
+   "question": "A SaaS tool earns $20 per customer per month at a 75% gross margin, and loses 5% of customers each month. Using the simple formula, what is the gross-margin lifetime value per customer?",
+   "options": [
+    "$400",
+    "$15",
+    "$300",
+    "$225"
+   ],
+   "rationales": [
+    "Wrong: $400 is revenue lifetime value; it ignores the 75% gross margin.",
+    "Wrong: $15 is just one month of gross margin, not the lifetime value.",
+    "Correct: $20 × 0.75 ÷ 0.05 = $300.",
+    "Wrong: $225 applies the margin twice ($300 × 0.75)."
+   ],
+   "answer": 2,
+   "explanation": "Simple LTV = monthly ARPU × gross margin ÷ monthly churn. That is $20 × 0.75 = $15 of margin per month, and 1 ÷ 0.05 = 20 months average lifetime. $15 × 20 = $300.",
+   "interview_tip": "Unit-economics questions often start with LTV. Using gross margin, not revenue, and stating the formula out loud shows financial fluency."
+  },
+  {
+   "id": "2026-10-25-09",
+   "topic": "Experimentation",
+   "concept": "Probability to beat control in Bayesian A/B readouts",
+   "difficulty": "medium",
+   "question": "Your experimentation tool reports a Bayesian result: 'Variant B has a 93% probability of beating control, expected lift +1.2%'. What is the correct interpretation?",
+   "options": [
+    "Given the data and the prior, there is a 93% chance B's true effect is above zero",
+    "If we ran this test 100 times, B would win in exactly 93 of them",
+    "B is guaranteed to lift the metric by at least 1.2% after launch",
+    "There is a 7% chance the result is a false positive, like a p-value of 0.07"
+   ],
+   "rationales": [
+    "Correct: that is exactly what a posterior probability of beating control means.",
+    "Wrong: that describes repeated-sampling frequencies, not what a posterior probability states.",
+    "Wrong: +1.2% is an expected value with uncertainty around it, not a guaranteed minimum.",
+    "Wrong: a p-value is a different quantity; 1 minus the posterior probability is not a p-value."
+   ],
+   "answer": 0,
+   "explanation": "A Bayesian posterior gives a direct probability statement about the true effect, given the data and prior assumptions. 93% to beat control still leaves a 7% chance B is worse, and the size of that possible loss matters. Teams often pair it with 'expected loss' to decide whether to ship.",
+   "interview_tip": "Interviewers check whether you can explain results to stakeholders without overclaiming. Contrast it with a p-value and mention expected loss for extra credit."
+  },
+  {
+   "id": "2026-10-25-10",
+   "topic": "Experimentation",
+   "concept": "Page-level randomization for SEO experiments",
+   "difficulty": "hard",
+   "question": "A travel site wants to test new title tags on its 40,000 city pages to see if they bring more Google search traffic. Why can't it run a normal user-level A/B test?",
+   "options": [
+    "Search engines block sites from running any A/B tests on pages they index",
+    "User-level tests need logged-in users, and most search visitors are logged out",
+    "Title tags change too rarely for the test to reach significance in a few weeks",
+    "The 'user' here is the search engine's single crawler, so you split pages into groups instead"
+   ],
+   "rationales": [
+    "Wrong: search engines allow testing; they discourage cloaking, which is showing crawlers different content from users.",
+    "Wrong: user-level tests can use cookies for logged-out users; login isn't the problem.",
+    "Wrong: test length is a planning issue; the core problem is the randomization unit.",
+    "Correct: the outcome depends on what the crawler sees, so pages, not users, must be the unit."
+   ],
+   "answer": 3,
+   "explanation": "Search ranking is decided by one crawler seeing one version of each page, so you can't show different users different versions and measure organic traffic. Instead, split similar pages into control and test groups, change only the test group, and compare traffic trends, often against a forecast from pre-period data.",
+   "interview_tip": "Choosing the randomization unit is a favourite experimentation question. Recognising that the 'treated' party is the crawler, not the user, shows deep understanding."
+  },
+  {
+   "id": "2026-10-25-11",
+   "topic": "Estimation",
+   "concept": "Annual AC servicing visits in Delhi",
+   "difficulty": "easy",
+   "question": "Roughly how many air-conditioner servicing visits happen in Delhi each year?",
+   "options": [
+    "About 45 lakh",
+    "About 4.5 lakh",
+    "About 45 thousand",
+    "About 4.5 crore"
+   ],
+   "rationales": [
+    "Correct: households × AC ownership × ACs per home × services per year ≈ 45 lakh.",
+    "Wrong: 4.5 lakh implies one service per AC every six or seven years, far below normal practice.",
+    "Wrong: 45 thousand would mean only a tiny share of ACs ever get serviced.",
+    "Wrong: 4.5 crore would need about 15 services per AC per year."
+   ],
+   "answer": 0,
+   "explanation": "Delhi has about 2.2 crore people, roughly 50 lakh households at ~4.4 per home. Assume about 40% own ACs, so ~20 lakh homes, with ~1.5 ACs each, giving ~30 lakh ACs. At about 1.5 services per AC per year (pre-summer plus repairs), that's ~45 lakh visits. Offices and shops would add more.",
+   "interview_tip": "For guesstimates, state the structure first (households, ownership, units, frequency), then sanity-check. Mentioning segments you excluded, like offices, shows awareness of scope."
+  },
+  {
+   "id": "2026-10-25-12",
+   "topic": "Estimation",
+   "concept": "Time-saved estimate for an AI meeting notetaker",
+   "difficulty": "medium",
+   "question": "A 10,000-person company is considering an AI meeting notetaker. About 60% of staff attend meetings regularly, and the tool saves each of them roughly 15 minutes a day on notes and follow-ups. About how many hours does it save company-wide per week?",
+   "options": [
+    "About 60,000 hours",
+    "About 75,000 hours",
+    "About 7,500 hours",
+    "About 750 hours"
+   ],
+   "rationales": [
+    "Wrong: about 60,000 hours assumes the tool saves all meeting time, not just note-taking.",
+    "Wrong: 75,000 hours is ten times too high, probably applying 15 minutes per meeting rather than per day.",
+    "Correct: 6,000 × 0.25 hours × 5 days = 7,500 hours.",
+    "Wrong: 750 hours is ten times too low, probably from dropping a factor like the five working days."
+   ],
+   "answer": 2,
+   "explanation": "6,000 users × 15 minutes × 5 days = 450,000 minutes, or 7,500 hours per week. That is about 190 full-time weeks of work. The key is applying the saving only to meeting attendees and only to note-taking time, not to the whole meeting.",
+   "interview_tip": "Value-based estimates often back an AI business case. Interviewers look for whether you count only the time the tool actually replaces, not the whole activity."
+  },
+  {
+   "id": "2026-10-25-13",
+   "topic": "Strategy",
+   "concept": "Buyer power from a few large retail customers",
+   "difficulty": "easy",
+   "question": "A packaged-snacks brand sells 70% of its volume through three large retail chains. In Porter's Five Forces, what does this mainly indicate?",
+   "options": [
+    "High supplier power, since the brand depends on retailers to supply shelf space",
+    "High buyer power, since a few big buyers can push down prices and demand better terms",
+    "Low competitive rivalry, since three chains limit how many brands reach consumers",
+    "High threat of new entrants, since retail chains can easily stock rival snacks"
+   ],
+   "rationales": [
+    "Wrong: the retailers are the brand's customers (buyers), not its suppliers.",
+    "Correct: concentrated customers have strong bargaining power over the seller.",
+    "Wrong: rivalry between snack brands for limited shelf space is, if anything, intensified.",
+    "Wrong: entrant threat is about new competitors entering the market, not where sales are concentrated."
+   ],
+   "answer": 1,
+   "explanation": "Buyer power is high when a few buyers account for a large share of sales. Losing one chain would hit the brand hard, so the chains can demand lower prices, promotions and listing fees. Brands reduce this by building direct channels or strong consumer pull.",
+   "interview_tip": "Five Forces questions test whether you can map a real situation to the right force. Following with a mitigation, like direct channels, shows you think strategically, not just academically."
+  },
+  {
+   "id": "2026-10-25-14",
+   "topic": "Strategy",
+   "concept": "Scaling a negative-unit-economics business amplifies losses",
+   "difficulty": "easy",
+   "question": "A startup loses ₹40 on every delivery after delivery costs, and its plan is to 'grow fast and get profitable at scale'. What should a PM check first?",
+   "options": [
+    "Which specific costs fall with scale, and whether that closes the ₹40 gap",
+    "Whether competitors are also losing money, so the market stays healthy",
+    "Whether the marketing budget can double so the company grows fast",
+    "Whether app ratings are high enough to support a higher price later"
+   ],
+   "rationales": [
+    "Correct: profitability at scale requires specific per-order costs that actually fall with volume.",
+    "Wrong: competitors' losses don't fix your unit economics and can mean a price war.",
+    "Wrong: spending more to grow faster increases losses if each order is still negative.",
+    "Wrong: ratings matter, but the first question is whether any lever makes each order profitable."
+   ],
+   "answer": 0,
+   "explanation": "If each order loses money, more orders just mean bigger losses unless scale changes the per-order economics. You need a concrete path: denser routes, larger basket sizes, cheaper buying, or fees. If no cost actually falls with volume, growth makes things worse.",
+   "interview_tip": "Business questions often hide a unit-economics trap. Asking 'what changes per order at scale?' shows you won't confuse growth with health."
+  },
+  {
+   "id": "2026-10-25-15",
+   "topic": "Strategy",
+   "concept": "Prioritising markets by attractiveness and ability to win",
+   "difficulty": "hard",
+   "question": "An Indian payments startup must pick its first international market. Indonesia is the largest market; the UAE is smaller but has a large Indian diaspora already using the product for remittances, and partner banks there have reached out. Which reasoning is strongest?",
+   "options": [
+    "Enter both at once so the company doesn't miss either window",
+    "Weigh market size against ability to win; the UAE's existing users and partners may beat a larger, harder market",
+    "Pick Indonesia, since the biggest addressable market always offers the most upside",
+    "Pick whichever market has the fewest competitors, since less competition means faster growth"
+   ],
+   "rationales": [
+    "Wrong: splitting a startup's limited team across two launches usually weakens both.",
+    "Correct: it balances attractiveness with concrete advantages that raise the odds of winning.",
+    "Wrong: size matters, but a large market you can't win is worth less than a smaller one you can.",
+    "Wrong: few competitors can also mean little demand or high barriers; it's one factor, not the decision."
+   ],
+   "answer": 1,
+   "explanation": "Market choice should weigh how attractive a market is (size, growth, margins) against your ability to win there (existing users, distribution, partners, regulation). A smaller market where you start with demand and partners can be a better first step than a huge market where you start from zero. Early wins also fund later expansion.",
+   "interview_tip": "Market-entry questions reward a two-axis framework (attractiveness × ability to win). Using evidence from the prompt, like existing users and inbound partners, makes the answer concrete."
+  },
+  {
+   "id": "2026-10-25-16",
+   "topic": "Execution",
+   "concept": "Single-threaded owner for a critical initiative",
+   "difficulty": "easy",
+   "question": "A checkout redesign has stalled for two quarters because four teams each own a piece and nobody owns the whole result. What is Amazon's 'single-threaded leader' fix?",
+   "options": [
+    "Give one leader full-time ownership of the result, with the authority and team to deliver it",
+    "Split the project into four separate launches so each team ships independently",
+    "Add a weekly sync where all four team leads share status updates",
+    "Have the VP review progress personally every week"
+   ],
+   "rationales": [
+    "Correct: one dedicated owner with authority removes the gap where no one owns the whole.",
+    "Wrong: separate launches may produce a fragmented checkout that no one is responsible for end to end.",
+    "Wrong: more syncs share status but still leave no one accountable for the overall result.",
+    "Wrong: exec attention helps briefly but a VP can't own day-to-day trade-offs across teams."
+   ],
+   "answer": 0,
+   "explanation": "A single-threaded leader works only on one initiative and is accountable for its outcome, usually with a dedicated team. When ownership is split, everyone optimises their part and the whole drifts. Status meetings and exec reviews add visibility but not ownership.",
+   "interview_tip": "Amazon interviews often probe ownership structures. Explaining why split ownership stalls work, and how you'd fix it, shows organisational maturity."
+  },
+  {
+   "id": "2026-10-25-17",
+   "topic": "Execution",
+   "concept": "Reference-class forecasting to counter the planning fallacy",
+   "difficulty": "medium",
+   "question": "Your team estimates a data migration at 6 weeks. The last four similar migrations in the company took 10, 12, 9 and 14 weeks, each estimated at about 6. What's the best way to set the plan?",
+   "options": [
+    "Anchor on past similar migrations (about 9-14 weeks) and adjust for real differences",
+    "Ask the team to re-estimate in more detail until everyone agrees on a number",
+    "Keep 6 weeks, since this team is more experienced than the previous ones",
+    "Use 6 weeks but add a 10% buffer for unexpected issues"
+   ],
+   "rationales": [
+    "Correct: base rates from similar projects are the best starting point, then you adjust.",
+    "Wrong: more detailed bottom-up estimates usually miss the same unknown problems as before.",
+    "Wrong: every team believes it is the exception; that belief is the planning fallacy itself.",
+    "Wrong: a 10% buffer is tiny compared with the 50-130% overruns seen on past migrations."
+   ],
+   "answer": 0,
+   "explanation": "The planning fallacy is our tendency to underestimate our own tasks. Reference-class forecasting fixes it by starting from how long similar projects actually took, then adjusting for specific differences. Bottom-up detail tends to miss the same unknowns again.",
+   "interview_tip": "When asked how you handle estimates, citing base rates from similar past work shows you plan with evidence, not optimism."
+  },
+  {
+   "id": "2026-10-25-18",
+   "topic": "Execution",
+   "concept": "Combining top-down goals with bottom-up plans in planning",
+   "difficulty": "medium",
+   "question": "Leadership sets a goal to grow paid conversions 20% next year. Your team's bottom-up plan of known projects adds up to about 8%. What is the best next step?",
+   "options": [
+    "Submit the 8% plan quietly and let leadership notice the difference",
+    "Commit to 20% anyway and figure out how during the year",
+    "Pad each project's impact estimate until the total reaches 20%",
+    "Show the 12-point gap and propose options: extra bets, more resources, or a revised target"
+   ],
+   "rationales": [
+    "Wrong: staying silent avoids the hard conversation now and creates a worse one later.",
+    "Wrong: committing without a plan sets up a predictable miss and erodes trust.",
+    "Wrong: inflating estimates hides the gap and damages your credibility when results arrive.",
+    "Correct: it surfaces the gap early with concrete choices so leaders can make a real trade-off."
+   ],
+   "answer": 3,
+   "explanation": "Good planning reconciles top-down ambition with bottom-up reality. Making the gap visible lets leadership decide: fund new bets, add people, accept risk, or change the goal. Hiding or papering over the gap guarantees a surprise later.",
+   "interview_tip": "Planning questions test candour with leadership. Strong answers quantify the gap and bring options, not just a problem."
+  },
+  {
+   "id": "2026-10-25-19",
+   "topic": "Behavioural",
+   "concept": "Addressing a high performer's disrespectful behaviour",
+   "difficulty": "hard",
+   "question": "Your strongest engineer ships the most code, but often dismisses junior teammates' ideas harshly in design reviews. Two juniors have stopped speaking up. As the PM partnering with the eng manager, what's the best approach?",
+   "options": [
+    "Leave it alone, since output matters most and the engineer's results speak for themselves",
+    "Ask the juniors to toughen up and defend their ideas more firmly",
+    "Raise it publicly in the next review so the whole team sees the standard",
+    "Work with the eng manager so specific examples and their impact are raised with the engineer privately"
+   ],
+   "rationales": [
+    "Wrong: the team's lost contributions are a real cost that the engineer's output doesn't offset.",
+    "Wrong: it puts the burden on the people being harmed instead of addressing the cause.",
+    "Wrong: public correction humiliates and usually makes people defensive rather than changing behaviour.",
+    "Correct: it respects who owns feedback and gives the engineer concrete, private, actionable input."
+   ],
+   "answer": 3,
+   "explanation": "Behaviour that silences others has a hidden cost: lost ideas and a team that stops contributing. The eng manager owns performance feedback, so the PM should bring specific examples and impact to them and support a private conversation. Strong cultures hold high performers to the same behaviour bar.",
+   "interview_tip": "Interviewers want to see you won't trade team health for one person's output. Naming who owns the feedback, and giving specifics, shows judgement."
+  },
+  {
+   "id": "2026-10-25-20",
+   "topic": "Behavioural",
+   "concept": "Re-motivating a team after a failed launch",
+   "difficulty": "hard",
+   "question": "A feature your team spent five months on launched and missed every target; leadership is pausing it. Morale is low and people are asking if their work mattered. What's the best way to lead the team forward?",
+   "options": [
+    "Tell the team the targets were unrealistic, so the miss wasn't really their fault",
+    "Hold an honest review of what you learned, credit good work, and connect the lessons to the next bet",
+    "Move straight to the next project so the team stops dwelling on the failure",
+    "Explain that leadership's decision was premature and the feature would have worked with more time"
+   ],
+   "rationales": [
+    "Wrong: blaming the targets avoids ownership and teaches nothing about what to do differently.",
+    "Correct: honesty, recognition and a link to what's next rebuild motivation on solid ground.",
+    "Wrong: skipping reflection wastes the lessons and leaves people feeling their work was discarded.",
+    "Wrong: undermining leadership may feel supportive but breeds cynicism and doesn't move the team forward."
+   ],
+   "answer": 1,
+   "explanation": "After a failure, teams need to hear the truth, see what was learned, and know their effort was valued. A blameless review turns the work into insight, and tying it to the next decision shows it mattered. Skipping or deflecting leaves cynicism behind.",
+   "interview_tip": "Failure stories are common in behavioural rounds. Strong answers show ownership, specific learnings, and how you turned them into the next result."
+  },
+  {
+   "id": "2026-10-25-21",
+   "topic": "Behavioural",
+   "concept": "Removing yourself as a decision bottleneck through delegation",
+   "difficulty": "hard",
+   "question": "Your team of eight waits on you to approve every copy change, design tweak and minor scope call. Velocity has dropped and you're working weekends. What's the best fix?",
+   "options": [
+    "Stop reviewing small decisions entirely and let the team ship whatever they choose",
+    "Define which decisions the team owns, share the principles you use, and review outcomes instead of approving each call",
+    "Work longer hours for a few weeks to clear the approval backlog",
+    "Hire another PM so approvals are split across two people"
+   ],
+   "rationales": [
+    "Wrong: removing all guidance risks inconsistent quality; delegation needs clear principles, not absence.",
+    "Correct: it pushes decisions to the team with guardrails, removing the bottleneck sustainably.",
+    "Wrong: extra hours treat the symptom and won't last; the bottleneck returns.",
+    "Wrong: a second approver halves the queue but keeps the same broken structure."
+   ],
+   "answer": 1,
+   "explanation": "A PM who approves everything becomes the slowest part of the system. Clear decision rights plus shared principles (who the user is, the quality bar, what matters most) let the team decide well on their own. You then check outcomes and coach, which scales far better than gatekeeping.",
+   "interview_tip": "Scaling yourself is a key senior-PM signal. Describing decision rights and principles, not just 'trusting the team', shows a repeatable mechanism."
+  },
+  {
+   "id": "2026-10-25-22",
+   "topic": "AI Product",
+   "concept": "Long-context stuffing vs RAG for large document sets",
+   "difficulty": "medium",
+   "question": "A legal-tech startup lets lawyers ask questions across a firm's 50,000 contracts. An engineer suggests skipping retrieval and putting everything into a model with a 1M-token context window. What's the main problem?",
+   "options": [
+    "Long-context models can't read legal language as accurately as short-context models",
+    "Retrieval is always more accurate than long context, regardless of corpus size",
+    "Context windows can't hold scanned PDFs, only plain text",
+    "50,000 contracts far exceed 1M tokens, and sending huge contexts on every question is slow and costly"
+   ],
+   "rationales": [
+    "Wrong: there's no evidence that long-context models handle legal text worse in general.",
+    "Wrong: long context can beat retrieval for small corpora; the issue here is scale and cost.",
+    "Wrong: PDFs are converted to text or images first; format isn't the core limit.",
+    "Correct: the corpus is far too large, and per-query cost and latency would be very high."
+   ],
+   "answer": 3,
+   "explanation": "Even large windows hold a few thousand pages at most, while 50,000 contracts are hundreds of millions of tokens. Sending massive contexts on each query also drives up cost and latency. Retrieval narrows the input to relevant passages; long context works well once you've retrieved a manageable set.",
+   "interview_tip": "AI PM interviews often ask RAG vs long-context. A strong answer does quick token math and treats them as complementary rather than rivals."
+  },
+  {
+   "id": "2026-10-25-23",
+   "topic": "AI Product",
+   "concept": "Jailbreaks vs prompt injection",
+   "difficulty": "easy",
+   "question": "What's the key difference between a jailbreak and a prompt injection attack on an AI assistant?",
+   "options": [
+    "Jailbreaks require access to the system prompt, while injections don't",
+    "A jailbreak is when the user tries to bypass safety rules; an injection hides instructions in content the model reads",
+    "Prompt injection only works on open-weights models, while jailbreaks work on any model",
+    "Jailbreaks target image models, while prompt injections target text models"
+   ],
+   "rationales": [
+    "Wrong: neither attack requires seeing the system prompt.",
+    "Correct: the difference is who supplies the malicious instruction and through which channel.",
+    "Wrong: both attacks affect closed and open models alike.",
+    "Wrong: both attacks apply to text and multimodal models."
+   ],
+   "answer": 1,
+   "explanation": "In a jailbreak, the user directly tries to get the model to break its rules. In prompt injection, attacker instructions are hidden in third-party content (a web page, email, document) that the model processes on the user's behalf. Injection is the bigger risk for agents, because the user may be the victim, not the attacker.",
+   "interview_tip": "Knowing who the attacker is in each case shows security fluency. Link injection risk to agents with tools for a strong answer."
+  },
+  {
+   "id": "2026-10-25-24",
+   "topic": "AI Product",
+   "concept": "Decomposing a task into a prompt chain",
+   "difficulty": "medium",
+   "question": "A single long prompt that reads a support ticket, classifies it, looks up policy and drafts a reply is unreliable, and it's hard to tell which part fails. What's the best change?",
+   "options": [
+    "Split it into a chain of smaller steps, each with its own output you can check and evaluate",
+    "Raise the temperature so the model explores more ways to solve the task",
+    "Add more examples to the single prompt until the failures stop",
+    "Switch to the largest available model and keep the single prompt as is"
+   ],
+   "rationales": [
+    "Correct: smaller steps are easier to get right, test and debug individually.",
+    "Wrong: higher temperature adds randomness, which usually makes reliability worse.",
+    "Wrong: more examples may help a bit but still leave one opaque prompt that's hard to debug.",
+    "Wrong: a bigger model may help but costs more and still hides which step is failing."
+   ],
+   "answer": 0,
+   "explanation": "Breaking a complex task into steps (classify, retrieve policy, draft) makes each step simpler and gives you checkpoints. You can evaluate and fix each step separately and use cheaper models where possible. The trade-off is more calls and a bit more latency.",
+   "interview_tip": "Interviewers like seeing debuggability as a design goal. Mention per-step evals and the latency trade-off for a complete answer."
+  },
+  {
+   "id": "2026-10-25-25",
+   "topic": "AI Product",
+   "concept": "Freezing the judge model version for comparable eval scores",
+   "difficulty": "hard",
+   "question": "Your team scores a writing assistant weekly using an LLM judge. This week every variant's score jumped 6 points, including the unchanged baseline. The judge points to the provider's 'latest' model alias. What most likely happened, and what's the fix?",
+   "options": [
+    "Users are writing better prompts, so pin the evaluation set to older prompts",
+    "The baseline quietly improved, so update the baseline and keep comparing",
+    "LLM judges are random, so average scores over more weeks before acting",
+    "The judge model was updated behind the alias; pin a fixed judge version and re-score the baseline"
+   ],
+   "rationales": [
+    "Wrong: weekly evals use a fixed set; user prompts in production don't change eval inputs.",
+    "Wrong: the baseline didn't change, so its score shouldn't have; the grader is the variable.",
+    "Wrong: some noise exists, but a uniform 6-point jump for all variants points to a systematic change.",
+    "Correct: an unpinned judge is the classic cause of a uniform shift across all variants."
+   ],
+   "answer": 3,
+   "explanation": "If an unchanged baseline moves, the measuring tool changed. A 'latest' alias can silently switch to a new model that grades differently. Pin the judge to a specific version, re-run the baseline on it, and treat any judge upgrade as a deliberate, recalibrated change.",
+   "interview_tip": "Eval reliability questions test whether you treat the grader as part of the system. Saying 'an unchanged baseline moving means the ruler moved' is a crisp signal."
+  },
+  {
+   "id": "2026-10-25-26",
+   "topic": "AI Product",
+   "concept": "On-device vs cloud inference trade-off",
+   "difficulty": "medium",
+   "question": "A keyboard app wants AI next-phrase suggestions as users type. Why might it run a small model on the phone rather than call a large cloud model?",
+   "options": [
+    "On-device inference has no cost to the company and no battery impact for users",
+    "On-device models are always more accurate than cloud models",
+    "It gives instant suggestions offline and keeps typed text on the device, at some cost to quality",
+    "Cloud models can't handle short text like keyboard input"
+   ],
+   "rationales": [
+    "Wrong: on-device inference uses battery and storage, and building small models still costs money.",
+    "Wrong: small on-device models are usually less capable than large cloud models.",
+    "Correct: latency, offline use and privacy favour on-device, with a quality trade-off.",
+    "Wrong: cloud models handle short text fine; latency and privacy are the issues."
+   ],
+   "answer": 2,
+   "explanation": "Suggestions need to appear within milliseconds as users type, and a network round trip is too slow and fails offline. Keeping keystrokes on the phone is also a major privacy win. The trade-offs are smaller models with lower quality and some battery and storage use.",
+   "interview_tip": "AI architecture questions reward naming the constraints that drive the choice. Latency, privacy, offline use and cost are the four to cover."
+  },
+  {
+   "id": "2026-10-25-27",
+   "topic": "Technology",
+   "concept": "Storing timestamps in UTC",
+   "difficulty": "easy",
+   "question": "A booking app stores appointment times in each server's local time. After expanding from India to the UAE, customers see wrong times. What's the standard fix?",
+   "options": [
+    "Run separate servers in each country so local time always matches users",
+    "Store all times in India Standard Time, since that's where the company is based",
+    "Store all times in UTC and convert to each user's time zone only when displaying",
+    "Ask users to enter times in the server's time zone when booking"
+   ],
+   "rationales": [
+    "Wrong: separate servers don't solve cross-border bookings and add a lot of complexity.",
+    "Wrong: a single local zone still breaks for users elsewhere and for zones with daylight saving.",
+    "Correct: UTC storage plus conversion on display is the standard approach.",
+    "Wrong: asking users to do conversion is error-prone and a poor experience."
+   ],
+   "answer": 2,
+   "explanation": "Storing time in one universal reference (UTC) avoids confusion across servers, regions and daylight-saving changes. The app converts to the user's or venue's time zone only for display. For future appointments, also store the intended local time zone so changes in rules don't shift them.",
+   "interview_tip": "Simple technical questions check you understand common data pitfalls. Mentioning storing the venue's time zone for future events shows extra depth."
+  },
+  {
+   "id": "2026-10-25-28",
+   "topic": "Technology",
+   "concept": "Tail latency amplification in fan-out requests",
+   "difficulty": "hard",
+   "question": "A home-feed request calls 50 backend services in parallel and waits for all of them. Each service is fast 99% of the time but slow 1% of the time. Roughly what share of feed loads will be slow?",
+   "options": [
+    "About 1%, since each service is slow only 1% of the time",
+    "About 2%, since slow calls in parallel overlap",
+    "About 40%, since the chance at least one of 50 calls is slow is high",
+    "About 50%, since each of the 50 services adds 1%"
+   ],
+   "rationales": [
+    "Wrong: that's true for one call, but waiting on 50 calls multiplies the exposure.",
+    "Wrong: parallel calls don't overlap away slowness; one slow call delays the whole request.",
+    "Correct: 1 − 0.99^50 ≈ 39%, so roughly 40% of feed loads are slow.",
+    "Wrong: probabilities don't add linearly; the correct figure is about 39%."
+   ],
+   "answer": 2,
+   "explanation": "The chance that all 50 calls are fast is 0.99^50, about 0.61, so about 39% of requests hit at least one slow call. When you wait for the slowest of many calls, rare slowness becomes common. Fixes include timeouts with partial results, hedged requests, and fewer dependencies.",
+   "interview_tip": "This 'tail at scale' idea appears in system-design discussions. Doing the quick probability and proposing partial-result timeouts shows strong technical fluency."
+  },
+  {
+   "id": "2026-10-25-29",
+   "topic": "Growth",
+   "concept": "Launching in an atomic network before expanding",
+   "difficulty": "medium",
+   "question": "A new neighbourhood-services app (plumbers, tutors, cooks) has small amounts of supply and demand spread across all of Bengaluru, and few requests get matched. What's the best growth move?",
+   "options": [
+    "Spend more on city-wide ads to increase total sign-ups on both sides",
+    "Add more service categories so every user finds something useful",
+    "Focus on a few neighbourhoods until supply and demand are dense enough for matches",
+    "Expand to Pune and Hyderabad to show investors the model scales"
+   ],
+   "rationales": [
+    "Wrong: city-wide spend spreads users thin again, so match rates stay low.",
+    "Wrong: more categories divide already thin supply further.",
+    "Correct: building density in a small area is what makes local network effects start working.",
+    "Wrong: new cities repeat the thin-density problem before it's solved in the first one."
+   ],
+   "answer": 2,
+   "explanation": "Local marketplaces work only when there's enough density in each area for buyers to find sellers quickly. Concentrating on a small 'atomic network' (a few neighbourhoods) makes matches happen, which drives word of mouth. Then you expand area by area.",
+   "interview_tip": "Marketplace growth questions often test density thinking. Naming the 'atomic network' and showing how you'd expand from it is a strong signal."
+  },
+  {
+   "id": "2026-10-25-30",
+   "topic": "Current Events",
+   "concept": "ChatGPT ads kept separate from answer generation (Oct 2026)",
+   "difficulty": "medium",
+   "question": "In October 2026, OpenAI described how ChatGPT picks ads: the ad system runs on separate services, models and code from the system that writes answers, a model only nominates candidates, and an auction tool decides placement. Why design it this way?",
+   "options": [
+    "It protects trust that ads don't shape answers, and an ad outage or delay doesn't slow replies",
+    "Separate systems let OpenAI charge advertisers more by running two auctions per query",
+    "Regulators require AI companies to run advertising on physically separate data centres",
+    "A single combined model would be too large to serve, so the split is purely about compute"
+   ],
+   "rationales": [
+    "Correct: separation protects answer integrity and keeps ad problems from delaying responses.",
+    "Wrong: nothing reported suggests double auctions; the auction tool makes one placement and pricing decision.",
+    "Wrong: the reports cite no such regulation; the separation is OpenAI's own design choice.",
+    "Wrong: compute isn't the stated reason; independence of answers and reliability are."
+   ],
+   "answer": 0,
+   "explanation": "Reports on OpenAI's post say ad services, models and code are separate from answer generation, so a slow or failing ad system doesn't delay responses, and ads appear below replies. OpenAI says ads do not shape ChatGPT's answers, and the auction, not the language model, decides placement and price. The PM lesson: when monetisation could threaten the core product's trust, separate them architecturally.",
+   "interview_tip": "Monetisation questions for AI assistants often ask how to add ads without losing trust. Citing architectural separation and keeping the core experience independent is a strong, current answer.",
+   "source": "https://www.tokenpost.com/news/technology/37572"
+  }
+ ]
+}
