@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-26",
+   "theme": "Lurkers, profit pools & agents that never see the password",
+   "count": 30
+  },
+  {
    "date": "2026-10-25",
    "theme": "Who gets asked, who decides & tail latency",
    "count": 30

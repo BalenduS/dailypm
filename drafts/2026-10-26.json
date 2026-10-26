@@ -1,0 +1,637 @@
+{
+  "date": "2026-10-26",
+  "theme": "Lurkers, profit pools & agents that never see the password",
+  "questions": [
+    {
+      "topic": "Product Sense",
+      "concept": "Instant payouts for gig workers' cash-flow needs",
+      "difficulty": "medium",
+      "question": "A ride-hailing app in India is losing drivers to a rival. Interviews show many drivers pay for fuel daily in cash, but the app pays earnings out weekly. What is the best first product bet to win them back?",
+      "options": [
+        "Offer an optional instant payout of the day's earnings to the driver's UPI account",
+        "Raise the weekly incentive bonus for drivers who complete a set number of trips",
+        "Add an in-app earnings dashboard that projects the driver's weekly payout total",
+        "Partner with fuel stations to give drivers a small discount on every refill"
+      ],
+      "answer": 0,
+      "explanation": "The pain point is cash flow timing, not the total amount earned. Drivers need money today to buy tomorrow's fuel, and a weekly cycle forces them to borrow or stop working. Instant payouts fix the timing directly; any fee or limits can be tuned later.",
+      "rationales": [
+        "Correct: it targets the real constraint, which is when the money arrives rather than how much it is.",
+        "Wrong: a bigger bonus still lands at the end of the week, so the daily fuel gap remains.",
+        "Wrong: seeing a projection does not put cash in the driver's hands when the fuel bill is due.",
+        "Wrong: a small discount helps margins but doesn't solve having no cash on hand before payday."
+      ],
+      "interview_tip": "Interviewers look for whether you dig into why users behave as they do. Separating 'how much' from 'when' shows you found the root need rather than adding money to the problem."
+    },
+    {
+      "topic": "Product Sense",
+      "concept": "Staff roles so small-business owners can delegate without sharing logins",
+      "difficulty": "medium",
+      "question": "Owners of small shops using a WhatsApp-based commerce tool hand their phone to staff so they can reply to customers. Owners say they worry staff can see payouts and change prices. What should the product team build first?",
+      "options": [
+        "Staff accounts with roles, so staff can reply to chats but not see payouts or edit prices",
+        "A reminder telling owners to change their password after staff have used the phone",
+        "An activity log that shows owners every action taken on the account each day",
+        "A rule that only the owner's own device can be logged in to the account at any time"
+      ],
+      "answer": 0,
+      "explanation": "The job is delegating customer replies while keeping money and pricing under the owner's control. Role-based staff access lets work be shared without sharing the owner's identity. Logs and password resets only detect or limit the damage after access is already shared.",
+      "rationales": [
+        "Correct: it separates who can do what, which is the actual worry, and removes the need to hand over the phone.",
+        "Wrong: changing passwords doesn't stop staff from seeing payouts while they are using the account.",
+        "Wrong: a log helps with auditing but doesn't prevent staff from seeing or changing sensitive things.",
+        "Wrong: locking to one device makes delegation harder, so owners would keep handing over the phone."
+      ],
+      "interview_tip": "In product-sense rounds, notice when one account is really used by several people with different needs. Proposing roles shows you design for how small businesses actually operate."
+    },
+    {
+      "topic": "Product Sense",
+      "concept": "Fit confidence tools to reduce size-driven fashion returns",
+      "difficulty": "hard",
+      "question": "An Indian fashion marketplace has a 30% return rate, and two-thirds of returns are tagged 'size didn't fit'. The CEO wants to cut returns without hurting conversion. Which bet should the PM prioritise first?",
+      "options": [
+        "Show a size recommendation based on the shopper's past kept orders and similar buyers' fit feedback",
+        "Charge a small return fee on every order to discourage customers from returning items",
+        "Add a detailed size chart with body measurements to every product page",
+        "Remove cash on delivery for shoppers who have returned more than two orders"
+      ],
+      "answer": 0,
+      "explanation": "Most returns come from uncertainty about fit, so the best lever is to reduce that uncertainty at the moment of choice. Personalised size advice uses data the marketplace already has and helps conversion because shoppers feel more confident. Fees and restrictions reduce returns by putting off buyers, which hurts the other goal.",
+      "rationales": [
+        "Correct: it attacks the main cause (fit uncertainty) and should raise confidence, helping both returns and conversion.",
+        "Wrong: a fee lowers returns by discouraging purchases, which conflicts with protecting conversion.",
+        "Wrong: size charts help a little, but most shoppers don't measure themselves and brands size differently.",
+        "Wrong: it punishes a symptom for a subset of users and removes a payment method many Indian shoppers rely on."
+      ],
+      "interview_tip": "Strong answers split the metric (returns) by reason before proposing solutions, then check each idea against the counter-goal. Saying out loud that a fee 'wins' on returns but 'loses' on conversion shows trade-off thinking."
+    },
+    {
+      "topic": "Product Sense",
+      "concept": "Serving lurkers who consume but never post",
+      "difficulty": "hard",
+      "question": "A professional community app finds that 90% of monthly users read posts but never post or comment. Leadership asks how to increase value for these users. What is the strongest first move?",
+      "options": [
+        "Interview and segment the readers by why they visit, then improve the reading experience for the biggest group",
+        "Prompt every reader to write their first post with a pop-up after three visits",
+        "Award points and badges to users who comment, to turn readers into contributors",
+        "Hide some posts until the user has made at least one contribution to the community"
+      ],
+      "answer": 0,
+      "explanation": "Readers are not a problem to fix; they often get real value from reading. The first step is to learn what job reading does for them (learning, job leads, staying informed) and serve that job better. Pushing everyone to post assumes posting is the goal, which can annoy the majority and lower content quality.",
+      "rationales": [
+        "Correct: it treats readers as a valid segment and finds the job they hire the product for before building.",
+        "Wrong: repeated pop-ups push an action most readers don't want and can drive them away.",
+        "Wrong: rewards can create low-quality comments and still ignore what readers came for.",
+        "Wrong: gating content punishes the majority and is likely to cut visits rather than create good posts."
+      ],
+      "interview_tip": "This tests whether you question the premise. Saying 'lurkers can be happy users' and asking what value they get is the kind of user-first reframing interviewers reward."
+    },
+    {
+      "topic": "Metrics",
+      "concept": "Concentration: one large seller driving a marketplace-wide refund spike",
+      "difficulty": "hard",
+      "question": "A marketplace's refund rate jumped from 2% to 3.5% this week. It shows up across all categories and regions. What is the most useful next cut to take?",
+      "options": [
+        "Break refunds down by seller to check whether a few large sellers account for most of the increase",
+        "Break refunds down by device type to check whether a new app release caused the problem",
+        "Compare this week's refund rate to the same week last year to rule out seasonality",
+        "Survey a random sample of customers who requested refunds to ask for their reasons"
+      ],
+      "answer": 0,
+      "explanation": "When a spike appears across every category and region, it can still come from a few actors whose orders are spread everywhere, like a large multi-category seller with a fulfilment problem. Cutting by seller tests that quickly with existing data. A concentrated cause points to a targeted fix instead of a platform-wide change.",
+      "rationales": [
+        "Correct: a few big sellers can spread a problem across all categories and regions, and this cut finds that fast.",
+        "Wrong: refunds are driven by what happens after purchase, so device type is a less likely cause here.",
+        "Wrong: a 75% jump in one week is unlikely to be normal seasonality, and this cut doesn't locate the cause.",
+        "Wrong: surveys are slow and biased by who answers; existing data can find the cause faster."
+      ],
+      "interview_tip": "In root-cause questions, interviewers want you to pick cuts that match how the system works. Mentioning the supply side (sellers) in a marketplace shows you understand that both sides drive the metric."
+    },
+    {
+      "topic": "Metrics",
+      "concept": "North Star for a consumables D2C brand",
+      "difficulty": "medium",
+      "question": "An Indian D2C brand sells protein powder online. Most first orders are discounted, and profit comes from customers who reorder. Which North Star metric fits best?",
+      "options": [
+        "Number of customers who place a repeat order within 60 days of their first",
+        "Total first orders placed each month across all marketing channels",
+        "Average order value across all orders placed in the month",
+        "Monthly website visitors who reach the product detail page"
+      ],
+      "answer": 0,
+      "explanation": "A North Star should reflect the value customers get and the brand's path to profit. For a consumable, a repeat purchase shows the product worked and is when the order makes money. First orders and traffic can be bought with discounts and ads without building a business.",
+      "rationales": [
+        "Correct: repeat purchase captures both customer value and the brand's profit engine.",
+        "Wrong: first orders can be inflated with discounts and don't show whether customers liked the product.",
+        "Wrong: order value can rise through bundles while fewer customers return, hiding the real problem.",
+        "Wrong: visitors are an upper-funnel input, not evidence of delivered value."
+      ],
+      "interview_tip": "When choosing a North Star, explain how the business makes money and tie the metric to it. Pointing out that first orders are subsidised shows you think about unit economics, not just volume."
+    },
+    {
+      "topic": "Metrics",
+      "concept": "Blended CAC hides paid-channel efficiency",
+      "difficulty": "easy",
+      "question": "A startup reports a customer acquisition cost of ₹300 by dividing total marketing spend by all new customers. Half the new customers came from word of mouth. What is the main risk in using this number to scale paid ads?",
+      "options": [
+        "The paid CAC is much higher, because the blended figure is diluted by free customers",
+        "The CAC is overstated, because word-of-mouth customers carry hidden costs",
+        "The number is fine as long as the same calculation is used every month",
+        "The figure ignores the revenue those customers will generate over time"
+      ],
+      "answer": 0,
+      "explanation": "Blended CAC divides all spend by all customers, including ones who arrived for free. If half came organically, the true cost per paid customer is roughly double. Scaling ad spend on the blended figure will disappoint because new paid customers cost the paid rate.",
+      "rationales": [
+        "Correct: organic customers lower the average, so the marginal cost of a paid customer is much higher.",
+        "Wrong: organic customers usually lower CAC, not raise it, so the error runs the other way.",
+        "Wrong: consistency doesn't fix a number that measures the wrong thing for this decision.",
+        "Wrong: that describes LTV, a separate question; the issue here is how CAC was calculated."
+      ],
+      "interview_tip": "Interviewers like candidates who ask how a number was built before using it. Separating blended from paid CAC is a quick signal of analytical maturity."
+    },
+    {
+      "topic": "Metrics",
+      "concept": "Micro-conversions as early signals for a low-frequency purchase",
+      "difficulty": "easy",
+      "question": "A home-loan comparison site gets only a few completed applications per day, so tests on the application rate take months. What is a sensible way to get faster signal?",
+      "options": [
+        "Track earlier steps that predict applications, such as using the EMI calculator or saving a loan offer",
+        "Stop running tests and rely on user interviews for all product decisions",
+        "Count page views on the loan pages as the main success metric instead",
+        "Run tests only during the festive season, when applications are highest"
+      ],
+      "answer": 0,
+      "explanation": "When the final conversion is rare, earlier actions that correlate with it give faster feedback. These micro-conversions should be checked against the final outcome, but they let the team learn in days instead of months. Page views are too far from intent to be useful.",
+      "rationales": [
+        "Correct: intent-heavy earlier steps give quicker readouts, as long as they predict real applications.",
+        "Wrong: interviews are valuable, but dropping measurement entirely loses evidence the team can get.",
+        "Wrong: page views say little about intent and are easy to inflate.",
+        "Wrong: peak-season results may not apply to the rest of the year and still limit how often you can learn."
+      ],
+      "interview_tip": "Mention checking that the proxy actually predicts the outcome. That one sentence shows you know proxies can mislead."
+    },
+    {
+      "topic": "Experimentation",
+      "concept": "Stratified randomization for small B2B samples",
+      "difficulty": "medium",
+      "question": "A B2B SaaS team wants to A/B test a new onboarding flow on 200 new accounts. A few enterprise accounts are far bigger than the rest. What should they do when assigning accounts to groups?",
+      "options": [
+        "Group accounts by size first, then randomly split within each group so both arms get a similar mix",
+        "Put all enterprise accounts in treatment, since they matter most to revenue",
+        "Assign accounts by alternating sign-up order so the groups end up the same size",
+        "Leave out the enterprise accounts entirely so they can't affect the result"
+      ],
+      "answer": 0,
+      "explanation": "With small samples, pure random assignment can by chance put most big accounts in one arm and swamp the result. Stratifying by size and randomizing within each stratum keeps the arms balanced on the factor that matters most. It keeps the test fair and lowers noise.",
+      "rationales": [
+        "Correct: stratified randomization keeps arms balanced on a key variable, which matters a lot in small samples.",
+        "Wrong: putting the big accounts on one side guarantees the arms differ, so the comparison is biased.",
+        "Wrong: alternating isn't truly random and does nothing to balance account size.",
+        "Wrong: excluding them means you learn nothing about the segment that drives the most revenue."
+      ],
+      "interview_tip": "B2B experiments often come up because samples are small. Naming stratification (or blocking) shows you know how to adapt A/B testing when 'just randomize' isn't enough."
+    },
+    {
+      "topic": "Experimentation",
+      "concept": "Regression discontinuity around an eligibility threshold",
+      "difficulty": "hard",
+      "question": "A lender gave a lower interest rate to every applicant with a credit score of 750 or above, without any A/B test. The PM wants to estimate how the lower rate affects loan uptake. Which approach is most credible?",
+      "options": [
+        "Compare uptake for applicants just above 750 with those just below it",
+        "Compare average uptake for everyone above 750 with everyone below it",
+        "Compare uptake this quarter with last quarter, before the lower rate existed",
+        "Ask applicants above 750 whether the lower rate affected their decision"
+      ],
+      "answer": 0,
+      "explanation": "People with scores of 748 and 752 are nearly the same, so the main difference between them is whether they got the lower rate. Comparing just around the cutoff isolates the effect of the rate, which is a regression discontinuity design. Comparing all high and low scorers mixes in many other differences.",
+      "rationales": [
+        "Correct: near the threshold the groups are similar, so the jump in uptake can be credited to the rate.",
+        "Wrong: high-score and low-score applicants differ in income and need, so the gap is confounded.",
+        "Wrong: many things change between quarters, so the before/after gap can't be credited to the rate.",
+        "Wrong: self-reported reasons are unreliable and miss people the rate might have discouraged or not affected."
+      ],
+      "interview_tip": "When there's no A/B test, interviewers want to see that you can find a natural experiment. Spotting a hard cutoff and using it shows strong causal reasoning."
+    },
+    {
+      "topic": "Estimation",
+      "concept": "Daily passengers at an airport from flight capacity",
+      "difficulty": "medium",
+      "question": "Estimate total daily passengers (arriving plus departing) at an airport with about 450 departing flights a day, an average of 180 seats per flight and an 85% load factor.",
+      "options": [
+        "About 35,000",
+        "About 70,000",
+        "About 140,000",
+        "About 300,000"
+      ],
+      "answer": 2,
+      "explanation": "Departing passengers ≈ 450 flights × 180 seats × 0.85 ≈ 68,850, or about 70,000. Arrivals roughly match departures, so the total is about 2 × 70,000 ≈ 140,000 per day, or about 50 million a year. Checking that yearly figure against known large airports is a good sanity test.",
+      "rationales": [
+        "Wrong: this is half of departures alone, as if one direction were split in half again; it undercounts.",
+        "Wrong: this is departures only; the question asks for arriving plus departing passengers.",
+        "Correct: about 70,000 departing plus a similar number arriving gives about 140,000.",
+        "Wrong: this is about double the right answer, for example from doubling for arrivals twice or skipping the load factor and rounding up."
+      ],
+      "interview_tip": "Say your structure first (flights × seats × load × 2 directions), then do the maths, then sanity-check against a known yearly figure. The cross-check is often what separates strong candidates."
+    },
+    {
+      "topic": "Estimation",
+      "concept": "App-marketplace revenue estimate (Shopify app)",
+      "difficulty": "medium",
+      "question": "Estimate annual revenue for a Shopify reviews app. Assume 2 million active merchants, 30% sell physical products where reviews matter, 2% of those install the app, half of installers pay, and the paid plan is $20 a month.",
+      "options": [
+        "About $144,000",
+        "About $1.4 million",
+        "About $2.9 million",
+        "About $14 million"
+      ],
+      "answer": 1,
+      "explanation": "Relevant merchants = 2M × 30% = 600,000. Installs = 600,000 × 2% = 12,000. Paying = 6,000. Revenue = 6,000 × $20 × 12 ≈ $1.44 million a year. Each step is an assumption you'd state and could later test.",
+      "rationales": [
+        "Wrong: this is close to the monthly figure ($120,000); the question asks for annual revenue, so multiply by 12.",
+        "Correct: 2M × 0.3 × 0.02 × 0.5 × $20 × 12 ≈ $1.44M.",
+        "Wrong: this counts all installers as paying and skips the 50% paid step.",
+        "Wrong: this is off by 10x, for example by using 20% install instead of 2%."
+      ],
+      "interview_tip": "Interviewers care more about a clean, stated funnel than the exact number. Saying which assumption you're least sure of (install rate) and how you'd check it adds a lot."
+    },
+    {
+      "topic": "Strategy",
+      "concept": "Long-tail aggregation economics in marketplaces",
+      "difficulty": "easy",
+      "question": "An online bookstore makes a large share of sales from titles that a physical store would never stock. Which idea explains why this is possible?",
+      "options": [
+        "The long tail: low storage and discovery costs make many niche items worth selling in total",
+        "Economies of scale: buying bestsellers in bulk lowers the cost of every book",
+        "Network effects: each new reader makes the store more valuable to other readers",
+        "Price discrimination: charging different readers different prices for the same title"
+      ],
+      "answer": 0,
+      "explanation": "A physical store has limited shelves, so it stocks only titles that sell quickly. Online, holding and surfacing a niche title costs very little, so millions of slow sellers add up to a big share of sales. This long-tail effect is a key advantage of online aggregators.",
+      "rationales": [
+        "Correct: near-zero shelf cost plus search and recommendations make niche items viable in total.",
+        "Wrong: bulk buying explains cheaper bestsellers, not why niche titles make up a large share of sales.",
+        "Wrong: reviews can add network effects, but they don't explain why niche stock is economical.",
+        "Wrong: varying prices is unrelated to the breadth of titles a store can carry."
+      ],
+      "interview_tip": "Long-tail thinking comes up when discussing marketplaces and content platforms. Linking it to discovery (search and recommendations) shows you know the tail only pays if people can find it."
+    },
+    {
+      "topic": "Strategy",
+      "concept": "Profit pool analysis for choosing where to play",
+      "difficulty": "hard",
+      "question": "A food-delivery company wants to expand along the restaurant value chain. It could make cloud kitchens, supply ingredients, offer restaurant software or provide working-capital loans. What should the strategy work start with?",
+      "options": [
+        "Map where profit is earned along the chain and where the company has an advantage to capture it",
+        "Pick the segment with the largest total revenue, since it offers the most room to grow",
+        "Copy the move a leading competitor made most recently, to avoid falling behind",
+        "Start with the option engineering can build fastest, to show progress quickly"
+      ],
+      "answer": 0,
+      "explanation": "Revenue and profit often sit in different places in a value chain. A profit pool map shows which steps earn healthy margins, and pairing it with the company's assets (order data, restaurant relationships) shows where it can win. The biggest revenue segment may have thin margins and strong incumbents.",
+      "rationales": [
+        "Correct: it combines where the money is made with where the company can actually win.",
+        "Wrong: large revenue can come with low margins, as is common in ingredient supply.",
+        "Wrong: a rival's move may suit their assets, not yours, and copying it skips the analysis.",
+        "Wrong: speed of building says nothing about whether the business will be attractive."
+      ],
+      "interview_tip": "In strategy rounds, separate 'how big' from 'how profitable' and 'can we win'. Naming profit pools and your right to win shows structured thinking beyond market size."
+    },
+    {
+      "topic": "Strategy",
+      "concept": "Partnering with kirana stores' distribution rather than displacing them",
+      "difficulty": "medium",
+      "question": "A packaged-snacks startup wants to reach small towns in India, where most purchases happen at neighbourhood kirana stores and e-commerce use is low. Which go-to-market approach fits best?",
+      "options": [
+        "Sell through kiranas using a distributor app that makes ordering and credit easy for store owners",
+        "Spend heavily on online ads to pull small-town shoppers onto the brand's own website",
+        "Open company-owned stores in each town to control the shelf and the brand experience",
+        "Wait until e-commerce use in these towns grows before entering the market"
+      ],
+      "answer": 0,
+      "explanation": "Where trusted local stores control most buying, the fastest path to customers is through them. Making it easy for store owners to order and get credit gives the startup reach without building its own channel. Fighting the existing channel is slow and expensive.",
+      "rationales": [
+        "Correct: it uses the channel customers already trust and solves the store owner's own needs.",
+        "Wrong: low online buying means ads would mostly reach people who won't purchase on the website.",
+        "Wrong: company stores are costly to run and hard to make profitable in many small towns.",
+        "Wrong: waiting gives up the market to brands already working with kiranas."
+      ],
+      "interview_tip": "Interviewers like candidates who design go-to-market around how customers already buy. Treating the store owner as a customer with their own needs is a strong signal."
+    },
+    {
+      "topic": "Execution",
+      "concept": "T-shirt sizing for early roadmap estimates",
+      "difficulty": "easy",
+      "question": "During quarterly planning, a PM has 25 ideas and needs rough effort estimates from engineering in one meeting. What is the most suitable approach?",
+      "options": [
+        "Ask engineers to size each idea as S, M, L or XL relative to the others",
+        "Ask engineers for a detailed task breakdown and hour estimate for each idea",
+        "Skip effort estimates and rank ideas only by expected impact",
+        "Estimate effort yourself so engineers can stay focused on current work"
+      ],
+      "answer": 0,
+      "explanation": "Early planning only needs relative effort to compare options. T-shirt sizing is quick, matches how uncertain the ideas still are and keeps engineers involved. Detailed estimates can come later for the items that make the cut.",
+      "rationales": [
+        "Correct: relative sizing is fast and precise enough for early prioritisation.",
+        "Wrong: detailed estimates for 25 rough ideas waste time and give false precision.",
+        "Wrong: ignoring effort can favour huge projects over cheaper wins with similar impact.",
+        "Wrong: PM-only estimates are less accurate and reduce engineering buy-in."
+      ],
+      "interview_tip": "When asked how you plan, match estimate precision to the decision. Saying 'rough now, detailed later' shows you know when to spend effort on accuracy."
+    },
+    {
+      "topic": "Execution",
+      "concept": "Definition of Ready for backlog items",
+      "difficulty": "easy",
+      "question": "Engineers often pick up stories and then stop for days waiting on designs or answers about edge cases. Which practice best prevents this?",
+      "options": [
+        "Agree on a Definition of Ready, so stories enter a sprint only when designs and key questions are settled",
+        "Add more story points to each story to account for possible waiting time",
+        "Ask engineers to start coding anyway and fill in the missing details later",
+        "Hold a daily meeting where blocked engineers can raise their blockers to the PM"
+      ],
+      "answer": 0,
+      "explanation": "A Definition of Ready sets the checks a story must pass before the team commits to it, such as designs attached and acceptance criteria agreed. It moves the clarifying work before the sprint instead of in the middle of it. Standups surface blockers but don't prevent them.",
+      "rationales": [
+        "Correct: it stops unready work from entering the sprint, which prevents the stalls.",
+        "Wrong: padding estimates hides the problem without fixing why stories are unready.",
+        "Wrong: building before key details are known often leads to rework.",
+        "Wrong: raising blockers helps, but the stories still enter the sprint unready."
+      ],
+      "interview_tip": "Interviewers ask how you work with engineering day to day. Naming a lightweight upstream check shows you fix process problems at the source."
+    },
+    {
+      "topic": "Execution",
+      "concept": "Vertical slicing over horizontal layers",
+      "difficulty": "medium",
+      "question": "A team plans to build a new returns feature: first the full database schema, then all APIs, then the whole UI, with nothing usable for eight weeks. What should the PM suggest?",
+      "options": [
+        "Build thin end-to-end slices, such as one return type through UI, API and data, and ship each slice",
+        "Keep the plan but add a checkpoint review at the end of each layer",
+        "Build the UI first with mock data so stakeholders can see progress sooner",
+        "Split the team so database, API and UI work happen in parallel layers"
+      ],
+      "answer": 0,
+      "explanation": "Building layer by layer delays any real feedback until the end, when changes are expensive. Vertical slices deliver working value early, expose integration problems sooner and let the team learn from real users. Each slice builds on the last.",
+      "rationales": [
+        "Correct: end-to-end slices deliver usable value early and reveal problems while they are cheap to fix.",
+        "Wrong: reviews per layer still produce nothing a user can try until all layers are done.",
+        "Wrong: a mock UI shows design but hides backend risk and gives users nothing real.",
+        "Wrong: parallel layers can still fail at integration and still ship nothing usable early."
+      ],
+      "interview_tip": "When asked how you'd de-risk a big build, talk about delivering thin working slices. It shows you value learning early over looking busy."
+    },
+    {
+      "topic": "Behavioural",
+      "concept": "Responding to micromanagement by increasing visibility",
+      "difficulty": "hard",
+      "question": "Your new manager asks for daily updates and reviews every small decision you make, which slows your team down. What is the best way to handle it?",
+      "options": [
+        "Ask what worries them, agree on regular updates that cover it, and propose which decisions you'll make alone",
+        "Keep sending daily updates without comment, since the manager has the right to ask",
+        "Escalate to your manager's boss that the oversight is slowing the team down",
+        "Make decisions without telling the manager, to prove you can be trusted"
+      ],
+      "answer": 0,
+      "explanation": "Micromanagement usually comes from a lack of trust or visibility, often because the manager is new. Asking about their concerns, then giving visibility in a form that fits, builds trust. Agreeing on which decisions you own makes the boundary clear and gets autonomy back over time.",
+      "rationales": [
+        "Correct: it deals with the cause (missing trust and visibility) and sets clear decision rights.",
+        "Wrong: quietly complying avoids conflict but leaves the slowdown and your team's frustration in place.",
+        "Wrong: escalating before talking to the manager damages the relationship and skips the simplest fix.",
+        "Wrong: going around the manager tends to reduce trust and invite even more oversight."
+      ],
+      "interview_tip": "Behavioural answers on managing up should show empathy for the other person's view and a concrete agreement. Describing how you earned more autonomy over time makes the story strong."
+    },
+    {
+      "topic": "Behavioural",
+      "concept": "Running decisions across time zones asynchronously",
+      "difficulty": "medium",
+      "question": "Your team is split between Bengaluru and San Francisco with almost no overlapping hours. Decisions keep slipping a day because questions wait for the next call. What would you do?",
+      "options": [
+        "Write up decisions with context and a deadline for input, and make the call when the deadline passes",
+        "Move all key meetings to the one overlapping hour, even if it's late at night for one side",
+        "Let each location make its own decisions without involving the other",
+        "Ask the team in one location to shift their working hours to match the other"
+      ],
+      "answer": 0,
+      "explanation": "Async decision docs let both sides weigh in on their own time, with a clear deadline so things don't drag. They also keep a record of why decisions were made. Forcing everything into live meetings at bad hours burns people out and doesn't scale.",
+      "rationales": [
+        "Correct: written proposals with deadlines keep decisions moving and include both locations fairly.",
+        "Wrong: one overlapping hour can't hold every decision, and late-night calls wear down one side.",
+        "Wrong: splitting decisions by location creates silos and conflicting choices.",
+        "Wrong: making one side change their hours is unfair and rarely lasts."
+      ],
+      "interview_tip": "Interviewers at global companies often ask about distributed teams. Showing a specific mechanism, not just 'more communication', signals experience."
+    },
+    {
+      "topic": "Behavioural",
+      "concept": "Disclosing a known defect to affected customers",
+      "difficulty": "hard",
+      "question": "After launch, you find a bug that has been miscalculating some customers' invoices by a small amount for two weeks. Sales asks you to fix it quietly so customers don't lose trust. What should you do?",
+      "options": [
+        "Fix it, work out who was affected, and agree with leadership to tell those customers and correct their bills",
+        "Fix it quietly, since the amounts are small and most customers won't notice",
+        "Fix it and add a general note about 'billing improvements' to the release notes",
+        "Wait to see whether any customers complain before deciding whether to tell them"
+      ],
+      "answer": 0,
+      "explanation": "Customers were charged the wrong amount, so they are owed a correction and an explanation. Telling them openly protects long-term trust, and raising it with leadership makes sure legal and finance are involved. Hiding the error risks a much bigger loss of trust if it comes out later.",
+      "rationales": [
+        "Correct: it fixes the money, owns the mistake, and brings in leadership for an aligned response.",
+        "Wrong: hiding a billing error that affects money is not honest and puts trust at serious risk.",
+        "Wrong: a vague note doesn't tell affected customers what happened or correct their bills.",
+        "Wrong: waiting for complaints puts the burden on customers and makes the company look evasive."
+      ],
+      "interview_tip": "This tests integrity under pressure. Strong answers show you pushed back on the easy path, brought in the right people and put the customer first."
+    },
+    {
+      "topic": "AI Product",
+      "concept": "Refreshing eval sets as product usage shifts",
+      "difficulty": "medium",
+      "question": "An AI writing assistant's eval scores have stayed high for six months, but support tickets about bad outputs are rising. Usage has shifted from emails to long reports. What is the most likely issue?",
+      "options": [
+        "The eval set no longer reflects what users ask, so it misses failures on the new kinds of tasks",
+        "The model has been quietly updated by the provider and is now weaker overall",
+        "Users are becoming pickier over time, so ticket volume rises even when quality holds",
+        "The scoring rubric is too strict, which keeps eval scores falsely high"
+      ],
+      "answer": 0,
+      "explanation": "An eval set built for emails can't catch problems with long reports. When usage changes, the eval set must be refreshed with samples of current traffic, or scores stop predicting user experience. The gap between steady scores and rising complaints is the clue.",
+      "rationales": [
+        "Correct: evals only measure what they include, and usage has moved to tasks they don't cover.",
+        "Wrong: a model change is possible but would also tend to show up on the existing evals, which haven't moved.",
+        "Wrong: rising expectations can happen, but the change in usage is a more specific explanation.",
+        "Wrong: a strict rubric would lower scores, not keep them high."
+      ],
+      "interview_tip": "AI PM interviews often probe how you keep evals honest. Saying you'd sample live traffic regularly into the eval set shows production thinking."
+    },
+    {
+      "topic": "AI Product",
+      "concept": "Versioning prompts as deployable artifacts",
+      "difficulty": "medium",
+      "question": "An AI support bot's answers got worse overnight. The team discovers someone edited the system prompt in a shared dashboard, and nobody knows what the old prompt said. What should the PM push for?",
+      "options": [
+        "Keep prompts in version control, run evals on each change and allow one-click rollback",
+        "Limit dashboard access so only the PM can edit the system prompt",
+        "Write the current prompt into a shared document so everyone can see it",
+        "Freeze the prompt permanently so nobody can introduce regressions"
+      ],
+      "answer": 0,
+      "explanation": "Prompts change product behaviour as much as code does, so they need the same controls: history, review, testing and rollback. With versioning and evals, a bad change is caught before release or undone in minutes. Restricting access alone doesn't stop mistakes.",
+      "rationales": [
+        "Correct: treating prompts like code gives history, testing and fast rollback.",
+        "Wrong: fewer editors reduces risk but still leaves no history, testing or rollback.",
+        "Wrong: a document goes stale quickly and doesn't test or roll back changes.",
+        "Wrong: freezing blocks all improvements; the goal is safe change, not no change."
+      ],
+      "interview_tip": "Interviewers want to know you can run AI features in production. Mentioning prompt versioning and evals in CI shows operational maturity."
+    },
+    {
+      "topic": "AI Product",
+      "concept": "Provisioned throughput vs pay-as-you-go for predictable load",
+      "difficulty": "medium",
+      "question": "An AI feature now serves steady, predictable traffic all day, and the team keeps hitting rate limits on a pay-as-you-go model API during peaks. Which option should the PM explore?",
+      "options": [
+        "Reserved or provisioned capacity sized to the steady load, with pay-as-you-go for spikes above it",
+        "Switch all traffic to the cheapest small model to stay under the rate limits",
+        "Add a queue so users wait until capacity frees up during busy periods",
+        "Ask users to retry later when they see an error during peak hours"
+      ],
+      "answer": 0,
+      "explanation": "When load is steady and predictable, reserving capacity gives guaranteed throughput and often a lower unit price. Keeping pay-as-you-go for bursts handles peaks without paying for idle reserved capacity. This trades a commitment for reliability.",
+      "rationales": [
+        "Correct: reserving for the baseline and bursting on demand fits predictable traffic well.",
+        "Wrong: a weaker model may lower quality, and small models have rate limits too.",
+        "Wrong: queueing is fine for background jobs but hurts an interactive feature.",
+        "Wrong: pushing errors onto users damages trust and doesn't add capacity."
+      ],
+      "interview_tip": "Cost and capacity planning comes up in AI PM rounds. Showing you'd match the pricing model to the traffic pattern signals strong business and technical judgement."
+    },
+    {
+      "topic": "AI Product",
+      "concept": "What RLHF optimises in a language model",
+      "difficulty": "easy",
+      "question": "In reinforcement learning from human feedback (RLHF), what is the model mainly trained to do?",
+      "options": [
+        "Produce responses that people would rate higher, using a reward model trained on human preferences",
+        "Predict the next word in a large body of internet text as accurately as possible",
+        "Memorise a fixed set of facts so it can answer questions without errors",
+        "Search the web and cite sources before answering every question"
+      ],
+      "answer": 0,
+      "explanation": "RLHF collects human comparisons of responses, trains a reward model on them, then tunes the language model to score well on that reward. It shapes helpfulness, tone and safety. Next-word prediction is the earlier pretraining step.",
+      "rationales": [
+        "Correct: RLHF tunes the model toward outputs humans prefer, via a learned reward model.",
+        "Wrong: that describes pretraining, which comes before RLHF.",
+        "Wrong: RLHF shapes behaviour; it doesn't make the model memorise facts or remove errors.",
+        "Wrong: web search is a tool feature, not what RLHF trains."
+      ],
+      "interview_tip": "Knowing the basic training stages helps you explain model behaviour, like why models can be overly agreeable. Linking RLHF to that kind of side effect is a good signal."
+    },
+    {
+      "topic": "AI Product",
+      "concept": "Showing the agent's plan for approval before execution",
+      "difficulty": "hard",
+      "question": "A travel-booking AI agent sometimes books the wrong dates or hotels when a request is ambiguous. Each booking involves several steps and costs real money. What design change best reduces costly mistakes while keeping the agent useful?",
+      "options": [
+        "Show the agent's interpreted plan (dates, hotel, price) for one-tap approval before it books",
+        "Ask the user to confirm every individual step, including each search the agent runs",
+        "Only allow the agent to suggest options and never complete a booking itself",
+        "Add a disclaimer that users are responsible for checking bookings afterwards"
+      ],
+      "answer": 0,
+      "explanation": "Most errors come from misreading the request, which a short plan summary exposes before money is spent. One approval at the point that matters keeps the agent fast. Confirming every step adds friction without much extra safety.",
+      "rationales": [
+        "Correct: it catches misunderstandings at the one point where a mistake gets costly, with little friction.",
+        "Wrong: approving every search wears users out, and they will start approving without reading.",
+        "Wrong: removing booking throws away the main value of an agent.",
+        "Wrong: a disclaimer shifts blame but doesn't prevent wrong bookings."
+      ],
+      "interview_tip": "Interviewers want you to place human checkpoints where error costs are high and skip them elsewhere. Explaining why one plan approval beats many confirmations shows good agent UX judgement."
+    },
+    {
+      "topic": "Technology",
+      "concept": "Serverless cold starts and latency",
+      "difficulty": "medium",
+      "question": "A new API built on serverless functions is fast most of the time, but the first request after a quiet period sometimes takes several seconds. What is the most likely cause?",
+      "options": [
+        "A cold start: the platform has to spin up a new function instance before handling the request",
+        "The database index has been dropped, making every query slow",
+        "The CDN cache has been cleared, so static files are reloading",
+        "The user's network is slow on the first request of each session"
+      ],
+      "answer": 0,
+      "explanation": "Serverless platforms shut down idle instances. The next request has to wait while a new one starts and loads code, which adds latency only after quiet periods. Fixes include keeping some instances warm or reducing startup work.",
+      "rationales": [
+        "Correct: the pattern (slow only after idle time) matches a cold start.",
+        "Wrong: a missing index would slow every query, not just the first one after a quiet period.",
+        "Wrong: CDN caching affects static files, not the API's function runtime.",
+        "Wrong: network issues wouldn't consistently follow idle periods on the server side."
+      ],
+      "interview_tip": "Technical rounds test whether you can reason from symptoms. Matching the pattern (only after idle) to the cause shows you understand how the system works."
+    },
+    {
+      "topic": "Technology",
+      "concept": "DNS TTL during a domain cutover",
+      "difficulty": "easy",
+      "question": "A team is moving its website to a new server and will update the domain's DNS record. Some users may keep reaching the old server for hours. What should they do beforehand to shorten that window?",
+      "options": [
+        "Lower the DNS record's time-to-live (TTL) a day or two before the switch",
+        "Increase the DNS record's TTL so the new address is cached for longer",
+        "Clear the browser cache on the team's own computers before switching",
+        "Turn off the old server at the exact moment the DNS record is changed"
+      ],
+      "answer": 0,
+      "explanation": "DNS answers are cached for the TTL period. Lowering it ahead of time means caches expire quickly, so users pick up the new address soon after the change. Keeping the old server running during the switch avoids errors for anyone still cached.",
+      "rationales": [
+        "Correct: a short TTL makes caches refresh quickly after the change.",
+        "Wrong: a longer TTL makes caches hold the old address for longer.",
+        "Wrong: clearing your own cache doesn't affect users' or ISPs' caches.",
+        "Wrong: shutting down the old server early breaks the site for users with cached old addresses."
+      ],
+      "interview_tip": "PMs are expected to understand launch risks like migrations. Knowing about TTL and keeping the old server up shows you can plan a smooth cutover."
+    },
+    {
+      "topic": "Growth",
+      "concept": "Contextual upgrade prompts at usage limits",
+      "difficulty": "medium",
+      "question": "A freemium design tool shows an upgrade banner on the home screen, but few users click it. Data shows users who hit the free export limit are much more likely to pay. What should the growth PM test?",
+      "options": [
+        "Show the upgrade offer at the moment a user hits the export limit, explaining what the paid plan unlocks",
+        "Make the home-screen banner bigger and more colourful so more users notice it",
+        "Email all free users a discount code for the paid plan once a month",
+        "Lower the free export limit for everyone so more users run into it sooner"
+      ],
+      "answer": 0,
+      "explanation": "Upgrade prompts work best when the user has just felt the value and the limit at once. Showing the offer at the export limit links the price to a need they have right now. A generic banner reaches people with no current reason to pay.",
+      "rationales": [
+        "Correct: it reaches users at their highest-intent moment, with a clear reason to upgrade.",
+        "Wrong: a bigger banner still reaches users when they have no reason to pay.",
+        "Wrong: blanket discounts reach low-intent users and can lower revenue from those who would pay full price.",
+        "Wrong: tightening the limit for everyone can hurt activation and push users away before they see value."
+      ],
+      "interview_tip": "In monetisation questions, focus on timing and intent. Showing how you'd find the high-intent moment from data is a strong growth signal."
+    },
+    {
+      "topic": "Current Events",
+      "concept": "1Password for Agents credential delegation (Oct 2026)",
+      "difficulty": "easy",
+      "question": "In October 2026, 1Password announced '1Password for Agents' for personal AI agents. According to coverage of the launch, how does it let an agent sign in to a user's accounts?",
+      "options": [
+        "The user approves the agent's sign-in request and the login is filled into the form, without the agent seeing the password",
+        "The agent receives a copy of the user's password vault so it can log in to any site on its own",
+        "The user types the password into the agent's chat window, and the agent deletes it after use",
+        "The agent signs in using a shared master password that 1Password creates for all AI agents"
+      ],
+      "answer": 0,
+      "explanation": "Per MacRumors' launch coverage, an agent sends a sign-in request, the user approves or denies it, the agent proves its identity with a unique digital key, and the credentials are filled directly into the sign-in form so the agent never sees or stores them. The coverage says it is free for 1Password Individual and Family accounts. The product idea is letting an agent use a secret without holding it, with a human approving each use.",
+      "rationales": [
+        "Correct: the agent gets approved use of the login without the password ever reaching it.",
+        "Wrong: giving the agent the whole vault is the risk the product is designed to avoid.",
+        "Wrong: pasting passwords into chat puts the secret in the agent's context, which the product avoids.",
+        "Wrong: a shared master password would be a major security risk and isn't how the product works."
+      ],
+      "interview_tip": "AI agent questions often turn to trust and safety. Explaining 'let the agent use a credential without holding it, with approval per request' shows you can design delegation safely.",
+      "source": "https://www.macrumors.com/2026/10/22/1password-for-agents/"
+    }
+  ]
+}
