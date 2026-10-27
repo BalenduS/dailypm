@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-27",
+   "theme": "Read receipts, flanker brands & eval noise",
+   "count": 30
+  },
+  {
    "date": "2026-10-26",
    "theme": "Lurkers, profit pools & agents that never see the password",
    "count": 30

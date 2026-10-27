@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-27",
+ "theme": "Read receipts, flanker brands & eval noise",
+ "questions": [
+  {
+   "id": "2026-10-27-01",
+   "topic": "Product Sense",
+   "concept": "Reciprocal opt-out for presence signals like read receipts",
+   "difficulty": "hard",
+   "question": "A messaging app plans to add 'Seen by' lists to group chats. In research, many users say they already feel pressure to reply quickly once others know they've read a message. How should the PM design the feature?",
+   "options": [
+    "Ship it with a reciprocal setting: users who turn off their own receipts also stop seeing other people's",
+    "Ship it on for everyone so the signal is consistent and nobody can tell who is hiding their reads",
+    "Drop the idea, since any presence signal adds pressure and users said they dislike it",
+    "Ship it off by default and show a prompt nudging users to turn it on for better group coordination"
+   ],
+   "rationales": [
+    "Correct: it gives users control and keeps it fair, since you can't watch others while staying hidden yourself.",
+    "Wrong: forcing it on ignores the pressure users told you about and will push sensitive users to stop opening chats.",
+    "Wrong: the signal has real coordination value; the pressure is a design problem to solve, not a reason to kill it.",
+    "Wrong: off by default plus a nudge looks safe, but the nudge pushes people back into the pressure they described."
+   ],
+   "answer": 0,
+   "explanation": "Read receipts help coordination but create social pressure. A reciprocal opt-out lets anxious users protect themselves, and because opting out costs them the same signal, people don't hide their own reads while still watching everyone else's. This keeps the feature useful for groups that want it and stops it turning into one-way surveillance.",
+   "interview_tip": "Product sense rounds reward naming the second-order social effect of a feature. Proposing a design that keeps the benefit while making the cost opt-out and fair shows mature judgement."
+  },
+  {
+   "id": "2026-10-27-02",
+   "topic": "Product Sense",
+   "concept": "Throttling inbound demand to the overloaded side of a marketplace",
+   "difficulty": "hard",
+   "question": "On a dating app, the most popular 10% of profiles receive most of the likes. They feel overwhelmed and churn, while most other users get no matches. Which change best addresses the root cause?",
+   "options": [
+    "Give popular profiles stronger filters so they can hide likes that don't meet their criteria",
+    "Sell a paid 'super like' that pins the sender to the top of the recipient's queue",
+    "Cap how many likes each user can send per day so every like carries more signal",
+    "Boost new profiles in discovery for their first week so they get early attention"
+   ],
+   "rationales": [
+    "Wrong: filters help popular users cope, but the flood of low-effort likes keeps coming and others still get nothing.",
+    "Wrong: a paid boost adds even more inbound demand to the people already overwhelmed by it.",
+    "Correct: scarcity changes sender behaviour, cutting volume to popular profiles and improving the quality of each like.",
+    "Wrong: a new-user boost helps briefly but leaves the incentive behind the imbalance in place."
+   ],
+   "answer": 2,
+   "explanation": "The imbalance comes from sending likes costing nothing, so people send them in bulk to the most attractive profiles. A daily cap makes likes scarce: senders choose more carefully and spread their likes more widely, popular users get fewer but more serious likes, and other users get more attention. It fixes the sender incentive instead of treating the symptom on the receiving side.",
+   "interview_tip": "Marketplace questions test whether you find which side is constrained and why. Pointing at the incentive that creates the imbalance, not just its symptoms, signals strong product sense."
+  },
+  {
+   "id": "2026-10-27-03",
+   "topic": "Product Sense",
+   "concept": "Time-bound location sharing by default",
+   "difficulty": "medium",
+   "question": "A safety app lets users share live location with family while commuting home at night. Research shows many users forget to stop sharing, and some later regret how long others could see them. What is the best design change?",
+   "options": [
+    "Send a daily reminder listing everyone who can currently see the user's live location",
+    "Add a settings page where users can review and revoke each person's location access",
+    "Keep sharing on, but show a small banner on the home screen while location is shared",
+    "Make sharing end by default after a set time or on arrival, with a one-tap option to extend"
+   ],
+   "rationales": [
+    "Wrong: a reminder helps a little, but it still relies on users acting, and daily nags get ignored.",
+    "Wrong: a control page is useful but buried; users who forget to stop sharing won't go looking for it.",
+    "Wrong: a banner raises awareness but still leaves sharing on indefinitely unless the user acts.",
+    "Correct: a default expiry matches the real job (this trip) and removes the need to remember to stop."
+   ],
+   "answer": 3,
+   "explanation": "The problem is that sharing stays on long after the trip it was meant for. Making each share expire by default (after a set time or when the user arrives) matches how the feature is actually used, without users having to remember anything. Reminders and settings pages still rely on the user taking action, which is what's failing today.",
+   "interview_tip": "Interviewers like seeing you match defaults to the real job. Saying 'the share should last as long as the trip' shows you design from how people actually use the feature."
+  },
+  {
+   "id": "2026-10-27-04",
+   "topic": "Product Sense",
+   "concept": "Guest checkout before account creation",
+   "difficulty": "easy",
+   "question": "An Indian D2C brand's website asks shoppers to create an account before they can pay. Analytics show the biggest checkout drop-off is at that step. What should the PM try first?",
+   "options": [
+    "Shorten the sign-up form to just name, email, phone number and a password",
+    "Add social login buttons so shoppers can sign up with one tap instead of a form",
+    "Offer a 10% discount to shoppers who complete account sign-up during checkout",
+    "Let shoppers check out as guests and offer to save an account after the order is placed"
+   ],
+   "rationales": [
+    "Wrong: a shorter form helps, but the mandatory step itself is what causes people to drop off.",
+    "Wrong: social login lowers effort, but some shoppers still won't want an account just to buy once.",
+    "Wrong: a discount costs margin to push people over a barrier you could simply remove.",
+    "Correct: it removes an unnecessary step at peak intent and moves account creation to after the purchase."
+   ],
+   "answer": 3,
+   "explanation": "Forcing account creation before payment adds work at the moment intent is highest, and it isn't needed to complete the order. Guest checkout removes the barrier, and offering to save an account after purchase (with details already filled in) still captures many sign-ups once the shopper has had a good experience.",
+   "interview_tip": "Checkout questions test whether you remove friction before optimising it. Asking 'is this step needed at all right now?' is the move interviewers look for."
+  },
+  {
+   "id": "2026-10-27-05",
+   "topic": "Metrics",
+   "concept": "Crash-induced session inflation",
+   "difficulty": "hard",
+   "question": "After a new app release, sessions per user rise 12% while average time per session falls by a similar amount. DAU and total time spent are flat. What is the most likely explanation to check first?",
+   "options": [
+    "A notification change is pulling users in for quick checks that end right after opening",
+    "A new feature is bringing users back more often for short, high-intent visits each day",
+    "Crashes or forced restarts in the new version are splitting single visits into several sessions",
+    "Users are getting what they need faster, so each session is shorter but more frequent"
+   ],
+   "rationales": [
+    "Wrong: a notification change would show up in open sources, and nothing here says notifications changed.",
+    "Wrong: real extra visits would usually add to total time or DAU, but both are flat.",
+    "Correct: the same total time cut into more sessions, right after a release, points to sessions being split.",
+    "Wrong: faster success would usually reduce total time, not keep it flat while sessions multiply."
+   ],
+   "answer": 2,
+   "explanation": "When sessions go up and session length goes down by about the same amount while total time and DAU stay flat, the same usage is probably being cut into more pieces. A crash or restart in the new release would do exactly that. Check crash rate and session-end reasons by app version before crediting any feature.",
+   "interview_tip": "Root-cause questions reward checking whether the numbers add up before telling a story. Spotting that total time is unchanged and suspecting how sessions are counted shows rigour."
+  },
+  {
+   "id": "2026-10-27-06",
+   "topic": "Metrics",
+   "concept": "Constant-currency revenue to remove FX effects",
+   "difficulty": "medium",
+   "question": "A US-listed SaaS company reports in dollars. European revenue fell 5% quarter on quarter, but European customer count, seats and euro list prices are unchanged. What should the PM look at first?",
+   "options": [
+    "Churn among European customers, since a revenue drop usually means some accounts were lost",
+    "Revenue at constant currency, to see whether a weaker euro against the dollar explains the drop",
+    "Seat usage among European customers, since lower usage often comes before downgrades",
+    "Discounting by the European sales team, since deeper discounts lower revenue per seat"
+   ],
+   "rationales": [
+    "Wrong: customer count is unchanged, so lost accounts can't explain the decline.",
+    "Correct: with volume and local prices flat, converting at a fixed rate shows whether FX alone explains the drop.",
+    "Wrong: usage is a leading indicator for future revenue, not an explanation for revenue already reported.",
+    "Wrong: discounting is possible, but it's less likely than FX when euro list prices and seats are flat; check FX first."
+   ],
+   "answer": 1,
+   "explanation": "If customers, seats and euro prices are all unchanged, the business in local terms hasn't moved. A drop in reported dollar revenue then most likely comes from exchange rates. Restating revenue at constant currency (using last quarter's rate) separates real business change from currency translation.",
+   "interview_tip": "Metric drop questions often hide an external factor. Naming currency effects and constant-currency reporting for global products shows business fluency beyond product analytics."
+  },
+  {
+   "id": "2026-10-27-07",
+   "topic": "Metrics",
+   "concept": "Seat utilisation as a B2B churn predictor",
+   "difficulty": "medium",
+   "question": "A B2B SaaS team wants an early warning, about 90 days before renewal, that an account may churn. Which metric is the best leading indicator?",
+   "options": [
+    "Total logins per account per month, summed across all of the account's users",
+    "Share of purchased seats active each week, tracked as a trend for each account",
+    "The account admin's most recent NPS survey response",
+    "Number of support tickets the account has opened in the last quarter"
+   ],
+   "rationales": [
+    "Wrong: total logins can be propped up by a few heavy users while most seats sit unused.",
+    "Correct: it ties usage to what the customer pays for and drops well before the renewal decision.",
+    "Wrong: one admin's survey answer is sparse and may not reflect how the wider team uses the product.",
+    "Wrong: ticket counts are ambiguous, since engaged accounts often file more tickets, not fewer."
+   ],
+   "answer": 1,
+   "explanation": "Buyers renew when the seats they pay for are being used. A falling share of active seats shows value slipping across the organisation, and it shows up months before the renewal decision. It is measured per account and relative to what was purchased, so it fits how renewal decisions get made.",
+   "interview_tip": "B2B metric questions test whether you measure the account, not just the user. Tying the metric to what the buyer pays for shows you understand renewal decisions."
+  },
+  {
+   "id": "2026-10-27-08",
+   "topic": "Metrics",
+   "concept": "Judging a metric dip against normal variance",
+   "difficulty": "easy",
+   "question": "Yesterday's orders on a grocery app were 3% lower than the day before, and a leader asks what went wrong. What should the PM do first?",
+   "options": [
+    "Ask engineering to check whether any releases went out in the last 24 hours",
+    "Start a root-cause investigation across every platform, region and app version",
+    "Launch a small discount today to recover the lost orders before the week ends",
+    "Compare the dip with normal variation for the same weekday over recent weeks"
+   ],
+   "rationales": [
+    "Wrong: checking releases is a good later step, but it assumes something broke before you know that.",
+    "Wrong: a full investigation may be wasted if the drop is within the usual range.",
+    "Wrong: discounting reacts to a problem that may not exist and costs margin.",
+    "Correct: first check whether the dip is outside normal variation before spending effort explaining it."
+   ],
+   "answer": 3,
+   "explanation": "Daily metrics move around on their own, and comparing to the previous day mixes in weekday effects. Comparing with the same weekday over recent weeks shows whether 3% is outside the normal range. If it is within the usual band, there may be nothing to explain; if not, the investigation is worth starting.",
+   "interview_tip": "Interviewers like candidates who first ask 'is this change real?'. Starting with normal variance before diving in shows calm, structured analysis."
+  },
+  {
+   "id": "2026-10-27-09",
+   "topic": "Experimentation",
+   "concept": "Twyman's law: suspiciously large results",
+   "difficulty": "medium",
+   "question": "A test of a redesigned welcome email reports a 40% lift in day-7 retention. Similar email tests at the company have moved retention by 1-2%. What should the PM do before sharing the result?",
+   "options": [
+    "Roll the email out to everyone and keep a 5% holdout to confirm the effect later",
+    "Check the setup for errors: sample ratio, who was enrolled, and how retention was logged in each arm",
+    "Run the test for two more weeks to confirm the lift holds before rolling it out",
+    "Share it right away, since the result is statistically significant at the 95% level"
+   ],
+   "rationales": [
+    "Wrong: rolling out an unchecked result risks acting on an error and makes later checks harder.",
+    "Correct: an outlier this large calls for checking the setup and data before trusting it.",
+    "Wrong: running longer just collects more of the same possibly broken data.",
+    "Wrong: a significant p-value doesn't protect against a broken setup, which can produce significant but false results."
+   ],
+   "answer": 1,
+   "explanation": "Twyman's law says that a result that looks surprising or unusually large is most often caused by an error. A 40% lift from an email, when similar tests move 1-2%, very likely comes from a bug: unequal assignment, different populations enrolled, or retention logged differently. Check the setup before believing the number; running longer does not fix a broken measurement.",
+   "interview_tip": "Saying 'this looks too good, so I'd check the plumbing first' is a strong signal in experimentation rounds. It shows you know how often big wins turn out to be bugs."
+  },
+  {
+   "id": "2026-10-27-10",
+   "topic": "Experimentation",
+   "concept": "Synthetic control for a single-market launch",
+   "difficulty": "medium",
+   "question": "A food-delivery company changes its delivery-fee policy in Pune only, and can't randomize users. Which approach gives the most credible estimate of the policy's effect on orders?",
+   "options": [
+    "Compare Pune with the single most similar city by size and income after the launch",
+    "Compare Pune's orders in the four weeks after launch with the four weeks before launch",
+    "Build a weighted mix of other cities that matched Pune's order trend before launch, and compare after",
+    "Survey Pune customers on whether the new fees changed how often they order"
+   ],
+   "rationales": [
+    "Wrong: one similar city can still differ in trend or local events; a matched weighted mix is more reliable.",
+    "Wrong: before/after mixes the policy with seasonality, festivals and anything else that changed.",
+    "Correct: a weighted comparison built to match Pune's pre-launch trend gives a credible counterfactual.",
+    "Wrong: what people say about their own ordering is unreliable compared with actual order data."
+   ],
+   "answer": 2,
+   "explanation": "A synthetic control combines several untreated cities, weighted so that together they track Pune closely before launch. After launch, the gap between Pune and this synthetic Pune estimates the effect, while controlling for seasonality and company-wide trends. It usually works better than any single comparison city.",
+   "interview_tip": "When randomization isn't possible, interviewers want to hear how you'd build a credible counterfactual. Naming synthetic control and why it beats a single comparison city shows depth."
+  },
+  {
+   "id": "2026-10-27-11",
+   "topic": "Estimation",
+   "concept": "Annual LPG cylinder refills in India",
+   "difficulty": "easy",
+   "question": "Roughly how many domestic LPG cylinder refills happen in India in a year? Assume about 30 crore households have an LPG connection.",
+   "options": [
+    "About 1,800 crore refills a year",
+    "About 18 crore refills a year",
+    "About 180 crore refills a year",
+    "About 30 crore refills a year"
+   ],
+   "rationales": [
+    "Wrong: this implies about 60 refills per household a year, more than one a week.",
+    "Wrong: this implies under one refill per household a year, far too few for daily cooking.",
+    "Correct: 30 crore households × about 6 refills a year gives roughly 180 crore.",
+    "Wrong: this counts one refill per household, ignoring that cylinders run out every couple of months."
+   ],
+   "answer": 2,
+   "explanation": "Start with about 30 crore connected households. A 14.2 kg cylinder lasts a typical family about 1.5-2 months, and some poorer households refill less often, so assume about 6 refills per household per year. 30 crore × 6 ≈ 180 crore refills a year. The method (households × refill frequency) matters more than the exact figure.",
+   "interview_tip": "Interviewers care about structure: base population × usage frequency, with a quick sanity check. Saying how long one cylinder lasts a family shows you ground assumptions in real behaviour."
+  },
+  {
+   "id": "2026-10-27-12",
+   "topic": "Estimation",
+   "concept": "Annual electricity cost of a GPU cluster",
+   "difficulty": "medium",
+   "question": "Estimate the yearly electricity bill for running 1,000 GPUs around the clock in an Indian data centre. Assume about 1 kW per GPU including cooling and overhead, and ₹8 per kWh.",
+   "options": [
+    "About ₹70 crore a year",
+    "About ₹7 crore a year",
+    "About ₹70 lakh a year",
+    "About ₹7 lakh a year"
+   ],
+   "rationales": [
+    "Wrong: this is ten times too high, as if each GPU drew 10 kW.",
+    "Correct: 1 MW × 8,760 hours × ₹8/kWh ≈ ₹7 crore.",
+    "Wrong: this is ten times too low, as if the cluster ran only about 36 days a year.",
+    "Wrong: this is a thousand times too low, roughly the bill for a single GPU."
+   ],
+   "answer": 1,
+   "explanation": "1,000 GPUs × 1 kW = 1 MW. A year has about 8,760 hours, so energy is about 8.76 million kWh. At ₹8 per kWh that is about ₹7 crore a year. Breaking it into power, hours and price makes the estimate easy to check and adjust.",
+   "interview_tip": "AI PM interviews increasingly include infrastructure cost estimates. Moving cleanly from kW to kWh to rupees shows you can reason about the costs behind AI features."
+  },
+  {
+   "id": "2026-10-27-13",
+   "topic": "Strategy",
+   "concept": "Monetising adjacent services when core transactions are zero-margin",
+   "difficulty": "hard",
+   "question": "An Indian payments app handles a huge volume of UPI payments, but earns almost nothing per payment because merchant fees on UPI are zero. Which strategy best builds a profitable business?",
+   "options": [
+    "Add a small convenience fee to every UPI payment made through the app",
+    "Exit UPI and push users toward card payments, where merchant fees can be earned",
+    "Cut cashback and rewards on UPI payments to stop losing money on each transaction",
+    "Use the payment relationship and data to sell adjacent services like merchant loans, devices and insurance"
+   ],
+   "rationales": [
+    "Wrong: switching UPI apps costs users nothing, so a per-payment fee would drive them to rivals.",
+    "Wrong: leaving UPI gives up the distribution that makes the business valuable.",
+    "Wrong: cutting rewards reduces losses but doesn't create any revenue model.",
+    "Correct: it turns a zero-margin, high-frequency relationship into revenue from services that can be priced."
+   ],
+   "answer": 3,
+   "explanation": "When the core transaction can't be priced, its value is in the frequent customer relationship and the transaction data it creates. Payment flows help underwrite merchant loans and sell soundboxes, insurance and other financial products, where margins exist. Payments act as the free acquisition and engagement layer for services that can be charged for.",
+   "interview_tip": "Strategy questions often ask where the money really comes from. Recognising a zero-margin core as an acquisition engine for adjacent products shows business-model maturity."
+  },
+  {
+   "id": "2026-10-27-14",
+   "topic": "Strategy",
+   "concept": "Flanker brand to counter low-cost entrants",
+   "difficulty": "medium",
+   "question": "A premium Indian skincare brand is losing price-sensitive customers to new brands priced 40% lower. Its core customers still value the premium positioning. What is the best response?",
+   "options": [
+    "Launch a separate lower-priced brand to compete at the low end without touching the core brand",
+    "Cut the core brand's prices by 30% to close most of the gap with the new entrants",
+    "Run frequent sitewide sales on the core brand to win back price-sensitive shoppers",
+    "Ignore the entrants and keep investing only in the premium brand's marketing"
+   ],
+   "rationales": [
+    "Correct: it competes at the low end while protecting the core brand's price and positioning.",
+    "Wrong: a big price cut gives away margin on loyal customers and blurs the premium image.",
+    "Wrong: frequent sales teach customers to wait for discounts and weaken the premium brand.",
+    "Wrong: ignoring entrants lets them build scale and later move up into the core market."
+   ],
+   "answer": 0,
+   "explanation": "A flanker (or fighting) brand lets the company compete for price-sensitive buyers while keeping the premium brand's price and image intact. Cutting the core price or running constant sales trains loyal customers to pay less and weakens the positioning they value. The risk to manage is cannibalisation, so the flanker needs clearly different products and channels.",
+   "interview_tip": "Competitive-response questions test whether you protect what already works. Separating the low-end fight from the core brand shows you think about positioning, not just price."
+  },
+  {
+   "id": "2026-10-27-15",
+   "topic": "Strategy",
+   "concept": "Ansoff matrix market development",
+   "difficulty": "easy",
+   "question": "A meal-kit company that succeeded in Bengaluru plans to sell the same meal kits in Pune and Hyderabad. In the Ansoff matrix, what kind of growth strategy is this?",
+   "options": [
+    "Market penetration: existing products sold more in existing markets",
+    "Diversification: new products sold in new markets",
+    "Market development: existing products sold in new markets",
+    "Product development: new products sold in existing markets"
+   ],
+   "rationales": [
+    "Wrong: penetration means growing share in Bengaluru, not entering new cities.",
+    "Wrong: diversification needs both a new product and a new market, but the product is unchanged.",
+    "Correct: the product stays the same and the market (new cities) is new.",
+    "Wrong: product development would mean new products for Bengaluru customers."
+   ],
+   "answer": 2,
+   "explanation": "The Ansoff matrix crosses products (existing or new) with markets (existing or new). Taking the same meal kits to new cities is market development. It is usually less risky than diversification because the product is proven, but it still needs local demand, operations and competition checked.",
+   "interview_tip": "Ansoff gives a quick way to describe the risk of a growth move. Naming the quadrant and its main risk shows structured strategic thinking."
+  },
+  {
+   "id": "2026-10-27-16",
+   "topic": "Execution",
+   "concept": "String freeze for localisation before release",
+   "difficulty": "easy",
+   "question": "An app is launching in Hindi and Tamil alongside English. Designers keep changing English button text late in the sprint, and translations keep falling behind. What should the PM put in place?",
+   "options": [
+    "A string freeze date before release, after which UI text changes need explicit approval",
+    "Launch the Hindi and Tamil versions one release after English to give translators time",
+    "Machine translation for any text changed in the final week, reviewed after launch",
+    "A rule that translators must turn around any new text within the same day"
+   ],
+   "rationales": [
+    "Correct: it gives translators stable text and makes late changes a deliberate exception.",
+    "Wrong: delaying the languages postpones the problem and weakens the launch.",
+    "Wrong: shipping unreviewed machine translation risks poor-quality text for new users.",
+    "Wrong: forcing same-day turnaround rushes quality and doesn't stop the constant changes."
+   ],
+   "answer": 0,
+   "explanation": "Translations can only be finished against stable text. A string freeze sets a date after which UI copy stops changing, so translators and reviewers have time to localise and check it. Late changes are still possible, but they go through an explicit decision instead of breaking every language.",
+   "interview_tip": "Launch execution questions often hinge on cross-team dependencies. Naming a concrete mechanism like a string freeze shows you've shipped products in multiple languages."
+  },
+  {
+   "id": "2026-10-27-17",
+   "topic": "Execution",
+   "concept": "Burn-up chart reveals scope creep",
+   "difficulty": "medium",
+   "question": "A team's burn-up chart shows the 'completed work' line rising steadily each sprint, but the 'total scope' line is rising almost as fast, so the finish date keeps moving out. What is the most accurate diagnosis?",
+   "options": [
+    "The team is spending too much time on bugs instead of planned feature work",
+    "Scope is growing faster than expected; the team's delivery pace is not the main problem",
+    "The team's velocity is too low and needs more engineers to meet the date",
+    "The original estimates were too optimistic, so all stories should be re-estimated"
+   ],
+   "rationales": [
+    "Wrong: bug work would show up as slower completion, but completion is steady.",
+    "Correct: steady completed work with a rising total means the target keeps moving.",
+    "Wrong: the completed line is rising steadily, so pace isn't the main issue; adding people won't stop added scope.",
+    "Wrong: re-estimating doesn't address the new work being added each sprint."
+   ],
+   "answer": 1,
+   "explanation": "A burn-up chart shows completed work and total scope as separate lines. Steady progress with a rising scope line means new work keeps being added, which is scope creep. The fix is to manage what gets added (trade-offs, cuts, change control), not to push the team to go faster.",
+   "interview_tip": "Interviewers like candidates who can read delivery charts. Explaining why burn-up separates scope from progress, and acting on scope, shows practical execution skill."
+  },
+  {
+   "id": "2026-10-27-18",
+   "topic": "Execution",
+   "concept": "Scheduled brownouts before an API shutdown",
+   "difficulty": "medium",
+   "question": "A platform is retiring its v1 API in two months. Despite repeated emails, 15% of traffic still uses v1, much of it from integrations nobody seems to own. What is the best next step?",
+   "options": [
+    "Turn v1 off on the planned date and handle the support tickets that follow",
+    "Schedule short, announced v1 outages to surface hidden dependencies before the final shutdown",
+    "Extend the shutdown date by six months to give customers more time to migrate",
+    "Send another round of deprecation emails to every account's admin and billing contacts"
+   ],
+   "rationales": [
+    "Wrong: a hard cut with no warning breaks customers all at once and creates an escalation flood.",
+    "Correct: planned short outages reveal hidden users while the change can still be undone.",
+    "Wrong: extending the date delays the problem without finding the people who need to migrate.",
+    "Wrong: more emails reach the same contacts who haven't acted; unowned integrations won't respond."
+   ],
+   "answer": 1,
+   "explanation": "Unowned integrations don't respond to email; they only get noticed when they break. Brief, announced brownouts (for example an hour at a time, growing longer) make the breakage visible while it's still reversible, so owners appear and migrate before the permanent shutdown. It turns a single cliff into controlled, recoverable steps.",
+   "interview_tip": "Deprecation questions test whether you can change things without breaking customers. A staged approach like brownouts shows you plan for the users who never read announcements."
+  },
+  {
+   "id": "2026-10-27-19",
+   "topic": "Behavioural",
+   "concept": "Refusing a new hire's confidential info from a former employer",
+   "difficulty": "hard",
+   "question": "A new PM who joined from your main competitor offers to show you their old company's internal pricing roadmap, saying it would help your upcoming pricing decision. What is the best response?",
+   "options": [
+    "Ask your manager whether it's acceptable to look before deciding what to do",
+    "Look only at the high-level direction, without copying it or sharing it further",
+    "Decline, ask them not to share any of it, and involve legal if anything was already shared",
+    "Decline the document, but ask them to describe the main points from memory instead"
+   ],
+   "rationales": [
+    "Wrong: this isn't a grey area; asking permission delays a clear refusal and implies it might be fine.",
+    "Wrong: limiting how much you look at still uses information you have no right to.",
+    "Correct: it refuses the information completely and handles any exposure properly.",
+    "Wrong: a verbal summary is still the competitor's confidential information."
+   ],
+   "answer": 2,
+   "explanation": "A former employer's confidential plans aren't yours to use, whether shared as a document or from memory. Declining clearly protects the company, the new hire and the integrity of your decision. Involving legal if anything already reached you is the right way to contain it. Your pricing decision should rest on your own customer research and public information.",
+   "interview_tip": "Integrity questions test whether you hold the line when the shortcut is tempting. A clear refusal plus a sensible containment step signals trustworthiness."
+  },
+  {
+   "id": "2026-10-27-20",
+   "topic": "Behavioural",
+   "concept": "Inviting a sceptic to stress-test your analysis",
+   "difficulty": "hard",
+   "question": "The day before a launch review, a data scientist tells you your analysis overstates the feature's impact. You think your numbers are right. What is the best way to handle it?",
+   "options": [
+    "Share your queries and data with them today, and if their concern holds, present the uncertainty",
+    "Ask them to send their objections in writing so you can review them after the launch review",
+    "Present your analysis as planned and note in the appendix that a data scientist disagrees",
+    "Escalate to your manager so they can decide whose analysis goes to the review"
+   ],
+   "rationales": [
+    "Correct: it tests the analysis quickly and keeps the review honest about what is known.",
+    "Wrong: deferring until after the review lets a possibly wrong analysis drive the decision.",
+    "Wrong: a footnote leaves leaders to decide on numbers you know are contested.",
+    "Wrong: escalating before trying to resolve it yourself skips the most direct and collaborative path."
+   ],
+   "answer": 0,
+   "explanation": "The goal is the right decision, not winning the argument. Opening your work to the sceptic quickly either strengthens the analysis or catches a real error before leaders act on it. If the concern holds, presenting the uncertainty honestly protects your credibility and the decision. It also builds trust with a key partner.",
+   "interview_tip": "Interviewers look for intellectual honesty under deadline pressure. Showing you invited the challenge and would change your story if needed signals strong judgement."
+  },
+  {
+   "id": "2026-10-27-21",
+   "topic": "Behavioural",
+   "concept": "Turning a legal 'no' into a compliant alternative",
+   "difficulty": "hard",
+   "question": "Legal blocks your 'find friends from contacts' feature in the EU two weeks before launch. Leadership is keen on the feature. What is the best next step?",
+   "options": [
+    "Drop the feature entirely, since legal has decided and the date can't move",
+    "Learn the specific risk legal sees, then design an alternative with them, such as opt-in matching",
+    "Ask leadership to override legal, since the feature is important to the launch goals",
+    "Launch everywhere except the EU and revisit the EU once the launch is done"
+   ],
+   "rationales": [
+    "Wrong: giving up skips the work of finding a compliant way to deliver the value.",
+    "Correct: it treats legal as a partner and looks for a version that removes the actual risk.",
+    "Wrong: trying to override legal ignores real risk and damages a key relationship.",
+    "Wrong: geo-splitting can help, but doing it without understanding the risk may repeat it elsewhere."
+   ],
+   "answer": 1,
+   "explanation": "A legal 'no' is usually about a specific risk, such as processing non-users' contact data without consent. Understanding that risk lets you design with legal an alternative that removes it, like explicit opt-in or privacy-preserving matching. You keep the user value, respect the constraint and give leadership a real option instead of a stand-off.",
+   "interview_tip": "Stakeholder questions often include a hard constraint. Showing you dig into the 'why' behind a no and co-design a path signals ownership and collaboration."
+  },
+  {
+   "id": "2026-10-27-22",
+   "topic": "AI Product",
+   "concept": "Active vs total parameters in mixture-of-experts models",
+   "difficulty": "easy",
+   "question": "A mixture-of-experts model is described as having '816B total parameters, 42B active'. What does 'active' mean for the product team?",
+   "options": [
+    "The model uses 42B parameters on easy prompts and all 816B on hard ones",
+    "The model can be run on a device with enough memory for 42B parameters",
+    "Only 42B parameters were trained, and the rest are copies used for redundancy",
+    "Each token runs through about 42B parameters, so compute per token is near a 42B model, but memory must hold all 816B"
+   ],
+   "rationales": [
+    "Wrong: routing happens per token for every prompt; it isn't a switch between easy and hard prompts.",
+    "Wrong: serving still needs memory for all 816B weights, not just 42B.",
+    "Wrong: all parameters are trained; the experts are different, not redundant copies.",
+    "Correct: active parameters set compute per token, while total parameters set memory needs."
+   ],
+   "answer": 3,
+   "explanation": "In a mixture-of-experts model, a router sends each token to a few expert sub-networks, so only a fraction of the weights (here about 42B) do work for any token. That makes compute per token closer to a 42B dense model, which helps speed and cost. All 816B weights still have to be loaded in memory to serve it, which drives hardware needs.",
+   "interview_tip": "AI PM interviews test whether you can turn model specs into cost and latency implications. Separating compute (active) from memory (total) shows real technical fluency."
+  },
+  {
+   "id": "2026-10-27-23",
+   "topic": "AI Product",
+   "concept": "Metadata filters in RAG retrieval",
+   "difficulty": "medium",
+   "question": "An internal HR assistant built with RAG sometimes answers with last year's leave policy or another country's policy. All versions are correctly stored in the index. What is the best fix?",
+   "options": [
+    "Filter retrieval by metadata such as the employee's country and the policy's effective date",
+    "Switch to a larger model that is better at choosing the right policy from the context",
+    "Fine-tune the model on the current policies so it remembers which ones apply",
+    "Retrieve more chunks per question so the current policy is more likely to be included"
+   ],
+   "rationales": [
+    "Correct: it removes inapplicable versions before generation, fixing the problem where it starts.",
+    "Wrong: a bigger model may still pick the wrong version when several similar policies are in context.",
+    "Wrong: fine-tuning is costly, goes stale when policies change, and doesn't fix retrieval.",
+    "Wrong: more chunks bring in even more outdated or foreign policies and can confuse the model further."
+   ],
+   "answer": 0,
+   "explanation": "The wrong documents are being retrieved because policies from different years and countries look semantically similar. Adding metadata filters (country, effective date, status) before or alongside semantic search makes sure only the applicable version can reach the model. It's a precise, cheap fix at the retrieval step where the failure happens.",
+   "interview_tip": "RAG questions reward locating the failure in the pipeline. Spotting a retrieval problem and fixing it with structured filters shows practical AI product sense."
+  },
+  {
+   "id": "2026-10-27-24",
+   "topic": "AI Product",
+   "concept": "Eval set size and confidence in pass-rate differences",
+   "difficulty": "hard",
+   "question": "On a 100-example eval set, a new prompt scores 82% and the current prompt scores 78%. The team wants to ship the new prompt as a clear improvement. What is the best response?",
+   "options": [
+    "Re-run the new prompt on the same 100 examples a few times and ship if it stays above 80%",
+    "Ask the team to manually review the 4 extra passing examples to confirm they are real wins",
+    "A 4-point gap on 100 examples is likely within noise; compare both on the same larger set before deciding",
+    "Ship it, since a 4-point gain is meaningful for an AI feature and the direction is positive"
+   ],
+   "rationales": [
+    "Wrong: re-running on the same 100 examples doesn't reduce uncertainty about how the prompt will do on new inputs.",
+    "Wrong: there may not be exactly 4 'extra' wins; the prompts can win and lose on different examples.",
+    "Correct: the gap is smaller than the sampling uncertainty, so more paired data is needed to decide.",
+    "Wrong: the direction is positive, but at this sample size it could easily be chance."
+   ],
+   "answer": 2,
+   "explanation": "With 100 examples, a pass rate around 80% has a standard error of about 4 points, and the uncertainty on the difference between two prompts is even larger. A 4-point gap is well within noise. Comparing both prompts on the same, larger set (paired, so each example is judged for both) is needed before calling it a real improvement.",
+   "interview_tip": "Interviewers like AI PMs who treat evals like experiments. Quickly estimating the noise in a small eval set shows you won't ship on a coin flip."
+  },
+  {
+   "id": "2026-10-27-25",
+   "topic": "AI Product",
+   "concept": "Omission errors in summarization evals",
+   "difficulty": "medium",
+   "question": "An AI tool summarizes sales calls. Its evals check that every statement in a summary is accurate, and it scores well. Yet reps complain the summaries miss key commitments, like promised discounts. What should the team add?",
+   "options": [
+    "A coverage check that measures how many key points from the call appear in the summary",
+    "A length limit so summaries stay short and focus on the most important points",
+    "A stricter accuracy check that uses a stronger model as the judge for each statement",
+    "A user rating button so reps can flag summaries they don't find useful"
+   ],
+   "rationales": [
+    "Correct: it measures the omissions that accuracy checks can't see.",
+    "Wrong: shorter summaries would likely leave out even more key points.",
+    "Wrong: a stricter accuracy check still only judges what is included, not what is missing.",
+    "Wrong: ratings help gather feedback, but they don't systematically measure what is missing."
+   ],
+   "answer": 0,
+   "explanation": "Accuracy evals only check what the summary says, not what it leaves out. A summary can be completely accurate and still miss the most important commitment. A coverage (recall) check against a list of key points per call measures omissions directly, matching what reps are complaining about.",
+   "interview_tip": "AI eval questions test whether your metrics match the user's real complaint. Separating accuracy from completeness shows you design evals around actual failure modes."
+  },
+  {
+   "id": "2026-10-27-26",
+   "topic": "AI Product",
+   "concept": "Batch size trade-off between throughput and latency in LLM serving",
+   "difficulty": "medium",
+   "question": "To cut inference cost, the infra team proposes doubling the batch size on the GPUs serving a chat assistant. What trade-off should the PM expect?",
+   "options": [
+    "Lower cost per token and faster responses, since GPUs are used more efficiently",
+    "Higher total throughput and lower cost per token, but slower responses for each individual user",
+    "Lower throughput overall, but each user's response arrives faster than before",
+    "Same cost per token but higher accuracy, since the model sees more examples at once"
+   ],
+   "rationales": [
+    "Wrong: efficiency improves overall, but individual responses usually get slower, not faster.",
+    "Correct: bigger batches trade per-user latency for total throughput and lower cost.",
+    "Wrong: this reverses the effect; bigger batches raise total throughput and slow each user.",
+    "Wrong: batching at serving time doesn't change model accuracy; it only changes how requests share hardware."
+   ],
+   "answer": 1,
+   "explanation": "Batching more requests together keeps the GPU busier, so more tokens are produced per second in total and cost per token falls. But each request shares the GPU with more others, so per-user speed (time to first token and tokens per second) usually gets worse. The PM should decide how much latency the product can accept for the savings.",
+   "interview_tip": "AI PM interviews often probe cost-latency trade-offs. Explaining what batching does to individual users versus the system shows you can make informed infrastructure trade-offs."
+  },
+  {
+   "id": "2026-10-27-27",
+   "topic": "Technology",
+   "concept": "Data residency requirements constrain region choice",
+   "difficulty": "medium",
+   "question": "A large EU customer's contract requires that their data is stored and processed only in the EU. Your SaaS product runs entirely in a US region. What is the core change needed?",
+   "options": [
+    "Add a CDN with EU edge locations so the customer's pages load from Europe",
+    "Copy the customer's data to an EU backup each night while keeping production in the US",
+    "Encrypt the customer's data at rest in the US region with keys they control",
+    "Run storage and processing for that customer in an EU region and route their traffic there"
+   ],
+   "rationales": [
+    "Wrong: a CDN caches content near users, but the main data and processing stay in the US.",
+    "Wrong: an EU backup doesn't change where production data is stored and processed.",
+    "Wrong: encryption protects data, but it is still stored and processed in the US.",
+    "Correct: it puts the customer's data and processing physically in the EU, which is what the contract requires."
+   ],
+   "answer": 3,
+   "explanation": "Data residency is about where data lives and is processed. Meeting it means running that customer's storage and compute in an EU region and making sure their requests (and any sub-processors) stay there. CDNs, encryption and backups help with speed or security but leave the primary data in the US.",
+   "interview_tip": "Enterprise PMs often face residency requirements in deals. Knowing it is about where data lives and is processed, not just security, shows you can scope the real work."
+  },
+  {
+   "id": "2026-10-27-28",
+   "topic": "Technology",
+   "concept": "Minimum supported app version for breaking backend changes",
+   "difficulty": "easy",
+   "question": "A backend change will break app versions older than 5.2, and about 8% of users are still on older versions. Mobile users don't always update. What should the team put in place?",
+   "options": [
+    "A minimum-supported-version check that asks users on older versions to update before continuing",
+    "A push notification asking all users to update the app sometime this week",
+    "Ask app store support to automatically update users on older versions",
+    "Release the backend change and fix any problems on older versions in the next app release"
+   ],
+   "rationales": [
+    "Correct: it reliably moves users off unsupported versions before they hit broken behaviour.",
+    "Wrong: a notification is easy to ignore, so many users will still be on old versions.",
+    "Wrong: app stores don't force updates on request; the app has to handle this itself.",
+    "Wrong: old versions can't receive fixes unless users update, so fixing later doesn't help them."
+   ],
+   "answer": 0,
+   "explanation": "Unlike the web, mobile apps keep running old code until users update. A minimum-supported-version check lets the backend tell older apps to update (a soft prompt first, then a hard block if needed) before the breaking change hits. That turns a silent failure into a clear, guided step.",
+   "interview_tip": "Technical fluency questions often check you understand how mobile differs from web. Mentioning version gating shows you plan for users who never update."
+  },
+  {
+   "id": "2026-10-27-29",
+   "topic": "Growth",
+   "concept": "Coupon leakage to deal sites eroding margin",
+   "difficulty": "medium",
+   "question": "A D2C brand gave influencers a public '50% off first order' code. Within a week it appears on coupon sites, and many redemptions come from existing customers. What is the best fix?",
+   "options": [
+    "Switch to unique, single-use codes or links tied to new accounts and verified first orders",
+    "Lower the discount to 20% so that leaked redemptions cost the brand less",
+    "Ask the coupon sites to remove the code and keep running the campaign as it is",
+    "End the influencer campaign, since codes will always leak and harm margins"
+   ],
+   "rationales": [
+    "Correct: it limits the offer to the people it's for and keeps per-influencer tracking.",
+    "Wrong: a smaller discount reduces the loss but still subsidises existing customers and weakens the offer.",
+    "Wrong: takedowns are slow and incomplete; codes reappear on other sites.",
+    "Wrong: the channel can work; the problem is the code design, not influencers."
+   ],
+   "answer": 0,
+   "explanation": "A shared public code can't control who uses it, so it spreads and gets used by people it wasn't meant for. Unique or single-use codes (or auto-applied links) tied to genuinely new accounts keep the offer limited to its intended audience while keeping the campaign. You can still track performance per influencer.",
+   "interview_tip": "Growth questions reward protecting unit economics while keeping a working channel. Fixing the mechanism instead of killing the campaign shows practical judgement."
+  },
+  {
+   "id": "2026-10-27-30",
+   "topic": "Current Events",
+   "concept": "DeepSeek Search and Fetch API per-success pricing (Oct 2026)",
+   "difficulty": "easy",
+   "question": "In October 2026, DeepSeek launched standalone Search and Fetch APIs for developers. According to The New Stack's coverage, how are they priced?",
+   "options": [
+    "Per token, based on the size of the search results and page content returned",
+    "Free for anyone who also pays for DeepSeek's chat model on the same account",
+    "A flat monthly subscription that includes up to five requests per second",
+    "$0.75 per 1,000 successful requests each, with failed calls, empty searches and timeouts not charged"
+   ],
+   "rationales": [
+    "Wrong: pricing is per request, not per token of returned content.",
+    "Wrong: the APIs are billed separately and don't need a DeepSeek model request; only a temporary waiver applied to some tool calls.",
+    "Wrong: five requests per second is a rate limit, not a subscription allowance.",
+    "Correct: it's priced per 1,000 successful requests, with unsuccessful calls free."
+   ],
+   "answer": 3,
+   "explanation": "The New Stack reports each API costs $0.75 per 1,000 successful requests, and failed calls, empty searches and timeouts cost nothing. They don't need a separate model request, so they can be used with other AI models. Each is capped at five requests per second per account, and a temporary fee waiver for some server-side tool calls ends on October 31. Charging only for successful results ties the price to the value delivered.",
+   "interview_tip": "Pricing news makes good interview material. Pointing out that charging only for successful requests ties price to value, and builds developer trust, shows you think about pricing design.",
+   "source": "https://thenewstack.io/?p=22840940"
+  }
+ ]
+}
