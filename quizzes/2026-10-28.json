@@ -1,0 +1,667 @@
+{
+ "date": "2026-10-28",
+ "theme": "Search reformulations, cache stampedes & Sweden's Copilot-only rule",
+ "questions": [
+  {
+   "id": "2026-10-28-01",
+   "topic": "Product Sense",
+   "concept": "Pre-charge reminders before subscription auto-renewal",
+   "difficulty": "medium",
+   "question": "An Indian meal-kit subscription sees many angry refund requests and chargebacks the day after annual plans auto-renew. Users say they forgot they had signed up. What is the best product change?",
+   "options": [
+    "Hide the renewal date in settings so fewer users notice the charge and file refunds before it goes through",
+    "Send a clear reminder a few days before renewal with the amount, date and a one-tap way to cancel or switch plans",
+    "Add a cancellation survey with several steps so users think twice before asking for their money back",
+    "Move every user to monthly billing so each charge is smaller and less likely to trigger a refund request"
+   ],
+   "rationales": [
+    "Wrong: hiding the date makes the surprise worse and raises chargebacks, which can get the merchant flagged by payment networks.",
+    "Correct: it removes the surprise behind the complaints, and users who stay are retained on purpose rather than by accident.",
+    "Wrong: adding friction to refunds is a dark pattern; it angers users who were already surprised and invites more chargebacks.",
+    "Wrong: smaller charges are still surprises, and dropping annual billing gives up cash flow without fixing the forgotten sign-up."
+   ],
+   "answer": 1,
+   "explanation": "The pain is surprise, not price. A pre-charge reminder with the amount and an easy exit turns a surprise charge into an informed choice. Some users will cancel, but the ones who renew do so knowingly, which cuts chargebacks (costly and risky with payment partners) and protects trust. In India, RBI's e-mandate rules already require a pre-debit notification before recurring card charges, so this also aligns with regulation.",
+   "interview_tip": "Interviewers like candidates who find the real pain (surprise) behind a symptom (refunds). Willing to accept some cancellations for durable trust signals long-term thinking."
+  },
+  {
+   "id": "2026-10-28-02",
+   "topic": "Product Sense",
+   "concept": "Recovery paths for zero-result searches",
+   "difficulty": "medium",
+   "question": "On a grocery app, 12% of searches return no results, often due to misspellings, regional names (e.g. 'bhindi' vs 'okra') or items not stocked. What should the PM prioritise first?",
+   "options": [
+    "Hide the search bar for new users and push them to browse categories, where empty results cannot happen",
+    "Expand the catalogue until every searched item is stocked, starting with the most searched missing items",
+    "Show a message asking users to check their spelling and try a different search term before giving up",
+    "Add spelling tolerance and synonym mapping, and when nothing matches show close alternatives instead of an empty page"
+   ],
+   "rationales": [
+    "Wrong: search is the highest-intent entry point; removing it hides the problem and hurts users who know what they want.",
+    "Wrong: some missing items should be added, but most zero results here are naming problems, and stocking everything is slow and costly.",
+    "Wrong: it puts the burden on the user; many will not know the 'correct' name and will simply leave.",
+    "Correct: it fixes the biggest causes (spelling and naming) and gives a path forward when an item really isn't stocked."
+   ],
+   "answer": 3,
+   "explanation": "Zero-result pages are dead ends that lose sales. Most cases here are vocabulary mismatches the system can fix: typo tolerance and synonyms (including regional and Hinglish names) map the query to items that exist. For truly unstocked items, showing near substitutes keeps the user moving. Logging remaining zero-result queries also tells the category team what to stock next.",
+   "interview_tip": "A strong answer segments the failure causes first (vocabulary vs inventory) and fixes the largest, cheapest one. It shows you diagnose before you build."
+  },
+  {
+   "id": "2026-10-28-03",
+   "topic": "Product Sense",
+   "concept": "Glanceable design for users in motion (drivers)",
+   "difficulty": "hard",
+   "question": "You're designing a new order-alert feature for delivery riders, who use the app on a phone mounted on their scooter while riding. Which design principle should drive the feature most?",
+   "options": [
+    "Make alerts glanceable and voice-first, with one large action, and delay complex choices until the rider has stopped",
+    "Show full order details, map and earnings on one screen so riders have all the information in a single view",
+    "Let riders customise every alert setting during onboarding so the app adapts to each rider's preferences",
+    "Match the dense layout of the restaurant partner app so both sides of the marketplace see the same information"
+   ],
+   "rationales": [
+    "Correct: it fits the rider's real situation—short glances, audio and one action—and moves complex decisions to safe moments.",
+    "Wrong: a dense screen forces long glances while riding, which is unsafe and slows decisions.",
+    "Wrong: customisation is fine later, but it doesn't solve the core problem and adds onboarding friction for new riders.",
+    "Wrong: the restaurant staff use the app at a counter; copying their layout ignores the rider's very different context."
+   ],
+   "answer": 0,
+   "explanation": "The context of use is the main constraint: riders have seconds of attention, gloves, glare and safety risk. Good in-motion design keeps visual tasks short, uses audio, offers a single big tap target, and defers anything needing reading or typing until the vehicle is stationary (as car interfaces do). The best design here is the one that is safe and quick, not the one with the most information.",
+   "interview_tip": "Product sense interviewers look for candidates who name the context of use early and let it shape the design. Mentioning safety as a hard constraint is a strong signal."
+  },
+  {
+   "id": "2026-10-28-04",
+   "topic": "Product Sense",
+   "concept": "Easy override when automatic inference is wrong",
+   "difficulty": "hard",
+   "question": "A travel app auto-detects the user's language and currency from their location. Travellers abroad complain the app suddenly switches to a language they can't read. What is the best fix?",
+   "options": [
+    "Show a pop-up on every launch abroad asking whether the user wants to keep the detected language",
+    "Keep auto-detection as a first guess, but use the device language, remember manual choices, and show an obvious switcher",
+    "Remove auto-detection entirely and ask every user to choose language and currency on each first launch",
+    "Improve the location model's accuracy so the app detects the user's country more precisely when travelling"
+   ],
+   "rationales": [
+    "Wrong: repeated pop-ups create fatigue and still don't remember what the user chose.",
+    "Correct: it uses a better signal, respects explicit choices, and gives an easy way to recover from a wrong guess.",
+    "Wrong: it throws away a helpful default for the majority and adds friction for everyone to fix a problem for some.",
+    "Wrong: the location is detected correctly; the problem is that location doesn't predict the language a traveller reads."
+   ],
+   "answer": 1,
+   "explanation": "Inference is useful as a default, but every inference is sometimes wrong, so the design must make being wrong cheap. Here location is the wrong signal for language: a traveller's device language is a far better proxy, and a manual choice should always win and be remembered. A visible switcher lets users recover in one step. This keeps the convenience for most users and stops the failure for the rest.",
+   "interview_tip": "This tests whether you design for failure cases of smart features. Saying 'the guess will be wrong sometimes, so make correction easy and sticky' shows mature judgement."
+  },
+  {
+   "id": "2026-10-28-05",
+   "topic": "Metrics",
+   "concept": "Delivery-fee increase raising AOV by filtering out small orders",
+   "difficulty": "hard",
+   "question": "After raising the delivery fee on orders under ₹199, a quick-commerce app's average order value rose 14%. The finance team calls it a success. What should the PM check first?",
+   "options": [
+    "The share of orders just above ₹199, since bunching there would show users are reacting to the threshold",
+    "Total orders, revenue and contribution per user, because AOV may have risen only because small orders disappeared",
+    "Basket size per order, because more items per basket would prove users are adding more to avoid the fee",
+    "Whether AOV rose in every city, since a rise across all cities would confirm the fee change is working well"
+   ],
+   "rationales": [
+    "Wrong: bunching is useful later, but it describes behaviour at the threshold, not whether the business gained overall.",
+    "Correct: it checks the outcome that matters and catches the case where AOV rose simply because small orders were lost.",
+    "Wrong: basket size per order has the same flaw as AOV—it rises when small baskets drop out.",
+    "Wrong: a rise everywhere is exactly what losing small orders everywhere would produce; it doesn't separate the two stories."
+   ],
+   "answer": 1,
+   "explanation": "AOV is a ratio that rises when low-value orders vanish, even if no one spends more. If users who used to place small orders now order less or churn, AOV goes up while total revenue and engagement fall. The real test is whether total revenue and contribution per user improved and whether order frequency held. Only then is the fee change a win.",
+   "interview_tip": "Root-cause questions reward spotting that a ratio can move through its composition. Strong candidates immediately ask for the totals behind an average."
+  },
+  {
+   "id": "2026-10-28-06",
+   "topic": "Metrics",
+   "concept": "Query reformulation rate as a search failure signal",
+   "difficulty": "hard",
+   "question": "After a ranking change, searches per user on a shopping app rose 18%, and the team wants to celebrate higher engagement. Purchases per searcher are flat. What is the most likely reading?",
+   "options": [
+    "Searches rose because of seasonal traffic, so the team should compare against the same week last year",
+    "Users may be retyping and refining queries because results got worse, so check reformulation and successful-search rates",
+    "More searches with flat purchases means the catalogue lacks products, so the team should add more items",
+    "The ranking change made search more engaging, so users are exploring more products and will buy more in time"
+   ],
+   "rationales": [
+    "Wrong: seasonality is worth a check, but the change lines up with the ranking launch and purchases didn't rise with traffic.",
+    "Correct: it treats repeated searching as possible failure and names the metrics that would confirm or rule it out.",
+    "Wrong: the catalogue didn't change; the ranking did, so a catalogue gap doesn't explain the timing.",
+    "Wrong: it assumes more activity is good; for a tool meant to find things fast, extra searches usually mean effort."
+   ],
+   "answer": 1,
+   "explanation": "For search, more queries per user is often a bad sign: people search again when the first results don't help. The quick test is the reformulation rate (a new query soon after one with no click or purchase) and successful-search rate. If those got worse, the ranking change hurt users even though a top-line 'engagement' number went up.",
+   "interview_tip": "Interviewers test whether you know when 'more usage' is bad. Naming a failure-sensitive metric like reformulation rate signals real analytical depth."
+  },
+  {
+   "id": "2026-10-28-07",
+   "topic": "Metrics",
+   "concept": "Order defect rate as a seller quality metric",
+   "difficulty": "medium",
+   "question": "A marketplace wants one metric to judge seller quality fairly across sellers of very different sizes. Which is the best choice?",
+   "options": [
+    "Order defect rate: the share of a seller's orders with a cancellation, late delivery, return for damage or a complaint",
+    "Average star rating across all of a seller's products, using every review left since the seller joined",
+    "Gross merchandise value per seller, since the biggest sellers are the ones customers trust the most",
+    "Total number of complaints received by each seller over the last 90 days of trading on the marketplace"
+   ],
+   "rationales": [
+    "Correct: it's normalised for size and directly reflects bad buyer experiences across several failure types.",
+    "Wrong: lifetime ratings are slow to reflect recent problems and are skewed by who chooses to leave reviews.",
+    "Wrong: GMV measures scale; a large seller can still ship many late or damaged orders.",
+    "Wrong: a raw count grows with volume, so large good sellers look worse than small bad ones."
+   ],
+   "answer": 0,
+   "explanation": "A rate normalised by orders lets small and large sellers be compared fairly, and bundling the main ways an order can go wrong captures the buyer's actual experience. Amazon uses an order defect rate for this reason. Raw counts punish big sellers, lifetime averages hide recent decline, and GMV measures size, not quality.",
+   "interview_tip": "Marketplace metric questions check whether you normalise and focus on the customer outcome. Mentioning fairness across seller sizes shows you think about both sides."
+  },
+  {
+   "id": "2026-10-28-08",
+   "topic": "Metrics",
+   "concept": "Bounce rate definition",
+   "difficulty": "easy",
+   "question": "In web analytics, what does a high bounce rate on a landing page usually mean?",
+   "options": [
+    "Many visitors return to the page several times in one week before deciding whether to buy",
+    "Many visitors leave after viewing only that page, without taking another action on the site",
+    "Many visitors scroll to the bottom of the page and read all of the content before leaving",
+    "Many visitors arrive through paid ads rather than through organic search or direct visits"
+   ],
+   "rationales": [
+    "Wrong: repeat visits describe return frequency, not bouncing.",
+    "Correct: that is the definition—single-page sessions with no further action.",
+    "Wrong: deep scrolling is engagement on the page; it isn't what bounce rate measures.",
+    "Wrong: traffic source is a separate dimension; bounces can come from any channel."
+   ],
+   "answer": 1,
+   "explanation": "Bounce rate is the share of sessions that view one page and leave with no further interaction. A high rate on a landing page often signals a mismatch between what the ad or link promised and what the page shows, or a slow or confusing page. Context matters: on a page whose job is a single answer, such as a help article, a bounce can still be a success.",
+   "interview_tip": "Basic metric definitions come up as quick checks. Adding when a high bounce rate is actually fine shows you interpret metrics rather than just recite them."
+  },
+  {
+   "id": "2026-10-28-09",
+   "topic": "Experimentation",
+   "concept": "Bootstrap confidence intervals for medians",
+   "difficulty": "medium",
+   "question": "Your test's primary metric is median delivery time, which is skewed and has no simple variance formula. How should you get a confidence interval for the difference between variants?",
+   "options": [
+    "Bootstrap: resample users with replacement many times, recompute the median difference each time, and take the percentiles",
+    "Switch the metric to the mean, since a mean is always a better summary than a median for skewed data",
+    "Use a standard t-test on the medians, since the t-test works for any summary statistic with a large sample",
+    "Report only the point difference in medians, because confidence intervals can't be computed for medians"
+   ],
+   "rationales": [
+    "Correct: bootstrapping gives a valid interval for medians and resampling by user respects the randomisation unit.",
+    "Wrong: for skewed data the mean is pulled by outliers; changing metrics to fit a formula is the wrong way round.",
+    "Wrong: the t-test is built for means; applying it to medians gives the wrong variance.",
+    "Wrong: intervals for medians are routine with resampling; reporting a point estimate alone hides uncertainty."
+   ],
+   "answer": 0,
+   "explanation": "The bootstrap estimates a statistic's sampling variation by resampling the data many times and recomputing it. It works for medians, percentiles and other metrics without neat formulas. Resampling at the randomisation unit (users) keeps the interval honest when a user has many orders.",
+   "interview_tip": "Knowing the bootstrap shows you can handle real-world metrics like p90 latency. Strong candidates also mention resampling at the unit that was randomised."
+  },
+  {
+   "id": "2026-10-28-10",
+   "topic": "Experimentation",
+   "concept": "PSA or ghost-ad control groups for ad lift measurement",
+   "difficulty": "medium",
+   "question": "A D2C brand wants to know how many extra purchases its Instagram ads really cause. Comparing buyers who saw an ad with those who didn't shows a huge gap. What is the better design?",
+   "options": [
+    "Use the platform's reported conversions, since the platform tracks every purchase made after an ad view",
+    "Compare sales in the weeks with ads against weeks without ads, keeping everything else about the campaign the same",
+    "Compare people who clicked the ad with people who saw it but didn't click, since clicking shows real interest",
+    "Randomly hold out part of the target audience and show them a neutral ad or no ad, then compare purchases between groups"
+   ],
+   "rationales": [
+    "Wrong: platform-attributed conversions count purchases that would have happened anyway, inflating results.",
+    "Wrong: week-to-week comparisons mix in seasonality, promotions and other changes.",
+    "Wrong: clickers differ from non-clickers in intent, so this compares two different kinds of people.",
+    "Correct: random assignment within the targeted audience removes selection bias and measures true incremental purchases."
+   ],
+   "answer": 3,
+   "explanation": "People who see an ad are already targeted because they're likely buyers, so exposed vs unexposed comparisons overstate the effect. A randomised holdout within the target audience (with a public-service or 'ghost' ad to log who would have been shown it) creates a fair counterfactual. The gap between groups is the ad's incremental lift.",
+   "interview_tip": "Ad measurement questions test whether you separate correlation from incrementality. Naming a randomised holdout is the strong answer."
+  },
+  {
+   "id": "2026-10-28-11",
+   "topic": "Estimation",
+   "concept": "Annual two-wheeler helmet unit sales in India",
+   "difficulty": "medium",
+   "question": "Roughly how many two-wheeler helmets are sold in India each year?",
+   "options": [
+    "About 100 million",
+    "About 10 million",
+    "About 400 million",
+    "About 1 billion"
+   ],
+   "rationales": [
+    "Correct: new-vehicle demand (~30M) plus replacements on the installed base (~80M) gives about 110 million.",
+    "Wrong: this roughly matches new two-wheeler sales alone and ignores replacement demand from the existing fleet.",
+    "Wrong: this assumes nearly everyone replaces several helmets a year, which far exceeds realistic usage.",
+    "Wrong: this is close to one helmet per person in India each year, which is far beyond two-wheeler ownership."
+   ],
+   "answer": 0,
+   "explanation": "Method: India sells about 20 million new two-wheelers a year; at ~1.5 helmets each (rider plus sometimes pillion), that's ~30 million. The active fleet is roughly 200 million vehicles; at ~1.2 helmets each and a ~3-year replacement cycle, replacements add ~80 million. Total ≈ 110 million, so about 100 million. The key is counting both new-vehicle demand and replacement on the installed base.",
+   "interview_tip": "Interviewers want structure: new demand plus replacement on an installed base. Stating your assumptions clearly matters more than the exact number."
+  },
+  {
+   "id": "2026-10-28-12",
+   "topic": "Estimation",
+   "concept": "Human eval labelling cost estimate",
+   "difficulty": "easy",
+   "question": "You need human ratings for 2,000 chatbot conversations. Each conversation is rated by 3 raters, each rating takes 4 minutes, and raters cost ₹600 per hour. What is the labelling cost?",
+   "options": [
+    "About ₹24 lakh",
+    "About ₹24,000",
+    "About ₹2.4 lakh",
+    "About ₹7.2 lakh"
+   ],
+   "rationales": [
+    "Wrong: this is ten times too high, a place-value slip when converting minutes to hours.",
+    "Wrong: this is ten times too low, as if only 40 hours of rating were needed.",
+    "Correct: 6,000 ratings × 4 minutes = 400 hours, and 400 × ₹600 = ₹2.4 lakh.",
+    "Wrong: this multiplies by the 3 raters twice, tripling the correct cost."
+   ],
+   "answer": 2,
+   "explanation": "Ratings = 2,000 × 3 = 6,000. Time = 6,000 × 4 minutes = 24,000 minutes = 400 hours. Cost = 400 × ₹600 = ₹2,40,000, about ₹2.4 lakh. Estimates like this help a PM decide how often to run human evals and when an LLM judge is worth calibrating.",
+   "interview_tip": "AI PM interviews increasingly ask about eval costs. Quick, clean arithmetic plus a note on what the number means for eval cadence is a strong answer."
+  },
+  {
+   "id": "2026-10-28-13",
+   "topic": "Strategy",
+   "concept": "Using price elasticity to decide a price increase",
+   "difficulty": "medium",
+   "question": "A B2B invoicing tool tested a 20% price rise for new customers. Sign-ups fell 8%. Ignoring other effects, what does this suggest?",
+   "options": [
+    "Demand is fairly inelastic here, so revenue from new customers likely rises, about 10% (1.20 × 0.92 ≈ 1.10)",
+    "The test is meaningless, since price changes for new customers can't predict how revenue will move",
+    "Demand is elastic, because any drop in sign-ups means the price is above what customers will pay",
+    "Revenue is unchanged, since the higher price and the lost sign-ups cancel each other out exactly"
+   ],
+   "rationales": [
+    "Correct: elasticity is about −0.4, so revenue rises roughly 10% from new customers.",
+    "Wrong: a randomised price test on new customers is one of the best ways to estimate elasticity.",
+    "Wrong: some volume loss is expected; elasticity depends on whether the volume drop is larger than the price rise.",
+    "Wrong: an 8% loss is much smaller than a 20% gain, so they don't cancel."
+   ],
+   "answer": 0,
+   "explanation": "Price elasticity is the percentage change in quantity divided by the percentage change in price: −8% / +20% = −0.4. Below 1 in size means inelastic: the price gain outweighs the volume loss, so revenue rises by about 1.20 × 0.92 = 1.104, roughly 10%. A PM should still watch longer-term effects like churn, word of mouth and competitor response.",
+   "interview_tip": "Pricing questions reward doing the quick revenue math and then naming the second-order risks. It shows both numeracy and judgement."
+  },
+  {
+   "id": "2026-10-28-14",
+   "topic": "Strategy",
+   "concept": "Winning the core segment before horizontal expansion",
+   "difficulty": "hard",
+   "question": "Your scheduling SaaS for dental clinics has 6% share of its target market and growing churn. The CEO wants to expand into salons and gyms to grow faster. What is the strongest strategic response?",
+   "options": [
+    "Argue to deepen the dental product first—fix churn and win more share—since expansion spreads a weak position thinner",
+    "Support expanding to salons and gyms now, since a larger total market always means faster revenue growth",
+    "Propose a generic scheduling product that serves all verticals, so the team stops building dental-only features",
+    "Suggest pausing all growth work until the product reaches 50% share of the dental market before any expansion"
+   ],
+   "rationales": [
+    "Correct: it addresses the weakness first and keeps expansion as a later move from a position of strength.",
+    "Wrong: a bigger market doesn't help if the product loses users in its current one; churn will follow you.",
+    "Wrong: going generic gives up the vertical depth that is the main reason clinics choose you.",
+    "Wrong: an arbitrary 50% bar is too rigid; the point is clear signals of a strong core, not a fixed share."
+   ],
+   "answer": 0,
+   "explanation": "Low share plus rising churn means the core product hasn't yet won its first market. Expanding now splits limited resources, delays fixing churn, and takes on new competitors without an advantage. Adjacency moves work best from a strong core: high retention and share, plus assets (integrations, brand, data) that carry over. Fix the core and set clear signals for when to expand.",
+   "interview_tip": "Strategy interviewers want candidates who can push back on a leader's growth idea with evidence. Proposing expansion criteria rather than a flat 'no' shows maturity."
+  },
+  {
+   "id": "2026-10-28-15",
+   "topic": "Strategy",
+   "concept": "Economies of scope",
+   "difficulty": "easy",
+   "question": "A ride-hailing company launches food delivery using its existing drivers, app and payments system, making delivery cheaper for it than for a new entrant. What is this advantage called?",
+   "options": [
+    "Network effects",
+    "Switching costs",
+    "Economies of scale",
+    "Economies of scope"
+   ],
+   "rationales": [
+    "Wrong: network effects mean the product gets more valuable as more users join, which isn't the point here.",
+    "Wrong: switching costs are what customers lose by leaving; this is about the company's cost to serve.",
+    "Wrong: scale is about more volume of one product, not using shared assets for a new one.",
+    "Correct: the saving comes from sharing assets across different products."
+   ],
+   "answer": 3,
+   "explanation": "Economies of scope are cost savings from producing several products with shared resources. Here the drivers, app, mapping and payments serve both rides and food, so each added product is cheaper to run. Economies of scale are about lower unit costs from more volume of the same product.",
+   "interview_tip": "Knowing the difference between scale and scope helps when you argue for an adjacency. It shows you can name why your company has a cost edge."
+  },
+  {
+   "id": "2026-10-28-16",
+   "topic": "Execution",
+   "concept": "Wizard-of-Oz test before building automation",
+   "difficulty": "medium",
+   "question": "Your team wants to build an AI that automatically writes custom product bundles for a Shopify store's shoppers. Engineering estimates 3 months. How can you test whether shoppers value bundles before building it?",
+   "options": [
+    "Have staff manually create bundles behind the same interface for a small group of shoppers and measure uptake",
+    "Run a survey asking shoppers whether they would like personalised bundles when they shop on the store",
+    "Look at competitors who offer bundles and copy the approach of whichever one seems most successful",
+    "Build a simple version of the AI in one month and launch it to all shoppers to see what happens"
+   ],
+   "rationales": [
+    "Correct: it tests real demand with real behaviour and almost no engineering cost.",
+    "Wrong: surveys capture stated interest, which often doesn't match what people actually do.",
+    "Wrong: competitors have different customers and data; copying them doesn't test value for your shoppers.",
+    "Wrong: a rushed build still costs a month and a weak AI could hide whether the idea itself is valuable."
+   ],
+   "answer": 0,
+   "explanation": "In a Wizard-of-Oz test, users see what looks like the real feature while humans do the work behind the scenes. It measures real behaviour—do shoppers buy the bundles?—before investing in automation. If uptake is weak, you saved three months; if strong, you also learn which bundles work, which helps build the AI.",
+   "interview_tip": "Interviewers like candidates who de-risk value before building. Naming a Wizard-of-Oz test shows you separate 'is it wanted?' from 'can we build it?'."
+  },
+  {
+   "id": "2026-10-28-17",
+   "topic": "Execution",
+   "concept": "Making trade-offs explicit when adding roadmap items",
+   "difficulty": "easy",
+   "question": "Mid-quarter, a director asks you to add a new integration to your already full roadmap. What is the best first response?",
+   "options": [
+    "Decline the request, since the quarter's roadmap was agreed and changes would confuse the team",
+    "Add it to the backlog quietly and plan to look at it next quarter without telling the director",
+    "Show what's currently planned and ask which item should move to make room, with the impact of each option",
+    "Accept the request and ask the team to work extra hours so everything planned still ships this quarter"
+   ],
+   "rationales": [
+    "Wrong: a flat 'no' ignores that priorities can change; the director may be right that this matters more.",
+    "Wrong: quietly deferring without telling the director damages trust when they find out.",
+    "Correct: it turns the request into a clear trade-off decision with the cost of each choice laid out.",
+    "Wrong: hidden overtime isn't sustainable and makes the plan less reliable for everyone."
+   ],
+   "answer": 2,
+   "explanation": "Capacity is fixed, so new work means something else moves. Making that trade-off visible turns an add-on request into a priority decision the director can own. It respects the request, protects the team, and keeps commitments honest.",
+   "interview_tip": "This shows up in prioritisation questions. A strong answer frames 'yes, and here is what we drop' rather than yes or no."
+  },
+  {
+   "id": "2026-10-28-18",
+   "topic": "Execution",
+   "concept": "Measurable non-functional requirements in a spec",
+   "difficulty": "medium",
+   "question": "Your PRD for a new checkout page says 'the page should be fast and reliable.' Engineering asks for more. What is the best rewrite?",
+   "options": [
+    "Say the page must be as fast as possible and should never go down, so the team aims for the highest standard",
+    "Ask for the page to match a competitor's checkout speed, measured by the team testing it on office Wi-Fi",
+    "Leave performance to engineering, since speed and reliability are technical choices rather than product ones",
+    "Set targets such as p95 load under 1.5s on 4G, 99.9% monthly availability, and a payment error rate under 0.5%"
+   ],
+   "rationales": [
+    "Wrong: 'as fast as possible' and 'never down' can't be tested and give no basis for trade-offs.",
+    "Wrong: office Wi-Fi isn't how users shop, and a competitor's speed is not a clear target.",
+    "Wrong: engineers decide how; the PM should set what level of speed and reliability users need.",
+    "Correct: the targets are specific, measurable and based on realistic user conditions."
+   ],
+   "answer": 3,
+   "explanation": "Non-functional requirements need numbers to be testable and to guide trade-offs. Percentile latency on a realistic network, an availability target and an error budget define 'fast and reliable' in a way engineering can design for and QA can verify. The PM owns these because they come from user and business impact.",
+   "interview_tip": "Spec questions reward precision. Mentioning percentiles and realistic network conditions signals you can work closely with engineering."
+  },
+  {
+   "id": "2026-10-28-19",
+   "topic": "Behavioural",
+   "concept": "Countering a HiPPO opinion with a cheap test",
+   "difficulty": "medium",
+   "question": "In a review, a senior VP insists the homepage needs a large video banner, based on personal taste. Your data suggests it may slow the page. What is the best approach?",
+   "options": [
+    "Quietly delay the banner work in the hope that the VP forgets about it in a few weeks",
+    "Agree to ship it, since the VP is senior and challenging their idea in a meeting is risky for your career",
+    "Acknowledge the goal behind the idea, share the latency risk, and propose a quick A/B test to decide with data",
+    "Tell the VP in the meeting that decisions should be based on data, not opinions, and reject the idea"
+   ],
+   "rationales": [
+    "Wrong: stalling is passive-aggressive and breaks trust when it's noticed.",
+    "Wrong: shipping something you think hurts users without raising it fails your ownership of the product.",
+    "Correct: it respects the VP's intent, names the risk and moves the decision to evidence through a cheap test.",
+    "Wrong: you may be right, but lecturing a senior leader publicly damages the relationship and the decision."
+   ],
+   "answer": 2,
+   "explanation": "The 'highest-paid person's opinion' can be handled without confrontation. Find the goal behind the idea (e.g. brand impact), share the specific risk, and offer a fast test so the decision rests on evidence. This respects the VP, keeps the conversation about users, and avoids both blind compliance and a public fight.",
+   "interview_tip": "Interviewers want to see influence with respect. Turning a disagreement into a quick experiment is a classic strong move."
+  },
+  {
+   "id": "2026-10-28-20",
+   "topic": "Behavioural",
+   "concept": "Correcting an external overpromise made by another team",
+   "difficulty": "hard",
+   "question": "Two weeks before launch, you discover marketing has announced a feature to customers that your team cut from scope a month ago. Launch materials are already public. What do you do?",
+   "options": [
+    "Stay quiet, since marketing made the announcement and correcting it is their responsibility, not yours",
+    "Tell marketing and your manager at once, agree on a corrected message and timeline, and help contact affected customers",
+    "Ask the team to rush the cut feature into the launch so the public promise is kept, even with less testing",
+    "Email customers yourself to say marketing made a mistake, so they know your team wasn't at fault"
+   ],
+   "rationales": [
+    "Wrong: the customer impact affects your product; waiting for another team to notice is not ownership.",
+    "Correct: it acts fast, works with the other team, fixes the customer impact, and leads to a process fix.",
+    "Wrong: rushing a cut feature risks a buggy launch, which can hurt customers more than a late feature.",
+    "Wrong: blaming another team publicly damages trust inside and outside the company."
+   ],
+   "answer": 1,
+   "explanation": "Ownership means acting on the problem even when you didn't cause it. Raise it immediately, work with marketing on an honest correction and a realistic date, and help reach customers who may have bought on that promise. Then fix the process gap (e.g. a scope sign-off before external messaging) so it doesn't happen again.",
+   "interview_tip": "This is an Ownership / Earn Trust story. Strong answers fix the customer issue first, avoid blame, and finish with the mechanism that prevents a repeat."
+  },
+  {
+   "id": "2026-10-28-21",
+   "topic": "Behavioural",
+   "concept": "Addressing passive non-commitment after a decision",
+   "difficulty": "hard",
+   "question": "Your team agreed on an approach after a debate. One senior engineer who disagreed said they would commit, but weeks later their part is far behind and they keep raising the old concerns. What is the best action?",
+   "options": [
+    "Raise the delay in the team stand-up so peer pressure gets the engineer to deliver their part faster",
+    "Talk privately, ask what's driving the delays, re-check whether new facts justify revisiting, and agree on clear next steps",
+    "Reopen the whole decision with the team, since one person's concerns mean the original choice was weak",
+    "Reassign their work to another engineer quietly so the project stays on track without a hard conversation"
+   ],
+   "rationales": [
+    "Wrong: public pressure damages trust and doesn't uncover why the work is slow.",
+    "Correct: it addresses the behaviour directly and privately, separates new facts from old debate, and ends with clear commitments.",
+    "Wrong: reopening without new information rewards stalling and wastes the team's time.",
+    "Wrong: quietly moving work avoids the problem and leaves the engineer and the team confused."
+   ],
+   "answer": 1,
+   "explanation": "Slow delivery after 'commit' may mean the engineer still has a real concern, or that something else is blocking them. A private conversation finds out which. If there are new facts, the decision can be revisited properly; if not, you restate the decision, agree on deliverables and dates, and follow up. This handles it directly, fairly and without public pressure.",
+   "interview_tip": "This tests 'disagree and commit' from the other side. Strong answers show you can hold people to a decision while still listening for genuinely new information."
+  },
+  {
+   "id": "2026-10-28-22",
+   "topic": "AI Product",
+   "concept": "Edit distance on AI drafts as an implicit quality signal",
+   "difficulty": "medium",
+   "question": "Your AI writes first drafts of customer-support replies that agents can edit before sending. Few agents use thumbs up/down. What is the best ongoing quality signal?",
+   "options": [
+    "How many drafts the AI generates per day, since more drafts means agents rely on the feature more",
+    "How much agents edit each draft before sending, tracked by how many characters or sentences they change",
+    "The share of agents who opened the feature at least once, which shows overall reach across the team",
+    "The average length of AI drafts, since longer replies usually contain more helpful detail for customers"
+   ],
+   "rationales": [
+    "Wrong: draft volume measures usage, not whether drafts are good; agents may generate and discard many.",
+    "Correct: it captures quality from every use and shows where drafts need improvement.",
+    "Wrong: reach shows adoption but says nothing about whether drafts are useful.",
+    "Wrong: length doesn't equal quality; long drafts may need more editing."
+   ],
+   "answer": 1,
+   "explanation": "Edits are a natural, high-volume signal: if agents send drafts nearly unchanged, the AI is doing its job; heavy rewrites or deletions mean it isn't. Edit distance can be tracked per intent or customer type to find weak spots, and the edited versions become training or eval data. It avoids relying on sparse explicit feedback.",
+   "interview_tip": "AI PM interviews value implicit signals from real workflows. Mentioning that edits double as training data shows data-flywheel thinking."
+  },
+  {
+   "id": "2026-10-28-23",
+   "topic": "AI Product",
+   "concept": "Content-based features to solve item cold start in recommenders",
+   "difficulty": "easy",
+   "question": "A video app's recommender learns from views and likes. Newly uploaded videos get almost no recommendations because they have no engagement yet. What helps most?",
+   "options": [
+    "Recommend only the most popular videos so viewers always see content with proven engagement",
+    "Wait until each new video gets enough views from search before including it in recommendations",
+    "Use content features like title, tags, audio and visual embeddings to match new videos to interested viewers",
+    "Ask uploaders to pay for promotion so their new videos get the views needed to enter the system"
+   ],
+   "rationales": [
+    "Wrong: popularity-only makes the rich richer and starves new creators, hurting supply over time.",
+    "Wrong: waiting traps good new videos in a loop where they never get the views needed to be recommended.",
+    "Correct: content features let the system recommend new items before any engagement exists.",
+    "Wrong: paid promotion may help some, but it doesn't fix the system's inability to handle new items."
+   ],
+   "answer": 2,
+   "explanation": "Collaborative filtering needs interaction data, which new items lack (item cold start). Content-based signals describe the item itself, so the system can place a new video near similar ones and show it to people who liked those. Combined with some exploration traffic, this gets new videos the initial exposure they need.",
+   "interview_tip": "Cold start is a common ML-product question. Distinguishing user cold start from item cold start, and naming content features, shows clear thinking."
+  },
+  {
+   "id": "2026-10-28-24",
+   "topic": "AI Product",
+   "concept": "Resolving conflicting sources in RAG by recency and authority",
+   "difficulty": "hard",
+   "question": "An HR assistant built with RAG gives employees the old leave policy about 30% of the time, because both the 2024 and 2026 policy PDFs are in the index. What is the best fix?",
+   "options": [
+    "Tell the model in the system prompt to always give the most recent policy when it sees conflicting documents",
+    "Fine-tune the model on the 2026 policy so it learns the right answer and stops using the retrieved text",
+    "Add effective-date and status metadata, filter or rank by the current authoritative version, and retire superseded documents",
+    "Increase the number of retrieved chunks so the model always sees both versions and can choose between them"
+   ],
+   "rationales": [
+    "Wrong: the model can't reliably tell which chunk is newer if the dates aren't in the text, so the error persists.",
+    "Wrong: fine-tuning goes stale when the policy changes again and doesn't stop retrieval of the old file.",
+    "Correct: it fixes the source of the conflict and makes retrieval return only the valid version.",
+    "Wrong: showing more conflicting text increases confusion and cost without telling the model which is right."
+   ],
+   "answer": 2,
+   "explanation": "The root cause is the knowledge base: two conflicting sources with no signal about which is valid. Fixing it at the data and retrieval layer—version metadata, filtering to current documents, and removing or archiving superseded ones—stops the wrong text from reaching the model. Prompt rules help a bit, but the model often can't tell which chunk is newer from the text alone.",
+   "interview_tip": "Interviewers test whether you fix AI errors at the right layer. Saying 'this is a data problem, not a prompt problem' is the strong signal here."
+  },
+  {
+   "id": "2026-10-28-25",
+   "topic": "AI Product",
+   "concept": "ROC AUC is threshold-independent",
+   "difficulty": "easy",
+   "question": "Your fraud model has a ROC AUC of 0.92. What does this number tell you?",
+   "options": [
+    "That the model catches 92% of all fraud cases while flagging no more than 8% of legitimate ones",
+    "That 92% of the transactions the model flags as fraud will turn out to be actual fraud in production",
+    "That the model correctly classifies 92% of all transactions at the default 0.5 decision threshold",
+    "How well the model ranks fraudulent cases above legitimate ones across all thresholds, not its precision at a chosen threshold"
+   ],
+   "rationales": [
+    "Wrong: that describes one point on the ROC curve, not the area under the whole curve.",
+    "Wrong: that is precision at a threshold, which depends on the threshold and on how rare fraud is.",
+    "Wrong: that is accuracy at one threshold; AUC doesn't fix a threshold.",
+    "Correct: AUC measures ranking ability across thresholds, not performance at one operating point."
+   ],
+   "answer": 3,
+   "explanation": "AUC is the probability that a random positive gets a higher score than a random negative. It measures ranking quality across all thresholds. It doesn't tell you precision, accuracy or recall at the threshold you actually ship; with rare fraud, even a high-AUC model can have low precision. The PM still needs to pick a threshold based on the costs of misses and false alarms.",
+   "interview_tip": "Knowing what AUC doesn't tell you is the real test. Linking it to choosing a threshold by business cost shows product judgement."
+  },
+  {
+   "id": "2026-10-28-26",
+   "topic": "AI Product",
+   "concept": "Informative tool errors so agents can self-correct",
+   "difficulty": "medium",
+   "question": "Your booking agent calls a calendar API. When it passes a bad date format, the API returns just 'Error 400', and the agent often gives up or loops. What is the most effective fix?",
+   "options": [
+    "Stop the agent at the first error and hand every failed booking to a human support agent to complete",
+    "Hide all errors from the agent and silently retry the same call a few times until it eventually succeeds",
+    "Switch to a larger model, since a smarter model will guess the right date format without more information",
+    "Return clear error messages to the agent, e.g. 'date must be YYYY-MM-DD; you sent 28/10/2026', so it can retry correctly"
+   ],
+   "rationales": [
+    "Wrong: human handoff is right for real failures, not for a formatting mistake the agent could fix.",
+    "Wrong: retrying the same bad input will fail the same way and waste time and cost.",
+    "Wrong: a bigger model still can't know the API's expected format if nobody tells it.",
+    "Correct: actionable errors give the agent what it needs to fix the call itself."
+   ],
+   "answer": 3,
+   "explanation": "Agents recover from mistakes when the tool tells them what went wrong and how to fix it. A specific, actionable error message lets the model correct its input on the next try, cutting loops and failures. This is cheap to build and helps every model, unlike upgrading the model or adding human handoffs for routine errors.",
+   "interview_tip": "Agent design questions often hinge on tool interfaces. Saying 'design tool outputs for the model as the user' signals hands-on experience."
+  },
+  {
+   "id": "2026-10-28-27",
+   "topic": "Technology",
+   "concept": "Role of an API gateway",
+   "difficulty": "easy",
+   "question": "Your product has several backend services. Engineering proposes an API gateway in front of them. What is its main job?",
+   "options": [
+    "A monitoring dashboard that shows engineers how many requests each service gets each day",
+    "A testing tool that checks every service's API for bugs before new code is released to users",
+    "A database that stores data from all services in one place so they can share information easily",
+    "A single entry point that routes requests to the right service and handles shared tasks like auth and rate limiting"
+   ],
+   "rationales": [
+    "Wrong: gateways produce logs used by monitoring, but they are not a dashboard.",
+    "Wrong: API testing happens in CI tools, not in a production gateway.",
+    "Wrong: a gateway doesn't store application data; that's a database's job.",
+    "Correct: routing plus shared concerns like auth and rate limits is the gateway's role."
+   ],
+   "answer": 3,
+   "explanation": "An API gateway sits between clients and backend services. It routes each request to the right service and centralises cross-cutting concerns such as authentication, rate limiting, logging and sometimes caching. Clients get one stable address, and services don't each need to reimplement these features.",
+   "interview_tip": "Technical fluency questions check you know common building blocks. Explaining why a gateway helps (one place for auth and limits) is enough for most PM loops."
+  },
+  {
+   "id": "2026-10-28-28",
+   "topic": "Technology",
+   "concept": "Cache stampede when a hot key expires",
+   "difficulty": "medium",
+   "question": "During a big sale, the cached home-page product list expires every 60 seconds. Each time, the database briefly spikes and the site slows. What is happening, and what helps?",
+   "options": [
+    "Many requests miss the cache at once and hit the database together; let one request refresh it while others get the old copy",
+    "The cache is too small to hold the product list, so it should be replaced with a larger cache server",
+    "The database is too slow in general and needs to be replaced before the next sale to handle traffic",
+    "Users are refreshing the page too often, so the site should limit how many times each user can reload"
+   ],
+   "rationales": [
+    "Correct: it names the stampede and the standard fix of one refresher while others use the stale value.",
+    "Wrong: the item fits in the cache; the spike comes from it expiring, not from lack of space.",
+    "Wrong: the database copes fine between expiries; the problem is a burst at one moment.",
+    "Wrong: limiting users hurts the sale and doesn't stop the burst when the cache expires."
+   ],
+   "answer": 0,
+   "explanation": "When a popular cached item expires, thousands of requests miss at the same moment and all query the database—a cache stampede. Fixes include letting a single request rebuild the value (a lock) while others are served the stale copy, refreshing just before expiry, or adding random jitter to expiry times.",
+   "interview_tip": "A PM doesn't need to implement this, but recognising the pattern behind periodic spikes helps in incident discussions and system-design rounds."
+  },
+  {
+   "id": "2026-10-28-29",
+   "topic": "Growth",
+   "concept": "Bootstrapping a social graph via contact import at onboarding",
+   "difficulty": "medium",
+   "question": "A new social expense-splitting app finds users who add at least two friends in week one retain far better. Most new users add none. What is the best onboarding change?",
+   "options": [
+    "Give users who add friends a cash reward, paid immediately, for every friend they add",
+    "Require users to upload their full contact list before they can see any part of the app",
+    "Offer contact sync after explaining the benefit, show which friends already use the app, and make inviting others one tap",
+    "Send push notifications every day to users with no friends reminding them to add some"
+   ],
+   "rationales": [
+    "Wrong: paying per friend invites fake or low-quality connections and is expensive.",
+    "Wrong: forcing contact upload is a privacy red flag and causes many users to leave.",
+    "Correct: it makes finding and inviting friends easy and clear, which directly targets the activation gap.",
+    "Wrong: daily nags without making the task easier create fatigue and opt-outs."
+   ],
+   "answer": 2,
+   "explanation": "The product is useless without friends on it, so onboarding should help users find them fast. Explaining why you need contacts improves opt-in; showing friends already on the app gives instant value; easy invites grow the graph. This addresses the activation gap while respecting privacy. (The friend-retention link may be partly correlation, so test the change.)",
+   "interview_tip": "Growth questions reward linking activation to the product's core value. Noting that the retention correlation needs testing shows rigour."
+  },
+  {
+   "id": "2026-10-28-30",
+   "topic": "Current Events",
+   "concept": "Sweden Government Offices Copilot-only AI policy (Oct 2026)",
+   "difficulty": "easy",
+   "question": "From 26 October 2026, Sweden's Government Offices blocked ChatGPT and Claude on staff computers and kept Microsoft Copilot as the approved AI tool. What reason did officials give?",
+   "options": [
+    "Cost: Copilot was cheaper per seat than other assistants, so the offices chose it to cut their software budget",
+    "Accuracy: tests showed ChatGPT and Claude gave more wrong answers on Swedish government questions",
+    "Information security: using AI services without a formal agreement on data handling was seen as a risk, and only Copilot passed review",
+    "Language: only Copilot supported Swedish fully, so the other assistants were blocked for staff"
+   ],
+   "rationales": [
+    "Wrong: reports did not cite price as the reason for the decision.",
+    "Wrong: no accuracy test was given as the reason; the issue was data handling and contracts.",
+    "Correct: the stated reason was information security and the lack of formal agreements for the other services.",
+    "Wrong: language support was not the stated reason for blocking the tools."
+   ],
+   "answer": 2,
+   "explanation": "Officials cited information security: using AI services without a formal contract could have consequences, including around sensitive information staff entered. Copilot had been through a security review, after which its settings were tightened; ChatGPT and Claude had not. The PM lesson: in enterprise and government sales, contracts, data-handling terms and security reviews often decide adoption more than model quality, which favours vendors already inside the customer's procurement.",
+   "interview_tip": "For enterprise AI strategy questions, mention that trust, compliance and existing contracts are a major distribution moat—often bigger than model benchmarks.",
+   "source": "https://decrypt.co/381763/sweden-government-offices-block-chatgpt-claude"
+  }
+ ]
+}

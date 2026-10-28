@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-28",
+   "theme": "Search reformulations, cache stampedes & Sweden's Copilot-only rule",
+   "count": 30
+  },
+  {
    "date": "2026-10-27",
    "theme": "Read receipts, flanker brands & eval noise",
    "count": 30
