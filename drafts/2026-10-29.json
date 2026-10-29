@@ -1,0 +1,513 @@
+{"date": "2026-10-29", "theme": "Exploration slots, false deflection & GPT-6.1 Terra's real cost", "questions": [
+{"topic": "Product Sense", "concept": "Bulk actions for power users managing many items", "difficulty": "medium",
+ "question": "Shopify merchants with 3,000+ products say updating prices before a festive sale takes them a whole weekend, editing one product page at a time. What should the PM prioritise building?",
+ "options": [
+  "A bulk editor that lets merchants filter products and change prices for many items at once, with a preview before saving",
+  "A redesigned single-product page with larger fields and fewer clicks so each individual price edit is faster",
+  "A help-centre article and video that teaches merchants keyboard shortcuts for moving quickly between product pages",
+  "An AI assistant that writes better product descriptions so the merchant's listings convert more during the sale"
+ ],
+ "answer": 0,
+ "explanation": "The pain scales with item count: any per-item flow, however polished, still costs time times 3,000. Power users need operations on sets (filter, select, apply, preview). The preview matters because a bulk mistake is also bulk, so the design must make errors visible before they ship.",
+ "rationales": [
+  "Correct: it changes the cost from per-item to per-batch, which is the real problem, and the preview guards against costly mass errors.",
+  "Wrong: a faster single edit still has to be done thousands of times. It shaves seconds off a problem measured in days.",
+  "Wrong: education helps marginally but leaves the underlying one-at-a-time workflow in place.",
+  "Wrong: it solves a different problem. Merchants asked for speed in updating prices, not better copy."
+ ],
+ "interview_tip": "Interviewers like candidates who notice when a segment's pain scales with volume. Naming 'operations on sets, with a preview and undo' shows you think about power users and failure modes together."},
+{"topic": "Product Sense", "concept": "Vacation mode to pause listings without losing ranking", "difficulty": "medium",
+ "question": "On a handmade-goods marketplace, many small sellers delete their shops when they travel or fall ill for a few weeks, then struggle to regain visibility when they return. What is the best product response?",
+ "options": [
+  "Offer a vacation mode that hides listings or shows a return date while preserving the shop's reviews and search standing",
+  "Penalise sellers who go inactive so that active sellers rank higher and buyers always see in-stock shops first",
+  "Send sellers weekly reminder emails while they are away so they remember to come back to the marketplace sooner",
+  "Let buyers keep ordering while the seller is away and automatically refund any orders not shipped within ten days"
+ ],
+ "answer": 0,
+ "explanation": "The sellers' real need is a temporary pause, but the product only offers 'on' or 'deleted'. A pause state with a visible return date sets buyer expectations and keeps the reputation the seller earned. This protects supply, which is usually the hard side to rebuild in a niche marketplace.",
+ "rationales": [
+  "Correct: it gives sellers the missing 'pause' option, protects buyer experience with clear expectations, and retains scarce supply.",
+  "Wrong: punishing short breaks pushes more sellers to delete or leave, shrinking the supply the marketplace depends on.",
+  "Wrong: reminders don't fix the problem. The issue is that being away costs them their visibility, not that they forget.",
+  "Wrong: accepting orders that will likely be refunded creates bad buyer experiences and damages trust in the platform."
+ ],
+ "interview_tip": "A strong answer spots the binary-state gap (active vs deleted) and adds the missing middle state. Mention the buyer side too: a return date keeps the experience honest for both sides."},
+{"topic": "Product Sense", "concept": "Exploration slots to avoid recommendation filter bubbles", "difficulty": "hard",
+ "question": "A short-video app's feed is highly personalised. Session time is healthy, but surveys show long-time users feel the feed has become 'the same five things', and 90-day retention for that cohort is slipping. What is the best product change to test?",
+ "options": [
+  "Reserve a small share of feed slots for content outside the user's usual interests, and learn from how they respond to it",
+  "Increase personalisation strength further so every video matches the user's top interests even more precisely",
+  "Add a large 'reset my feed' button on the home screen that wipes the user's history and starts over from scratch",
+  "Show more videos from accounts the user already follows, since they chose those accounts deliberately themselves"
+ ],
+ "answer": 0,
+ "explanation": "Pure exploitation optimises the next swipe but narrows the feed until it feels stale, which hurts long-term retention. A controlled exploration budget brings in novelty and also gives the model new signal about interests the user hasn't shown yet. The share can be tuned by measuring retention and satisfaction, not just short-term watch time.",
+ "rationales": [
+  "Correct: it trades a little short-term relevance for novelty and new learning signal, directly addressing staleness and long-term retention.",
+  "Wrong: this deepens the filter bubble that is causing the complaint. It may lift session time briefly while retention keeps falling.",
+  "Wrong: a full reset throws away useful history and is a blunt tool most users won't use. The problem is narrowness, not bad data.",
+  "Wrong: followed accounts are an even narrower pool than the current feed, so this likely makes the sameness worse."
+ ],
+ "interview_tip": "This is the explore-exploit trade-off in product form. Strong candidates say what they'd measure (long-term retention, 'feed feels fresh' surveys) rather than only session time."},
+{"topic": "Product Sense", "concept": "Sensitive-content controls in automatic memory resurfacing", "difficulty": "hard",
+ "question": "A photo app's 'On this day' memories drive strong engagement, but a growing number of support tickets come from users shown photos of an ex-partner or a pet that has died. What is the best way to improve the feature?",
+ "options": [
+  "Let users hide specific people, pets or date ranges from memories, and offer that control right on the memory card itself",
+  "Turn the memories feature off by default for everyone so that no user is ever shown an upsetting photo without opting in",
+  "Train a model to detect sad photos and quietly remove them, without giving users any visible settings to manage",
+  "Keep the feature as it is, since total engagement is up and only a small share of users have complained about it"
+ ],
+ "answer": 0,
+ "explanation": "Automatic resurfacing is valuable for most users but painful in predictable cases. The fix is user control at the moment of pain: a 'don't show me this person/time' option on the card itself, plus a settings page. This keeps the delight for most people while giving those affected a quick, dignified way out.",
+ "rationales": [
+  "Correct: it keeps the feature's value and gives affected users precise, easy-to-find control exactly when they need it.",
+  "Wrong: switching it off for everyone removes value from the majority to protect a minority who could be served with targeted controls.",
+  "Wrong: a model can't know which photos are painful to a given person (an ex looks like any friend), and silent removal gives no recourse.",
+  "Wrong: these harms are emotionally severe and erode trust in the product. Low complaint volume understates how many users are affected."
+ ],
+ "interview_tip": "Interviewers probe whether you weigh severity, not just frequency. Strong answers protect the majority experience while giving the hurt minority control at the point of harm."},
+{"topic": "Metrics", "concept": "Pickup ETA change behind rising driver cancellations", "difficulty": "hard",
+ "question": "A ride-hailing app's driver cancellation rate rose from 8% to 12% the week after a new dispatch algorithm launched. Demand, driver supply and app versions look unchanged. What should the PM check first?",
+ "options": [
+  "Whether the new algorithm is matching drivers to riders farther away, by comparing pickup distance before and after launch",
+  "Whether riders are leaving more negative reviews of drivers, which might be discouraging drivers from accepting trips",
+  "Whether competitor apps raised driver incentives that week, pulling drivers away from the platform at peak hours",
+  "Whether the cancellation metric's dashboard has a query bug, since a 50% jump in one week seems too large to be real"
+ ],
+ "answer": 0,
+ "explanation": "The timing points at the dispatch change, and the most direct mechanism is pickup distance: longer unpaid trips to the rider make drivers more likely to cancel. Comparing pickup distance and ETA distributions before and after, and cancellations by pickup distance, would confirm or rule it out quickly. Supply is unchanged, which weakens competitor explanations.",
+ "rationales": [
+  "Correct: it tests the most likely mechanism linked to the only change that week, with data the team already has.",
+  "Wrong: reviews could matter, but nothing ties them to this week's change. It skips the obvious launch-related cause.",
+  "Wrong: supply is unchanged, so drivers aren't leaving. An external incentive shift would also not fit the precise launch timing.",
+  "Wrong: checking data quality is reasonable, but a real product change landed that week with a plausible mechanism, so test that first."
+ ],
+ "interview_tip": "In root-cause questions, start from what changed and name the mechanism linking it to the metric. Saying 'cut cancellations by pickup distance' shows you can turn a hypothesis into a quick check."},
+{"topic": "Metrics", "concept": "Gross revenue retention caps at 100%", "difficulty": "medium",
+ "question": "A B2B SaaS company reports net revenue retention of 118% and gross revenue retention of 84%. What does the gap between these two numbers tell you?",
+ "options": [
+  "Existing customers are churning or downgrading meaningfully, but expansion from the rest more than makes up for it",
+  "The company is losing almost no revenue from existing customers, so churn is not a problem worth investigating",
+  "New customer acquisition is strong this year, which is why net revenue retention is higher than gross retention",
+  "The two metrics use different time periods, so the gap simply reflects timing rather than customer behaviour"
+ ],
+ "answer": 0,
+ "explanation": "GRR counts only losses (churn and downgrades) and is capped at 100%. NRR adds expansion from the same customers. Here 16% of starting revenue is lost each year, but upsells add about 34%. The headline 118% is healthy, yet the 84% GRR shows a churn problem that expansion is hiding.",
+ "rationales": [
+  "Correct: GRR of 84% means 16% of revenue leaked away; NRR above 100% means expansion from remaining customers covers it.",
+  "Wrong: this misreads NRR. A 16% gross loss is significant and is masked by expansion revenue.",
+  "Wrong: both metrics exclude new customers. They measure only the revenue from customers who existed at the start of the period.",
+  "Wrong: they are normally computed over the same cohort and period. The gap reflects expansion vs losses, not timing."
+ ],
+ "interview_tip": "For B2B roles, quoting both NRR and GRR shows maturity. Strong candidates note that expansion can mask churn and ask which segment is churning."},
+{"topic": "Metrics", "concept": "Cart abandonment rate calculation", "difficulty": "easy",
+ "question": "An Indian D2C skincare site had 10,000 sessions where a product was added to cart. 2,500 of those sessions completed a purchase. What is the cart abandonment rate?",
+ "options": [
+  "75%, because 7,500 of the 10,000 carts created did not result in a completed purchase",
+  "25%, because 2,500 of the 10,000 carts created ended up turning into a completed purchase",
+  "33%, because 2,500 purchases divided by the 7,500 abandoned carts gives the ratio",
+  "300%, because 7,500 abandoned carts divided by the 2,500 completed purchases gives the ratio"
+ ],
+ "answer": 0,
+ "explanation": "Cart abandonment rate = 1 − (completed purchases ÷ carts created) = 1 − 2,500/10,000 = 75%. The denominator is carts created, not purchases. Typical e-commerce abandonment is high (often around 70%), so the trend and the reasons (surprise shipping fees, forced sign-up, payment failures) matter more than the absolute level.",
+ "rationales": [
+  "Correct: 7,500 abandoned out of 10,000 carts created is 75%.",
+  "Wrong: 25% is the cart-to-purchase conversion rate, the opposite of abandonment.",
+  "Wrong: dividing purchases by abandoned carts mixes the numerator and denominator into a meaningless ratio.",
+  "Wrong: a rate of carts abandoned cannot exceed 100%; the denominator must be total carts, not purchases."
+ ],
+ "interview_tip": "Simple definitions are a warm-up in analytical rounds. Getting the denominator right quickly, then asking what causes abandonment, signals both precision and curiosity."},
+{"topic": "Metrics", "concept": "North Star for a developer payments API", "difficulty": "medium",
+ "question": "You are PM for a payments API that developers integrate into their apps. Which metric best serves as the product's North Star?",
+ "options": [
+  "Total value of successful payments processed through the API each month across all integrated merchants",
+  "Number of developers who signed up for an API key and created a sandbox account each month",
+  "Number of API calls received per month, including authentication, lookups and failed requests",
+  "Average page views on the API documentation site per developer visit during the month"
+ ],
+ "answer": 0,
+ "explanation": "A North Star should capture the core value delivered and link to revenue. For a payments API, value is delivered when real money moves successfully for merchants, and revenue is usually a percentage of it. Signups and docs traffic are early-funnel inputs; raw API calls can rise because of retries or errors.",
+ "rationales": [
+  "Correct: successful payment volume reflects real value to merchants and their customers, and it drives revenue directly.",
+  "Wrong: signups are a top-of-funnel input. Many sandbox users never go live, so it doesn't measure value delivered.",
+  "Wrong: call volume includes errors and retries. It can rise when the product gets worse, so it's a misleading North Star.",
+  "Wrong: docs page views measure interest or confusion, not value. More views could even mean the docs are unclear."
+ ],
+ "interview_tip": "When asked for a North Star, tie it to the moment users get value and to how the business earns. Then mention one or two input metrics like activation (first live payment)."},
+{"topic": "Experimentation", "concept": "Checking pre-experiment balance on key metrics", "difficulty": "medium",
+ "question": "Before reading an A/B test's results, an analyst notices that users in the treatment group had 6% higher average spend than control in the four weeks before the test started. The split itself was 50/50. What should the team do?",
+ "options": [
+  "Investigate the assignment for bias and adjust for the pre-period difference before trusting any measured lift",
+  "Ignore it, since randomisation guarantees the groups are identical and pre-test behaviour doesn't affect results",
+  "Report the full treatment lift as measured, since the pre-period difference will average out by the end of the test",
+  "Stop all experimentation on the platform until the engineering team rebuilds the randomisation service from scratch"
+ ],
+ "answer": 0,
+ "explanation": "Randomisation should make groups similar before treatment. A large pre-period gap suggests a bug in assignment (or a rare unlucky draw), and either way it can masquerade as treatment lift. Check how users were bucketed, and use pre-period data (for example with CUPED or difference-in-differences) to adjust the estimate.",
+ "rationales": [
+  "Correct: an imbalance before treatment threatens validity, so check for an assignment bug and adjust the estimate for it.",
+  "Wrong: randomisation makes groups balanced in expectation, not guaranteed. A 6% pre-period gap is a red flag worth checking.",
+  "Wrong: a persistent baseline difference does not average out; it gets counted as lift and inflates the result.",
+  "Wrong: this overreacts. One imbalance calls for investigation of this test, not shutting down all experiments."
+ ],
+ "interview_tip": "Mentioning pre-period balance checks, alongside sample ratio mismatch, shows you validate experiments before reading results, a habit interviewers at Meta and Google look for."},
+{"topic": "Experimentation", "concept": "Full factorial design for testing two changes at once", "difficulty": "medium",
+ "question": "A team wants to test a new checkout button colour and a new free-shipping message, and suspects the two might interact. What experiment design lets them measure each change and their interaction?",
+ "options": [
+  "A 2×2 factorial test with four groups: neither change, button only, message only, and both changes together",
+  "Two separate sequential A/B tests, first the button change for two weeks and then the message change afterwards",
+  "A single A/B test where the treatment group receives both changes together and the control receives neither",
+  "Launch both changes to everyone and compare overall conversion with the same weeks from the previous year"
+ ],
+ "answer": 0,
+ "explanation": "A factorial design randomises users into every combination, so you can estimate each change's main effect and whether combining them works better or worse than the sum of the parts. It uses traffic efficiently because each user contributes to both comparisons. The trade-off is that detecting interactions needs more sample.",
+ "rationales": [
+  "Correct: covering all four combinations separates each effect and reveals any interaction between them.",
+  "Wrong: sequential tests are slower and can't measure interaction, and time differences between periods add noise.",
+  "Wrong: bundling both changes measures only their combined effect; you can't tell which change drove it.",
+  "Wrong: a year-over-year comparison has no control group and is confounded by seasonality and many other changes."
+ ],
+ "interview_tip": "Knowing when to use factorial designs shows experiment literacy beyond basic A/B. Mention the traffic cost of detecting interactions to show judgement."},
+{"topic": "Estimation", "concept": "Annual tempered-glass screen protector sales in India", "difficulty": "medium",
+ "question": "Estimate annual tempered-glass screen protector sales in India. Assume 700 million smartphone users, 60% of them use a screen protector, and each of those users replaces it about twice a year (cracks, scratches or a new phone). Which estimate is closest?",
+ "options": [
+  "About 840 million units a year",
+  "About 84 million units a year",
+  "About 420 million units a year",
+  "About 2.5 billion units a year"
+ ],
+ "answer": 0,
+ "explanation": "Users with protectors: 700M × 60% = 420M. Replacements: 420M × 2 per year ≈ 840M units. This is a replacement-cycle model: installed base × adoption × purchase frequency. In an interview you would sanity-check frequency (rough handling and cheap protectors push it up) and note that new-phone purchases are already captured in the replacement rate.",
+ "rationales": [
+  "Correct: 700M × 0.6 × 2 ≈ 840M units.",
+  "Wrong: this is off by a factor of ten, a slip in the multiplication.",
+  "Wrong: this counts users with protectors but forgets they buy about two a year.",
+  "Wrong: this would imply about six protectors per user per year, far above the stated replacement rate."
+ ],
+ "interview_tip": "State the structure (base × adoption × frequency) before doing the arithmetic. Interviewers grade the method and your sanity check more than the final number."},
+{"topic": "Estimation", "concept": "One-time embedding cost for a document corpus", "difficulty": "medium",
+ "question": "A company wants to embed its 2 million support documents for semantic search. Documents average 1,500 tokens, and the embedding model costs $0.02 per million tokens. Roughly what will the one-time embedding cost be?",
+ "options": [
+  "About $60",
+  "About $600",
+  "About $6,000",
+  "About $6"
+ ],
+ "answer": 0,
+ "explanation": "Total tokens = 2M docs × 1,500 = 3 billion tokens = 3,000 million tokens. Cost = 3,000 × $0.02 = $60. Embedding is usually cheap; the bigger costs in a RAG system tend to be vector storage, re-embedding when models change, and the LLM generation calls at query time.",
+ "rationales": [
+  "Correct: 3,000 million tokens × $0.02 per million = $60.",
+  "Wrong: this is ten times too high, likely from treating 3 billion tokens as 30,000 million.",
+  "Wrong: this is a hundred times too high and would wrongly suggest embedding is the main cost driver.",
+  "Wrong: this is ten times too low, likely from dropping a zero when converting billions to millions."
+ ],
+ "interview_tip": "AI PM interviews increasingly include cost maths. Showing the unit conversion clearly, then noting where the real costs sit, signals you can reason about AI unit economics."},
+{"topic": "Strategy", "concept": "Supplier power of model providers over AI applications", "difficulty": "medium",
+ "question": "An AI writing startup depends on a single frontier model provider, which has just raised prices and launched a competing writing feature of its own. In Porter's Five Forces terms, what is the main strategic problem?",
+ "options": [
+  "High supplier power: one critical supplier can squeeze its margins and also compete with it directly",
+  "High buyer power: its customers can negotiate lower prices because writing tools are widely available",
+  "High threat of new entrants: low barriers mean many new startups can launch similar writing tools easily",
+  "High rivalry: existing writing tools compete aggressively on price and features in a crowded market"
+ ],
+ "answer": 0,
+ "explanation": "The startup's key input comes from one supplier that controls pricing and has moved forward into the startup's market. That is classic supplier power, worsened by forward integration. Responses include supporting multiple models, building value the supplier can't easily copy (workflow, data, distribution), and negotiating volume terms.",
+ "rationales": [
+  "Correct: a single critical supplier raising prices and integrating forward is the definition of strong supplier power.",
+  "Wrong: buyer power may exist, but the scenario's new problem comes from the supplier, not customers.",
+  "Wrong: new entrants are a real force for AI apps, but they don't explain the price rise and competing feature.",
+  "Wrong: rivalry among peers isn't what's described; the threat comes from the startup's own supplier."
+ ],
+ "interview_tip": "Applying a framework to a live situation (AI app vs model provider) shows strategic fluency. Follow with concrete mitigations like multi-model support."},
+{"topic": "Strategy", "concept": "Value-based pricing vs cost-plus pricing", "difficulty": "easy",
+ "question": "A B2B tool saves each customer's finance team about ₹20 lakh a year in manual work, and costs about ₹1 lakh per customer per year to serve. The team prices it at cost plus 30% (₹1.3 lakh). What is the main issue with this approach?",
+ "options": [
+  "It ignores the value delivered, leaving a lot of willingness to pay unused; pricing should anchor on customer value",
+  "It is too expensive, because customers compare it with free spreadsheets and will refuse to pay anything above cost",
+  "It makes the company unprofitable, because a 30% margin can never cover sales and support costs in B2B",
+  "It is illegal in most markets to price a product far above what it costs the company to produce and deliver"
+ ],
+ "answer": 0,
+ "explanation": "Cost-plus pricing sets a floor, not a target. When a product saves ₹20 lakh, customers would rationally pay much more than ₹1.3 lakh. Value-based pricing captures a fair share of the value created (often 10–30%), funding growth while still leaving customers far ahead.",
+ "rationales": [
+  "Correct: price is anchored on cost rather than the ₹20 lakh of value, leaving large willingness to pay untapped.",
+  "Wrong: spreadsheets exist, but the ₹20 lakh savings show customers get far more value than ₹1.3 lakh.",
+  "Wrong: profitability depends on all costs, but the bigger issue is underpricing relative to value, not the margin maths.",
+  "Wrong: pricing well above cost is normal and legal in software; value-based pricing is standard practice."
+ ],
+ "interview_tip": "In pricing questions, starting from customer value (and checking with willingness-to-pay research) signals business judgement. Mention cost only as the floor."},
+{"topic": "Strategy", "concept": "Super-app cross-selling to spread acquisition cost", "difficulty": "hard",
+ "question": "An Indian payments app with 300 million users is considering adding insurance, loans and travel booking. Specialist apps in each category have better products. What is the strongest strategic argument for expanding anyway?",
+ "options": [
+  "It already pays to acquire and engage these users, so cross-selling spreads that cost across more revenue lines than specialists can",
+  "Being in more categories automatically produces network effects, since each new service makes payments more valuable to all users",
+  "Specialists will exit once a large app enters, so the payments app will win each category regardless of product quality",
+  "Regulators favour large apps offering many services, so expansion will mainly reduce the company's compliance burden"
+ ],
+ "answer": 0,
+ "explanation": "The super-app logic is economies of scope in distribution: frequent, trusted payments usage creates cheap reach and data for cross-selling. A specialist must pay full acquisition cost for each customer, while the super-app's marginal cost is low. The risk is that weaker products convert poorly, so it needs 'good enough' quality and contextual placement.",
+ "rationales": [
+  "Correct: shared acquisition and engagement cost lets the super-app earn more per user at a lower marginal cost than specialists.",
+  "Wrong: adding categories doesn't create network effects by itself; more users of insurance don't make payments better for others.",
+  "Wrong: entry doesn't guarantee winning. Specialists with better products often hold on, especially in high-consideration categories.",
+  "Wrong: financial services usually add regulatory burden; each category brings its own licensing and compliance."
+ ],
+ "interview_tip": "Strong strategy answers separate distribution advantages from network effects. Naming the risk (weaker products) and how to mitigate it shows balanced judgement."},
+{"topic": "Execution", "concept": "Dual-track agile: discovery and delivery", "difficulty": "easy",
+ "question": "A team keeps building features that ship on time but go unused. Their PM proposes 'dual-track agile'. What does this practice involve?",
+ "options": [
+  "Running continuous discovery to validate problems and ideas in parallel with delivery work that builds validated items",
+  "Splitting the engineering team into two groups that build the same feature independently and ship the better version",
+  "Running two sprints at the same time with different lengths so urgent bugs and planned features never collide",
+  "Maintaining separate roadmaps for executives and engineers so each audience sees the level of detail it needs"
+ ],
+ "answer": 0,
+ "explanation": "Dual-track agile pairs a discovery track (interviews, prototypes, tests that check value and usability) with a delivery track (building what passed discovery). It keeps the team learning about what to build while still shipping, reducing the risk of building unused features.",
+ "rationales": [
+  "Correct: discovery and delivery run side by side, so only validated ideas reach the build queue.",
+  "Wrong: building the same thing twice wastes capacity and isn't what dual-track means.",
+  "Wrong: this describes a scheduling trick for interrupts, not the discovery-plus-delivery model.",
+  "Wrong: audience-specific roadmaps are a communication practice, unrelated to dual-track agile."
+ ],
+ "interview_tip": "When asked how you avoid building the wrong thing, describing continuous discovery alongside delivery shows you manage value risk, not just schedule risk."},
+{"topic": "Execution", "concept": "Committed vs aspirational OKRs", "difficulty": "easy",
+ "question": "At a company that uses Google-style OKRs, a team hits 0.6 on an aspirational key result and 0.6 on a committed key result. How should these scores be read?",
+ "options": [
+  "The aspirational result is a reasonable outcome, but the committed one is a miss that needs a clear explanation",
+  "Both results are equally good, because 0.6 to 0.7 is always the target range for every type of key result",
+  "Both results are failures, because any key result scored below 1.0 means the team did not meet its goal",
+  "The committed result is fine, but the aspirational one is a failure because stretch goals must be fully met"
+ ],
+ "answer": 0,
+ "explanation": "Committed OKRs are promises the team plans around and should hit fully (1.0). Aspirational OKRs are deliberate stretches where around 0.6–0.7 is a normal outcome. Mixing the two leads either to sandbagging or to missed commitments that other teams depended on.",
+ "rationales": [
+  "Correct: 0.6 is healthy for a stretch goal but a shortfall for a commitment others relied on.",
+  "Wrong: the 0.6–0.7 'sweet spot' applies only to aspirational key results, not committed ones.",
+  "Wrong: treating stretch goals as pass/fail at 1.0 discourages ambitious goal-setting.",
+  "Wrong: this reverses the logic; committed results must be met, stretch results needn't be."
+ ],
+ "interview_tip": "Knowing the difference shows you set goals that others can depend on while still aiming high, a common Google interview probe on planning."},
+{"topic": "Execution", "concept": "Decoupling deployment from release for a fixed marketing date", "difficulty": "medium",
+ "question": "A feature must go live at 10 AM during a big launch event. Engineering worries that deploying new code during the event is risky. What is the best execution approach?",
+ "options": [
+  "Deploy the code days earlier behind a feature flag, test it in production internally, and switch it on at 10 AM",
+  "Deploy the full code change at exactly 10 AM so the feature appears precisely when the presenter announces it",
+  "Move the launch event to a later date so engineering can deploy without any time pressure on the day",
+  "Ask the presenter to demo a recorded video and make the feature available a week after the event ends"
+ ],
+ "answer": 0,
+ "explanation": "Separating deploy (code reaches production) from release (users see it) removes risk from the launch moment. The code is already running and tested; at 10 AM only a flag flips, which is fast and easy to reverse. This is standard practice for launches tied to events.",
+ "rationales": [
+  "Correct: it de-risks the event by shipping early, validating in production and releasing with a reversible flag flip.",
+  "Wrong: deploying under a spotlight concentrates risk at the worst moment, with no time to recover from problems.",
+  "Wrong: moving a public event is costly and unnecessary when the risk can be engineered away.",
+  "Wrong: it undermines the launch and isn't needed; feature flags let the real feature go live on time."
+ ],
+ "interview_tip": "Explaining 'deploy early, release with a flag' shows you understand how launches are de-risked in practice, a frequent topic in execution rounds."},
+{"topic": "Behavioural", "concept": "Validating secondhand requirements relayed by sales", "difficulty": "hard",
+ "question": "A senior sales leader insists that a top enterprise prospect 'needs' a custom reporting dashboard to sign, and sends you a detailed spec. Your team could build it in six weeks. What is the best first step?",
+ "options": [
+  "Ask to join a call with the prospect's actual users to understand the decision they need the report for, before committing",
+  "Start building the dashboard immediately, since a top prospect's signature is at stake and sales knows the account best",
+  "Decline the request because the roadmap is already set and one-off custom work slows down the core product",
+  "Escalate to your VP to decide whether sales or product should own customer requirements for enterprise deals"
+ ],
+ "answer": 0,
+ "explanation": "Secondhand requirements are often a solution guessed by someone in the middle. Talking to the users reveals the underlying need, which might be met by an existing export, a smaller change, or a feature that helps many customers. It also shows sales you're taking the deal seriously rather than blocking it.",
+ "rationales": [
+  "Correct: going to the source uncovers the real need and often a cheaper, more broadly useful solution, while supporting the deal.",
+  "Wrong: building to a relayed spec risks six weeks on the wrong thing; the stated solution may not be what users need.",
+  "Wrong: refusing without understanding the need damages the sales relationship and may lose a real opportunity.",
+  "Wrong: escalating before even exploring the need turns a solvable problem into a turf fight."
+ ],
+ "interview_tip": "Amazon's Customer Obsession and Dive Deep show up here. Strong stories show you went to the real customer and found a better solution than the one handed to you."},
+{"topic": "Behavioural", "concept": "Choosing a frugal reuse over a new build", "difficulty": "hard",
+ "question": "Your team plans a new notification service for a feature, estimated at one quarter of work. You discover another team's existing messaging platform could meet 85% of the need with a two-week integration. Which approach best shows strong judgement?",
+ "options": [
+  "Propose using the existing platform, confirm the missing 15% with users and the owning team, and plan around the gaps",
+  "Build the new service anyway, since owning the full stack gives your team more control and fewer dependencies",
+  "Quietly copy the other team's code into your own repository so you get the speed without depending on them",
+  "Pause the feature until leadership decides on a single company-wide messaging strategy for every team"
+ ],
+ "answer": 0,
+ "explanation": "Reusing a working system saves about ten weeks of effort. The responsible move is to check whether the missing 15% matters to users, agree support expectations with the owning team, and decide whether to fill gaps later. This reflects Amazon's Frugality and Invent and Simplify principles.",
+ "rationales": [
+  "Correct: it captures most of the value at a fraction of the cost and handles the gaps and dependency explicitly.",
+  "Wrong: control is a valid concern but rarely worth a quarter of work when a proven platform exists; this needs evidence, not preference.",
+  "Wrong: forking code creates a hidden, unmaintained duplicate and damages trust with the other team.",
+  "Wrong: waiting for a company-wide strategy stalls delivery over a decision that isn't needed to move forward."
+ ],
+ "interview_tip": "Frugality stories land best when you show the trade-off you accepted and how you managed the dependency, not just that you saved time."},
+{"topic": "Behavioural", "concept": "Responding to public user backlash after a launch", "difficulty": "hard",
+ "question": "You launched a redesign of a popular app's home screen. Within hours, thousands of users post angry complaints on social media, though early metrics show only a small dip in engagement. What is the best response?",
+ "options": [
+  "Acknowledge the feedback publicly, sort complaints into real usability issues versus change aversion, and fix or roll back based on evidence",
+  "Ignore the complaints, since change aversion always fades and engagement metrics show the redesign is mostly fine",
+  "Roll back the redesign immediately to stop the backlash, then decide later whether to try launching it again",
+  "Ask the comms team to post that the redesign is based on extensive research and that users will get used to it"
+ ],
+ "answer": 0,
+ "explanation": "Backlash mixes change aversion (which fades) with real problems (which don't). Acknowledging users quickly preserves trust; categorising complaints and checking metrics by segment tells you which is which. Then act on evidence: fix specific issues, add a way back for key workflows, or roll back if harm is real.",
+ "rationales": [
+  "Correct: it respects users, separates real issues from change aversion, and lets evidence decide the response.",
+  "Wrong: some complaints may point to real usability problems, and silence damages trust even when change aversion is part of it.",
+  "Wrong: an instant rollback lets noise decide and may discard a better design without understanding the issues.",
+  "Wrong: a defensive message dismisses users' concerns and usually makes backlash worse."
+ ],
+ "interview_tip": "Interviewers look for calm, structured responses under pressure. Show that you listened, diagnosed with data, and acted, rather than either caving or dismissing."},
+{"topic": "AI Product", "concept": "Model cards to document intended use and limitations", "difficulty": "easy",
+ "question": "Your team is releasing an internal ML model that flags risky loan applications for other teams to use. What is the main purpose of publishing a model card with it?",
+ "options": [
+  "To document intended uses, training data, performance across groups and known limitations so others use it appropriately",
+  "To provide marketing copy that explains the model's benefits to customers in simple, non-technical language",
+  "To give legal a signed record that the model is fully accurate and free of bias for all possible use cases",
+  "To store the model's weights and code in a format that other teams can download and retrain on their data"
+ ],
+ "answer": 0,
+ "explanation": "A model card is short documentation that tells users what the model is for, how it was trained and evaluated, how it performs across relevant slices, and where it shouldn't be used. It prevents misuse, such as applying a model built for one population or decision to another.",
+ "rationales": [
+  "Correct: it documents purpose, data, sliced performance and limits so downstream teams make informed decisions.",
+  "Wrong: model cards are for technical transparency, not marketing.",
+  "Wrong: no model is fully accurate or bias-free; a model card discloses limitations rather than certifying perfection.",
+  "Wrong: storing weights is a model registry's job; a model card describes the model rather than packaging it."
+ ],
+ "interview_tip": "Mentioning model cards when discussing responsible AI launches signals you think about downstream misuse, especially for high-stakes decisions like lending."},
+{"topic": "AI Product", "concept": "Accuracy paradox on imbalanced classes", "difficulty": "easy",
+ "question": "A fraud model for a payments app reports 99.5% accuracy. Only 0.5% of transactions are fraudulent. Why should the PM be sceptical of this number?",
+ "options": [
+  "A model that labels every transaction as legitimate would also score 99.5%, so accuracy says little about catching fraud",
+  "Accuracy above 99% always means the model has overfitted to its training data and will fail in production",
+  "Fraud models should be judged only on latency and cost, since accuracy can't be measured for financial data",
+  "The number is fine; 99.5% accuracy means the model catches 99.5% of all fraudulent transactions"
+ ],
+ "answer": 0,
+ "explanation": "With rare classes, accuracy is dominated by the majority class. A useless 'never fraud' model scores 99.5%. Use precision (how many flagged are real fraud) and recall (how much fraud is caught), ideally weighted by money lost and customers wrongly blocked.",
+ "rationales": [
+  "Correct: the trivial 'all legitimate' baseline matches the score, so accuracy hides whether any fraud is caught.",
+  "Wrong: high accuracy can be legitimate; overfitting is diagnosed by comparing training and held-out performance.",
+  "Wrong: model quality can and should be measured, with metrics suited to rare events like precision and recall.",
+  "Wrong: this confuses accuracy with recall; accuracy counts all correct labels, mostly the legitimate majority."
+ ],
+ "interview_tip": "Quickly naming the trivial baseline and switching to precision/recall is a classic signal of ML fluency in AI PM interviews."},
+{"topic": "AI Product", "concept": "Gold-standard check items to monitor labeller quality", "difficulty": "medium",
+ "question": "You outsource labelling of 50,000 chatbot responses as 'helpful' or 'unhelpful' to train an AI evaluator. How can you best monitor label quality as the work proceeds?",
+ "options": [
+  "Mix in hidden items with known correct labels and track each labeller's accuracy on them, retraining or removing weak labellers",
+  "Ask labellers to rate their own confidence on each item and remove all labels where confidence is below 90%",
+  "Wait until all 50,000 labels are done, then train the evaluator and see whether its performance looks reasonable",
+  "Pay labellers per item completed so they are motivated to finish quickly and the dataset is ready sooner"
+ ],
+ "answer": 0,
+ "explanation": "Gold (honeypot) items with known answers give a continuous, objective measure of each labeller's reliability without them knowing which items are tests. Combined with agreement checks across labellers, this catches careless or confused labelling early, before it contaminates the dataset.",
+ "rationales": [
+  "Correct: hidden known-answer items measure each labeller's accuracy continuously and let you act early.",
+  "Wrong: self-rated confidence is poorly calibrated and can't catch confidently wrong labellers.",
+  "Wrong: waiting until the end makes problems expensive to fix and hard to trace to specific labellers.",
+  "Wrong: per-item pay without quality checks rewards speed over care and can lower label quality."
+ ],
+ "interview_tip": "AI PMs often own data pipelines. Describing quality controls like gold items and agreement rates shows you treat labelled data as a product with its own quality bar."},
+{"topic": "AI Product", "concept": "Catastrophic forgetting after narrow fine-tuning", "difficulty": "medium",
+ "question": "A team fine-tunes a general LLM on thousands of insurance-claims conversations. It now handles claims well, but users notice it has become worse at general tasks like summarising emails and simple maths. What is the most likely cause?",
+ "options": [
+  "Narrow fine-tuning overwrote some general capabilities; mixing in general data or using lighter adapters can reduce this",
+  "The base model provider silently updated the model, which degraded general tasks for every customer at the same time",
+  "Fine-tuning always improves every capability, so the drop must come from a bug in the email feature's prompt",
+  "The claims data was too small to change the model at all, so the users' perception must be wrong"
+ ],
+ "answer": 0,
+ "explanation": "Catastrophic forgetting happens when training heavily on a narrow distribution shifts weights away from skills the model had. Mitigations include mixing general data into training, parameter-efficient methods like LoRA, lower learning rates, and evaluating on a broad regression suite, not just the target task.",
+ "rationales": [
+  "Correct: training heavily on one domain can erode broader skills, and the listed mitigations address it.",
+  "Wrong: a fine-tuned model is a separate copy; a provider update wouldn't explain a drop that appeared right after fine-tuning.",
+  "Wrong: fine-tuning involves trade-offs; it doesn't improve every capability by default.",
+  "Wrong: thousands of examples can meaningfully change behaviour, as the improved claims handling shows."
+ ],
+ "interview_tip": "Mentioning broad regression evals after fine-tuning shows you think about what might break, not only what you're trying to improve."},
+{"topic": "AI Product", "concept": "False deflection: bot 'resolutions' that lead to repeat contacts", "difficulty": "hard",
+ "question": "After launching an AI support bot, the share of chats 'resolved without an agent' rose from 30% to 65%. But CSAT fell and customers contacting support again within 7 days rose sharply. What is the most likely explanation and next step?",
+ "options": [
+  "Many 'resolutions' are users giving up, so redefine success as no repeat contact within 7 days and review those failed chats",
+  "The bot is working well; CSAT fell because customers are not yet used to AI and will adjust within a few months",
+  "Human agents are handling escalations badly, so retrain the agents rather than changing anything about the bot",
+  "Repeat contacts are rising because more customers are using support overall, so the trend can be safely ignored"
+ ],
+ "answer": 0,
+ "explanation": "Deflection rate counts any chat that ended without an agent, including people who left frustrated. The rise in 7-day repeat contacts and fall in CSAT suggest false resolutions. A better success metric is true resolution (no repeat contact on the same issue), and reviewing those chats reveals which intents the bot fails.",
+ "rationales": [
+  "Correct: it identifies that the metric counts abandonment as success, fixes the definition and digs into the failures.",
+  "Wrong: blaming novelty ignores the clear signal from repeat contacts that problems aren't being solved.",
+  "Wrong: nothing points to agent quality; the issue appears in chats the bot claims to have resolved.",
+  "Wrong: the scenario says repeat contacts rose sharply after launch, which points to unresolved issues, not just volume."
+ ],
+ "interview_tip": "Interviewers love candidates who question whether a metric measures what it claims. Proposing a downstream truth signal (repeat contact) is a strong move."},
+{"topic": "Technology", "concept": "Object storage for user-uploaded media", "difficulty": "easy",
+ "question": "A social app stores user-uploaded photos as binary blobs in its main relational database, and the database is getting slow and expensive. What is the standard fix?",
+ "options": [
+  "Store the files in object storage (like Amazon S3) and keep only the file URL and metadata in the database",
+  "Add more indexes to the photo table so the database can find and return large image files more quickly",
+  "Compress each photo into text format and store it in a separate column of the same database table",
+  "Move the entire database to a bigger server each time storage grows, since that requires no code changes"
+ ],
+ "answer": 0,
+ "explanation": "Relational databases are built for structured, queryable data, not large binary files. Object storage is cheap, durable and scales almost without limit, and pairs well with a CDN for fast delivery. The database stores a pointer (URL) plus metadata such as owner and upload time.",
+ "rationales": [
+  "Correct: it puts large files in storage built for them and keeps the database lean and fast.",
+  "Wrong: indexes speed up lookups, not the cost of storing and moving large binary blobs.",
+  "Wrong: encoding images as text increases their size and keeps the same problem in the database.",
+  "Wrong: scaling up repeatedly is expensive and has limits; it delays the fix rather than solving it."
+ ],
+ "interview_tip": "Basic architecture choices like this come up in technical rounds. Explaining the 'pointer in the DB, file in object storage' pattern shows sound fundamentals."},
+{"topic": "Technology", "concept": "Inverted index for full-text search", "difficulty": "medium",
+ "question": "A marketplace's product search uses SQL queries like WHERE title LIKE '%red shoes%', and searches have become slow as the catalogue grew to millions of items. Why would a dedicated search engine (like Elasticsearch) help?",
+ "options": [
+  "It builds an inverted index mapping each word to the items containing it, so lookups avoid scanning every row and support relevance ranking",
+  "It stores all products in memory as a single list, so it can scan every product faster than a database scan can",
+  "It removes the need to store product data anywhere else, replacing the database as the main source of truth",
+  "It caches the results of every possible query in advance, so all searches are answered directly from that cache"
+ ],
+ "answer": 0,
+ "explanation": "A LIKE query with a leading wildcard can't use a normal index, so it scans every row. A search engine pre-builds an inverted index (word → list of items), so finding matches is fast, and it adds features like tokenisation, typo tolerance, synonyms and relevance scoring. The database usually remains the source of truth.",
+ "rationales": [
+  "Correct: the inverted index avoids full scans and enables relevance features that LIKE queries lack.",
+  "Wrong: a faster full scan would still slow down as the catalogue grows; the gain comes from indexing.",
+  "Wrong: search engines are typically kept in sync with the database, not a replacement for it.",
+  "Wrong: precomputing every possible query is impossible; the index answers new queries quickly."
+ ],
+ "interview_tip": "PMs who understand why search needs its own index can discuss search quality trade-offs (freshness, ranking) more credibly with engineers."},
+{"topic": "Growth", "concept": "Hook model stages", "difficulty": "easy",
+ "question": "Nir Eyal's Hook model describes how products build habits. What are its four stages, in order?",
+ "options": [
+  "Trigger, action, variable reward, investment",
+  "Acquisition, activation, retention, referral",
+  "Awareness, interest, desire, action",
+  "Cue, craving, response, reward"
+ ],
+ "answer": 0,
+ "explanation": "A trigger (external like a notification, or internal like boredom) prompts a simple action; a variable reward keeps it interesting; and investment (adding data, content or followers) makes the product better with use and loads the next trigger. Ethical use means building habits that serve users, not compulsions.",
+ "rationales": [
+  "Correct: these are the Hook model's four stages.",
+  "Wrong: these are stages of the AARRR pirate-metrics funnel, not the Hook model.",
+  "Wrong: this is AIDA, a classic marketing funnel for persuasion.",
+  "Wrong: this is the habit loop from James Clear's Atomic Habits, which is similar but omits investment."
+ ],
+ "interview_tip": "Referencing the investment stage, how user effort makes the product stickier, shows you understand retention beyond notifications. Add an ethics note for balance."},
+{"topic": "Current Events", "concept": "GPT-6.1 Terra per-token vs per-task cost (Oct 2026)", "difficulty": "medium",
+ "question": "OpenAI launched GPT-6.1 Terra on 26 October 2026 at $1/$5 per million input/output tokens, half the list price of GPT-6.1 Sol ($2/$10). Yet in Artificial Analysis' benchmark run, Terra cost about $0.40 per task versus Sol's $0.72, only about 44% cheaper. What explains the gap?",
+ "options": [
+  "Terra used far more output tokens to finish the same tasks, so part of its per-token discount was eaten up",
+  "Terra's API applies a hidden surcharge on every request that is not included in the published list price",
+  "Sol received a temporary launch discount during the benchmark, which made it look cheaper than it normally is",
+  "Artificial Analysis rounded the costs to the nearest dollar, which distorted the small per-task numbers"
+ ],
+ "answer": 0,
+ "explanation": "Per-task cost = tokens used × price per token. Reported figures show Terra used roughly 130 million output tokens on the index versus about 67 million for Sol, run at maximum reasoning effort, so its 50% per-token discount translated into only about 44% savings per task. PMs choosing models should compare cost per completed task at the reasoning effort they'll actually use.",
+ "rationales": [
+  "Correct: higher token usage per task offsets part of the lower price per token.",
+  "Wrong: no such surcharge was reported; the gap is explained by token usage.",
+  "Wrong: nothing indicates a launch discount for Sol; both were compared at list prices.",
+  "Wrong: the figures are reported to the cent ($0.40 vs $0.72), so rounding doesn't explain it."
+ ],
+ "interview_tip": "Model-selection questions increasingly come up in AI PM loops. Saying 'compare cost per successful task, not price per token' signals real AI unit-economics sense.",
+ "source": "https://www.beri.net/article/gpt-6-1-terra-launch-pricing-1-5-artificial-analysis-vs-gpt-6-1-sol-computer-use-reasoning-effort-migration"}
+]}

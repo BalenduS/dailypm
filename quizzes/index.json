@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-29",
+   "theme": "Exploration slots, false deflection & GPT-6.1 Terra's real cost",
+   "count": 30
+  },
+  {
    "date": "2026-10-28",
    "theme": "Search reformulations, cache stampedes & Sweden's Copilot-only rule",
    "count": 30
