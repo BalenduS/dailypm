@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-30",
+   "theme": "Harvest-cycle design, stale AI memory & Cloudflare's KV-cache leak",
+   "count": 30
+  },
+  {
    "date": "2026-10-29",
    "theme": "Exploration slots, false deflection & GPT-6.1 Terra's real cost",
    "count": 30
