@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-10-31",
+   "theme": "Escalate wisely: cascades, signals and ownership",
+   "count": 30
+  },
+  {
    "date": "2026-10-30",
    "theme": "Harvest-cycle design, stale AI memory & Cloudflare's KV-cache leak",
    "count": 30
