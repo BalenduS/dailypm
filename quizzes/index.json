@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-01",
+   "theme": "Hidden costs: defaults, denominators and dependencies",
+   "count": 30
+  },
+  {
    "date": "2026-10-31",
    "theme": "Escalate wisely: cascades, signals and ownership",
    "count": 30

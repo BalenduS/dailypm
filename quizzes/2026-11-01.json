@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-01",
+ "theme": "Hidden costs: defaults, denominators and dependencies",
+ "questions": [
+  {
+   "id": "2026-11-01-01",
+   "topic": "Product Sense",
+   "concept": "Label-free returns for customers without printers",
+   "difficulty": "medium",
+   "question": "An Indian fashion marketplace finds that many tier-3 customers start a return but never finish it. The return flow asks them to print a shipping label and stick it on the parcel. What is the best first change to test?",
+   "options": [
+    "Remove free returns in those areas so fewer customers start a return they can't finish",
+    "Let the pickup agent scan a QR code shown in the app, so no printed label is needed",
+    "Give customers a bigger refund if they finish the return within 48 hours",
+    "Send the label by email as well, so customers can print it from any device"
+   ],
+   "rationales": [
+    "This cuts the metric by hurting customers and trust, instead of fixing the broken step.",
+    "Correct: it removes the step the segment can't complete, at the moment pickup happens.",
+    "A reward doesn't help if the customer physically can't print the label.",
+    "Emailing the label still assumes the customer has a printer, which is the real blocker."
+   ],
+   "answer": 1,
+   "explanation": "The drop-off comes from a step these users can't do: most don't own a printer. The best fix removes the step. Letting the agent scan a code on the customer's phone, or bring a pre-printed label, fits how they actually live. Good product sense means finding the specific blocker for a segment, not adding rewards or friction around it.",
+   "interview_tip": "Interviewers like candidates who ask 'what can this user actually do?' Naming the real-world constraint (no printer) before suggesting fixes shows strong user empathy."
+  },
+  {
+   "id": "2026-11-01-02",
+   "topic": "Product Sense",
+   "concept": "Designing for shared devices in multi-user households",
+   "difficulty": "hard",
+   "question": "A video app in India sees odd recommendations and many complaints like 'my feed is full of cartoons and cooking shows'. Research shows one phone is often shared by several family members. Which solution best addresses the root problem?",
+   "options": [
+    "Add a 'Not interested' button on every recommendation so users can clean up their feed",
+    "Show more trending videos, since they appeal to everyone and avoid wrong personal picks",
+    "Ask each family member to sign up for their own account with a separate phone number",
+    "Add quick-switch profiles on one device, with a light 'Who's watching?' prompt when usage patterns change"
+   ],
+   "rationales": [
+    "This treats symptoms one video at a time and still mixes everyone's signals in one profile.",
+    "This gives up on personalisation instead of fixing the mixed-signal problem.",
+    "Many family members don't have their own phone or number, so this blocks the very users you need.",
+    "Correct: it separates each viewer's signals on the shared device with little extra effort."
+   ],
+   "answer": 3,
+   "explanation": "The real issue is that one account is mixing several people's tastes, so the model learns a blend that suits nobody. Lightweight profiles on the same device separate the signals without asking each person for a phone or login. Prompting only when the pattern changes keeps friction low. The fix targets the data problem at its source.",
+   "interview_tip": "Shared devices are a classic emerging-market product sense prompt. Strong answers explain how the context breaks the product's assumption (one device = one person) and fix that assumption."
+  },
+  {
+   "id": "2026-11-01-03",
+   "topic": "Product Sense",
+   "concept": "Proof-of-delivery photos to resolve 'item not received' disputes",
+   "difficulty": "medium",
+   "question": "A quick-commerce app gets many 'item not received' claims for orders left at doors or with guards. Support can't tell real claims from false ones, so it refunds almost all of them. What should the PM build first?",
+   "options": [
+    "Ban accounts with more than two claims in a month from getting refunds",
+    "Have riders take a geo-tagged photo of the drop-off, shown to the customer and to support",
+    "Require customers to upload a photo or video before any refund is approved",
+    "Stop doorstep and guard deliveries so every order must be handed over in person"
+   ],
+   "rationales": [
+    "A blunt cap punishes honest repeat customers and doesn't tell you which claims are false.",
+    "Correct: it records proof at the moment of delivery and helps both customer and support.",
+    "Customers can't photograph an item they say they never got, so this mostly blocks honest users.",
+    "This adds cost and delay for every order to fix a problem in a small share of them."
+   ],
+   "answer": 1,
+   "explanation": "The missing piece is evidence of what happened at delivery. A geo-tagged photo by the rider creates that record at almost no cost, helps honest customers find their order, and lets support judge claims fairly. It also discourages false claims without punishing everyone. Fix the information gap before adding blanket rules.",
+   "interview_tip": "In marketplace trust questions, look for the cheapest way to create evidence. Interviewers value solutions that help honest users and discourage abuse at the same time."
+  },
+  {
+   "id": "2026-11-01-04",
+   "topic": "Product Sense",
+   "concept": "Preset tip options and default anchoring for gig workers",
+   "difficulty": "hard",
+   "question": "A food-delivery app wants to raise rider earnings through tips. One option is to pre-select a ₹30 tip at checkout. User research shows customers feel tricked when they notice a pre-selected tip. What is the best design?",
+   "options": [
+    "Pre-select ₹30 anyway, since defaults raise tipping and riders benefit",
+    "Show the tip only to customers who have tipped before, to avoid annoying others",
+    "Show tip choices with none pre-selected, and ask after delivery when the customer has seen the service",
+    "Remove tips and add a fixed ₹30 'rider fee' to every order"
+   ],
+   "rationales": [
+    "This raises tips now but the research shows it erodes trust, which can hurt orders and the brand.",
+    "This hides tipping from most customers and limits rider earnings.",
+    "Correct: it keeps the choice honest and asks at the moment customers can judge the service.",
+    "A mandatory fee changes pricing and removes the link between good service and reward."
+   ],
+   "answer": 2,
+   "explanation": "A pre-selected tip raises tips in the short run, but customers who feel tricked lose trust in the whole checkout. Asking after delivery, with clear choices and nothing pre-selected, ties the tip to the service the rider gave. It keeps the choice honest and still nudges by making tipping easy. Good product sense weighs short-term gains against long-term trust for both sides.",
+   "interview_tip": "Two-sided products often force you to trade one side's gain against the other's trust. A strong answer names that tension and shows a design that serves both."
+  },
+  {
+   "id": "2026-11-01-05",
+   "topic": "Metrics",
+   "concept": "Average of ratios vs ratio of averages",
+   "difficulty": "medium",
+   "question": "An ads team reports click-through rate two ways. Method A: total clicks divided by total impressions. Method B: work out each advertiser's CTR, then average those numbers. Method B is much higher. What is the most likely reason?",
+   "options": [
+    "Method B double-counts clicks that happen across several advertisers",
+    "Method B uses the median instead of the mean, so it ignores outliers",
+    "Small advertisers with few impressions but high CTRs count as much as big ones in Method B",
+    "Method A includes bot impressions, while Method B removes them"
+   ],
+   "rationales": [
+    "Clicks aren't shared across advertisers here; the gap comes from weighting, not double-counting.",
+    "Method B is described as a mean of per-advertiser CTRs, not a median.",
+    "Correct: equal weighting lets small, high-CTR advertisers pull the simple average up.",
+    "Nothing in the setup says the methods treat bots differently."
+   ],
+   "answer": 2,
+   "explanation": "An average of ratios gives every advertiser equal weight, whatever their size. A tiny advertiser with 10 impressions and 2 clicks (20% CTR) counts as much as one with millions of impressions at 1%. The ratio of totals (Method A) weights by volume and reflects overall traffic. Neither is wrong, but they answer different questions, so you must say which one you are using.",
+   "interview_tip": "Interviewers test whether you notice how a metric is aggregated. Saying 'Do we want the typical advertiser's CTR or the overall CTR?' signals strong analytical habits."
+  },
+  {
+   "id": "2026-11-01-06",
+   "topic": "Metrics",
+   "concept": "Fill rate as a B2B wholesale marketplace health metric",
+   "difficulty": "easy",
+   "question": "A B2B app lets kirana stores order stock from distributors. Shopkeepers complain that orders arrive with items missing. Which metric most directly tracks this problem?",
+   "options": [
+    "App store rating",
+    "Number of distributors on the platform",
+    "Average order value",
+    "Fill rate: share of ordered units actually delivered"
+   ],
+   "rationales": [
+    "Ratings are slow, noisy and affected by many things besides missing items.",
+    "More distributors doesn't tell you whether orders arrive complete.",
+    "Order value can stay flat or even rise while items go missing.",
+    "Correct: it directly measures how much of each order was delivered."
+   ],
+   "answer": 3,
+   "explanation": "Fill rate measures how much of what was ordered actually arrived. It maps directly to the complaint about missing items. Retailers who keep getting short deliveries learn they can't rely on the app and go back to other suppliers. It's a core supply-side reliability metric for wholesale and grocery marketplaces.",
+   "interview_tip": "For marketplace metric questions, tie each metric to a specific user pain. Picking the metric that measures the complaint directly shows clear thinking."
+  },
+  {
+   "id": "2026-11-01-07",
+   "topic": "Metrics",
+   "concept": "Longer session time as a negative signal in task-completion apps",
+   "difficulty": "medium",
+   "question": "A bank's app redesign raised average session time by 25%. A stakeholder calls it a big engagement win. What is the PM's best response?",
+   "options": [
+    "Run a survey asking customers if they like the new design",
+    "Check whether tasks like transfers now take longer to finish, because longer sessions may mean more friction",
+    "Ignore session time and only look at daily active users",
+    "Agree, since longer sessions mean customers enjoy using the app more"
+   ],
+   "rationales": [
+    "Surveys can help, but they don't directly check whether tasks got slower.",
+    "Correct: it tests whether the change reflects friction rather than value.",
+    "DAU alone won't tell you whether the redesign made tasks easier or harder.",
+    "This assumes more time is good, which is often false for task-focused apps."
+   ],
+   "answer": 1,
+   "explanation": "In a utility app, users come to get a task done and leave. Longer sessions may mean they're struggling to find things or getting stuck. The right check is task success and time-to-complete for key journeys such as transfers and bill payments. A metric's meaning depends on the product's job.",
+   "interview_tip": "Interviewers like candidates who question whether 'more' is good. Linking the metric to the product's job (finish tasks fast) shows mature metric judgement."
+  },
+  {
+   "id": "2026-11-01-08",
+   "topic": "Metrics",
+   "concept": "Normalizing support ticket counts by active users",
+   "difficulty": "hard",
+   "question": "After a successful festive campaign, a D2C brand's weekly support tickets doubled. The support head says product quality has dropped. What should the PM check first?",
+   "options": [
+    "Tickets per active customer or per order, to see if the rate rose or just the volume",
+    "Whether the help-centre search box is working correctly",
+    "Average ticket resolution time compared with last month",
+    "Which support agents handled the most tickets during the campaign"
+   ],
+   "rationales": [
+    "Correct: normalizing separates growth in volume from a real rise in the problem rate.",
+    "This jumps to one guessed cause before checking if there is a problem at all.",
+    "Resolution time measures support speed, not whether there are more problems per customer.",
+    "Agent workload doesn't explain why customers raised more tickets."
+   ],
+   "answer": 0,
+   "explanation": "If the campaign doubled orders, tickets would double even if quality stayed the same. Dividing by orders or active customers shows whether the rate of problems actually changed. If the rate is flat, the rise is just growth. If the rate rose, segment it by new vs existing customers and by issue type to find the cause.",
+   "interview_tip": "In root-cause questions, always ask 'did the denominator change?' first. It's a quick check that shows rigour before you dive into segments."
+  },
+  {
+   "id": "2026-11-01-09",
+   "topic": "Experimentation",
+   "concept": "Excluding outliers after seeing results (p-hacking)",
+   "difficulty": "medium",
+   "question": "A test on a new checkout shows no significant result. An analyst then removes the top 1% of spenders, and the result becomes significant. What is the main problem?",
+   "options": [
+    "Choosing the exclusion rule after seeing the data inflates false positives",
+    "Top spenders should always be studied in a separate experiment",
+    "Significance tests don't work on revenue metrics",
+    "Removing 1% of users always makes the sample too small"
+   ],
+   "rationales": [
+    "Correct: a rule picked after seeing results biases the analysis toward a 'win'.",
+    "Separate tests aren't needed; a pre-set capping rule handles outliers fairly.",
+    "Revenue can be tested; heavy tails just need a planned method like capping.",
+    "Dropping 1% rarely leaves too little data; the problem is when and why the rule was chosen."
+   ],
+   "answer": 0,
+   "explanation": "If you try different analysis choices until something becomes significant, the stated p-value no longer means what it says. This is p-hacking, or the 'garden of forking paths'. Rules for outliers, such as capping, should be set before the test starts and applied the same way to every variant.",
+   "interview_tip": "Interviewers want you to spot data dredging. Saying 'outlier rules must be set before the test' shows you can protect a team from fooling itself."
+  },
+  {
+   "id": "2026-11-01-10",
+   "topic": "Experimentation",
+   "concept": "Ship decision when the primary metric wins but a guardrail regresses",
+   "difficulty": "hard",
+   "question": "A new recommendation widget raises add-to-cart by 4% (significant). But the guardrail 'returns rate' also rises by 1.5 percentage points (significant). Leadership wants to ship. What should the PM do?",
+   "options": [
+    "Estimate net impact (extra margin minus return costs) and look into why returns rose before deciding",
+    "Ship, since the primary metric won and guardrails are only for information",
+    "Rerun the test until the returns increase is no longer significant",
+    "Drop the returns metric, since it's measured weeks after the purchase"
+   ],
+   "rationales": [
+    "Correct: it weighs the real trade-off and looks for the cause before deciding.",
+    "Guardrails exist to block launches that hurt the business elsewhere; ignoring them defeats their purpose.",
+    "Rerunning until the bad result fades is a form of p-hacking.",
+    "Returns being delayed doesn't make them less real; it means you need a longer readout."
+   ],
+   "answer": 0,
+   "explanation": "A guardrail regression means the win might be costing something real. Here, more returns could cancel out the extra sales and hurt customer trust. The PM should calculate the net business effect and find which recommendations drive the returns, for example poor size matches. Then fix and retest, or ship only where the trade-off is positive.",
+   "interview_tip": "Mixed results are a favourite experiment question. Strong answers turn both metrics into a common unit like money and propose a fix, rather than simply shipping or killing."
+  },
+  {
+   "id": "2026-11-01-11",
+   "topic": "Estimation",
+   "concept": "Annual laptop purchases by Indian college students",
+   "difficulty": "medium",
+   "question": "Estimate the number of laptops bought each year by students starting college in India. Which is closest?",
+   "options": [
+    "About 0.4 million",
+    "About 40 million",
+    "About 15 million",
+    "About 4 million"
+   ],
+   "rationales": [
+    "This would mean only about 4% of new students buy one, which is too low given laptops are needed for many courses.",
+    "This is almost the total number of college students, and far above all PC sales.",
+    "This is close to India's entire yearly PC market, so it's far too high for one segment.",
+    "Correct: 11M new students × ~40% purchase rate ≈ 4.4M."
+   ],
+   "answer": 3,
+   "explanation": "Method: India has about 43 million students in higher education. Most courses are 3-4 years, so roughly 11 million new students join each year. If about 40% buy a laptop around the time they start, that's about 4.4 million. Sanity check: India's whole PC market is about 14 million units a year, so students starting college being around a third is plausible.",
+   "interview_tip": "Show your segmentation step (new joiners per year, not all students) and end with a sanity check against a known number. That's what interviewers grade."
+  },
+  {
+   "id": "2026-11-01-12",
+   "topic": "Estimation",
+   "concept": "Monthly mobile data usage in India",
+   "difficulty": "medium",
+   "question": "Roughly how much mobile data do Indian smartphone users consume in total each month?",
+   "options": [
+    "About 20 exabytes",
+    "About 200 exabytes",
+    "About 0.2 exabytes",
+    "About 2 exabytes"
+   ],
+   "rationales": [
+    "Correct: ~650M users × ~30 GB ≈ 20 EB.",
+    "This implies about 300 GB per user per month, far beyond typical mobile use.",
+    "This implies about 0.3 GB per user per month, far below India's heavy video-driven usage.",
+    "This implies about 3 GB per user per month, which is closer to usage from many years ago."
+   ],
+   "answer": 0,
+   "explanation": "Method: India has roughly 650-700 million smartphone users. Cheap data and video use push average use to about 30 GB per user per month. 650 million × 30 GB ≈ 19.5 billion GB, which is about 20 exabytes (1 EB = 1 billion GB). Industry reports put Indian per-smartphone usage near this level.",
+   "interview_tip": "Unit conversion is where many candidates slip. State units clearly (GB to EB) and sanity-check the per-user number against your own phone usage."
+  },
+  {
+   "id": "2026-11-01-13",
+   "topic": "Strategy",
+   "concept": "Portfolio of bets across core, adjacent and transformational (70/20/10)",
+   "difficulty": "medium",
+   "question": "A CEO asks a product leader how to split next year's team capacity between improving the core product, expanding into nearby markets, and new long-shot ideas. Which approach fits the well-known '70/20/10' model?",
+   "options": [
+    "Spend about 70% on the core, 20% on adjacent bets and 10% on transformational bets",
+    "Put everything into the core until growth stalls, then switch to new ideas",
+    "Split capacity equally across all three, so each gets a fair chance",
+    "Spend 70% on new long-shot ideas, because the core product is already working"
+   ],
+   "rationales": [
+    "Correct: it matches the model's balance of core, adjacent and transformational work.",
+    "New bets need time to grow; starting only after growth stalls leaves a gap.",
+    "Equal splits ignore that the core usually needs, and justifies, most of the investment.",
+    "This flips the model and risks neglecting the business that pays for everything."
+   ],
+   "answer": 0,
+   "explanation": "The 70/20/10 model keeps most effort on the core business that funds everything, while saving steady capacity for adjacent and riskier bets. Waiting until the core stalls is too late, because new bets take years to mature. The exact split can change with the company's stage, but the idea is to hold a balanced portfolio on purpose.",
+   "interview_tip": "When asked about long-term strategy, show you can balance today's business with future bets. Naming a portfolio approach and how you'd adjust it by company stage reads as senior thinking."
+  },
+  {
+   "id": "2026-11-01-14",
+   "topic": "Strategy",
+   "concept": "Responding to a competitor's price war",
+   "difficulty": "hard",
+   "question": "A well-funded rival cuts prices on its meal-kit subscription by 40%. Your product has higher quality and loyal customers, but a smaller budget. What is the strongest first response?",
+   "options": [
+    "Cut quality to lower costs so you can afford a similar price",
+    "Do nothing, since loyal customers never switch on price",
+    "Match the 40% cut right away so no customers leave",
+    "Find which customer segments are actually leaving, and defend them with targeted offers while keeping your premium positioning"
+   ],
+   "rationales": [
+    "Cutting quality weakens your main advantage while trying to win on the rival's terms.",
+    "Some customers will switch; ignoring the threat risks losing the price-sensitive ones.",
+    "A full match uses up your smaller budget and gives up your quality advantage.",
+    "Correct: it limits the cost of defence and keeps your positioning."
+   ],
+   "answer": 3,
+   "explanation": "Matching a better-funded rival's price cut can drain your cash and turn quality into a commodity. A smarter response is to find out who is price-sensitive and at risk, and protect them with targeted offers like a smaller plan or loyalty perks. Meanwhile, keep the quality message for customers who value it. Respond with precision, not across the board.",
+   "interview_tip": "Competitive-response questions test whether you rush to copy. Strong candidates segment the threat first and respond in a way that plays to their own strengths."
+  },
+  {
+   "id": "2026-11-01-15",
+   "topic": "Strategy",
+   "concept": "Embedded payments to monetise a vertical SaaS",
+   "difficulty": "medium",
+   "question": "A booking software company for salons charges a flat ₹999 per month and struggles to raise prices. Many salons take payments through other providers. Which strategic move most likely increases revenue per customer?",
+   "options": [
+    "Offer built-in payments and earn a small share of each transaction",
+    "Offer a free version to reach more salons",
+    "Raise the subscription fee by 50% for all salons",
+    "Build a consumer app to compete with salon booking marketplaces"
+   ],
+   "rationales": [
+    "Correct: it grows revenue with salon volume and adds real value to the product.",
+    "A free tier grows reach but lowers revenue per customer in the short term.",
+    "A large across-the-board rise is risky when the company already struggles to raise prices.",
+    "This is a big new business that may compete with partners and doesn't monetise current customers."
+   ],
+   "answer": 0,
+   "explanation": "Vertical SaaS companies often earn more from payments than from subscriptions. Built-in payments add value for salons (one system, faster settlement) and let the company earn a fee that grows with each salon's business. This is why many vertical SaaS players add embedded finance. It turns software into a share of the customer's money flow.",
+   "interview_tip": "For B2B monetisation questions, mention revenue that grows with the customer's success. It shows you understand how vertical software companies really make money."
+  },
+  {
+   "id": "2026-11-01-16",
+   "topic": "Execution",
+   "concept": "Incident commander role during an outage",
+   "difficulty": "easy",
+   "question": "During a major outage, five engineers and three managers are all in one call, each suggesting fixes and talking to customers. What is the most important first step?",
+   "options": [
+    "Wait for the outage to end, then hold a meeting to review it",
+    "Let the most senior manager take over the technical debugging",
+    "Ask everyone to write their ideas in a document for later review",
+    "Name one incident commander to coordinate the response and decisions"
+   ],
+   "rationales": [
+    "A review is important, but only after the incident is handled.",
+    "Seniority isn't the same as being the best person to debug; this can slow the fix.",
+    "Writing ideas for later doesn't help coordinate the live response.",
+    "Correct: one coordinator brings order and speeds up decisions."
+   ],
+   "answer": 3,
+   "explanation": "In an incident, confusion slows the fix. An incident commander runs the response: assigning roles (fixing, communication, notes), making calls and keeping everyone on one plan. They don't have to be the most senior or the one fixing the bug. Clear ownership turns many busy people into a coordinated team.",
+   "interview_tip": "If asked how you handle a crisis, mention clear roles: one coordinator, one communicator, one fixer. It signals you've handled real incidents."
+  },
+  {
+   "id": "2026-11-01-17",
+   "topic": "Execution",
+   "concept": "Writing a one-pager to align before a full spec",
+   "difficulty": "easy",
+   "question": "A PM has a new feature idea but isn't sure leadership agrees on the problem. What should they write first?",
+   "options": [
+    "A launch plan with marketing dates",
+    "A detailed spec with every edge case and screen",
+    "A short one-pager covering the problem, target users, goals and open questions",
+    "A list of engineering tickets for the first sprint"
+   ],
+   "rationales": [
+    "Launch planning comes much later, after the solution is agreed.",
+    "A detailed spec is premature when the problem itself isn't agreed.",
+    "Correct: it gets quick alignment on the problem and goals.",
+    "Tickets assume the solution is decided, which it isn't yet."
+   ],
+   "answer": 2,
+   "explanation": "A one-pager tests agreement on the problem and goals before anyone invests in details. If leaders disagree on whether the problem matters, a detailed spec wastes time. Once the one-pager is agreed, the PM can write the fuller spec with confidence. Align on the 'why' before the 'how'.",
+   "interview_tip": "Interviewers like PMs who match the document to the stage. Saying 'I align on the problem in a one-pager first' shows you avoid wasted effort."
+  },
+  {
+   "id": "2026-11-01-18",
+   "topic": "Execution",
+   "concept": "Options when a critical dependency slips",
+   "difficulty": "medium",
+   "question": "Two weeks before launch, the payments team says the API your feature needs will be three weeks late. The launch date is tied to a partner event. What should the PM do first?",
+   "options": [
+    "Escalate to the payments team's director to force them to deliver on time",
+    "Lay out options (cut scope, use a temporary workaround, or move the date) with their trade-offs, and agree on one with stakeholders",
+    "Push the launch back three weeks without telling the partner yet",
+    "Ask your engineers to build the payments API themselves"
+   ],
+   "rationales": [
+    "Escalation alone rarely creates three weeks of capacity and can damage the relationship.",
+    "Correct: it frames the choices and their costs for a fast, shared decision.",
+    "Moving the date silently surprises the partner and skips other options.",
+    "Rebuilding another team's API creates duplicate work and risk."
+   ],
+   "answer": 1,
+   "explanation": "When a dependency slips, the PM's job is to make the trade-off clear and decide quickly. Options might be launching without payments, using a temporary manual process, or moving the date. Each has costs. Putting them side by side lets stakeholders make an informed choice instead of reacting in a panic.",
+   "interview_tip": "Execution questions often test how you handle slips. Strong answers list two or three options with trade-offs and a recommendation, not a single reflex."
+  },
+  {
+   "id": "2026-11-01-19",
+   "topic": "Behavioural",
+   "concept": "Leading with the bottom line in exec updates (BLUF)",
+   "difficulty": "medium",
+   "question": "A PM must tell the VP that a key launch will miss its date. They have five minutes. Which way of starting is best?",
+   "options": [
+    "Start with the background and timeline, building up to the delay at the end",
+    "Start by listing which teams caused the delay",
+    "Start with the bottom line: the new date, the main cause and what you need from the VP",
+    "Send a long email beforehand and use the meeting to answer questions"
+   ],
+   "rationales": [
+    "Saving the bad news for the end wastes the VP's time and can look like hiding it.",
+    "Blaming other teams first looks defensive and doesn't help solve the problem.",
+    "Correct: it gives the VP what they need first and invites the right discussion.",
+    "A long pre-read is fine, but the meeting still needs a clear bottom line."
+   ],
+   "answer": 2,
+   "explanation": "Senior leaders have little time and need the key facts first. 'Bottom line up front' (BLUF) means you lead with the outcome, the cause and any decision or help needed, then add detail if asked. It builds trust because it shows you're on top of the issue and not hiding the bad news.",
+   "interview_tip": "When telling a story about bad news, show how you communicated it: clearly, early and with a plan. Interviewers listen for that structure."
+  },
+  {
+   "id": "2026-11-01-20",
+   "topic": "Behavioural",
+   "concept": "Declining a deceptive design request from leadership",
+   "difficulty": "hard",
+   "question": "A growth director asks you to hide the 'cancel subscription' button deep in settings to cut churn before the quarter ends. You think it's deceptive. What is the best response?",
+   "options": [
+    "Refuse in a team-wide email explaining why it's unethical",
+    "Do it, since the director owns the churn target",
+    "Explain the risks (trust, complaints, regulation) and propose retention options like pause or targeted offers",
+    "Agree, but quietly make the button easy to find again after the quarter"
+   ],
+   "rationales": [
+    "Going public first damages the relationship and doesn't offer a better path.",
+    "Following orders here risks customer trust and legal trouble, and ignores your duty to users.",
+    "Correct: it challenges the method while helping solve the real business goal.",
+    "Doing it quietly and then undoing it is dishonest and still harms users in the meantime."
+   ],
+   "answer": 2,
+   "explanation": "Making cancellation hard can reduce churn in the short term, but it damages trust, raises complaints and can break consumer protection rules. The best response is to push back on the approach, not the goal. Offer ethical options that also lower churn, such as pause, downgrade or offers based on why people leave. You protect users while still helping with the target.",
+   "interview_tip": "Integrity questions test whether you can say no and still be helpful. Strong answers disagree respectfully and bring alternatives that serve the same goal."
+  },
+  {
+   "id": "2026-11-01-21",
+   "topic": "Behavioural",
+   "concept": "Owning a customer problem outside your team's remit",
+   "difficulty": "hard",
+   "question": "A major customer tells you about a billing bug. It's in another team's product, and that team is busy. The customer is losing money every day. What best shows ownership?",
+   "options": [
+    "Ask your engineers to fix the billing code without involving the billing team",
+    "Log a ticket in the billing team's queue and move on",
+    "Take ownership of getting it solved: alert the billing team with impact data, agree a fix plan, and keep the customer updated until it's fixed",
+    "Tell the customer to contact the billing team directly"
+   ],
+   "rationales": [
+    "Changing another team's code without them is risky and damages trust.",
+    "A ticket alone may sit in a busy queue while the customer keeps losing money.",
+    "Correct: you drive the problem to a fix while respecting the other team's ownership.",
+    "Sending the customer elsewhere passes the problem on and makes them chase it."
+   ],
+   "answer": 2,
+   "explanation": "Ownership means you don't say 'that's not my job'. You don't need to write the fix yourself, but you make sure it gets fixed. That means bringing clear impact data to the owning team, agreeing a plan and keeping the customer informed. This builds trust with the customer and works with the other team rather than around it.",
+   "interview_tip": "Amazon's 'Ownership' principle is often tested this way. Describe how you pushed the fix through and kept the customer updated, not just that you reported it."
+  },
+  {
+   "id": "2026-11-01-22",
+   "topic": "AI Product",
+   "concept": "Output truncation at the max-tokens limit",
+   "difficulty": "easy",
+   "question": "Users of an AI report writer say long reports sometimes stop mid-sentence. Logs show these responses hit the model's maximum output length. What is the best fix?",
+   "options": [
+    "Switch to a model with a bigger context window for input",
+    "Raise the output limit or generate long reports section by section, and detect when a response was cut off",
+    "Raise the temperature so the model writes faster",
+    "Tell users to ask for shorter reports"
+   ],
+   "rationales": [
+    "A bigger input window doesn't change the cap on output length.",
+    "Correct: it addresses the limit directly and catches cut-offs.",
+    "Temperature changes randomness, not length or speed.",
+    "This pushes a fixable technical limit onto users."
+   ],
+   "answer": 1,
+   "explanation": "Models stop when they reach the output token limit, even mid-sentence. The fix is to give enough room, or split long work into parts such as one call per section. You should also check the response's stop reason so the product can notice cut-offs and continue. Users shouldn't have to work around a technical limit.",
+   "interview_tip": "Knowing basic LLM limits like output caps shows technical fluency. Mention detecting the stop reason; it shows you think about failure handling."
+  },
+  {
+   "id": "2026-11-01-23",
+   "topic": "AI Product",
+   "concept": "Per-language eval slices for a multilingual assistant",
+   "difficulty": "medium",
+   "question": "A support chatbot launches in English, Hindi and Tamil. Its overall eval score is 90%, but Tamil users complain a lot. What is the most likely gap in the eval process?",
+   "options": [
+    "The eval set is mostly English, so the overall score hides weak Tamil performance",
+    "The model's temperature is too low for Tamil",
+    "90% is too low a score to launch in any language",
+    "Tamil users are harder to please, so complaints don't reflect quality"
+   ],
+   "rationales": [
+    "Correct: a blended score mostly measures English and hides Tamil problems.",
+    "Temperature isn't a language-specific fix and doesn't explain the gap.",
+    "The issue isn't the overall threshold; it's that the score hides a weak segment.",
+    "Dismissing complaints without data ignores a likely quality problem."
+   ],
+   "answer": 0,
+   "explanation": "An overall score can hide a weak language if most test cases are in English. Each language needs enough test cases and its own reported score. Quality often drops for lower-resource languages, so slice evals by language, and ideally use native speakers to review the results. Report what users actually experience, not a blended average.",
+   "interview_tip": "Interviewers like candidates who slice AI evals by segment. Mentioning language, user type or task slices shows you know averages hide failures."
+  },
+  {
+   "id": "2026-11-01-24",
+   "topic": "AI Product",
+   "concept": "Keeping secrets out of system prompts",
+   "difficulty": "easy",
+   "question": "An engineer put an internal API key and discount rules inside the system prompt of a customer-facing chatbot. Why is this risky?",
+   "options": [
+    "System prompts are deleted after each conversation",
+    "System prompts are slower to process when they contain numbers",
+    "Users can often get the model to reveal its system prompt, exposing the secrets",
+    "The model will refuse to answer if the prompt has an API key"
+   ],
+   "rationales": [
+    "System prompts persist per conversation; deletion isn't the concern.",
+    "Numbers in a prompt don't meaningfully slow it down; the issue is exposure.",
+    "Correct: prompt extraction can leak whatever is in the system prompt.",
+    "Models don't refuse because a key is present; they may simply repeat it."
+   ],
+   "answer": 2,
+   "explanation": "System prompts are not a safe place for secrets. Users can often trick a model into repeating its instructions. API keys should stay in backend code and be used by tools the model calls, not shown to the model. Treat anything in the prompt as something a user might see.",
+   "interview_tip": "Mentioning basic AI security, like keeping secrets out of prompts, signals you'd catch risky designs before launch."
+  },
+  {
+   "id": "2026-11-01-25",
+   "topic": "AI Product",
+   "concept": "Running safety checks in parallel with generation",
+   "difficulty": "hard",
+   "question": "A voice assistant checks every user request with a safety classifier before calling the main model. This adds 400 ms of delay, and users say it feels slow. Unsafe requests are rare. What is the best design change?",
+   "options": [
+    "Run the safety check at the same time as the main model, and block or replace the response if the check flags it",
+    "Remove the safety check, since unsafe requests are rare",
+    "Only run the safety check on every tenth request",
+    "Use a bigger safety model so it catches more problems"
+   ],
+   "rationales": [
+    "Correct: it keeps the safety check while cutting the delay users feel.",
+    "Removing safety checks creates real risk, even if bad requests are rare.",
+    "Random sampling lets most unsafe requests through.",
+    "A bigger model would likely add more delay, making the problem worse."
+   ],
+   "answer": 0,
+   "explanation": "Running the check in parallel removes most of the added wait, because the model starts working right away. If the check flags the request, the system stops or swaps the response before the user hears it. You pay a little extra compute on rare flagged requests in exchange for faster responses. You keep safety without making every user wait.",
+   "interview_tip": "AI system design questions often involve trade-offs between speed and safety. Strong candidates find designs that keep both rather than giving one up."
+  },
+  {
+   "id": "2026-11-01-26",
+   "topic": "AI Product",
+   "concept": "Data flywheel from user corrections to AI output",
+   "difficulty": "medium",
+   "question": "An AI invoice-reading tool lets accountants fix fields the model gets wrong. How can the product turn these corrections into a lasting advantage?",
+   "options": [
+    "Delete corrections after saving the invoice, to protect privacy",
+    "Use corrections only to count how often the model is wrong",
+    "Show a message thanking users for each correction",
+    "Log corrections (with consent) as labelled examples to improve evals and the model over time"
+   ],
+   "rationales": [
+    "Deleting all corrections wastes the most valuable signal; privacy can be handled with consent and controls.",
+    "Counting errors helps measurement but misses using them to improve the model.",
+    "Thanks are nice, but they don't improve the model.",
+    "Correct: it turns corrections into data that improves the product over time."
+   ],
+   "answer": 3,
+   "explanation": "Each correction is a labelled example from real usage, showing exactly where the model fails. Collected with consent, these examples improve the eval set and can help train better models. Better models attract more users, who produce more corrections. This is a data flywheel: usage improves the product, which brings more usage.",
+   "interview_tip": "AI strategy questions often ask about moats. Describe how your product's usage creates data that makes it better, and mention consent."
+  },
+  {
+   "id": "2026-11-01-27",
+   "topic": "Technology",
+   "concept": "Optimistic concurrency control for simultaneous edits",
+   "difficulty": "medium",
+   "question": "In an inventory tool, two staff edit the same product's stock count at the same time, and one person's change silently overwrites the other. What is a common fix?",
+   "options": [
+    "Let the last person to save always win",
+    "Make the screen refresh every second",
+    "Allow only one person to log in to the tool at a time",
+    "Save each record with a version number, and reject a save if the version changed since the user loaded it"
+   ],
+   "rationales": [
+    "'Last write wins' is exactly what causes the silent overwrite.",
+    "Frequent refreshes reduce the chance but don't prevent conflicts.",
+    "Blocking everyone else is far too restrictive for a team tool.",
+    "Correct: version checks catch conflicting edits and prevent lost updates."
+   ],
+   "answer": 3,
+   "explanation": "Optimistic concurrency control adds a version number to each record. When saving, the system checks the version is still the one the user started with. If not, it rejects the save and asks the user to review the new data. This prevents silent overwrites without locking everyone out.",
+   "interview_tip": "Technical fluency questions often explore data conflicts. Explaining version checks in plain words shows you can discuss designs with engineers."
+  },
+  {
+   "id": "2026-11-01-28",
+   "topic": "Technology",
+   "concept": "ACID transactions for a wallet balance transfer",
+   "difficulty": "easy",
+   "question": "A wallet app moves money from user A to user B. A server crash once left money taken from A but never added to B. What database feature prevents this?",
+   "options": [
+    "Adding an index on the user ID column",
+    "A transaction, so both updates succeed together or neither happens",
+    "Sharding the users table",
+    "A cache in front of the database"
+   ],
+   "rationales": [
+    "An index speeds up lookups but doesn't protect against partial updates.",
+    "Correct: atomic transactions make sure both updates happen or neither does.",
+    "Sharding spreads data across servers and doesn't guarantee the transfer completes.",
+    "A cache speeds up reads but doesn't make the two updates happen together."
+   ],
+   "answer": 1,
+   "explanation": "A database transaction groups both changes, debit A and credit B, into one all-or-nothing step. If anything fails midway, everything is rolled back. This 'atomic' guarantee, part of ACID, is why financial systems rely on transactions. Money is never lost between steps.",
+   "interview_tip": "Payments come up often in PM interviews. Knowing why transactions matter shows you understand the reliability needs of money movement."
+  },
+  {
+   "id": "2026-11-01-29",
+   "topic": "Growth",
+   "concept": "Annual plan discounts to improve retention and cash flow",
+   "difficulty": "medium",
+   "question": "A language-learning app offers monthly plans at ₹499. It considers adding an annual plan at ₹3,999 (about 33% off). What is the main benefit beyond the discount?",
+   "options": [
+    "It lowers the cost of acquiring each user",
+    "It locks in revenue upfront and removes 11 monthly chances to cancel, improving retention",
+    "It makes the monthly plan more popular",
+    "It guarantees every annual user will be more active"
+   ],
+   "rationales": [
+    "Acquisition cost depends on marketing, not on plan length.",
+    "Correct: upfront payment and fewer cancel moments improve retention and cash.",
+    "An annual option often pulls users away from the monthly plan, not toward it.",
+    "Paying upfront doesn't guarantee more activity; some annual users stop using the app."
+   ],
+   "answer": 1,
+   "explanation": "Annual plans bring cash in upfront and remove the monthly moments when users decide whether to cancel. This usually raises 12-month retention even with the discount. The risk is that users who don't stay active won't renew next year, so watch engagement and renewal rates too. Annual pricing is a common lever for retention and cash flow.",
+   "interview_tip": "In growth questions, mention both the benefit (cash, retention) and the risk (low renewal from inactive users). It shows balanced thinking."
+  },
+  {
+   "id": "2026-11-01-30",
+   "topic": "Current Events",
+   "concept": "Shopify Messaging WhatsApp marketing automations (Oct 2026)",
+   "difficulty": "easy",
+   "question": "On 28 October 2026, Shopify added WhatsApp to Shopify Messaging automations. According to Shopify's changelog, which ready-made automation templates does it include?",
+   "options": [
+    "Order confirmation, shipping update and delivery confirmation",
+    "Abandoned browse, abandoned cart and abandoned checkout",
+    "Product reviews, restock alerts and price-drop alerts",
+    "Birthday offers, loyalty rewards and referral invites"
+   ],
+   "rationales": [
+    "These are order-update messages, not the marketing automations Shopify described in this launch.",
+    "Correct: these three recovery templates are what the changelog lists.",
+    "Reviews and restock alerts weren't among the templates in this launch.",
+    "Shopify's post didn't list birthday, loyalty or referral templates."
+   ],
+   "answer": 1,
+   "explanation": "Shopify's changelog says merchants can use ready-made templates for customers who browse without buying, leave items in their cart, or don't finish checkout. Merchants can also add WhatsApp to automations they build themselves, set up under Messaging > Automations. For Indian D2C brands, where WhatsApp is a main channel, this brings cart recovery into Shopify's native tools.",
+   "interview_tip": "Knowing platform moves like this helps in commerce PM interviews. Be ready to discuss the trade-off: higher conversion from WhatsApp versus message costs and consent rules.",
+   "source": "https://changelog.shopify.com/posts/create-whatsapp-marketing-automations-in-shopify-messaging"
+  }
+ ]
+}
