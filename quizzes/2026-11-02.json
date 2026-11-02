@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-02",
+ "theme": "When the clicks stop: owning the user relationship",
+ "questions": [
+  {
+   "id": "2026-11-02-01",
+   "topic": "Product Sense",
+   "concept": "Practice mode to reduce first-use fear for novices",
+   "difficulty": "medium",
+   "question": "You're the PM for a stock-trading app in India. Research shows many people who sign up and finish KYC never place a first trade. In interviews they say they're 'scared of losing money by pressing the wrong button.' Which solution best targets this pain point?",
+   "options": [
+    "A practice mode with virtual money that uses the real order screens, with a clear path to place a small real trade",
+    "A simpler home screen that hides advanced order types until users have made five trades",
+    "A daily push notification featuring trending stocks to spark interest and urgency",
+    "A ₹100 cashback on the first trade to give hesitant users a financial reason to start"
+   ],
+   "rationales": [
+    "Correct: it removes the fear by letting users rehearse the real flow without risk, then bridges them to a small real trade.",
+    "Simplifying helps a little, but users still face real money on their first press, which is what they fear.",
+    "Trending-stock alerts create urgency, which raises anxiety for scared beginners rather than lowering it.",
+    "Cashback adds motivation, but the problem is fear of error; an incentive can even push anxious users into trades they don't understand."
+   ],
+   "answer": 0,
+   "explanation": "The stated barrier is fear of making a costly mistake, not lack of motivation or interest. Practice mode lets novices rehearse the exact flow with no real risk, which builds confidence that carries into the real interface. Linking it to a small first real trade turns that confidence into activation instead of leaving people in the sandbox.",
+   "interview_tip": "In product-sense rounds, interviewers check whether your solution matches the root cause users state. Name the barrier (fear vs motivation vs awareness) before proposing a fix."
+  },
+  {
+   "id": "2026-11-02-02",
+   "topic": "Product Sense",
+   "concept": "Supporting OS-level text size settings without breaking layouts",
+   "difficulty": "easy",
+   "question": "Many older users of a grocery app set their phone's system font size to the largest setting. Support tickets mention cut-off buttons and overlapping prices. What is the best product response?",
+   "options": [
+    "Show a tip asking affected users to reduce their phone's font size for the best experience",
+    "Lock the app's font size so the layout always looks the way designers intended",
+    "Add a separate 'senior mode' with its own simplified screens maintained alongside the main app",
+    "Build layouts that respect the system text size and reflow cleanly, and test screens at the largest settings"
+   ],
+   "rationales": [
+    "Asking users to shrink text pushes your layout bug onto the people least able to read small text.",
+    "Locking the font ignores an accessibility need and makes the app unreadable for the people who changed the setting.",
+    "A separate mode doubles maintenance and still leaves the main app broken for anyone who doesn't find the mode.",
+    "Correct: respect the user's chosen setting and make layouts reflow, verified by testing at extreme sizes."
+   ],
+   "answer": 3,
+   "explanation": "Users who raise the system text size are telling every app how they need to read. Supporting that setting (Dynamic Type on iOS, font scale on Android) with layouts that wrap and grow fixes the problem for everyone who relies on it. Testing at the largest sizes catches clipped buttons before users do.",
+   "interview_tip": "Accessibility comes up in Google and Meta design rounds. Strong answers treat system settings as user intent and mention testing at extremes, not bolt-on modes."
+  },
+  {
+   "id": "2026-11-02-03",
+   "topic": "Product Sense",
+   "concept": "Signalling freshness of crowdsourced information",
+   "difficulty": "medium",
+   "question": "A maps app lets users report whether a shop is open, whether a ramp is wheelchair accessible, and so on. Users complain that reports are often outdated: a 'ramp available' tag from three years ago led a wheelchair user to a closed entrance. What is the best improvement?",
+   "options": [
+    "Remove all reports older than six months so only recent information appears",
+    "Show when each report was last confirmed, lower its weight as it ages, and prompt nearby visitors to re-confirm stale ones",
+    "Add a disclaimer that community information may be inaccurate and should be checked",
+    "Allow only verified business owners to edit accessibility information"
+   ],
+   "rationales": [
+    "Hard deletion throws away information that is often still true, and in low-traffic areas leaves nothing at all.",
+    "Correct: it makes freshness visible, discounts old data, and creates a loop to refresh it.",
+    "A disclaimer shifts the risk to users without helping them decide what to trust.",
+    "Owners may be slow to update and have mixed incentives; it also cuts off the visitors who actually use the ramp."
+   ],
+   "answer": 1,
+   "explanation": "The problem is not the report itself but that users can't tell how current it is. Showing the last-confirmed date lets people judge risk, decaying old reports keeps rankings honest, and asking nearby visitors to re-check keeps the data fresh. This keeps useful history while making its reliability visible.",
+   "interview_tip": "When designing for user-generated data, interviewers look for trust signals and feedback loops. Mention how the data stays fresh over time, not just how it is collected."
+  },
+  {
+   "id": "2026-11-02-04",
+   "topic": "Product Sense",
+   "concept": "Clear pending-state messaging when a payment is debited but unconfirmed",
+   "difficulty": "hard",
+   "question": "In a UPI payments app, about 1% of payments end with money debited from the user's bank but the merchant not yet confirming it. Today the app shows 'Payment failed', so many users pay again and end up charged twice until the auto-reversal arrives days later. What is the best design change?",
+   "options": [
+    "Show a distinct 'Pending' state that says the money is safe, gives the expected time to resolve, warns against paying again, and notifies the final outcome",
+    "Hide the transaction from history until it's resolved to avoid confusing users",
+    "Keep showing 'Payment failed' but add a 'Retry' button so users can complete their purchase quickly",
+    "Show 'Payment successful' to reduce anxiety, then quietly reverse it if the merchant never confirms"
+   ],
+   "rationales": [
+    "Correct: honest status, reassurance, a timeline, and a clear 'don't pay again' message address the cause of double payments.",
+    "Hiding a debit the user can see in their bank app increases panic and support tickets.",
+    "A retry button on a falsely 'failed' payment encourages exactly the double charge that's causing harm.",
+    "Showing success for an unconfirmed payment is misleading and leaves merchants unpaid and users confused when it's reversed."
+   ],
+   "answer": 0,
+   "explanation": "The real problem is that the app says 'failed' when the true state is unknown, which causes double payments and support calls. An honest pending state tells users where their money is, how long it will take, and what not to do, and a notification closes the loop. Accurate system status builds trust in money products.",
+   "interview_tip": "Payments and fintech design questions test whether you design for edge states, not just the happy path. Strong answers name the user's anxiety and the behaviour the current design causes."
+  },
+  {
+   "id": "2026-11-02-05",
+   "topic": "Metrics",
+   "concept": "90-day repeat purchase rate calculation",
+   "difficulty": "easy",
+   "question": "An Indian D2C skincare brand got 10,000 first-time buyers in January. By the end of April, 1,800 of them had bought again, placing 2,600 repeat orders in total. What is the 90-day repeat purchase rate for the January cohort?",
+   "options": [
+    "69%",
+    "44%",
+    "26%",
+    "18%"
+   ],
+   "rationales": [
+    "69% divides repeat buyers by repeat orders, which measures how orders are spread across repeaters, not the share of the cohort that came back.",
+    "44% comes from adding customers and orders together (4,400) ÷ 10,000, which mixes two different units.",
+    "26% divides repeat orders by buyers, so heavy repeaters are counted more than once.",
+    "Correct: 1,800 repeat customers ÷ 10,000 first-time buyers = 18%."
+   ],
+   "answer": 3,
+   "explanation": "Repeat purchase rate counts customers, not orders: 1,800 repeat buyers ÷ 10,000 cohort buyers = 18%. Counting orders (2,600) overstates it because some customers bought several times. Tracking this by monthly cohort is an early health signal for consumables brands.",
+   "interview_tip": "Interviewers like to check that you define the numerator and denominator before quoting a number. Say 'customers, not orders' and 'cohort-based' to show rigour."
+  },
+  {
+   "id": "2026-11-02-06",
+   "topic": "Metrics",
+   "concept": "Zero-click answers lowering CTR without lowering satisfaction",
+   "difficulty": "hard",
+   "question": "After a search engine adds AI-generated answers at the top of results, click-through rate to websites falls 15%. Sessions per user are flat, and the share of queries followed by a re-search of the same query falls. A director says search quality got worse. What's the best read?",
+   "options": [
+    "Users are ignoring the AI answers and the results, which is why both clicks and re-searches fell",
+    "CTR fell because more queries are answered on the page; fewer re-searches suggest users are satisfied, so CTR alone is no longer a good quality metric",
+    "Quality clearly got worse because users click fewer results, so the AI answers should be rolled back",
+    "The drop is likely a logging bug, since a 15% change is too large to be real"
+   ],
+   "rationales": [
+    "If users ignored everything, you'd expect more re-searches and fewer sessions, not fewer re-searches.",
+    "Correct: other signals show success, so the drop reflects a broken proxy rather than worse quality.",
+    "This treats CTR as quality itself, ignoring that the new design delivers value without a click.",
+    "Checking instrumentation is fine, but fewer re-searches and flat sessions fit a real behaviour change."
+   ],
+   "answer": 1,
+   "explanation": "When the product starts answering on the page, a click no longer means success; it can even mean the answer wasn't enough. The supporting signals (flat sessions, fewer re-searches) point to satisfied users. The lesson is to update the success metric when the product changes how value is delivered, while separately tracking the effect on publisher traffic.",
+   "interview_tip": "Root-cause questions reward checking whether the metric still measures value after a product change. Bring in triangulating signals before declaring a win or a loss."
+  },
+  {
+   "id": "2026-11-02-07",
+   "topic": "Metrics",
+   "concept": "Seller response time as a leading indicator of marketplace conversion",
+   "difficulty": "medium",
+   "question": "On a services marketplace (home repairs), buyers send enquiries and sellers reply with quotes. The team wants an early metric that predicts whether bookings will rise next quarter. Which is the strongest leading indicator?",
+   "options": [
+    "Total number of sellers listed on the platform",
+    "Share of enquiries that get a seller reply within one hour",
+    "Number of app downloads from buyers this month",
+    "Average star rating of completed jobs last quarter"
+   ],
+   "rationales": [
+    "Listed sellers count supply, but inactive or slow sellers don't convert enquiries.",
+    "Correct: it is controllable, measured early, and directly tied to whether an enquiry becomes a booking.",
+    "Downloads are top-of-funnel and say nothing about whether enquiries get answered.",
+    "Past ratings are a lagging quality measure and change slowly."
+   ],
+   "answer": 1,
+   "explanation": "In enquiry-based marketplaces, buyers often book whoever replies first, so fast replies drive conversion. The share answered within an hour is something the team can influence now and moves before bookings do. Listings, past ratings and downloads are either outputs or weakly tied to booking.",
+   "interview_tip": "For marketplace metric questions, find the moment where the transaction succeeds or fails and measure that. Interviewers want leading inputs, not vanity counts."
+  },
+  {
+   "id": "2026-11-02-08",
+   "topic": "Metrics",
+   "concept": "Lagging refund and chargeback costs that trail a conversion win",
+   "difficulty": "hard",
+   "question": "A checkout redesign lifts conversion by 6% in its first two weeks and is about to ship to everyone. You notice it hides the delivery-time estimate until after payment. What should you check before calling it a win?",
+   "options": [
+    "Whether refunds, cancellations and chargebacks rise for these orders over the following weeks, since those costs show up later",
+    "Whether the conversion lift is statistically significant at a 95% confidence level",
+    "Whether page load time improved, because faster pages often explain conversion gains",
+    "Whether the design team's usability scores for the new layout went up"
+   ],
+   "rationales": [
+    "Correct: the design hides information, so the likely harm is post-purchase costs that a short readout can't see.",
+    "Significance matters, but a real lift can still be a net loss if it creates later refunds.",
+    "Load time is a possible confound, but the specific risk here is the hidden delivery estimate.",
+    "Usability scores don't measure whether customers later cancel or dispute."
+   ],
+   "answer": 0,
+   "explanation": "Hiding key information can raise conversion now and push costs later: customers who would have bounced buy, then cancel or dispute when they see the delivery time. Refunds and chargebacks arrive weeks after the order, so a two-week readout misses them. Judge the change on net completed orders or margin after these lagging costs.",
+   "interview_tip": "Strong candidates ask 'what does this metric not capture yet?' Mentioning delayed costs shows you think about the full customer outcome."
+  },
+  {
+   "id": "2026-11-02-09",
+   "topic": "Experimentation",
+   "concept": "High-variance metrics need larger samples",
+   "difficulty": "medium",
+   "question": "You're testing a new recommendations widget. You can choose either conversion rate (did the user buy?) or revenue per user as the primary metric. Revenue per user is very skewed: a few users spend a lot. With the same traffic, what should you expect?",
+   "options": [
+    "Conversion rate will need more traffic because binary metrics carry less information",
+    "Revenue per user will reach significance faster because it captures more information than a yes/no metric",
+    "Revenue per user will need much more traffic to detect the same relative lift, because its variance is far higher",
+    "Both metrics will need the same sample size because they come from the same users"
+   ],
+   "rationales": [
+    "Binary metrics have bounded variance, which usually makes them easier, not harder, to detect changes in.",
+    "More information doesn't help if most of it is noise from a few big spenders.",
+    "Correct: higher variance means wider confidence intervals and a larger required sample.",
+    "Same users doesn't mean same variance; sample size depends on each metric's spread."
+   ],
+   "answer": 2,
+   "explanation": "Sample size grows with a metric's variance. Skewed revenue has huge variance, so detecting a 2% lift needs far more users than the same lift in conversion rate. Teams often use conversion as the primary metric, cap or winsorize revenue, or apply variance-reduction methods.",
+   "interview_tip": "Interviewers probe whether you know why some tests take longer. Linking metric choice to variance and test duration shows practical experimentation sense."
+  },
+  {
+   "id": "2026-11-02-10",
+   "topic": "Experimentation",
+   "concept": "Logging parity between experiment variants",
+   "difficulty": "hard",
+   "question": "A test of a redesigned onboarding flow shows a 12% lift in 'tutorial completed' events. An engineer notes the new flow fires that event from a new client-side logger, while control uses the old server-side event. What should you conclude?",
+   "options": [
+    "The lift is real because random assignment balances out any differences between groups",
+    "The lift is probably understated, since client-side logging usually drops events",
+    "The comparison isn't trustworthy until both variants log the event the same way, because the lift may come from logging differences",
+    "Ship the flow and fix logging afterwards, since a 12% gain is too large to be noise"
+   ],
+   "rationales": [
+    "Randomization only balances who is in each group, not how each group's behaviour is recorded.",
+    "Client-side logging can drop or duplicate events; you can't know the direction without checking.",
+    "Correct: unequal measurement breaks the comparison regardless of how users were assigned.",
+    "A big lift from a measurement change is a reason to doubt it, not to ship faster."
+   ],
+   "answer": 2,
+   "explanation": "Randomization balances users, not instrumentation. If the two variants measure the event differently, the difference could be caused entirely by logging (for example, duplicate fires or different definitions). Re-run with the same logging in both arms, or validate the new logger in an A/A setup first.",
+   "interview_tip": "Trustworthy-experiment questions often hide a measurement flaw. Ask 'is the metric measured identically in both arms?' before reading results."
+  },
+  {
+   "id": "2026-11-02-11",
+   "topic": "Estimation",
+   "concept": "Daily auto-rickshaw trips in Bengaluru",
+   "difficulty": "medium",
+   "question": "Estimate the number of auto-rickshaw trips taken in Bengaluru on a typical weekday. Assume about 1.5 lakh autos are active on a given day.",
+   "options": [
+    "About 22 lakh (2.2 million)",
+    "About 2.2 crore (22 million)",
+    "About 25,000",
+    "About 2.2 lakh (220,000)"
+   ],
+   "rationales": [
+    "Correct: 1.5 lakh autos × ~15 trips per day ≈ 22 lakh.",
+    "This needs about 150 trips per auto per day, impossible in a 12-hour shift.",
+    "This is less than one trip per auto per day, which doesn't match how drivers earn a living.",
+    "This implies about 1.5 trips per auto per day, far too few for a full working day."
+   ],
+   "answer": 0,
+   "explanation": "Start with supply: 1.5 lakh active autos. A driver working 10-12 hours with short city trips of 20-30 minutes, plus waiting time, completes roughly 15 trips a day. 1.5 lakh × 15 ≈ 22.5 lakh trips. A sanity check: for a city of about 1.3 crore people, roughly one in six taking one auto trip a day is plausible.",
+   "interview_tip": "For supply-side estimates, interviewers want throughput logic: units × utilisation × trips per unit. Always end with a sanity check against population."
+  },
+  {
+   "id": "2026-11-02-12",
+   "topic": "Estimation",
+   "concept": "Freemium subscription revenue from MAU and paid conversion",
+   "difficulty": "medium",
+   "question": "A meditation app in India has 2 crore (20 million) monthly active users. About 3% pay for a premium plan at ₹99 per month. Assuming payers stay all year, what is the approximate annual subscription revenue?",
+   "options": [
+    "About ₹7 crore",
+    "About ₹7,130 crore",
+    "About ₹71 crore",
+    "About ₹713 crore"
+   ],
+   "rationales": [
+    "This is roughly one month's revenue (about ₹6 crore), forgetting to multiply by 12.",
+    "This is 100× too high, a units slip between lakh and crore.",
+    "Correct: 6 lakh payers × ₹99 × 12 ≈ ₹71 crore.",
+    "This is 10× too high, as if 30% of users paid instead of 3%."
+   ],
+   "answer": 2,
+   "explanation": "Payers = 2 crore × 3% = 6 lakh. Monthly revenue = 6 lakh × ₹99 ≈ ₹5.9 crore. Annual = ₹5.9 crore × 12 ≈ ₹71 crore. In a real answer you'd adjust for churn, annual-plan discounts and app-store fees, which would lower the figure.",
+   "interview_tip": "Interviewers watch your unit handling (lakh vs crore) and whether you name the adjustments you'd make, like churn and platform fees."
+  },
+  {
+   "id": "2026-11-02-13",
+   "topic": "Strategy",
+   "concept": "Licensing user-generated content to AI labs",
+   "difficulty": "medium",
+   "question": "A large discussion-forum platform is offered a multi-year deal to license its users' posts to an AI company for model training. What is the most important strategic risk for the PM to weigh?",
+   "options": [
+    "The AI company's products may answer users' questions directly, reducing visits to the forum and weakening the community that creates the content",
+    "Server costs will rise sharply because the AI company needs real-time access",
+    "Users will stop posting immediately once they learn about any data deal",
+    "Licensing income is usually too small to matter compared with advertising revenue"
+   ],
+   "rationales": [
+    "Correct: the main risk is strengthening a substitute that erodes the platform's traffic and content supply.",
+    "Bulk data delivery is a cost, but rarely the strategic issue.",
+    "User reaction is a real risk, but 'immediately stop posting' overstates it; the slower traffic loss is the bigger threat.",
+    "Some deals are large; dismissing the revenue skips the real trade-off."
+   ],
+   "answer": 0,
+   "explanation": "Data licensing brings near-pure-margin revenue, but it can feed a substitute: an AI that answers from the forum's content can keep people from ever visiting. That threatens traffic, ad revenue and, over time, the contributor community that produces the asset. Good deals add conditions such as attribution, links back and usage limits.",
+   "interview_tip": "AI-era strategy questions often ask how incumbents should treat AI companies: partner, license or block. Name both the revenue and the substitution risk, and propose guardrails."
+  },
+  {
+   "id": "2026-11-02-14",
+   "topic": "Strategy",
+   "concept": "Step-change advantage needed to overcome switching inertia",
+   "difficulty": "medium",
+   "question": "A startup has built a note-taking app that is about 20% faster and slightly cleaner than the market leader. Early users like it, but almost no one switches from the incumbent. What is the most likely strategic explanation?",
+   "options": [
+    "The startup's prices are probably too low, which makes users doubt its quality",
+    "A modest improvement rarely outweighs the cost of moving data, habits and collaborators, so it needs a much bigger advantage or a segment the leader serves poorly",
+    "Users don't notice speed differences under 50%, so the improvement is invisible",
+    "The market is too small for two products, so users stick with whichever came first"
+   ],
+   "rationales": [
+    "Pricing could matter, but there's no evidence here; the pattern fits switching inertia.",
+    "Correct: switching costs and habits mean a small gain isn't enough to move users.",
+    "There's no such threshold, and users can notice speed; they just don't value it enough to switch.",
+    "Note-taking is a large market with many competitors, so 'too small' doesn't fit."
+   ],
+   "answer": 1,
+   "explanation": "People weigh benefits against the cost of switching: moving notes, relearning, and convincing teammates. A 20% gain rarely clears that bar, which is why challengers aim for a step-change advantage or start with a segment the incumbent underserves. Import tools help, but the core value gap must be large.",
+   "interview_tip": "When asked how to beat an incumbent, strong answers name the switching cost and either a 10x better wedge or an underserved segment, not 'build a better product'."
+  },
+  {
+   "id": "2026-11-02-15",
+   "topic": "Strategy",
+   "concept": "Moving upmarket: enterprise demands vs self-serve SMB motion",
+   "difficulty": "hard",
+   "question": "A self-serve SaaS invoicing tool is loved by small businesses. Three large companies offer big contracts if the product adds SSO, custom approval workflows and dedicated support. The CEO wants to go upmarket. What is the most important consideration?",
+   "options": [
+    "Adding SSO is a small task, so the decision is mostly about engineering effort",
+    "Enterprise needs can pull roadmap, sales and support away from the self-serve engine, so decide deliberately whether to build a separate motion or stay focused",
+    "Enterprise contracts always pay more per customer, so the move is clearly right",
+    "Small businesses will churn as soon as any enterprise feature appears"
+   ],
+   "rationales": [
+    "SSO is one item; the bigger cost is the ongoing enterprise motion around it.",
+    "Correct: the trade-off is focus and operating model, not just revenue per customer.",
+    "Higher contract value doesn't account for sales cost, custom work and slower velocity.",
+    "Well-designed tiers can keep SMB simple; automatic churn overstates the risk."
+   ],
+   "answer": 1,
+   "explanation": "Going upmarket changes the whole business: longer sales cycles, custom requests, security reviews and support expectations. These compete for the same team that keeps the self-serve product simple and growing. The right answer is a deliberate choice, often separate teams or a tiered plan, not drifting into enterprise one deal at a time.",
+   "interview_tip": "Upmarket/downmarket questions test whether you see the operating-model change. Talk about who you're building for, how you sell, and what you'll stop doing."
+  },
+  {
+   "id": "2026-11-02-16",
+   "topic": "Execution",
+   "concept": "Key results as measurable outcomes, not task lists",
+   "difficulty": "easy",
+   "question": "Your team's objective is 'Make onboarding effortless for new merchants.' Which is the best key result?",
+   "options": [
+    "Reduce the number of onboarding screens from 9 to 5",
+    "Ship the redesigned onboarding flow by the end of Q2",
+    "Run 10 user interviews with newly signed-up merchants",
+    "Increase the share of new merchants who list their first product within 24 hours from 35% to 55%"
+   ],
+   "rationales": [
+    "Fewer screens is a design choice; it might help but doesn't prove onboarding got easier.",
+    "Shipping is an output; it can be done on time and still not make onboarding easier.",
+    "Interviews are useful activities, not results.",
+    "Correct: it is measurable, has a baseline and target, and reflects the user outcome."
+   ],
+   "answer": 3,
+   "explanation": "A key result should measure the outcome the objective describes, so you know whether users actually got value. 'First product listed within 24 hours' captures effortless onboarding with a baseline and target. Shipping, interviewing and cutting screens are tasks or outputs that may or may not move the outcome.",
+   "interview_tip": "OKR questions test outcome thinking. Turn 'we'll ship X' into 'users will be able to do Y, measured by Z'."
+  },
+  {
+   "id": "2026-11-02-17",
+   "topic": "Execution",
+   "concept": "Treating accessibility as a launch requirement",
+   "difficulty": "easy",
+   "question": "Two days before launch, QA finds that the new checkout can't be completed with a screen reader: the 'Pay' button has no label. Design says it can be fixed in the next release. What should the PM do?",
+   "options": [
+    "Treat it as launch-blocking, since some users can't complete purchases at all, and get the fix in or delay",
+    "Launch and add a support number so screen-reader users can order by phone",
+    "Ask legal whether the issue creates liability before deciding",
+    "Launch on time and add the fix to next sprint, since screen-reader users are a small share"
+   ],
+   "rationales": [
+    "Correct: it blocks the core job for some users, and the fix is usually quick.",
+    "A phone workaround treats some customers as second-class and adds support cost.",
+    "Legal exposure exists, but the decision should rest on user impact, not only on liability.",
+    "'Small share' reasoning still means real customers can't pay; it's a core-flow failure."
+   ],
+   "answer": 0,
+   "explanation": "A bug that stops a group of users from completing the core task is a blocker, the same as if the button failed for everyone on one browser. An unlabelled button is usually a small fix, so the cost of holding is low. Making accessibility part of the definition of done avoids this late scramble.",
+   "interview_tip": "Interviewers like PMs who treat accessibility as quality, not a nice-to-have. Mention adding it to acceptance criteria so it's caught earlier next time."
+  },
+  {
+   "id": "2026-11-02-18",
+   "topic": "Execution",
+   "concept": "Cross-functional bug bash before launch",
+   "difficulty": "easy",
+   "question": "A week before launching a new seller dashboard, the PM wants to find usability issues and bugs that automated tests miss. Which approach is most effective?",
+   "options": [
+    "Ask the QA team to rerun the full automated test suite twice",
+    "Send the build to the whole company with a note asking for feedback when they have time",
+    "Wait for the first week of production traffic and fix what customers report",
+    "Run a time-boxed bug bash where engineers, design, support and sales try real seller tasks and log issues in one shared tracker"
+   ],
+   "rationales": [
+    "Re-running the same automated tests finds the same things; they can't judge usability.",
+    "Open-ended requests get little attention and scattered feedback that's hard to triage.",
+    "Letting customers find the bugs costs trust and is slower to fix.",
+    "Correct: focused, varied testers using real tasks, with organised triage."
+   ],
+   "answer": 3,
+   "explanation": "A bug bash puts different perspectives on real tasks at the same time, which finds issues scripted tests don't cover: confusing flows, edge cases and missing states. Time-boxing and a single tracker make results easy to triage. Support and sales bring knowledge of how customers actually behave.",
+   "interview_tip": "Launch questions often ask how you ensure quality. Mention who you bring in, how you triage, and the exit criteria for launching."
+  },
+  {
+   "id": "2026-11-02-19",
+   "topic": "Behavioural",
+   "concept": "Responding when a peer escalates over your head",
+   "difficulty": "hard",
+   "question": "A peer PM complained to your director that your team is blocking their launch, without talking to you first. Your director asks you what's going on. What is the strongest response?",
+   "options": [
+    "Reprioritise immediately to unblock the peer so the director sees you as a team player",
+    "Explain to your director that the peer should have come to you and that the escalation was unprofessional",
+    "Give your director the facts calmly, then meet the peer directly to understand their need, agree on a plan, and suggest raising issues with each other first next time",
+    "Stay neutral with the director and wait for the peer to approach you when they're ready"
+   ],
+   "rationales": [
+    "Reprioritising without understanding the trade-off may hurt your own commitments and rewards escalation.",
+    "Even if true, leading with blame looks defensive and doesn't solve the blocker.",
+    "Correct: facts upward, problem-solving sideways, and a norm to prevent a repeat.",
+    "Waiting leaves the conflict and the blocker unresolved."
+   ],
+   "answer": 2,
+   "explanation": "The strongest answer handles the situation and the relationship. Give your manager facts without blame, then go to the peer to solve the real problem and set a working norm for the future. This shows ownership and maturity rather than defensiveness or appeasement.",
+   "interview_tip": "In behavioural rounds, conflict stories should show you go to the source and fix the process. Avoid stories where you criticise the other person."
+  },
+  {
+   "id": "2026-11-02-20",
+   "topic": "Behavioural",
+   "concept": "Killing your own pet project when evidence turns",
+   "difficulty": "hard",
+   "question": "You championed a new feature and got leadership to fund it. After a three-month beta, adoption is low and interviews show users don't value it. Your team has worked hard on it. What should you do?",
+   "options": [
+    "Ask for another quarter to add features, since the team has invested too much to quit now",
+    "Quietly reduce staffing on it without announcing a decision, to avoid an awkward conversation",
+    "Redefine success with softer metrics that the current numbers meet",
+    "Recommend stopping or pivoting it, share the evidence openly with leadership and the team, and capture what was learned"
+   ],
+   "rationales": [
+    "This is sunk-cost thinking; past investment isn't a reason to keep going.",
+    "Quiet de-staffing creates confusion and loses trust when people notice.",
+    "Moving the goalposts damages your credibility and wastes more resources.",
+    "Correct: it follows the evidence, is transparent, and respects the team's effort."
+   ],
+   "answer": 3,
+   "explanation": "Strong PMs judge their own ideas by the same evidence as anyone else's. Recommending a stop, explaining the data, and recognising the team's work keeps your credibility and frees people for better bets. Sharing lessons turns the spend into learning.",
+   "interview_tip": "Amazon's 'Are Right, A Lot' and 'Earn Trust' map here. Interviewers want to see you separate your ego from the decision."
+  },
+  {
+   "id": "2026-11-02-21",
+   "topic": "Behavioural",
+   "concept": "Redirecting public credit to the team who did the work",
+   "difficulty": "medium",
+   "question": "At an all-hands, the VP praises you by name for a launch that drove strong growth. In fact, the key idea and most of the work came from an engineer and a designer on your team. What's the best response?",
+   "options": [
+    "Thank the VP and name the engineer and designer and what they contributed, then follow up so their managers know too",
+    "Accept the praise graciously; as PM you're accountable for the launch, so the credit is fair",
+    "Correct the VP publicly and explain you had little to do with the result",
+    "Say nothing in the meeting but thank the team privately afterwards"
+   ],
+   "rationales": [
+    "Correct: specific public credit plus a follow-up that helps the team's careers.",
+    "Accountability for outcomes doesn't mean taking credit for others' work.",
+    "Overcorrecting downplays your real role and can make the moment awkward.",
+    "Private thanks is kind but leaves leadership with the wrong picture."
+   ],
+   "answer": 0,
+   "explanation": "Good leaders send credit to the people who earned it, publicly and specifically. Naming contributions in the moment and telling their managers helps their careers and builds trust. It's honest without dismissing your own role.",
+   "interview_tip": "Behavioural rounds probe whether you use 'I' and 'we' accurately. Showing you give credit away is a strong signal for leadership roles."
+  },
+  {
+   "id": "2026-11-02-22",
+   "topic": "AI Product",
+   "concept": "Tokenization causes character-level errors in LLMs",
+   "difficulty": "easy",
+   "question": "Users report that your AI writing assistant sometimes miscounts letters in a word or fails at exact character limits for SMS. What is the main technical reason?",
+   "options": [
+    "The model was trained only on long documents, so it doesn't understand short words",
+    "The context window is too small to hold the whole word",
+    "LLMs process text as tokens (chunks of characters), not individual letters, so character-level counting is unreliable",
+    "The model's temperature is set too high, causing random counting mistakes"
+   ],
+   "rationales": [
+    "Training data covers short words; the issue is representation, not lack of examples.",
+    "A single word fits easily in any context window.",
+    "Correct: tokenization hides letters, so the model guesses character counts.",
+    "Lower temperature reduces randomness but doesn't give the model access to individual letters."
+   ],
+   "answer": 2,
+   "explanation": "Language models read and write tokens, which are usually word pieces of several characters. They don't directly 'see' individual letters, so tasks like counting characters or meeting an exact length are error-prone. The product fix is to count with code and give the model feedback or enforce limits after generation.",
+   "interview_tip": "AI PM interviews often test whether you know model limits. Pair the limit with a product fix, like using code to check length."
+  },
+  {
+   "id": "2026-11-02-23",
+   "topic": "AI Product",
+   "concept": "Prompt brittleness tested with paraphrased inputs",
+   "difficulty": "medium",
+   "question": "Your support bot passes 95% of your eval set. In production, quality is noticeably worse. You find that eval questions are tidy and phrased like your help docs, while real users write short, misspelled or code-mixed messages. What's the best next step?",
+   "options": [
+    "Expand the eval set with paraphrased, misspelled and code-mixed versions of the same intents, and track quality on those separately",
+    "Fine-tune the model on your help docs so it learns the correct phrasing",
+    "Add an instruction asking users to write complete, correctly spelled questions",
+    "Switch to a larger model, since bigger models aren't affected by phrasing"
+   ],
+   "rationales": [
+    "Correct: make the eval represent real inputs, then measure robustness directly.",
+    "Training on docs reinforces tidy phrasing and doesn't address messy user input.",
+    "Asking users to change how they write rarely works and adds friction.",
+    "Larger models are often more robust, but still sensitive to phrasing; you need to measure it."
+   ],
+   "answer": 0,
+   "explanation": "The eval set doesn't match how real users write, so its score overstates quality. Adding realistic variations of the same intents tests robustness and shows where the bot fails. Tracking that slice separately lets you see improvement as you fix prompts or retrieval.",
+   "interview_tip": "Strong AI PM answers connect eval design to production reality. Mention sampling real traffic to build eval cases."
+  },
+  {
+   "id": "2026-11-02-24",
+   "topic": "AI Product",
+   "concept": "Chunk overlap to preserve context across boundaries",
+   "difficulty": "medium",
+   "question": "In your RAG system for HR policies, answers often miss key conditions. You discover that a sentence like 'This applies only to full-time employees' often lands in the next chunk, separated from the rule it qualifies. What is the most direct fix?",
+   "options": [
+    "Increase the model's temperature so it explores more possible answers",
+    "Retrieve only the single most relevant chunk to reduce noise",
+    "Switch to a larger embedding model so similarity scores improve",
+    "Split documents along headings or paragraphs and add some overlap between chunks so related sentences stay together"
+   ],
+   "rationales": [
+    "Temperature affects randomness, not what text is retrieved.",
+    "Fewer chunks makes it more likely the condition is missing.",
+    "A better embedder can't put back a sentence that was split into a different chunk.",
+    "Correct: fix the chunk boundaries so related text is retrieved together."
+   ],
+   "answer": 3,
+   "explanation": "The problem is how documents are split: conditions are being cut off from the rules they modify. Splitting on natural structure and overlapping chunks keeps qualifying sentences with their context. Retrieval and generation can't recover information that never made it into the retrieved chunk.",
+   "interview_tip": "RAG questions often test whether you can find which stage is failing. Name the stage (chunking, retrieval, generation) before proposing a fix."
+  },
+  {
+   "id": "2026-11-02-25",
+   "topic": "AI Product",
+   "concept": "Sandboxed environments for testing agents with side effects",
+   "difficulty": "medium",
+   "question": "You're building an AI agent that can issue refunds, update orders and email customers. Before launch you need to evaluate how it behaves across hundreds of scenarios. What is the safest effective approach?",
+   "options": [
+    "Test on a small set of real customers with a manual review of every outcome",
+    "Run the agent in a sandbox with mock or test versions of the order system, payments and email, and score its actions",
+    "Evaluate only the agent's text responses, since actions follow automatically from the text",
+    "Ask the model to describe what it would do in each scenario instead of letting it act"
+   ],
+   "rationales": [
+    "Real customers face real consequences; this can't cover hundreds of scenarios safely.",
+    "Correct: realistic test systems allow scale and action-level scoring without real-world harm.",
+    "Text quality doesn't show whether the agent called the right tool with the right inputs.",
+    "Stated plans often differ from actual tool use; you need to observe real actions."
+   ],
+   "answer": 1,
+   "explanation": "Agents need to be tested on their actions, but real refunds and emails can't be undone. A sandbox with realistic test systems lets you run many scenarios, record every tool call, and check results without harming anyone. Describing intended actions is not the same as what the agent actually does with tools.",
+   "interview_tip": "Agent-evaluation questions test safety thinking. Mention sandboxes, action logs and scoring the outcome of each scenario."
+  },
+  {
+   "id": "2026-11-02-26",
+   "topic": "AI Product",
+   "concept": "Setting a classifier threshold by expected cost of errors",
+   "difficulty": "hard",
+   "question": "Your model flags possibly fraudulent marketplace orders for manual review. Missing a fraud costs about ₹4,000 on average. Reviewing a legitimate order costs ₹50 in reviewer time plus some delay for the customer. How should you set the flagging threshold?",
+   "options": [
+    "Use 0.5, since that is the natural midpoint for classifier scores",
+    "Choose the threshold that minimises total expected cost, weighing missed fraud against review cost and customer delay across score levels",
+    "Pick the threshold that gives the highest accuracy on the test set",
+    "Pick the threshold where precision and recall are equal"
+   ],
+   "rationales": [
+    "0.5 is arbitrary and assumes both errors cost the same.",
+    "Correct: tie the threshold to business costs and constraints.",
+    "Accuracy is dominated by the many legitimate orders and ignores cost differences.",
+    "Equal precision and recall has no link to what each error actually costs."
+   ],
+   "answer": 1,
+   "explanation": "Errors here have very different costs: missing fraud costs about 80× more than reviewing a good order. The right threshold is the one that minimises expected total cost, which here means flagging fairly aggressively, limited by reviewer capacity and customer experience. Default cut-offs and accuracy ignore these costs.",
+   "interview_tip": "For ML product questions, interviewers want you to turn model metrics into business costs. Say what each error type costs and who bears it."
+  },
+  {
+   "id": "2026-11-02-27",
+   "topic": "Technology",
+   "concept": "Push notifications are best-effort, not guaranteed delivery",
+   "difficulty": "medium",
+   "question": "Your app sends a one-time login code by push notification only. Some users say they never receive it. What is the key technical fact the PM should know?",
+   "options": [
+    "Push only fails when the user's phone is switched off, so retrying later will fix it",
+    "Push delivery through Apple and Google services is best-effort and can be delayed or dropped, so critical flows need a fallback like SMS or in-app display",
+    "Push notifications are guaranteed to arrive within a few seconds, so the issue must be a bug in the app",
+    "Push notifications can only be sent to users who opened the app in the last 24 hours"
+   ],
+   "rationales": [
+    "Delivery can fail for many reasons besides a powered-off phone, such as disabled notifications or battery optimisation.",
+    "Correct: best-effort delivery means critical flows need another path.",
+    "There's no delivery guarantee; assuming one leads to fragile designs.",
+    "There's no such 24-hour rule for standard push notifications."
+   ],
+   "answer": 1,
+   "explanation": "Push services don't guarantee delivery: notifications can be delayed by battery settings, network conditions, or disabled permissions. For critical messages like login codes, design a fallback channel and a 'resend' option. Push is fine for nudges, not as the only path for essential actions.",
+   "interview_tip": "Technical-fluency questions check whether you know a system's limits and design around them. Mention fallbacks for anything a user can't proceed without."
+  },
+  {
+   "id": "2026-11-02-28",
+   "topic": "Technology",
+   "concept": "robots.txt is advisory, not access control",
+   "difficulty": "easy",
+   "question": "A content site's PM says, 'We added AI crawlers to our robots.txt file, so our content is now protected from scraping.' What's the most accurate response?",
+   "options": [
+    "robots.txt only affects search ranking and has no effect on crawlers at all",
+    "robots.txt encrypts the listed pages so blocked crawlers can't read them",
+    "robots.txt is a request that well-behaved crawlers follow; it doesn't technically block access, so real protection needs measures like login walls, rate limiting or bot detection",
+    "robots.txt is legally binding, so any crawler that ignores it is automatically blocked by the browser"
+   ],
+   "rationales": [
+    "Major crawlers do read and honour it; it's more than a ranking signal.",
+    "robots.txt is a plain text file; it doesn't encrypt anything.",
+    "Correct: it signals preferences but doesn't enforce them.",
+    "Browsers don't enforce robots.txt, and ignoring it doesn't trigger an automatic block."
+   ],
+   "answer": 2,
+   "explanation": "robots.txt tells crawlers which paths the site owner prefers they avoid. Reputable crawlers respect it, but nothing stops a scraper from ignoring it. Enforcement requires technical controls such as authentication, rate limits and bot detection, plus legal agreements where relevant.",
+   "interview_tip": "With AI scraping in the news, this comes up in content and platform PM interviews. Show you know the difference between a convention and an enforcement mechanism."
+  },
+  {
+   "id": "2026-11-02-29",
+   "topic": "Growth",
+   "concept": "Login walls trade casual reach for identified users",
+   "difficulty": "medium",
+   "question": "A content platform gets much of its traffic from logged-out visitors arriving from search. It plans to require sign-in to read most posts. Which outcome is most likely, and what should the PM measure?",
+   "options": [
+    "Lower revenue in all cases, because logged-out visitors generate most ad income",
+    "Higher total traffic, because people value content more when it's gated",
+    "No change in traffic, because visitors from search already intend to sign up",
+    "Fewer casual visitors but a larger share of identified, higher-value users; measure net sign-ups, logged-in retention and revenue, not just total visits"
+   ],
+   "rationales": [
+    "Logged-in users usually monetise better, so revenue doesn't automatically fall.",
+    "Gating rarely increases total traffic; the friction causes drop-off.",
+    "Most search visitors want a quick answer and won't sign up just to read.",
+    "Correct: it trades reach for depth, so measure the full trade-off."
+   ],
+   "answer": 3,
+   "explanation": "Login walls add friction, so many casual visitors will leave instead of signing up. The bet is that those who do sign up are worth more: they can be targeted, retained and monetised better. Judge it by net new logged-in users, their retention and revenue, against the lost reach.",
+   "interview_tip": "Growth interviews test whether you see both sides of a friction trade-off. Name the drop-off, the value per user, and the metric that decides it."
+  },
+  {
+   "id": "2026-11-02-30",
+   "topic": "Current Events",
+   "concept": "Reddit logged-in-only test amid Google AI Mode traffic decline (Oct 2026)",
+   "difficulty": "easy",
+   "question": "On 29 October 2026, Reddit CEO Steve Huffman said Reddit will test a logged-in-only experience after Google search referrals fell. Which figure did he cite to support pushing visitors to sign in?",
+   "options": [
+    "Google search referrals fell by more than half in October",
+    "Logged-out visitors account for over 80% of Reddit's ad revenue",
+    "Logged-in users account for over 80% of Reddit's monetization",
+    "Over 80% of Reddit's daily visitors already sign in"
+   ],
+   "rationales": [
+    "The reported decline was more than 1 million referrals a week, not a halving.",
+    "This reverses the reported figure; logged-in users, not logged-out ones, drive most monetization.",
+    "Correct: Huffman said logged-in users drive over 80% of monetization.",
+    "This wasn't reported; the 80% figure relates to monetization, not the share of visitors."
+   ],
+   "answer": 2,
+   "explanation": "The Star reported that search referrals to Reddit fell by more than 1 million a week on average in October, and Huffman blamed Google's AI search features. He said logged-in users make up over 80% of monetization, and Reddit will test a logged-in-only experience in select markets outside the US in Q4 2026. The trade-off is less casual reach in exchange for direct relationships and less scraping.",
+   "interview_tip": "Expect AI-and-traffic questions in strategy rounds. Be ready to argue whether a login wall builds a moat or shrinks the funnel, and what you'd measure.",
+   "source": "https://www.thestar.com.my/tech/tech-news/2026/10/30/reddit-search-traffic-slumps-will-push-visitor-sign-ins-to-curb-ai-scraping"
+  }
+ ]
+}
