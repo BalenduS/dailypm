@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-03",
+ "theme": "Right moment, right guardrail",
+ "questions": [
+  {
+   "id": "2026-11-03-01",
+   "topic": "Product Sense",
+   "concept": "Price guidance for first-time marketplace sellers",
+   "difficulty": "hard",
+   "question": "On a second-hand electronics marketplace, 55% of first-time sellers never make a sale. Listings from these sellers are priced on average 30% above what similar items actually sell for, and most sellers delete the listing within two weeks. You're asked to improve first-seller success. Which solution best targets the root problem?",
+   "options": [
+    "Add a tutorial video on how to take better photos and write stronger listing descriptions",
+    "Send first-time sellers a push notification after seven days telling them to lower their price by 10%",
+    "At listing time, show the price range that similar items recently sold for, with a suggested price and the expected time to sell at each point",
+    "Boost new sellers' listings to the top of search results for their first two weeks"
+   ],
+   "rationales": [
+    "Photos and descriptions matter, but nothing in the data says they are the problem; the 30% price gap is the clear signal.",
+    "This reacts a week late with a generic discount that ignores the item, and many sellers will already have lost interest.",
+    "Correct: it gives sellers the missing market information at the decision point, so they set a sellable price from the start.",
+    "More exposure for an overpriced listing brings views but not sales, and it pushes better-priced listings down for buyers."
+   ],
+   "answer": 2,
+   "explanation": "The data points to a pricing problem caused by missing information: new sellers anchor on what they paid or what they hope for, because they can't see what the market will bear. Giving them comparable sold prices at the moment they set the price fixes the decision when it is made, and showing the price-versus-speed trade-off lets them choose rather than being told. Fixes that come later or that add exposure don't change the overpriced listing.",
+   "interview_tip": "Product sense interviews reward tying the solution to the evidence. Name the root cause the data shows (an information gap at pricing time) and fix it at the moment the decision is made."
+  },
+  {
+   "id": "2026-11-03-02",
+   "topic": "Product Sense",
+   "concept": "Capturing data at the moment it is created (receipt capture)",
+   "difficulty": "hard",
+   "question": "In a B2B expense tool, employees submit expense reports an average of 23 days after spending, and finance teams spend hours chasing missing receipts. Interviews show employees lose paper receipts and forget details by month-end. What is the strongest product direction?",
+   "options": [
+    "Let finance teams set a penalty that delays reimbursement for late reports",
+    "Redesign the month-end report form so it takes fewer clicks to fill in",
+    "Add a weekly email reminder telling employees which reports are overdue and copying their managers",
+    "Let employees snap a receipt right after paying (or auto-match card transactions with a receipt prompt), so the expense is captured in the moment and reports build themselves"
+   ],
+   "rationales": [
+    "Penalties punish employees for a workflow problem and hurt the end-user without fixing the cause.",
+    "A shorter form helps a little, but the receipt is still lost and details are still forgotten by month-end.",
+    "Reminders add pressure but don't bring back lost receipts or forgotten details; the batch workflow stays broken.",
+    "Correct: capturing at the moment of spend removes the memory and lost-receipt problem instead of chasing it later."
+   ],
+   "answer": 3,
+   "explanation": "The pain comes from a gap between when the information exists (at the till) and when the product asks for it (at month-end). The strongest fix moves capture to the moment of spending, ideally triggered by the card transaction itself, so there is nothing to remember later. Reminders, penalties and a faster form all keep the month-end batch that causes the lost receipts.",
+   "interview_tip": "A strong answer spots the timing mismatch between when data is created and when the product asks for it. Interviewers like candidates who redesign the workflow rather than adding reminders."
+  },
+  {
+   "id": "2026-11-03-03",
+   "topic": "Product Sense",
+   "concept": "Personal quiet hours for non-standard schedules",
+   "difficulty": "medium",
+   "question": "A healthcare staffing app sends shift offers and updates as push notifications. Nurses on night shifts complain the app wakes them up at 11 AM, and many have turned notifications off completely, missing urgent shift offers. What's the best solution?",
+   "options": [
+    "Let users set quiet hours based on their own sleep schedule (or infer it from their booked shifts), holding non-urgent messages and letting only shifts they've opted into break through",
+    "Reduce the total number of notifications by half for every user",
+    "Send all notifications as emails instead, so they never wake anyone up",
+    "Apply a fixed quiet window for everyone from 10 PM to 7 AM local time"
+   ],
+   "rationales": [
+    "Correct: it fits each user's real schedule and keeps a path for urgent, opted-in alerts.",
+    "A blanket cut drops useful alerts along with noise and still wakes night workers during their sleep.",
+    "Email is too slow for time-sensitive shift offers, so nurses would miss the shifts they want.",
+    "A clock-based window protects day workers but does nothing for night-shift nurses, the very users complaining."
+   ],
+   "answer": 0,
+   "explanation": "The problem is that 'night' isn't the same for every user: night-shift workers sleep during the day. Quiet hours tied to each person's real schedule, with a clear rule for what can break through, protect sleep while keeping urgent offers. That stops users from switching notifications off altogether, which is the worst outcome for both sides.",
+   "interview_tip": "Interviewers look for whether you notice that edge users break the 'normal' assumption. Design around the user's context and keep a controlled path for what truly matters."
+  },
+  {
+   "id": "2026-11-03-04",
+   "topic": "Product Sense",
+   "concept": "Auto-translated quick replies for cross-language chat",
+   "difficulty": "easy",
+   "question": "A ride-hailing app in India finds that pickups fail when the driver and rider don't share a language: calls end in confusion and riders cancel. Drivers are usually driving when messages arrive. Which feature fits this context best?",
+   "options": [
+    "A free-text chat that drivers can type into while driving, with an option to translate",
+    "A help article explaining how to share a pickup location clearly",
+    "A rule that matches riders only with drivers who speak the same language",
+    "Tap-to-send preset messages ('I'm at the gate', 'Arriving in 2 minutes') that are shown to the other person in their own language"
+   ],
+   "rationales": [
+    "Typing while driving is unsafe, and free text translates less reliably than a known set of phrases.",
+    "A help article doesn't solve the live language gap at pickup time.",
+    "Language matching shrinks the pool of drivers, raising wait times for everyone.",
+    "Correct: one-tap, pre-translated messages suit drivers on the move and solve the language gap."
+   ],
+   "answer": 3,
+   "explanation": "Preset quick replies cover most pickup conversations, need one tap, and can be translated reliably because the text is known in advance. That fits a driver who can't type safely and a rider who reads a different language. Restricting matches by language would cut supply and raise wait times.",
+   "interview_tip": "Context-of-use questions test whether you design for the user's real situation. Mention safety and speed for the driver, not just the translation feature."
+  },
+  {
+   "id": "2026-11-03-05",
+   "topic": "Metrics",
+   "concept": "Fewer support contacts from hidden contact options (suppressed demand)",
+   "difficulty": "hard",
+   "question": "After a help-centre redesign, support tickets fall 35% in a month and the team celebrates lower cost. You notice the 'Contact us' button moved from the top of the page to below several article lists. App-store reviews mentioning 'can't reach support' doubled, and refund requests through card-issuer chargebacks rose. What's the best read?",
+   "options": [
+    "The redesign worked: the articles are answering questions, so fewer users need support",
+    "The drop is likely suppressed demand: users still have problems but can't find how to reach support, so the cost is moving to chargebacks and bad reviews",
+    "Ticket volume is seasonal, so the drop is probably unrelated to the redesign",
+    "The ticketing system is likely losing tickets, so the team should audit its logging first"
+   ],
+   "rationales": [
+    "This assumes the drop is good, ignoring the rise in 'can't reach support' reviews and chargebacks.",
+    "Correct: the side signals show unresolved problems leaking into worse channels, not fewer problems.",
+    "Seasonality is worth checking, but it doesn't explain the timing with the redesign or the rise in other channels.",
+    "Logging checks are fine, but the outside signals (reviews and chargebacks) point to a real change in user behaviour."
+   ],
+   "answer": 1,
+   "explanation": "Fewer tickets only means success if users' problems were solved. Here the signals point the other way: more complaints about reaching support and more chargebacks suggest the problems remain and the cost has moved to channels that are more expensive and more damaging. To claim real deflection you'd want evidence like solved-article feedback and no rise in repeat contacts or escalations elsewhere.",
+   "interview_tip": "Root-cause questions reward checking whether a 'good' drop is real value or just hidden demand. Bring in counter-metrics from other channels before you celebrate."
+  },
+  {
+   "id": "2026-11-03-06",
+   "topic": "Metrics",
+   "concept": "Primary success metric for a login autofill feature",
+   "difficulty": "medium",
+   "question": "You launch password autofill in a mobile browser. Which primary metric best shows the feature is delivering value?",
+   "options": [
+    "Share of login attempts completed successfully using autofill, without the user editing the filled fields",
+    "Average time users spend on login pages",
+    "Number of times the autofill prompt is shown each day",
+    "Number of passwords users have saved in the password manager"
+   ],
+   "rationales": [
+    "Correct: it measures completed logins the feature actually handled, with edits as a sign of failure.",
+    "Time on login pages could fall for many reasons, and it doesn't show whether login succeeded.",
+    "Impressions show how often the prompt appears, not whether it helped anyone log in.",
+    "Saved passwords are a setup step; many saved passwords could still produce failed or edited logins."
+   ],
+   "answer": 0,
+   "explanation": "Autofill's job is to get people logged in quickly and correctly. Successful, unedited autofill logins capture both usage and quality: if users have to fix the filled text, the feature failed even though it ran. Prompt impressions measure exposure, saved passwords measure setup, and time on page is ambiguous.",
+   "interview_tip": "Interviewers want a metric tied to the job the feature does. Show that you count success, not exposure, and mention a quality signal like edits."
+  },
+  {
+   "id": "2026-11-03-07",
+   "topic": "Metrics",
+   "concept": "Reading calendar-date diagonals in a cohort triangle",
+   "difficulty": "easy",
+   "question": "In a cohort retention table, rows are signup months and columns are 'months since signup'. You see a dip that runs along one diagonal, hitting each cohort at a different column. What does that pattern most likely indicate?",
+   "options": [
+    "Users always drop off at a specific stage of their lifecycle, such as month three",
+    "The newest cohorts are lower quality than the older ones",
+    "Something happened in one calendar month (an outage, a holiday, a pricing change) that hit every cohort at once",
+    "The table has a calculation error, because real dips only appear in columns"
+   ],
+   "rationales": [
+    "A lifecycle drop-off would show up down one column, not along a diagonal.",
+    "A weak cohort shows up as one low row, not a diagonal across many cohorts.",
+    "Correct: diagonals line up with calendar time, so a diagonal dip points to an event in that month.",
+    "Diagonal patterns are real and common; they reflect calendar events, not errors."
+   ],
+   "answer": 2,
+   "explanation": "Each diagonal in a cohort triangle is the same calendar month seen from different cohort ages. A dip along a diagonal means an event in that month affected all users regardless of when they joined. A dip down a column would point to a lifecycle stage, and a weak row would point to one cohort's quality.",
+   "interview_tip": "Reading cohort tables quickly is a common analytical screen. Explain the three directions (rows, columns, diagonals) and what each one tells you."
+  },
+  {
+   "id": "2026-11-03-08",
+   "topic": "Metrics",
+   "concept": "Time to second purchase as an early retention signal",
+   "difficulty": "easy",
+   "question": "A D2C skincare brand wants an early signal, within the first 60 days, of whether new customers will become loyal. Which metric is the most useful early indicator?",
+   "options": [
+    "Share of new customers who make a second purchase within 60 days of their first",
+    "Number of new customers acquired each month",
+    "Average order value of first purchases",
+    "Number of product page views per visitor"
+   ],
+   "rationales": [
+    "Correct: an early repeat purchase is the clearest sign a customer is forming a habit with the brand.",
+    "Acquisition volume measures growth at the top, not whether customers stay.",
+    "First-order value shows spend once, but a big first basket can still be a one-time purchase.",
+    "Page views show browsing, not buying, and they don't predict repeat purchases well."
+   ],
+   "answer": 0,
+   "explanation": "The jump from first to second purchase is where most D2C customers are lost, and customers who reorder early are much more likely to keep buying. Measuring the share who reorder within a set window gives an early, actionable read on loyalty. First-order value and acquisition counts don't tell you whether customers come back.",
+   "interview_tip": "Interviewers like candidates who pick a leading indicator that's tied to long-term value. Mention why the second purchase is the key drop-off point."
+  },
+  {
+   "id": "2026-11-03-09",
+   "topic": "Experimentation",
+   "concept": "Primacy effect: lift that grows as users learn a new interface",
+   "difficulty": "medium",
+   "question": "You test a redesigned, more powerful spreadsheet toolbar on existing users. In week one, the treatment's task completion is 3% below control. In week two it's level, and by week four it's 4% above. What's the best interpretation?",
+   "options": [
+    "The redesign hurts users, and the week-one result is the true effect",
+    "Users needed time to learn the new layout (a primacy or learning effect), so the early results understated the long-term effect",
+    "The test is broken, because results shouldn't change direction over time",
+    "This is a novelty effect, so the week-four gain will fade"
+   ],
+   "rationales": [
+    "Week one captures the cost of relearning, not the long-term effect once users adapt.",
+    "Correct: the rising trend fits users learning the new interface, so the early dip isn't the lasting effect.",
+    "Results can change over time for real behavioural reasons; a shifting trend alone doesn't mean the test is broken.",
+    "A novelty effect starts high and fades; this result starts low and grows, which is the opposite."
+   ],
+   "answer": 1,
+   "explanation": "Existing users are used to the old interface, so a new one often costs them at first while they relearn it. As they adapt, the real value shows up. This is the opposite of a novelty effect, where results start high and fade. Running long enough and looking at the trend by week (or at new users, who have no old habits) helps you see the steady-state effect.",
+   "interview_tip": "Experimentation interviews test whether you know effects can change over time. Name both novelty and primacy effects and how you'd check them (trend by week, new vs existing users)."
+  },
+  {
+   "id": "2026-11-03-10",
+   "topic": "Experimentation",
+   "concept": "Encouragement design when you can't force feature use",
+   "difficulty": "hard",
+   "question": "You want to measure the causal effect of using a new budgeting tool on users' savings. You can't make users use it, and users who choose to use it are already better savers. What's the best experiment design?",
+   "options": [
+    "Survey users who used the tool and ask how much more they saved because of it",
+    "Compare savings between users who used the tool and those who didn't, controlling for age and income",
+    "Randomly assign some users to get a strong prompt to try the tool, then compare savings between the prompted and unprompted groups (and scale by the difference in usage)",
+    "Turn the tool on for everyone and compare savings before and after launch"
+   ],
+   "rationales": [
+    "Self-reported impact is unreliable and only covers users who chose the tool.",
+    "Controls help, but self-selection runs on things you can't measure, like motivation, so the comparison stays biased.",
+    "Correct: randomizing the nudge gives a clean causal comparison, which you can scale by how much it changed usage.",
+    "A before/after comparison mixes the tool's effect with seasonality and anything else that changed at the same time."
+   ],
+   "answer": 2,
+   "explanation": "When you can't randomize the behaviour itself, you can randomize encouragement. Because the prompt is random, the two groups are alike except that one got the push, so the difference in outcomes is causal. Dividing that difference by the difference in tool use estimates the effect for users who were moved to use it. Comparing users vs non-users mixes in self-selection, even with controls.",
+   "interview_tip": "Senior-level stats questions often probe what to do when you can't randomize the treatment. Mentioning encouragement designs (and intention-to-treat) signals strong causal thinking."
+  },
+  {
+   "id": "2026-11-03-11",
+   "topic": "Estimation",
+   "concept": "Monthly push notification volume for a food-delivery app",
+   "difficulty": "medium",
+   "question": "Estimate how many push notifications a food-delivery app in India sends per month. Assume 40M monthly active users, 60% have push turned on, marketing pushes go out about 3 times a week, and the app handles 1.5M orders a day with about 4 status updates per order.",
+   "options": [
+    "About 150 million",
+    "About 0.5 billion",
+    "About 50 million",
+    "About 5 billion"
+   ],
+   "rationales": [
+    "This counts only the order-status pushes and leaves out marketing.",
+    "Correct: about 310M marketing plus 180M order-status pushes gives roughly 0.5 billion.",
+    "This is about one-tenth of the answer, as if only one week of marketing or one type of push were counted.",
+    "This is ten times too high, as if every user got several pushes a day."
+   ],
+   "answer": 1,
+   "explanation": "Split into marketing and transactional pushes. Marketing: 40M × 60% = 24M reachable users × 3 per week × ~4.3 weeks ≈ 310M. Transactional: 1.5M orders × 4 updates × 30 days = 180M. Total ≈ 490M, or about 0.5 billion a month. Splitting by message type keeps the method clear and shows which part a product change would affect.",
+   "interview_tip": "Estimation interviews reward a clean split into parts that add up. State each assumption, do the maths aloud, and sanity-check the final number."
+  },
+  {
+   "id": "2026-11-03-12",
+   "topic": "Estimation",
+   "concept": "Annual school notebook unit sales in India",
+   "difficulty": "easy",
+   "question": "Estimate how many school notebooks are sold in India each year. Assume about 250 million school students, each using about 10 notebooks a year.",
+   "options": [
+    "About 250 million",
+    "About 2.5 billion",
+    "About 800 million",
+    "About 25 billion"
+   ],
+   "rationales": [
+    "This is one notebook per student, far too low for a full school year.",
+    "Correct: 250M students × 10 notebooks each gives about 2.5 billion.",
+    "This is about three per student, below even one notebook per main subject.",
+    "This is 100 per student, which is not realistic for a year."
+   ],
+   "answer": 1,
+   "explanation": "Students × notebooks per student: 250M × 10 = 2.5 billion notebooks a year. You can sense-check the 10 by thinking of 5–8 subjects, with older students filling more than one notebook per subject and younger ones using fewer. Stating the per-student usage clearly makes the estimate easy to adjust.",
+   "interview_tip": "Simple sizing questions test whether you structure clearly and sense-check your inputs. Explain why your usage-per-person number is reasonable."
+  },
+  {
+   "id": "2026-11-03-13",
+   "topic": "Strategy",
+   "concept": "Brand dilution from a down-market extension",
+   "difficulty": "medium",
+   "question": "A premium Indian audio brand known for ₹25,000 headphones is considering a ₹1,999 earbud line under the same brand name to grab volume. What's the biggest strategic risk to weigh?",
+   "options": [
+    "Retailers might ask for a lower margin on the earbuds",
+    "The cheap line could weaken the premium image that justifies the high prices on the core products",
+    "Competitors might copy the earbuds' design",
+    "The earbuds might sell so well that the factory runs out of capacity"
+   ],
+   "rationales": [
+    "Retail margins are a normal negotiation, not a threat to the business's position.",
+    "Correct: harming the premium brand image can cost more in core margins than the new line earns.",
+    "Copying is a risk for any product and doesn't depend on using the premium name.",
+    "Capacity can be planned for; it isn't the core strategic risk of the decision."
+   ],
+   "answer": 1,
+   "explanation": "A premium brand's pricing power rests on how customers see it. Putting the same name on a budget product can blur that image, making it harder to charge premium prices later. That's why many companies launch a separate sub-brand or a distinct product line for the low end. The other risks are real but operational and easier to manage.",
+   "interview_tip": "Strategy interviews reward spotting second-order effects on the core business. Suggest a mitigation, such as a separate sub-brand, to show judgement."
+  },
+  {
+   "id": "2026-11-03-14",
+   "topic": "Strategy",
+   "concept": "Gross margin compression from AI inference in SaaS",
+   "difficulty": "medium",
+   "question": "A B2B SaaS company with 80% gross margins adds an AI assistant to every plan at no extra charge. Heavy users trigger many model calls. Six months later, gross margin is 68%. What's the most strategic response?",
+   "options": [
+    "Remove the AI assistant, since it lowers gross margin",
+    "Price AI to track its cost, for example with usage limits per plan, a paid add-on or credits, while cutting cost per task through model routing and caching",
+    "Raise prices on all plans by 15% without changing anything about the AI feature",
+    "Accept the lower margin permanently, since all software companies will have AI costs"
+   ],
+   "rationales": [
+    "Dropping the feature gives up customer value and leaves room for competitors.",
+    "Correct: tying price to usage and lowering cost per task protects margins while keeping the feature.",
+    "A flat price rise burdens light users and still lets heavy users' costs grow unchecked.",
+    "Some margin change may be acceptable, but giving up on pricing and cost control isn't a strategy."
+   ],
+   "answer": 1,
+   "explanation": "Unlike traditional software, AI features carry a real cost each time they're used, and heavy users drive most of it. The fix is to line up price with that cost (limits, add-ons, credits) and lower the cost per task, so the feature can stay without wiping out margins. Removing it gives up the value; a flat price rise charges light users for heavy users' costs.",
+   "interview_tip": "AI strategy questions increasingly test unit economics. Show you know AI adds a per-use cost and that pricing should follow it."
+  },
+  {
+   "id": "2026-11-03-15",
+   "topic": "Strategy",
+   "concept": "Painkiller vs vitamin positioning in a downturn",
+   "difficulty": "easy",
+   "question": "During a budget freeze, a B2B startup's renewals hold up well for its invoice-reconciliation tool but its team-engagement analytics product sees heavy churn. Which idea best explains the difference?",
+   "options": [
+    "The analytics product is priced too low to be taken seriously",
+    "Customers prefer older products over newer ones during downturns",
+    "The reconciliation tool has a better user interface",
+    "The reconciliation tool solves an urgent, costly problem (a 'painkiller'), while engagement analytics is a 'nice-to-have' (a 'vitamin') that's easy to cut"
+   ],
+   "rationales": [
+    "A low price usually makes a product easier to keep, not easier to cut.",
+    "Product age isn't the driver; the urgency of the problem solved is.",
+    "Usability matters, but it doesn't explain why buyers cut one product and keep the other in a freeze.",
+    "Correct: urgent, costly problems survive budget cuts; optional improvements get cut first."
+   ],
+   "answer": 3,
+   "explanation": "When budgets tighten, buyers keep products that remove urgent pain or are tied to money and compliance, and cut those whose value is real but optional. Positioning a product as a painkiller, with a clear cost of not having it, makes it far stickier.",
+   "interview_tip": "Interviewers like candidates who tie positioning to the buyer's pain. Mention how you'd reposition a 'vitamin' around a measurable cost or risk."
+  },
+  {
+   "id": "2026-11-03-16",
+   "topic": "Execution",
+   "concept": "Parking-lot list to contain 'while we're at it' scope",
+   "difficulty": "easy",
+   "question": "During build, stakeholders keep suggesting small 'while we're at it' additions to your feature. Each sounds cheap, but together they threaten the date. What's the best way to handle them?",
+   "options": [
+    "Move the launch date each time an idea is accepted",
+    "Reject all new ideas without recording them, to protect the team's focus",
+    "Accept the small ones, since each one is cheap on its own",
+    "Capture each idea in a visible 'later' list, and only add one now if it meets the launch goal and something of similar size comes out"
+   ],
+   "rationales": [
+    "Moving the date for each addition turns scope creep into schedule creep.",
+    "Dropping ideas without a record discourages stakeholders and loses good input.",
+    "Each 'cheap' item adds testing and risk, and together they cause the slip.",
+    "Correct: it keeps ideas, holds scope steady, and makes trade-offs explicit."
+   ],
+   "answer": 3,
+   "explanation": "Small additions add up and quietly push the date. A visible list shows people their ideas aren't lost, and a clear rule (it must serve the launch goal, and it swaps for something else) keeps scope fixed. That protects the date without shutting down good ideas.",
+   "interview_tip": "Execution questions reward showing a simple mechanism for trade-offs. Mention how you keep stakeholders feeling heard while protecting the date."
+  },
+  {
+   "id": "2026-11-03-17",
+   "topic": "Execution",
+   "concept": "Choosing a pilot market for a staged launch",
+   "difficulty": "medium",
+   "question": "You're launching a new payments feature across 12 countries. Leadership wants to start with one pilot market. Which market is the best pilot?",
+   "options": [
+    "The largest market, so the launch has the biggest impact from day one",
+    "A mid-sized market whose users and payment methods look like the larger markets, where problems would be contained and fixable",
+    "The market with the most unusual regulations, to get the hardest one done first",
+    "The smallest market with the fewest users, so nothing important is at risk"
+   ],
+   "rationales": [
+    "Starting in the biggest market maximises the damage if something goes wrong.",
+    "Correct: it balances representative learning with a contained downside.",
+    "An unusual regulatory setup gives you lessons that won't carry over to other markets.",
+    "A tiny market limits risk, but its lessons may not apply to larger markets."
+   ],
+   "answer": 1,
+   "explanation": "A pilot is for learning, so it should look like where you'll roll out later and keep the downside small. A representative mid-sized market gives you lessons that carry over while limiting risk. The largest market puts too much at stake, and a tiny or unusual one teaches you little about the rest.",
+   "interview_tip": "Interviewers look for the purpose of a pilot: learning you can carry over, with limited risk. State your selection criteria before naming a market."
+  },
+  {
+   "id": "2026-11-03-18",
+   "topic": "Execution",
+   "concept": "Grandfathering existing customers during a price change",
+   "difficulty": "medium",
+   "question": "Your SaaS product is raising its list price by 25% for new customers. Long-time customers on older plans are very price-sensitive and make up most of your revenue. What's the best rollout plan?",
+   "options": [
+    "Keep the price change quiet and let customers notice it on their next invoice",
+    "Raise prices for everyone on the same day, to keep pricing simple",
+    "Raise prices for existing customers first, since they already know the product's value",
+    "Apply the new price to new customers now, keep existing customers on their current price for a set period, and give them clear notice before any change"
+   ],
+   "rationales": [
+    "Surprise invoices destroy trust and drive churn and complaints.",
+    "Same-day changes for everyone risk churn from the most important, price-sensitive customers.",
+    "Starting with the most price-sensitive group invites the highest churn risk.",
+    "Correct: it protects core revenue while still moving new customers to the new price."
+   ],
+   "answer": 3,
+   "explanation": "Grandfathering lets you capture the new price from new customers without shocking the base that drives most revenue. A defined period and clear advance notice give existing customers time to adjust and reduce churn and backlash. Surprise or same-day changes for a price-sensitive base risk losing core revenue.",
+   "interview_tip": "Pricing rollouts test whether you think about customer trust and revenue at risk. Mention notice periods and how you'll measure churn after the change."
+  },
+  {
+   "id": "2026-11-03-19",
+   "topic": "Behavioural",
+   "concept": "Proposing to change an agreed success metric mid-project",
+   "difficulty": "hard",
+   "question": "Halfway through a project, you realise the success metric your team committed to in planning (signups) will go up even if the feature fails users, while the outcome leadership cares about (30-day retention) may not move. What's the strongest action?",
+   "options": [
+    "Wait until the project ends, then explain in the review that signups was the wrong metric",
+    "Keep reporting signups, since that's what was agreed and changing it now looks bad",
+    "Raise it early with leadership, show why the current metric can mislead, and propose a revised metric with a clear plan, owning the original choice",
+    "Quietly start tracking retention and report whichever metric looks better at the end"
+   ],
+   "rationales": [
+    "Waiting until the end wastes the time when the team could have changed course.",
+    "Sticking to a metric you know misleads means you're optimising for the plan instead of for users.",
+    "Correct: it's transparent, early and evidence-based, and it fixes the goal while there's time to act.",
+    "Choosing metrics after seeing results is cherry-picking and destroys trust in your reporting."
+   ],
+   "answer": 2,
+   "explanation": "Committing to a metric is meant to drive the right outcome, not to protect the plan. Flagging the issue early, with evidence and a better proposal, keeps the team focused on real value and builds trust. Owning that the original metric was your call shows maturity. Picking metrics after the fact is the opposite of what strong PMs do.",
+   "interview_tip": "Behavioural interviews (Amazon 'Are Right, A Lot', 'Earn Trust') reward raising problems early and owning your earlier decisions. Show what you changed and what happened as a result."
+  },
+  {
+   "id": "2026-11-03-20",
+   "topic": "Behavioural",
+   "concept": "Bringing churned-customer voices to a defensive team",
+   "difficulty": "hard",
+   "question": "Your team believes churn is caused by price, and they get defensive when you suggest product problems. Exit surveys are vague. How do you best move the team toward the real cause?",
+   "options": [
+    "Ask leadership to tell the team that churn is a product issue",
+    "Run a discount campaign to prove price isn't the issue",
+    "Write a long document arguing that the team's product is the real problem",
+    "Set up calls with recently churned customers and invite engineers and designers to listen in, then review the patterns together"
+   ],
+   "rationales": [
+    "Escalation may force compliance but loses buy-in and trust.",
+    "A discount test costs money and time, and it doesn't reveal the actual product problems.",
+    "A one-sided argument usually makes a defensive team dig in.",
+    "Correct: direct customer exposure builds shared understanding and lowers defensiveness."
+   ],
+   "answer": 3,
+   "explanation": "Hearing customers directly is far more persuasive than a PM's opinion, and it lets the team discover the cause themselves, which lowers defensiveness. Reviewing patterns together builds shared ownership of the fix. Arguing or escalating tends to harden positions, and a discount test is slow and costly.",
+   "interview_tip": "Interviewers look for influence without authority and customer obsession. Show how you let evidence, not seniority, change minds."
+  },
+  {
+   "id": "2026-11-03-21",
+   "topic": "Behavioural",
+   "concept": "Acting on a time-sensitive decision while your manager is unreachable",
+   "difficulty": "hard",
+   "question": "On a Saturday, you learn a partner's broken integration is charging some customers twice. Your manager, who normally approves changes, is on a flight for 10 hours. Turning off the integration is reversible but will pause new orders from that partner. What do you do?",
+   "options": [
+    "Turn off the integration to stop the harm, tell your manager and the partner what you did and why, and plan the fix and refunds for when they're back",
+    "Ask the partner to fix it and wait for their reply before acting",
+    "Leave it running but email affected customers to warn them",
+    "Wait for your manager to land, since they normally approve these changes"
+   ],
+   "rationales": [
+    "Correct: it stops ongoing customer harm with a reversible action and keeps everyone informed.",
+    "Waiting on the partner leaves customers exposed for an unknown time.",
+    "Warning customers while the bug keeps charging them is not ownership.",
+    "Waiting 10 hours lets more customers be charged twice, which is worse than a short pause in orders."
+   ],
+   "answer": 0,
+   "explanation": "Customers are being harmed now, and the action is reversible, so a strong PM acts within their judgement and communicates clearly. This is a two-way-door decision: you can turn the integration back on. Waiting lets the double charges grow, and warning customers without stopping the problem doesn't protect them.",
+   "interview_tip": "Amazon-style 'Bias for Action' and 'Ownership' questions reward acting on reversible decisions and communicating openly. Explain why the decision was safe to make without approval."
+  },
+  {
+   "id": "2026-11-03-22",
+   "topic": "AI Product",
+   "concept": "Idempotency keys for retried agent tool calls",
+   "difficulty": "medium",
+   "question": "An AI travel agent sometimes books the same hotel twice. Logs show the booking API timed out, the agent assumed it failed and retried, but the first call had actually succeeded. What's the best fix?",
+   "options": [
+    "Send a unique idempotency key with each booking request, so the provider treats a retry as the same booking instead of a new one",
+    "Lower the model's temperature so it behaves more consistently",
+    "Increase the API timeout so calls rarely time out",
+    "Tell the model in the prompt never to retry a booking"
+   ],
+   "rationales": [
+    "Correct: it makes retries safe, so a repeated request can't create a second booking.",
+    "Temperature affects word choice, not how the system handles timeouts and retries.",
+    "Longer timeouts reduce the problem but can't remove it, and they slow the agent down.",
+    "Banning retries means real failures never get retried, leaving users without a booking."
+   ],
+   "answer": 0,
+   "explanation": "Timeouts don't tell you whether a call succeeded, so retries are needed but can create duplicates. An idempotency key lets the provider recognise a repeated request and return the original result instead of booking again. It fixes the issue at the system level, regardless of what the model decides.",
+   "interview_tip": "AI PM interviews increasingly test whether you treat agents as software systems. Showing you know retries and idempotency signals strong technical judgement."
+  },
+  {
+   "id": "2026-11-03-23",
+   "topic": "AI Product",
+   "concept": "End-to-end latency budget across a voice agent pipeline",
+   "difficulty": "medium",
+   "question": "A voice support agent feels slow: users wait about 2.5 seconds after they stop talking before it replies. The pipeline is speech-to-text, then an LLM, then text-to-speech. What should the PM push for first?",
+   "options": [
+    "Switch to the largest, most capable model to improve answer quality",
+    "Shorten every answer to one sentence",
+    "Add a 'please wait' sound so users know the agent is thinking",
+    "Measure time spent in each step and set a budget for each, then attack the largest one, for example by streaming between steps"
+   ],
+   "rationales": [
+    "A larger model usually adds delay, making the problem worse.",
+    "Very short answers can hurt quality and may not touch the slowest step.",
+    "A waiting sound may soften the experience but doesn't make the agent faster.",
+    "Correct: measuring each step and budgeting time focuses work on the biggest source of delay."
+   ],
+   "answer": 3,
+   "explanation": "In a chain, total delay is the sum of each step, so you first need to know where the time goes. A budget per step points the team to the biggest bottleneck, and streaming lets later steps start before earlier ones finish, cutting the wait users feel. Covering up the delay or changing answers without measuring doesn't fix the cause.",
+   "interview_tip": "Voice and real-time AI questions reward breaking delay into parts. Name the steps and how streaming between them changes the experience."
+  },
+  {
+   "id": "2026-11-03-24",
+   "topic": "AI Product",
+   "concept": "Enforcing business rules in code rather than in the prompt",
+   "difficulty": "hard",
+   "question": "A bank's AI assistant can issue fee refunds. Policy says no customer may get more than two refunds a year. The system prompt states this rule, but audits find the assistant sometimes grants a third refund when customers push hard. What's the best fix?",
+   "options": [
+    "Repeat the rule several times in the system prompt and add 'this is very important'",
+    "Fine-tune the model on examples of politely refusing a third refund",
+    "Enforce the limit in the refund tool itself, which checks the customer's refund history and rejects requests over the limit no matter what the model asks",
+    "Have a human review every refund the assistant issues"
+   ],
+   "rationales": [
+    "Stronger wording may lower the error rate but still leaves room for a determined customer to persuade the model.",
+    "Fine-tuning helps the model's behaviour but doesn't guarantee a hard rule is never broken.",
+    "Correct: a check in code guarantees the policy is followed, whatever the model says.",
+    "Reviewing every refund is safe but slow and costly, and it's unnecessary when the rule is easy to check in code."
+   ],
+   "answer": 2,
+   "explanation": "Hard business rules shouldn't depend on the model following instructions, because models can be persuaded or make mistakes. Putting the check in the tool makes the rule impossible to break, while the model still handles the conversation. Prompting and fine-tuning reduce errors but can't guarantee compliance, and reviewing every refund throws away the automation.",
+   "interview_tip": "Strong AI PMs separate what the model decides from what the system must guarantee. Say clearly which rules belong in code and which in the prompt."
+  },
+  {
+   "id": "2026-11-03-25",
+   "topic": "AI Product",
+   "concept": "Clustering production queries to find uncovered intents",
+   "difficulty": "medium",
+   "question": "Your AI assistant scores 92% on its eval set, but user satisfaction is falling. You suspect users are asking things your eval set doesn't cover. What's the most effective way to find out?",
+   "options": [
+    "Sample recent production conversations, group them into topics, and compare how often each topic appears in usage versus in the eval set",
+    "Add more examples of the same types already in the eval set",
+    "Ask the team to brainstorm which questions users might be asking",
+    "Run the existing eval set on a newer model to see if the score rises"
+   ],
+   "rationales": [
+    "Correct: it measures the gap between real usage and eval coverage directly.",
+    "More of the same examples doesn't reveal the topics you're missing.",
+    "Brainstorming relies on guesses rather than what users actually do.",
+    "A higher score on the same set says nothing about the topics it doesn't cover."
+   ],
+   "answer": 0,
+   "explanation": "An eval set only measures what it contains. Grouping real conversations into topics shows what users actually ask, and comparing that mix with the eval set exposes gaps. Those gaps tell you where to add test cases and where quality is likely falling.",
+   "interview_tip": "Eval questions in interviews reward grounding test sets in real usage. Mention how you'd keep the eval set updated as usage changes."
+  },
+  {
+   "id": "2026-11-03-26",
+   "topic": "AI Product",
+   "concept": "Reasoning tokens count toward output cost",
+   "difficulty": "easy",
+   "question": "You switch a feature to a reasoning model. Visible answers are the same length as before, but the bill per request triples. What's the most likely reason?",
+   "options": [
+    "Users are asking longer questions since the switch",
+    "Reasoning models cache prompts, which costs extra",
+    "The model generates internal reasoning tokens before answering, and those are billed as output tokens even though users don't see them",
+    "The provider charges more for the same number of visible tokens on weekends"
+   ],
+   "rationales": [
+    "Longer questions would raise input cost a bit, but they don't explain a tripling with the same answers.",
+    "Prompt caching usually lowers cost, it doesn't add to it.",
+    "Correct: hidden reasoning tokens add to output costs even when the visible answer doesn't change.",
+    "Weekend pricing isn't a common model pricing scheme and wouldn't explain a steady tripling."
+   ],
+   "answer": 2,
+   "explanation": "Reasoning models 'think' by producing tokens before the final answer. Those tokens are usually billed like output tokens, so cost can rise sharply even when the visible answer stays the same. That's why it pays to set reasoning effort to match the task and to track cost per request, not just answer length.",
+   "interview_tip": "AI PM interviews increasingly test cost awareness. Mention reasoning tokens and adjusting effort to the task to show you understand AI unit economics."
+  },
+  {
+   "id": "2026-11-03-27",
+   "topic": "Technology",
+   "concept": "ETags and conditional requests to save bandwidth",
+   "difficulty": "easy",
+   "question": "A mobile app downloads a 2 MB product catalogue every time it opens, even though the catalogue changes only a few times a week. What's the simplest way to cut this waste?",
+   "options": [
+    "Have the server tag each version (an ETag) and let the app ask 'has it changed?', so the server sends the full file only when there's a new version",
+    "Download the catalogue only once when the app is installed",
+    "Compress the catalogue more heavily but keep downloading it every time",
+    "Move the catalogue to a faster database"
+   ],
+   "rationales": [
+    "Correct: the full file is sent only when it has changed, which saves most of the bandwidth.",
+    "Users would never see catalogue updates.",
+    "Compression helps, but the app still downloads the whole file every time.",
+    "A faster database doesn't reduce the amount of data sent to the phone."
+   ],
+   "answer": 0,
+   "explanation": "With conditional requests, the app sends the version tag it already has. If nothing changed, the server replies with a tiny 'not modified' response instead of the full file. This saves data and time while still picking up updates. Downloading only once would leave users with stale data.",
+   "interview_tip": "Technical fluency questions test whether you can pick a simple, standard fix. Explain the trade-off between freshness and bandwidth."
+  },
+  {
+   "id": "2026-11-03-28",
+   "topic": "Technology",
+   "concept": "N+1 query problem slowing a list page",
+   "difficulty": "medium",
+   "question": "An order-history page that shows 50 orders takes 4 seconds to load. Engineers find the code runs one database query to get the orders, then a separate query for each order's items. What's the issue and fix?",
+   "options": [
+    "The database is too small; move to a bigger server",
+    "It's an 'N+1 query' problem; fetch all the orders' items in one batched query (or a join) instead of one query per order",
+    "The network is slow; add a CDN in front of the database",
+    "The page is showing too many orders; limit it to 10"
+   ],
+   "rationales": [
+    "A bigger server hides the problem for a while but keeps the wasteful query pattern.",
+    "Correct: batching the queries removes the dozens of round trips that cause the delay.",
+    "CDNs cache static content near users; they don't speed up database queries.",
+    "Showing fewer orders hurts the user experience without fixing the cause."
+   ],
+   "answer": 1,
+   "explanation": "Running one query per row turns a single page load into 51 round trips to the database. Fetching the related data in one go cuts that to one or two queries, which usually fixes the slowdown. A bigger server or fewer rows treats the symptom, and a CDN doesn't help with database queries.",
+   "interview_tip": "PMs aren't expected to write queries, but recognising common performance problems helps you push for the right fix and estimate effort."
+  },
+  {
+   "id": "2026-11-03-29",
+   "topic": "Growth",
+   "concept": "Paid brand-search ads cannibalising organic traffic",
+   "difficulty": "medium",
+   "question": "A D2C brand spends heavily on search ads for its own brand name. The ads show a strong return on ad spend, since many buyers click them. What's the key question to ask before increasing that spend?",
+   "options": [
+    "Whether the ads' click-through rate is above the industry average",
+    "Whether the landing page loads quickly enough",
+    "How many of those buyers would have clicked the free organic result for the brand anyway, which you can test by pausing the ads in some regions",
+    "Whether the brand can bid on more keywords related to its name"
+   ],
+   "rationales": [
+    "A high click-through rate is expected on brand searches and doesn't show incremental value.",
+    "Page speed matters for conversion but doesn't answer whether the ad itself adds sales.",
+    "Correct: it focuses on incremental sales, which is what matters for the spending decision.",
+    "More keywords expands spend without answering whether current spend is incremental."
+   ],
+   "answer": 2,
+   "explanation": "People searching your brand name already intend to find you, so many would click your organic listing if there were no ad. Reported return on ad spend counts all those buyers, inflating the ad's real value. A geo holdout (pausing ads in some regions) shows the incremental effect before you spend more.",
+   "interview_tip": "Growth interviews reward questioning attributed numbers. Mention incrementality and a holdout test to show you'd measure real impact."
+  },
+  {
+   "id": "2026-11-03-30",
+   "topic": "Current Events",
+   "concept": "Defender-first access for a dual-use cyber model (Gemini 4 Carbon, Oct 2026)",
+   "difficulty": "medium",
+   "question": "On 28 October 2026, Google announced Gemini 4 Carbon, a model with state-of-the-art cybersecurity skills for finding and patching vulnerabilities. Instead of a general launch, Google made it available first to a subset of cyber defenders and said it would widen access through its Fairwind Program. What's the clearest product reason for this rollout?",
+   "options": [
+    "The same skills that help defenders patch bugs could help attackers exploit them, so giving defenders a head start limits misuse while Google learns from real use",
+    "The model is too slow for consumer use, so it needs to be tested with professionals first",
+    "Cybersecurity customers pay the most, so starting with them maximises launch revenue",
+    "Regulators require all new models to launch only to security professionals"
+   ],
+   "rationales": [
+    "Correct: the gated, defender-first rollout manages dual-use risk while building real-world learning.",
+    "The announcement says nothing about speed limiting consumer use; access is limited for safety reasons.",
+    "Google's announcement frames the limit around trusted defenders and safety, not revenue.",
+    "There's no rule that all models must launch only to security professionals; this was Google's choice."
+   ],
+   "answer": 0,
+   "explanation": "Gemini 4 Carbon is 'dual-use': the ability to find and exploit vulnerabilities helps defenders and attackers alike. Releasing first to vetted defenders gives them time to fix problems before broad access, and lets Google watch for misuse and refine safeguards before opening up. It's a staged rollout driven by risk, not by revenue or performance.",
+   "interview_tip": "Interviewers like candidates who connect launch strategy to risk. For dual-use capabilities, explain who gets access first and what you'd learn before widening it.",
+   "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+  }
+ ]
+}
