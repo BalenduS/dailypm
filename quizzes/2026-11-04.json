@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-04",
+ "theme": "Bottlenecks, baselines and broken signals",
+ "questions": [
+  {
+   "id": "2026-11-04-01",
+   "topic": "Product Sense",
+   "concept": "Hands-free step mode for cooking with messy hands",
+   "difficulty": "medium",
+   "question": "A recipe app sees that 40% of users who start a recipe drop off before the last step. Session recordings show users scrolling back and forth with wet or floury hands, the screen locking mid-recipe, and long ingredient lists mixed into the method text. What should the team build first?",
+   "options": [
+    "Shorter recipes with fewer steps, promoted at the top of the home feed to raise completion rates",
+    "Short video versions of every recipe so users can watch the technique instead of reading the instructions",
+    "A save-for-later button so users who drop off can come back to the recipe at a more convenient time",
+    "A cook mode that shows one step at a time in large text, keeps the screen awake, and moves to the next step by voice or a large tap target"
+   ],
+   "rationales": [
+    "This games the completion metric by changing which recipes people cook, rather than making any recipe easier to follow.",
+    "Videos still need scrubbing and replaying with messy hands, and they don't stop the screen locking; they change the format, not the context problem.",
+    "Users aren't dropping off because they ran out of time; they drop off mid-task because the app is hard to use while cooking.",
+    "Correct: it fixes each observed blocker (locking screen, scrolling to find the step, needing clean hands) at the moment the user is actually cooking."
+   ],
+   "answer": 3,
+   "explanation": "The evidence describes a context-of-use problem: the user's hands are busy and dirty, the device fights them by locking, and the layout makes them hunt for their place. A cook mode removes each of those blockers at the moment of use. The other ideas change the content or the timing, but the user would still be fighting the phone while cooking.",
+   "interview_tip": "Interviewers look for whether you design for where and how the product is used. Naming the physical context (hands busy, eyes away, screen locking) before proposing features is a strong product-sense signal."
+  },
+  {
+   "id": "2026-11-04-02",
+   "topic": "Product Sense",
+   "concept": "Separating announcements from chatter in large community groups",
+   "difficulty": "hard",
+   "question": "A messaging app's community feature is popular with school parent groups of 200-400 members. Teachers say parents miss important notices (fee deadlines, early closures) because they get buried under hundreds of chat messages, and many parents have muted the group entirely. Which solution best addresses the core problem?",
+   "options": [
+    "A limit of 10 messages per member per day so that the group becomes quieter and notices are easier to spot",
+    "An admin-only announcements channel inside the community that notifies all members, with open discussion moved to separate sub-groups",
+    "A daily AI-generated digest of the group's conversation, sent as a single message every evening to all members",
+    "Letting admins pin one message to the top of the group so the most recent important notice is always visible"
+   ],
+   "rationales": [
+    "Rationing messages punishes normal conversation, frustrates active members, and still mixes notices with whatever chatter remains.",
+    "Correct: it splits high-signal notices from chatter so parents can mute the conversation without missing what matters.",
+    "A digest helps catch-up, but parents who muted the group may ignore it too, and a summary can drop or blur a deadline that has to be exact.",
+    "A single pin is overwritten by the next notice and doesn't notify muted members, so older but still-relevant notices get lost."
+   ],
+   "answer": 1,
+   "explanation": "The root problem is that two jobs with different value share one stream: rare, high-importance notices and frequent, low-importance chatter. Muting is the rational response to the chatter, but it also silences the notices. Separating the streams lets parents mute discussion while still reliably receiving announcements, which fixes the cause rather than reducing noise in a mixed stream.",
+   "interview_tip": "Strong product-sense answers separate user jobs that are being forced into one surface. Explaining why users' workaround (muting) makes sense, and designing around it, shows real empathy."
+  },
+  {
+   "id": "2026-11-04-03",
+   "topic": "Product Sense",
+   "concept": "Graceful degradation to audio-only on poor networks",
+   "difficulty": "easy",
+   "question": "A video-consultation app for small-town clinics finds that 30% of calls in tier-3 towns drop when the network weakens, and patients rarely call back. What is the best first fix?",
+   "options": [
+    "Raise video quality so the doctor gets a clearer picture and the consultation can finish faster",
+    "Block patients from starting a call unless a network speed test shows enough bandwidth for HD video",
+    "Automatically switch the call to audio-only when bandwidth falls, keep the call connected, and offer to resume video when it recovers",
+    "Show a message asking patients to move to a place with Wi-Fi before the doctor joins the call"
+   ],
+   "rationales": [
+    "Higher quality needs more bandwidth, which would make drops more frequent on exactly the networks causing the problem.",
+    "Blocking calls turns a partial problem into a total one, and the patients most likely to be blocked are the ones with the fewest alternatives.",
+    "Correct: it protects the core job (talking to the doctor) when conditions get worse, and restores video when it can.",
+    "Many patients in these towns don't have Wi-Fi nearby; this puts the burden on the user instead of fixing the product."
+   ],
+   "answer": 2,
+   "explanation": "The user's goal is to finish the consultation, not to see video. When the network can't carry video, falling back to audio keeps the core job working instead of failing completely. Good products degrade gracefully under bad conditions rather than failing or pushing the problem back to the user.",
+   "interview_tip": "When asked to design for emerging markets, interviewers want to hear how the product behaves under bad conditions. Prioritising the core job over the full experience is the signal."
+  },
+  {
+   "id": "2026-11-04-04",
+   "topic": "Product Sense",
+   "concept": "Predicted prep time instead of self-reported ready signals for dispatch",
+   "difficulty": "medium",
+   "question": "On a food-delivery app, riders wait an average of 12 minutes at restaurants. Investigation shows many restaurants tap 'food ready' as soon as an order arrives, because orders marked ready get a rider assigned faster. Which change best fixes rider wait time?",
+   "options": [
+    "Fine restaurants for every order where the rider waits more than five minutes after the food was marked ready",
+    "Delay every rider assignment by ten minutes across all restaurants so riders arrive closer to when food is ready",
+    "Pay riders a per-minute waiting fee so that the time they spend at restaurants is no longer unpaid",
+    "Dispatch riders using each restaurant's predicted prep time, learned from past handover times, instead of relying on the 'ready' tap"
+   ],
+   "rationales": [
+    "Fines treat the symptom and strain restaurant relationships, and restaurants may simply find a new way to game the timing.",
+    "A flat delay ignores that prep times vary widely: fast kitchens would make customers wait and slow ones would still keep riders waiting.",
+    "This compensates riders but doesn't cut wait time; the marketplace still wastes rider capacity at peak.",
+    "Correct: it removes reliance on a signal that restaurants have a reason to game and uses observed behaviour per restaurant instead."
+   ],
+   "answer": 3,
+   "explanation": "The 'ready' signal is broken because restaurants are rewarded for sending it early. Asking them to be honest won't hold while the incentive remains. Predicting prep time from actual handover data replaces the gamed signal with a measured one and adapts to each restaurant, so riders arrive when food is really ready.",
+   "interview_tip": "Marketplace questions often hinge on incentives. Pointing out that a signal is being gamed because of how it's rewarded, then replacing it with behaviour you can measure, is a senior-level insight."
+  },
+  {
+   "id": "2026-11-04-05",
+   "topic": "Metrics",
+   "concept": "Percentage points vs percent change",
+   "difficulty": "easy",
+   "question": "A checkout redesign raises conversion from 4% to 5%. In the launch update, how should you describe the change?",
+   "options": [
+    "A 125% increase in conversion, since 5% is 125% of the original 4% rate",
+    "A 20% relative increase in conversion, which is a 1 percentage-point gain",
+    "A 1 percentage-point increase, which is a 25% relative increase in conversion",
+    "A 1% increase in conversion, since the rate moved from 4% up to 5%"
+   ],
+   "rationales": [
+    "5% is 125% of 4%, but that makes the increase 25%, not 125%; this confuses the ratio with the change.",
+    "20% is the change divided by the new value (1/5); relative change is always measured against the starting value (1/4).",
+    "Correct: 5% - 4% = 1 percentage point, and 1 / 4 = a 25% relative lift.",
+    "This confuses percentage points with percent; calling it a 1% increase understates the relative lift 25-fold."
+   ],
+   "answer": 2,
+   "explanation": "The absolute change between two rates is measured in percentage points: 5% minus 4% is 1 point. The relative change divides that by the starting value: 1 / 4 = 25%. Mixing the two up is common and can make a result sound much smaller or larger than it is, so strong updates state both clearly.",
+   "interview_tip": "Precision with numbers builds credibility in analytical rounds. State both the absolute and the relative change so that no one in the room is misled."
+  },
+  {
+   "id": "2026-11-04-06",
+   "topic": "Metrics",
+   "concept": "Little's Law for sizing concurrent workload",
+   "difficulty": "medium",
+   "question": "Your support chat receives an average of 120 new chats per hour at peak. Each chat lasts 15 minutes on average from start to close, and each agent can handle 3 chats at the same time. Roughly how many agents do you need online at peak (ignoring buffer)?",
+   "options": [
+    "10 agents",
+    "3 agents",
+    "40 agents",
+    "30 agents"
+   ],
+   "rationales": [
+    "Correct: 120 × 0.25 h = 30 concurrent chats, and 30 / 3 per agent = 10 agents.",
+    "Three agents can hold only 9 chats at once, far short of the 30 that are open at any moment on average.",
+    "This divides 120 chats by 3 per agent, ignoring that each chat lasts only a quarter of an hour.",
+    "30 is the number of concurrent chats, not agents; it forgets each agent handles three at once."
+   ],
+   "answer": 0,
+   "explanation": "Little's Law says the average number of items in a system equals arrival rate times time in system: L = λ × W. Here 120 chats/hour × 0.25 hours = 30 chats open at any moment. With 3 concurrent chats per agent, you need 30 / 3 = 10 agents. In practice you'd add buffer for variability, but the law gives the baseline quickly.",
+   "interview_tip": "Little's Law is a fast tool for capacity questions about queues, support, warehouses and servers. Interviewers value a clean formula, a number, and a note on adding buffer for peaks."
+  },
+  {
+   "id": "2026-11-04-07",
+   "topic": "Metrics",
+   "concept": "Demand-weighted availability vs SKU-count availability",
+   "difficulty": "medium",
+   "question": "A quick-commerce app reports that 97% of its SKUs are in stock, yet customers keep complaining that items are unavailable. You learn the top 200 SKUs drive 60% of demand and often run out during evening peaks. Which availability metric would best reflect the customer experience?",
+   "options": [
+    "The total number of SKUs listed in the catalogue, compared with the main competitor's catalogue",
+    "The share of customer item requests (searches or add-to-cart attempts) that were in stock at that moment",
+    "The average number of days each SKU is out of stock per month, across the whole catalogue",
+    "The percentage of SKUs that are in stock when the store's inventory is counted at opening each morning"
+   ],
+   "rationales": [
+    "Catalogue breadth isn't availability; a larger catalogue can coexist with frequent stockouts of the items people buy.",
+    "Correct: it weights availability by demand and measures it at the moment of need, which is what customers feel.",
+    "This still weights all SKUs equally, so long-tail items that never sell dilute the stockouts that matter.",
+    "Opening-time counts miss the evening peak, which is exactly when the top SKUs run out."
+   ],
+   "answer": 1,
+   "explanation": "Counting SKUs treats a rarely bought spice the same as milk at 8 pm. Weighting availability by actual demand, at the moment customers ask for the item, measures what customers experience: did they get what they wanted when they wanted it. That metric would expose the peak-time stockouts of high-demand items that the SKU count hides.",
+   "interview_tip": "When a metric looks great but customers are unhappy, interviewers want you to question the metric's unit and weighting. Proposing a demand-weighted, moment-of-need version is a strong move."
+  },
+  {
+   "id": "2026-11-04-08",
+   "topic": "Metrics",
+   "concept": "Duplicate requests inflating demand after a retry feature",
+   "difficulty": "hard",
+   "question": "A ride-hailing app launched 'auto-retry', which automatically re-sends a ride request if no driver accepts within 60 seconds. Since launch, ride requests are up 15%, completed trips are flat, and the fulfilment rate (completed / requests) fell from 80% to about 70%. Leadership thinks there's a sudden driver shortage. What should you do first?",
+   "options": [
+    "Launch a driver incentive in the affected cities right away to raise supply and recover fulfilment",
+    "Group requests into unique rider intents (one per rider session) and recompute demand and fulfilment on that basis",
+    "Roll back auto-retry immediately, since it clearly caused the fulfilment rate to fall",
+    "Report the 15% rise in requests as a demand win, since more riders are trying to book trips"
+   ],
+   "rationales": [
+    "Incentives are costly and may be unnecessary; the numbers are fully explained by duplicate requests with no change in supply.",
+    "Correct: it removes the duplicate requests that inflate the denominator, so you can see whether fulfilment really changed.",
+    "Auto-retry may help riders get matched; rolling back based on a metric artefact could hurt the experience you meant to improve.",
+    "Requests rose because the system re-sends them, not because more people want rides; trips are flat, so real demand didn't grow."
+   ],
+   "answer": 1,
+   "explanation": "Auto-retry turns one rider's attempt into several requests, so the denominator grew without any new demand. If 100 riders produce 80 trips but now generate about 115 requests, fulfilment drops to 80/115, roughly 70%, even though nothing changed for riders or drivers. Counting unique intents removes the duplicates and shows whether there's a real supply problem before spending on incentives.",
+   "interview_tip": "Root-cause questions reward checking whether a metric's definition changed before assuming behaviour changed. Showing the arithmetic that fully explains the drop is a strong close."
+  },
+  {
+   "id": "2026-11-04-09",
+   "topic": "Experimentation",
+   "concept": "Non-inferiority testing for a cost-cutting change",
+   "difficulty": "hard",
+   "question": "You want to replace the model that writes support ticket summaries with a cheaper one that cuts inference cost by 40%. The goal is not to improve quality, only to make sure it doesn't get meaningfully worse. How should you design the experiment?",
+   "options": [
+    "Skip the test and ship, since a 40% saving is large enough to justify any small drop in quality",
+    "Set a non-inferiority margin in advance (for example, agent-rated quality may drop by no more than 2 points) and ship only if the confidence interval stays above it",
+    "Run a standard two-sided test and ship the cheaper model if the quality difference is not statistically significant",
+    "Ship the cheaper model only if it shows a statistically significant improvement in quality over the current one"
+   ],
+   "rationales": [
+    "Without measuring, you can't know whether the drop is small; a large quality loss could cost more in support time than it saves.",
+    "Correct: it tests the actual claim (not meaningfully worse) with a pre-set tolerance, so a small or noisy test can't pass by default.",
+    "Absence of evidence isn't evidence of no difference; a small sample could miss a real quality drop and you'd ship it anyway.",
+    "This sets a bar the change was never meant to clear and would block a good cost saving that keeps quality the same."
+   ],
+   "answer": 1,
+   "explanation": "A non-significant result in a normal test doesn't prove the two are equal; an underpowered test will almost always be 'not significant'. A non-inferiority test asks the right question: can we rule out a drop larger than the margin we'd accept? Setting that margin before the test ties the decision to an explicit trade-off between cost and quality.",
+   "interview_tip": "Interviewers like candidates who match the test design to the decision. Saying 'this is a non-inferiority question' and naming a margin shows statistical maturity beyond basic A/B testing."
+  },
+  {
+   "id": "2026-11-04-10",
+   "topic": "Experimentation",
+   "concept": "Treatment leakage through shared content biasing lift toward zero",
+   "difficulty": "medium",
+   "question": "You A/B test a new shareable recipe card. Treatment users share the cards into family WhatsApp groups, where many control users see and tap them. The test shows only a small lift in recipe saves. What does the leakage most likely mean for your result?",
+   "options": [
+    "The measured lift probably understates the true effect, because control users are also exposed to the treatment through shares",
+    "The result is unaffected, because users were randomly assigned and randomisation removes any bias",
+    "The result is invalid only if the share of control users exposed is larger than the share of treatment users",
+    "The measured lift probably overstates the true effect, because sharing makes treatment users look more engaged than they are"
+   ],
+   "rationales": [
+    "Correct: control users who see shared cards are partly treated, which narrows the gap between groups and shrinks the measured lift.",
+    "Randomisation protects assignment, but it can't stop the treatment from spilling over to control users after assignment.",
+    "Any meaningful exposure among control users dilutes the comparison; the bias doesn't require exposure to exceed some threshold.",
+    "Leakage moves the control group toward the treatment, which shrinks the gap; it doesn't inflate the treatment group's numbers."
+   ],
+   "answer": 0,
+   "explanation": "When control users get some of the treatment, the two groups become more alike and the difference between them shrinks. That biases the estimate toward zero, so a small lift may hide a larger real effect. Fixes include randomising by cluster (such as family group or region) or measuring exposure and analysing it separately.",
+   "interview_tip": "For social or shareable features, interviewers expect you to raise spillover without being prompted. Knowing the direction of the bias, and naming a cluster design, is the strong answer."
+  },
+  {
+   "id": "2026-11-04-11",
+   "topic": "Estimation",
+   "concept": "Annual toothbrush unit sales in India",
+   "difficulty": "medium",
+   "question": "Estimate the number of toothbrushes sold in India each year.",
+   "options": [
+    "About 20-30 billion",
+    "About 200-300 million",
+    "About 20-30 million",
+    "About 2-3 billion"
+   ],
+   "rationales": [
+    "This would mean every user replaces a toothbrush almost every two weeks, far above real behaviour.",
+    "This implies most people buy one only every four to five years, which is far too slow for a cheap, worn-out product.",
+    "This is closer to one brush per 50 people a year; it underestimates the user base or replacement rate by about 100 times.",
+    "Correct: ~1.2B users × ~2 replacements a year ≈ 2.4B units."
+   ],
+   "answer": 3,
+   "explanation": "Start with about 1.45 billion people. Assume around 85% use a toothbrush (some use neem sticks, powder with fingers, or are infants), which gives about 1.2 billion users. Dentists recommend replacing every three months, but actual behaviour is slower; assume about 2 per person per year. 1.2 billion × 2 ≈ 2.4 billion toothbrushes, so about 2-3 billion a year.",
+   "interview_tip": "For consumables, interviewers want population, adoption rate and replacement frequency stated as clear assumptions. Sanity-check the result against everyday behaviour before you commit."
+  },
+  {
+   "id": "2026-11-04-12",
+   "topic": "Estimation",
+   "concept": "Monthly WhatsApp order-update message volume for a D2C brand",
+   "difficulty": "easy",
+   "question": "An Indian D2C skincare brand ships 3,000 orders a day and sends WhatsApp updates at four points per order: order confirmed, shipped, out for delivery, and delivered. Roughly how many order-update messages does it send per month?",
+   "options": [
+    "About 360,000",
+    "About 36,000",
+    "About 3.6 million",
+    "About 12,000"
+   ],
+   "rationales": [
+    "Correct: 3,000 × 4 = 12,000 a day, × 30 days ≈ 360,000 a month.",
+    "This is off by a factor of 10; it is roughly what you'd get counting only three days of messages.",
+    "This is ten times too high; it would require 30,000 orders a day at four messages each.",
+    "12,000 is the daily volume; it forgets to multiply by the days in the month."
+   ],
+   "answer": 0,
+   "explanation": "Messages per day = 3,000 orders × 4 updates = 12,000. Over a 30-day month that's 12,000 × 30 = 360,000 messages. This kind of estimate is the starting point for budgeting messaging costs and planning provider limits.",
+   "interview_tip": "Small, clean estimates still matter: state the unit (messages per order), the daily total, then the month. Interviewers notice when you keep units straight."
+  },
+  {
+   "id": "2026-11-04-13",
+   "topic": "Strategy",
+   "concept": "Picks-and-shovels strategy in a technology gold rush",
+   "difficulty": "easy",
+   "question": "A startup sells evaluation and monitoring tools to companies building AI applications, regardless of which AI model or app ends up winning. Which strategy best describes this?",
+   "options": [
+    "Razor and blades: selling a cheap core product and making money on consumable add-ons",
+    "Vertical integration: owning every layer from the model to the end-user application",
+    "Aggregation: owning the end-user relationship and commoditising the suppliers behind it",
+    "Picks and shovels: supplying tools every competitor needs instead of betting on which one wins"
+   ],
+   "rationales": [
+    "Razor-and-blades depends on a cheap core plus recurring consumables; nothing here describes that pricing structure.",
+    "Vertical integration means owning several layers of the value chain; this company sells one tool layer to others.",
+    "Aggregators own demand and sit between users and suppliers; this company sells to builders and doesn't own end users.",
+    "Correct: it serves all competitors with tools they need, so it benefits from the market's growth rather than any single winner."
+   ],
+   "answer": 3,
+   "explanation": "In a gold rush, the people selling picks and shovels make money whichever miners strike gold. A tools company that serves every AI builder grows with the whole market and doesn't need to predict the winner. The risk is that the platforms its customers depend on build the same tools in.",
+   "interview_tip": "When discussing where to play in AI, naming picks-and-shovels and its main risk (platforms building it in) shows you can reason about market structure, not just products."
+  },
+  {
+   "id": "2026-11-04-14",
+   "topic": "Strategy",
+   "concept": "Steering subscribers to web checkout to avoid app-store fees",
+   "difficulty": "medium",
+   "question": "A subscription app is now allowed to show iOS users a link to buy on its website, where it avoids the app store's commission. The CFO wants to remove in-app purchase entirely and send everyone to the web. What is the most important trade-off to test before deciding?",
+   "options": [
+    "Whether the website's design matches the app's brand closely enough that users notice no difference",
+    "Whether competitors have already moved their own subscribers to web checkout in the same market",
+    "Whether the engineering team can build the web checkout page within one sprint of work",
+    "Whether the extra margin per subscriber outweighs the drop in conversion from a longer, less familiar web checkout"
+   ],
+   "rationales": [
+    "Brand consistency matters, but it's secondary to whether users actually complete the purchase outside the app.",
+    "Competitors' choices are useful context but don't tell you how your own users will convert.",
+    "Build effort is a delivery question; even an easy build could lose money if conversion drops sharply.",
+    "Correct: it frames the choice as margin per sale versus number of sales and measures the net effect."
+   ],
+   "answer": 3,
+   "explanation": "The decision is about net revenue, not fee savings alone. Leaving the app to pay on the web adds steps, re-entering payment details and lost trust, so fewer people may complete the purchase. Testing the web flow against in-app purchase on revenue per user who reaches the paywall shows whether higher margin per sale beats fewer sales.",
+   "interview_tip": "Strategy interviewers reward turning a policy change into a measurable trade-off. Name the two forces (margin up, conversion down) and the metric that nets them out."
+  },
+  {
+   "id": "2026-11-04-15",
+   "topic": "Strategy",
+   "concept": "Forking the product for one enterprise deployment model",
+   "difficulty": "hard",
+   "question": "Your cloud-only B2B SaaS has 400 customers. A large bank offers a deal worth 15% of your ARR if you deliver an on-premises version installed in its own data centre. Sales wants to say yes. What is the strongest response?",
+   "options": [
+    "Find the bank's underlying requirement (data control, compliance) and offer a dedicated single-tenant or customer-cloud deployment from the same codebase",
+    "Accept the deal, because 15% of ARR from one customer is too large to turn down at this stage",
+    "Decline immediately, because enterprise customers always slow down product development for everyone else",
+    "Accept the deal, but build the on-premises version as a separate product owned by a new team"
+   ],
+   "rationales": [
+    "Correct: it serves the real need while avoiding a permanent fork, and keeps the decision tied to segment strategy.",
+    "The revenue is attractive, but it ignores the ongoing cost of maintaining a second product and the concentration risk of one big customer.",
+    "Saying no without understanding the need may lose a strategic segment; enterprise deals can be worth it when they fit the product.",
+    "A separate team still means a forked codebase to maintain and a split roadmap; it hides the cost rather than removing it."
+   ],
+   "answer": 0,
+   "explanation": "An on-premises fork means separate releases, slower upgrades, harder support and engineering time pulled from 400 other customers, which is a long-term cost hidden behind a one-time win. Banks usually ask for on-prem because of data control and regulation, and these can often be met with a dedicated tenant or a deployment in the bank's cloud account using the same code. If many banks need it, that becomes a deliberate segment decision, not a one-off deal.",
+   "interview_tip": "Senior PMs are tested on resisting big one-off deals that bend the product. Ask for the underlying requirement and show the hidden long-term cost of forking."
+  },
+  {
+   "id": "2026-11-04-16",
+   "topic": "Execution",
+   "concept": "Improving the bottleneck stage (Theory of Constraints)",
+   "difficulty": "medium",
+   "question": "Features move from design to engineering to QA. QA has a two-week queue, while design and engineering finish work quickly. Leadership proposes hiring two more designers to ship faster. What should you recommend?",
+   "options": [
+    "Raise QA's throughput (test automation, engineers testing their own work) or reduce work sent to it, because QA limits overall speed",
+    "Ask engineering to start more features in parallel so that there is always work ready for QA",
+    "Hire the designers, since more design output will feed engineering and push more features through the pipeline",
+    "Remove QA from the process for low-risk features so that they can be shipped directly to users"
+   ],
+   "rationales": [
+    "Correct: improving the constraint is the only way to increase what the whole pipeline ships.",
+    "Starting more work increases work in progress and lengthens the queue, which makes delivery slower, not faster.",
+    "More design output just piles up in front of QA; the system still ships at QA's pace.",
+    "Skipping testing may ship sooner but raises the risk of bugs; it trades quality for speed instead of fixing the bottleneck."
+   ],
+   "answer": 0,
+   "explanation": "The output of a pipeline is set by its slowest stage. Adding capacity upstream of the bottleneck only makes the queue in front of QA longer, adding waiting time without shipping more. Speeding up QA, or reducing the load it receives, raises the throughput of the whole system.",
+   "interview_tip": "Execution interviews often hide a bottleneck in the setup. Find the constraint first and explain why adding capacity elsewhere won't help."
+  },
+  {
+   "id": "2026-11-04-17",
+   "topic": "Execution",
+   "concept": "Sticky user bucketing in percentage rollouts",
+   "difficulty": "medium",
+   "question": "You roll out a new checkout to 10% of traffic by randomly assigning each request. Users report the checkout page changing between visits and items disappearing from carts. What is the right fix for the rollout?",
+   "options": [
+    "Lower the rollout to 1% of requests so that fewer users experience the switching between versions",
+    "Add a banner telling users they may see a new checkout design while testing is in progress",
+    "Assign rollout by a hash of a stable user ID so each user consistently gets the same version",
+    "Speed up the rollout to 100% so that all users get the same new version at the same time"
+   ],
+   "rationales": [
+    "Fewer affected requests still means some users switch versions; the assignment method is the problem, not the size.",
+    "A banner explains the problem but doesn't stop the version switching or the lost carts.",
+    "Correct: a stable hash keeps each user in one version, which fixes the flip-flopping and keeps measurement clean.",
+    "Going to 100% skips the safety of a staged rollout before you know the new checkout works."
+   ],
+   "answer": 2,
+   "explanation": "Random assignment per request means the same user can see different versions from one page load to the next, which breaks state like carts and confuses users. Bucketing by a hash of a stable ID (user or account) keeps each person in one version for the whole rollout. It also makes the rollout measurable, because you can compare users rather than mixed sessions.",
+   "interview_tip": "Rollout mechanics come up in launch questions. Saying 'bucket by stable user ID' shows you understand both user experience and clean measurement."
+  },
+  {
+   "id": "2026-11-04-18",
+   "topic": "Execution",
+   "concept": "Purpose of a sprint retrospective",
+   "difficulty": "easy",
+   "question": "In Scrum, what is the main purpose of the sprint retrospective?",
+   "options": [
+    "For the team to review how it worked during the sprint and agree on concrete improvements for the next one",
+    "For the team to demo completed work to stakeholders and gather feedback on the product increment",
+    "For the manager to evaluate each team member's individual performance during the sprint",
+    "For the team to select backlog items and plan the work it will commit to in the next sprint"
+   ],
+   "rationales": [
+    "Correct: the retro looks at how the team worked and produces specific changes to try next sprint.",
+    "That's the sprint review, which looks at the product increment rather than the team's way of working.",
+    "Retros are a safe space for the team; turning them into performance reviews would kill honest discussion.",
+    "That's sprint planning, which decides what to build next rather than how to work better."
+   ],
+   "answer": 0,
+   "explanation": "The retrospective focuses on the process: what helped, what got in the way, and what the team will change. Its output is a small number of actionable improvements. The demo to stakeholders is the sprint review, and choosing work is sprint planning.",
+   "interview_tip": "Interviewers may ask how you run rituals. Describing retros that end in one or two owned actions, which you follow up on, signals that you care about results, not ceremony."
+  },
+  {
+   "id": "2026-11-04-19",
+   "topic": "Behavioural",
+   "concept": "Acting on harm to a vulnerable subgroup despite positive aggregate metrics",
+   "difficulty": "hard",
+   "question": "Your team launched a buy-now-pay-later option at checkout. Conversion is up 8% and leadership wants to celebrate. Digging in, you find that missed repayments have tripled among first-time borrowers with thin credit histories. What do you do?",
+   "options": [
+    "Quietly roll the feature back for everyone without telling leadership, to avoid an awkward conversation",
+    "Let the celebration go ahead, since the overall result is positive and repayment is the borrower's own responsibility",
+    "Share the subgroup data with leadership right away and propose tighter eligibility and limits for thin-file users, with missed repayments as a tracked guardrail",
+    "Wait for the next quarterly review to raise the issue, once there is a fuller set of repayment data"
+   ],
+   "rationales": [
+    "Acting alone and hiding it destroys trust and removes leadership from a decision that is theirs to make.",
+    "Ignoring known harm to vulnerable customers is ethically wrong and exposes the company to regulatory and reputational damage.",
+    "Correct: it surfaces the harm promptly with evidence and offers a specific fix that protects the at-risk group while keeping the benefit.",
+    "Waiting lets more customers fall into debt while you already have a clear signal."
+   ],
+   "answer": 2,
+   "explanation": "A good aggregate result can hide real harm to a vulnerable group, and in lending that harm also becomes regulatory and brand risk. Raising it quickly with the data, and coming with a targeted fix rather than only a problem, protects customers while keeping most of the win. Adding a guardrail metric makes sure the issue stays visible.",
+   "interview_tip": "Behavioural rounds test whether you speak up when the numbers look good. Strong answers combine customer obsession with a practical fix, not just raising alarms."
+  },
+  {
+   "id": "2026-11-04-20",
+   "topic": "Behavioural",
+   "concept": "Including a remote teammate left out of in-person decisions",
+   "difficulty": "hard",
+   "question": "A senior engineer on your team works from another time zone. She keeps learning about design decisions after they've been made in hallway conversations at headquarters, and she has gone quiet in meetings. What is the best way to fix this?",
+   "options": [
+    "Send a weekly email summarising the decisions made that week so she always knows what was decided",
+    "Encourage her to speak up more in meetings and to ask colleagues directly about upcoming decisions",
+    "Talk with her one-to-one, then change how decisions are made: write proposals in a shared doc and allow a comment window before anything is final",
+    "Ask her to shift her working hours so she can overlap more with headquarters and join the conversations"
+   ],
+   "rationales": [
+    "Summaries tell her what was decided but still give her no voice before decisions are made.",
+    "She can't contribute to decisions she doesn't know are happening; this blames her for a process problem.",
+    "Correct: it listens first and then changes the process so that being remote no longer means being left out.",
+    "This puts the cost on her and may not be sustainable; it treats the symptom instead of the exclusionary process."
+   ],
+   "answer": 2,
+   "explanation": "The problem is the decision process, which favours people who are physically present. A one-to-one acknowledges her experience; a written, async decision process with time to comment gives everyone an equal chance to shape decisions. That fixes the mechanism rather than asking the excluded person to adapt.",
+   "interview_tip": "Inclusion questions reward fixing the system rather than the person. Show that you listened, and that you changed a mechanism everyone uses."
+  },
+  {
+   "id": "2026-11-04-21",
+   "topic": "Behavioural",
+   "concept": "Giving an honest no-hire on an exec-referred candidate",
+   "difficulty": "hard",
+   "question": "You interview a PM candidate who was referred by your VP. In your session, the candidate showed clear gaps in product judgment. Before the debrief, other interviewers seem to lean toward 'hire', and you sense pressure to go along. What should you do?",
+   "options": [
+    "Change your vote to 'lean hire' to avoid friction, since the other interviewers may have seen strengths you missed",
+    "Submit a clear 'no hire' with specific examples from your interview, and present them calmly in the debrief",
+    "Abstain from voting, since the referral makes it awkward for you to judge the candidate objectively",
+    "Support a hire on the condition that the candidate is placed on a performance plan from day one"
+   ],
+   "rationales": [
+    "Changing your vote without new evidence lowers the bar and hides useful information from the debrief.",
+    "Correct: it gives honest, evidence-based input and keeps the hiring bar independent of who referred the candidate.",
+    "Abstaining removes your evidence from the decision; the referral is a reason to be careful, not to stay silent.",
+    "Hiring someone you expect to fail is unfair to them and the team; a performance plan is not a substitute for the bar."
+   ],
+   "answer": 1,
+   "explanation": "Hiring decisions work only if each interviewer reports what they actually saw. Specific, evidence-based feedback gives the debrief real information, and the referral shouldn't change the bar. If others saw strengths, the group can weigh them, but only if your evidence is on the table.",
+   "interview_tip": "Amazon-style loops test 'Hire and Develop the Best' and 'Have Backbone'. A strong story shows you held the bar with evidence and stayed respectful under pressure."
+  },
+  {
+   "id": "2026-11-04-22",
+   "topic": "AI Product",
+   "concept": "Validating model-generated links against the catalog",
+   "difficulty": "medium",
+   "question": "A shopping assistant recommends products with links. About 7% of links lead to 404 pages or the wrong product because the model writes the URLs itself. What is the most reliable fix?",
+   "options": [
+    "Lower the model's temperature so that it generates more predictable and accurate product URLs",
+    "Add a line to the system prompt telling the model to only give links to real products that exist",
+    "Show a disclaimer under each recommendation saying that links may sometimes be out of date",
+    "Have the model return product IDs from the retrieved results and build links from the catalog, rejecting any ID not found"
+   ],
+   "rationales": [
+    "Lower temperature makes outputs more consistent, not more correct; the model can still confidently produce a wrong URL.",
+    "Instructions can reduce the problem but can't guarantee it; the model may still produce plausible but wrong URLs.",
+    "A disclaimer shifts blame to the user but leaves the broken experience and lost sales in place.",
+    "Correct: it moves the exact part (the URL) into code backed by the catalog, so broken links become impossible."
+   ],
+   "answer": 3,
+   "explanation": "Models are good at choosing among options but unreliable at reproducing exact strings like URLs. Making the model pick IDs from retrieved results, and then building and checking the link in code, guarantees every link points to a real product. Facts that must be exact should come from a trusted system, not from generated text.",
+   "interview_tip": "AI PM interviews reward knowing which parts of a feature belong to the model and which belong to deterministic code. Say 'the model chooses, the system supplies the exact value'."
+  },
+  {
+   "id": "2026-11-04-23",
+   "topic": "AI Product",
+   "concept": "Field-level accuracy for document extraction evals",
+   "difficulty": "medium",
+   "question": "Your AI reads supplier invoices and extracts 12 fields (vendor, date, amount, tax, and so on). Only 62% of invoices have every field correct, and the team doesn't know where to focus. Which evaluation would best guide improvements?",
+   "options": [
+    "A single LLM-as-judge score from 1 to 5 rating how good each extracted invoice looks overall",
+    "Accuracy per field across a labelled set, with critical fields like amount and tax tracked and weighted separately",
+    "Text similarity (such as BLEU) between the extracted output and the full invoice text",
+    "The average confidence score that the model reports for each invoice it processes"
+   ],
+   "rationales": [
+    "A single holistic score hides which fields fail and adds judge noise to a task that has exact right answers.",
+    "Correct: it breaks failures down by field and weights them by business impact, which shows where to focus.",
+    "BLEU measures word overlap for free text; extraction has exact field values that should be checked directly.",
+    "Model confidence isn't accuracy; models can be confident and wrong, and it doesn't say which fields fail."
+   ],
+   "answer": 1,
+   "explanation": "A whole-document pass rate tells you something is wrong but not what. Measuring accuracy per field shows which fields fail and how often, and weighting critical fields reflects that a wrong amount is far worse than a wrong address line. That points the team at the fixes with the most impact.",
+   "interview_tip": "When designing evals, interviewers want metrics that are tied to how the task fails. Break the outcome into parts and weight by the cost of each error."
+  },
+  {
+   "id": "2026-11-04-24",
+   "topic": "AI Product",
+   "concept": "Asking clarifying questions when ambiguity changes the answer",
+   "difficulty": "easy",
+   "question": "Users of an AI data assistant often ask 'What was revenue last quarter?' Your company uses a fiscal year that differs from the calendar year, and revenue can mean gross or net. What should the assistant do?",
+   "options": [
+    "Always pick the calendar quarter and gross revenue, since those are the most common meanings",
+    "Refuse to answer until the user rewrites the question using the exact metric names from the data warehouse",
+    "Ask a short clarifying question, or state its assumption clearly, when the different readings would give materially different numbers",
+    "Return every possible combination of quarter and revenue definition in one long table"
+   ],
+   "rationales": [
+    "A silent default will often be wrong at a company with a fiscal calendar, and users won't know it was assumed.",
+    "Refusing is unhelpful and expects users to know warehouse names, which defeats the point of the assistant.",
+    "Correct: it resolves meaningful ambiguity with little friction and makes any assumption visible.",
+    "Dumping every combination overwhelms the user and pushes the interpretation work back to them."
+   ],
+   "answer": 2,
+   "explanation": "When a question has several readings that give different answers, guessing silently risks a confident wrong number. A brief clarifying question, or a clear statement of the assumption used, keeps the answer trustworthy without much friction. Over time, remembering a user's choice can remove the question entirely.",
+   "interview_tip": "Interviewers like hearing when an AI product should ask rather than answer. Tie it to the cost of a wrong answer and keep the friction small."
+  },
+  {
+   "id": "2026-11-04-25",
+   "topic": "AI Product",
+   "concept": "Setting an AI launch bar against the current human baseline",
+   "difficulty": "hard",
+   "question": "An AI system triages insurance claims with 92% accuracy on a labelled set. Legal says it can't launch until it reaches 99%. On the same set, your current human triage team scores 89% and takes three days per claim. What is the strongest way to frame the launch decision?",
+   "options": [
+    "Compare the AI and humans on the same set by error type and severity, and design human review for the high-severity cases",
+    "Launch immediately, since 92% is higher than the human team's 89% on the same labelled set",
+    "Benchmark the model against the accuracy that competitors claim for their own triage systems",
+    "Hold the launch until the model reaches 99%, since legal has set that as the required threshold"
+   ],
+   "rationales": [
+    "Correct: it uses the real baseline, examines error severity rather than only the average, and designs a review safety net.",
+    "Higher average accuracy doesn't mean the errors are equally harmful; the model may fail on the most costly claims.",
+    "Competitors' claims are unverified and measured on different data, so they say little about this decision.",
+    "99% may be unreachable and higher than what humans achieve; holding out means keeping a worse, slower process."
+   ],
+   "answer": 0,
+   "explanation": "A fixed accuracy target ignores what happens today: humans make mistakes too, and they are slower. The right bar compares against the status quo, but also checks which errors each makes, since a model that is more accurate on average could still make rarer, more serious mistakes. Routing high-severity or low-confidence claims to humans lets you capture the gain while controlling the worst risks.",
+   "interview_tip": "A strong AI PM reframes 'is it good enough?' as 'is it better than today, and where is it worse?'. Mentioning error severity and human review shows judgment."
+  },
+  {
+   "id": "2026-11-04-26",
+   "topic": "AI Product",
+   "concept": "Detecting verbatim regurgitation of licensed training data",
+   "difficulty": "medium",
+   "question": "A code assistant occasionally outputs long, near-verbatim blocks from public repositories under restrictive licences. Enterprise customers worry about legal risk. What is the most effective product mitigation?",
+   "options": [
+    "Raise the sampling temperature so that the model is less likely to repeat exact sequences from training",
+    "Fine-tune the model on more internal code so that it relies less on public repositories",
+    "Add a line to the terms of service saying that users are responsible for checking licences themselves",
+    "Check outputs against an index of public code and block or attribute long near-verbatim matches, showing the source licence"
+   ],
+   "rationales": [
+    "Higher temperature makes code less reliable and doesn't guarantee memorised blocks won't appear.",
+    "More fine-tuning may change style but doesn't remove memorised public code or provide any guarantee.",
+    "Pushing responsibility to users doesn't reduce the risk and won't reassure enterprise buyers.",
+    "Correct: it detects the exact risk at output time and gives users the information to comply."
+   ],
+   "answer": 3,
+   "explanation": "Models can memorise and reproduce training data, especially common snippets. A filter that compares outputs against known public code catches the specific risk, and showing the source and licence lets customers decide. Enterprise buyers value this kind of concrete control because it turns a vague risk into something they can manage.",
+   "interview_tip": "AI PM interviews increasingly include IP and trust questions. Proposing a detect-and-attribute control, not just a policy, signals you can ship to enterprises."
+  },
+  {
+   "id": "2026-11-04-27",
+   "topic": "Technology",
+   "concept": "SLI vs SLO vs SLA",
+   "difficulty": "easy",
+   "question": "Your team sets an internal target that 99.9% of API requests succeed over any 30-day window. What is this target called?",
+   "options": [
+    "A recovery time objective (RTO)",
+    "A service level objective (SLO)",
+    "A service level agreement (SLA)",
+    "A service level indicator (SLI)"
+   ],
+   "rationales": [
+    "RTO is how quickly you must recover after a disaster, not an ongoing success-rate target.",
+    "Correct: an internal target for a measured reliability level is an SLO.",
+    "An SLA is a contractual promise to customers with consequences; this is an internal goal.",
+    "The SLI is the metric being measured (request success rate), not the target you set for it."
+   ],
+   "answer": 1,
+   "explanation": "An SLI is the measurement itself, such as the percentage of successful requests. An SLO is the internal target for that measurement, like 99.9% over 30 days. An SLA is an external contract with customers, usually with penalties, and is normally set looser than the SLO so the team has room to react.",
+   "interview_tip": "Knowing SLI/SLO/SLA helps in reliability and platform PM conversations. Mention that SLAs are set looser than SLOs to leave a safety margin."
+  },
+  {
+   "id": "2026-11-04-28",
+   "topic": "Technology",
+   "concept": "Noisy-neighbour problem in multi-tenant SaaS",
+   "difficulty": "medium",
+   "question": "In your multi-tenant analytics SaaS, one large customer runs heavy reports at month-end, and dashboards slow down for every other customer. What is the best way to address this?",
+   "options": [
+    "Ask the large customer to run its reports at night, when other customers are less active",
+    "Cache every dashboard for 24 hours so that other customers never have to wait for queries",
+    "Add per-tenant resource limits and query queues, and move the heaviest customers to dedicated or isolated capacity",
+    "Upgrade the shared database to a bigger server so that it has more headroom at month-end"
+   ],
+   "rationales": [
+    "Relying on a customer's goodwill is fragile, and month-end reporting often can't move.",
+    "Day-old dashboards break analytics use cases that need fresh data, and it doesn't fix the shared load.",
+    "Correct: it isolates tenants so one customer's load can't degrade the experience for others.",
+    "A bigger server helps until the next spike; the shared design still lets one tenant consume everything."
+   ],
+   "answer": 2,
+   "explanation": "When tenants share resources, one heavy user can starve the rest. Per-tenant limits keep any single customer from taking everything, and isolating the biggest customers protects both them and everyone else. This is a product decision as well, often tied to enterprise pricing tiers with dedicated capacity.",
+   "interview_tip": "Platform PM interviews may probe scaling in B2B. Naming the noisy-neighbour problem and connecting isolation to pricing tiers shows technical and business fluency."
+  },
+  {
+   "id": "2026-11-04-29",
+   "topic": "Growth",
+   "concept": "Timing invite prompts after the user experiences value",
+   "difficulty": "easy",
+   "question": "A team collaboration app asks new users to invite teammates on the very first screen after signup. Only 4% send an invite. What change is most likely to raise invites?",
+   "options": [
+    "Prompt for invites right after the user creates their first document, when sharing it for feedback is a natural next step",
+    "Make the invite step mandatory before users can access the app, so every new user sends at least one invite",
+    "Send three follow-up emails over the first week reminding the user to invite their teammates",
+    "Offer a cash reward for each teammate invited, paid when the invite is sent"
+   ],
+   "rationales": [
+    "Correct: it asks at the moment collaboration helps the user, so inviting serves their own goal.",
+    "Forcing invites leads to fake or low-quality invites and makes many users abandon signup.",
+    "Reminders repeat the same ask without giving users a reason; they add noise more than motivation.",
+    "Paying per invite attracts spammy invites to people who never activate and adds fraud risk."
+   ],
+   "answer": 0,
+   "explanation": "Asking for invites before users have seen any value means they have nothing worth sharing and no reason to vouch for the app. Prompting when they have created something that is better with others ties the invite to their own goal. The invite feels like part of the work, not a favour to the company.",
+   "interview_tip": "Growth interviews reward linking viral loops to user value. Say when in the journey you'd ask, and why the user would want to at that moment."
+  },
+  {
+   "id": "2026-11-04-30",
+   "topic": "Current Events",
+   "concept": "Anthropic Message Threads eligibility and pricing (Nov 2026)",
+   "difficulty": "medium",
+   "question": "Anthropic's Message Threads beta for the Messages API lets a client send the full conversation once and then send only new messages plus the previous response's ID, keeping time to first token lower as conversations grow. A PM at a telehealth company that has HIPAA readiness enabled on its API organisation wants to adopt it to speed up a long-running clinical agent. According to Anthropic's documentation, what should the PM expect?",
+   "options": [
+    "Threads reduce token costs, because the API no longer bills for the earlier messages it already holds",
+    "Threads are not HIPAA eligible, so requests from an organisation with HIPAA readiness enabled are rejected",
+    "Threads are stored durably, so the company can stop keeping its own copy of each conversation",
+    "Threads are available, as long as the company also turns on zero data retention for the account"
+   ],
+   "rationales": [
+    "The docs say threads don't change pricing or rate limits; the benefit is smaller requests and lower latency, not cheaper tokens.",
+    "Correct: the documentation lists threads as not HIPAA eligible and says organisations with HIPAA readiness enabled get an unsupported-request error.",
+    "Threads are held only in memory for a short time; the docs tell developers to keep their own copy as the source of truth.",
+    "Threads are also not ZDR eligible, so turning on zero data retention doesn't make them available."
+   ],
+   "answer": 1,
+   "explanation": "Anthropic's documentation says threads are kept on the server briefly (expiring 5 minutes after the last request and deleted within an hour), do not change pricing or rate limits, and are not ZDR or HIPAA eligible; organisations with HIPAA readiness enabled get an error. So the feature's latency benefit isn't available to this team, and they would look at other options such as prompt caching. Checking a feature's compliance eligibility before planning around it is a core PM habit in regulated industries.",
+   "interview_tip": "AI platform PM interviews often test whether you check compliance and data-handling limits before adopting a new capability. Separating the latency benefit from cost and eligibility shows careful reading.",
+   "source": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+  }
+ ]
+}

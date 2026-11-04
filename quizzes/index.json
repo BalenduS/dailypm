@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-04",
+   "theme": "Bottlenecks, baselines and broken signals",
+   "count": 30
+  },
+  {
    "date": "2026-11-03",
    "theme": "Right moment, right guardrail",
    "count": 30
