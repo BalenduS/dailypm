@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-05",
+   "theme": "Base rates, burst limits and better bets",
+   "count": 30
+  },
+  {
    "date": "2026-11-04",
    "theme": "Bottlenecks, baselines and broken signals",
    "count": 30

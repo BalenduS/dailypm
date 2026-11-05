@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-05",
+ "theme": "Base rates, burst limits and better bets",
+ "questions": [
+  {
+   "id": "2026-11-05-01",
+   "topic": "Product Sense",
+   "concept": "Opt-in commitment devices for savings goals",
+   "difficulty": "hard",
+   "question": "A fintech app in India lets users create savings 'goal pots'. Users say they really want to save for these goals, yet most withdraw from the pot within weeks, mostly for discretionary spending. Which solution best addresses the underlying problem?",
+   "options": [
+    "Send weekly push reminders showing how close each user is to their goal",
+    "Let users opt into a self-chosen lock on the pot, with an early-unlock path that adds a short cooling-off delay",
+    "Block all withdrawals from goal pots until the goal date, for every user",
+    "Raise the interest rate on goal pots so the reward for leaving money in is larger"
+   ],
+   "rationales": [
+    "Reminders help awareness, but users already know their goal; they withdraw anyway when temptation strikes.",
+    "Correct: it targets present bias with a voluntary commitment, and the delay stops impulse withdrawals without trapping money needed for emergencies.",
+    "A forced lock for everyone ignores emergencies and users who never wanted it, which would hurt trust and push people away from the product.",
+    "A slightly higher rate barely changes an in-the-moment spending decision; the problem is impulse, not the size of the reward."
+   ],
+   "answer": 1,
+   "explanation": "The gap between what users say they want and what they do in the moment is present bias. A commitment device that users choose for themselves turns their own long-term intent into a constraint on their short-term self. The cooling-off delay adds friction to impulse withdrawals while keeping money reachable in a real emergency, which matters for users with thin buffers.",
+   "interview_tip": "Product sense interviews reward naming the behavioural mechanism (here, present bias) before proposing a fix. A strong answer also protects the edge case, emergencies, instead of over-correcting."
+  },
+  {
+   "id": "2026-11-05-02",
+   "topic": "Product Sense",
+   "concept": "Price-drop protection to stop pre-sale purchase deferral",
+   "difficulty": "hard",
+   "question": "An Indian electronics marketplace sees conversion on high-ticket items fall sharply in the 4–6 weeks before its big festive sale. Users add items to cart, then wait, afraid the price will drop during the sale. Leadership wants to protect pre-sale revenue without cutting prices. Which change best addresses the root cause?",
+   "options": [
+    "Run deeper pre-sale discounts on high-ticket items to pull demand forward",
+    "Show 'only 3 left' scarcity messages on high-ticket product pages to create urgency",
+    "Offer a price-drop guarantee: if the price falls within a set window after purchase, refund the difference as store credit",
+    "Hide the upcoming sale dates so fewer users know they could wait for the event"
+   ],
+   "rationales": [
+    "This cuts prices, which leadership ruled out, and it just moves the discount earlier rather than removing the reason to wait.",
+    "Artificial scarcity doesn't address the fear of overpaying and can feel manipulative on expensive items.",
+    "Correct: it removes the risk that makes users wait, and store credit limits the cost while bringing users back.",
+    "Big sales are widely publicised and users can see them coming, so hiding dates rarely works and damages trust."
+   ],
+   "answer": 2,
+   "explanation": "The root cause is fear of regret: users would buy now if they weren't afraid of overpaying. A price-drop guarantee removes that risk, so waiting no longer pays off. Paying the difference as store credit keeps the money in the marketplace and costs less than a blanket discount.",
+   "interview_tip": "Interviewers look for whether you diagnose why users hesitate before suggesting a fix. Naming the user's risk and removing it (risk reversal) is a recognisable strong pattern."
+  },
+  {
+   "id": "2026-11-05-03",
+   "topic": "Product Sense",
+   "concept": "Visual search for items users can't name",
+   "difficulty": "easy",
+   "question": "On a home-decor marketplace, many sessions end after vague searches like 'brown thing for wall' or 'lamp like this', with no purchase. Interviews show users often saw an item at a friend's home or on Instagram but don't know what it's called. Which feature most directly addresses this?",
+   "options": [
+    "Camera and screenshot-based visual search that returns similar-looking items",
+    "Editorial buying guides that explain common decor terminology",
+    "A larger set of category filters on the search results page",
+    "Spell-correction and synonym expansion in the text search box"
+   ],
+   "rationales": [
+    "Correct: it lets users search with the image they already have instead of words they don't know.",
+    "Guides teach vocabulary slowly and outside the moment of need; few users will read one to find one lamp.",
+    "Filters narrow a result set, but users can't reach a useful result set in the first place.",
+    "Synonyms help when users know roughly what to type; these users don't know the item's name."
+   ],
+   "answer": 0,
+   "explanation": "The users' problem is not typing errors or too few filters; they cannot describe the item in words at all. Visual search lets them start from what they do have, a photo or screenshot. Matching the input method to what users know is the core idea.",
+   "interview_tip": "A strong product sense answer ties the solution tightly to the evidence. Here the interview finding ('they don't know what it's called') points straight to the input method."
+  },
+  {
+   "id": "2026-11-05-04",
+   "topic": "Product Sense",
+   "concept": "Pre-post reconsideration prompts for offensive replies",
+   "difficulty": "medium",
+   "question": "A social app's comment sections suffer pile-ons. Analysis shows most offensive replies come from ordinary users in heated moments, not from a small group of repeat abusers. Which intervention best fits this diagnosis?",
+   "options": [
+    "Require phone-number verification before anyone can post a comment",
+    "Permanently ban any account after its first reported comment",
+    "When a classifier flags a draft reply as likely offensive, prompt the user to review it before posting",
+    "Collapse all comments by default so readers must tap to expand them"
+   ],
+   "rationales": [
+    "Verification deters throwaway accounts and repeat abusers, but these replies come from real, established users.",
+    "Harsh bans suit repeat abusers; for ordinary users reports are noisy and a one-strike ban would punish many people unfairly.",
+    "Correct: it targets the moment of impulse and leaves users in control, matching the 'ordinary users, heated moments' diagnosis.",
+    "Collapsing everything hurts all conversation and does nothing to stop offensive replies being written."
+   ],
+   "answer": 2,
+   "explanation": "If the problem is impulsive behaviour by otherwise normal users, the best lever is a moment of reflection at the point of posting. A nudge before posting adds light friction only where it's needed and lets people change their minds. Several large platforms have tested such prompts and reported users editing or deleting flagged replies.",
+   "interview_tip": "Interviewers want the solution to follow from the segment you identified. Saying 'because it's ordinary users in the moment, I'd intervene at that moment' shows clear reasoning."
+  },
+  {
+   "id": "2026-11-05-05",
+   "topic": "Metrics",
+   "concept": "Checking for a pre-existing trend before blaming a launch",
+   "difficulty": "hard",
+   "question": "Weekly orders per active user on a grocery app fell 6% in the four weeks after a redesigned home screen launched to 100% of users. The design team is being blamed. What is the most important first check?",
+   "options": [
+    "Roll back the redesign immediately and watch whether orders recover",
+    "Plot the metric for several months before launch to see if it was already falling at a similar rate",
+    "Survey users about whether they like the new home screen",
+    "Compare orders per user on iOS versus Android since the launch"
+   ],
+   "rationales": [
+    "Rolling back is slow and costly, and the recovery would be another uncontrolled before-and-after comparison.",
+    "Correct: a pre-existing trend is the most common way a before-and-after story misleads, and checking it takes minutes.",
+    "Opinions about the design don't tell you whether it changed ordering behaviour.",
+    "A platform split helps if the launch differed by platform, but here it shipped to everyone, so it doesn't isolate the cause."
+   ],
+   "answer": 1,
+   "explanation": "With no control group, a before-and-after comparison can't separate the launch from whatever was already happening. The cheapest, fastest check is the longer history: if the metric was already falling at about the same rate, the launch probably didn't cause it. Only if there's a clear break at launch is the redesign a strong suspect.",
+   "interview_tip": "In metric-drop questions, interviewers listen for 'was this already happening?' before you dig into segments. Checking the trend first shows you don't jump to conclusions."
+  },
+  {
+   "id": "2026-11-05-06",
+   "topic": "Metrics",
+   "concept": "Trial-to-paid conversion should use matured trial cohorts",
+   "difficulty": "medium",
+   "question": "A SaaS company with a 14-day free trial reports monthly 'trial-to-paid conversion' as paid conversions this month ÷ trials started this month. A campaign doubled trial signups in the last week of the month. What happens to the reported rate, and what's the better definition?",
+   "options": [
+    "It rises, because more trials always produce more conversions within the same month",
+    "It drops artificially; fix it by dividing paid conversions by total active users instead",
+    "It stays accurate, because conversions and trials are counted over the same month",
+    "It drops artificially, because the new trials haven't had time to convert; measure each cohort once its trial has ended"
+   ],
+   "rationales": [
+    "Late-month trials mostly convert next month, so the rate falls this month rather than rising.",
+    "Active users is the wrong denominator; it mixes in paying customers and doesn't measure trial conversion at all.",
+    "Counting in the same calendar month doesn't mean the same users are counted; many converters started last month.",
+    "Correct: the late-month trials haven't matured, and cohort-based measurement fixes the timing mismatch."
+   ],
+   "answer": 3,
+   "explanation": "Trials started late in the month can't convert until next month, so they inflate the denominator but not the numerator. Grouping users by trial-start cohort and measuring conversion after the trial ends compares like with like. This is a timing mismatch between numerator and denominator.",
+   "interview_tip": "Interviewers like candidates who check how a metric is calculated before interpreting it. Spotting a numerator-denominator timing mismatch is a strong analytical signal."
+  },
+  {
+   "id": "2026-11-05-07",
+   "topic": "Metrics",
+   "concept": "Cost per install vs cost per activated user",
+   "difficulty": "easy",
+   "question": "A mobile game's growth team celebrates that cost per install (CPI) fell 40% after switching ad networks. What should they check before calling it a win?",
+   "options": [
+    "The total number of ad impressions the new network served",
+    "Cost per activated or paying user from each network, since cheap installs may never engage",
+    "Click-through rate on the new network's ads",
+    "The app store rating in the weeks after the switch"
+   ],
+   "rationales": [
+    "Impressions are an input to the funnel and say nothing about user quality.",
+    "Correct: it measures what the spend actually buys, valuable users, not just downloads.",
+    "CTR describes ad engagement, not whether installed users stay or pay.",
+    "Ratings are a lagging, noisy signal and won't isolate which network's users are worth paying for."
+   ],
+   "answer": 1,
+   "explanation": "Installs are only valuable if those users play and pay. Cheaper networks often deliver lower-quality or even fraudulent installs, so CPI can fall while the cost of a valuable user rises. Comparing cost per activated or paying user shows whether the switch actually improved efficiency.",
+   "interview_tip": "Growth and metrics interviews often test whether you look past a cheap top-of-funnel metric to user quality. Naming the downstream metric quickly shows good judgement."
+  },
+  {
+   "id": "2026-11-05-08",
+   "topic": "Metrics",
+   "concept": "Long clicks as a post-click satisfaction signal",
+   "difficulty": "medium",
+   "question": "A news app's ranking team changes the model to optimise feed click-through rate. CTR rises 8%, but subscriptions and return visits are flat. Which metric best tells whether the extra clicks reflect real value?",
+   "options": [
+    "The share of clicks followed by meaningful reading time (long clicks) rather than a quick return",
+    "The number of items shown per feed load",
+    "The average headline length of clicked items",
+    "Total clicks per session across the feed"
+   ],
+   "rationales": [
+    "Correct: it measures whether the click delivered value, which is what drives subscriptions and return visits.",
+    "Items per load describes the feed layout, not whether users found content worth reading.",
+    "Headline length is a content attribute, not a measure of user satisfaction.",
+    "More clicks per session is just CTR in another form and can rise with clickbait too."
+   ],
+   "answer": 0,
+   "explanation": "Optimising CTR can reward attention-grabbing headlines that disappoint once opened. Measuring what happens after the click, whether people stay and read, separates satisfying clicks from clickbait. Search and feed teams widely use long clicks or dwell time as a quality check on CTR.",
+   "interview_tip": "Interviewers like hearing that you'd pair an engagement metric with a quality metric. Explaining how CTR can be gamed shows depth."
+  },
+  {
+   "id": "2026-11-05-09",
+   "topic": "Experimentation",
+   "concept": "Estimating test duration from eligible daily traffic",
+   "difficulty": "medium",
+   "question": "You need about 40,000 users per variant for an A/B test with two variants. The checkout page gets 8,000 eligible new users per day, and you'll put 50% of that traffic into the test. Roughly how long should the test run?",
+   "options": [
+    "About 5 days",
+    "About 10 days",
+    "About 6 weeks",
+    "About 3 weeks: 20 days of traffic, rounded up to full weeks"
+   ],
+   "rationales": [
+    "This divides 40,000 by all 8,000 daily users, ignoring both the 50% allocation and the two-way split.",
+    "This assumes 4,000 per variant per day, which forgets that only half the traffic is in the test.",
+    "This double-counts: it treats 40,000 as needed per arm and also halves traffic per arm again.",
+    "Correct: 4,000 in-test users a day gives 2,000 per variant, so 20 days, rounded up to full weeks."
+   ],
+   "answer": 3,
+   "explanation": "50% of 8,000 is 4,000 users a day in the test, split across two variants: 2,000 per variant per day. 40,000 ÷ 2,000 = 20 days. Rounding up to three full weeks covers weekday and weekend behaviour equally.",
+   "interview_tip": "PMs are expected to sanity-check test timelines quickly. Walking through allocation, split and weekly cycles shows you can plan experiments realistically."
+  },
+  {
+   "id": "2026-11-05-10",
+   "topic": "Experimentation",
+   "concept": "Writing a falsifiable hypothesis with mechanism and expected effect",
+   "difficulty": "easy",
+   "question": "Which is the strongest hypothesis to write before an A/B test of a new one-page checkout?",
+   "options": [
+    "Because removing the separate address step cuts drop-off, one-page checkout will raise completion by at least 2% with no rise in payment failures",
+    "We believe customers will like one-page checkout more than the current flow",
+    "One-page checkout will improve the overall user experience for our customers",
+    "Let's test one-page checkout and see which metrics move the most"
+   ],
+   "rationales": [
+    "Correct: it names the mechanism, primary metric, minimum effect and guardrail, so the result can clearly confirm or reject it.",
+    "Liking isn't measured by the test, and there's no metric or expected effect.",
+    "'Improve the experience' has no metric or threshold, so any result could be read as success.",
+    "Looking for whatever moves is a fishing expedition that raises false positives."
+   ],
+   "answer": 0,
+   "explanation": "A good hypothesis states the change, the reason it should work, the metric, the expected size of the effect and a guardrail. That makes it falsifiable and sets the decision before data arrives. Vague hypotheses invite cherry-picking whichever metric happens to move.",
+   "interview_tip": "Interviewers often ask 'what's your hypothesis?' A strong answer includes mechanism, metric, effect size and guardrail in one sentence."
+  },
+  {
+   "id": "2026-11-05-11",
+   "topic": "Estimation",
+   "concept": "Annual weddings in India via the age-cohort method",
+   "difficulty": "easy",
+   "question": "Estimate the number of weddings in India per year. Assume a population of about 1.4 billion, spread roughly evenly over about 70 years of age, and that about 90% of people marry once.",
+   "options": [
+    "About 9 million",
+    "About 18 million",
+    "About 40 million",
+    "About 1 million"
+   ],
+   "rationales": [
+    "Correct: 20M per age group × 90% = 18M people marrying, ÷ 2 people per wedding ≈ 9M.",
+    "This counts people getting married, forgetting that each wedding involves two people.",
+    "This is far too high; it would need over twice the people in an age group to marry each year.",
+    "This is an order of magnitude too low; it would mean only about one in ten people ever marries."
+   ],
+   "answer": 0,
+   "explanation": "Each one-year age group is about 1.4 billion ÷ 70 = 20 million people. About 90% marry, so about 18 million people marry each year. Each wedding involves two people, so that's about 9 million weddings a year.",
+   "interview_tip": "In guesstimates, interviewers watch for unit errors like people versus events. Saying 'two people per wedding' out loud shows careful structure."
+  },
+  {
+   "id": "2026-11-05-12",
+   "topic": "Estimation",
+   "concept": "Annual mattress unit sales in India",
+   "difficulty": "medium",
+   "question": "Estimate annual mattress unit sales in India. Assume about 300 million households, half of which use bought mattresses, two mattresses per such household, and replacement every 8 years. Ignore first-time buyers.",
+   "options": [
+    "About 35–40 million",
+    "About 300 million",
+    "About 19 million",
+    "About 75 million"
+   ],
+   "rationales": [
+    "Correct: a 300M installed base replaced every 8 years gives about 37.5M a year.",
+    "This is the whole installed base, not the yearly replacement volume.",
+    "This forgets the two mattresses per household (150M ÷ 8 ≈ 19M).",
+    "This uses a 4-year cycle instead of 8, doubling the answer."
+   ],
+   "answer": 0,
+   "explanation": "Installed base: 300M households × 50% × 2 mattresses = 300M mattresses. With an 8-year replacement cycle, about one-eighth are replaced each year: 300M ÷ 8 ≈ 37.5M units.",
+   "interview_tip": "Replacement-cycle sizing (installed base ÷ lifespan) is a reusable template. Interviewers reward naming it and separating the installed base from yearly flow."
+  },
+  {
+   "id": "2026-11-05-13",
+   "topic": "Strategy",
+   "concept": "Experience curve cost advantage",
+   "difficulty": "easy",
+   "question": "A battery maker finds its cost per kWh falls about 18% each time its cumulative production doubles. Which concept does this describe, and what does it imply strategically?",
+   "options": [
+    "Diminishing returns: each extra unit produced becomes more expensive",
+    "Economies of scope: the firm should diversify into adjacent products",
+    "Network effects: each new customer makes the product more valuable to others",
+    "The experience curve: winning volume early can build a lasting cost advantage"
+   ],
+   "rationales": [
+    "Diminishing returns would mean costs rising, the opposite of what's described.",
+    "Scope economies come from sharing resources across products, not from making more of one product.",
+    "Network effects are about value to users rising with more users, not production cost falling.",
+    "Correct: cost falling with cumulative production is the experience curve, and early volume becomes a cost lead."
+   ],
+   "answer": 3,
+   "explanation": "The experience (learning) curve says unit costs fall by a steady percentage each time cumulative output doubles, through learning, process improvements and scale. A company that gets ahead in cumulative volume can stay cheaper than rivals, which is why some firms price aggressively early. It depends on cumulative output, not just current size.",
+   "interview_tip": "Strategy interviews test whether you can name the source of an advantage precisely. Distinguishing experience curves from scale, scope and network effects shows clear thinking."
+  },
+  {
+   "id": "2026-11-05-14",
+   "topic": "Strategy",
+   "concept": "Company-owned vs franchise expansion trade-off",
+   "difficulty": "medium",
+   "question": "A popular café chain in Bengaluru wants to reach 200 outlets across India in three years. Its edge is a tightly controlled customer experience, and it has limited capital. What is the main trade-off of choosing franchising?",
+   "options": [
+    "Lower brand risk, because franchisees carry the reputational damage of bad outlets",
+    "Slower growth, but no need for standardised operating playbooks",
+    "Higher margin per outlet and full control, but much slower growth",
+    "Faster, capital-light growth, at the cost of less control over quality and customer experience"
+   ],
+   "rationales": [
+    "Customers blame the brand for a bad outlet, so franchising increases brand risk rather than shifting it.",
+    "Franchising is usually faster, and it needs more standardised playbooks, not fewer.",
+    "This describes company-owned expansion, not franchising.",
+    "Correct: franchising trades control for speed and capital efficiency, a real tension for an experience-led brand."
+   ],
+   "answer": 3,
+   "explanation": "Franchising uses other people's capital and local operators to grow quickly, but the brand gives up direct control and a share of outlet profits. For a brand whose edge is a controlled experience, that loss of control is the central risk, and it would need strong playbooks, training and audits to manage it.",
+   "interview_tip": "Interviewers want you to tie the trade-off to the company's specific advantage. Saying 'control matters most here because experience is their edge' shows strategic judgement."
+  },
+  {
+   "id": "2026-11-05-15",
+   "topic": "Strategy",
+   "concept": "Distinguishing a network effect from a scale effect",
+   "difficulty": "hard",
+   "question": "A founder pitches: 'Our cloud storage service has network effects — the more customers we have, the cheaper storage gets for everyone.' What's the best critique?",
+   "options": [
+    "That's a supply-side economy of scale: costs fall with volume, but a new user doesn't make the product more valuable to existing users",
+    "That's correct: any benefit that grows with the number of users is a network effect",
+    "That's a switching cost, because cheaper storage makes customers reluctant to leave",
+    "That's a data network effect, because more customers generate more usage data"
+   ],
+   "rationales": [
+    "Correct: falling costs from volume are a scale economy; nothing about a new user improves the service for others.",
+    "This definition is too broad; it would make almost every scale benefit a network effect.",
+    "Switching costs are about the cost of leaving; the pitch describes cost falling with volume.",
+    "A data network effect requires the data to improve the product for users; here the claim is only about cost."
+   ],
+   "answer": 0,
+   "explanation": "A network effect means each additional user makes the product more valuable to other users, as with a messaging app. Lower unit cost from bigger volume is an economy of scale, which a well-funded rival can match by buying volume. The difference matters because investors value true network effects as a stronger moat.",
+   "interview_tip": "Interviewers often probe moat claims. Precisely separating network effects from scale shows you won't accept buzzwords at face value."
+  },
+  {
+   "id": "2026-11-05-16",
+   "topic": "Execution",
+   "concept": "Minimum lovable product vs minimum viable product",
+   "difficulty": "easy",
+   "question": "A PM argues for a 'minimum lovable product' instead of a bare MVP for a new consumer journaling app entering a crowded market. What is the core argument?",
+   "options": [
+    "MVPs only make sense for B2B products, so consumer apps should skip them",
+    "In a crowded consumer category, a barely working v1 won't earn retention; the first version must do one narrow thing users love",
+    "A lovable product removes the need to test assumptions with real users",
+    "A lovable product needs every feature competitors have before it can launch"
+   ],
+   "rationales": [
+    "MVPs are used widely in consumer products; the debate is about the quality bar, not the category.",
+    "Correct: keep scope narrow, but make the core experience good enough that users come back.",
+    "An MLP still needs testing with users; it's a launch bar, not a replacement for learning.",
+    "Feature parity is the opposite of minimal and delays learning."
+   ],
+   "answer": 1,
+   "explanation": "An MVP aims to learn with the least effort, but in crowded consumer markets users drop a rough product before you learn anything. An MLP stays small in scope but makes the core experience delightful enough to earn repeat use. It's still minimal, just with a higher bar on quality for the core.",
+   "interview_tip": "Interviewers ask how you'd scope a v1. Showing you adjust the quality bar to the market, while keeping scope small, is a strong signal."
+  },
+  {
+   "id": "2026-11-05-17",
+   "topic": "Execution",
+   "concept": "Specifying unhappy paths and error states in a spec",
+   "difficulty": "easy",
+   "question": "Your spec for a bulk CSV contact import in a B2B CRM describes only the flow where the file uploads and imports cleanly. In review, engineers keep asking 'what if' questions. What's the most useful addition?",
+   "options": [
+    "A note telling engineering to handle errors however they think is best",
+    "More detailed visual mockups of the successful import confirmation screen",
+    "An unhappy-paths section: malformed rows, duplicates, partial failures and oversized files, each with expected behaviour and user messaging",
+    "A list of future enhancements planned for later versions of the import"
+   ],
+   "rationales": [
+    "Leaving error behaviour unspecified pushes product decisions onto engineering and leads to inconsistent user experiences.",
+    "The happy path is already defined; more mockups of it don't resolve the open questions.",
+    "Correct: defining error cases and user messaging answers the engineers' questions and prevents surprises.",
+    "Future work doesn't help engineers build version one correctly."
+   ],
+   "answer": 2,
+   "explanation": "Real imports are messy, and most of the engineering work and user frustration lives in error cases. Specifying expected behaviour for each failure, including what the user sees and can do next, prevents inconsistent handling and rework. It also lets QA write test cases.",
+   "interview_tip": "Interviewers asking 'what goes in a good PRD?' look for edge cases and error states. Mentioning them shows you've shipped real products."
+  },
+  {
+   "id": "2026-11-05-18",
+   "topic": "Execution",
+   "concept": "Defining incident severity levels by customer impact",
+   "difficulty": "medium",
+   "question": "During incidents, your on-call engineers keep debating whether something is SEV1 or SEV3, which delays escalation. What's the best fix?",
+   "options": [
+    "Define severity levels in advance by customer impact (users affected, payments blocked, data loss), with examples and who to page",
+    "Let the on-call engineer set severity based on how hard the fix looks",
+    "Treat every incident as SEV1 so nothing is ever under-escalated",
+    "Decide severity in the postmortem, once the root cause is known"
+   ],
+   "rationales": [
+    "Correct: pre-agreed, impact-based criteria end the debate and trigger the right response quickly.",
+    "Fix difficulty isn't customer impact; a quick fix can still be a major outage.",
+    "If everything is SEV1, the label stops meaning anything and people burn out.",
+    "Severity is needed to guide the response during the incident, not afterwards."
+   ],
+   "answer": 0,
+   "explanation": "Severity should drive the response, so it has to be decided quickly and consistently in the moment. Clear, impact-based definitions with examples remove the debate. Tying each level to who gets paged and how often updates go out turns the definition into action.",
+   "interview_tip": "Execution interviews may ask how you'd improve incident response. Answers that set up a mechanism, not just effort, read as senior."
+  },
+  {
+   "id": "2026-11-05-19",
+   "topic": "Behavioural",
+   "concept": "Seeking feedback proactively after a weak exec review",
+   "difficulty": "hard",
+   "question": "Your quarterly review with the VP went poorly: she cut you off twice and asked for 'the so-what'. Nobody gave you explicit feedback afterwards. In a behavioural interview, which follow-up best demonstrates ownership and growth?",
+   "options": [
+    "Wait for your manager to bring it up in your next performance review",
+    "Ask the VP or her chief of staff for ten minutes of specific feedback, restructure the next update to lead with decisions and impact, and check it landed",
+    "Add far more detail and appendix slides to the next review so you're never caught short",
+    "Tell your team the VP seemed to be having a bad day and move on"
+   ],
+   "rationales": [
+    "Waiting passes ownership of your growth to someone else and loses months.",
+    "Correct: it seeks specific feedback, acts on the signal and checks the result.",
+    "More detail is the opposite of what 'so-what' asks for; executives wanted the point first.",
+    "Blaming the VP's mood avoids learning and models poor ownership to the team."
+   ],
+   "answer": 1,
+   "explanation": "Ownership means seeking out feedback rather than waiting for it, then acting on it and closing the loop. The VP's 'so-what' points at structure, so leading with the decision and impact is the right change. Checking whether it worked shows a learning loop rather than a one-off fix.",
+   "interview_tip": "Behavioural answers about setbacks are judged on self-awareness and what you changed. Show you sought feedback, acted on it and measured the result."
+  },
+  {
+   "id": "2026-11-05-20",
+   "topic": "Behavioural",
+   "concept": "Framing a platform investment in the stakeholder's own metrics",
+   "difficulty": "hard",
+   "question": "You want two quarters of engineering time to rebuild a brittle checkout platform. The business-unit head who owns the revenue target sees it as 'engineers wanting to refactor'. What is the most effective way to win her support?",
+   "options": [
+    "Start the rebuild quietly using spare capacity and present it once it's done",
+    "Quantify what the brittleness costs in her terms, such as failed-checkout revenue and delayed launches, and propose a staged plan with early wins",
+    "Escalate to the CTO and ask for the rebuild to be mandated as technical debt",
+    "Walk her through the architectural problems in detail so she understands the risk"
+   ],
+   "rationales": [
+    "Working around a key stakeholder erodes trust and hides a large resource decision.",
+    "Correct: it speaks to her revenue goal and reduces risk with staged delivery.",
+    "Escalating first damages the relationship and wins compliance, not support.",
+    "Technical detail rarely persuades a business owner; impact on her goals does."
+   ],
+   "answer": 1,
+   "explanation": "Influence without authority works best when you frame the ask in the other person's goals. Showing revenue lost to checkout failures and launches delayed by fragile code turns 'refactor' into 'revenue protection'. A staged plan with early wins lowers the perceived risk of a two-quarter bet.",
+   "interview_tip": "Influence questions reward answers that translate your ask into the stakeholder's metrics. Interviewers listen for data, empathy and a de-risked plan."
+  },
+  {
+   "id": "2026-11-05-21",
+   "topic": "Behavioural",
+   "concept": "Shipping a reversible v1 to design partners despite polish requests",
+   "difficulty": "medium",
+   "question": "Your team wants three more weeks of polish on a new reporting feature for SMB customers. It's behind a feature flag, easy to change after launch, and five design partners are waiting for it. What's the best call?",
+   "options": [
+    "Launch to all customers immediately without telling anyone about the known gaps",
+    "Hold the launch until the team is fully happy, because first impressions matter most",
+    "Drop the polish work entirely and move the team on to the next project",
+    "Ship to the design partners now with known gaps shared, and polish based on how they actually use it"
+   ],
+   "rationales": [
+    "A full launch with hidden gaps risks trust with the wider customer base, who didn't sign up for a beta.",
+    "Polishing without usage data risks spending three weeks on things partners don't care about.",
+    "Abandoning polish dismisses the team's valid concerns; it should be prioritised by feedback, not skipped.",
+    "Correct: it moves fast on a reversible decision, uses partners for real feedback, and stays transparent."
+   ],
+   "answer": 3,
+   "explanation": "This is a reversible, two-way-door decision with a small, forgiving audience ready to give feedback. Shipping to design partners gets real usage data, which shows which polish matters. Being open about known gaps protects trust, and the team's quality concerns are still addressed, just guided by evidence.",
+   "interview_tip": "Interviewers (especially Amazon) probe bias for action. A strong answer explains why the decision is reversible and how you limited the downside."
+  },
+  {
+   "id": "2026-11-05-22",
+   "topic": "AI Product",
+   "concept": "Consolidating contradictory instructions in an overgrown system prompt",
+   "difficulty": "medium",
+   "question": "A support assistant's system prompt has grown to 4,000 words after a year of patches from different teams. Quality is erratic: the bot sometimes refuses refunds it should approve and sometimes over-apologises. What's the best first step?",
+   "options": [
+    "Raise the temperature so the model explores more varied responses",
+    "Add a new line at the top telling the model to follow all the rules carefully",
+    "Audit the prompt for conflicting or outdated instructions, consolidate it, and re-run the eval suite to check the effect",
+    "Switch to a larger model with a bigger context window"
+   ],
+   "rationales": [
+    "Higher temperature makes behaviour less consistent, the opposite of what's needed.",
+    "A blanket 'follow the rules' line doesn't resolve which conflicting rule wins.",
+    "Correct: it removes the root cause, conflicting instructions, and verifies the change with evals.",
+    "A bigger context window doesn't help; the prompt fits already, the problem is contradictions."
+   ],
+   "answer": 2,
+   "explanation": "Prompts patched by many teams accumulate rules that conflict, and the model resolves those conflicts inconsistently. Cleaning up the prompt removes the cause, and re-running evals confirms the fix didn't break anything. Treat the prompt like code that needs refactoring and testing.",
+   "interview_tip": "AI PM interviews value candidates who treat prompts as maintained, tested artefacts. Mentioning evals after any prompt change is a strong signal."
+  },
+  {
+   "id": "2026-11-05-23",
+   "topic": "AI Product",
+   "concept": "Near-duplicate leakage across train and test splits",
+   "difficulty": "medium",
+   "question": "A team built an eval set for an intent classifier by randomly splitting 50,000 support tickets into training and test sets. Test accuracy is 97%, but production accuracy is 82%. Many tickets turn out to be near-identical templated messages. What is the likely issue?",
+   "options": [
+    "The test set is too large; a smaller one would better reflect production",
+    "Near-duplicates landed in both sets, so the test rewarded memorisation; dedupe or split by template or time",
+    "A 97% vs 82% gap is normal sampling noise for a dataset of this size",
+    "The model is underfitting and needs more training epochs"
+   ],
+   "rationales": [
+    "Test-set size doesn't cause the gap; a smaller test set would only make estimates noisier.",
+    "Correct: leakage through near-duplicates inflates test accuracy; a grouped or time-based split fixes it.",
+    "With thousands of test examples, a 15-point gap is far too large to be noise.",
+    "Underfitting would show low accuracy on test too, not 97%."
+   ],
+   "answer": 1,
+   "explanation": "With a random split, near-identical tickets end up in both training and test, so the model is tested on examples it has effectively already seen. That inflates offline accuracy. Removing duplicates, or splitting by template, customer or time, gives a test set that resembles new production data.",
+   "interview_tip": "Interviewers like hearing that you question high offline scores. Naming leakage and how to split data properly shows ML fluency."
+  },
+  {
+   "id": "2026-11-05-24",
+   "topic": "AI Product",
+   "concept": "Diversity-aware reranking (maximal marginal relevance) in RAG",
+   "difficulty": "medium",
+   "question": "A RAG assistant over a company wiki answers 'What are our travel policies?' using the top 5 retrieved chunks. All five are near-identical copies of the domestic travel page from different wiki versions, so international rules are missed. Which retrieval change most directly fixes this?",
+   "options": [
+    "Lower the model's temperature for more deterministic answers",
+    "Increase the chunk size so each chunk holds more text",
+    "Switch to a larger embedding model with more dimensions",
+    "Dedupe near-identical chunks and rerank for diversity (e.g. maximal marginal relevance) so top-k covers different content"
+   ],
+   "rationales": [
+    "Temperature affects generation, not which chunks were retrieved.",
+    "Larger chunks don't stop duplicates from taking all the slots and may add noise.",
+    "A better embedding model would still rank the near-identical copies highest.",
+    "Correct: diversity-aware reranking and deduplication stop one passage from crowding out others."
+   ],
+   "answer": 3,
+   "explanation": "Pure similarity ranking can fill every slot with versions of the same passage. Maximal marginal relevance balances relevance against similarity to chunks already chosen, so the context covers more ground. Removing stale duplicate versions from the index also helps.",
+   "interview_tip": "RAG questions often test whether you can locate a failure in retrieval vs generation. Diagnosing 'retrieval returned redundant chunks' precisely is a strong signal."
+  },
+  {
+   "id": "2026-11-05-25",
+   "topic": "AI Product",
+   "concept": "Perceived vs measured productivity gains from AI tools",
+   "difficulty": "hard",
+   "question": "After rolling out an AI coding assistant, a developer survey shows engineers feel about 25% faster. Leadership wants to cite this to justify a large licence expansion. What's the strongest PM response?",
+   "options": [
+    "Use the number of accepted AI suggestions as proof of the productivity gain",
+    "Measure lines of code written per engineer before and after the rollout",
+    "Treat self-reports as a weak signal and measure real outcomes, e.g. a controlled comparison of time-to-complete and rework on similar tasks",
+    "Accept the survey, since developers are best placed to judge their own speed"
+   ],
+   "rationales": [
+    "Accepted suggestions measure use, not time saved; accepted code can still need rework.",
+    "Lines of code rewards volume, not value, and AI tools can inflate it easily.",
+    "Correct: it replaces perception with measured outcomes before a major investment.",
+    "Self-reports can be badly wrong about speed; research has found people felt faster while being slower."
+   ],
+   "answer": 2,
+   "explanation": "People are poor judges of their own speed with new tools. A 2025 randomised study by METR found experienced open-source developers took longer with AI tools while believing they had been faster. A controlled comparison on outcomes such as completion time, quality and rework is the evidence a big spending decision needs.",
+   "interview_tip": "AI PM interviews increasingly ask how you'd prove an AI feature's value. Separating perceived from measured impact shows rigour."
+  },
+  {
+   "id": "2026-11-05-26",
+   "topic": "AI Product",
+   "concept": "Precision falls when prevalence drops at fixed model quality",
+   "difficulty": "hard",
+   "question": "A fraud classifier has 90% recall and a 1% false-positive rate. At launch, 5% of transactions were fraud and precision was about 83%. Fraud has since dropped to 0.5% of transactions, and the model is unchanged. Roughly what is precision now?",
+   "options": [
+    "About 8%",
+    "About 83%, unchanged",
+    "About 31%",
+    "About 90%"
+   ],
+   "rationales": [
+    "This underestimates the true positives; with 45 caught and about 100 false alarms, precision is about 31%, not 8%.",
+    "Precision isn't a fixed property of the model; it changes with the base rate.",
+    "Correct: 45 true positives against about 100 false positives gives roughly 31%.",
+    "90% is the recall, not the precision."
+   ],
+   "answer": 2,
+   "explanation": "Per 10,000 transactions at 0.5% fraud: 50 are fraud, of which 90% (45) are caught. Of 9,950 legitimate transactions, 1% (about 100) are wrongly flagged. Precision = 45 ÷ 145 ≈ 31%. Precision depends on how common the positive class is, so it can collapse when fraud gets rarer even though the model hasn't changed.",
+   "interview_tip": "Interviewers test base-rate reasoning with classifier questions. Working it out per 10,000 cases out loud is a clear, strong approach."
+  },
+  {
+   "id": "2026-11-05-27",
+   "topic": "Technology",
+   "concept": "Denormalising for read speed at the cost of write complexity",
+   "difficulty": "easy",
+   "question": "An e-commerce order-history page is slow because each load joins five tables. An engineer proposes storing a pre-joined copy of key order fields on the order record. What's the main trade-off?",
+   "options": [
+    "Faster reads, but the copies must be kept in sync when source data changes, adding write complexity and risk of inconsistency",
+    "It removes the need for any database indexes on the orders table",
+    "Slower reads, but stronger consistency guarantees across tables",
+    "Faster reads with no real downside, because storage is cheap"
+   ],
+   "rationales": [
+    "Correct: reads get faster, but duplicated data must be kept consistent on every write.",
+    "Queries on the denormalised table still need indexes to be fast.",
+    "Denormalisation speeds up reads and weakens consistency, the reverse of this option.",
+    "Storage cost is minor; the real cost is keeping duplicated data in sync."
+   ],
+   "answer": 0,
+   "explanation": "Denormalisation duplicates data to avoid expensive joins on read. The cost is that every change to the original data must also update the copies, or users see stale or conflicting information. It's often worth it for read-heavy pages, but the sync logic has to be designed carefully.",
+   "interview_tip": "Technical PM rounds check you understand trade-offs, not just definitions. Naming both sides of a design choice is the strong signal."
+  },
+  {
+   "id": "2026-11-05-28",
+   "topic": "Technology",
+   "concept": "Token bucket rate limiting allows bursts within an average rate",
+   "difficulty": "medium",
+   "question": "Your public API allows 'an average of 10 requests per second'. Customers complain that batch jobs sending 50 requests at once get rejected, even though they're well under the average over a minute. Which approach allows these short bursts while still capping the average?",
+   "options": [
+    "A fixed limit of 10 requests in each one-second window",
+    "A token bucket: tokens refill at 10 per second up to a cap (say 100), so a burst can spend saved tokens",
+    "Queueing every request and processing exactly one every 100 ms",
+    "Removing rate limits for all paying customers"
+   ],
+   "rationales": [
+    "A fixed one-second window is what's rejecting the bursts today.",
+    "Correct: it allows bursts up to the bucket size while keeping the long-term average at 10 per second.",
+    "Strict pacing smooths load but makes batch jobs slow and doesn't let them burst.",
+    "Removing limits exposes the service to overload from one heavy customer."
+   ],
+   "answer": 1,
+   "explanation": "A token bucket refills at the average rate and stores unused tokens up to a maximum, so idle clients can burst and still be held to the long-run average. The bucket size sets the largest allowed burst. It's a common way to balance customer flexibility with protecting the service.",
+   "interview_tip": "API platform PM interviews often touch rate limits. Knowing why bursts matter to customers and how a token bucket helps shows practical fluency."
+  },
+  {
+   "id": "2026-11-05-29",
+   "topic": "Growth",
+   "concept": "Forcing a correlational 'magic number' activation threshold",
+   "difficulty": "medium",
+   "question": "Analysis shows users who follow 10+ accounts in their first week retain at three times the rate of others. The team plans to require every new user to follow 10 accounts before entering the app. What's the key flaw in this reasoning?",
+   "options": [
+    "Follow counts can't be measured reliably during the first week",
+    "Onboarding has no influence on retention, so the change won't matter",
+    "10 is too low; the requirement should be 20 to maximise retention",
+    "The threshold is a correlation: motivated users may follow more anyway, so forcing it may not cause retention and needs testing"
+   ],
+   "rationales": [
+    "Follows are easy to log; measurement isn't the problem.",
+    "Onboarding often does affect retention; the issue is whether this action is the cause.",
+    "Raising the number makes the same causal assumption, with even more friction.",
+    "Correct: the threshold may reflect who the users are rather than what the action does, so test before forcing it."
+   ],
+   "answer": 3,
+   "explanation": "'Magic number' thresholds are useful signals, but they come from observational data. Users who follow many accounts may already be more engaged, so forcing low-intent users to follow random accounts might not help and could add friction or a worse feed. An experiment, such as better suggested follows versus a forced step, shows whether the action actually causes retention.",
+   "interview_tip": "Growth interviews often test the 'aha moment' idea. Strong candidates use it as a hypothesis to test, not a rule to force."
+  },
+  {
+   "id": "2026-11-05-30",
+   "topic": "Current Events",
+   "concept": "Mistral Large 4 open-weight licence carve-out for hosted model services (Oct 2026)",
+   "difficulty": "medium",
+   "question": "In late October 2026 Mistral released the weights of Mistral Large 4 under its 'Mistral Ecosystem Open-Weight' licence, which it describes as a modified MIT licence. A startup wants to (a) fine-tune and self-host the model inside its own SaaS product, and (b) separately sell hosted API access to the model to other developers. Per Mistral's announcement, what applies?",
+   "options": [
+    "Both are allowed freely, because a modified MIT licence permits any commercial use",
+    "Neither is allowed without a commercial licence, because the weights are for research use only",
+    "(a) is allowed freely; (b) is a Model-as-a-Service offering, which needs a separate commercial licence from Mistral",
+    "Both are allowed only below an annual revenue threshold, above which a licence is required"
+   ],
+   "rationales": [
+    "'Modified' is the key word: the change is the MaaS condition, so not every commercial use is free.",
+    "The licence explicitly allows commercial use and fine-tuning; it isn't research-only.",
+    "Correct: the announcement allows free commercial use except for Model-as-a-Service offerings, which need a separate licence.",
+    "The condition depends on the type of business (MaaS), not a revenue threshold, unlike some other open-weight licences."
+   ],
+   "answer": 2,
+   "explanation": "Mistral says the model is free to use, modify, fine-tune and commercialise, with one condition: businesses that run a Model-as-a-Service offering need a separate commercial licence before using it commercially. Building it into your own product is fine; reselling hosted access to the model is the reserved case. This licence protects Mistral's own API business while encouraging adoption.",
+   "interview_tip": "AI product strategy interviews may ask how open-weight licences affect build-vs-buy choices. Reading the specific commercial condition, and why the vendor chose it, shows business sense.",
+   "source": "https://mistral.ai/news/mistral-large-4-oss/"
+  }
+ ]
+}
