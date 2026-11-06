@@ -1,0 +1,527 @@
+{"date": "2026-11-06", "theme": "Hidden denominators, honest forecasts and context gaps", "questions": [
+{"topic": "Product Sense", "concept": "Ordering groceries for family in another city", "difficulty": "medium",
+ "question": "A quick-commerce app in India notices many users in Bengaluru place orders delivered to their elderly parents in Lucknow. Parents often miss the delivery call, and the paying child has no idea whether the order arrived. Which product change best fits this job?",
+ "options": [
+  "Saved 'family' profiles with the recipient's own address and phone, live updates sent to both payer and recipient, and delivery instructions for the rider",
+  "A lower delivery fee for orders shipped to a different city than the payer's location, to encourage more of these orders",
+  "A video-call button inside the app so the child can walk parents through using the app themselves",
+  "A larger catalogue of senior-focused products such as health supplements and mobility aids in the parents' city"
+ ],
+ "answer": 0,
+ "explanation": "The job is 'take care of my parents' needs from a distance', and it has two users: a payer who wants confidence and a recipient who must receive the order. The pain is coordination — the rider calls the wrong person and the payer gets no proof. Making the recipient a first-class entity (own contact, own notifications, rider instructions) closes both gaps at once.",
+ "rationales": [
+  "Correct: it treats payer and recipient as separate users with separate needs, fixing missed calls and the payer's lack of visibility.",
+  "Cheaper delivery may grow volume but does nothing about missed deliveries or the payer's anxiety — it optimises a metric, not the pain.",
+  "This assumes parents should become app users; many won't, and it adds effort for both sides instead of removing the coordination problem.",
+  "More products answers a need nobody raised; the observed pain is in delivery coordination, not assortment."
+ ],
+ "interview_tip": "Product-sense interviewers reward spotting that the buyer and the end user are different people. Name both, state each one's pain, and design for the hand-off between them."},
+
+{"topic": "Product Sense", "concept": "Natural stopping points to reduce compulsive scrolling", "difficulty": "medium",
+ "question": "A short-video app's research shows many users end late-night sessions feeling regret about time spent, and that group churns faster over 6 months. The team wants to improve long-term wellbeing without crippling the feed. Which change is the strongest first step?",
+ "options": [
+  "Insert a natural stopping cue — e.g. 'You're all caught up on creators you follow' — after a session passes a user-set length, with an easy way to keep going",
+  "Hard-lock the app for every user after 60 minutes of watching in a day, with no override",
+  "Reduce video quality after midnight so the experience is less appealing to continue",
+  "Add a weekly screen-time report email that lists total minutes watched in the app"
+ ],
+ "answer": 0,
+ "explanation": "Infinite feeds remove natural stopping points, so users rely on willpower at their weakest moment. Reintroducing a gentle, user-configured stopping cue gives people a decision point while respecting autonomy. Because the regret group churns faster, this is a long-term retention play, not just a wellbeing gesture.",
+ "rationales": [
+  "Correct: it restores a decision point at the moment of overuse, respects user choice, and targets the group whose regret predicts churn.",
+  "A blanket hard lock punishes users who are happy with their usage and invites backlash and workarounds; it is paternalistic, not targeted.",
+  "Degrading quality is a covert dark pattern — it frustrates users without giving them a real choice and erodes trust.",
+  "A weekly report arrives far from the moment of decision, so it raises awareness but rarely changes in-the-moment behaviour."
+ ],
+ "interview_tip": "Expect 'how would you improve wellbeing without killing engagement?' at Meta and Google. Strong answers tie wellbeing to a long-term business metric and intervene at the moment of the behaviour."},
+
+{"topic": "Product Sense", "concept": "Upfront scope approval for price changes in home services", "difficulty": "hard",
+ "question": "On a home-services marketplace (plumbers, electricians), the top complaint is 'the final bill was much higher than the quote'. Professionals say the true job often isn't clear until they open the wall or inspect the fixture. Which solution best addresses this for both sides?",
+ "options": [
+  "Have the pro diagnose on-site, then send an itemised revised price that the customer must approve in-app before extra work starts, with photos of the problem",
+  "Cap every job at the original quoted price so customers are never surprised, with the marketplace covering any difference",
+  "Show customers a wider price range at booking, such as ₹300–₹3,000, so any final amount falls inside the range",
+  "Let customers rate pricing fairness after the job and suspend pros whose fairness rating falls below a threshold"
+ ],
+ "answer": 0,
+ "explanation": "The real problem isn't that prices change — scope uncertainty is genuine — but that changes happen without consent or evidence. A diagnose-then-approve step turns a surprise into a decision: the customer sees why (photos), sees what (itemised), and agrees before money is committed. Pros keep the ability to price the true job, so supply isn't pushed away.",
+ "rationales": [
+  "Correct: it accepts that scope is uncertain and fixes the consent and transparency gap, keeping both customers and pros whole.",
+  "Capping price shifts all scope risk to the marketplace or the pro; pros will refuse complex jobs or cut corners, damaging supply and quality.",
+  "A very wide range is technically accurate but useless for decisions, and customers still feel surprised by the final number.",
+  "Ratings punish pros after the fact for a structural problem they can't avoid, and they don't stop the surprise from happening."
+ ],
+ "interview_tip": "Marketplace product-sense questions test whether you protect both sides. Call out the trade-off explicitly: a fix that delights buyers but drives away supply is not a fix."},
+
+{"topic": "Product Sense", "concept": "Presence indicators to prevent collaborative edit collisions", "difficulty": "easy",
+ "question": "In a shared spreadsheet product, teams report that two people often edit the same budget cells at once and unknowingly overwrite each other. Which design change most directly prevents this?",
+ "options": [
+  "Show live presence — each collaborator's cursor and selected cell, labelled with their name and colour",
+  "Send everyone an email summary at the end of the day listing which cells changed",
+  "Ask users to type their initials in a comment before editing any cell",
+  "Restrict editing so only the sheet owner can change values, with others suggesting edits"
+ ],
+ "answer": 0,
+ "explanation": "Collisions happen because people can't see each other working. Live presence makes others' activity visible at the moment of action, so people naturally avoid the same cell or coordinate. It prevents the problem without adding process or removing collaboration.",
+ "rationales": [
+  "Correct: it gives real-time awareness at the moment of editing, which is when collisions happen.",
+  "A daily summary only reveals overwrites after the damage is done.",
+  "A manual etiquette step adds friction and people will skip it, especially under deadline.",
+  "Owner-only editing removes collisions by removing collaboration, which defeats the product's purpose."
+ ],
+ "interview_tip": "When asked to fix a collaboration problem, look for a solution that adds awareness rather than rules. Interviewers like candidates who prevent errors at the moment they occur."},
+
+{"topic": "Metrics", "concept": "Cumulative charts hiding a slowing growth rate", "difficulty": "easy",
+ "question": "A founder's investor update shows a 'total registered users' chart that rises every month. What is the main problem with using this chart to judge product health?",
+ "options": [
+  "A cumulative total can only go up, so it can hide that new signups per month are shrinking and that users are leaving",
+  "Registered users should be reported weekly instead of monthly to be meaningful",
+  "The chart should use a logarithmic axis, otherwise growth is exaggerated",
+  "Total users is fine on its own as long as the number is above one million"
+ ],
+ "answer": 0,
+ "explanation": "Cumulative metrics never fall, so a line that still rises can hide a growth rate that is falling and a user base that is leaving. Plot the period-level numbers (new users per month, active users, retention) to see the real trend.",
+ "rationales": [
+  "Correct: a cumulative count always rises and hides both a falling rate of new users and churn.",
+  "Changing the reporting period doesn't fix the problem; a weekly cumulative line hides the same things.",
+  "Axis scaling changes how the line looks, not the fact that a cumulative count can't show a decline.",
+  "Size doesn't make a cumulative metric informative — a large total can still be hiding a shrinking business."
+ ],
+ "interview_tip": "If you are shown a chart in a metrics round, first ask whether it's cumulative or per-period. Spotting a cumulative vanity chart early shows good data instincts."},
+
+{"topic": "Metrics", "concept": "ARR bridge decomposition (new, expansion, contraction, churn)", "difficulty": "easy",
+ "question": "A B2B SaaS company's ARR grew from $10.0M to $11.0M over the year. New customers added $2.5M and existing customers expanded by $1.0M. Downgrades (contraction) removed $0.5M. How much ARR was lost to churned customers?",
+ "options": ["$2.0M", "$1.0M", "$1.5M", "$3.0M"],
+ "answer": 0,
+ "explanation": "An ARR bridge says ending ARR = starting ARR + new + expansion − contraction − churn. So 11.0 = 10.0 + 2.5 + 1.0 − 0.5 − churn, which gives churn = $2.0M. The headline +$1.0M hides a large churn problem that the bridge brings out.",
+ "rationales": [
+  "Correct: 10.0 + 2.5 + 1.0 − 0.5 = 13.0, and 13.0 − 11.0 = 2.0.",
+  "$1.0M is the net change in ARR, not the churn component.",
+  "$1.5M comes from forgetting to subtract contraction before solving for churn.",
+  "$3.0M double-counts by adding contraction to churn instead of treating them separately."
+ ],
+ "interview_tip": "B2B metrics rounds often ask you to break a revenue change into its components. Walking through the bridge out loud shows you won't be fooled by a healthy-looking net number."},
+
+{"topic": "Metrics", "concept": "Average improved by dropping failed outcomes (cancellations excluded)", "difficulty": "hard",
+ "question": "A food-delivery app's average delivery time fell from 38 to 31 minutes after a new dispatch system launched, but customer satisfaction also fell. The delivery-time metric is computed over completed orders only. What should you check first?",
+ "options": [
+  "Whether cancellations rose — if slow orders are now being cancelled instead of delivered late, they drop out of the average",
+  "Whether riders are using a newer version of the rider app that reports timestamps differently",
+  "Whether satisfaction surveys were sent at a different time of day than before the launch",
+  "Whether the 31-minute average is statistically significant compared with the old 38 minutes"
+ ],
+ "answer": 0,
+ "explanation": "When a metric is computed only over successful cases, a system that turns slow successes into failures will look better while customers are worse off. A dispatch change that cancels hard-to-serve orders would lower average delivery time and lower satisfaction at once — exactly the pattern here. Always check what is excluded from the denominator before celebrating.",
+ "rationales": [
+  "Correct: it explains both movements at once — the average improves because the worst cases leave it, and the customers whose orders are cancelled are unhappy.",
+  "An instrumentation change is possible, but it wouldn't explain why satisfaction dropped; look first at a mechanism that explains both signals.",
+  "Survey timing could shift satisfaction, but it can't explain a 7-minute drop in delivery time; it's a side check, not the first one.",
+  "A 7-minute shift on large volume is almost surely significant; significance tells you nothing about whether the metric is being gamed by exclusions."
+ ],
+ "interview_tip": "In root-cause questions, the strongest move is finding one mechanism that explains every signal you were given. Saying 'what's not in the denominator?' is a hallmark of senior analytical thinking."},
+
+{"topic": "Metrics", "concept": "Duplicate accounts inflating signups after a login change", "difficulty": "hard",
+ "question": "After a redesign moved 'Log in' into a menu and made 'Get started' the main button, a consumer app's daily signups rose 25%. Daily active users stayed flat and support tickets about 'lost order history' rose sharply. What is the most likely explanation?",
+ "options": [
+  "Returning users can't find the login, so they create new accounts — signups rise without any new people",
+  "The new 'Get started' button is attracting new users who churn faster than the old cohort",
+  "A competitor outage sent new users to the app during the same period",
+  "The redesign caused a logging bug that counts each signup event twice"
+ ],
+ "answer": 0,
+ "explanation": "Three signals line up: more signups, flat DAU, and existing users saying their history is missing. That's the signature of returning users signing up again because login became hard to find. Confirm it by matching new accounts to existing phone numbers, emails or device IDs.",
+ "rationales": [
+  "Correct: it explains all three signals — inflated signups, unchanged actives and 'lost history' tickets from people on fresh accounts.",
+  "Fast-churning new users could explain flat DAU, but not the jump in tickets about lost order history.",
+  "An outage would bring genuinely new users and wouldn't create history-loss complaints from existing customers.",
+  "A double-counting bug would inflate signups but wouldn't cause real users to report missing history."
+ ],
+ "interview_tip": "Interviewers often plant a 'weird' side signal like support tickets. Use it — the candidate who explains every clue, not just the headline metric, stands out."},
+
+{"topic": "Experimentation", "concept": "Winner's curse: significant lifts overestimate the true effect", "difficulty": "medium",
+ "question": "A team runs many small A/B tests each quarter and ships the ones that reach significance. Post-launch, the shipped features consistently deliver smaller lifts than their tests showed. What is the most likely statistical reason?",
+ "options": [
+  "Filtering for significant results in underpowered tests selects the ones that got lucky, so measured lifts overstate true effects",
+  "The tests used a two-tailed test, which systematically overstates the lift compared with a one-tailed test",
+  "Control groups were too large relative to treatment groups, inflating the measured difference",
+  "Post-launch measurement uses all users, and larger samples always shrink effect sizes"
+ ],
+ "answer": 0,
+ "explanation": "When tests are underpowered, only estimates that happened to land high cross the significance bar. Shipping only those winners means the reported lifts are biased upward — the 'winner's curse'. Fixes include larger tests, shrinking estimates, replication or holdbacks to measure realised impact.",
+ "rationales": [
+  "Correct: selecting on significance in noisy tests keeps the lucky overestimates, so realised lifts regress toward the true, smaller effect.",
+  "One- vs two-tailed affects the significance threshold, not the bias of the lift estimate; two-tailed is actually more conservative.",
+  "Unequal split sizes reduce power but do not systematically inflate the measured lift.",
+  "Larger samples make estimates more precise, not smaller; the shrinkage comes from selection, not sample size."
+ ],
+ "interview_tip": "Mentioning the winner's curse when asked 'why didn't the launch match the test?' shows real experimentation maturity. Pair it with a remedy like holdbacks or replication."},
+
+{"topic": "Experimentation", "concept": "Type I vs Type II error in a ship decision", "difficulty": "easy",
+ "question": "A test of a new checkout flow shows no significant difference, so the team does not ship it. In reality the new flow does improve conversion. What kind of error is this?",
+ "options": [
+  "A Type II error (false negative) — a real effect was missed",
+  "A Type I error (false positive) — a non-existent effect was detected",
+  "A sample ratio mismatch — users were not split evenly",
+  "A novelty effect — early excitement distorted the result"
+ ],
+ "answer": 0,
+ "explanation": "A Type II error is failing to detect an effect that really exists — a false negative. Its probability is beta, and power (1 − beta) is the chance of catching a true effect. Low power from small samples makes this error more common.",
+ "rationales": [
+  "Correct: the effect was real but the test didn't detect it, which is a false negative.",
+  "A Type I error would be declaring a winner when there is no real effect — the opposite situation.",
+  "Sample ratio mismatch is a randomisation problem, not a name for missing a true effect.",
+  "Novelty effects inflate early results; they don't describe failing to find a real improvement."
+ ],
+ "interview_tip": "Interviewers check that you can map business outcomes to error types. A strong answer also says which error is costlier here and how that should shape alpha and power."},
+
+{"topic": "Estimation", "concept": "Annual storage for chat voice notes", "difficulty": "medium",
+ "question": "Estimate the yearly storage needed for voice notes on a messaging app with 100 million daily users. Assume each user sends 5 voice notes a day, each about 20 seconds long, encoded at about 16 kbps, stored once per message. Which is closest?",
+ "options": ["About 7 PB per year", "About 7 TB per year", "About 700 TB per year", "About 700 PB per year"],
+ "answer": 0,
+ "explanation": "16 kbps = 2 KB per second, so a 20-second note is about 40 KB. Daily: 100M users × 5 notes × 40 KB = 20 billion KB = 20 TB per day. Yearly: 20 TB × 365 ≈ 7.3 PB. Replication and backups would multiply this, which is worth stating as a follow-up.",
+ "rationales": [
+  "Correct: 40 KB × 500M notes = 20 TB/day, × 365 ≈ 7 PB/year.",
+  "7 TB is less than a single day of notes; it comes from losing a factor of 1,000 in unit conversion.",
+  "700 TB is roughly a month of notes, a factor of 10 too low for a full year.",
+  "700 PB would need each note to be about 4 MB — around 100× the stated bitrate."
+ ],
+ "interview_tip": "In technical estimation, write units at every step (kbps → KB/s → KB per note → TB/day). Interviewers care more about clean unit handling and sanity checks than the final number."},
+
+{"topic": "Estimation", "concept": "Battery-swap stations needed for an e-rickshaw fleet", "difficulty": "medium",
+ "question": "A city has about 20,000 e-rickshaws. Each needs about 2 battery swaps per day. A swap station holds 10 batteries, a battery takes about 3 hours to recharge, and stations run about 18 hours a day. Roughly how many stations are needed to meet demand?",
+ "options": ["About 700", "About 70", "About 7,000", "About 20,000"],
+ "answer": 0,
+ "explanation": "Demand: 20,000 × 2 = 40,000 swaps a day. Supply per station: 10 batteries × (18 h ÷ 3 h) = 60 swaps a day. Stations needed: 40,000 ÷ 60 ≈ 670, so about 700. In practice you'd add a buffer for peak hours, since demand bunches around shift changes.",
+ "rationales": [
+  "Correct: 40,000 swaps ÷ 60 swaps per station ≈ 670.",
+  "70 stations could only do about 4,200 swaps a day — a tenth of demand.",
+  "7,000 would assume each station does about 6 swaps a day, ignoring that each battery cycles six times.",
+  "20,000 is one station per rickshaw, which confuses vehicles with stations."
+ ],
+ "interview_tip": "Supply-capacity estimates follow a clear pattern: total demand ÷ capacity per unit. Saying where peaks would change the answer shows product judgment beyond arithmetic."},
+
+{"topic": "Strategy", "concept": "Frequency-margin wedge: high-frequency use case to sell high-margin products", "difficulty": "medium",
+ "question": "A fintech app in India makes almost nothing on UPI payments but has users opening it several times a day. Its leadership wants a profitable business. Which strategy best uses its position?",
+ "options": [
+  "Use the frequent, low-margin payment habit to cross-sell infrequent, high-margin products like credit, insurance and wealth",
+  "Start charging users a small fee on every UPI payment to make the core product profitable",
+  "Cut marketing spend to zero and wait for payment volume to grow into profitability",
+  "Spin off payments and focus only on a standalone lending app with its own acquisition"
+ ],
+ "answer": 0,
+ "explanation": "A high-frequency, low-margin product earns attention and trust; low-frequency, high-margin products earn money but are expensive to sell. Pairing them lets the frequent habit cut the acquisition cost of the profitable products. Many super-apps and payment players follow this wedge.",
+ "rationales": [
+  "Correct: it turns cheap, repeated engagement into a low-cost distribution channel for products with real margins.",
+  "Charging for payments in a market where rivals are free invites users to switch, destroying the habit that is the core asset.",
+  "Volume alone doesn't fix near-zero margin; growing a zero-margin business doesn't create profit.",
+  "A standalone lending app throws away the distribution advantage and has to buy every customer from scratch."
+ ],
+ "interview_tip": "Strategy rounds reward explaining where value is created versus where it is captured. Naming the frequency-margin wedge shows you think in business models, not just features."},
+
+{"topic": "Strategy", "concept": "Conservation of attractive profits (modularity shifts where profit sits)", "difficulty": "hard",
+ "question": "Laptop makers once earned high margins, but as components became standard and interchangeable, margins moved to the chip and operating-system suppliers. A PM is applying this lesson to AI apps, where models are improving fast but app experiences look increasingly similar. What does the principle predict?",
+ "options": [
+  "Profit shifts to whichever layer stays scarce and hard to swap; if apps become interchangeable, value moves to models, distribution or proprietary data",
+  "Profit always stays with the company closest to the end customer, so app makers will keep the highest margins",
+  "Every layer of the stack earns similar margins once a market matures, so it doesn't matter which layer you build in",
+  "Profit shifts to whichever layer has the most companies competing in it, because competition drives innovation"
+ ],
+ "answer": 0,
+ "explanation": "Christensen's 'conservation of attractive profits' says that when one layer becomes modular and commoditised, profit moves to an adjacent layer that is still integrated or scarce. For AI apps, if the user experience becomes interchangeable, profit goes to whatever stays hard to replicate: frontier models, distribution, or proprietary data and workflows. The PM's job is to own a scarce layer, not just a thin interface.",
+ "rationales": [
+  "Correct: profit follows scarcity and non-substitutability, so commoditised apps pass value to whichever layer remains hard to replace.",
+  "Being close to the customer only helps if switching is hard; in the PC case, assemblers were closest to the customer and still lost margin.",
+  "Margins differ sharply across layers in mature markets — that unevenness is the whole point of the principle.",
+  "Many competitors in a layer is a sign of commoditisation, which pushes profit away, not toward it."
+ ],
+ "interview_tip": "Value-chain questions ('where will profit be in five years?') appear in AI-company PM loops. Strong answers name what will stay scarce and show how the product will own it."},
+
+{"topic": "Strategy", "concept": "Come for the tool, stay for the network", "difficulty": "medium",
+ "question": "A new restaurant-reservation marketplace can't attract diners because it has few restaurants, and can't attract restaurants because it has few diners. Which entry strategy best breaks this deadlock?",
+ "options": [
+  "Give restaurants a useful standalone tool — table management software — that they adopt for its own sake, then switch on diner bookings once enough restaurants are using it",
+  "Spend heavily on diner ads so restaurants see demand and decide to join",
+  "Sign up restaurants by promising guaranteed bookings and pay for any shortfall",
+  "Launch in 20 cities at once so the network grows faster everywhere"
+ ],
+ "answer": 0,
+ "explanation": "'Come for the tool, stay for the network' gives one side value on its own, before any network exists. A tool restaurants want regardless builds supply, and that supply then makes the network valuable to diners. OpenTable grew this way, with reservation software for restaurants.",
+ "rationales": [
+  "Correct: it delivers single-player value to the supply side first, creating the inventory that later powers the network.",
+  "Diner ads with too few restaurants lead to bad first experiences and wasted spend, because supply is the bottleneck.",
+  "Guaranteed bookings are expensive and don't scale; they subsidise the deadlock instead of breaking it.",
+  "Spreading across many cities makes each local network thinner, which makes the cold-start problem worse."
+ ],
+ "interview_tip": "Marketplace cold-start questions are common. Naming a single-player tool that earns one side's adoption shows you understand network effects aren't magic on day one."},
+
+{"topic": "Execution", "concept": "Open questions section in a spec", "difficulty": "easy",
+ "question": "A PM is writing a spec for a new feature, and several decisions are still undecided — for example, whether to support refunds in v1 and which team owns notifications. What is the best way to handle these in the document?",
+ "options": [
+  "List them in an 'Open questions' section with an owner and a target decision date for each",
+  "Leave them out until they're decided so the spec looks finished and confident",
+  "Pick an answer for each yourself and write it into the spec as settled",
+  "Mention them in a team chat rather than the spec, to avoid cluttering the document"
+ ],
+ "answer": 0,
+ "explanation": "An open-questions section makes uncertainty visible, so reviewers know what is still undecided and can help resolve it. Adding an owner and a date turns each question into a tracked decision instead of a loose end. This prevents engineers from building on assumptions that later change.",
+ "rationales": [
+  "Correct: it makes unknowns visible, owned and time-bound, which is what keeps a spec honest and moving.",
+  "Hiding open issues makes the spec look done but leads to surprises and rework when they surface later.",
+  "Deciding alone skips the people who own those areas, and presents a guess as a decision.",
+  "Chat discussions get lost; the spec should be the single place where the state of decisions lives."
+ ],
+ "interview_tip": "When asked how you write specs, mention tracking open questions with owners. It shows you manage ambiguity openly instead of hiding it."},
+
+{"topic": "Execution", "concept": "Account-level rollout for collaborative B2B features", "difficulty": "medium",
+ "question": "A B2B project-management tool is gradually rolling out a redesigned shared task board to 10% of users, randomised by individual user. Customers complain that teammates see different boards and can't follow each other's instructions. What should the PM change?",
+ "options": [
+  "Roll out by workspace (account), so everyone in the same team gets the same version at the same time",
+  "Speed the rollout to 100% immediately so no one sees a mixed experience",
+  "Keep per-user rollout but add a banner explaining that teammates may see a different version",
+  "Pause the rollout and collect more feedback from the 10% who already have it"
+ ],
+ "answer": 0,
+ "explanation": "For collaborative products the unit that shares an experience is the team, not the person. Rolling out by workspace keeps teams consistent and still lets you ramp gradually and compare groups. Choosing the rollout unit to match how people collaborate prevents both confusion and contaminated measurement.",
+ "rationales": [
+  "Correct: matching the rollout unit to the collaboration unit removes the mismatch while keeping a controlled, gradual ramp.",
+  "Going to 100% removes the inconsistency but also removes your safety net and ability to compare before full launch.",
+  "A banner explains the confusion but doesn't fix it; teams still can't follow each other's instructions.",
+  "Pausing stops harm but doesn't address the cause; resuming with the same setup would bring the same problem back."
+ ],
+ "interview_tip": "Execution questions about B2B rollouts test whether you think in accounts, not users. Mentioning workspace-level rollout shows you understand how teams experience a product."},
+
+{"topic": "Execution", "concept": "Throughput-based Monte Carlo forecasting", "difficulty": "medium",
+ "question": "Leadership asks when a 60-item backlog will be done. Over the last 12 weeks the team finished between 4 and 9 items a week, varying a lot. Which forecasting approach gives the most honest answer?",
+ "options": [
+  "Simulate many possible futures by sampling from past weekly throughput, and give a date range with likelihoods, such as '85% likely by week 10'",
+  "Divide 60 by the best week (9 items) and commit to finishing in about 7 weeks",
+  "Ask each engineer for their own estimate and add them up into one exact date",
+  "Divide 60 by the average weekly rate and commit to that single date"
+ ],
+ "answer": 0,
+ "explanation": "Monte Carlo forecasting uses the team's real delivery history, including its variability, to produce a range of likely finish dates. Giving dates with confidence levels sets expectations honestly and makes risk visible. A single date from an average sounds precise but hides about a 50% chance of being late.",
+ "rationales": [
+  "Correct: it uses real throughput variability and communicates the answer as probabilities, not false precision.",
+  "Planning from the best week is wishful; most weeks are slower, so the date will almost certainly slip.",
+  "Summing individual guesses adds up each person's optimism and ignores coordination and interruptions.",
+  "An average-based date is a coin flip — roughly half of outcomes land later — and it hides the spread leadership needs to see."
+ ],
+ "interview_tip": "When asked 'how do you estimate timelines?', describing ranges with confidence levels based on historical data signals mature, trustworthy planning."},
+
+{"topic": "Behavioural", "concept": "Handling a key-person risk after a confidential disclosure", "difficulty": "hard",
+ "question": "The lead engineer on your most critical launch tells you, in confidence, that they are interviewing elsewhere. They are the only person who deeply understands the payment integration. What is the best response?",
+ "options": [
+  "Keep the confidence, encourage them to talk to their manager, and reduce single-person risk across the project through design docs and pairing without revealing why",
+  "Tell their manager right away, because the launch risk outweighs the promise of confidentiality",
+  "Do nothing — it's their personal decision, and planning around it would be unfair to them",
+  "Offer them a promise of promotion if they stay until launch, without checking with their manager"
+ ],
+ "answer": 0,
+ "explanation": "Good leaders protect trust and the business at the same time. Keeping the confidence preserves the relationship; reducing single-person dependency is good practice anyway and doesn't reveal the disclosure. Encouraging them to speak with their manager gives the organisation a fair chance to respond.",
+ "rationales": [
+  "Correct: it honours the confidence while responsibly reducing a risk that should be reduced regardless.",
+  "Breaking a confidence damages trust with this engineer and the whole team, and the risk can be reduced without it.",
+  "Ignoring a known single point of failure on a critical launch is a failure of ownership.",
+  "A PM promising a promotion oversteps their authority and makes a commitment they likely can't keep."
+ ],
+ "interview_tip": "This tests judgment and integrity under conflicting duties. Strong answers protect the person and the project, and name that reducing a single point of failure is good practice anyway."},
+
+{"topic": "Behavioural", "concept": "Giving upward feedback to your manager", "difficulty": "hard",
+ "question": "In product reviews, your manager often answers questions that were directed at your engineers, and two engineers have told you they now feel sidelined. How should you handle it?",
+ "options": [
+  "Raise it privately with your manager, describe specific moments and the impact on the team, and suggest a concrete alternative such as letting engineers answer first",
+  "Tell the engineers to speak up more forcefully in reviews so they aren't talked over",
+  "Escalate to your manager's manager, since it is affecting team morale",
+  "Stay silent — a manager's meeting style isn't something a PM should comment on"
+ ],
+ "answer": 0,
+ "explanation": "Good upward feedback is private, specific and focused on impact, and it offers a practical fix. Specific moments make it hard to dismiss, and focusing on the team's experience keeps it about outcomes, not blame. Proposing an alternative makes it easy for the manager to change.",
+ "rationales": [
+  "Correct: private, specific, impact-focused feedback with a concrete suggestion is the most likely to change behaviour while keeping trust.",
+  "This puts the burden on the people being affected and leaves the cause untouched.",
+  "Skipping a direct conversation damages trust and is a heavy step for a fixable behaviour.",
+  "Saying nothing lets morale keep eroding; PMs are expected to speak up when team health is affected."
+ ],
+ "interview_tip": "'Tell me about giving feedback to someone senior' is common. Interviewers look for courage plus tact: private, specific, impact-led, and solution-oriented."},
+
+{"topic": "Behavioural", "concept": "Holding a vendor accountable for missed SLAs while preserving the partnership", "difficulty": "hard",
+ "question": "Your SMS/OTP vendor has missed its delivery-time SLA three times this quarter, causing login failures for your users. The vendor is otherwise strong and switching would take months. What is the best course of action?",
+ "options": [
+  "Share incident data with the vendor, agree a written fix plan with dates and SLA credits, and in parallel set up a backup provider for failover",
+  "Terminate the contract right away and move to a new vendor, accepting months of migration work",
+  "Keep raising complaints over email each time it happens, since switching is too expensive",
+  "Quietly accept the misses, since the vendor is good overall and the relationship matters"
+ ],
+ "answer": 0,
+ "explanation": "Accountability and partnership aren't opposites. Data-backed conversations, a dated fix plan and contractual credits hold the vendor to its promise, while a backup provider protects users without destroying the relationship. It also gives you real leverage if the vendor doesn't improve.",
+ "rationales": [
+  "Correct: it holds the vendor accountable with evidence and a plan, while protecting users through a fallback.",
+  "Firing them at once leaves users exposed during a long migration and throws away an otherwise good partner.",
+  "Repeated complaints with no plan or consequences rarely change behaviour, and users keep failing to log in.",
+  "Accepting the misses fails your users; customer impact outranks relationship comfort."
+ ],
+ "interview_tip": "Amazon-style 'Customer Obsession' and 'Have Backbone' questions reward balancing firmness with partnership. Mention data, a dated plan and a mitigation that protects customers now."},
+
+{"topic": "AI Product", "concept": "Cosine similarity for comparing embeddings", "difficulty": "easy",
+ "question": "A semantic-search feature turns each document and query into an embedding vector. Which measure is most commonly used to decide how similar a query is to a document?",
+ "options": [
+  "Cosine similarity — the angle between the two vectors",
+  "The number of identical words in the query and document",
+  "The difference in length between the query and the document text",
+  "Whether the two vectors have the same number of dimensions"
+ ],
+ "answer": 0,
+ "explanation": "Cosine similarity measures how closely two vectors point in the same direction, regardless of their size. In embedding space, direction captures meaning, so vectors pointing similarly represent similar content. It's the default similarity measure in most vector databases.",
+ "rationales": [
+  "Correct: the angle between embeddings reflects how close their meanings are, which is why cosine similarity is standard.",
+  "Word overlap is lexical matching, which embeddings are meant to go beyond — they match meaning even with different words.",
+  "Text length says nothing about meaning; a short query can match a long document perfectly.",
+  "Vectors from the same model always have the same dimensions, so this tells you nothing about similarity."
+ ],
+ "interview_tip": "AI PM interviews often check basic retrieval literacy. Explaining embeddings and cosine similarity simply shows you can work credibly with ML engineers."},
+
+{"topic": "AI Product", "concept": "Prioritising supplied context over parametric knowledge", "difficulty": "medium",
+ "question": "A legal-assistant feature answers questions about contracts that users upload. In testing, when a contract's terms differ from typical legal norms, the model sometimes answers from the norm rather than from the uploaded contract. Which fix is most appropriate?",
+ "options": [
+  "Instruct and evaluate the model to answer only from the uploaded document, quote the relevant clause, and say when the document doesn't address the question",
+  "Fine-tune the model on more general legal textbooks so its background knowledge is stronger",
+  "Raise the temperature so the model is less likely to repeat typical legal patterns",
+  "Shorten the uploaded documents so the model has less text to process"
+ ],
+ "answer": 0,
+ "explanation": "The model is falling back on what it learned in training (parametric knowledge) instead of the document in front of it. Explicit grounding instructions, requiring quoted clauses, and evals built from contracts with unusual terms push it to prefer the supplied context. Making it say 'the document doesn't cover this' prevents silent fill-ins.",
+ "rationales": [
+  "Correct: it targets the actual failure — preferring training knowledge over the document — and makes answers checkable via quotes.",
+  "More general legal knowledge strengthens the very norms that are overriding the document, making the problem worse.",
+  "Higher temperature adds randomness, not faithfulness; it would make answers less reliable.",
+  "Cutting the document risks removing the clauses that matter and doesn't change which source the model trusts."
+ ],
+ "interview_tip": "Interviewers like candidates who diagnose why an AI is wrong before fixing it. Distinguishing 'uses training knowledge' from 'uses the provided document' shows real LLM fluency."},
+
+{"topic": "AI Product", "concept": "Off-policy evaluation with inverse propensity weighting", "difficulty": "hard",
+ "question": "A team wants to evaluate a new recommendation policy using only logs from the current policy, before running an A/B test. Why is a simple 'replay clicks on items the new policy would also have shown' estimate biased, and what corrects it?",
+ "options": [
+  "The logs over-represent items the old policy liked to show; weighting each logged outcome by the inverse of the probability the old policy showed it corrects for that",
+  "The logs are too old; re-running the analysis on only the most recent week of data fixes the bias",
+  "Clicks are noisy; replacing clicks with dwell time removes the bias",
+  "The new policy has more parameters; reducing it to the same size as the old policy fixes the comparison"
+ ],
+ "answer": 0,
+ "explanation": "Logged data reflects what the old policy chose to show, so items it rarely showed are under-represented and their outcomes are under-weighted. Inverse propensity weighting gives each logged outcome a weight of 1 ÷ (probability the old policy showed it), rebalancing the data as if the new policy had chosen. It needs logged propensities and some randomness in the old policy, and high weights can add variance.",
+ "rationales": [
+  "Correct: the bias comes from the old policy's selection, and inverse propensity weighting reweights outcomes to undo it.",
+  "Using fresher data doesn't change the fact that the old policy chose what was shown; the selection bias stays.",
+  "Changing the outcome metric doesn't fix selection bias; dwell time is collected under the same skewed exposure.",
+  "Model size has nothing to do with the bias, which is caused by how the logged data was collected."
+ ],
+ "interview_tip": "For ML-heavy PM roles, knowing that logged data carries the old system's choices — and that you should log propensities — is a strong signal. Pair it with 'then confirm with an online test'."},
+
+{"topic": "AI Product", "concept": "Contextualising chunks with document-level context before embedding", "difficulty": "medium",
+ "question": "A RAG system over company annual reports often retrieves a chunk saying 'Revenue grew 12% this year' without knowing which company or year it refers to, so answers mix up companies. Which change most directly fixes this?",
+ "options": [
+  "Before embedding, prepend each chunk with a short summary of its source, such as company name, report year and section",
+  "Increase the number of chunks retrieved per query from 5 to 50",
+  "Switch to a larger language model to generate the final answer",
+  "Make chunks smaller so each one contains only a single sentence"
+ ],
+ "answer": 0,
+ "explanation": "Chunks lose the context that made them meaningful once they're cut from the document. Adding a short header with the document's key context (company, year, section) to each chunk before embedding makes retrieval match the right source. Anthropic has described this approach as 'contextual retrieval'.",
+ "rationales": [
+  "Correct: it restores the missing context inside each chunk, so both retrieval and the generator know which company and year it belongs to.",
+  "Retrieving more chunks brings in more ambiguous chunks, adding noise rather than identifying the right source.",
+  "A bigger generator can't recover information that isn't in the retrieved text.",
+  "Smaller chunks strip away even more context, making the ambiguity worse."
+ ],
+ "interview_tip": "When debugging RAG in interviews, separate retrieval problems from generation problems. Spotting that chunks have lost their context shows hands-on retrieval experience."},
+
+{"topic": "AI Product", "concept": "Tail cost per task (p95) for flat-priced AI agents", "difficulty": "medium",
+ "question": "A company plans to sell its AI research agent at a flat ₹999 per month with unlimited tasks. The average task costs ₹4 in inference, but 5% of tasks loop through many tool calls and cost over ₹150. What should the PM focus on before launch?",
+ "options": [
+  "The cost distribution — especially the tail and heavy users — and add step/spend limits or fair-use caps so expensive tasks can't wipe out margin",
+  "The average cost only, since ₹4 per task leaves a large margin at ₹999 a month",
+  "Raising the price to ₹4,999 so even the most expensive users are covered",
+  "Removing tool use entirely so every task costs the same"
+ ],
+ "answer": 0,
+ "explanation": "With flat pricing, margins depend on the tail, not the average. A small share of runaway tasks — often from a small share of heavy users — can make a whole plan unprofitable. Understanding the distribution and adding guardrails like step budgets and fair-use limits protects margin without hurting typical users.",
+ "rationales": [
+  "Correct: flat pricing makes you absorb the tail, so you need to measure it and cap it.",
+  "Averages hide the heavy tail; a few users running ₹150 tasks repeatedly can turn the plan loss-making.",
+  "A 5× price rise hurts conversion for the many low-cost users to cover a few heavy ones — limits are a sharper tool.",
+  "Removing tools would gut the agent's usefulness to solve a cost problem that limits can handle."
+ ],
+ "interview_tip": "AI pricing questions increasingly test unit economics. Talking about cost distributions and per-task budgets, not just averages, signals you can run an AI P&L."},
+
+{"topic": "Technology", "concept": "Idempotent HTTP methods (PUT vs POST)", "difficulty": "easy",
+ "question": "A mobile app's network sometimes drops, so requests are retried automatically. Which request is safest to retry without creating duplicate effects, based on standard HTTP semantics?",
+ "options": [
+  "A PUT that sets the user's display name to a specific value",
+  "A POST that creates a new order",
+  "A POST that sends a payment to another user",
+  "A POST that adds a comment to a post"
+ ],
+ "answer": 0,
+ "explanation": "PUT is defined as idempotent: sending the same request many times leaves the resource in the same state as sending it once. POST usually creates something new, so retries can create duplicates — duplicate orders, payments or comments. For POSTs that must be retried, systems add idempotency keys.",
+ "rationales": [
+  "Correct: setting a value to the same thing twice has the same effect as once, so retrying is safe.",
+  "Retrying a create-order POST can create a second order if the first actually succeeded.",
+  "Retrying a payment POST could send money twice — the most dangerous kind of duplicate.",
+  "Retrying a comment POST can post the same comment twice."
+ ],
+ "interview_tip": "Technical PM questions often probe retries and duplicates. Knowing which operations are idempotent — and mentioning idempotency keys for payments — shows solid API fluency."},
+
+{"topic": "Technology", "concept": "Stream vs batch processing for real-time decisions", "difficulty": "medium",
+ "question": "A payments company currently computes fraud risk scores in a nightly batch job. Fraudsters now drain stolen cards within minutes. What architectural change best addresses this?",
+ "options": [
+  "Move fraud scoring to stream processing, so each transaction is scored on events as they arrive, within milliseconds to seconds",
+  "Run the same batch job hourly instead of nightly",
+  "Add more servers to the nightly batch job so it finishes faster",
+  "Store transactions in a data warehouse so analysts can query them the next morning"
+ ],
+ "answer": 0,
+ "explanation": "Batch processing works on accumulated data at intervals; stream processing handles each event as it happens. When the decision must be made before the fraud completes, only streaming meets the latency need. Batch is still useful for training models and deep analysis that feed the real-time scorer.",
+ "rationales": [
+  "Correct: scoring each transaction as it arrives is the only option fast enough to stop fraud measured in minutes.",
+  "Hourly batches are better than nightly but still leave an hour-long window, far longer than the minutes fraudsters need.",
+  "Finishing the nightly job faster doesn't change that it only runs once a day.",
+  "A warehouse supports analysis after the fact; it doesn't make decisions while a transaction is happening."
+ ],
+ "interview_tip": "System-design questions often hinge on latency requirements. Start from 'how fresh must the decision be?' and let that choose batch versus streaming."},
+
+{"topic": "Growth", "concept": "Channel fatigue from aggressive viral invites", "difficulty": "medium",
+ "question": "A social app's growth team added auto-sent SMS invites to every contact in a user's phone. Signups rose for three weeks, then invite conversion collapsed and the SMS sender ID started getting flagged as spam. What is the best lesson to act on?",
+ "options": [
+  "Aggressive invites burn the channel; move to user-chosen, personal invites sent at a value moment and track recipient complaints as a guardrail",
+  "The invite message copy has gone stale; rotate in new SMS wording every week",
+  "Switch the same auto-invite flow from SMS to email, where spam filters are weaker",
+  "Increase the number of reminder SMS sent to contacts who haven't joined yet"
+ ],
+ "answer": 0,
+ "explanation": "Viral channels are shared resources: spammy volume teaches recipients and carriers to ignore or block you, and conversion falls for everyone. Fewer, more personal invites at the right moment keep the channel healthy, and complaint and block rates should be guardrails. Sustainable virality comes from users choosing to share.",
+ "rationales": [
+  "Correct: it fixes the cause — spammy, non-consensual volume — and adds a guardrail to keep the channel healthy.",
+  "New copy doesn't stop recipients and carriers from treating unsolicited bulk messages as spam.",
+  "Moving the same spammy behaviour to email burns another channel and the brand along with it.",
+  "More reminders add to the spam signal and speed up the channel's collapse."
+ ],
+ "interview_tip": "Growth interviews reward long-term thinking about channels. Pairing a growth tactic with a guardrail like complaint rate shows you won't trade the future for a short-term spike."},
+
+{"topic": "Current Events", "concept": "Nothing's screen-less AI-native device and the 'couldn't have been an app' test (Nov 2026)", "difficulty": "easy",
+ "question": "On 4 November 2026, Nothing CEO Carl Pei teased the company's first 'AI-native' product, shipping next month. He said it has no new screen and 'couldn't have been an app', and pointed to a 'context gap' — context that matters never reaches the model. From a product view, what is the strongest justification for building dedicated hardware like this rather than a phone app?",
+ "options": [
+  "It must capture moments or context a phone app structurally can't, such as when pulling out a phone is too slow or awkward",
+  "Hardware has higher prices than apps, so it earns more revenue per customer",
+  "Removing the screen makes the product cheaper to make than a phone app is to build",
+  "Dedicated hardware avoids the need for any AI model in the cloud"
+ ],
+ "answer": 0,
+ "explanation": "A new device asks users to buy, carry and charge something extra, so it has to do a job a phone can't. Pei's framing — 'couldn't have been an app' and the 'context gap', illustrated by the moment lost while you pull out your phone to write something down — is exactly that test. Nothing hasn't confirmed what the product does, so the takeaway is the reasoning, not the feature.",
+ "rationales": [
+  "Correct: the bar for new hardware is a job the phone structurally can't do, which is what Pei's 'context gap' framing points to.",
+  "Higher prices don't justify a product; if a phone app could do the job, customers won't pay more to carry another device.",
+  "Physical products are almost always costlier to make and support than apps; cost isn't the argument.",
+  "Nothing hasn't said the device avoids cloud AI, and avoiding the cloud isn't the reason Pei gave."
+ ],
+ "interview_tip": "AI hardware questions ('should we build a device?') come up at AI companies. Strong answers start with 'what can't the phone do?' before discussing features or price.",
+ "source": "https://9to5google.com/2026/11/04/nothing-teaser-new-ai-screen-less-product-launch"}
+]}
