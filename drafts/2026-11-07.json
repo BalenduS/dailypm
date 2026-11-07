@@ -1,0 +1,637 @@
+{
+ "date": "2026-11-07",
+ "theme": "Defaults, mix shifts and hidden costs",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Contextual contribution prompts at the moment of visit",
+   "difficulty": "hard",
+   "question": "You're the PM for Google Maps. Wheelchair users say accessibility info (step-free entrance, accessible restroom) is missing for most places. Only 0.3% of users ever edit a place. Which approach most likely fills the gap fastest with trustworthy data?",
+   "options": [
+    "Ask a single yes/no accessibility question to users whose location shows they just visited that place",
+    "Add a detailed accessibility form to every place page so motivated users can contribute",
+    "Partner with disability NGOs to manually audit the top 10,000 places in each city",
+    "Let wheelchair users request info, then email the business owner to fill it in"
+   ],
+   "answer": 0,
+   "explanation": "Contribution rates are driven by low effort and fresh knowledge. A one-tap question asked right after a confirmed visit reaches the huge pool of people who just saw the entrance, costs seconds, and can be cross-checked across many visitors for accuracy. That scales far beyond the tiny base of voluntary editors.",
+   "rationales": [
+    "Correct: it targets people with first-hand, fresh knowledge, minimises effort to one tap, and aggregating many answers builds trust.",
+    "A long form on the place page only reaches the 0.3% who already edit; effort kills participation.",
+    "Expert audits are high quality but slow, expensive and don't scale to millions of places or stay fresh.",
+    "Business owners rarely respond and have an incentive to overstate accessibility, so coverage and trust stay low."
+   ],
+   "interview_tip": "Product-sense rounds reward spotting the binding constraint (here, contributor supply and effort) and designing around user context rather than adding a bigger feature."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Mutual opt-in before revealing a sensitive social signal",
+   "difficulty": "hard",
+   "question": "Meta wants a feature that helps users reconnect with old friends they've drifted from. Research shows people fear seeming needy if the other person doesn't reciprocate. What design best addresses this core fear?",
+   "options": [
+    "Let users privately mark 'I'd like to reconnect' and notify both only when both have marked each other",
+    "Show a weekly 'People you've lost touch with' list with a one-tap 'Say hi' message template",
+    "Send the friend a notification saying someone from their past wants to reconnect, without naming them",
+    "Boost old friends' posts in each other's feeds so interaction happens naturally over time"
+   ],
+   "answer": 0,
+   "explanation": "The core pain is the social risk of unreciprocated interest. A double opt-in reveals intent only when it is mutual, so no one is exposed to rejection. The same pattern underpins dating 'matches' and is the most direct fix for asymmetric-risk social actions.",
+   "rationales": [
+    "Correct: mutual reveal removes the fear of rejection because unreciprocated interest is never shown.",
+    "Templates reduce writing effort but the sender still bears the full rejection risk, which is the real barrier.",
+    "An anonymous 'someone wants to reconnect' ping creates anxiety and guessing, and feels creepy rather than safe.",
+    "Feed boosting is passive and may help a little, but it doesn't address the explicit fear and is hard to attribute."
+   ],
+   "interview_tip": "Interviewers look for you to name the emotional pain point, not just the functional one, and design specifically for it."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Budgeting for irregular income",
+   "difficulty": "medium",
+   "question": "You're designing a budgeting app for Indian gig workers (delivery riders, freelancers) whose weekly income swings by ±50%. Users of the current monthly-budget feature abandon it within two weeks. What's the best product change?",
+   "options": [
+    "Budget from a conservative baseline income and route surplus weeks into a buffer that smooths lean weeks",
+    "Ask users to forecast their next month's income so the monthly budget is more accurate",
+    "Switch to daily budgets that recalculate each day from yesterday's earnings",
+    "Add reminders and streaks to encourage users to stick with the monthly budget"
+   ],
+   "answer": 0,
+   "explanation": "A fixed monthly budget assumes stable income, so it breaks for gig workers. Planning against a low, reliable baseline and banking the upside into a buffer matches how their cash actually flows and keeps the plan valid in bad weeks — which is why users quit today.",
+   "rationales": [
+    "Correct: it fits the real income pattern, keeps essentials covered in lean weeks and turns volatility into savings.",
+    "Users can't forecast volatile income well; the plan will still break and feel like failure.",
+    "Daily recalculation from yesterday's earnings amplifies volatility and makes spending limits whipsaw.",
+    "Engagement mechanics don't fix a model that doesn't match users' reality; they just delay abandonment."
+   ],
+   "interview_tip": "Strong candidates question the product's built-in assumption about the user (stable income) instead of adding engagement features on top."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Voice-note input for users who prefer speaking over typing",
+   "difficulty": "medium",
+   "question": "Kirana store owners receive customer orders on WhatsApp, mostly as voice notes in Hindi and regional languages. You're building an order-management tool for them. Which first feature best fits their workflow?",
+   "options": [
+    "Turn incoming voice notes into an editable item list the owner can confirm in one tap",
+    "A web dashboard where owners type each order into a structured form",
+    "Ask customers to switch to a catalogue link and order by tapping items instead",
+    "A reminder bot that nudges owners when an order has been waiting too long"
+   ],
+   "answer": 0,
+   "explanation": "Meet users where they are: orders already arrive as voice notes, and owners are busy at the counter. Converting voice into a draft list they just confirm removes the most time-consuming step without changing customer behaviour. It also keeps a human check on transcription errors.",
+   "rationales": [
+    "Correct: it fits the existing channel and habit, removes the main manual effort and keeps the owner in control.",
+    "Retyping orders into a dashboard adds work for a user who is serving customers in person.",
+    "Changing customer behaviour is costly and many customers prefer speaking; it risks losing orders.",
+    "Reminders don't remove the core effort of reading and listening to each order."
+   ],
+   "interview_tip": "Interviewers reward designing around existing behaviour and constraints (language, channel, time) rather than asking users to change."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Composition shift after automation absorbs easy cases",
+   "difficulty": "hard",
+   "question": "An e-commerce company launched an AI bot that now resolves 40% of support tickets — mostly simple order-status questions. Human-agent CSAT then fell from 4.5 to 4.1 and average handle time rose 25%. What's the most likely explanation?",
+   "options": [
+    "The tickets reaching humans are now the hard, frustrating ones, so the mix changed, not agent quality",
+    "Agents became complacent after the bot launch and need retraining on soft skills",
+    "The bot is giving wrong answers, which angers customers before they reach a human",
+    "CSAT surveys are now sent at a different time, so the readings aren't comparable"
+   ],
+   "answer": 0,
+   "explanation": "When automation removes the easy cases, the remaining human queue is harder by construction: longer and less satisfying contacts. Before blaming agents, compare like with like, e.g. CSAT and handle time for the same ticket types before and after launch.",
+   "rationales": [
+    "Correct: a composition shift toward hard tickets naturally raises handle time and lowers CSAT with no change in agent performance.",
+    "Possible, but it ignores the obvious mix change; you'd need same-ticket-type comparisons before concluding this.",
+    "Plausible to check, but the question says the bot handles simple status questions, and this doesn't explain longer handle time on its own.",
+    "Survey timing changes can matter, but nothing suggests it changed; the launch is the known structural change."
+   ],
+   "interview_tip": "In root-cause questions, interviewers want you to check mix and segment shifts before concluding that performance changed."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Stock vs flow metrics",
+   "difficulty": "easy",
+   "question": "A subscription app reports '2 million subscribers' and '150,000 new subscribers this month'. Which statement correctly describes these two numbers?",
+   "options": [
+    "Subscribers is a stock measured at a point in time; new subscribers is a flow measured over a period",
+    "Both are flows, because subscribers change every month",
+    "Subscribers is a flow and new subscribers is a stock, since new ones accumulate",
+    "Both are stocks, because they're counts of people"
+   ],
+   "answer": 0,
+   "explanation": "A stock is a level at a moment (total subscribers today); a flow is a rate over a period (new signups or churn per month). Stocks change only through flows: ending stock = starting stock + inflows − outflows. Mixing them up leads to wrong ratios like churn divided by the wrong base.",
+   "rationales": [
+    "Correct: total subscribers is a point-in-time level; monthly new subscribers is an amount per period.",
+    "The total changes over time, but it's still measured at a point, which makes it a stock.",
+    "This reverses the definitions: accumulated totals are stocks, period counts are flows.",
+    "Being a count of people doesn't make something a stock; what matters is whether it's a level or a per-period amount."
+   ],
+   "interview_tip": "Clearly separating stocks and flows lets you build growth accounting quickly in an analytics interview."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Trip completion rate as a navigation success metric",
+   "difficulty": "easy",
+   "question": "You own turn-by-turn navigation in a maps app. Which is the best primary success metric?",
+   "options": [
+    "Share of started navigations that reach the destination without the user abandoning the route",
+    "Number of navigation sessions started per day",
+    "Average time users spend in navigation mode",
+    "Number of route options shown per search"
+   ],
+   "answer": 0,
+   "explanation": "Navigation exists to get users to their destination. Completion of started trips captures whether it did its job, and it can be paired with counter-metrics like ETA accuracy or reroutes. Volume and time metrics don't show whether the product worked.",
+   "rationales": [
+    "Correct: it measures whether the core job — reaching the destination — was done.",
+    "Starts measure demand or reach, not whether navigation succeeded.",
+    "Longer time in navigation can mean worse routes or traffic; it's ambiguous for a utility product.",
+    "More options isn't value by itself and may add choice overload."
+   ],
+   "interview_tip": "Tie the metric to the job the user hired the product for; interviewers flag volume metrics picked by default."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Attribution window changing measured conversions",
+   "difficulty": "medium",
+   "question": "Marketing switched the ad platform's attribution window from 7-day click to 1-day click. Reported conversions from paid ads fell 30% overnight while total orders stayed flat. What should you conclude?",
+   "options": [
+    "The measurement changed, not the ads' real effect; compare channels only under the same window",
+    "Paid ads became less effective and the budget should be cut by about 30%",
+    "Organic channels are now doing better and are taking credit from paid",
+    "The tracking pixel is broken because conversions fell so sharply"
+   ],
+   "answer": 0,
+   "explanation": "Shortening the window means conversions after day one are no longer credited to ads, so reported numbers drop even if real impact is unchanged. Flat total orders confirm the business didn't change. Attribution numbers depend on definitions and should be compared like for like; incrementality tests measure true impact.",
+   "rationales": [
+    "Correct: the definition change explains the drop and total orders are flat, so real performance didn't change.",
+    "Cutting budget based on a definition change could remove ads that actually drive later conversions.",
+    "Credit may move to other channels in reports, but that's also an artefact of the window, not a real shift.",
+    "A broken pixel would usually show erratic data; here the drop lines up exactly with a known config change."
+   ],
+   "interview_tip": "Interviewers want you to check for definition and instrumentation changes before reading a metric move as a real change."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Baseline conversion rate drives required sample size",
+   "difficulty": "medium",
+   "question": "You want to detect a 10% relative lift in two A/B tests: one on checkout completion (baseline 40%) and one on an upsell click (baseline 2%). Which needs a much larger sample per arm, and why?",
+   "options": [
+    "The upsell test, because at low baselines a 10% relative lift is a tiny absolute change compared with the noise",
+    "The checkout test, because a 40% baseline has more variance than a 2% baseline",
+    "Both need the same sample, because the relative lift is the same 10%",
+    "The checkout test, because more users reach checkout, so the test needs more of them"
+   ],
+   "answer": 0,
+   "explanation": "Required sample size scales roughly with (1−p)/(p·relative lift²). At 2%, a 10% relative lift is only 0.2 percentage points, so you need many times more users than at 40%, where it's 4 points. Rare events are expensive to test, so teams often pick a higher-frequency proxy or accept a larger MDE.",
+   "rationales": [
+    "Correct: the absolute effect is tiny relative to noise when the baseline is low, so far more users are needed.",
+    "Variance p(1−p) is higher at 40%, but relative to the effect size the low-baseline test is much noisier.",
+    "Sample size depends on the absolute effect and the baseline, not just the relative lift.",
+    "Traffic available doesn't change how many users the test needs; it only changes how long it runs."
+   ],
+   "interview_tip": "Being able to say why rare-event metrics need huge samples, and what to do about it, signals real experimentation experience."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Choosing a metric that matures within the test window",
+   "difficulty": "medium",
+   "question": "You test a new onboarding flow for a B2B SaaS tool. The real goal is 90-day paid retention, but the test can run only 3 weeks. What's the best approach?",
+   "options": [
+    "Use a leading indicator validated to predict 90-day retention as the decision metric, then confirm later with a holdout",
+    "Run for 3 weeks and read 90-day retention for whatever users have reached day 90",
+    "Use signups as the decision metric, since it's the only metric that's complete in 3 weeks",
+    "Extend the test to 6 months so 90-day retention is fully observed before deciding"
+   ],
+   "answer": 0,
+   "explanation": "Long-latency outcomes can't be measured in short tests. The standard approach is a proxy that has been shown to predict the long-term outcome (e.g. a team reaching an activation milestone in week one), plus a holdout to confirm the long-term effect. This balances speed with protection against optimising the wrong thing.",
+   "rationales": [
+    "Correct: a validated proxy gives a timely decision, and the holdout checks the long-term effect.",
+    "No users in a 3-week test reach day 90, so this metric would be empty or biased.",
+    "Signups may not reflect onboarding quality and can rise while retention falls.",
+    "Six months blocks learning and other launches; the proxy-plus-holdout approach is usually better."
+   ],
+   "interview_tip": "Show that you know the tension between test speed and long-term outcomes, and how to manage it."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual eyeglass frame unit sales in India",
+   "difficulty": "medium",
+   "question": "Estimate the number of eyeglass frames sold in India per year.",
+   "options": [
+    "About 90–100 million",
+    "About 10 million",
+    "About 400 million",
+    "About 1 billion"
+   ],
+   "answer": 0,
+   "explanation": "Population ~1.4B. About 30% need vision correction (~420M), but only about half wear glasses (~210M wearers). If a frame is replaced about every 2.5 years, that's ~84M a year; some people own a second pair (reading or sunglasses with power), adding ~10–15%, so roughly 90–100M frames a year.",
+   "rationales": [
+    "Correct: wearers (~210M) ÷ replacement cycle (~2.5 years) plus second pairs gives ~90–100M.",
+    "Too low: it implies only ~25M wearers on a 2.5-year cycle, far below India's vision-correction need.",
+    "Too high: it would mean almost every wearer buying two frames a year.",
+    "Far too high: close to one frame per person per year, including people who don't need glasses."
+   ],
+   "interview_tip": "Interviewers grade the structure: penetration, actual adoption, replacement cycle, then sanity-check against the population."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Monthly cost of an AI voice support agent",
+   "difficulty": "easy",
+   "question": "An insurer moves inbound support calls to an AI voice agent. There are 20,000 calls a day, averaging 4 minutes, and the all-in cost (telephony, speech-to-text, LLM, text-to-speech) is $0.08 per minute. What's the approximate monthly cost?",
+   "options": [
+    "About $190,000",
+    "About $19,000",
+    "About $1.9 million",
+    "About $6,400"
+   ],
+   "answer": 0,
+   "explanation": "20,000 calls × 4 min = 80,000 minutes a day. × 30 days = 2.4M minutes a month. × $0.08 = $192,000 a month. Then compare this with the cost of human agents for the same volume and add a buffer for longer calls and escalations.",
+   "rationales": [
+    "Correct: 2.4M minutes × $0.08 ≈ $192K.",
+    "Off by 10×, as if you used 3 days instead of 30 or $0.008 per minute.",
+    "Off by 10× too high; it would need 24M minutes a month or $0.80 per minute.",
+    "This is roughly one day's cost ($6,400), not a month's."
+   ],
+   "interview_tip": "For AI cost estimates, break volume into units the vendor bills on (minutes, tokens) and state your assumptions out loud."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Revenue trough when switching from perpetual licences to subscription",
+   "difficulty": "hard",
+   "question": "A desktop design-software company sells $600 perpetual licences and plans to switch to a $20/month subscription. The board is alarmed by the forecast for the next two years. What is the main reason, and how should leadership frame it?",
+   "options": [
+    "Upfront revenue drops while subscription revenue builds slowly; frame it as a temporary trough before larger, recurring revenue",
+    "Subscriptions always earn less per customer, so the company should keep perpetual licences",
+    "Customers will churn immediately, so the switch should be cancelled",
+    "Costs rise sharply because of the new billing system, which is a permanent margin hit"
+   ],
+   "answer": 0,
+   "explanation": "Switching from one-time to recurring revenue shifts revenue later: each new customer pays $20 a month instead of $600 upfront, so reported revenue and cash dip before the recurring base grows (the 'fish' curve that Adobe and others went through). If retention holds, lifetime value rises and revenue becomes more predictable. Leadership should set expectations using recurring metrics like ARR and net retention.",
+   "rationales": [
+    "Correct: it explains the timing effect and how to manage investor expectations using recurring metrics.",
+    "At 30+ months of retention, a subscription matches or beats the perpetual price, and adds predictable revenue.",
+    "Some users push back, but immediate mass churn isn't the reason for the forecast dip; that is the revenue timing.",
+    "Billing costs are real but small and one-off; they don't explain a two-year revenue trough."
+   ],
+   "interview_tip": "Strategy interviews reward explaining the financial mechanics of a business-model change and how you'd communicate them."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Negative network effects from congestion",
+   "difficulty": "medium",
+   "question": "A dating app's matches per user fell as it grew in Bengaluru, even though more users joined. Women report being overwhelmed with low-quality messages. What's the best description of the problem?",
+   "options": [
+    "A negative network effect: more users on one side creates congestion that lowers value for the other side",
+    "A positive network effect that has reached saturation and stopped adding value",
+    "Multi-homing: users are spread across several dating apps at once",
+    "Weak local network effects, because the city is too large for density to matter"
+   ],
+   "answer": 0,
+   "explanation": "Network effects can turn negative when growth adds congestion or noise. Here, more messages per woman reduces each message's value and drives her to disengage, which then lowers matches for everyone. Fixes include limits on outgoing likes, ranking by quality, or letting women message first.",
+   "rationales": [
+    "Correct: growth on one side is degrading the experience on the other through congestion.",
+    "Saturation means value stops rising; here value is actually falling, which points to a negative effect.",
+    "Multi-homing might exist, but it doesn't explain overload from too many messages.",
+    "Density is high here; the issue is too much low-quality interaction, not too little."
+   ],
+   "interview_tip": "Bringing up negative network effects and how to design against them shows mature marketplace thinking."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "TAM vs SAM vs SOM",
+   "difficulty": "easy",
+   "question": "A startup builds billing software for Indian dental clinics. Which is the Serviceable Addressable Market (SAM)?",
+   "options": [
+    "Annual spend on billing software by dental clinics in the regions and segments the product can actually serve",
+    "Total annual spend on all healthcare software across India",
+    "The revenue the startup realistically expects to win in the next three years",
+    "Total annual revenue earned by dental clinics in India"
+   ],
+   "answer": 0,
+   "explanation": "TAM is the total demand for the category; SAM is the part your product and go-to-market can actually reach (right segment, geography, language, integrations); SOM is the share you can realistically capture soon. Investors look for a credible path from SAM to SOM.",
+   "rationales": [
+    "Correct: SAM is the slice of the market your product and channels can actually serve.",
+    "That's a broader TAM-style number that includes many categories the product doesn't address.",
+    "That's the SOM — the share you expect to capture in the near term.",
+    "Clinic revenue is not software spend; it overstates the market you can sell into."
+   ],
+   "interview_tip": "Use clear definitions and then size bottom-up — interviewers distrust top-down 'we just need 1%' logic."
+  },
+  {
+   "topic": "Execution",
+   "concept": "User-facing release notes framed around benefits",
+   "difficulty": "easy",
+   "question": "You're writing release notes for a mobile banking app update that adds faster UPI payments. Which line is best for customers?",
+   "options": [
+    "Pay your contacts in seconds — UPI payments now go through up to 2× faster",
+    "Refactored UPI payment service and reduced API latency on the transaction endpoint",
+    "Version 8.4.2 includes various performance improvements and bug fixes",
+    "We've rebuilt payments infrastructure as part of our 2026 platform roadmap"
+   ],
+   "answer": 0,
+   "explanation": "Customer-facing release notes should say what changed in terms of what users can now do or feel, in plain language. Engineering details belong in internal changelogs, and vague 'bug fixes' lines waste the chance to drive adoption of a new improvement.",
+   "rationales": [
+    "Correct: it's plain, specific and framed around the user benefit.",
+    "Accurate, but written for engineers; customers don't know what an API endpoint is.",
+    "Too vague to tell users anything or encourage them to try the improvement.",
+    "It focuses on the company's internal plans rather than what users gain."
+   ],
+   "interview_tip": "PMs own launch communication; interviewers like candidates who naturally translate technical work into user value."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Operational readiness and runbooks before launch",
+   "difficulty": "medium",
+   "question": "Your team is launching UPI autopay mandates for a subscription product next week. Code is done and QA passed. What is the most important remaining step before launch?",
+   "options": [
+    "Confirm on-call coverage, alerts on key failure metrics, and a runbook for common failures and rollback",
+    "Prepare a launch blog post and social media assets",
+    "Add one more feature requested by sales to strengthen the launch",
+    "Run another full round of QA on the existing test cases"
+   ],
+   "answer": 0,
+   "explanation": "For a payments feature, the risk after QA is in production: bank failures, mandate errors and retries. Operational readiness — who is on call, what alerts fire, and a runbook for diagnosing and rolling back — determines how fast you catch and fix problems that QA can't simulate.",
+   "rationales": [
+    "Correct: it prepares the team to detect and respond to real production failures quickly.",
+    "Marketing matters but doesn't reduce the risk of a payment failure hurting customers.",
+    "Adding scope a week before launch raises risk without fixing readiness gaps.",
+    "Re-running the same tests gives little new information; production risks need monitoring and response plans."
+   ],
+   "interview_tip": "Strong PMs talk about what happens after launch — monitoring and response — not just shipping the code."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Prioritising an actively exploited vulnerability over roadmap work",
+   "difficulty": "hard",
+   "question": "Mid-sprint, security reports a vulnerability in your B2B file-sharing product that could expose files. It's medium severity, but there's evidence attackers are already exploiting it. Your sprint is committed to a feature promised to a major customer. What should you do?",
+   "options": [
+    "Pull the needed engineers to fix it now, tell the customer about the slip, and share a new date",
+    "Finish the committed feature first, then fix the vulnerability in the next sprint",
+    "Add the fix to the backlog with high priority and let the team pick it up when they can",
+    "Ask legal whether you are required to disclose before deciding anything"
+   ],
+   "answer": 0,
+   "explanation": "Active exploitation changes the priority: the risk is now real customer harm and growing exposure, not a theoretical bug. You fix it immediately, and handle the commitment slip by communicating early with the customer. Legal and disclosure work happens in parallel, not as a blocker.",
+   "rationales": [
+    "Correct: active exploitation makes this urgent, and proactive communication manages the customer commitment.",
+    "Waiting a sprint leaves customer files exposed to active attackers; a feature deadline doesn't outweigh that.",
+    "'When they can' is too vague for an active exploit; it needs an owner and immediate action.",
+    "Legal input matters for disclosure, but it shouldn't delay stopping the exploitation."
+   ],
+   "interview_tip": "Interviewers look for clear prioritisation logic (likelihood × impact) and clear stakeholder communication when you break a commitment."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Informal poaching of your engineers by a peer PM",
+   "difficulty": "hard",
+   "question": "A peer PM keeps asking two of your engineers for 'quick favours' on their project. It now takes about 30% of their time and your launch is slipping. The engineers like the work. What's the best first step?",
+   "options": [
+    "Talk to the peer PM directly, show the impact on your launch, and agree a formal way to request help",
+    "Tell your engineers to refuse any requests from the other team",
+    "Escalate to both managers to have the peer PM stop immediately",
+    "Absorb the delay and quietly move your launch date to avoid conflict"
+   ],
+   "answer": 0,
+   "explanation": "Start with a direct, data-based conversation with the peer: share the impact, assume good intent, and agree a visible process (e.g. requests go through planning, with explicit trade-offs). This fixes the root cause while protecting the relationship. Escalate only if that fails.",
+   "rationales": [
+    "Correct: it addresses the issue at its source, uses facts, and creates a lasting mechanism.",
+    "Putting engineers in the middle damages collaboration and their autonomy, and skips the root cause.",
+    "Escalating first damages trust when a direct conversation hasn't been tried.",
+    "Hiding the delay fails your stakeholders and lets the problem keep growing."
+   ],
+   "interview_tip": "Behavioural interviewers want to see direct conflict resolution, data, and mechanisms — and escalation only as a later step."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Sales asks to share unreleased roadmap dates with a prospect",
+   "difficulty": "hard",
+   "question": "A sales leader wants you on a call to promise a prospect that a feature will ship 'by March' to close a $2M deal. The feature is planned but not yet scoped, and your confidence in March is low. What's the best response?",
+   "options": [
+    "Join the call to share direction and the problem you're solving, but don't commit to a date you can't stand behind",
+    "Agree to March, because the deal is large and the team can push to meet it",
+    "Refuse to join the call, since roadmap discussions with prospects are sales' responsibility",
+    "Give the date privately to the sales leader and let them decide what to tell the prospect"
+   ],
+   "answer": 0,
+   "explanation": "You can support the deal by showing commitment to the problem and sharing direction, while being honest about uncertainty (e.g. 'we'll confirm a date after scoping in four weeks'). An unrealistic promise risks a broken commitment, lost trust and a churned customer later.",
+   "rationales": [
+    "Correct: it supports the deal and the relationship without creating a commitment you're likely to break.",
+    "Committing on low confidence creates a likely broken promise and pressures the team into a crunch.",
+    "Refusing to help hurts the partnership with sales; PMs can add credibility on these calls.",
+    "This still creates an external commitment from an unreliable date and just moves the responsibility."
+   ],
+   "interview_tip": "Show you can balance business urgency with integrity — a classic 'earn trust' and 'customer obsession' test."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Advocating for a team member's promotion with evidence",
+   "difficulty": "medium",
+   "question": "An engineer on your team has been the driving force behind your product's biggest win this year, but their manager doesn't see their impact. You're not their manager. What's the most effective way to help?",
+   "options": [
+    "Write specific, evidence-based feedback on their impact and share it with their manager before the review cycle",
+    "Tell the engineer they deserve a promotion and encourage them to ask for it",
+    "Raise it with the skip-level manager to make sure leadership notices",
+    "Mention their contributions publicly in the next all-hands so everyone knows"
+   ],
+   "answer": 0,
+   "explanation": "Promotion decisions depend on clear evidence that reaches the decision-maker at the right time. Specific, written feedback (what they did, the outcome, the scope) given to their manager before calibration is the most useful and appropriate input from a cross-functional partner.",
+   "rationales": [
+    "Correct: concrete evidence, sent to the right person at the right time, is what moves promotion decisions.",
+    "Encouragement is kind but doesn't give the manager evidence, and may raise expectations without support.",
+    "Going over the manager's head first can feel like a bypass and harm the working relationship.",
+    "Public recognition is good, but it isn't structured evidence for a promotion decision."
+   ],
+   "interview_tip": "Stories about developing others show leadership; interviewers look for specific, actionable support."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Tokens-per-minute quotas constrain launch capacity",
+   "difficulty": "easy",
+   "question": "You're launching an LLM-powered email-drafting feature to 5 million users next week. In planning, what's the most important capacity limit to check with your model provider?",
+   "options": [
+    "Your account's tokens-per-minute and requests-per-minute rate limits at expected peak usage",
+    "The model's maximum context window size",
+    "The number of languages the model supports",
+    "The model's ranking on public benchmarks"
+   ],
+   "answer": 0,
+   "explanation": "API providers cap throughput per account (tokens and requests per minute). If peak demand exceeds that, users get errors no matter how good the model is. Estimate peak traffic in tokens per minute, then request a higher quota, use provisioned capacity or a gradual rollout.",
+   "rationales": [
+    "Correct: rate limits determine whether the feature can serve peak traffic at all.",
+    "Context window matters for long inputs, but email drafts are short; it's not the scaling risk.",
+    "Language coverage is a quality question, not a launch capacity limit.",
+    "Benchmarks don't tell you whether your account can handle the traffic."
+   ],
+   "interview_tip": "Mentioning quotas and peak-load planning shows practical experience shipping AI features at scale."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Setting user expectations about AI limitations at first use",
+   "difficulty": "easy",
+   "question": "Users of a new AI tax assistant in a fintech app trust its answers too much and sometimes file based on mistakes. What's the best first product fix?",
+   "options": [
+    "At first use and near key answers, explain clearly what the assistant can and can't do and when to verify",
+    "Remove the assistant until accuracy reaches 100%",
+    "Add a long legal disclaimer in the app's terms of service",
+    "Make the assistant's tone more confident so users trust its correct answers"
+   ],
+   "answer": 0,
+   "explanation": "Over-trust is managed by calibrating expectations where decisions are made: short, visible notes about limits and when to check with a professional or official source. This keeps the value of the assistant while reducing harmful reliance. Terms-of-service text is rarely read.",
+   "rationales": [
+    "Correct: visible, contextual guidance calibrates trust at the moment users act on answers.",
+    "100% accuracy is unrealistic for AI; removing the feature loses its value instead of managing risk.",
+    "Users don't read terms of service, so it won't change their behaviour.",
+    "More confidence would increase over-trust, which is the problem."
+   ],
+   "interview_tip": "Interviewers look for trust calibration — not blind trust, not refusing to ship — when you talk about AI UX."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "PR AUC over ROC AUC for rare-positive problems",
+   "difficulty": "medium",
+   "question": "You're evaluating a fraud model where only 0.1% of transactions are fraud. Two models both have ROC AUC of 0.97, but very different PR AUC (0.45 vs 0.20). Which should guide your choice, and why?",
+   "options": [
+    "PR AUC, because it reflects precision on the rare fraud class, which ROC AUC hides when negatives dominate",
+    "ROC AUC, because it is the standard metric and both models are equally good",
+    "Accuracy, because it combines performance on both fraud and non-fraud transactions",
+    "Neither; only the model's training loss shows which one is better"
+   ],
+   "answer": 0,
+   "explanation": "With extreme imbalance, ROC AUC can look great because the false-positive rate is computed over a huge number of negatives. PR AUC focuses on precision and recall for the rare positives — i.e. how many flagged transactions are really fraud — which drives review cost and customer friction.",
+   "rationales": [
+    "Correct: PR AUC shows how useful the model is at finding rare positives without too many false alarms.",
+    "Equal ROC AUC hides big differences in precision when positives are rare.",
+    "Accuracy is misleading here: predicting 'no fraud' for everything scores 99.9%.",
+    "Training loss doesn't measure performance on held-out data or the business trade-off."
+   ],
+   "interview_tip": "Choosing the right metric for class imbalance is a common ML-fluency check in AI PM interviews."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Feedback loop bias from training on model-exposed data",
+   "difficulty": "hard",
+   "question": "A shopping app's recommender is retrained weekly on clicks. Over six months, a small set of products gets more and more recommendations, new sellers' products are rarely shown, and overall conversion has started to fall. What's the root cause?",
+   "options": [
+    "The model learns only from items it already showed, so it keeps reinforcing its own past choices",
+    "The model is too small and needs more parameters to capture user preferences",
+    "Users' tastes have converged, so recommending the same products is correct",
+    "Weekly retraining is too frequent and causes the model to overfit to noise"
+   ],
+   "answer": 0,
+   "explanation": "Training only on clicks from what the model chose to show creates a feedback loop: shown items get clicks, which makes them shown more, while unseen items never get the data to compete. The fix is exploration (show some new or random items), logging propensities and correcting for exposure bias.",
+   "rationales": [
+    "Correct: exposure bias in a closed feedback loop creates popularity bias and starves new items.",
+    "A bigger model trained on the same biased data will learn the same bias.",
+    "Falling conversion and starved new sellers suggest a model problem, not genuine taste convergence.",
+    "Retraining frequency isn't the issue; the data each retrain sees is biased."
+   ],
+   "interview_tip": "Explaining feedback loops in ML products and how exploration fixes them shows strong AI product judgment."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Cost–quality Pareto frontier for model selection",
+   "difficulty": "medium",
+   "question": "You are choosing a model for an invoice-extraction feature. On your eval set: Model A scores 94% at $4 per 1,000 docs, Model B scores 93% at $1, Model C scores 90% at $2. Your quality bar is 92%. Which choice is best?",
+   "options": [
+    "Model B, because it meets the bar at the lowest cost and Model C is worse on both",
+    "Model A, because it has the highest accuracy",
+    "Model C, because it is in the middle on cost",
+    "Model A and C together, routing hard documents to A"
+   ],
+   "answer": 0,
+   "explanation": "Compare models on cost and quality together. C is dominated by B (worse and more expensive), so it's off the Pareto frontier. Among options that meet the 92% bar, B is the cheapest, and the 1-point gain from A costs 4× more. Check slices (e.g. handwritten invoices) before deciding.",
+   "rationales": [
+    "Correct: B meets the quality bar at the lowest cost; C is dominated.",
+    "A is better, but the extra point may not be worth 4× the cost when B already meets the bar.",
+    "C fails the 92% bar and is more expensive than B, so it's dominated.",
+    "Routing can help, but C can't meet the bar and is dominated, so it shouldn't be part of the setup."
+   ],
+   "interview_tip": "Interviewers like structured trade-offs: define the bar, remove dominated options, then optimise cost."
+  },
+  {
+   "topic": "Technology",
+   "concept": "SDK vs API",
+   "difficulty": "easy",
+   "question": "A payments company offers both an API and an SDK to merchants' developers. What's the key difference?",
+   "options": [
+    "The API is the interface for requests and responses; the SDK is a library that wraps the API to make integration easier",
+    "The API is only for mobile apps, while the SDK is only for websites",
+    "The SDK runs on the payment company's servers, while the API runs on the merchant's device",
+    "The API is free to use, while the SDK is the paid enterprise version"
+   ],
+   "answer": 0,
+   "explanation": "An API defines how software talks to a service (endpoints, inputs, outputs). An SDK is a package of code for a specific language or platform — handling auth, retries and data types — that calls the API underneath. SDKs reduce integration time, which matters for developer adoption.",
+   "rationales": [
+    "Correct: the SDK is a convenience layer around the API for a given platform.",
+    "Both can be used on many platforms; there's no mobile-vs-web split by definition.",
+    "This reverses it: SDK code runs in the client's app, and the API is served by the provider.",
+    "Pricing isn't the difference; both are usually part of the same product."
+   ],
+   "interview_tip": "Technical fluency questions check you can explain basic concepts simply, as you would to a stakeholder."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Geospatial indexing for nearby-driver queries",
+   "difficulty": "medium",
+   "question": "A ride-hailing app must find drivers within 2 km of each rider, thousands of times per second. Scanning every driver's coordinates is too slow. What is the standard approach?",
+   "options": [
+    "Index drivers by geographic cells (e.g. geohash or H3) and search only the rider's cell and its neighbours",
+    "Sort all drivers by latitude and binary search for nearby ones",
+    "Cache each rider's last search results for an hour",
+    "Store drivers in a relational database with an index on driver ID"
+   ],
+   "answer": 0,
+   "explanation": "Geospatial indexes divide the map into cells so a query only checks drivers in nearby cells, then calculates exact distance for that small set. Systems like Uber's H3 hexagonal grid do this, and it scales to many queries per second with constantly moving drivers.",
+   "rationales": [
+    "Correct: cell-based indexing reduces each query to a small area.",
+    "Sorting by one coordinate still includes drivers who are far away in longitude, so it doesn't reduce the search enough.",
+    "Drivers move constantly, so hour-old results would be wrong.",
+    "An index on driver ID doesn't help find drivers by location."
+   ],
+   "interview_tip": "In system-design discussions, PMs should understand the main approach and its trade-offs (cell size, freshness), not implementation details."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Onboarding paywall placement in subscription apps",
+   "difficulty": "medium",
+   "question": "A meditation app shows its subscription paywall after users finish a 7-day free content series. Experiments in similar apps show placing it at the end of onboarding (with a free-trial offer) converts much better. Why is that typically true?",
+   "options": [
+    "Intent and motivation are highest right after signup, and the trial lets users experience premium value before paying",
+    "Users who see the paywall early are more likely to forget to cancel the trial",
+    "Showing the paywall later makes the app look less trustworthy",
+    "Early paywalls filter out all low-intent users, so total retention always rises"
+   ],
+   "answer": 0,
+   "explanation": "In many subscription apps, most trial starts happen during onboarding when motivation is high. A trial at that moment captures intent and then lets users experience premium value. Waiting a week means many users have already left. Test placement and watch trial-to-paid and refund rates.",
+   "rationales": [
+    "Correct: it captures peak motivation and still lets users try the full value via a trial.",
+    "Relying on forgotten cancellations is a dark pattern that drives refunds, complaints and churn.",
+    "Paywall timing doesn't mainly affect trust; the drop-off in motivation is the issue.",
+    "Early paywalls may reduce some engaged free users; 'always' overstates the effect."
+   ],
+   "interview_tip": "Growth interviews reward explaining why timing matters (user motivation) and naming the guardrails you'd watch."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Gemini API auto-routing of retired 2.5 models (Nov 2026)",
+   "difficulty": "medium",
+   "question": "Google announced that from 1 December 2026, Gemini API requests to gemini-2.5-pro and gemini-2.5-flash will be automatically routed to newer models (Gemini 3.8 Flash and Gemini 3.5 Flash-Lite), billed at the newer models' prices. For a PM whose product uses gemini-2.5-flash, what's the most important action?",
+   "options": [
+    "Run your eval suite on the target model now and migrate deliberately before the automatic switch",
+    "Do nothing, because newer models are always better and the switch is automatic",
+    "Move immediately to a different provider to avoid any forced migrations in future",
+    "Keep calling gemini-2.5-flash, since only the model name changes, not behaviour"
+   ],
+   "answer": 0,
+   "explanation": "Automatic routing means behaviour, prices and features (Google noted breaking changes, including in function calling) can change without code changes. Teams should test the target model on their own evals, update prompts and tool definitions, check cost impact, and migrate on their own schedule rather than be surprised.",
+   "rationales": [
+    "Correct: test and migrate deliberately to control quality, cost and breaking changes.",
+    "Newer isn't guaranteed better for your tasks, and breaking changes can cause failures.",
+    "Switching providers is costly and still involves future deprecations; it overreacts to a normal lifecycle event.",
+    "Routing to a different model changes behaviour and pricing, even if your code calls the same name."
+   ],
+   "interview_tip": "Model deprecations are a real ops topic in AI PM roles; strong candidates mention evals, cost checks and owned migration timelines.",
+   "source": "https://www.datastudios.org/post/gemini-api-reroutes-gemini-2-5-pro-2-5-flash-december-1-3-8-flash-3-5-flash-lite"
+  }
+ ]
+}
