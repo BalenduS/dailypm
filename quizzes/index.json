@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-08",
+   "theme": "Signals, safeguards and staged bets",
+   "count": 30
+  },
+  {
    "date": "2026-11-07",
    "theme": "Defaults, mix shifts and hidden costs",
    "count": 30

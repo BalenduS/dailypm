@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-08",
+ "theme": "Signals, safeguards and staged bets",
+ "questions": [
+  {
+   "id": "2026-11-08-01",
+   "topic": "Product Sense",
+   "concept": "Turning a storage-full limit moment into guided cleanup",
+   "difficulty": "hard",
+   "question": "You're the PM for Google Photos. Many free users hit 'storage full', get a blunt upsell banner, and a large share stop backing up entirely instead of paying. What is the best product response?",
+   "options": [
+    "Lower the price of the smallest paid plan so that more users convert at the limit",
+    "Silently compress all existing photos to a lower quality to free space for new backups",
+    "Show the upgrade banner more often so more users see the paid plan before they give up",
+    "At the storage-full moment, offer a guided review of large videos, blurry shots and duplicates, alongside the upgrade option"
+   ],
+   "rationales": [
+    "Price may help some users, but it ignores the many who won't pay at any price and still leaves them stuck with no backup.",
+    "Changing users' originals without consent breaks trust in a product whose whole promise is safe-keeping memories.",
+    "More banners add pressure but don't change the user's choice between paying and quitting; it can raise churn from backup.",
+    "Correct: it gives users a no-cost way to keep backing up, keeps them in the habit, and still presents the upgrade to those who value it."
+   ],
+   "answer": 3,
+   "explanation": "The real failure is users abandoning backup, which kills long-term retention and future conversion. A limit moment is high-attention: helping users free space by reviewing low-value items (big videos, blurry shots, duplicates) keeps them active, while the upgrade stays visible for those who prefer to pay. Retained, backing-up users are the ones who eventually convert.",
+   "interview_tip": "Interviewers like candidates who treat a paywall or limit as a user moment to design, not just a monetisation lever, and who name the metric they're protecting (backup retention)."
+  },
+  {
+   "id": "2026-11-08-02",
+   "topic": "Product Sense",
+   "concept": "Proactive service recovery during travel disruptions",
+   "difficulty": "medium",
+   "question": "You're the PM for an airline app. When a flight is cancelled, customers queue for hours at the counter or on the phone to rebook. Which feature would most improve their experience?",
+   "options": [
+    "A loyalty-points voucher sent automatically to every affected passenger after the trip",
+    "A push alert with pre-selected alternative flights that can be accepted or changed with one tap",
+    "A push alert explaining the cancellation reason in more detail, with an apology",
+    "A live chat button in the app so customers can talk to an agent while they wait"
+   ],
+   "rationales": [
+    "Compensation is nice later, but it does nothing for the stress of being stranded now.",
+    "Correct: the airline already knows who is affected and which seats exist, so pushing a ready-made rebooking removes the queue entirely for most people.",
+    "Explanation helps tone, but it doesn't solve the customer's real job: getting to their destination.",
+    "Chat moves the queue to a new channel but agents are still the bottleneck during a mass disruption."
+   ],
+   "answer": 1,
+   "explanation": "Good service recovery is proactive: the company acts before the customer has to ask. The airline holds the data (affected passengers, open seats), so it can propose a rebooking instantly, letting most customers self-serve and freeing agents for complex cases. This turns a bad moment into a trust-building one.",
+   "interview_tip": "Strong product-sense answers spot when the company already knows something the user is about to ask for, and design to remove the work rather than to speed up a queue."
+  },
+  {
+   "id": "2026-11-08-03",
+   "topic": "Product Sense",
+   "concept": "Serving known-intent vs exploratory users on one home screen",
+   "difficulty": "hard",
+   "question": "You're redesigning the home screen of a food-delivery app. Research shows about 60% of sessions are users who already know what they want (often a past order), and 40% are browsing for ideas. The current home is a long feed of promo banners. What's the best direction?",
+   "options": [
+    "Put search and one-tap reorder of recent orders at the top, with personalised discovery below",
+    "Split users into two apps or modes chosen at onboarding: 'quick order' and 'explore'",
+    "Replace banners with a large search bar only, because most sessions already know what they want",
+    "Make the home screen a pure discovery feed, since browsing users have the most room to grow order value"
+   ],
+   "rationales": [
+    "Correct: fast paths for the common known-intent case sit first, while discovery remains one scroll away for browsers, so one layout serves both.",
+    "Intent varies by session, not by person; the same user browses on Friday and reorders on Tuesday, so a fixed mode chosen once fits poorly.",
+    "Search-only helps known intent but leaves browsing users with nothing to spark ideas, hurting discovery.",
+    "This serves the minority and makes the majority scroll past content they don't need, slowing their order."
+   ],
+   "answer": 0,
+   "explanation": "Intent is a property of the session, not a fixed user type. A layered home screen gives the common case (know what I want) the fastest route at the top, through search and reorder, and keeps a personalised discovery section below for browsing sessions. You can then measure time-to-order for intent sessions and conversion from discovery separately.",
+   "interview_tip": "Segmenting by situation or intent, not just by demographic, is a signal of mature product sense; mention how you'd measure each path."
+  },
+  {
+   "id": "2026-11-08-04",
+   "topic": "Product Sense",
+   "concept": "Shrinking the first commitment to start a habit",
+   "difficulty": "medium",
+   "question": "A meditation app finds most new users stop within a week. Exit surveys say the default 20-minute sessions 'feel like a chore'. Which change best addresses this?",
+   "options": [
+    "Default new users to short 2–3 minute sessions, then suggest longer ones as they build a streak",
+    "Offer a discount on the annual plan to users who complete their first 20-minute session",
+    "Send more reminder notifications during the first week to bring users back",
+    "Add a leaderboard so users can compare their total meditation minutes with friends"
+   ],
+   "rationales": [
+    "Correct: lowering the effort of each early session makes the habit easy to start, and length can grow once the routine is set.",
+    "A discount doesn't make the session feel any easier and only rewards users who already pushed through.",
+    "Reminders bring people back to the same 20-minute chore; they treat the symptom, not the cause.",
+    "Competition on minutes rewards long sessions, the very thing users find hard, and can feel at odds with meditation."
+   ],
+   "answer": 0,
+   "explanation": "Habits form when the behaviour is easy to repeat. If the first sessions feel too big, shrink them: a tiny, achievable session builds the routine, and the product can step users up gradually. Measure week-1 and week-4 retention, not minutes per session.",
+   "interview_tip": "Interviewers reward answers that use the user's stated friction as the root cause and change the core experience rather than adding nudges around it."
+  },
+  {
+   "id": "2026-11-08-05",
+   "topic": "Metrics",
+   "concept": "Consent-driven tracking loss vs real conversion decline",
+   "difficulty": "hard",
+   "question": "Right after launching a new cookie-consent banner in the EU, your web analytics show tracked checkouts down 22% in the EU only. Which check most quickly tells you whether this is a real business drop?",
+   "options": [
+    "Compare EU conversion rate before and after in the analytics tool, split by browser",
+    "Compare backend order counts and revenue from the payments system against the analytics numbers",
+    "Survey EU users to ask whether the banner made them less likely to buy",
+    "Roll back the banner in one EU country for a week and watch analytics conversions"
+   ],
+   "rationales": [
+    "This still uses the same analytics data that is missing users who declined tracking, so it can't separate tracking loss from real loss.",
+    "Correct: server-side orders don't depend on cookie consent; if they're flat while tracked checkouts fell, the drop is measurement, not behaviour.",
+    "Surveys are slow and self-reported, and won't size the gap between tracked and actual orders.",
+    "Rolling back a compliance feature is risky and slow when a quick look at backend data answers the question."
+   ],
+   "answer": 1,
+   "explanation": "A consent banner reduces how many users your client-side analytics can see, so tracked events fall even if real purchases don't. The fastest test is to compare against a source of truth that doesn't depend on consent, such as orders and revenue in the backend. If those are flat, update dashboards to account for the coverage change rather than chasing a phantom drop.",
+   "interview_tip": "In root-cause questions, strong candidates first ask 'is the drop real or a measurement change?' and name an independent source of truth to check against."
+  },
+  {
+   "id": "2026-11-08-06",
+   "topic": "Metrics",
+   "concept": "Anchoring cohort start to activation rather than signup",
+   "difficulty": "medium",
+   "question": "Your B2B analytics tool needs about two weeks of data integration before customers see any value. Week-1 retention measured from signup looks terrible. What is the better way to measure retention here?",
+   "options": [
+    "Shorten the window to day-1 retention, which is easier to improve",
+    "Measure retention only for customers who renew their annual contract",
+    "Keep measuring from signup but exclude customers who never log in again",
+    "Start each cohort's clock when the customer first reaches activation (data connected and first report viewed)"
+   ],
+   "rationales": [
+    "A shorter window from signup still measures the setup period, when no value is possible.",
+    "Renewal is a lagging, yearly signal that's too slow for product decisions.",
+    "Dropping those who leave hides the very churn you want to see (survivorship bias).",
+    "Correct: retention from activation shows whether the product keeps users once they get value, and setup is tracked separately as time-to-activate."
+   ],
+   "answer": 3,
+   "explanation": "When there's a long setup, signup-based retention mixes two problems: getting set up and staying engaged. Splitting them gives two clean metrics: activation rate and time-to-activate for onboarding, and retention from the activation date for ongoing value. Each points to a different team and fix.",
+   "interview_tip": "Defining when the clock starts is a subtle metric-design choice; mentioning it shows you think about what a metric actually measures."
+  },
+  {
+   "id": "2026-11-08-07",
+   "topic": "Metrics",
+   "concept": "Gross vs net GMV after cancellations and returns",
+   "difficulty": "easy",
+   "question": "A fashion marketplace reports GMV of ₹100 crore for the month. 25% of that value was later cancelled or returned. Which figure best reflects the value of goods actually sold?",
+   "options": [
+    "Gross GMV of ₹100 crore, because orders were placed",
+    "Net GMV of ₹75 crore, after removing cancellations and returns",
+    "₹125 crore, because returns create extra reverse-logistics activity",
+    "Revenue equal to the platform's commission on ₹100 crore"
+   ],
+   "rationales": [
+    "Gross GMV counts orders that never turned into sales, which overstates the business, especially in categories with high returns.",
+    "Correct: net GMV removes cancelled and returned value and is the honest measure of goods actually sold.",
+    "Returns add cost, not sales value; adding them inflates the number in the wrong direction.",
+    "Commission is the platform's revenue (take rate), a different metric from the value of goods sold."
+   ],
+   "answer": 1,
+   "explanation": "Gross GMV counts the value of every order placed; net GMV subtracts cancellations and returns. In fashion, where returns are high, the gap is large, so investors and teams track net GMV to judge real demand and fulfilment quality.",
+   "interview_tip": "Knowing which version of GMV a company reports, and why it matters in high-return categories, shows business fluency in marketplace interviews."
+  },
+  {
+   "id": "2026-11-08-08",
+   "topic": "Metrics",
+   "concept": "Sell-through rate as a supply health metric",
+   "difficulty": "easy",
+   "question": "A second-hand electronics marketplace listed 10,000 items in October. 3,000 of them sold within 30 days. What does this 30% figure measure, and why does it matter?",
+   "options": [
+    "Sell-through rate; it shows whether sellers' listings find buyers fast enough to keep listing",
+    "Take rate on the items sold; it measures how much the platform earns",
+    "Return rate of sold items; it measures post-purchase satisfaction",
+    "Conversion rate of buyers who visited the site; it measures buyer demand"
+   ],
+   "rationales": [
+    "Correct: sold items ÷ listed items in a period is sell-through; low values mean sellers wait and may leave the platform.",
+    "Take rate is the platform's revenue as a share of GMV, unrelated to how many listings sold.",
+    "Return rate counts items sent back after sale, not items that sold.",
+    "Buyer conversion uses visitors as the base, not listed items."
+   ],
+   "answer": 0,
+   "explanation": "Sell-through rate is the share of listed items that sell within a time window. For sellers, it's the core promise of a marketplace: list here and it will sell. Low or falling sell-through warns of weak demand, poor pricing, or poor matching, and predicts seller churn.",
+   "interview_tip": "In marketplace metric questions, naming a supply-side health metric like sell-through shows you're thinking about both sides, not just buyers."
+  },
+  {
+   "id": "2026-11-08-09",
+   "topic": "Experimentation",
+   "concept": "Hawthorne effect in a hand-picked pilot",
+   "difficulty": "medium",
+   "question": "A retail chain pilots a new store-ops app in 10 stores. Regional managers chose the stores, and the product team visited each one weekly. Sales in pilot stores rose 8% vs others. What is the biggest reason to doubt the result?",
+   "options": [
+    "Extra attention and hand-picked stores may explain the lift, not the app itself",
+    "Sales are a lagging metric, so the 8% must be a seasonal effect",
+    "The app was only tested for retail, so results won't apply to other industries",
+    "Ten stores is too small to run any statistical test at all"
+   ],
+   "rationales": [
+    "Correct: people often perform better when observed (Hawthorne effect), and managers likely chose stronger stores, so the comparison is confounded.",
+    "Seasonality would affect all stores, and the comparison is pilot vs non-pilot in the same period.",
+    "External validity to other industries isn't the question; the chain only cares about its own stores.",
+    "Ten units is small but still analysable; the bigger issue is bias, not test feasibility."
+   ],
+   "answer": 0,
+   "explanation": "Two biases stack here: selection (managers picked stores likely to do well) and the Hawthorne effect (staff behave differently when they get attention). A cleaner design randomly assigns stores, gives control stores similar attention, and checks pre-pilot trends.",
+   "interview_tip": "Calling out how a pilot was run, not just its numbers, is a sign of good experimental judgment in execution interviews."
+  },
+  {
+   "id": "2026-11-08-10",
+   "topic": "Experimentation",
+   "concept": "Latency confound from treatment-only infrastructure",
+   "difficulty": "hard",
+   "question": "You A/B test a new recommendation model. The treatment runs on a new, separate serving cluster; control uses the existing one. Treatment shows 3% lower engagement. Before rejecting the model, what should you check first?",
+   "options": [
+    "Whether the test ran long enough to reach the planned sample size",
+    "Whether the new model's offline accuracy was better than the old model's",
+    "Whether users in the treatment group were more likely to be new users",
+    "Whether treatment's page load latency was higher than control's because of the new cluster"
+   ],
+   "rationales": [
+    "Sample size matters, but a 3% drop with an obvious structural difference between arms points first to a confound.",
+    "Offline accuracy doesn't explain an online drop; it's the gap you're trying to explain.",
+    "Randomization should balance new users; it's worth checking but less likely than a known infra difference.",
+    "Correct: if only treatment uses new infrastructure (cold caches, extra network hops), slower pages alone can lower engagement and mask the model's effect."
+   ],
+   "answer": 3,
+   "explanation": "An A/B test isolates one change only if everything else is equal. Serving treatment from a different cluster changes latency, caching and error rates along with the model. Check latency and errors by arm; if they differ, rerun with both arms on the same infrastructure or add the old model to the new cluster as a control.",
+   "interview_tip": "Strong candidates ask 'what else differs between arms?' before interpreting a result; mentioning latency as a hidden treatment is a sharp signal."
+  },
+  {
+   "id": "2026-11-08-11",
+   "topic": "Estimation",
+   "concept": "Annual birthday cakes bought in urban India",
+   "difficulty": "easy",
+   "question": "Roughly how many birthday cakes are bought each year in urban India? Assume about 50 crore (500 million) urban residents.",
+   "options": [
+    "About 1.5 crore (15 million)",
+    "About 15 lakh (1.5 million)",
+    "About 150 crore (1.5 billion)",
+    "About 15 crore (150 million)"
+   ],
+   "rationales": [
+    "This implies 3% of people, still too low for urban households where kids' and adults' birthdays often include a cake.",
+    "This implies only 1 in 330 urban people get a cake each year, far too low given how common cake-cutting is.",
+    "This is three cakes per person per year, implausibly high even counting office and group celebrations.",
+    "Correct: about 30% of 500 million people having a bought cake gives ~150 million, consistent with common urban habits."
+   ],
+   "answer": 3,
+   "explanation": "Method: 500M urban people × share who get a bought cake for their birthday. Kids almost always do; many adults do via family or office celebrations; some don't. A reasonable blended rate is ~30%, so ~150M cakes, plus some extra for offices and shared celebrations, landing in the 15 crore range.",
+   "interview_tip": "Interviewers care about clear segmentation (kids vs adults, homes vs offices) and sanity checks more than the exact number."
+  },
+  {
+   "id": "2026-11-08-12",
+   "topic": "Estimation",
+   "concept": "Monthly inference cost of a free-tier image generator",
+   "difficulty": "medium",
+   "question": "Your app has 20 lakh (2 million) free users. About 20% generate images in a month, averaging 30 images each. Each image costs $0.02 to generate. Roughly what is the monthly inference cost?",
+   "options": [
+    "About $24 million",
+    "About $240,000",
+    "About $2.4 million",
+    "About $24,000"
+   ],
+   "rationales": [
+    "This is 100x too high and would imply every user generates hundreds of images.",
+    "Correct: 2M × 20% = 400k active; × 30 = 12M images; × $0.02 = $240k.",
+    "This is 10x too high; it would mean all 2 million users were active or each made 300 images.",
+    "This is 10x too low; it treats 1.2 million images instead of 12 million."
+   ],
+   "answer": 1,
+   "explanation": "Active users = 2,000,000 × 0.2 = 400,000. Images = 400,000 × 30 = 12,000,000. Cost = 12,000,000 × $0.02 = $240,000 per month. Knowing this lets you set free-tier quotas and judge whether conversion to paid covers it.",
+   "interview_tip": "AI-product interviews increasingly ask for cost back-of-envelope; walk the chain aloud (users → active → usage → unit cost) and tie it to a decision like quota limits."
+  },
+  {
+   "id": "2026-11-08-13",
+   "topic": "Strategy",
+   "concept": "Real options: staged investment under uncertainty",
+   "difficulty": "medium",
+   "question": "Your CEO is unsure whether a new regional market will grow fast enough to justify a ₹200 crore launch. Demand data will be much clearer in 12 months. What's the best strategic approach?",
+   "options": [
+    "Commit the full ₹200 crore now to beat competitors to the market",
+    "Wait 12 months and do nothing, then decide with complete data",
+    "Make a small investment now (a pilot city and key partnerships) that keeps the option to scale fast if signals are strong",
+    "Hire a consultancy to produce a definitive five-year forecast before deciding"
+   ],
+   "rationales": [
+    "Committing everything under high uncertainty risks a large loss if demand doesn't appear.",
+    "Doing nothing gives up learning and may leave you too slow to act if the market takes off.",
+    "Correct: a small, staged bet buys learning and a position, and you can expand or exit as uncertainty resolves.",
+    "Forecasts can't remove real uncertainty; the data you need comes from being in the market."
+   ],
+   "answer": 2,
+   "explanation": "Real-options thinking treats investments as a series of choices. When uncertainty is high and will resolve with time or learning, it pays to make a small investment that preserves the right, but not the obligation, to scale later. Define the signals that trigger the next stage in advance.",
+   "interview_tip": "In strategy rounds, proposing a staged bet with clear triggers shows you can balance ambition with risk instead of choosing between 'all in' and 'wait'."
+  },
+  {
+   "id": "2026-11-08-14",
+   "topic": "Strategy",
+   "concept": "Deterring entry with credible pre-commitment",
+   "difficulty": "hard",
+   "question": "You lead a quick-commerce company that dominates one city. A well-funded rival is weighing entry. Which move is most likely to deter them before they enter?",
+   "options": [
+    "Publicly announcing you will cut prices sharply if anyone enters",
+    "Releasing a press statement highlighting your market share and customer love",
+    "Raising prices now to bank profits before competition arrives",
+    "Signing long-term leases on the best dark-store locations and expanding coverage ahead of demand"
+   ],
+   "rationales": [
+    "Threats are cheap talk; the rival knows a price war hurts you too, so it may not believe you'd follow through.",
+    "Market-share messaging doesn't change the rival's costs or likely payoffs.",
+    "Higher prices and fat margins make the market look more attractive to an entrant.",
+    "Correct: sunk, hard-to-reverse investments change the entrant's economics; the best sites are gone, and you can serve demand cheaply."
+   ],
+   "answer": 3,
+   "explanation": "Deterrence works when the incumbent's commitment is credible, usually because it's costly and hard to undo. Locking up scarce locations and building capacity raises the entrant's costs and lowers its expected share, so the rational choice is to stay out. Verbal threats without commitment are easy to ignore.",
+   "interview_tip": "Distinguishing credible commitments from cheap talk is a classic strategy signal; link it to scarce assets that matter in the specific business."
+  },
+  {
+   "id": "2026-11-08-15",
+   "topic": "Strategy",
+   "concept": "Bookings vs billings vs recognised revenue in SaaS",
+   "difficulty": "easy",
+   "question": "A customer signs a 3-year SaaS contract worth $360,000 on 1 January, billed annually upfront. At the end of March, what is the recognised revenue for Q1?",
+   "options": [
+    "$120,000, because one year was billed",
+    "$0, because revenue is only recognised at the end of the contract",
+    "$360,000, because the full contract was booked",
+    "$30,000, because revenue is recognised as the service is delivered"
+   ],
+   "rationales": [
+    "$120,000 is the billing (amount invoiced), not revenue earned in Q1.",
+    "Subscription revenue is recognised steadily over the service period, not all at the end.",
+    "$360,000 is the booking (total contract value), not revenue earned so far.",
+    "Correct: $120,000 per year ÷ 4 quarters = $30,000 earned for service delivered in Q1."
+   ],
+   "answer": 3,
+   "explanation": "Bookings = total contract value signed ($360k). Billings = what's invoiced ($120k for year 1). Revenue = what's earned by delivering the service over time ($10k per month, so $30k in Q1). The difference between billings and revenue sits as deferred revenue.",
+   "interview_tip": "B2B PM interviews may probe financial literacy; knowing these three terms helps you discuss pricing and sales incentives credibly."
+  },
+  {
+   "id": "2026-11-08-16",
+   "topic": "Execution",
+   "concept": "Staggered platform launch vs simultaneous parity",
+   "difficulty": "medium",
+   "question": "A new feature is ready on Android, but iOS needs 6 more weeks. Android is 80% of your users in India. Marketing wants to wait so both launch together. What's the best call?",
+   "options": [
+    "Move iOS engineers to Android work, since iOS is only 20% of users",
+    "Launch on Android with a full marketing campaign immediately, telling iOS users it's coming soon",
+    "Wait 6 weeks so all users get the same experience at the same time",
+    "Launch on Android now with no marketing push, learn and fix issues, then do a full launch when iOS is ready"
+   ],
+   "rationales": [
+    "Dropping iOS ignores a valuable segment (often higher-spending) and creates long-term parity debt.",
+    "Heavy marketing to users who can't use it yet frustrates iOS users and wastes spend.",
+    "Waiting delays value and learning for 80% of users, with little gain beyond a cleaner announcement.",
+    "Correct: users get value now, the team learns from real usage, and the big marketing moment waits until everyone can use it."
+   ],
+   "answer": 3,
+   "explanation": "Staggered launches are common when one platform is ready first. A quiet rollout on the ready platform delivers value and real-world feedback, and the coordinated campaign can wait for parity. Separate 'release' from 'launch': ship when ready, market when the story is complete.",
+   "interview_tip": "Interviewers look for options beyond 'wait' or 'ship everything'; separating release from the marketing launch is a strong move."
+  },
+  {
+   "id": "2026-11-08-17",
+   "topic": "Execution",
+   "concept": "Load shedding non-critical features during overload",
+   "difficulty": "medium",
+   "question": "During a big sale, your e-commerce backend is overloaded and checkout errors are rising. Engineers say it will take hours to add capacity. As the PM, what should you push for right now?",
+   "options": [
+    "Pause the sale until extra capacity is added, then restart it",
+    "Turn off non-essential features (recommendations, reviews widgets, live stock counters) to free capacity for checkout",
+    "Keep everything on and post a status message asking users to retry later",
+    "Roll back the last release, even though nothing changed in checkout code"
+   ],
+   "rationales": [
+    "Pausing the sale stops all revenue and disappoints users when a partial fix is available.",
+    "Correct: degrading low-value features protects the core flow that drives revenue until capacity catches up.",
+    "Asking users to retry adds more load and lets revenue and trust leak away during peak demand.",
+    "Rolling back without evidence that the release caused it wastes time and may not help a load problem."
+   ],
+   "answer": 1,
+   "explanation": "Load shedding means deliberately turning off less important work so the most important flows keep running. A PM should know in advance which features are 'nice to have' and can be switched off by flags during peak events, and agree the priority order before the sale.",
+   "interview_tip": "Incident questions reward candidates who protect the core user journey and have pre-agreed playbooks, not ones who only escalate."
+  },
+  {
+   "id": "2026-11-08-18",
+   "topic": "Execution",
+   "concept": "Sprint goal as a commitment to an outcome",
+   "difficulty": "easy",
+   "question": "Halfway through a sprint, your team learns one planned ticket is far harder than estimated. Which artefact should guide what they drop or swap so the sprint still delivers value?",
+   "options": [
+    "The sprint goal, the one shared objective the sprint must achieve",
+    "The sprint backlog, which lists every ticket the team must finish",
+    "Each engineer's story-point target for the sprint",
+    "The release date promised to stakeholders for the next feature"
+   ],
+   "rationales": [
+    "Correct: a clear goal lets the team trade tasks in or out mid-sprint while staying focused on the outcome.",
+    "A ticket list is the sprint backlog; the goal sits above it so the plan can flex.",
+    "Measuring individuals by points misuses estimates and isn't the goal's purpose.",
+    "Sprints may or may not end in a release; the goal is about the team's focus, not external dates."
+   ],
+   "answer": 0,
+   "explanation": "The sprint goal is a short statement of what the sprint should achieve. It creates focus and flexibility: if work turns out harder than expected, the team can change the specific tasks while still meeting the goal. Without it, a sprint becomes a to-do list.",
+   "interview_tip": "Describing sprints in terms of outcomes rather than tickets signals you lead teams toward goals, not just manage backlogs."
+  },
+  {
+   "id": "2026-11-08-19",
+   "topic": "Behavioural",
+   "concept": "Customer requests a change that undermines their own security",
+   "difficulty": "hard",
+   "question": "A large enterprise customer demands you let their admins turn off two-factor authentication for all users because employees find it annoying. Sales says the renewal is at risk. What's the strongest response?",
+   "options": [
+    "Refuse outright and tell sales the customer must accept the policy",
+    "Understand the friction, offer safer options like SSO or remembered devices, and explain the risk clearly to their security team",
+    "Turn it off for them, since it's their choice and the renewal is valuable",
+    "Escalate to your VP and let them decide with sales"
+   ],
+   "rationales": [
+    "A flat no ignores a real pain point and damages the relationship when better options exist.",
+    "Correct: it addresses the real pain (login friction) while keeping the customer secure, and brings in the people who own the risk.",
+    "Giving in hurts the customer if they're breached and may expose your company too; it solves the request, not the problem.",
+    "Escalation may be needed later, but jumping to it skips your job of understanding the need and proposing options."
+   ],
+   "answer": 1,
+   "explanation": "The customer's real problem is friction, not 2FA itself. SSO, trusted devices or longer sessions can reduce friction while keeping protection. Involving their security team makes the trade-off explicit to the people accountable for it. This shows customer obsession and high standards together.",
+   "interview_tip": "Behavioural answers stand out when you separate the stated request from the underlying need and protect the customer from a decision that would hurt them."
+  },
+  {
+   "id": "2026-11-08-20",
+   "topic": "Behavioural",
+   "concept": "Interpersonal conflict between engineers when you're not their manager",
+   "difficulty": "hard",
+   "question": "Two senior engineers on your team keep clashing in code reviews; it's slowing delivery and others are uncomfortable. You're the PM, not their manager. What's the best first step?",
+   "options": [
+    "Ask one of the engineers to move to a different project to reduce friction",
+    "Stay out of it, because people issues are only the engineering manager's job",
+    "Talk to each privately to understand the issue, then raise the pattern and its delivery impact with their engineering manager",
+    "Call a team meeting to discuss the conflict openly so everyone can share views"
+   ],
+   "rationales": [
+    "Reassigning people is not the PM's call and doesn't address the root cause.",
+    "Ignoring it lets delivery and team health suffer; PMs should raise issues even when they don't own the fix.",
+    "Correct: you gather facts, show care for both people, and bring it to the person who owns their performance and growth, with clear impact.",
+    "A public discussion of a personal conflict can embarrass both and make things worse."
+   ],
+   "answer": 2,
+   "explanation": "PMs lead through influence. Here that means listening to both sides privately, focusing on behaviour and impact rather than blame, and partnering with the engineering manager, who has the authority and responsibility to resolve it. You can also help by clarifying shared goals or review norms.",
+   "interview_tip": "Interviewers check that you know your role's limits but still act; naming the right partner (the EM) and the business impact is key."
+  },
+  {
+   "id": "2026-11-08-21",
+   "topic": "Behavioural",
+   "concept": "Closing the loop with frontline teams on reported issues",
+   "difficulty": "medium",
+   "question": "Your support team stopped reporting product bugs because 'nothing ever happens'. You've just joined as PM. What's the best way to rebuild their trust?",
+   "options": [
+    "Ask them to only report bugs that affect more than 100 customers",
+    "Send a message reminding them that reporting bugs is part of their job",
+    "Set up a visible tracker, triage their reports weekly, and tell them what was fixed, scheduled or declined and why",
+    "Promise that every bug they report will be fixed within one sprint"
+   ],
+   "rationales": [
+    "A high bar further discourages reporting and loses useful early signals.",
+    "A reminder ignores why they stopped and doesn't change the experience that caused it.",
+    "Correct: consistent triage and clear feedback show their input matters, even when the answer is no.",
+    "Over-promising will fail quickly and make trust worse."
+   ],
+   "answer": 2,
+   "explanation": "People keep sharing input when they see what happens to it. A transparent process (visible queue, regular triage, outcomes communicated with reasons) turns support into a reliable source of customer insight. Closing the loop on 'no' decisions matters as much as fixes.",
+   "interview_tip": "Show that you build mechanisms that make feedback flow, not just one-off gestures; this maps to Amazon's 'Earn Trust'."
+  },
+  {
+   "id": "2026-11-08-22",
+   "topic": "AI Product",
+   "concept": "Chain-of-thought prompting for multi-step problems",
+   "difficulty": "easy",
+   "question": "Your LLM-based tax helper often gets multi-step calculations wrong when asked for the final number directly. Which simple prompting change is most likely to help?",
+   "options": [
+    "Ask the model to work through the steps before giving the final answer",
+    "Shorten the prompt so the model has less to read",
+    "Ask the model to answer more confidently",
+    "Raise the temperature so the model explores more answers"
+   ],
+   "rationales": [
+    "Correct: step-by-step reasoning lets the model handle each part in order, which improves multi-step accuracy.",
+    "Removing context may cut useful instructions and doesn't address the reasoning problem.",
+    "Asking for confidence changes tone, not accuracy.",
+    "Higher temperature adds randomness, which usually hurts accuracy on precise calculations."
+   ],
+   "answer": 0,
+   "explanation": "Chain-of-thought prompting asks the model to show intermediate steps before answering. It tends to improve multi-step reasoning because each step is generated explicitly. For exact arithmetic, pairing it with a calculator tool is even more reliable; you can hide the steps from users if needed.",
+   "interview_tip": "AI-PM interviews test basic prompting levers; mention both step-by-step reasoning and tool use for exact maths to show depth."
+  },
+  {
+   "id": "2026-11-08-23",
+   "topic": "AI Product",
+   "concept": "Hallucinated package names in AI coding assistants",
+   "difficulty": "medium",
+   "question": "Your AI coding assistant sometimes suggests installing open-source packages that don't exist. Why is this a security risk, and what's the best mitigation?",
+   "options": [
+    "It causes licence issues; only suggest packages with MIT licences",
+    "It breaks builds; switch to a larger model, which never invents package names",
+    "Attackers can publish malware under those made-up names; check suggested packages against the registry and flag unknown or new ones",
+    "It wastes developer time; add a disclaimer telling users to double-check package names"
+   ],
+   "rationales": [
+    "Licences are a separate issue and don't address fake or malicious packages.",
+    "Bigger models still hallucinate sometimes; relying on the model alone is not a safeguard.",
+    "Correct: invented names can be registered by attackers; verifying against the registry and flagging new or low-reputation packages blocks the attack.",
+    "A disclaimer doesn't stop users from installing a malicious package, and misses the security risk."
+   ],
+   "answer": 2,
+   "explanation": "If models repeatedly invent the same package names, attackers can publish malicious packages under those names and wait for developers to install them. Mitigate in the product: validate suggestions against the real registry, warn on unknown, very new or low-download packages, and log patterns of invented names.",
+   "interview_tip": "Showing you think about how AI mistakes become attack surfaces, and fixing them with checks in the product, is a strong AI-PM signal."
+  },
+  {
+   "id": "2026-11-08-24",
+   "topic": "AI Product",
+   "concept": "Dialect bias in toxicity classifiers",
+   "difficulty": "hard",
+   "question": "Your community app's AI moderation flags posts as toxic. Overall precision is 92%, but appeals show posts written in certain regional dialects and slang are removed far more often for harmless content. What's the best next step?",
+   "options": [
+    "Turn off moderation for posts in those dialects to avoid unfair removals",
+    "Measure false-positive rates by language and dialect, add labelled examples from those groups, and route borderline cases there to human review",
+    "Keep the model, since 92% precision is strong and appeals are a small share of posts",
+    "Lower the toxicity threshold for everyone, so fewer posts are removed overall"
+   ],
+   "rationales": [
+    "Turning off moderation leaves those communities unprotected from real abuse.",
+    "Correct: measure the gap per slice, fix the training data, and add human review where the model is weakest.",
+    "An aggregate number can hide serious harm to a subgroup; those users are being silenced unfairly.",
+    "A global threshold change lets more real abuse through everywhere and doesn't fix the specific bias."
+   ],
+   "answer": 1,
+   "explanation": "Toxicity models often learn surface features (certain words or spellings) that are common and harmless in some dialects, causing more false positives for those users. Slice-level metrics reveal the gap; better labelled data, dialect-aware evaluation and targeted human review close it without weakening protection for everyone.",
+   "interview_tip": "Interviewers want to see that you look beyond aggregate metrics to fairness by segment, and propose concrete fixes that keep safety intact."
+  },
+  {
+   "id": "2026-11-08-25",
+   "topic": "AI Product",
+   "concept": "Regeneration rate as an implicit dissatisfaction signal",
+   "difficulty": "medium",
+   "question": "Very few users click thumbs-up or thumbs-down on your AI writing assistant. Which signal would best show how often responses miss the mark?",
+   "options": [
+    "Share of responses that users regenerate or immediately rephrase their request after",
+    "Number of users who open the settings page",
+    "Total number of prompts sent per day",
+    "Average response length per session"
+   ],
+   "rationales": [
+    "Correct: a regenerate or quick rephrase is a common, low-effort sign the user didn't get what they wanted.",
+    "Settings visits are rare and don't map clearly to response quality.",
+    "Prompt volume is usage, which can rise when answers are bad and users keep trying.",
+    "Length tells you about verbosity, not whether the answer was useful."
+   ],
+   "answer": 0,
+   "explanation": "Explicit ratings are sparse and biased toward strong opinions. Behavioural signals like regenerations and rapid rephrasing happen naturally and at scale. Track them by task type, and sample those sessions for review to find why responses fail.",
+   "interview_tip": "Mentioning implicit signals and how you'd validate them against human review shows practical AI-evaluation thinking."
+  },
+  {
+   "id": "2026-11-08-26",
+   "topic": "AI Product",
+   "concept": "pass^k reliability for agents across repeated trials",
+   "difficulty": "medium",
+   "question": "Your customer-service agent completes a refund task correctly 90% of the time in a single run. If each attempt is independent, how likely is it to succeed on all of 3 separate runs of the same task?",
+   "options": [
+    "About 99.9%, because more attempts give more chances to succeed",
+    "About 30%, because 90% divided by 3 runs",
+    "About 73%, because each run must succeed: 0.9 × 0.9 × 0.9",
+    "About 90%, because the success rate doesn't change across runs"
+   ],
+   "rationales": [
+    "~99.9% is the chance at least one of 3 succeeds (pass@3); that's a different question from all succeeding.",
+    "Dividing by runs isn't how independent probabilities combine.",
+    "Correct: the chance every run succeeds is 0.9³ ≈ 0.73, which shows how consistency drops with repeated use.",
+    "90% applies to a single run, not to succeeding every time."
+   ],
+   "answer": 2,
+   "explanation": "pass@k asks if any of k tries succeeds; pass^k asks if all k do. For customer-facing agents, users care about consistency: the same task should work every time. 0.9³ ≈ 0.73, so a '90% agent' fails one in four customers who do the task three times. Measure pass^k when reliability matters.",
+   "interview_tip": "Explaining the difference between 'can it ever do it' and 'does it reliably do it' is a strong AI-PM signal for agent products."
+  },
+  {
+   "id": "2026-11-08-27",
+   "topic": "Technology",
+   "concept": "4xx client errors vs 5xx server errors",
+   "difficulty": "easy",
+   "question": "After a release, your dashboard shows a spike in HTTP 500-range errors on the checkout API. What does this most likely indicate?",
+   "options": [
+    "Users are not logged in when they try to check out",
+    "Something is failing on the server side, such as a bug or a dependency outage",
+    "The API is working correctly but responses are slower",
+    "Users are entering invalid card details more often"
+   ],
+   "rationales": [
+    "Missing login returns 401, a 4xx code.",
+    "Correct: 5xx codes mean the server failed to handle a valid request, pointing to a bug, crash or failed dependency.",
+    "Slow responses aren't errors; they'd show in latency metrics, not 5xx counts.",
+    "Invalid input typically returns 4xx (client error) codes, like 400."
+   ],
+   "answer": 1,
+   "explanation": "HTTP status codes in the 400s mean the client sent a bad or unauthorised request; codes in the 500s mean the server failed. A 5xx spike right after a release strongly suggests a regression or a dependency problem and is a common trigger for rollback.",
+   "interview_tip": "Basic technical fluency like reading status codes helps you triage incidents quickly with engineers."
+  },
+  {
+   "id": "2026-11-08-28",
+   "topic": "Technology",
+   "concept": "Read-your-own-writes consistency",
+   "difficulty": "medium",
+   "question": "Users update their profile photo, but when the page reloads they sometimes still see the old photo for a few seconds, and they file bugs. Engineers say reads come from replicas that lag slightly. What's the best fix for the user experience?",
+   "options": [
+    "Serve that user's own reads from the primary (or show their update locally) for a short time after they write",
+    "Tell users in the help center that changes can take a few seconds",
+    "Switch the whole system to a single database with no replicas",
+    "Increase the number of replicas so reads are spread more evenly"
+   ],
+   "rationales": [
+    "Correct: 'read your own writes' guarantees the person who made the change sees it immediately, while others can see it slightly later.",
+    "Documentation doesn't stop the confusion; users will still think it failed.",
+    "Removing replicas hurts scale and reliability for a problem that affects only the writer's own view.",
+    "More replicas don't remove lag and may make it worse."
+   ],
+   "answer": 0,
+   "explanation": "With replicated databases, other users seeing a change a few seconds later is fine, but the person who made it expects to see it immediately. Routing their reads to the primary briefly, or updating the UI from the local change, gives read-your-own-writes consistency without giving up the scaling benefits of replicas.",
+   "interview_tip": "Translating a consistency trade-off into user-visible behaviour, and picking a targeted fix, shows strong technical product sense."
+  },
+  {
+   "id": "2026-11-08-29",
+   "topic": "Growth",
+   "concept": "Behaviour-triggered vs calendar-based lifecycle messaging",
+   "difficulty": "easy",
+   "question": "Your SaaS onboarding sends the same emails on day 1, 3 and 7 to every new user. Many users get tips for steps they already completed. What's the better approach?",
+   "options": [
+    "Send more emails so users see more tips in their first week",
+    "Send all tips in one long welcome email on day 1",
+    "Trigger messages based on what each user has or hasn't done, such as 'invited no teammates after creating a project'",
+    "Stop onboarding emails and rely on in-app tooltips only"
+   ],
+   "rationales": [
+    "More emails without relevance raise unsubscribes and train users to ignore you.",
+    "A long email overloads users and still isn't matched to what they need.",
+    "Correct: behaviour-based messages are relevant to where each user is stuck, so they're more useful and less annoying.",
+    "In-app tips help active users but don't reach users who haven't come back."
+   ],
+   "answer": 2,
+   "explanation": "Lifecycle messaging works best when triggered by user behaviour, especially missed activation steps. It reaches users at the right moment with the right nudge, improving activation and avoiding irrelevant messages. Measure by step completion, not opens.",
+   "interview_tip": "Growth interviewers like seeing you tie messaging to activation milestones and measure downstream actions."
+  },
+  {
+   "id": "2026-11-08-30",
+   "topic": "Current Events",
+   "concept": "Microsoft 365 Copilot Business default usage-billing cap (Nov 2026)",
+   "difficulty": "medium",
+   "question": "Microsoft delayed default-on usage-based billing for new Microsoft 365 Copilot Business licences in its CSP channel to January–March 2027. The default limit is 4,000 Copilot Credits per user per month, at one cent per credit. For a 100-user customer, what is the maximum monthly usage charge under the default, and what is that default mainly for?",
+   "options": [
+    "$400; it lets each user try usage billing at a token cost",
+    "$40,000; it pushes customers toward buying more licences",
+    "$4,000; it caps bill shock while still allowing heavier AI use",
+    "$4,000; it guarantees every user consumes all 4,000 credits"
+   ],
+   "rationales": [
+    "This is 10x too low: 4,000 credits × $0.01 is $40 per user, not $4.",
+    "This is 10x too high and confuses a usage cap with a licence upsell.",
+    "Correct: 100 users × 4,000 credits × $0.01 = $4,000 per month at most; a default ceiling limits surprise bills while usage grows.",
+    "The arithmetic is right, but a cap is a maximum, not a guaranteed spend."
+   ],
+   "answer": 2,
+   "explanation": "4,000 credits × $0.01 = $40 per user per month, so 100 users can be charged at most $4,000 a month (about $48,000 a year) under the default. Usage-based AI pricing creates bill-shock risk for buyers; a sensible default cap makes adoption easier for finance teams while still letting heavy users go beyond seat-only limits.",
+   "interview_tip": "AI pricing questions often test whether you see the buyer's side: predictable spend matters, so defaults, caps and alerts are product features, not just billing settings.",
+   "source": "https://metrixdata360.com/top-takes/microsoft-licensing-changes-november-2026/"
+  }
+ ]
+}
