@@ -1,0 +1,637 @@
+{
+ "date": "2026-11-09",
+ "theme": "Decision moments and hidden denominators",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Designing around the user's decision point, not the raw data",
+   "difficulty": "hard",
+   "question": "You're the PM for a city commuter-rail app. Users say delay alerts are 'useless' even though they report delays accurately and within a minute. Interviews show users get the alert while still at home. What's the best redesign direction?",
+   "options": [
+    "Push delay alerts even faster, aiming for under ten seconds of latency",
+    "Frame alerts around the choice they face: leave now, wait, or take another route",
+    "Add a live map showing the exact position of every train on the line",
+    "Let users choose the delay size in minutes that triggers an alert"
+   ],
+   "answer": 1,
+   "explanation": "Accurate, timely data still fails if it doesn't help the user decide what to do. A commuter at home is choosing when to leave and which route to take, so the alert should translate the delay into that choice ('Leave 12 min later' or 'Take the bus from X'). Strong product sense starts from the job and the decision moment, then works back to which data to show.",
+   "rationales": [
+    "Latency isn't the complaint; alerts are already fast and accurate. Making them faster improves a metric users didn't ask about.",
+    "Correct: it turns raw status into a recommendation at the moment users decide, which is the unmet need behind 'useless'.",
+    "A map adds more data to read but still leaves the user to work out what to do; it fits rail enthusiasts more than rushed commuters.",
+    "A threshold setting cuts noise, but the alerts that do arrive still don't say what to do. It treats a symptom."
+   ],
+   "interview_tip": "Interviewers reward candidates who separate 'information' from 'decision support'. Name the user's decision and design the output around it."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Minimum group size before showing anonymous survey results",
+   "difficulty": "hard",
+   "question": "You're building team-level engagement surveys into an HR SaaS product. Managers want to see results for their team right away. Employees told researchers they'll only answer honestly if they truly can't be identified. What's the best default?",
+   "options": [
+    "Show managers results for any team, with names removed from each response",
+    "Hide results only for teams with fewer than two responses",
+    "Show results only once a group reaches a minimum response count, such as five",
+    "Let each employee choose if their answer appears in their manager's view"
+   ],
+   "answer": 2,
+   "explanation": "Removing names isn't enough. With very small groups, a manager can work out who said what from the answers themselves. A minimum response threshold (often around five) protects anonymity, which keeps answers honest, and honest answers are the whole value of the product. The manager's wish for instant visibility is the buyer need, but candid input from end users is what makes the data worth anything.",
+   "rationales": [
+    "With three people on a team, removing names barely hides anyone. Managers can guess, and employees know it, so honesty drops.",
+    "A threshold of two still lets a manager identify people by elimination. It is anonymity in name only.",
+    "Correct: a minimum group size makes re-identification hard and protects the honest answers that give the data its value.",
+    "Per-response opt-in splits the data into a biased subset and puts pressure on people who decline."
+   ],
+   "interview_tip": "This tests buyer versus end-user tension. A strong answer names the trust mechanism that makes the product work, then designs the manager experience within it."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Cancel window before escalating automatic emergency alerts",
+   "difficulty": "hard",
+   "question": "A smartwatch adds fall detection for older users that automatically calls a family member. In the pilot, most triggers were false alarms, such as sitting down hard or dropping the wrist. Families began ignoring the calls. What change best keeps the feature useful?",
+   "options": [
+    "Raise the detection threshold until false alarms nearly stop",
+    "Send a silent app notification instead of placing a call",
+    "Ask the wearer first, with a short countdown, and escalate only if they don't respond",
+    "Let families mute fall alerts for a set time when they are busy"
+   ],
+   "answer": 2,
+   "explanation": "The costs are uneven. A missed real fall is dangerous; a false alarm wastes attention and teaches families to ignore calls. A short 'Are you OK?' countdown on the watch lets the wearer cancel false positives, while an unresponsive wearer (the dangerous case) still triggers escalation. This keeps sensitivity high and protects trust in the alert channel.",
+   "rationales": [
+    "A higher threshold cuts false alarms but also misses real falls, the costly error in this product.",
+    "A quieter channel makes a real emergency easier to miss. It hides the problem instead of filtering it.",
+    "Correct: the wearer screens out false positives, and silence (the worrying signal) still escalates, so recall stays high and noise drops.",
+    "Muting builds alert fatigue into the product and could block a real emergency during the mute window."
+   ],
+   "interview_tip": "Safety-critical design questions test whether you weigh error costs unevenly. Use the human in the loop to filter false positives without giving up recall."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Browse-first navigation for small catalogs",
+   "difficulty": "medium",
+   "question": "A neighbourhood bakery launches an ordering app with about 40 products. The founder wants a big search bar at the top of the home screen, 'like Amazon'. What should you recommend?",
+   "options": [
+    "Keep search on top, since search users convert better on most apps",
+    "Lead with visual categories and best-sellers; search can be secondary",
+    "Show a personalised feed ranked by each user's past purchases only",
+    "Open with a questionnaire asking customers what they're craving"
+   ],
+   "answer": 1,
+   "explanation": "Search works when the catalog is large and users know what they want. With 40 items, customers browse, often by sight and on impulse, and many don't know product names. Clear categories and best-sellers show the whole range in a scroll or two. Copying a large marketplace's pattern without its context is a common product-sense mistake.",
+   "rationales": [
+    "Search users convert better because they arrive with intent. Putting search first doesn't create that intent, and with a small catalog it hides what's on offer.",
+    "Correct: a small catalog can be browsed at a glance, and visual categories suit impulse food purchases.",
+    "Purchase-only ranking fails new users with no history and narrows discovery in a tiny catalog.",
+    "A questionnaire adds friction before value. Users can scan 40 items faster than they can answer questions."
+   ],
+   "interview_tip": "Interviewers like candidates who question 'copy the big app' instincts. Tie each pattern to catalog size and user intent."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Rage clicks as a UX friction signal",
+   "difficulty": "easy",
+   "question": "Session analytics on your checkout page show many users clicking the 'Apply coupon' button five or more times within two seconds. What is this most likely telling you?",
+   "options": [
+    "Users are very engaged with coupons and want more promotions",
+    "The button likely looks unresponsive or fails, causing frustration",
+    "Bots are probably testing coupon codes and should be blocked",
+    "Users are double-checking that the discount was applied correctly"
+   ],
+   "answer": 1,
+   "explanation": "Repeated rapid clicks on one element ('rage clicks') usually mean the interface didn't respond as expected: no loading state, a silent error, or a slow call. It's a cheap behavioural signal that points you to friction to investigate with session replays or error logs. Pair it with the coupon API's error and latency data to confirm.",
+   "rationales": [
+    "Multiple clicks within seconds means frustration, not enthusiasm. Reading it as engagement is a classic misread of an activity count.",
+    "Correct: rapid repeat clicks usually mean no visible feedback or a failure, a strong friction signal to investigate.",
+    "Bot code-testing usually means many different codes over time, not human-speed bursts on one button. Check this, but it isn't the most likely cause.",
+    "One deliberate re-check is plausible, but five clicks in two seconds is not careful verification."
+   ],
+   "interview_tip": "When asked to diagnose UX problems, mentioning behavioural signals such as rage clicks, dead clicks and quick backs shows you can find friction before users complain."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Per-send CTR dilution when notification volume rises",
+   "difficulty": "hard",
+   "question": "Your growth team doubled the number of daily push notifications. A week later, push click-through rate has fallen from 6% to 4%. The team calls the change a failure. What's the best first response?",
+   "options": [
+    "Agree it failed, since CTR is the main measure of push quality",
+    "Check total clicks, downstream actions, and opt-outs, not just per-send CTR",
+    "Roll back right away; a 2-point CTR drop proves users are annoyed",
+    "Run an A/B test on notification copy to recover the lost CTR"
+   ],
+   "answer": 1,
+   "explanation": "CTR is a ratio, and doubling the denominator (sends) almost always lowers it, because the added notifications are lower-priority. Total clicks may have risen (2× sends at 4% = 8% of the old send base versus 6%). The real questions are whether incremental clicks produced valuable actions, and whether opt-outs and uninstalls rose. Those costs might outweigh the gain, but CTR alone can't tell you.",
+   "rationales": [
+    "CTR falling is expected when volume doubles. Treating the ratio as the outcome ignores that absolute clicks may have grown.",
+    "Correct: look at the numerator and the costs (clicks, conversions, opt-outs, uninstalls) to judge the volume change.",
+    "A lower ratio isn't proof of annoyance. Opt-out and disable rates measure annoyance directly, so check them before rolling back.",
+    "The CTR drop comes from mix and volume, not copy. Testing copy fixes the wrong cause."
+   ],
+   "interview_tip": "Root-cause questions often hide a ratio-denominator trap. Strong candidates break the ratio apart and name the counter-metric (opt-outs) that shows the real cost."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Driver utilisation (paid time share) as supply-side health",
+   "difficulty": "medium",
+   "question": "On a ride-hailing platform, the number of online drivers rose 25% this quarter, but driver churn also rose. Which metric best explains the churn?",
+   "options": [
+    "Average rider rating given to drivers",
+    "Total number of completed trips per day",
+    "Share of drivers' online time spent on paid trips",
+    "Number of new driver sign-ups per week"
+   ],
+   "answer": 2,
+   "explanation": "If driver supply grows faster than rider demand, each driver spends more time idle and earns less per online hour, which drives them to quit. Utilisation (paid time ÷ online time) captures this directly and links to hourly earnings, the thing drivers care about. Supply-side health is about each provider's economics, not total supply.",
+   "rationales": [
+    "Ratings measure service quality, not how much drivers earn, so they don't explain churn after supply growth.",
+    "Total trips can rise while each driver's share falls. It's an aggregate demand measure.",
+    "Correct: falling utilisation means more idle time and lower hourly earnings, the likely cause of churn when supply outgrows demand.",
+    "Sign-ups describe inflow, not why existing drivers leave. Rising sign-ups could even worsen utilisation."
+   ],
+   "interview_tip": "In marketplace metric questions, show you can think from each side's economics. For supply, that usually means utilisation and earnings per hour."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Real (inflation-adjusted) vs nominal GMV growth",
+   "difficulty": "medium",
+   "question": "A grocery marketplace reports GMV up 9% year over year. Food prices on the platform rose about 8% in the same period, and order count was flat. How should you describe growth to leadership?",
+   "options": [
+    "Strong growth: 9% GMV growth beats the category average",
+    "Real growth is about 1%; most of the GMV gain is from price inflation",
+    "Growth is negative, since order count must be adjusted for prices",
+    "Growth can't be judged without the ad revenue figures"
+   ],
+   "answer": 1,
+   "explanation": "Nominal GMV mixes volume and price. With prices up about 8%, real growth is roughly (1.09 / 1.08) − 1 ≈ 0.9%, which matches the flat order count. Separating price from volume stops a team from celebrating inflation and points to the real question: are customers buying more?",
+   "rationales": [
+    "The 9% headline is mostly price. Calling it strong growth overstates customer demand.",
+    "Correct: dividing out price inflation leaves about 1% real growth, consistent with flat orders.",
+    "Order count is already a volume measure; it needs no price adjustment, and flat isn't negative.",
+    "Ad revenue is a separate line. You can split this GMV figure into price and volume without it."
+   ],
+   "interview_tip": "Interviewers test whether you decompose a headline number. 'Price, volume, or mix?' is a strong opening for any revenue or GMV question."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Clustered standard errors when analysis unit is smaller than randomization unit",
+   "difficulty": "hard",
+   "question": "You test a new shelf layout by randomising 40 stores into treatment and control, then analyse 2 million individual transactions. The result looks highly significant (p < 0.001). What's the main concern?",
+   "options": [
+    "The sample is too large, so even tiny effects become significant",
+    "Transactions aren't independent; errors must be clustered by store",
+    "Store-level randomisation always produces sample ratio mismatch",
+    "The test should have used a one-tailed hypothesis instead"
+   ],
+   "answer": 1,
+   "explanation": "The effective sample size is close to the 40 randomised stores, not 2 million transactions, because transactions within a store share local demand, staff and weather. Treating them as independent greatly understates variance and inflates significance. Cluster-robust standard errors, or analysis at store level, give an honest p-value.",
+   "rationales": [
+    "Large samples do make small effects significant, but here the sample isn't really large. The randomisation unit has only 40 members.",
+    "Correct: correlated outcomes within a store mean variance must be estimated at the cluster level, or false positives multiply.",
+    "SRM is about unexpected allocation imbalance, not a built-in feature of store-level tests.",
+    "One-tailed tests make significance easier, not harder; they don't fix understated variance."
+   ],
+   "interview_tip": "When a test randomises groups (stores, cities, classrooms), say early that the analysis must respect that unit. Interviewers see this as experimentation maturity."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Small-percentage canary ramp for safety, not measurement",
+   "difficulty": "easy",
+   "question": "An engineer proposes shipping a new payment flow to 1% of users for two days 'to see if conversion improves'. What is a 1% ramp mainly good for?",
+   "options": [
+    "Measuring a precise conversion lift quickly",
+    "Catching crashes, errors and severe regressions with limited exposure",
+    "Proving the change is safe for every user segment",
+    "Replacing the need for a full A/B test later"
+   ],
+   "answer": 1,
+   "explanation": "A small canary limits the impact if something is badly broken. It's great for spotting crashes, error spikes and payment failures. It's usually too small and too short to measure a modest conversion change with confidence, which needs a properly powered experiment. Different ramp stages answer different questions.",
+   "rationales": [
+    "At 1% for two days, most conversion changes fall within noise; a precise lift estimate needs much more traffic.",
+    "Correct: a canary is a safety check that catches serious problems while few users are exposed.",
+    "A small sample can't prove safety across all segments; rare segment issues may not show up.",
+    "Passing a canary says little about impact. A powered test is still needed to measure lift."
+   ],
+   "interview_tip": "Strong candidates say what each rollout stage is for: canary for safety, powered test for impact, holdout for long-term effect."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual pizzas delivered in Bengaluru",
+   "difficulty": "medium",
+   "question": "Estimate the number of pizzas ordered for delivery in Bengaluru each year. Which figure is closest?",
+   "options": [
+    "About 1.5 million",
+    "About 15 million",
+    "About 150 million",
+    "About 1.5 billion"
+   ],
+   "answer": 1,
+   "explanation": "Bengaluru has about 14 million people, or roughly 4 million households. Say 30% of households (~1.2M) order delivery pizza about once a month, averaging one or two pizzas per order (~1.5): 1.2M × 12 × 1.5 ≈ 22M. Add offices, hostels and PGs, then trim for overlap and occasional orderers, and you land in the 15–25 million range. The point is the structure (households × penetration × frequency × units), not the exact number.",
+   "rationales": [
+    "About 1.5M implies only around 1 in 30 households ordering once a year, too low for a city with high delivery-app use.",
+    "Correct: households × share ordering × monthly frequency × pizzas per order gives tens of millions; 15M is the closest order of magnitude.",
+    "About 150M would mean every resident ordering about ten pizzas a year, far above realistic frequency.",
+    "About 1.5B would mean more than 100 pizzas per person per year, which is implausible."
+   ],
+   "interview_tip": "State the segmentation (households, offices, students), give round assumptions, and sanity-check per capita at the end. Interviewers grade the structure more than the final number."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual school-uniform sets sold in India",
+   "difficulty": "medium",
+   "question": "Estimate the number of school uniform sets bought in India each year. Which figure is closest?",
+   "options": [
+    "About 50 million",
+    "About 150 million",
+    "About 500 million",
+    "About 5 billion"
+   ],
+   "answer": 2,
+   "explanation": "India has roughly 250 million school students. Most schools require uniforms, so take about 90% (~225M). Children outgrow and wear out uniforms, so families typically buy about 2 sets a year (some buy 1, many buy 2–3): 225M × 2 ≈ 450M, roughly 500 million sets. Government schemes that supply free uniforms still count as sets bought, by the state.",
+   "rationales": [
+    "About 50M would cover only about one in five students with a single set, which ignores how widespread uniforms are.",
+    "About 150M is less than one set per student, but most students need at least one, and usually two.",
+    "Correct: ~250M students × ~90% uniform requirement × ~2 sets a year ≈ 450–500M.",
+    "About 5B would be about 20 sets per student per year, far beyond replacement needs."
+   ],
+   "interview_tip": "For replacement goods, show the installed base and the replacement cycle. Mention who pays (parents vs government) to show market awareness."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Harvest strategy for a declining legacy product",
+   "difficulty": "medium",
+   "question": "Your company's desktop photo-editing licence business is shrinking 15% a year as customers move to your new cloud product. It still makes strong profit with a small team. What's usually the right strategy for it?",
+   "options": [
+    "Invest heavily to rebuild it and win back growth",
+    "Shut it down right away to push everyone to the cloud product",
+    "Harvest it: minimise new investment, keep it stable, fund the new bet",
+    "Cut its price sharply to slow the decline in customers"
+   ],
+   "answer": 2,
+   "explanation": "A declining but profitable product with a clear successor is a classic harvest case. Keep it reliable and secure, stop building major features, and use its cash to fund the growth product, while offering easy migration paths. Shutting it down early throws away profit and angers loyal customers; reinvesting fights a structural shift you're causing yourself.",
+   "rationales": [
+    "Big reinvestment fights a market shift your own cloud product is driving. Returns are likely poor.",
+    "An abrupt shutdown gives up profit and risks pushing unhappy users to competitors instead of your cloud product.",
+    "Correct: harvesting keeps cash flowing at low cost and funds the successor while customers migrate at their own pace.",
+    "Price cuts lower profit on a product whose decline is structural; they rarely change the trend."
+   ],
+   "interview_tip": "Portfolio questions test whether you match investment to each product's lifecycle stage. Mention migration paths and keeping customer trust."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Coopetition: supplying a direct competitor",
+   "difficulty": "medium",
+   "question": "Your company makes a popular smartphone and also sells high-end display panels. A rival phone maker wants to buy your panels in large volume for its flagship. Which argument best supports saying yes?",
+   "options": [
+    "Selling to a rival always weakens your own phone's differentiation",
+    "Volume lowers your unit costs and the rival is a buyer, not your only rival",
+    "The rival would never become a large customer, so the risk is small",
+    "Saying yes guarantees the rival will stop competing on phones"
+   ],
+   "answer": 1,
+   "explanation": "Coopetition can be rational when a component business gains scale economies and profit from a competitor's demand, and the rival would otherwise buy from another supplier. The extra volume lowers your panel costs, which also helps your own phones. The risks (helping a rival's product, information leakage) are real and must be weighed, but 'never sell to competitors' is not a strategy.",
+   "rationales": [
+    "It may narrow one point of difference, but the rival can buy comparable panels elsewhere, so refusing mostly gives the volume to another supplier.",
+    "Correct: scale economies and component profit can outweigh the cost of supplying a rival who has other options anyway.",
+    "This contradicts the premise (large volume) and dodges the real trade-off.",
+    "Supplying parts doesn't change a rival's incentive to compete in the end market."
+   ],
+   "interview_tip": "Show you can separate business units with different economics. The component unit's best move can differ from the product unit's instinct."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Two-part tariff pricing (fixed fee plus per-use charge)",
+   "difficulty": "easy",
+   "question": "A coworking chain charges a monthly membership fee plus a per-hour rate for meeting rooms. What is this pricing structure called, and what does it mainly achieve?",
+   "options": [
+    "Penetration pricing; it wins share with a low introductory price",
+    "Two-part tariff; the fee captures value and the per-use price matches cost",
+    "Price skimming; it targets early adopters at a high price",
+    "Cost-plus pricing; it adds a fixed margin to each unit sold"
+   ],
+   "answer": 1,
+   "explanation": "A two-part tariff combines an access fee with a usage price. The fixed fee captures the value of access (a desk, community, amenities), while the per-use charge lets heavy users pay more and discourages overuse of scarce resources like meeting rooms. It's common in clubs, utilities, warehouse retail and many SaaS plans.",
+   "rationales": [
+    "Penetration pricing is about low launch prices to gain share, not a fee-plus-usage structure.",
+    "Correct: an access fee plus a usage price is a two-part tariff that captures value and manages scarce capacity.",
+    "Skimming means starting high and lowering prices over time, unrelated to this structure.",
+    "Cost-plus describes how a price level is set, not the fee-plus-usage form."
+   ],
+   "interview_tip": "Naming the pricing pattern and explaining why it fits the cost structure shows business fluency in strategy rounds."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Fix-it week for accumulated paper-cut bugs",
+   "difficulty": "easy",
+   "question": "Your app has dozens of small, low-severity bugs (misaligned text, confusing labels, slow animations). None is ever urgent enough to make a sprint, and app-store reviews increasingly mention 'feels janky'. What's a practical way to address them?",
+   "options": [
+    "Wait until one becomes severe enough to prioritise on its own",
+    "Schedule a time-boxed fix-it week dedicated to these paper cuts",
+    "Add every paper cut as a P0 so they all get done next sprint",
+    "Ask support to tell users the issues are known and minor"
+   ],
+   "answer": 1,
+   "explanation": "Paper cuts are individually trivial but together they hurt perceived quality. They lose every one-by-one prioritisation fight, so a dedicated, time-boxed fix-it week (or a standing capacity slice) clears them in bulk. It also boosts morale, because engineers ship many visible improvements quickly.",
+   "rationales": [
+    "Individually they never become severe; waiting means they keep piling up and dragging down perceived quality.",
+    "Correct: a dedicated time box gets around the prioritisation problem and fixes many small issues at once.",
+    "Labelling everything P0 makes the label meaningless and disrupts real priorities.",
+    "Acknowledging bugs doesn't fix the 'janky' perception already showing in reviews."
+   ],
+   "interview_tip": "Interviewers like hearing about mechanisms for work that standard prioritisation always loses, such as tech debt, paper cuts and accessibility."
+  },
+  {
+   "topic": "Execution",
+   "concept": "User acceptance testing with the customer before enterprise go-live",
+   "difficulty": "medium",
+   "question": "You're about to roll out a new invoicing workflow to a large enterprise customer who customised several approval rules. QA has passed internally. What step most reduces go-live risk?",
+   "options": [
+    "Ship on schedule, since internal QA already covered the changes",
+    "Run user acceptance testing with the customer's own users and data",
+    "Send detailed release notes and ask them to report issues afterwards",
+    "Delay until every possible edge case has been tested internally"
+   ],
+   "answer": 1,
+   "explanation": "Internal QA checks that the product works as built; it can't fully copy the customer's custom rules, data and real processes. User acceptance testing (UAT), where the customer's finance users run their real scenarios in a staging environment, catches gaps between 'works' and 'works for us', and gets formal sign-off before go-live.",
+   "rationales": [
+    "Internal QA doesn't reproduce customer-specific configuration and workflows, the main risk here.",
+    "Correct: UAT with real users and data validates fit for their setup and produces sign-off before go-live.",
+    "Release notes don't prevent problems; finding issues after go-live in invoicing is costly.",
+    "Testing every edge case internally is endless and still misses customer-specific context."
+   ],
+   "interview_tip": "For B2B launch questions, mention UAT, sign-off and a rollback plan. It signals you've shipped to enterprise customers."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Pareto analysis to focus on top crash signatures",
+   "difficulty": "medium",
+   "question": "Your app's crash rate is too high, and the crash dashboard shows 300 distinct crash signatures. Engineering capacity is limited to about two weeks. How should you plan the work?",
+   "options": [
+    "Fix crashes in the order they were first reported",
+    "Rank signatures by affected users and fix the top few first",
+    "Split engineers evenly so every signature gets some attention",
+    "Rewrite the most crash-prone module from scratch"
+   ],
+   "answer": 1,
+   "explanation": "Crash distributions are usually heavy-tailed: a handful of signatures often account for most affected users. Ranking by users affected (and severity, such as crashes in checkout) and fixing the top few delivers most of the improvement in limited time. That's the Pareto principle applied to reliability.",
+   "rationales": [
+    "First-reported order ignores impact; an old, rare crash could take time from a widespread one.",
+    "Correct: impact-ranking a heavy-tailed distribution gets the biggest crash-rate drop per engineering hour.",
+    "Spreading effort evenly wastes time on rare crashes and fixes nothing completely.",
+    "A rewrite is slow and risky and may add new crashes; it doesn't fit a two-week window."
+   ],
+   "interview_tip": "When given a long list of problems, show you'd look at the distribution first. 'A few causes probably drive most of the impact' is a strong line."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Stopping an unsafe customer-data shortcut under deadline",
+   "difficulty": "hard",
+   "question": "Two days before a demo to a big prospect, you find that a senior engineer exported real customer records into a shared spreadsheet so the demo looks realistic. Removing it means rebuilding the demo data overnight. What do you do?",
+   "options": [
+    "Let it go this once, then delete the spreadsheet after the demo",
+    "Stop the use now, restrict access, involve security, and build synthetic data",
+    "Report the engineer to HR before talking to them directly",
+    "Ask the prospect if they mind seeing real customer data in the demo"
+   ],
+   "answer": 1,
+   "explanation": "Exposing real customer data violates customer trust and likely privacy obligations, no matter the deadline. Act right away: remove or restrict the file, involve security or privacy to check exposure, and agree with the team on generating realistic synthetic data. Treat the engineer as a partner in the fix rather than a target, and follow up on preventing it (for example, a seeded demo dataset).",
+   "rationales": [
+    "Using data you know is exposed, even 'once', makes you complicit, and the exposure has already happened.",
+    "Correct: contain the risk, escalate through the right channel, and fix the deadline problem another way.",
+    "Going to HR first skips containment and the conversation; the urgent issue is the data, not discipline.",
+    "The data belongs to other customers; the prospect can't consent for them, and asking shows poor judgement."
+   ],
+   "interview_tip": "In ethics-and-pressure stories, interviewers look for fast containment, the right escalation, and a fix that still serves the business goal."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Recommending your own team's work be merged into another team's",
+   "difficulty": "hard",
+   "question": "After six months, you realise your team's notifications platform largely duplicates one another org is building, and theirs is further along. Merging would likely shrink your team's scope. What's the strongest move?",
+   "options": [
+    "Keep building quietly and aim to ship first to win the internal debate",
+    "Bring a candid analysis to leadership recommending consolidation and a plan",
+    "Raise it only if leadership asks about overlap in the next review",
+    "Ask your engineers to join the other team without telling your manager"
+   ],
+   "answer": 1,
+   "explanation": "Ownership means optimising for the company, not your own scope. Duplicate platforms cost money and fragment the user experience. Bring a clear, evidence-based recommendation (capabilities, gaps, migration plan, what happens to your team) to your manager and leadership. This builds a lot of trust and often leads to better opportunities for you and your team.",
+   "rationales": [
+    "Racing to ship wastes company resources and turns a strategy question into a political contest.",
+    "Correct: raising the duplication early with a constructive consolidation plan puts company outcomes ahead of team size.",
+    "Waiting to be asked lets waste grow and suggests you hid a known problem.",
+    "Going around your manager breaks trust and doesn't solve the platform overlap."
+   ],
+   "interview_tip": "Amazon-style 'Ownership' and 'Frugality' stories are strongest when you gave up personal scope for a better company result. Say what happened to your team afterwards."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Acting on feedback that you dominate discussions",
+   "difficulty": "medium",
+   "question": "In a 360 review, several engineers say you 'talk over people in planning meetings and decide too quickly'. You were surprised by this feedback. What's the best next step?",
+   "options": [
+    "Explain in your next team meeting why decisiveness matters for speed",
+    "Thank them, ask for examples, change how you run meetings, and check in",
+    "Stay quiet in meetings from now on so you can't be accused again",
+    "Ask your manager which engineers gave the feedback so you can follow up"
+   ],
+   "answer": 1,
+   "explanation": "Strong leaders treat surprising feedback as data. Ask for specific examples, then change the mechanics: let others speak first, use written pre-reads or silent brainstorming, and state how decisions will be made. Check back after a few weeks. Closing the loop shows you heard it and helps make honest feedback normal.",
+   "rationales": [
+    "Defending your style dismisses the feedback and tells people it isn't safe to give.",
+    "Correct: seeking specifics, changing behaviour in concrete ways and checking in turns feedback into visible growth.",
+    "Overcorrecting into silence removes your useful input and doesn't fix how decisions get made.",
+    "Hunting for who said it breaks the anonymity of a 360 and damages trust."
+   ],
+   "interview_tip": "For 'tell me about tough feedback' questions, show concrete behaviour change and a measurable check-in, not just that you listened."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Token log-probabilities as a confidence signal for LLM classification",
+   "difficulty": "medium",
+   "question": "You use an LLM to classify support tickets into 12 categories and want to send uncertain cases to a human. The model returns one label per ticket. Which signal is most useful for spotting uncertain cases?",
+   "options": [
+    "The length of the ticket text the model received",
+    "The probability the model gave its chosen label's tokens",
+    "Asking the model to rate its confidence from 1 to 10 in words",
+    "How quickly the model returned its answer"
+   ],
+   "answer": 1,
+   "explanation": "Token log-probabilities show how much probability the model put on the label it produced. Low or close-call probabilities flag ambiguous tickets you can send to human review. They still need calibrating against a labelled set, but they're usually a better signal than self-reported confidence, which LLMs are often poorly calibrated on.",
+   "rationales": [
+    "Length may correlate weakly with difficulty, but it doesn't measure the model's uncertainty about this label.",
+    "Correct: label-token probabilities are a direct, calibratable measure of how certain the model was.",
+    "Verbal self-ratings are often overconfident and inconsistent; they're a weaker signal than the model's own probabilities.",
+    "Response time reflects server load and output length, not uncertainty."
+   ],
+   "interview_tip": "When discussing human-in-the-loop AI, explain where your confidence signal comes from and that you'd calibrate thresholds on labelled data."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Hypothetical document embeddings (HyDE) for short queries",
+   "difficulty": "hard",
+   "question": "Your RAG system over long technical manuals does poorly on short user questions like 'pump keeps tripping'. The answer passages use formal language ('motor overload protection activates…'). Which technique directly targets this query–document mismatch?",
+   "options": [
+    "Raising the model temperature so it answers more creatively",
+    "Having the LLM write a draft answer, then retrieving with its embedding",
+    "Cutting the chunk size so each chunk holds a single sentence",
+    "Fine-tuning the generation model on the manuals' text"
+   ],
+   "answer": 1,
+   "explanation": "Short, informal queries sit far from formal passages in embedding space. HyDE (hypothetical document embeddings) has the LLM write a plausible answer-like passage first, then embeds that to search. Because the draft is written in document-like language, it lands closer to the real passages. The draft may contain errors, but it's used only for retrieval, not shown to the user.",
+   "rationales": [
+    "Temperature affects how random the generation is, not whether retrieval finds the right passages.",
+    "Correct: retrieving with an answer-shaped draft closes the gap in wording and style between short queries and formal documents.",
+    "Tiny chunks lose context and don't fix the vocabulary gap between query and document.",
+    "Fine-tuning the generator doesn't help if the right passages are never retrieved."
+   ],
+   "interview_tip": "Diagnosing RAG failures at the retrieval stage, and naming query-side fixes (rewriting, HyDE, hybrid search), signals hands-on AI product depth."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Content provenance metadata (C2PA) for AI-generated images",
+   "difficulty": "easy",
+   "question": "Your design app is launching AI image generation. Partners ask how others can tell an image was AI-generated after it's downloaded and shared. Which approach is the industry standard for attaching that information to the file?",
+   "options": [
+    "A visible text caption added under each image in the app",
+    "Signed provenance metadata, such as C2PA Content Credentials",
+    "A terms-of-service clause requiring users to disclose AI use",
+    "Lower-resolution exports so AI images look different"
+   ],
+   "answer": 1,
+   "explanation": "C2PA Content Credentials embed cryptographically signed provenance information (who made it, with what tool, what edits) in the file, so it travels with the image and can be checked by other platforms. Metadata can be stripped, so it's often paired with invisible watermarking, but it's the standard way to attach verifiable origin information.",
+   "rationales": [
+    "An in-app caption disappears once the image is downloaded or cropped; it doesn't travel with the file.",
+    "Correct: signed provenance metadata travels with the file and can be verified by others.",
+    "A terms-of-service rule depends on user compliance and leaves nothing machine-readable on the image.",
+    "Lower quality hurts the product and isn't a reliable or standard signal."
+   ],
+   "interview_tip": "In AI safety and trust questions, naming concrete standards (C2PA, watermarking) and their limits shows you know the ecosystem, not just the principle."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Small high-quality fine-tuning set over a large noisy one",
+   "difficulty": "medium",
+   "question": "Your team is fine-tuning a model to write product descriptions in your brand voice. You have 200 descriptions hand-picked by the brand team, or 20,000 scraped from your site over 10 years, including old styles and errors. What's the best starting point?",
+   "options": [
+    "Use all 20,000, since more data always gives a better fine-tune",
+    "Start with the 200 curated examples and evaluate, adding clean data as needed",
+    "Mix both sets equally so the model sees variety and quality",
+    "Skip fine-tuning and prompt the model with all 20,000 examples"
+   ],
+   "answer": 1,
+   "explanation": "Fine-tuning teaches the model to imitate its examples, so it learns the inconsistent styles and errors in a noisy set. For style and format tasks, a few hundred high-quality, consistent examples often beat thousands of noisy ones. Start curated, evaluate against brand criteria, and add more clean examples only where evals show gaps.",
+   "rationales": [
+    "More data helps only if it reflects the target behaviour; here most of it teaches outdated or wrong styles.",
+    "Correct: a small curated set teaches the target voice, and evals show where more data is needed.",
+    "Mixing in noisy data dilutes the brand voice the model is supposed to learn.",
+    "20,000 examples won't fit in a context window and would be very costly even if they did."
+   ],
+   "interview_tip": "Data-quality judgement is a frequent AI PM probe. Saying 'quality and consistency over volume, then let evals drive expansion' lands well."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Time-based train/test split to avoid temporal leakage",
+   "difficulty": "medium",
+   "question": "Your team trained a model to predict which subscribers will churn next month. Test accuracy was excellent, but it performed poorly in production. You learn the train/test split was random across three years of data. What's the likely issue?",
+   "options": [
+    "The model needed more features about customer demographics",
+    "A random split lets the model learn from the future; split by time instead",
+    "Accuracy should have been replaced by recall for the test set",
+    "Production users behave randomly, so no model will work well"
+   ],
+   "answer": 1,
+   "explanation": "With a random split, the training set includes data from after many of the test examples, so the model learns from future patterns (pricing changes, product changes, seasonality) it won't have in production. Training on earlier periods and testing on later ones mirrors real use and gives an honest estimate of performance.",
+   "rationales": [
+    "More features don't fix a misleading evaluation setup; the offline score would still be inflated.",
+    "Correct: a time-based split stops future information leaking into training and matches how the model is used.",
+    "Choosing recall is a separate metric decision; it wouldn't explain the gap between offline and production results.",
+    "Churn is predictable to a degree. The issue is the evaluation design, not randomness."
+   ],
+   "interview_tip": "When an AI feature works offline but fails online, check the eval setup first: leakage, split strategy, and distribution shift."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Change data capture (CDC) for syncing data across systems",
+   "difficulty": "medium",
+   "question": "Your orders database must keep the search index and analytics warehouse up to date within seconds. Today, a nightly batch job copies all orders. What's the most suitable approach?",
+   "options": [
+    "Run the full-copy batch job every five minutes instead of nightly",
+    "Stream database changes from its log using change data capture",
+    "Have the app write to all three systems on every order",
+    "Let the search service query the orders database directly"
+   ],
+   "answer": 1,
+   "explanation": "Change data capture reads the database's transaction log and streams inserts, updates and deletes to downstream systems in near real time. It's efficient (only changes move), reliable (the log is the source of truth), and avoids fragile dual writes. That makes it the standard pattern for keeping indexes, caches and warehouses in sync.",
+   "rationales": [
+    "Frequent full copies waste resources and still lag; the load grows as the table grows.",
+    "Correct: CDC streams only the changes from the log, giving near-real-time sync without dual-write risk.",
+    "Writing from the app to many systems risks inconsistency when one write fails partway.",
+    "Pointing search at the transactional database adds load and loses the search engine's features."
+   ],
+   "interview_tip": "In system-design-lite questions, naming CDC and the dual-write problem shows you understand data freshness trade-offs."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Server-sent events for one-way streaming updates",
+   "difficulty": "easy",
+   "question": "Your AI chat feature needs to stream the model's reply to the browser token by token. The client doesn't need to send anything while the reply streams. Which transport fits best with the least complexity?",
+   "options": [
+    "Client polling the server every 100 milliseconds",
+    "Server-sent events (SSE) over a standard HTTP connection",
+    "A nightly batch export of all generated replies",
+    "Email delivery of the full response when it finishes"
+   ],
+   "answer": 1,
+   "explanation": "Server-sent events keep one HTTP connection open and let the server push a stream of events to the client. That's perfect for one-way streams like token-by-token LLM output. It's simpler than WebSockets (which are two-way) and far more efficient than rapid polling. Many LLM APIs use SSE for streaming.",
+   "rationales": [
+    "Fast polling creates lots of wasted requests and choppy updates compared with a push stream.",
+    "Correct: SSE is a lightweight, standard way to push a one-way stream of events over HTTP.",
+    "A batch export doesn't help a live chat reply at all.",
+    "Email is asynchronous and unsuited to interactive, real-time output."
+   ],
+   "interview_tip": "Knowing why streaming improves perceived latency, and how it's delivered (SSE), helps you hold your own with engineers on AI products."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Sean Ellis 'very disappointed' product–market fit survey",
+   "difficulty": "easy",
+   "question": "Before scaling paid acquisition, a founder asks users: 'How would you feel if you could no longer use this product?' What result is the commonly cited benchmark for product–market fit?",
+   "options": [
+    "At least 40% answer 'very disappointed'",
+    "At least 40% give the product 5 stars",
+    "At least 10% say they'd recommend it to a friend",
+    "At least 70% answer 'somewhat disappointed'"
+   ],
+   "answer": 0,
+   "explanation": "The Sean Ellis test asks how users would feel without the product. The common benchmark is that 40% or more of active users say 'very disappointed'. It measures how much users depend on the product, not general satisfaction. Segmenting the 'very disappointed' group shows who your core users are and what they value.",
+   "rationales": [
+    "Correct: 40% 'very disappointed' is the widely used PMF threshold from the Sean Ellis survey.",
+    "Star ratings measure satisfaction, not dependence; it's a different question and benchmark.",
+    "Recommendation intent is closer to NPS, and 10% is not a PMF benchmark.",
+    "'Somewhat disappointed' is a weaker signal; the benchmark specifically counts 'very disappointed'."
+   ],
+   "interview_tip": "Mention retention curves alongside the Sean Ellis survey when discussing PMF. Interviewers like combined behavioural and attitudinal evidence."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Admin preview window before default-on enterprise rollout (ChatGPT dots, Nov 2026)",
+   "difficulty": "medium",
+   "question": "In November 2026, OpenAI made personal 'dots' (which can keep working on tasks between conversations) generally available to eligible ChatGPT Enterprise, Edu and Healthcare workspaces. There's an admin preview until November 18, when dots become available by default. What's the main product rationale for this structure?",
+   "options": [
+    "It lets OpenAI charge admins extra during the preview period",
+    "It gives admins time to enable, restrict or opt out before default-on",
+    "It ensures individual employees can't use dots until they request access",
+    "It delays the feature until all workspaces finish a security audit"
+   ],
+   "answer": 1,
+   "explanation": "Enterprise buyers need control over new capabilities, especially agents that keep working between conversations. A fixed preview window lets workspace owners and admins enable access early or opt out before the feature turns on by default, while OpenAI still gets broad adoption after the window. The release notes also mention admin controls over which members can use dots, plus pausing and reviewing usage.",
+   "rationales": [
+    "The release notes describe no preview surcharge; the window is about admin control, not monetisation.",
+    "Correct: per OpenAI's notes, admins can enable access or opt out during the preview, before dots become available by default on November 18.",
+    "The opposite: after the preview, dots are available by default in eligible workspaces, subject to admin controls.",
+    "No workspace-wide security audit gate is described; the feature is generally available with an admin preview."
+   ],
+   "interview_tip": "Enterprise rollout questions reward 'default on, with admin notice and controls'. It balances adoption against the buyer's need for governance.",
+   "source": "https://releasebot.io/updates/openai"
+  }
+ ]
+}

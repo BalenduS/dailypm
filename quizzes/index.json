@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-09",
+   "theme": "Decision moments and hidden denominators",
+   "count": 30
+  },
+  {
    "date": "2026-11-08",
    "theme": "Signals, safeguards and staged bets",
    "count": 30
