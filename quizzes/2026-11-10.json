@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-10",
+ "theme": "Hidden constraints and second-order effects",
+ "questions": [
+  {
+   "id": "2026-11-10-01",
+   "topic": "Product Sense",
+   "concept": "Hard constraints as filters vs soft preferences as ranking signals",
+   "difficulty": "hard",
+   "question": "You're the PM for walking directions in a maps app. Wheelchair users say the 'accessible' routes still sometimes include stairs. Today, step-free segments just get a boost in the route-ranking score. What's the best product change?",
+   "options": [
+    "Increase the ranking boost for step-free segments so those routes win more often",
+    "Treat step-free as a hard filter for users who need it, and say clearly when no fully step-free route exists",
+    "Ask wheelchair users to report stairs so the ranking model can learn faster",
+    "Add a stairs icon on each route so users can spot and avoid the bad segments"
+   ],
+   "rationales": [
+    "A bigger weight still lets a much faster route with one staircase win. Any finite boost treats an absolute need as a trade-off.",
+    "Correct: it models the need correctly. A must-have is a filter, and an explicit 'no step-free route' message keeps trust when the filter returns nothing.",
+    "Better data helps over time, but it doesn't fix the core flaw: even perfect data would still be ranked rather than enforced.",
+    "This moves the work onto the user and still recommends unusable routes first. Disclosure helps but doesn't fix the model of the need."
+   ],
+   "answer": 1,
+   "explanation": "For a wheelchair user, stairs aren't a mild preference to trade against time — a route with stairs is unusable. Hard constraints belong in the filter (what's eligible), soft preferences in the ranking (what's best among eligible). When no route meets the constraint, the honest answer is to say so and offer the closest option, not to quietly return something that fails.",
+   "interview_tip": "In product sense rounds, sort a segment's needs into must-haves and nice-to-haves before designing. Saying 'this is a constraint, not a preference' shows you understand the user."
+  },
+  {
+   "id": "2026-11-10-02",
+   "topic": "Product Sense",
+   "concept": "Designing for the intermediate plateau after the novice stage",
+   "difficulty": "hard",
+   "question": "A language-learning app keeps beginners well, but users who reach intermediate level churn sharply. Interviews show they feel they've 'stopped improving' even though lessons keep coming. Which direction best addresses the root cause?",
+   "options": [
+    "Add more beginner-style lessons so the streak feels easier to keep",
+    "Send more reminder notifications to intermediate users during the week",
+    "Shift intermediates to real-world practice, like conversations and native content, with visible progress",
+    "Offer intermediates a discount on the premium plan to lift their retention"
+   ],
+   "rationales": [
+    "Easier content may protect streaks, but it deepens the 'not improving' feeling, which is the stated reason they leave.",
+    "More reminders bring people back to content they already find pointless. This treats engagement as the problem, not perceived value.",
+    "Correct: it matches the stage-specific need (real use) and makes progress visible again, tackling the stated pain directly.",
+    "A discount doesn't fix the feeling of no progress, and it trains users to wait for price cuts."
+   ],
+   "answer": 2,
+   "explanation": "Novices see big, visible gains and get frequent wins. Intermediates hit a plateau: the next gains are slower and harder to notice, and drill-style lessons stop feeling useful. The fix is to change the job the product does at that stage — real-world use — and to make the slower progress visible so effort still feels like it's paying off.",
+   "interview_tip": "Strong candidates segment by lifecycle stage, not just demographics, and notice that needs change as users get better. It shows you think beyond onboarding."
+  },
+  {
+   "id": "2026-11-10-03",
+   "topic": "Product Sense",
+   "concept": "Low-effort polite exit to reduce ghosting in dating apps",
+   "difficulty": "medium",
+   "question": "On a dating app, many conversations end with one person going silent (ghosting), and surveyed users say it makes them feel bad and less likely to keep using the app. Which feature most directly targets the cause?",
+   "options": [
+    "Offer a one-tap, kindly worded 'not feeling a match' message that also closes the chat",
+    "Penalise ghosters by lowering their ranking in other users' recommendations",
+    "Show a 'last active' timestamp so users know when the other person was online",
+    "Limit each user to five open conversations at a time to force focus"
+   ],
+   "rationales": [
+    "Correct: it removes the social cost that drives ghosting and turns silence into closure, which is the experience users said they want.",
+    "Penalties are hard to apply fairly (silence isn't always bad intent) and they push people to leave chats open rather than end them kindly.",
+    "Seeing someone was online but didn't reply can make the hurt worse. It adds information without changing behaviour.",
+    "A cap may reduce some neglected chats, but it adds friction for everyone and doesn't address why people go silent."
+   ],
+   "answer": 0,
+   "explanation": "People often ghost because ending a conversation politely feels awkward and effortful. Making a kind exit take one tap lowers that cost, so more conversations end with closure instead of silence. That reduces the hurt for the receiver without punishing anyone.",
+   "interview_tip": "Ask why the behaviour happens before designing against it. Lowering the cost of the good behaviour usually beats punishing the bad one, and interviewers notice that."
+  },
+  {
+   "id": "2026-11-10-04",
+   "topic": "Product Sense",
+   "concept": "Unified inbox to meet sellers where they already sell",
+   "difficulty": "medium",
+   "question": "You're building tools for small Indian D2C sellers who take orders through WhatsApp, Instagram DMs and their Shopify store. Sellers miss orders and reply late. Which first feature would most likely fix the core pain?",
+   "options": [
+    "A weekly analytics report showing response times across channels",
+    "One inbox showing messages from all three channels, with order context next to each chat",
+    "A new in-app chat so customers message the seller inside your app instead",
+    "An auto-reply that tells customers the seller will respond within 24 hours"
+   ],
+   "rationales": [
+    "A report shows the problem after the fact but doesn't help sellers catch messages as they come in.",
+    "Correct: it meets sellers and customers where they already are and removes the cause of missed orders, which is switching between apps.",
+    "Customers won't move to a new app just to message a small seller. This adds a fourth channel instead of fixing the spread.",
+    "An auto-reply sets expectations but doesn't help the seller see or answer the message any faster."
+   ],
+   "answer": 1,
+   "explanation": "The pain is fragmentation: conversations are spread across apps the seller and customers already use. Pulling them into one place, with order details alongside, cuts missed messages without asking anyone to change habits. Asking customers to move to a new channel fights existing behaviour.",
+   "interview_tip": "When users already have entrenched channels, 'go where they are' beats 'bring them to us'. Mentioning adoption cost for both sides of the conversation is a strong signal."
+  },
+  {
+   "id": "2026-11-10-05",
+   "topic": "Metrics",
+   "concept": "Moving-holiday misalignment in year-over-year comparisons",
+   "difficulty": "hard",
+   "question": "Your festive-season dashboard shows a food-delivery app's orders for the first week of November down 14% year over year. Diwali fell in late October this year but in mid-November last year. What should you do first?",
+   "options": [
+    "Compare against last year's matching week by date, but exclude weekends",
+    "Escalate a demand problem and launch discounts for the rest of November",
+    "Align the comparison to days relative to Diwali, then re-check the trend",
+    "Check whether the drop is concentrated in new users before going further"
+   ],
+   "rationales": [
+    "Removing weekends doesn't fix the core issue: the same dates sit at different points in the festival cycle each year.",
+    "Acting before ruling out the calendar effect could waste discount spend on a drop that isn't real.",
+    "Correct: it removes the holiday-shift confound so you're comparing like with like before looking for a real cause.",
+    "Segmenting is useful later, but the obvious calendar confound should be checked first because it may explain the whole drop."
+   ],
+   "answer": 2,
+   "explanation": "Festivals that move on the calendar break simple date-to-date comparisons. This year's first week of November is the post-Diwali lull, while last year's same dates were the run-up to the festival — so a big YoY drop is expected even if demand is healthy. Lining up both years by days before and after the holiday removes that distortion, and only then can you judge real change.",
+   "interview_tip": "In root-cause questions, rule out external and calendar factors before internal ones. Naming a specific moving holiday shows real-world judgement."
+  },
+  {
+   "id": "2026-11-10-06",
+   "topic": "Metrics",
+   "concept": "Ticket reopen rate as a guardrail on resolution time",
+   "difficulty": "medium",
+   "question": "A support team is told to cut average time-to-resolution. Within a month it drops 30%, but CSAT dips. What's the most likely explanation, and the metric to add?",
+   "options": [
+    "The CSAT survey sample got smaller; add the CSAT response rate",
+    "Customers are getting faster answers and expecting more; add a customer expectations survey",
+    "Ticket volume is falling, so fewer cases drag the average; add tickets per agent",
+    "Agents are closing tickets before the problem is solved; add reopen rate as a guardrail"
+   ],
+   "rationales": [
+    "Response rate is worth checking, but it doesn't explain the specific pattern of speed up and satisfaction down.",
+    "Faster service rarely lowers satisfaction by itself. This explanation is less likely than gaming the target.",
+    "Lower volume could change averages, but it doesn't explain why customers are less happy.",
+    "Correct: a sharp speed gain alongside falling satisfaction is the classic sign of premature closure, and reopen rate catches it directly."
+   ],
+   "answer": 3,
+   "explanation": "When you target a speed metric alone, the easiest way to hit it is to close tickets early. That shows up as customers coming back with the same issue, so reopen rate (or repeat contacts) is the natural counter-metric. Pairing the speed goal with a quality guardrail stops the team from gaming one number at the users' expense.",
+   "interview_tip": "Whenever a metric becomes a target, name the cheapest way to game it and the guardrail that would catch it. Interviewers treat this as a sign of metric maturity."
+  },
+  {
+   "id": "2026-11-10-07",
+   "topic": "Metrics",
+   "concept": "Eligible-population denominator for feature adoption rate",
+   "difficulty": "easy",
+   "question": "A new 'split payment' feature only appears for orders above ₹2,000. The team reports adoption as split-payment users ÷ all monthly active users, giving 1.5%. Why is this a weak adoption metric?",
+   "options": [
+    "It should count orders instead of users to show real usage",
+    "Monthly active users is too small a base, so the rate looks inflated",
+    "It mixes new and returning users, which always biases adoption metrics",
+    "Most of the denominator never sees the feature, so the rate understates adoption"
+   ],
+   "rationales": [
+    "Counting orders can be useful, but it doesn't fix the core issue of measuring against people who couldn't use it.",
+    "It's the reverse: the base is too large, which makes the rate look smaller, not bigger.",
+    "New vs returning is a useful cut, but it isn't why this metric is misleading.",
+    "Correct: the denominator should be the eligible population, otherwise the number mostly reflects how few people qualify."
+   ],
+   "answer": 3,
+   "explanation": "Adoption should be measured against people who had the chance to use the feature. Here most active users never place an order above ₹2,000, so they never see the option. Dividing by eligible users (or eligible orders) shows whether the feature works for the people it was built for.",
+   "interview_tip": "Always ask 'out of whom?' when you hear a rate. Choosing the right denominator is one of the quickest ways to stand out in metrics rounds."
+  },
+  {
+   "id": "2026-11-10-08",
+   "topic": "Metrics",
+   "concept": "North Star for a personal budgeting app",
+   "difficulty": "medium",
+   "question": "You're picking a North Star metric for a personal budgeting app whose promise is 'feel in control of your money'. Which is the best choice?",
+   "options": [
+    "Total transactions synced from linked bank accounts per month",
+    "Weekly users who review their budget and stay within at least one category",
+    "Daily active users who open the app at least once",
+    "Number of new budgets created each month"
+   ],
+   "rationales": [
+    "Syncing happens automatically, so it measures integration volume, not whether users feel in control.",
+    "Correct: it ties a realistic usage rhythm to an outcome that reflects the product's promise.",
+    "Daily opens don't fit how often people budget, and opening the app doesn't mean they're getting value.",
+    "Creating budgets is a setup step. Many people create a budget and then ignore it."
+   ],
+   "answer": 1,
+   "explanation": "A good North Star captures the value users get, not just activity. For budgeting, value means users are engaging with their plan and it's actually changing what they do. Weekly users who review their budget and stay on track in a category combine regular engagement with a real outcome, and a weekly window fits how people manage money.",
+   "interview_tip": "Test any North Star by asking 'if this goes up, are users truly better off?' and 'does the time window match real usage?' Saying both checks out loud lands well."
+  },
+  {
+   "id": "2026-11-10-09",
+   "topic": "Experimentation",
+   "concept": "Translating triggered-population lift into overall impact",
+   "difficulty": "easy",
+   "question": "A checkout test only affects users who open the coupon drawer, which is 10% of buyers. Among those triggered users, conversion rises 5% (relative). Assuming non-triggered users are unaffected and convert at the same rate, what's the approximate relative lift for all buyers?",
+   "options": [
+    "5%",
+    "0.05%",
+    "2.5%",
+    "0.5%"
+   ],
+   "rationales": [
+    "That's the lift for triggered users only. Applying it to everyone ignores the 90% who never saw the change.",
+    "This is ten times too small, as if only 1% of buyers were triggered.",
+    "This assumes half of buyers were affected; only 10% were.",
+    "Correct: 0.10 × 5% = 0.5% relative lift across all buyers, given equal baseline conversion."
+   ],
+   "answer": 3,
+   "explanation": "Triggered analysis gives a clean read on the people who saw the change, but overall impact is that lift diluted by the share of traffic it touches. With equal baseline rates, overall lift ≈ 10% × 5% = 0.5%. Reporting the triggered number as the company-wide impact would overstate it ten times.",
+   "interview_tip": "When you present a triggered result, state both the triggered lift and the diluted overall impact. It shows rigour and stops leaders from over-forecasting."
+  },
+  {
+   "id": "2026-11-10-10",
+   "topic": "Experimentation",
+   "concept": "Interrupted time series for a launch that can't be randomized",
+   "difficulty": "medium",
+   "question": "A new legal requirement forces you to add an age-check screen for every user in one country on the same day, so no control group is possible and there's no comparable country. How should you best estimate its effect on signups?",
+   "options": [
+    "Model the pre-launch trend and seasonality, then measure the break at launch",
+    "Compare users who passed the age check with users who abandoned it",
+    "Compare signups in the week after launch with the week before",
+    "Survey new users about whether the age check annoyed them"
+   ],
+   "rationales": [
+    "Correct: it builds a counterfactual from the series' own history and isolates the change at the intervention date.",
+    "Comparing passers to abandoners is selection bias: these groups differ in many ways, and it doesn't measure total signup impact.",
+    "A one-week before/after ignores trend, seasonality and noise, so any change could be coincidence.",
+    "A survey captures opinions, not the actual change in signup volume."
+   ],
+   "answer": 0,
+   "explanation": "With no control group, an interrupted time series uses a long pre-launch history to forecast what would have happened, then measures the jump or slope change at the launch date. Accounting for trend and seasonality makes it far more credible than a simple before/after, though you should still check that nothing else changed on that day.",
+   "interview_tip": "Interviewers like candidates who know what to do when A/B testing isn't possible. Naming the method and its key assumption (nothing else changed at that time) is the strong answer."
+  },
+  {
+   "id": "2026-11-10-11",
+   "topic": "Estimation",
+   "concept": "Annual rakhis sold in India",
+   "difficulty": "medium",
+   "question": "Roughly how many rakhis are bought in India each year for Raksha Bandhan?",
+   "options": [
+    "About 10 billion",
+    "About 100 million",
+    "About 10 million",
+    "About 1 billion"
+   ],
+   "rationales": [
+    "10B would be about 25 rakhis per celebrating male, which is implausible.",
+    "100M would mean only about a quarter of celebrating males receive one rakhi, which misses how many rakhis each person gets.",
+    "10M would mean only about one in forty celebrating males receives a single rakhi — far too low for a festival this widespread.",
+    "Correct: ~400M male recipients × ~2.5 rakhis each ≈ 1 billion."
+   ],
+   "answer": 3,
+   "explanation": "Start with ~1.45B people. Assume ~55% (~800M) are in households that celebrate. About half are male, so ~400M potential recipients. Counting sisters, cousins and family friends, each receives about 2–3 rakhis on average, giving ~1 billion. Extras (rakhis for sisters-in-law, deities, spares) don't change the order of magnitude.",
+   "interview_tip": "Narrate your chain: population → share celebrating → recipients → rakhis per person. Interviewers care about clear logic and sanity checks more than the exact number."
+  },
+  {
+   "id": "2026-11-10-12",
+   "topic": "Estimation",
+   "concept": "Annual ceiling fan unit sales in India",
+   "difficulty": "medium",
+   "question": "A fan maker wants to size its home market. Working from India's installed base and typical product lifespan, about how many ceiling fans get bought nationwide in a year?",
+   "options": [
+    "About 800 million",
+    "About 80 million",
+    "About 300 million",
+    "About 8 million"
+   ],
+   "rationales": [
+    "800M is close to the whole installed base, as if every fan were replaced every year.",
+    "Correct: about 65M replacements plus about 15M for new homes ≈ 80M.",
+    "300M would mean replacing a third of all fans every year, implying a three-year lifespan.",
+    "8M would replace fans only every century or so; it ignores the installed base."
+   ],
+   "answer": 1,
+   "explanation": "India has ~300M households. At ~2.5 fans each that's ~750M fans in homes, plus ~150M in shops, offices and schools, so ~900M installed. Fans last ~12–15 years, so replacements are ~65M a year. New homes add ~5M households × ~3 fans ≈ 15M. Total ≈ 80M a year.",
+   "interview_tip": "For durable goods, split demand into replacement (installed base ÷ lifespan) and new installs. That structure signals you know how durables markets work."
+  },
+  {
+   "id": "2026-11-10-13",
+   "topic": "Strategy",
+   "concept": "Paying for default distribution placement",
+   "difficulty": "easy",
+   "question": "Why do search and AI-assistant companies pay large sums to be the default option in browsers and phones?",
+   "options": [
+    "Default status lets a company charge users a fee for each search",
+    "Defaults are required by law to be paid placements",
+    "Most users never change defaults, so a default captures huge recurring usage",
+    "Paying for a default gives the company ownership of the device's user data"
+   ],
+   "rationales": [
+    "Search defaults are monetised through ads, not per-search fees to users.",
+    "No law requires defaults to be paid; companies pay because defaults are valuable.",
+    "Correct: default inertia turns placement into a steady, large source of usage and revenue.",
+    "A default placement doesn't transfer ownership of the device maker's user data."
+   ],
+   "answer": 2,
+   "explanation": "Defaults are powerful because most people never change them. Being the default captures a large stream of queries that brings in ad or subscription revenue, and it denies that usage to rivals. That's why distribution deals can be worth more than small product advantages.",
+   "interview_tip": "In strategy rounds, discuss distribution alongside product quality. Recognising that defaults can beat a better product shows commercial maturity."
+  },
+  {
+   "id": "2026-11-10-14",
+   "topic": "Strategy",
+   "concept": "Marketplaces for acquisition while building an owned repeat channel",
+   "difficulty": "medium",
+   "question": "An Indian D2C skincare brand gets 80% of its sales from a big marketplace, which takes a high commission and doesn't share customer contact details. What's the most sensible strategy?",
+   "options": [
+    "Raise marketplace prices to cover the commission and accept lower volume",
+    "Spend more on marketplace ads to grow share before thinking about other channels",
+    "Keep using the marketplace for discovery while building owned channels for repeat buyers",
+    "Delist from the marketplace right away and push all buyers to the brand's own site"
+   ],
+   "rationales": [
+    "Higher prices may protect margin per order but lose volume and ranking, and they don't fix the missing customer relationship.",
+    "More ads deepen dependence on a channel that already takes too much margin and controls the customer.",
+    "Correct: it uses the marketplace for what it's good at and shifts repeat buyers, where margin and data matter most, to owned channels.",
+    "Leaving suddenly gives up most revenue and the discovery engine before owned channels are ready."
+   ],
+   "answer": 2,
+   "explanation": "Marketplaces are great for reach and trust but cost margin and hide the customer relationship. A balanced approach keeps them as a discovery channel while moving repeat buying to owned channels like the website or WhatsApp, using in-box offers, refill programmes and loyalty perks. Repeat purchases then happen at better margin with direct data.",
+   "interview_tip": "Channel-strategy answers should separate acquisition from retention economics. Showing you'd move repeat buyers to owned channels is a strong, practical signal."
+  },
+  {
+   "id": "2026-11-10-15",
+   "topic": "Strategy",
+   "concept": "Interdependent architecture when performance is not yet good enough",
+   "difficulty": "hard",
+   "question": "A startup building AI-powered smart glasses debates whether to design its own chip, optics and software together, or assemble off-the-shelf parts. Battery life and latency are still far below what users want. Which reasoning best supports building the key parts together?",
+   "options": [
+    "While performance falls short of needs, tight design across parts unlocks the gains modular parts can't",
+    "Building everything in-house is the only way to avoid competition from big tech",
+    "Off-the-shelf parts are always too expensive for a startup to source",
+    "Integrated products always earn higher margins, regardless of the market's stage"
+   ],
+   "rationales": [
+    "Correct: when performance is the bottleneck, integration across tightly linked parts is where the advantage comes from.",
+    "In-house building doesn't stop big tech from competing, and it's a heavy bet if performance is already good enough.",
+    "Standard parts are often cheaper, not more expensive, because of scale.",
+    "Integration isn't always more profitable; once products are good enough, modular players often win on cost and speed."
+   ],
+   "answer": 0,
+   "explanation": "When a product isn't yet good enough, performance depends on how the parts work together, so co-designing them lets a company push past what standard interfaces allow. Once performance overshoots needs, modular parts and standard interfaces win on cost and speed. The right choice depends on where the market sits on that curve.",
+   "interview_tip": "Linking the build-vs-assemble choice to whether the product is 'good enough' yet shows strategic depth. It's better than a one-size-fits-all answer on vertical integration."
+  },
+  {
+   "id": "2026-11-10-16",
+   "topic": "Execution",
+   "concept": "Instrumenting usage before deprecating an internal API",
+   "difficulty": "medium",
+   "question": "You want to retire an old internal API. Nobody is sure which services still call it, and the documentation is out of date. What's the best first step?",
+   "options": [
+    "Rewrite the API to the new version so nothing needs to be retired",
+    "Log every caller and request type for a few weeks to find real consumers",
+    "Ask team leads in a meeting whether their services depend on it",
+    "Announce a shutdown date to all engineering teams and turn it off then"
+   ],
+   "rationales": [
+    "Rewriting doesn't answer who depends on the old behaviour and adds work without a plan.",
+    "Correct: real usage data shows the true dependency list before you make any plan.",
+    "People forget scheduled jobs and scripts. Asking finds some users but not all.",
+    "A date without knowing consumers risks breaking critical services nobody remembered."
+   ],
+   "answer": 1,
+   "explanation": "You can't safely retire something without knowing who uses it, and memory and docs are unreliable. Logging callers shows real dependencies, including forgotten batch jobs and scripts. With that list you can contact owners, plan migrations and set a realistic date.",
+   "interview_tip": "For deprecation questions, start with 'measure who's actually using it'. Evidence before plans is the habit interviewers look for."
+  },
+  {
+   "id": "2026-11-10-17",
+   "topic": "Execution",
+   "concept": "Parkinson's law and padded estimates",
+   "difficulty": "easy",
+   "question": "Your team pads every task estimate by 50% 'just in case'. Projects still finish late, and work seems to expand to fill the time. What effect is this?",
+   "options": [
+    "Conway's law",
+    "Goodhart's law",
+    "Parkinson's law",
+    "Brooks's law"
+   ],
+   "rationales": [
+    "Conway's law says systems mirror the communication structure of the teams that build them.",
+    "Goodhart's law is about measures losing meaning once they become targets.",
+    "Correct: padded time gets consumed, so work expands to fill it.",
+    "Brooks's law is about adding people to a late project making it later."
+   ],
+   "answer": 2,
+   "explanation": "Parkinson's law says work expands to fill the time available. Per-task padding often gets used up through polishing, late starts or scope creep, so it doesn't protect the overall date. A common fix is to estimate tasks honestly and keep a shared buffer at the project level.",
+   "interview_tip": "When asked how you manage estimates, mention a shared project buffer instead of per-task padding. It shows you understand how teams actually behave."
+  },
+  {
+   "id": "2026-11-10-18",
+   "topic": "Execution",
+   "concept": "Say/do ratio for delivery predictability",
+   "difficulty": "easy",
+   "question": "Leadership complains that your team's quarterly commitments are unreliable. Which simple metric best tracks whether this improves?",
+   "options": [
+    "Number of features shipped per quarter",
+    "Average number of bugs found after each release",
+    "Share of committed items actually delivered in the period",
+    "Number of story points completed each sprint"
+   ],
+   "rationales": [
+    "Shipping lots of features says nothing about whether they were the ones promised.",
+    "Bugs measure quality, which matters, but not whether commitments were kept.",
+    "Correct: it directly measures how reliably the team delivers what it committed.",
+    "Story points measure effort and can be inflated; they don't show whether commitments were met."
+   ],
+   "answer": 2,
+   "explanation": "Predictability is about delivering what you said you would. The say/do ratio — committed items delivered divided by items committed — measures this directly. Unlike raw output, it rewards realistic planning, not just doing more.",
+   "interview_tip": "Pick metrics that match the exact complaint. Recommending a say/do ratio for a predictability concern shows precise thinking."
+  },
+  {
+   "id": "2026-11-10-19",
+   "topic": "Behavioural",
+   "concept": "Walking back a celebrated launch result after re-analysis",
+   "difficulty": "hard",
+   "question": "Your launch was celebrated in an all-hands for a 12% engagement lift. Two weeks later your analyst shows most of it was novelty and the lasting lift is about 2%. A VP plans to cite the 12% in a board update tomorrow. What do you do?",
+   "options": [
+    "Send a company-wide correction email before talking to the VP",
+    "Tell the VP today, share the corrected 2% with how you found it, and suggest updated wording",
+    "Ask the analyst to re-run the analysis with a different window to find a bigger number",
+    "Let the board update go out and correct the number in next quarter's review"
+   ],
+   "rationales": [
+    "Correcting publicly before telling the VP blindsides them. Get the decision-maker in the loop first.",
+    "Correct: fast, direct and with evidence, it protects the VP and the board from acting on a wrong figure.",
+    "Searching for a bigger number is p-hacking. It trades honesty for comfort.",
+    "Knowingly letting a wrong number reach the board damages trust far more than an early correction."
+   ],
+   "answer": 1,
+   "explanation": "Integrity means correcting the record quickly, especially before a wrong number reaches the board. Going to the VP first, with the evidence and suggested wording, lets them update the board deck without being surprised. Explaining what you learned (to account for novelty) turns it into a better process, not just bad news.",
+   "interview_tip": "Integrity stories land best when you acted quickly, told the right person first and added a process fix. Interviewers look for courage plus judgement on sequencing."
+  },
+  {
+   "id": "2026-11-10-20",
+   "topic": "Behavioural",
+   "concept": "Responding when your manager commits your team to an unvetted date",
+   "difficulty": "hard",
+   "question": "In a leadership meeting, your manager promised a partner a launch date that your team never estimated. Your engineers think it's about six weeks too early. What's the best next move?",
+   "options": [
+    "Meet your manager privately with the estimate and options, like cutting scope, adding help or moving the date",
+    "Tell the partner directly that the date isn't realistic",
+    "Have the team work weekends to hit the date without raising the issue",
+    "Escalate to your manager's boss, since the commitment was made without you"
+   ],
+   "rationales": [
+    "Correct: private, evidence-based and solution-focused, it gives your manager what they need to decide.",
+    "Going around your manager to the partner undermines them and creates confusion externally.",
+    "Silent overwork hides the risk, burns out the team and still may miss the date.",
+    "Escalating before talking to your manager damages trust; it's for when direct conversation fails."
+   ],
+   "answer": 0,
+   "explanation": "Your manager made the commitment, so they need to know first and in private. Bringing a real estimate and concrete options (cut scope, add help, adjust the date) turns a complaint into a decision they can make. It protects both the relationship and the team, and helps set up a process for future commitments.",
+   "interview_tip": "'Managing up' answers should show you raised the risk early, privately and with options. Ending with a process fix for future commitments makes it stronger."
+  },
+  {
+   "id": "2026-11-10-21",
+   "topic": "Behavioural",
+   "concept": "Protecting an engineer from public blame by a senior leader",
+   "difficulty": "hard",
+   "question": "In an incident review, a director repeatedly names the junior engineer whose change triggered an outage. The review was meant to be blameless, and the engineer has gone quiet. As the PM running the review, what do you do?",
+   "options": [
+    "End the meeting early and reschedule without the director",
+    "Stay quiet to avoid challenging a director in front of others",
+    "Agree the engineer made a mistake but say it was a small one",
+    "Redirect to how the system allowed the error, then follow up privately with the director and the engineer"
+   ],
+   "rationales": [
+    "Ending abruptly avoids conflict but loses the learning and may look like a public rebuke.",
+    "Silence lets blame become the norm and teaches everyone to hide mistakes.",
+    "This still centres the individual and accepts the blame framing.",
+    "Correct: it protects psychological safety in the moment, focuses on system fixes and deals with the director privately."
+   ],
+   "answer": 3,
+   "explanation": "Blameless reviews work because people speak openly about what happened; public blame stops that. Shifting the discussion to the gaps that let the change through (testing, review, rollout) protects the engineer and gets to the real fixes. Following up privately with the director avoids a public clash, and checking in with the engineer rebuilds trust.",
+   "interview_tip": "Interviewers want to see you defend team safety without picking public fights. Showing both the in-the-moment move and the private follow-up is the strong answer."
+  },
+  {
+   "id": "2026-11-10-22",
+   "topic": "AI Product",
+   "concept": "Comparing an AI feature against a simple heuristic baseline",
+   "difficulty": "medium",
+   "question": "Your team built an LLM that suggests reply templates for support agents, and offline it picks the 'right' template 78% of the time. Before you ship, what comparison matters most?",
+   "options": [
+    "How it scores on a public NLP benchmark for text classification",
+    "How it compares with a simple rule, like the most-used template for that ticket category",
+    "How quickly it responds compared with the agents' typing speed",
+    "How it compares with the largest available frontier model on the same task"
+   ],
+   "rationales": [
+    "Public benchmarks don't reflect your tickets, templates or users.",
+    "Correct: the simple rule is the real alternative, and the gap over it is the value the AI adds.",
+    "Speed matters, but it doesn't tell you whether the suggestions are better than a simple rule.",
+    "Comparing to a bigger model says whether you could do better with AI, not whether AI beats a simpler solution."
+   ],
+   "answer": 1,
+   "explanation": "An AI feature is only valuable if it beats the simplest alternative. If 'most common template for this category' already gets 74%, the LLM's extra 4 points may not be worth the cost, latency and risk. A strong heuristic baseline tells you the real gain you're paying for.",
+   "interview_tip": "Always ask 'what's the dumb baseline?' in AI questions. It shows you're focused on value, not technology for its own sake."
+  },
+  {
+   "id": "2026-11-10-23",
+   "topic": "AI Product",
+   "concept": "Repeat usage after first try as an AI feature traction signal",
+   "difficulty": "medium",
+   "question": "An AI 'summarise this thread' button launches in a work chat app. In week one, 40% of users try it. You need to judge whether it has real traction. Which metric is most informative?",
+   "options": [
+    "Share of first-time users who use it again in the following weeks",
+    "Total number of summaries generated in week one",
+    "Average length of the summaries generated",
+    "Number of positive social media posts about the feature"
+   ],
+   "rationales": [
+    "Correct: repeat use among triers is the clearest early sign that the feature solves a real problem.",
+    "Week-one volume is dominated by curiosity and launch promotion, so it overstates lasting value.",
+    "Summary length is a property of the output, not a measure of value.",
+    "Social buzz reflects a vocal few and fades quickly; it isn't a reliable usage signal."
+   ],
+   "answer": 0,
+   "explanation": "New AI features attract lots of curious first tries, which can mask whether they're useful. Repeat use by people who tried it shows they found real value and built it into their work. Tracking this cohort over several weeks separates curiosity from lasting usefulness.",
+   "interview_tip": "Point out the curiosity spike with AI launches and propose a 'tried → repeated' cohort metric. It signals you won't be fooled by launch-week numbers."
+  },
+  {
+   "id": "2026-11-10-24",
+   "topic": "AI Product",
+   "concept": "Credits as a pricing abstraction over varied model costs",
+   "difficulty": "hard",
+   "question": "Your SaaS product offers several AI actions whose cost to you varies a lot: a quick rewrite costs about 0.1¢, while a deep research report costs about 40¢. You want simple pricing that protects margin. Which approach fits best?",
+   "options": [
+    "A monthly credit allowance per plan, with each action costing credits by its expense, plus top-ups",
+    "Unlimited AI usage bundled into every seat at no extra cost",
+    "One flat price per AI action, set at the average cost",
+    "Charge customers your exact per-token costs plus a margin on every action"
+   ],
+   "rationales": [
+    "Correct: it ties price to cost per action in one easy unit, with predictable bills and room to grow.",
+    "Unlimited usage exposes you to a few heavy users whose costs can erase the margin from everyone else.",
+    "A flat average price overcharges cheap actions and loses money on expensive ones, and heavy users will lean toward the costly ones.",
+    "Token billing protects margin but is hard for customers to understand or predict, which slows adoption."
+   ],
+   "answer": 0,
+   "explanation": "Credits give customers one simple unit while letting you price expensive actions higher than cheap ones. A monthly allowance keeps bills predictable, and top-ups capture heavy users' extra value. It's simpler than raw token billing and safer than flat or unlimited pricing when costs vary by hundreds of times.",
+   "interview_tip": "For AI pricing, mention cost variance across actions and heavy-user risk. Proposing a unit customers understand, mapped to your costs, is the mature answer."
+  },
+  {
+   "id": "2026-11-10-25",
+   "topic": "AI Product",
+   "concept": "Measuring unnecessary tool calls in agent evaluation",
+   "difficulty": "medium",
+   "question": "Your customer-service agent gets the correct final answer 92% of the time, but costs and latency are higher than expected. Traces show it often searches the order database even for questions like 'what are your opening hours?'. What should you add to your evals?",
+   "options": [
+    "A higher target for final-answer accuracy",
+    "A user satisfaction score collected after each conversation",
+    "A metric for unneeded tool calls per task, alongside answer accuracy",
+    "A larger eval set of difficult edge cases"
+   ],
+   "rationales": [
+    "Accuracy is already high; raising the target doesn't address the wasted calls.",
+    "Satisfaction may not change much, and it won't pinpoint the unneeded tool calls.",
+    "Correct: it measures the specific behaviour driving cost and latency, so you can fix it and check for regressions.",
+    "More hard cases test correctness, not efficiency on simple questions."
+   ],
+   "answer": 2,
+   "explanation": "Measuring only the final answer hides wasteful paths. Tracking how often the agent calls tools it didn't need shows the source of extra cost and latency, and lets you improve tool descriptions or routing without hurting accuracy.",
+   "interview_tip": "Show you'd evaluate how an agent gets an answer, not just what it answers. Mentioning efficiency metrics like tool calls per task shows hands-on agent experience."
+  },
+  {
+   "id": "2026-11-10-26",
+   "topic": "AI Product",
+   "concept": "Zero data retention agreements with LLM providers",
+   "difficulty": "easy",
+   "question": "A hospital customer is willing to use your AI note-taking tool but worries that patient conversations sent to a third-party model provider could be stored. Which commitment most directly addresses that concern?",
+   "options": [
+    "A zero data retention agreement, so the provider doesn't store prompts or outputs after processing",
+    "Switching to a model with a larger context window",
+    "Showing a disclaimer that AI outputs may contain errors",
+    "Encrypting the notes on the user's device after they're generated"
+   ],
+   "rationales": [
+    "Correct: it directly addresses storage of sensitive data by the third-party provider.",
+    "Context window size affects how much text the model can process, not what happens to the data.",
+    "A disclaimer is about accuracy, not data storage or privacy.",
+    "Encryption on the device protects stored notes but doesn't stop the provider keeping what it received."
+   ],
+   "answer": 0,
+   "explanation": "The concern is about data being kept by the model provider. A zero data retention arrangement means requests are processed but not stored afterwards, which directly addresses that. It usually sits alongside other controls like encryption in transit, access controls and agreements required by health regulations.",
+   "interview_tip": "In enterprise AI questions, match the control to the exact concern. Separating retention, training use and access shows you can talk credibly with security buyers."
+  },
+  {
+   "id": "2026-11-10-27",
+   "topic": "Technology",
+   "concept": "Hyrum's law: observable behaviour becomes depended upon",
+   "difficulty": "medium",
+   "question": "Your team changes an API so results come back in a different order. The docs never promised any order, but several customers' integrations break. Which principle explains this?",
+   "options": [
+    "Conway's law: systems mirror team communication structures",
+    "Metcalfe's law: a network's value grows with the square of its users",
+    "Amdahl's law: speed-ups are limited by the parts you can't parallelise",
+    "Hyrum's law: with enough users, every observable behaviour gets relied on"
+   ],
+   "rationales": [
+    "Conway's law is about how org structure shapes system design, not unexpected dependence on behaviour.",
+    "Metcalfe's law is about network value growing with users.",
+    "Amdahl's law is about limits on parallel speed-ups.",
+    "Correct: customers relied on behaviour that was never promised but was visible to them."
+   ],
+   "answer": 3,
+   "explanation": "Hyrum's law says that with enough users, someone will depend on every observable behaviour of a system, whatever the docs say. That's why even 'safe' changes like ordering, timing or error text can break integrations. Teams plan for it with changelogs, staged rollouts and advance notice.",
+   "interview_tip": "Mentioning Hyrum's law when discussing API changes shows you understand why 'harmless' changes need rollout plans. It signals platform maturity."
+  },
+  {
+   "id": "2026-11-10-28",
+   "topic": "Technology",
+   "concept": "Bulkhead isolation to contain a failing dependency",
+   "difficulty": "easy",
+   "question": "Your checkout service calls both a payments provider and a slow product-recommendation service. When recommendations hang, they use up all the shared connection threads and checkout fails too. Which design pattern prevents this?",
+   "options": [
+    "Giving each dependency its own separate pool of threads or connections",
+    "Moving the database to a larger server",
+    "Adding a CDN in front of the checkout service",
+    "Switching the API from REST to GraphQL"
+   ],
+   "rationales": [
+    "Correct: isolating resources per dependency keeps one failure from spreading to critical paths.",
+    "A bigger database server doesn't address threads being exhausted by a slow downstream service.",
+    "A CDN speeds up static content but doesn't stop a slow service using up shared threads.",
+    "The API style doesn't change how resources are shared between dependencies."
+   ],
+   "answer": 0,
+   "explanation": "The bulkhead pattern splits resources into separate compartments, like a ship's hull, so a failure in one part can't sink the rest. With separate pools, a hanging recommendation service can only use up its own threads, and payments keep working. It's often paired with timeouts and circuit breakers.",
+   "interview_tip": "Naming isolation patterns (bulkheads, timeouts, circuit breakers) when asked about reliability shows technical fluency without needing to code."
+  },
+  {
+   "id": "2026-11-10-29",
+   "topic": "Growth",
+   "concept": "Sunsetting inactive email subscribers to protect deliverability",
+   "difficulty": "easy",
+   "question": "A D2C brand's marketing emails are increasingly landing in spam. About 40% of its list hasn't opened or clicked in over a year. What's the most effective first step?",
+   "options": [
+    "Send more emails each week to increase the chance of being seen",
+    "Buy a fresh email list to boost overall engagement rates",
+    "Change the email subject lines to be more eye-catching",
+    "Send a re-engagement email to inactive subscribers, then stop emailing those who don't respond"
+   ],
+   "rationales": [
+    "More emails to an unengaged list worsens the engagement signals that are causing the spam problem.",
+    "Bought lists have low engagement and often spam-trap addresses, which damages deliverability further.",
+    "Subject lines may lift opens slightly, but they don't fix the large inactive share hurting reputation.",
+    "Correct: removing persistently inactive addresses improves engagement and sender reputation."
+   ],
+   "answer": 3,
+   "explanation": "Inbox providers look at engagement. Mailing lots of people who never open signals unwanted mail and pushes everything toward spam. A re-engagement attempt followed by removing non-responders improves engagement rates and sender reputation, so emails reach the people who want them.",
+   "interview_tip": "Show you know growth channels have their own health metrics. Accepting a smaller, more engaged list over a larger one shows long-term thinking."
+  },
+  {
+   "id": "2026-11-10-30",
+   "topic": "Current Events",
+   "concept": "Entering a dominated smart-glasses market (Samsung–Google Intelligent Eyewear, Nov 2026)",
+   "difficulty": "medium",
+   "question": "Samsung said it will open pre-orders on November 12, 2026 for 'Intelligent Eyewear', audio-based AI glasses with no display developed with Google, ahead of a December launch. Omdia figures cited in the coverage put Meta at about 81% of AI smart-glasses shipments in H1 2026. As a PM on this launch, what's the strongest lever against such a dominant incumbent?",
+   "options": [
+    "Launch in as many countries as possible at once to grab share quickly",
+    "Use assets Meta lacks, like deep integration with Android phones and Gemini",
+    "Match Meta's features one for one and compete mainly on a lower price",
+    "Wait until the market matures before launching anything"
+   ],
+   "rationales": [
+    "A wide launch spreads resources thin; coverage says initial markets are South Korea and the US, which is a focused approach.",
+    "Correct: phone and assistant integration is something Meta can't easily copy, making it a strong reason to switch or choose.",
+    "Feature parity plus discounting invites a price war with a leader that has scale and a head start.",
+    "Waiting gives the leader more time to lock in users and developers while the category grows fast."
+   ],
+   "answer": 1,
+   "explanation": "Against an incumbent with most of the market, copying features and cutting price rarely wins. A newcomer does better by using complementary assets the leader doesn't have. For Samsung and Google, that means the Android phone base and Gemini, which can make the glasses work better with what users already own. The reported plan to start in a few markets (South Korea and the US) also fits a focused entry.",
+   "interview_tip": "For 'entering against a leader', anchor on assets the incumbent can't copy and a focused beachhead. Citing a real launch shows you follow the market.",
+   "source": "https://news.jkn.co.kr/editions/english/post/1080289"
+  }
+ ]
+}

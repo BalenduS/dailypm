@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-10",
+   "theme": "Hidden constraints and second-order effects",
+   "count": 30
+  },
+  {
    "date": "2026-11-09",
    "theme": "Decision moments and hidden denominators",
    "count": 30
