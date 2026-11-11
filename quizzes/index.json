@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-11",
+   "theme": "Speed versus safety trade-offs",
+   "count": 30
+  },
+  {
    "date": "2026-11-10",
    "theme": "Hidden constraints and second-order effects",
    "count": 30
