@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-13",
+ "theme": "Trust, density and closed-set decisions",
+ "questions": [
+  {
+   "id": "2026-11-13-01",
+   "topic": "Product Sense",
+   "concept": "Progressive verification: transaction limits before full KYC",
+   "difficulty": "hard",
+   "question": "You're the PM for a payments app for small Indian merchants. 60% of sign-ups abandon during full KYC (PAN, bank proof, shop photo) and never collect a single payment. Compliance allows low-value collections with lighter checks. What's the strongest design?",
+   "options": [
+    "Remove the shop photo and bank proof from KYC for everyone so the flow is shorter and abandonment falls",
+    "Offer a cashback reward to merchants who complete full KYC within 24 hours of signing up",
+    "Let merchants start collecting with a phone and ID check under a capped monthly limit, and ask for full KYC as they approach the cap",
+    "Keep full KYC upfront but split it into five shorter screens with a progress bar to reduce perceived effort"
+   ],
+   "rationales": [
+    "Dropping checks for everyone removes protection for high-value merchants too and likely breaks compliance; it trades risk for growth with no bound.",
+    "A reward adds motivation but leaves the effort before value unchanged, and it pays merchants who would have finished anyway.",
+    "Correct: it delivers value first, bounds risk with a limit, and asks for more verification exactly when the merchant is motivated to give it.",
+    "Chunking helps a little, but merchants still face the full effort before seeing any value, which is the real cause of abandonment."
+   ],
+   "answer": 2,
+   "explanation": "Progressive verification matches the level of checking to the level of risk. Merchants get value (their first payment) before paying the full effort cost, and the KYC request arrives when they have a reason to finish it: lifting the cap. The cap keeps fraud exposure bounded, so trust and growth don't have to be traded off all at once.",
+   "interview_tip": "Interviewers like candidates who see trust and friction as a dial, not a switch. Tying verification to risk level and to the user's moment of motivation shows mature thinking about marketplaces and fintech."
+  },
+  {
+   "id": "2026-11-13-02",
+   "topic": "Product Sense",
+   "concept": "Scarce send budget to signal message intent",
+   "difficulty": "hard",
+   "question": "On a professional networking site, recruiters can message anyone for free. Candidates now ignore most recruiter messages because they are generic mass blasts, and reply rates are falling for everyone, including good recruiters. Which change best fixes the dynamic?",
+   "options": [
+    "Rank recruiter messages in the inbox by the recruiter's company size and brand reputation",
+    "Give recruiters a limited monthly message budget and refund credits when candidates reply, so careful targeting is rewarded",
+    "Add an AI tool that writes more personalised-sounding recruiter messages so candidates engage more often",
+    "Let candidates turn off all recruiter messages with a single privacy toggle in their settings page"
+   ],
+   "rationales": [
+    "Brand ranking helps big companies, not relevant messages, and it buries good recruiters from smaller firms.",
+    "Correct: it changes sender incentives at the source, so volume falls, relevance rises, and the reply signal stays valuable.",
+    "Personalised-sounding blasts are still blasts; once candidates learn this, trust in the channel drops further.",
+    "An opt-out protects some candidates but shrinks the channel for good recruiters too, and it doesn't address why messages are bad."
+   ],
+   "answer": 1,
+   "explanation": "When sending is free, senders over-send and the channel becomes noise, which hurts the very senders who are careful. A scarce budget makes each message cost something, and refunding on reply rewards relevance rather than volume. The scarcity itself becomes a signal to candidates that a message was sent with intent.",
+   "interview_tip": "This tests whether you can spot a tragedy-of-the-commons problem in a two-sided product. Strong answers fix the incentive behind the behaviour instead of adding filters on top of it."
+  },
+  {
+   "id": "2026-11-13-03",
+   "topic": "Product Sense",
+   "concept": "Captions on by default for sound-off feed video",
+   "difficulty": "easy",
+   "question": "Data on a short-video feed shows that most videos are watched with the sound off, often on public transport, and many viewers scroll past talking-head videos in the first two seconds. What's the best product response?",
+   "options": [
+    "Show a pop-up asking viewers to turn their sound on for a better experience when a video starts",
+    "Unmute videos automatically when they start playing so viewers hear the speaker straight away",
+    "Recommend fewer talking-head videos so the feed favours visual content that works without sound",
+    "Auto-generate captions and show them by default on muted playback, with an easy way to turn them off"
+   ],
+   "rationales": [
+    "A pop-up adds friction and asks for behaviour users can't adopt on a crowded train.",
+    "Auto-unmuting in public is embarrassing and is exactly why users mute; it fights the context instead of serving it.",
+    "Down-ranking speech content hurts creators and loses useful content when captions would make it work.",
+    "Correct: it adapts the content to the user's real context and helps both creators and viewers."
+   ],
+   "answer": 3,
+   "explanation": "The context of use is sound-off, so the product should carry meaning without audio. Default captions let talking-head content work in that context without forcing users to change their behaviour. It also helps deaf and hard-of-hearing users, a classic curb-cut benefit.",
+   "interview_tip": "Interviewers listen for whether you design for the context of use. Naming the environment (sound-off, one-handed, in motion) before proposing a fix is a strong signal."
+  },
+  {
+   "id": "2026-11-13-04",
+   "topic": "Product Sense",
+   "concept": "Data-saver mode for users on prepaid data packs",
+   "difficulty": "medium",
+   "question": "A shopping app sees many users in smaller Indian towns open the app, browse two screens, and leave. Research shows they buy small prepaid data packs and worry that image-heavy pages are 'eating their data'. What's the best first change?",
+   "options": [
+    "Compress all product images across the app for every user to cut page sizes in half",
+    "Build a lighter Progressive Web App version and promote it through SMS marketing campaigns",
+    "Partner with telecom operators to offer free data for browsing inside the shopping app",
+    "Add a data-saver mode that loads low-resolution images by default and shows full images only on tap"
+   ],
+   "rationales": [
+    "Global compression hurts image quality for everyone, including users for whom it matters to buying decisions.",
+    "A PWA might help, but it's a large build and a new channel; it doesn't directly answer the data-cost fear in the existing app.",
+    "Zero-rating deals are slow, costly and can raise net-neutrality issues; it's not a first move.",
+    "Correct: it addresses the exact worry (data spend), gives control, and keeps detail available on demand."
+   ],
+   "answer": 3,
+   "explanation": "The stated pain is control over data cost, not just speed. A data-saver mode makes the cost visible and puts users in control, while keeping full images one tap away for the products they care about. It targets the affected segment without lowering quality for users on unlimited plans.",
+   "interview_tip": "Showing you understand users' constraints in emerging markets (data cost, device storage, connectivity) stands out. Strong answers solve for the specific segment rather than degrading the product for all."
+  },
+  {
+   "id": "2026-11-13-05",
+   "topic": "Metrics",
+   "concept": "Payment success rate counted per attempt vs per checkout",
+   "difficulty": "medium",
+   "question": "After your team launched automatic retries for failed card payments, the dashboard shows payment success rate falling from 92% to 85%, yet completed orders rose. The metric is defined as successful payment attempts divided by all attempts. What's the most likely explanation?",
+   "options": [
+    "Retries are causing card networks to decline more payments, which is hiding a real drop in order quality",
+    "Retries add extra attempts to the denominator, so per-attempt success falls even though more checkouts now succeed",
+    "The rise in completed orders is likely a seasonal effect that is masking a real fall in payment success",
+    "Retries are succeeding but are not being logged as successes, so the numerator is under-counted"
+   ],
+   "rationales": [
+    "Possible in theory, but it wouldn't explain more completed orders; nothing suggests networks changed behaviour.",
+    "Correct: the definition is per attempt; retries add hard attempts, so the rate falls while the user outcome improves.",
+    "Seasonality would not explain why the specific success metric moved right at the retry launch.",
+    "A logging bug is possible but it is a less likely first hypothesis than the definitional effect that matches both observations."
+   ],
+   "answer": 1,
+   "explanation": "Each retry is a new attempt, and retries happen only on hard cases, so they fail more often than first tries. That inflates the denominator with low-success attempts and drags the per-attempt rate down, while the share of checkouts that eventually pay goes up. The fix is to report success per checkout (unique payment intent) as the primary metric.",
+   "interview_tip": "Interviewers love denominators. Asking 'per what?' before diagnosing a metric change, and proposing a user-level definition, shows analytical maturity."
+  },
+  {
+   "id": "2026-11-13-06",
+   "topic": "Metrics",
+   "concept": "North Star for a B2B customer-support helpdesk",
+   "difficulty": "easy",
+   "question": "You're choosing a North Star metric for a B2B helpdesk product that support teams use to answer customer tickets. Which is the best choice?",
+   "options": [
+    "Number of new features shipped to the helpdesk each quarter",
+    "Total number of registered agent seats across all accounts",
+    "Weekly tickets resolved by customer teams using the product",
+    "Average time agents spend logged in to the helpdesk each day"
+   ],
+   "rationales": [
+    "Features shipped is an output of the team, not a measure of customer value.",
+    "Seats measure what was sold, not value used; seats can be bought and left idle.",
+    "Correct: it measures the value delivered (resolutions) and tracks engagement that drives retention and expansion.",
+    "Time logged in is ambiguous: a better product could reduce time spent per ticket."
+   ],
+   "answer": 2,
+   "explanation": "A North Star should capture the core value customers get and predict revenue. For a helpdesk, the value is resolving customers' tickets, so weekly tickets resolved reflects real usage and value delivered. It grows when accounts adopt more deeply and when more teams rely on the product.",
+   "interview_tip": "A good North Star answer links the metric to customer value and to the business model. Explaining why the alternatives fail is usually where candidates earn the points."
+  },
+  {
+   "id": "2026-11-13-07",
+   "topic": "Metrics",
+   "concept": "False-decline rate as a guardrail for fraud rules",
+   "difficulty": "medium",
+   "question": "Your risk team proposes a stricter fraud rule that cut fraud losses by 40% in a back-test. As the checkout PM, what is the most important metric to check before agreeing?",
+   "options": [
+    "How quickly the rule runs at checkout, measured as added milliseconds of decision latency",
+    "Whether the rule's fraud catch rate holds up when back-tested on last year's festive-season data",
+    "How many legitimate orders the rule would block, and the revenue and customer lifetime value lost from them",
+    "The total number of orders the rule flags each day compared with the current rule set"
+   ],
+   "rationales": [
+    "Latency is a valid check, but small compared with the economic cost of blocking good customers.",
+    "Robustness over time matters, but it still looks only at fraud caught, not good customers lost.",
+    "Correct: false declines are the hidden cost of fraud rules and usually decide whether a rule is worth it.",
+    "Flag count mixes good and bad orders; it doesn't say whether the flagged orders are fraud or good customers."
+   ],
+   "answer": 2,
+   "explanation": "Fraud rules have two kinds of error: missed fraud and blocked good customers. Back-tests usually report only the first, but false declines are often far more costly, because a declined good customer loses that order and may never come back. The decision should compare fraud saved against good revenue and lifetime value lost.",
+   "interview_tip": "This is a counter-metric question in disguise. Naming the cost of the 'other' error type, and putting both in the same currency, is what interviewers look for."
+  },
+  {
+   "id": "2026-11-13-08",
+   "topic": "Metrics",
+   "concept": "Wider delivery radius slowing average delivery time",
+   "difficulty": "hard",
+   "question": "Average delivery time on your food-delivery app rose from 31 to 35 minutes over two weeks. Ops says couriers aren't slower, and when you split orders by distance band (0-2 km, 2-4 km, 4-6 km), each band's delivery time is flat. What most likely happened?",
+   "options": [
+    "Couriers are taking longer routes in every band, but the effect is too small to see in each band separately",
+    "The distance bands are too wide, so a real slowdown inside each band is being averaged away by the split",
+    "Customers are placing larger orders that take restaurants longer to prepare, which raises total delivery time",
+    "A larger share of orders now comes from longer distances, for example after restaurants' delivery radius was widened"
+   ],
+   "rationales": [
+    "If routes got longer in every band, each band's time would rise; the flat bands rule this out.",
+    "Wide bands can hide some effects, but a real slowdown would still usually show up as at least some band rising.",
+    "Longer prep would raise times within bands too, which the data does not show.",
+    "Correct: flat segments with a rising total is the signature of a mix shift toward the slow segment."
+   ],
+   "answer": 3,
+   "explanation": "If every segment is flat but the overall average rose, the mix of segments changed. More orders in the slower, longer-distance band raise the average without anyone getting slower. A widened delivery radius is a classic cause; the next step is to confirm the share of orders by band and decide whether those longer orders are worth it.",
+   "interview_tip": "Root-cause questions reward a structured split: is it within segments or between them? Saying 'segments are flat, so check the mix' quickly is a strong signal of analytical clarity."
+  },
+  {
+   "id": "2026-11-13-09",
+   "topic": "Experimentation",
+   "concept": "Treating a secondary-metric win as exploratory when the primary is flat",
+   "difficulty": "medium",
+   "question": "Your test of a redesigned product page had add-to-cart rate as its pre-registered primary metric. It came back flat. Of the 12 secondary metrics, one, 'reviews read per visit', is up with p = 0.03. The designer wants to ship and call it a win. What should you do?",
+   "options": [
+    "Treat the reviews result as a hypothesis to retest, since with 12 secondary metrics one false positive at p < 0.05 is likely",
+    "Switch the primary metric to reviews read per visit, since that is where the redesign clearly had an effect",
+    "Ship the redesign, because a statistically significant improvement on any metric means the change worked",
+    "Extend the test until the add-to-cart metric reaches significance, then decide based on its direction"
+   ],
+   "rationales": [
+    "Correct: it respects the multiple-comparisons risk and turns the signal into a falsifiable follow-up test.",
+    "Changing the primary metric after seeing results is p-hacking; it destroys the value of pre-registration.",
+    "Many metrics plus a 5% threshold make a chance 'win' likely; this is the false-positive trap.",
+    "Extending until significance is a form of peeking and biases the result."
+   ],
+   "answer": 0,
+   "explanation": "With 12 secondary metrics each tested at 5%, the chance that at least one shows a 'significant' result by luck is close to 50%. A lone secondary win when the primary is flat is weak evidence and should generate a new, focused test rather than a ship decision. The pre-registered primary metric exists to stop this kind of after-the-fact picking.",
+   "interview_tip": "Interviewers check whether you resist the pull to declare victory. Saying 'promising, so let's run a focused test' shows rigour without dismissing the idea."
+  },
+  {
+   "id": "2026-11-13-10",
+   "topic": "Experimentation",
+   "concept": "Sample size per arm with the 16·p(1−p)/δ² rule",
+   "difficulty": "medium",
+   "question": "Checkout conversion is 10%. You want an A/B test able to detect an absolute lift of 1 percentage point (10% to 11%) at 5% significance and 80% power. Using the rule of thumb n ≈ 16 × p(1 − p) / δ² per arm, roughly how many users do you need in each arm?",
+   "options": [
+    "About 3,600 users per arm",
+    "About 1,440 users per arm",
+    "About 144,000 users per arm",
+    "About 14,400 users per arm"
+   ],
+   "rationales": [
+    "This would fit a 2-point lift (δ = 0.02), not a 1-point lift; halving the effect quadruples the sample.",
+    "This is ten times too small, as if δ were treated as 0.0316 instead of 0.01; it would leave the test badly underpowered.",
+    "This is ten times too large, a decimal slip; over-sizing wastes weeks of traffic.",
+    "Correct: 16 × 0.09 / 0.0001 = 14,400."
+   ],
+   "answer": 3,
+   "explanation": "p(1 − p) = 0.1 × 0.9 = 0.09 and δ = 0.01, so δ² = 0.0001. Then n ≈ 16 × 0.09 / 0.0001 = 14,400 users per arm. The rule bakes in 5% two-sided significance and 80% power, and it shows why small absolute effects on low baselines need large samples.",
+   "interview_tip": "You won't always need exact maths, but quickly sizing a test shows you know whether an idea is testable with your traffic. Mentioning that the needed sample grows with the square of the effect size is a bonus."
+  },
+  {
+   "id": "2026-11-13-11",
+   "topic": "Estimation",
+   "concept": "Annual paid car washes in Bengaluru",
+   "difficulty": "medium",
+   "question": "Estimate the number of paid car washes (at a car wash centre or by a paid cleaner doing a full wash, not daily dusting) in Bengaluru per year. Which is the most reasonable order of magnitude?",
+   "options": [
+    "About 900 million washes a year",
+    "About 9 million washes a year",
+    "About 900,000 washes a year",
+    "About 90 million washes a year"
+   ],
+   "rationales": [
+    "This implies about one paid wash per car per day, confusing daily dusting with paid full washes.",
+    "Correct: 2.5M cars × 30% × 12 washes ≈ 9M.",
+    "This implies about one paid wash per car every three years, far too rare for a dusty, rainy city.",
+    "This would mean every car gets a paid full wash about three times a month, which ignores home washing and cost."
+   ],
+   "answer": 1,
+   "explanation": "Bengaluru has roughly 2.5 million cars. Assume about 30% of owners use a paid full wash, about once a month: 2.5M × 0.3 × 12 ≈ 9 million washes a year. The others rely on home washing or a daily cleaner's dusting, which we exclude by definition. Changing the paying share or frequency moves the answer within the same order of magnitude.",
+   "interview_tip": "Clarify the definition (what counts as a 'wash') before calculating; that alone avoids order-of-magnitude errors. Interviewers reward clear assumptions and a sanity check at the end."
+  },
+  {
+   "id": "2026-11-13-12",
+   "topic": "Estimation",
+   "concept": "Mobile-phone repair shops needed in Pune",
+   "difficulty": "medium",
+   "question": "Estimate how many mobile-phone repair shops Pune can support. Which is the most reasonable order of magnitude?",
+   "options": [
+    "About 1,000 shops",
+    "About 100,000 shops",
+    "About 10,000 shops",
+    "About 100 shops"
+   ],
+   "rationales": [
+    "Correct: about 3M repairs a year divided by about 3,000 repairs per shop gives roughly 1,000 shops.",
+    "100,000 shops would be about one shop per 70 residents, which is not plausible.",
+    "10,000 shops would each get about one repair a day, too little to cover rent.",
+    "100 shops would each need about 100 repairs a day, far beyond a small counter shop's capacity."
+   ],
+   "answer": 0,
+   "explanation": "Pune has about 7 million people and about 6 million phones in use. If each phone needs a paid repair (screen, battery, charging port) about once every two years, that's about 3 million repairs a year. A shop handling about 10 repairs a day for 300 days does 3,000 a year, so Pune supports about 3M / 3,000 ≈ 1,000 shops.",
+   "interview_tip": "Supply-side estimates are demand divided by capacity per unit. Stating both sides clearly, then sanity-checking the per-shop daily load, is what makes the answer convincing."
+  },
+  {
+   "id": "2026-11-13-13",
+   "topic": "Strategy",
+   "concept": "Externalising an internal capability as a product",
+   "difficulty": "easy",
+   "question": "A large Indian e-commerce company has built an excellent internal logistics network with high capacity in tier-2 cities. Leadership asks whether to offer it to other brands as a paid service. What is the strongest argument for doing so?",
+   "options": [
+    "It guarantees higher profit margins because logistics services earn more than retail sales do",
+    "Outside volume spreads fixed costs over more shipments, lowering cost per parcel for the company's own orders too",
+    "It lets the company stop investing in logistics because outside customers will fund future improvements",
+    "Competitors who use the network will become dependent and eventually be forced to sell to the company"
+   ],
+   "rationales": [
+    "Margins aren't guaranteed; logistics can be lower-margin than retail. The benefit is scale, not a sure margin.",
+    "Correct: outside volume improves scale economics for the whole network, which is the core logic of selling internal infrastructure.",
+    "The company would still need to invest; outside customers add demand, they don't replace the owner's investment.",
+    "This is speculative and adversarial; it isn't the main reason, and customers would avoid a partner with that intent."
+   ],
+   "answer": 1,
+   "explanation": "Logistics has high fixed costs (hubs, fleets, software), so extra volume makes every parcel cheaper, including the company's own. Selling a strong internal capability turns a cost centre into a revenue line and a scale advantage. The main risks to manage are capacity conflicts at peak and sharing competitive data.",
+   "interview_tip": "Strategy questions reward naming the economic mechanism (here, fixed-cost leverage) and then the main risk. Mentioning peak-capacity conflicts shows you've thought it through."
+  },
+  {
+   "id": "2026-11-13-14",
+   "topic": "Strategy",
+   "concept": "Order density as the driver of last-mile unit economics",
+   "difficulty": "medium",
+   "question": "A quick-commerce startup loses money on each order. The founder proposes expanding to five new cities to 'get scale'. Each existing dark store's orders per hour are low. What is the most important strategic point to raise?",
+   "options": [
+    "Being first into new cities is critical, because quick-commerce markets always tip to a single winner in each city",
+    "Expanding to more cities will improve unit economics because the startup can negotiate better prices with national suppliers",
+    "The startup should raise delivery fees immediately to make each order profitable before considering any expansion",
+    "Last-mile costs fall with orders per store and per rider hour, so deepening density in current areas matters more than adding cities"
+   ],
+   "rationales": [
+    "Local markets can support several players; racing into new cities while losing money per order scales the losses.",
+    "Some purchasing benefit exists, but it is small next to the fixed cost of each under-used store and rider.",
+    "Pricing may help, but raising fees on low-density stores can cut orders further and worsen utilisation.",
+    "Correct: density drives unit economics in last-mile models; new cities spread thin rather than build density."
+   ],
+   "answer": 3,
+   "explanation": "In last-mile delivery, the main costs (store rent, staff, rider time) are fixed per store or per hour, so they only fall per order when each store handles more orders. New cities add new under-used stores and repeat the loss. The scale that matters is local density, not national footprint.",
+   "interview_tip": "Interviewers test whether you know what 'scale' means for a given business. Separating local density from geographic reach is a crisp, high-signal insight."
+  },
+  {
+   "id": "2026-11-13-15",
+   "topic": "Strategy",
+   "concept": "Private-label products on your own marketplace and seller trust",
+   "difficulty": "hard",
+   "question": "You run a large online marketplace. Leadership wants to launch private-label versions of top-selling items, using marketplace sales data to pick categories and ranking them prominently. Third-party sellers make up 70% of GMV. What is the biggest strategic risk to flag?",
+   "options": [
+    "Launching private label will require new warehouses and supply chains, which will slow the platform's roadmap",
+    "Sellers may see the platform as a competitor using their data, cutting investment, multi-homing elsewhere, and inviting regulatory scrutiny",
+    "Private-label products usually have lower margins than marketplace commissions, so the move will reduce total profit",
+    "Customers prefer known brands, so private-label products will not sell well enough to justify the effort"
+   ],
+   "rationales": [
+    "Operational cost is real but manageable; it's minor next to damaging the 70% of GMV from sellers.",
+    "Correct: the risk is to the trust and neutrality the whole marketplace depends on, plus legal exposure from self-preferencing.",
+    "Private label often has higher margins than commissions, which is why platforms pursue it; margin isn't the main risk.",
+    "Many private labels sell well on price; consumer demand isn't the key concern here."
+   ],
+   "answer": 1,
+   "explanation": "A marketplace's value rests on sellers trusting it as a neutral venue. Using their sales data to pick products and then self-preferencing in ranking turns the platform into a rival with an unfair edge. Sellers respond by investing less, listing elsewhere, or complaining to regulators, which can erode the supply that makes up most GMV.",
+   "interview_tip": "Platform questions often hinge on the conflict between owning a venue and competing in it. Naming seller trust, multi-homing and regulation together shows strategic breadth."
+  },
+  {
+   "id": "2026-11-13-16",
+   "topic": "Execution",
+   "concept": "Premature generalisation before a second customer",
+   "difficulty": "medium",
+   "question": "Your B2B team is building a custom approval workflow for one large customer. The tech lead wants to build a fully configurable workflow engine 'because other customers will want it'. No other customer has asked yet, and the deal closes in 6 weeks. What's the best call?",
+   "options": [
+    "Ask the customer to accept the product's existing approval flow so the team doesn't build anything new",
+    "Delay the deal until product research confirms how many other customers would want a configurable engine",
+    "Build the simplest version that meets this customer's needs with clean seams, and generalise once a second customer shows real demand",
+    "Build the configurable engine now, since rebuilding later for each new customer would cost far more effort overall"
+   ],
+   "rationales": [
+    "If the existing flow met their needs, there'd be no project; this risks the deal.",
+    "Delaying a near-closed deal for speculative research puts revenue at risk for little gain.",
+    "Correct: it protects the deadline, avoids guessing at requirements, and keeps the code ready to generalise.",
+    "This assumes you know what others will need; you often don't, so the engine may be built around the wrong variables."
+   ],
+   "answer": 2,
+   "explanation": "Generalising from one example usually means guessing at the wrong abstractions, and it threatens a fixed deadline. Building the specific version well, with clean code boundaries, meets the commitment and keeps options open. When a second or third customer appears, you'll know which parts really vary and can generalise with evidence.",
+   "interview_tip": "This tests judgment about scope and timing. Strong answers acknowledge the tech lead's concern and give a trigger for when to generalise, rather than just saying 'YAGNI'."
+  },
+  {
+   "id": "2026-11-13-17",
+   "topic": "Execution",
+   "concept": "Tracking postmortem action items to closure",
+   "difficulty": "easy",
+   "question": "Your team runs thorough postmortems after incidents, but the same kind of outage happened three times this year. Each postmortem listed the same fix as an action item. What's the most likely gap?",
+   "options": [
+    "Action items lack a named owner, due date, and tracking in the backlog, so they never get prioritised and closed",
+    "The team is not writing postmortems quickly enough after each incident, so details are being forgotten",
+    "The incident severity levels are set too low, so the outages don't get enough attention from leadership",
+    "The postmortems are not blameless enough, so engineers are hiding the real root cause of the outages"
+   ],
+   "rationales": [
+    "Correct: a repeated identical fix shows the root cause was known; the failure is in execution and tracking.",
+    "Speed of writing helps quality, but the right fix was captured each time, so recall isn't the problem.",
+    "Severity affects attention during the incident, but it doesn't explain why known fixes never shipped.",
+    "If the same fix was identified each time, the root cause was not hidden; blame culture isn't the evidence here."
+   ],
+   "answer": 0,
+   "explanation": "Finding the fix is only half the job; it must be scheduled and done. When the same item appears three times, the analysis was fine but the follow-through failed. Each action item needs an owner, a due date, and a place in the backlog with visibility to leadership until it's closed.",
+   "interview_tip": "Interviewers want PMs who close loops. Talking about owners, dates and review of open action items shows operational discipline."
+  },
+  {
+   "id": "2026-11-13-18",
+   "topic": "Execution",
+   "concept": "Avoiding risky releases right before low-coverage periods",
+   "difficulty": "easy",
+   "question": "Your team is ready to release a major change to the payments flow at 6 pm on Friday before a long weekend, when most engineers will be offline. What's the best decision?",
+   "options": [
+    "Move the release to early in the week, when the team is available to monitor and roll back quickly if needed",
+    "Release on Friday to a small percentage of users so any problems affect fewer people over the weekend",
+    "Release on Friday as planned, since the change has passed all tests and the code is ready to go live",
+    "Release on Friday but turn off monitoring alerts over the weekend so the on-call engineer isn't overloaded"
+   ],
+   "rationales": [
+    "Correct: it pairs a high-risk release with full coverage for detection and rollback.",
+    "A small rollout reduces blast radius, but problems would still sit unnoticed with no one around to act.",
+    "Passing tests doesn't remove production risk; payments issues can be costly and need fast response.",
+    "Turning off alerts during a risky release removes your ability to detect problems; it's the opposite of safe."
+   ],
+   "answer": 0,
+   "explanation": "Risk from a release depends on both the change and the team's ability to respond. A payments change before a long weekend combines high impact with slow detection and slow response. Moving it to when people are available to watch and roll back costs a few days and greatly reduces the downside.",
+   "interview_tip": "Simple, but it shows how you weigh risk: impact times the time to detect and recover. Saying that explicitly makes even an easy answer sound senior."
+  },
+  {
+   "id": "2026-11-13-19",
+   "topic": "Behavioural",
+   "concept": "Resetting expectations after your own overcommitment to a customer",
+   "difficulty": "hard",
+   "question": "Two months ago you told a key enterprise customer a feature would ship by end of quarter. Engineering now says it will take six more weeks because of a dependency you didn't account for. The customer's renewal is next month. What's the best first step?",
+   "options": [
+    "Wait until closer to the date in case engineering finds a faster path, then update the customer if needed",
+    "Ask engineering to cut testing and add weekend work so the original date can still be met before renewal",
+    "Tell the customer promptly, own the mistake, give a realistic date with the reason, and offer an interim option if one exists",
+    "Ask your account manager to tell the customer about the delay, since they own the commercial relationship"
+   ],
+   "rationales": [
+    "Waiting shortens the customer's time to react and makes the eventual news more damaging.",
+    "Cutting testing to save your own promise puts quality at risk for the customer you're trying to protect.",
+    "Correct: it shows ownership and candour and gives the customer time to adjust before renewal.",
+    "The account manager should be in the loop, but handing off your own mistake looks like avoiding accountability."
+   ],
+   "answer": 2,
+   "explanation": "The commitment was yours, so the reset should be too, and early bad news preserves more trust than late bad news. A clear reason, a realistic date and any interim help let the customer plan around the gap, especially with renewal coming. This also shows ownership of your own planning error.",
+   "interview_tip": "Amazon-style 'Earn Trust' and 'Ownership' questions reward candid, early communication. Saying 'I own it' and 'here's what I changed in my planning' makes the story strong."
+  },
+  {
+   "id": "2026-11-13-20",
+   "topic": "Behavioural",
+   "concept": "Responding to an engineering lead's push for a full rewrite",
+   "difficulty": "hard",
+   "question": "Your engineering lead is frustrated with a legacy service and proposes a six-month full rewrite. You think it would stall a roadmap your customers are waiting on, but the lead says the old code slows every feature. What's the best response?",
+   "options": [
+    "Quantify together how much the old code slows delivery and incidents, then compare a full rewrite with targeted rebuilds of the worst parts",
+    "Escalate the decision to your director so that neither of you has to take the trade-off on alone",
+    "Reject the rewrite, because customer-facing features always matter more than internal engineering work",
+    "Approve the rewrite to keep the engineering lead motivated, and tell customers the roadmap will slip by six months"
+   ],
+   "rationales": [
+    "Correct: it respects the lead's concern, grounds the decision in data, and explores options beyond all-or-nothing.",
+    "Escalating before trying to resolve it together signals you can't make trade-offs with your partner.",
+    "Dismissing tech debt ignores a real cost to delivery speed and damages your partnership with engineering.",
+    "Approving to keep morale ignores the customer impact and skips analysis of cheaper alternatives."
+   ],
+   "answer": 0,
+   "explanation": "Both sides have a real point: tech debt can slow every feature, and rewrites often run long. Turning the debate into evidence (time lost per feature, incident cost) gives a shared basis for deciding. Comparing a full rewrite with incremental replacement of the worst parts often finds a path that cuts drag without freezing the roadmap.",
+   "interview_tip": "Interviewers want to see you treat engineering concerns as business concerns. Turning a disagreement into a shared analysis with options is a strong pattern."
+  },
+  {
+   "id": "2026-11-13-21",
+   "topic": "Behavioural",
+   "concept": "Refusing to cherry-pick a date range to flatter results",
+   "difficulty": "hard",
+   "question": "Before a quarterly review, your VP asks you to show the new feature's impact using only the two weeks right after launch, when the lift was +12%. Over the full eight weeks the lift has faded to +2%. What should you do?",
+   "options": [
+    "Refuse to present the feature results at all until the impact has been measured over a full quarter",
+    "Show the full eight weeks, explain the early spike as novelty, and present the +2% with what it means and what's next",
+    "Show the two-week view as asked, since it's accurate data and the VP is responsible for how it's presented",
+    "Show both views but put the two-week result on the headline slide and the full period in the appendix"
+   ],
+   "rationales": [
+    "Refusing to present avoids the problem instead of handling it, and leaves leadership without information.",
+    "Correct: it protects decision quality and your credibility while still telling a useful story.",
+    "The two-week data is accurate but chosen to mislead; presenting it makes you part of the distortion.",
+    "Headlining the flattering number still misleads; most readers never reach the appendix."
+   ],
+   "answer": 1,
+   "explanation": "Picking a flattering window gives leadership a false picture and leads to bad decisions about where to invest. The honest presentation is the full period, with a clear story about why early lift faded and what that implies. You can still frame it constructively, for example what the team learned and the next bet.",
+   "interview_tip": "This is an integrity question. Strong candidates disagree respectfully, explain the risk of the flattering view, and offer a better way to tell the story."
+  },
+  {
+   "id": "2026-11-13-22",
+   "topic": "AI Product",
+   "concept": "NDCG rewards ranking relevant items higher",
+   "difficulty": "medium",
+   "question": "You're comparing two recommendation models offline. Both put the same 3 relevant items in their top 10, but Model A puts them at positions 1, 2 and 3 while Model B puts them at 8, 9 and 10. Which metric would show A is better while precision@10 would show them as equal?",
+   "options": [
+    "Coverage, because it measures how much of the catalogue the model recommends to users",
+    "Recall@10, because it measures the share of all relevant items that appear in the top ten",
+    "Accuracy, because it counts how many of the items were classified correctly as relevant",
+    "NDCG@10, because it discounts relevant items that appear lower in the ranked list"
+   ],
+   "rationales": [
+    "Coverage measures catalogue diversity across users, not ranking quality for one list.",
+    "Recall@10 is the same for both, because both include the same 3 relevant items in the top 10.",
+    "Accuracy isn't a ranking metric and ignores order entirely.",
+    "Correct: NDCG weights by position, so A scores higher than B."
+   ],
+   "answer": 3,
+   "explanation": "Precision@10 and recall@10 only count whether relevant items are in the top 10, not where. NDCG (normalised discounted cumulative gain) gives more credit to relevant items near the top, matching how users actually look at lists. It's the standard choice when position matters.",
+   "interview_tip": "Knowing which metric fits ranking, and why position matters, shows ML fluency. Tie it to user behaviour: people mostly look at the top few results."
+  },
+  {
+   "id": "2026-11-13-23",
+   "topic": "AI Product",
+   "concept": "Target leakage from features recorded after the outcome",
+   "difficulty": "hard",
+   "question": "Your team's churn model scores 0.97 AUC offline but performs poorly once deployed. You learn one feature is 'number of support tickets tagged cancellation-request', which is mostly filled in by agents during the cancellation call. What is the problem?",
+   "options": [
+    "The model is overfitting because it has too many features, and needs regularisation to generalise better",
+    "The deployment data has drifted since training, so the model needs to be retrained on more recent data",
+    "The feature is recorded as part of the outcome, so it leaks the answer in training but isn't known early enough to help in production",
+    "The AUC metric is unreliable for churn problems, so the team should use precision and recall instead"
+   ],
+   "rationales": [
+    "Overfitting can cause gaps, but the specific feature here explains the near-perfect score directly.",
+    "Drift is a common cause of decay, but the jump from 0.97 to poor right after launch points to leakage.",
+    "Correct: the feature is a by-product of churn, so it inflates offline scores and disappears in real use.",
+    "AUC is fine for churn; the issue is the input feature, not the metric."
+   ],
+   "answer": 2,
+   "explanation": "Target leakage happens when a feature contains information that only exists because of the outcome. Here, the ticket tag is created as the customer cancels, so in training it nearly reveals the label, but at prediction time (weeks before churn) it is empty. Remove features that aren't available at the moment the prediction is made.",
+   "interview_tip": "A 'too good to be true' offline score is a classic interview setup. Asking 'is each feature available at prediction time?' is the high-signal response."
+  },
+  {
+   "id": "2026-11-13-24",
+   "topic": "AI Product",
+   "concept": "Approximate nearest neighbour index: recall vs latency",
+   "difficulty": "medium",
+   "question": "Your semantic search over 200 million product embeddings is too slow with exact nearest-neighbour search. Engineering proposes an approximate nearest neighbour (ANN) index. What trade-off should you understand before agreeing?",
+   "options": [
+    "ANN removes the need for embeddings, matching queries to products directly using keyword overlap",
+    "ANN is much faster but may miss some true nearest neighbours, so you tune its settings to balance recall against latency and cost",
+    "ANN returns exactly the same results as exact search but needs much more storage for the extra index structures",
+    "ANN only works for text embeddings, so image and product embeddings will need a separate exact search"
+   ],
+   "rationales": [
+    "ANN is a way to search embeddings faster; it doesn't replace them with keywords.",
+    "Correct: the core trade-off is recall versus speed and cost, which you tune and measure.",
+    "ANN doesn't promise identical results; small recall loss is the price of speed.",
+    "ANN works on any vectors, including image and product embeddings."
+   ],
+   "answer": 1,
+   "explanation": "ANN indexes (like HNSW or IVF) search a smart subset of the space instead of comparing against every vector. That makes search far faster at scale but can occasionally miss a true nearest neighbour. Index settings let you trade recall for speed and cost, so you should measure recall on your own queries at the chosen settings.",
+   "interview_tip": "You don't need to know HNSW internals, but you should know that speed at scale costs some recall. Proposing to measure recall@k at the chosen settings shows good product-engineering judgment."
+  },
+  {
+   "id": "2026-11-13-25",
+   "topic": "AI Product",
+   "concept": "F1 score as the harmonic mean of precision and recall",
+   "difficulty": "easy",
+   "question": "A spam classifier has precision of 0.90 and recall of 0.60. Which statement about its F1 score is correct?",
+   "options": [
+    "F1 is 0.72, the harmonic mean, which is pulled toward the weaker of precision and recall",
+    "F1 is 0.54, the product of precision and recall, showing the combined error rate",
+    "F1 is 0.90, because F1 reports the higher of precision and recall for the model",
+    "F1 is 0.75, the simple average of precision and recall, giving them equal weight"
+   ],
+   "rationales": [
+    "Correct: 2 × 0.54 / 1.5 = 0.72, below the simple average because of the imbalance.",
+    "0.54 is P × R, not F1; the formula also doubles it and divides by the sum.",
+    "F1 doesn't take the maximum; that would hide the weak recall.",
+    "0.75 is the arithmetic mean; F1 uses the harmonic mean, which is lower when the two differ."
+   ],
+   "answer": 0,
+   "explanation": "F1 = 2 × P × R / (P + R) = 2 × 0.9 × 0.6 / 1.5 = 0.72. As a harmonic mean, it penalises imbalance: a model can't get a high F1 by being great at one and poor at the other. That's why it's useful as a single summary when both error types matter.",
+   "interview_tip": "Know the formula and, more importantly, when F1 is the wrong choice, for example when one error type is far more costly than the other."
+  },
+  {
+   "id": "2026-11-13-26",
+   "topic": "AI Product",
+   "concept": "Fixed workflow vs open-ended agent for a predictable process",
+   "difficulty": "medium",
+   "question": "You're automating invoice processing: extract fields, match to a purchase order, flag mismatches, and route for approval. The steps are the same every time. A teammate wants a fully autonomous agent that decides its own steps. What's the better design?",
+   "options": [
+    "A fixed workflow that calls an LLM only for the steps that need it, such as field extraction, with code handling the rest",
+    "A fully autonomous agent, because it can handle new types of invoices without anyone changing the code",
+    "A multi-agent system where separate agents negotiate with each other over how each invoice should be handled",
+    "A single large prompt that asks the model to do all the steps at once and return the final routing decision"
+   ],
+   "rationales": [
+    "Correct: it uses the model where it helps and keeps a predictable, testable process everywhere else.",
+    "Autonomy adds cost, latency and unpredictable failures to a process that doesn't need it.",
+    "Multi-agent setups add even more coordination complexity to a simple, linear process.",
+    "One big prompt mixes steps, is hard to debug and test, and makes errors harder to locate."
+   ],
+   "answer": 0,
+   "explanation": "When the steps are known and stable, a fixed workflow is cheaper, faster, easier to test and more predictable than an agent choosing its own path. The LLM adds value where judgment on messy input is needed, like reading invoices. Autonomous agents earn their cost when the path genuinely varies and can't be scripted.",
+   "interview_tip": "Interviewers like candidates who don't reach for agents by default. Matching autonomy to how variable the task is shows practical AI product sense."
+  },
+  {
+   "id": "2026-11-13-27",
+   "topic": "Technology",
+   "concept": "Deep links routing users into in-app content",
+   "difficulty": "easy",
+   "question": "Your marketing email links to a specific product, but users who tap it on their phone land on the app's home screen and have to search for the product again. What should engineering implement?",
+   "options": [
+    "A QR code in the email that users can scan with their phone camera to reach the product",
+    "A web-only landing page for every email so that users never get sent into the app at all",
+    "A push notification sent after the email, prompting the user to search for the product in the app",
+    "Deep links that open the app directly to the product page, and fall back to the web page if the app isn't installed"
+   ],
+   "rationales": [
+    "QR codes don't work well when the user is already reading on their phone.",
+    "Avoiding the app can help, but it gives up the app's better conversion for users who have it installed.",
+    "A follow-up push adds noise and still makes the user search; it doesn't fix the broken link.",
+    "Correct: deep links take users straight to the content, with a sensible fallback."
+   ],
+   "answer": 3,
+   "explanation": "Deep links (such as universal links on iOS and app links on Android) carry the user to a specific screen inside the app. With a web fallback, users without the app still reach the product. This removes the extra search step, which is a common source of drop-off in campaigns.",
+   "interview_tip": "Basic mobile plumbing comes up in growth and technical rounds. Mentioning the 'not installed' fallback shows you think about edge cases."
+  },
+  {
+   "id": "2026-11-13-28",
+   "topic": "Technology",
+   "concept": "Database connection pool exhaustion under load",
+   "difficulty": "medium",
+   "question": "During a sale, your checkout service starts timing out even though database CPU is only at 30%. Logs show requests waiting to get a database connection. A few slow queries for a new 'recommended for you' widget hold connections for several seconds. What is happening?",
+   "options": [
+    "Slow queries are holding connections, so the fixed-size connection pool runs out and other requests wait even though the database isn't busy",
+    "The network between the service and the database is congested, which is delaying every query equally",
+    "The database is overloaded and needs a bigger server, because CPU usage will climb as traffic keeps rising",
+    "The checkout service has a memory leak, which is slowing down every request as the sale goes on"
+   ],
+   "rationales": [
+    "Correct: waiting for connections with low CPU points to pool exhaustion caused by slow, long-held queries.",
+    "Network congestion would slow all queries, not show up as requests waiting to get a connection.",
+    "Low CPU suggests the database has capacity; a bigger server wouldn't fix connections held by slow queries.",
+    "A memory leak would show different symptoms; the logs point specifically to waiting for connections."
+   ],
+   "answer": 0,
+   "explanation": "Services share a limited pool of database connections. If some queries hold connections for seconds, the pool fills up and fast queries queue behind them, causing timeouts while the database itself has spare capacity. Fixes include speeding up or isolating the slow queries, setting timeouts, and giving critical paths like checkout their own pool.",
+   "interview_tip": "Reading a symptom (low CPU, high waits) and naming the bottleneck shows real technical fluency. Proposing to isolate the critical path is the product-minded follow-up."
+  },
+  {
+   "id": "2026-11-13-29",
+   "topic": "Growth",
+   "concept": "Seeding lookalike audiences with high-LTV customers",
+   "difficulty": "easy",
+   "question": "A D2C skincare brand runs paid social ads using a lookalike audience built from all past buyers. Many new customers buy once on discount and never return. What's the best change to the lookalike seed?",
+   "options": [
+    "Build the seed from everyone who visited the website, so the audience is larger and cheaper to reach",
+    "Stop using lookalike audiences and target broad age and gender groups to reach a wider set of buyers",
+    "Build the seed from repeat, high-lifetime-value customers so the platform finds people similar to the best buyers",
+    "Build the seed from customers who used a discount code, since they responded most strongly to past ads"
+   ],
+   "rationales": [
+    "A visitor seed is larger but lower intent, so it would bring even weaker buyers.",
+    "Broad targeting throws away useful signal and usually lowers quality further.",
+    "Correct: the seed defines who you get; better seed customers bring better new customers.",
+    "Discount users are exactly the low-retention group causing the problem."
+   ],
+   "answer": 2,
+   "explanation": "A lookalike audience copies the traits of its seed. If the seed includes many one-time discount buyers, the platform finds more of them. Seeding with repeat, high-value customers aims acquisition at people likely to stay, which improves LTV even if cost per first purchase rises a little.",
+   "interview_tip": "Growth interviewers like candidates who optimise acquisition for downstream value, not just cheap first conversions. Linking the input (seed) to the outcome (LTV) is the key move."
+  },
+  {
+   "id": "2026-11-13-30",
+   "topic": "Current Events",
+   "concept": "Gemini Decisions API zero-output-cost closed-set scoring (Nov 2026)",
+   "difficulty": "medium",
+   "question": "On Nov 11, 2026, Google CEO Sundar Pichai announced a Gemini Decisions API, reported as built for closed-set choices (yes/no, multiple choice with up to 255 options, rubric scoring) and priced at $0.10 per million input tokens with $0 for output tokens. Which use case fits it best?",
+   "options": [
+    "Writing long product descriptions for a new catalogue of several thousand fashion items",
+    "Labelling millions of support tickets into a fixed list of categories and urgency levels every day",
+    "Drafting personalised replies to each customer support ticket in the brand's own tone of voice",
+    "Running a multi-step agent that books travel by searching sites and filling in booking forms"
+   ],
+   "rationales": [
+    "Long descriptions are free-form generation, where output tokens are the main product.",
+    "Correct: fixed labels at high volume match closed-set scoring and benefit most from zero output pricing.",
+    "Personalised replies are open-ended text generation, which a closed-set decision model isn't built for.",
+    "Agentic booking needs planning and tool use across steps, not a single closed-set choice."
+   ],
+   "answer": 1,
+   "explanation": "Per the reports, the API scores inputs against a fixed set of answers rather than generating free text. High-volume classification into a known label set is exactly that shape, and charging only for input tokens makes it cheap at scale. Tasks that need open-ended text or multi-step actions still need a generative model or an agent.",
+   "interview_tip": "When a new AI product launches, interviewers may ask where it fits. Matching the model's shape (closed-set vs generative) and pricing to the use case is the strong answer.",
+   "source": "https://gokhshtein.com/news/2026-11-11-sundar-pichai-launches-gemini-decisions-api-with-new-pricing"
+  }
+ ]
+}
