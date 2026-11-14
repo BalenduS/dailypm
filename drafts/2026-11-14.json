@@ -1,0 +1,513 @@
+{"date": "2026-11-14", "theme": "Hidden causes, honest signals and earning trust", "questions": [
+{"topic": "Product Sense", "concept": "Structured make-an-offer to replace free-form haggling", "difficulty": "hard",
+ "question": "You're the PM for a used-goods marketplace in India. Buyers and sellers haggle in chat; 70% of chats end with no sale, and sellers complain about lowball messages and 'is this available?' spam. What's the strongest product change?",
+ "options": [
+  "Add a 'Make an offer' button: the buyer sends a binding price, the seller accepts, declines or counters once, and an accepted offer reserves the item",
+  "Hide the chat entirely and show only fixed prices, so buyers must pay the listed price or move on to another listing",
+  "Add AI-suggested reply templates to the chat so sellers can answer lowball and availability messages faster",
+  "Show each buyer's past chat-to-purchase rate on their profile so sellers can ignore buyers who rarely complete a deal"
+ ],
+ "answer": 0,
+ "explanation": "The root problem is that free-form chat makes negotiation costly and non-committal for both sides. A structured offer turns a vague conversation into a clear, binding proposal with a small set of responses, which filters out time-wasters and shortens the path to a deal. It keeps price flexibility, which used-goods buyers expect, while giving sellers control and less noise.",
+ "rationales": [
+  "Correct: it keeps negotiation but makes it structured and committal, cutting noise for sellers and speeding up deals for serious buyers.",
+  "Removing negotiation ignores a core expectation in used-goods markets, where prices are uncertain; many buyers would simply leave.",
+  "Faster replies treat the symptom; sellers still handle the same volume of low-intent messages with no commitment behind them.",
+  "Exposing buyer scores adds friction and penalises new buyers who have no history, while doing nothing to make negotiation itself work better."
+ ],
+ "interview_tip": "Marketplace product-sense prompts reward candidates who spot the transaction cost hidden in a flow. Naming the mechanism (commitment and structure) is stronger than adding features around the broken step."},
+{"topic": "Product Sense", "concept": "Automatic delay credits instead of claim-based compensation", "difficulty": "medium",
+ "question": "On a food-delivery app, orders that arrive 20+ minutes late are refunded only if the user contacts support. Late orders have 3x the churn of on-time ones, and support costs are rising. Which change best fixes the experience?",
+ "options": [
+  "Detect the delay automatically and credit the user in-app with a short apology before they ask, with no claim needed",
+  "Add a 'Report late order' button on the order page so users can claim compensation without waiting for an agent",
+  "Increase the promised delivery time for all orders by ten minutes so fewer orders count as late",
+  "Send a survey after every late order asking users to rate how upset they were about the delay"
+ ],
+ "answer": 0,
+ "explanation": "The company already knows when an order is late, so making the user ask is extra effort at the worst moment. Proactive credits turn a failure into a recovery: users feel respected, support contacts fall, and only those who never would have complained get something extra. Service recovery done without being asked often builds more loyalty than the failure cost.",
+ "rationales": [
+  "Correct: the system has the delay data, so acting on it removes effort, reduces contacts, and shows the user you noticed.",
+  "Self-serve claims lower effort somewhat, but users still have to notice, be annoyed and take action; many will churn without ever claiming.",
+  "Padding every ETA makes the product feel slower for everyone and hides the problem rather than repairing trust when it happens.",
+  "A survey adds more effort for an already unhappy user and gives no remedy, so it measures the damage without reducing it."
+ ],
+ "interview_tip": "Interviewers like candidates who use data the company already has to remove user effort. Mention the cost trade-off (credits paid to users who wouldn't have complained) and how you'd size it against churn saved."},
+{"topic": "Product Sense", "concept": "Explicit 'not interested' control with visible feed change", "difficulty": "medium",
+ "question": "Users of a short-video app say their feed 'keeps showing stuff I hate', yet the app only learns from watch time and skips. What's the best product response?",
+ "options": [
+  "Add a 'Not interested' action on each video that removes similar content immediately and briefly confirms what the feed will show less of",
+  "Increase the weight of skips in the ranking model so videos users swipe past quickly are shown less often over time",
+  "Add a settings page where users can pick their favourite topics from a long list during a one-time setup",
+  "Show a pop-up survey every 50 videos asking users how satisfied they are with their feed overall"
+ ],
+ "answer": 0,
+ "explanation": "Implicit signals are ambiguous: a quick skip might mean boredom or a mis-tap, and users have no way to say 'never this'. An explicit, in-context control captures strong negative intent at the moment it's felt, and visible feedback ('You'll see fewer videos like this') makes users trust that the system listened. That sense of control matters as much as the ranking change itself.",
+ "rationales": [
+  "Correct: it captures clear negative intent in context and shows users the feed responded, which rebuilds trust and control.",
+  "Better use of skips may help a bit, but skips stay noisy and users still feel unheard because nothing they do visibly changes the feed.",
+  "Up-front topic picking is effortful, goes stale as tastes change, and doesn't let users react to the specific video that bothered them.",
+  "A periodic survey interrupts viewing and gives a coarse score with no link to which content was the problem."
+ ],
+ "interview_tip": "For recommendation products, strong candidates separate implicit and explicit signals and talk about perceived control, not just model accuracy. Mentioning the visible confirmation shows attention to user trust."},
+{"topic": "Product Sense", "concept": "Purchase-time authentication to prevent accidental in-app purchases by children", "difficulty": "hard",
+ "question": "A mobile game popular with families sees rising refund requests and app-store complaints: children on parents' phones are buying gem packs with one tap. Revenue from these packs is significant. What's the best design?",
+ "options": [
+  "Require a fresh device authentication (fingerprint, face or PIN) for every purchase above a small amount, and offer an easy refund for first-time accidental buys",
+  "Remove all gem packs above a certain price so that any accidental purchase a child makes is small enough to ignore",
+  "Add a confirmation dialog that asks 'Are you sure?' before each purchase, with the confirm button in a different colour",
+  "Ask users for their age when they first open the game and block purchases for anyone who says they are under 18"
+ ],
+ "answer": 0,
+ "explanation": "The problem is that the person tapping isn't the person paying. Authentication at the moment of purchase checks the payer cheaply and reliably, while low-value buys stay smooth. A clear refund path for genuine mistakes protects trust and app-store standing. This keeps legitimate revenue while removing the revenue that would have turned into refunds and complaints anyway.",
+ "rationales": [
+  "Correct: it verifies the payer at the risky moment with little friction for adults, and a refund path handles the mistakes that still happen.",
+  "Capping prices cuts revenue from adults who want bigger packs, and repeated small accidental buys still add up.",
+  "Children tap through 'Are you sure?' dialogs easily, so it adds friction for adults without stopping the actual problem.",
+  "Self-declared age is easy to bypass, and on a shared phone the parent's account is already logged in, so the check doesn't reach the child."
+ ],
+ "interview_tip": "This tests whether you identify the real user in the moment (child) versus the account owner (parent). Strong answers balance revenue, trust and platform policy instead of maximising only one."},
+{"topic": "Metrics", "concept": "Rain-driven courier shortage behind a city order drop", "difficulty": "hard",
+ "question": "Saturday orders fell 12% in Mumbai only. App version, payments and marketing look normal. Sessions are flat, but conversion from menu to checkout fell and the 'no delivery partners available' error rose sharply. What's the most likely root cause and next check?",
+ "options": [
+  "Heavy rain cut the number of active couriers, raising ETAs and unavailability; check weather data against courier log-ins and ETA by hour",
+  "A competitor ran a big discount in Mumbai on Saturday; check social media and competitor apps for promotions in the city",
+  "Users' demand for food dropped because of a local holiday; check the city calendar for festivals or events that day",
+  "A ranking change pushed popular restaurants down the list; check the restaurant ranking experiment logs for the weekend"
+ ],
+ "answer": 0,
+ "explanation": "Flat sessions mean demand showed up; the drop happens later in the funnel, and the spike in 'no partners available' points to the supply side. A city-specific weather event like heavy rain reduces couriers on the road and raises ETAs, which in turn lowers conversion. Matching courier log-ins and ETAs to rainfall by hour would confirm it quickly.",
+ "rationales": [
+  "Correct: the evidence (flat sessions, rising unavailability errors) points to a supply shortage, and rain is a common, city-specific cause.",
+  "A competitor promo would mostly reduce sessions or app opens, not raise 'no delivery partners available' errors.",
+  "Lower demand would show up as fewer sessions, but sessions were flat; users came and then couldn't order.",
+  "A ranking change would affect conversion but wouldn't explain a jump in courier-unavailable errors, and would likely not be Mumbai-only."
+ ],
+ "interview_tip": "Root-cause questions reward reading the funnel to locate the break: demand vs supply, top vs bottom. Saying which data rules options in or out is what interviewers listen for."},
+{"topic": "Metrics", "concept": "Query reformulation rate as a search dissatisfaction signal", "difficulty": "medium",
+ "question": "You own search in a grocery app. Click-through on results is stable, but you suspect quality is slipping. Which metric best captures users not finding what they want?",
+ "options": [
+  "The share of searches followed within seconds by a new, edited query from the same user",
+  "The total number of searches per day, since more searches means users rely on search more",
+  "The average number of results shown per query, since more results means better coverage",
+  "The share of searches that come from the home screen rather than from a category page"
+ ],
+ "answer": 0,
+ "explanation": "When users quickly retype or tweak a query, it usually means the first results didn't satisfy them. Reformulation rate is a direct behavioural signal of search failure that clicks can miss, since people sometimes click a poor result before giving up. Tracking it by query type helps find which searches are breaking.",
+ "rationales": [
+  "Correct: quick reformulations are a strong sign the first results failed, and they catch dissatisfaction that clicks alone hide.",
+  "More searches can mean worse quality, because users are searching again and again; volume alone is ambiguous.",
+  "More results doesn't mean better results; relevance, not count, decides whether users find their item.",
+  "Entry point says where search starts, not whether it succeeded, so it can't detect slipping quality."
+ ],
+ "interview_tip": "Search metric questions test whether you know behavioural signals beyond clicks. Mentioning reformulation, zero-result rate, and time to add-to-cart together shows depth."},
+{"topic": "Metrics", "concept": "Traffic-weighted vs simple average of segment conversion rates", "difficulty": "easy",
+ "question": "City A has 90,000 visits at 2% conversion and City B has 10,000 visits at 10% conversion. A dashboard reports 'average conversion = 6%'. What is the actual overall conversion rate?",
+ "options": [
+  "2.8%, because overall conversion must weight each city by its number of visits",
+  "6%, because the average of the two city rates is the overall conversion rate",
+  "10%, because the best-performing city sets the ceiling for the overall rate",
+  "4%, because overall conversion is the midpoint between the median and mean"
+ ],
+ "answer": 0,
+ "explanation": "Overall conversion is total conversions divided by total visits: (1,800 + 1,000) / 100,000 = 2.8%. A simple average of rates treats a small city the same as a large one, which badly overstates performance here. Always check whether a dashboard average is weighted by volume.",
+ "rationales": [
+  "Correct: 2,800 conversions over 100,000 visits gives 2.8%, weighting each city by its traffic.",
+  "Averaging rates ignores that City A has nine times the traffic, so it overstates conversion by more than double.",
+  "The best segment doesn't set the overall rate; the large low-converting city pulls the total down.",
+  "There is no rule that overall conversion sits between a median and a mean; it is simply total conversions over total visits."
+ ],
+ "interview_tip": "Simple arithmetic traps are common in analytical rounds. Doing the weighted calculation out loud and naming the error shows you won't be misled by a dashboard."},
+{"topic": "Metrics", "concept": "One-off pulse vs lasting level shift in a DAU jump", "difficulty": "medium",
+ "question": "DAU jumped 15% on Tuesday. You find a push notification was accidentally sent to all users, including dormant ones. Leadership asks whether engagement has 'stepped up'. What's the best way to answer?",
+ "options": [
+  "Track the reactivated users over the next few weeks to see if DAU settles back to the old level or stays higher",
+  "Report that engagement stepped up by 15%, since the notification shows users are still interested in the product",
+  "Remove Tuesday from the data entirely and report that nothing happened, since the send was a mistake",
+  "Compare Tuesday's DAU with the same Tuesday last year to see if the jump is larger than normal seasonality"
+ ],
+ "answer": 0,
+ "explanation": "A one-off trigger usually creates a pulse that fades, not a lasting shift. Following the cohort that came back shows whether any of them stuck, which is the real question. The accident may even be a useful natural experiment about reactivating dormant users, but only the follow-up data can say so.",
+ "rationales": [
+  "Correct: it separates a temporary spike from a lasting change by watching whether the extra users keep coming back.",
+  "Calling it a step-up confuses a one-day pulse with a trend; DAU will likely fall back as the notification's effect fades.",
+  "Deleting the data throws away a useful signal about dormant-user reactivation and hides a real event from leadership.",
+  "Year-over-year comparison handles seasonality, but the cause is already known; the open question is whether the effect lasts."
+ ],
+ "interview_tip": "Interviewers want to see you distinguish pulses from level shifts and use follow-up cohorts. Turning an accident into a learning opportunity is a nice extra signal."},
+{"topic": "Experimentation", "concept": "Acting on a pre-specified heterogeneous treatment effect", "difficulty": "hard",
+ "question": "Before a test of a simplified home screen, you pre-registered new vs. tenured users as a key cut. Result: overall engagement is flat; new users +6% (significant), tenured users −4% (significant). What's the best decision?",
+ "options": [
+  "Ship the simplified screen to new users only, keep the current one for tenured users, and confirm with a follow-up test",
+  "Don't ship, because the overall result is flat and segment results should never change a launch decision",
+  "Ship to everyone, because the new-user gain matters more for growth than the small tenured-user loss",
+  "Re-run the test with a larger sample until the overall result becomes significant one way or the other"
+ ],
+ "answer": 0,
+ "explanation": "Because the segment cut was planned in advance and both effects are significant, this is a real difference in how groups respond, not post-hoc fishing. A flat average simply hides one group gaining and the other losing. Targeting the change where it helps captures the win without hurting tenured users, and a confirmation test guards against chance.",
+ "rationales": [
+  "Correct: a pre-registered, significant split is a reason to target, and a follow-up test confirms it before full commitment.",
+  "Segment results from planned cuts are valid evidence; ignoring them leaves a clear win for new users on the table.",
+  "Shipping to everyone knowingly harms tenured users, often the most valuable ones, to chase a gain you could get by targeting.",
+  "A bigger sample may make the average significant, but the average is the wrong number when two groups move in opposite directions."
+ ],
+ "interview_tip": "Interviewers probe whether you know the difference between pre-registered and post-hoc segments. Explaining why the average misleads here, and proposing targeting with confirmation, shows mature judgement."},
+{"topic": "Experimentation", "concept": "Cookie churn diluting a long logged-out experiment", "difficulty": "medium",
+ "question": "You run a four-week test on a travel site's logged-out landing page, randomizing by browser cookie. Many visitors clear cookies or switch devices. What's the main risk to the results?",
+ "options": [
+  "The same person can land in both arms over time, mixing exposure and biasing the measured effect toward zero",
+  "Cookie clearing makes the test run faster, because each new cookie counts as an extra user in the sample",
+  "Users who clear cookies are always more price sensitive, so the test will overstate the effect of the change",
+  "Cookies only affect page load speed, so the main risk is a latency difference between the two variants"
+ ],
+ "answer": 0,
+ "explanation": "When a cookie resets, the same person gets a new random assignment, so over weeks many people see both variants. That contamination blurs the difference between arms and makes real effects look smaller. Shorter tests, logged-in randomization where possible, or measuring first-visit outcomes reduce the problem.",
+ "rationales": [
+  "Correct: reassignment after cookie resets means people see both versions, which dilutes the true difference.",
+  "More cookies inflate the user count but don't add independent people, so it creates false confidence rather than a faster valid test.",
+  "There's no basis for assuming cookie-clearers are always more price sensitive; the clear risk is mixed exposure, not a fixed bias in one direction.",
+  "Cookies are used for assignment and identity here; latency isn't the issue that cookie churn creates."
+ ],
+ "interview_tip": "Knowing how the randomization unit breaks in practice is a sign of real experimentation experience. Mention the direction of the bias and one practical fix."},
+{"topic": "Estimation", "concept": "Annual salon visits in Mumbai", "difficulty": "medium",
+ "question": "Roughly how many salon or barber visits happen in Mumbai metro in a year? Assume about 20 million people.",
+ "options": [
+  "About 120 million visits",
+  "About 12 million visits",
+  "About 1.2 billion visits",
+  "About 400 million visits"
+ ],
+ "answer": 0,
+ "explanation": "Split by gender. Men: about 10.4 million; roughly 85% use a salon or barber about 10 times a year, giving about 88 million visits. Women: about 9.6 million; perhaps 60% visit about 6 times a year for haircuts, threading or other services, giving about 35 million. Total is roughly 120 million visits a year, or about 6 per person.",
+ "rationales": [
+  "Correct: about 88 million visits from men plus about 35 million from women gives roughly 120 million a year.",
+  "12 million would mean less than one visit per person per year, far below a typical haircut cycle of every few weeks for men.",
+  "1.2 billion would mean about 60 visits per person a year, or more than one a week, which is unrealistic.",
+  "400 million implies about 20 visits per person per year across the whole population, including children and people who cut hair at home."
+ ],
+ "interview_tip": "Segmenting by a driver that changes behaviour (here gender and frequency) is what interviewers look for. Ending with a sanity check like 'about 6 visits per person' shows you test your own answer."},
+{"topic": "Estimation", "concept": "Monthly LLM cost of an AI pull-request review bot", "difficulty": "medium",
+ "question": "A company with 500 engineers adds an AI code-review bot. Each engineer opens 4 pull requests a week, the bot runs about 3 times per PR (on each push), and each run uses 30,000 input and 2,000 output tokens. Prices are $3 per million input tokens and $15 per million output tokens. Roughly what is the monthly cost?",
+ "options": [
+  "About $3,000 per month",
+  "About $300 per month",
+  "About $30,000 per month",
+  "About $300,000 per month"
+ ],
+ "answer": 0,
+ "explanation": "PRs per month: 500 × 4 × 4.33 ≈ 8,660. Runs: × 3 ≈ 26,000. Input: 26,000 × 30,000 = 780 million tokens × $3/M ≈ $2,340. Output: 26,000 × 2,000 = 52 million tokens × $15/M ≈ $780. Total ≈ $3,100 a month, or about $6 per engineer, which is tiny next to engineering salaries.",
+ "rationales": [
+  "Correct: about $2,340 for input plus about $780 for output gives roughly $3,100 a month.",
+  "$300 would require about ten times fewer tokens; it likely forgets to multiply by runs per PR or uses weekly instead of monthly volume.",
+  "$30,000 is ten times too high, which often comes from pricing input tokens at the output rate.",
+  "$300,000 is off by a factor of 100, usually from treating tokens as thousands instead of millions in the price."
+ ],
+ "interview_tip": "AI cost estimates are now common in PM loops. Showing the input/output split, the multiplier for repeated runs, and a per-user sanity check signals strong technical and business fluency."},
+{"topic": "Strategy", "concept": "Competing against non-consumption", "difficulty": "hard",
+ "question": "You're launching simple accounting software in India. Incumbents serve mid-size firms well. Most of the 60 million small shops keep handwritten ledgers or nothing at all. What's the strongest positioning?",
+ "options": [
+  "Target the shops that use no software today: a phone-first, very simple app that beats a paper ledger, not the incumbents",
+  "Match the incumbents' full feature set at a lower price and win mid-size firms by being the cheaper option",
+  "Build advanced features incumbents lack, such as multi-entity consolidation, to win their most demanding customers",
+  "Partner with incumbents to resell their software to small shops through your own sales team"
+ ],
+ "answer": 0,
+ "explanation": "When most potential users consume nothing, the real competitor is the paper ledger, not the incumbent. A product that is simpler and cheaper but clearly better than doing nothing can win a huge market that incumbents ignore because it looks unprofitable. This is the classic route new entrants use to grow without a head-on fight.",
+ "rationales": [
+  "Correct: it competes with non-consumption, where the bar is 'better than paper' and incumbents aren't motivated to follow.",
+  "A head-on price war with established players is costly, and their customers face switching costs that cheaper pricing alone won't overcome.",
+  "Moving up-market fights incumbents where they are strongest and ignores the large untapped base of small shops.",
+  "Reselling incumbent software keeps the product too complex for small shops and gives you no lasting advantage."
+ ],
+ "interview_tip": "Strategy rounds reward naming who the real competitor is. Saying 'the alternative is a paper ledger' and designing for that bar shows you understand disruption theory in practice."},
+{"topic": "Strategy", "concept": "Paying for default placement as a distribution strategy", "difficulty": "easy",
+ "question": "A search company pays phone makers and browsers billions each year to be the default search option. What is the main strategic logic?",
+ "options": [
+  "Most users never change defaults, so paying for default placement buys a huge share of queries and the data and ad revenue they bring",
+  "Default placement is required by law, so search companies must pay device makers to be allowed on their devices at all",
+  "Paying for defaults is mainly a way to reduce the search company's tax bill by shifting revenue to hardware partners",
+  "Default deals let the search company control the phone's hardware design so it can build better search features"
+ ],
+ "answer": 0,
+ "explanation": "Defaults are powerful because most people accept them. Being the default captures a large stream of usage at the point of intent, which feeds ad revenue and improves the product through more data. If the revenue per user exceeds the payment, the deal pays for itself and keeps rivals from that traffic.",
+ "rationales": [
+  "Correct: defaults drive most usage, so buying them secures traffic, data and revenue, and keeps competitors out.",
+  "No law requires paying for placement; these are commercial deals, and the payments are about winning the default slot.",
+  "These deals are about distribution and revenue share, not tax planning.",
+  "Default deals cover software settings, not control over hardware design."
+ ],
+ "interview_tip": "Distribution is often the deciding factor in strategy questions. Linking defaults to user behaviour and to unit economics (revenue per user vs. payment) shows business sense."},
+{"topic": "Strategy", "concept": "Exclusive supply deals as a marketplace moat", "difficulty": "medium",
+ "question": "A new quick-commerce app wants to beat a larger rival. It considers signing exclusive deals with the top 50 local bakeries and sweet shops in each city. What's the key trade-off?",
+ "options": [
+  "Exclusives create unique supply rivals can't copy, but they cost money and partners may resist losing other channels' sales",
+  "Exclusives are free to sign and always beat rivals, because consumers will switch apps for any single store",
+  "Exclusives mainly lower delivery costs, since fewer stores means shorter routes for delivery partners",
+  "Exclusives remove the need for marketing, since the stores will promote the app to all their customers"
+ ],
+ "answer": 0,
+ "explanation": "Unique supply is one of the few ways to stand out when apps look alike, because a rival can't simply copy it. But partners give up sales on other platforms, so they expect guarantees or higher payouts, and deals can lapse. The question is whether the supply is valued enough by users to shift their choice of app.",
+ "rationales": [
+  "Correct: exclusives can differentiate, but they cost money and partners may push back on giving up other channels.",
+  "Exclusives aren't free, and one store rarely moves users; the effect depends on how much customers value that supply.",
+  "Exclusivity is about differentiation; it doesn't by itself make routes shorter or delivery cheaper.",
+  "Store promotion may help a little, but exclusives don't replace the need to acquire and retain customers."
+ ],
+ "interview_tip": "Interviewers like candidates who weigh both the advantage and its cost. Saying how you'd test whether users value the exclusive supply makes the answer concrete."},
+{"topic": "Execution", "concept": "Phased geographic rollout to match operations readiness", "difficulty": "medium",
+ "question": "You're launching scheduled grocery delivery. Engineering is ready nationwide, but warehouse slot-planning has only been tested in two cities. What's the best launch plan?",
+ "options": [
+  "Launch in the two tested cities first, add cities as each warehouse passes a readiness check, and track on-time rate per city",
+  "Launch nationwide on the same day for maximum marketing impact, and fix warehouse issues as they come up",
+  "Delay the launch everywhere until every warehouse in the country has completed full slot-planning tests",
+  "Launch nationwide but limit each user to one scheduled order per week to keep warehouse load low"
+ ],
+ "answer": 0,
+ "explanation": "The bottleneck is operations, not code. Rolling out city by city as each warehouse is ready keeps the promise to customers in every city where you launch, and lets you learn and fix problems before scaling. A clear readiness check and per-city metrics make the expansion decision objective.",
+ "rationales": [
+  "Correct: it matches the rollout pace to operational readiness and uses metrics to gate each expansion.",
+  "A nationwide launch with untested warehouses risks missed slots and broken promises across the country at once.",
+  "Waiting for every city delays value in the cities that are ready, with no added safety for them.",
+  "Usage caps don't make unready warehouses ready, and they frustrate customers everywhere."
+ ],
+ "interview_tip": "Launch questions reward finding the real constraint and gating on it. Naming the readiness criteria and the metric you'd watch shows execution discipline."},
+{"topic": "Execution", "concept": "Handover document when transferring a product area", "difficulty": "easy",
+ "question": "You're moving to a new team and handing your product area to another PM. Which handover document is most useful?",
+ "options": [
+  "A short doc covering goals and metrics, open decisions, key stakeholders, known risks and the reasons behind past choices",
+  "A complete export of every ticket, spec and meeting note from the last two years, organised by date",
+  "A list of the features you shipped, with launch dates, to show what has already been delivered",
+  "A slide deck of the product's vision with no operational details, so the new PM can form fresh views"
+ ],
+ "answer": 0,
+ "explanation": "A good handover gives the new owner what they need to make decisions quickly: what success looks like, what's in flight, who matters, what could go wrong, and why things are the way they are. The 'why' behind past decisions is the context that's hardest to recover later. Raw archives and feature lists don't give that.",
+ "rationales": [
+  "Correct: it focuses on decision-relevant context, including the reasoning that is otherwise lost.",
+  "A full archive buries the important parts; the new PM would have to dig through it to find what matters.",
+  "A feature list describes the past but not the current goals, risks or open decisions the new PM must handle.",
+  "Vision without operational detail leaves the new PM unaware of commitments and risks already in motion."
+ ],
+ "interview_tip": "This can come up as an ownership question. Mentioning that you'd also introduce the new PM to stakeholders in person shows you care about continuity, not just ticking a box."},
+{"topic": "Execution", "concept": "Three-point estimates to expose schedule risk", "difficulty": "medium",
+ "question": "Engineering estimates a payments integration at '6 weeks'. You know it depends on a bank's sandbox that has been unreliable before. How should you plan?",
+ "options": [
+  "Ask for best, likely and worst cases (e.g. 5, 6 and 12 weeks) and plan the launch and communication around that range",
+  "Use the 6-week estimate as given and add one week of buffer to every task across the whole project",
+  "Ask the team to commit to 6 weeks firmly so that the deadline motivates them to work around the sandbox issues",
+  "Wait until the bank's sandbox is working before asking for any estimate, so the number is fully accurate"
+ ],
+ "answer": 0,
+ "explanation": "A single number hides uncertainty, and here the risk is mostly on the late side because of the external dependency. Asking for best, likely and worst cases makes that skew visible, so you can set dates, buffers and stakeholder expectations honestly. It also points to the risk to tackle first: getting the sandbox working early.",
+ "rationales": [
+  "Correct: a three-point estimate shows the skewed risk from the dependency and lets you plan around it.",
+  "A flat buffer on every task wastes slack where risk is low and may still be too little where the dependency bites.",
+  "Pressure doesn't fix an unreliable external system; it just produces a promise likely to be broken.",
+  "Waiting for perfect information delays planning, and the sandbox may stay unreliable; ranges let you plan now."
+ ],
+ "interview_tip": "Interviewers like PMs who make uncertainty explicit rather than hiding it. Mentioning that you'd tackle the riskiest part first shows active risk management."},
+{"topic": "Behavioural", "concept": "Restoring team morale after a failed launch", "difficulty": "hard",
+ "question": "Your team's big launch missed its adoption target badly, and the team is discouraged; two engineers have asked about transfers. Leadership wants a new plan in two weeks. What do you do first?",
+ "options": [
+  "Run a blameless review with the team on what we learned, own your part openly, and shape the next bet together using those lessons",
+  "Present a new plan to leadership quickly so the team sees momentum, then share it with them once it's approved",
+  "Tell the team the target was unrealistic and that leadership set it, so they know the miss wasn't their fault",
+  "Give the team a week off from planning while you work on the new plan alone so they can recover"
+ ],
+ "answer": 0,
+ "explanation": "After a failure, people need to feel that the work taught something and that they have a say in what's next. A blameless review turns the miss into learning, and owning your part as PM models accountability. Building the next plan together restores a sense of control, which is what discouraged teams most need.",
+ "rationales": [
+  "Correct: it turns failure into learning, models ownership, and gives the team agency over the next step.",
+  "A plan handed down after approval deepens the feeling that the team has no say, which is part of what hurts morale.",
+  "Blaming leadership may feel supportive but avoids learning and undermines trust across the organisation.",
+  "Rest can help, but planning without the team removes their ownership and wastes their insight from the launch."
+ ],
+ "interview_tip": "In Amazon-style 'tell me about a failure' questions, strong answers show ownership, learning and how you brought the team with you. Saying what you personally got wrong is a strong signal."},
+{"topic": "Behavioural", "concept": "Owning an unglamorous problem that no team owns", "difficulty": "hard",
+ "question": "You notice that seller payouts are often delayed because of a manual reconciliation step that no team owns. It's not on your roadmap and not exciting work, but sellers complain often. What's the best response?",
+ "options": [
+  "Measure the impact, propose an owner and a fix, and drive it to resolution, even if your team does part of the work",
+  "Raise it in a team meeting so that someone else can pick it up when they have spare capacity",
+  "Ignore it, because work outside your roadmap distracts from the goals your team is measured on",
+  "Write a detailed complaint to leadership listing the teams that should have owned this process"
+ ],
+ "answer": 0,
+ "explanation": "Ownership means acting on problems that hurt customers even when they fall between teams. Quantifying the impact makes the case, and proposing a clear owner and fix moves it forward instead of just flagging it. Driving it to a result, rather than handing it off and forgetting, is what separates owners from observers.",
+ "rationales": [
+  "Correct: it shows ownership by sizing the problem, proposing a solution, and following through.",
+  "Mentioning it without an owner or plan usually means nothing happens, since 'someone' rarely picks it up.",
+  "Ignoring a known customer problem because it's not on your roadmap is the opposite of ownership.",
+  "Assigning blame doesn't fix the delay and damages relationships with the teams you need to help."
+ ],
+ "interview_tip": "Amazon's 'Ownership' principle is often tested this way. Strong stories show you acted beyond your scope and measured the result after the fix."},
+{"topic": "Behavioural", "concept": "Pushing back on a misleading marketing claim before launch", "difficulty": "hard",
+ "question": "Marketing's launch page says your AI feature 'eliminates errors'. Your evals show it cuts errors by about 40%. The launch is in three days and the marketing lead says the line tests well. What do you do?",
+ "options": [
+  "Raise it with the marketing lead now with the eval data, offer an accurate line that still sells, and escalate if it stays unresolved",
+  "Let it go, because marketing owns messaging and changing it three days before launch will cause conflict",
+  "Quietly ask a designer to change the text on the page without telling marketing, to avoid an argument",
+  "Post in a large company channel that marketing is overstating the product, so everyone is aware"
+ ],
+ "answer": 0,
+ "explanation": "An overstated claim risks customer trust, complaints and even legal trouble, so it needs fixing before launch. Going to the owner directly with data, and offering a strong but true alternative like 'cuts errors by 40%', makes it easy to say yes. Escalating only if needed keeps the relationship intact while protecting customers.",
+ "rationales": [
+  "Correct: it addresses the risk directly with evidence and a helpful alternative, keeping escalation as a fallback.",
+  "Staying silent lets a false claim reach customers, which hurts trust and is a risk the PM should flag.",
+  "Changing another team's work behind their back breaks trust and avoids the conversation that needs to happen.",
+  "Calling out a colleague publicly damages the relationship and is a poor first step when a direct talk could solve it."
+ ],
+ "interview_tip": "This tests integrity and influence together. Interviewers listen for direct, data-backed conversation, a constructive alternative, and a clear path to escalate."},
+{"topic": "AI Product", "concept": "Popularity bias in recommender systems", "difficulty": "easy",
+ "question": "A book app's recommendations keep showing the same bestsellers to almost everyone, and new or niche books rarely get shown. What is this problem called?",
+ "options": [
+  "Popularity bias, where items with many past interactions get recommended more and so gain even more interactions",
+  "Overfitting, where the model memorises a small training set and can't recommend anything new",
+  "Data leakage, where future information about the books is accidentally used during training",
+  "Underfitting, where the model is too simple to learn any pattern in user preferences at all"
+ ],
+ "answer": 0,
+ "explanation": "Recommenders learn from past interactions, and popular items have the most, so they get shown more and gain even more interactions in a loop. Niche items and new releases struggle to be seen even when they'd suit some users well. Fixes include exploration slots, diversity goals and adjusting for exposure.",
+ "rationales": [
+  "Correct: the loop of popular items gaining more exposure is popularity bias.",
+  "Overfitting means fitting noise in the training data; it doesn't specifically cause everyone to see the same bestsellers.",
+  "Data leakage inflates offline scores by using information unavailable at prediction time, which is a different problem.",
+  "An underfit model would give weak, generic results, but the specific pattern of over-recommending hits is popularity bias."
+ ],
+ "interview_tip": "AI product questions often test whether you see feedback loops. Proposing a fix like exploration slots and a metric like catalogue coverage shows practical knowledge."},
+{"topic": "AI Product", "concept": "Reviewing agent traces to diagnose failures", "difficulty": "medium",
+ "question": "Your customer-support agent's task success rate dropped from 82% to 71% after a prompt update. The final answers look reasonable in spot checks. What's the best next step?",
+ "options": [
+  "Review the step-by-step traces of failed tasks (tool calls, inputs, outputs) to find where the agent goes wrong",
+  "Roll the prompt back and forward a few times in production to see if the drop repeats",
+  "Switch to a larger model, since more capability usually fixes drops in task success",
+  "Increase the temperature so the agent explores more ways to complete each task"
+ ],
+ "answer": 0,
+ "explanation": "Agents fail in the middle: a wrong tool, a bad parameter, a skipped step. Final answers can look fine while the actions behind them are wrong. Reading the traces of failures shows exactly where behaviour changed after the prompt update, which leads to a targeted fix and new eval cases.",
+ "rationales": [
+  "Correct: traces show where in the sequence the agent failed, which final-answer checks miss.",
+  "Toggling in production exposes customers to the bad version again and still doesn't explain the cause.",
+  "A bigger model adds cost and may not fix a prompt-caused regression; you don't yet know what broke.",
+  "Higher temperature adds randomness, which usually makes agent behaviour less reliable, not more."
+ ],
+ "interview_tip": "Interviewers want PMs who debug AI systematically. Mentioning traces and turning failures into regression tests shows you know how agent quality is actually managed."},
+{"topic": "AI Product", "concept": "Semantic layer to ground text-to-SQL metric definitions", "difficulty": "medium",
+ "question": "You're building an 'ask your data' assistant that turns questions into SQL. In testing, it computes 'active customers' three different ways depending on the wording of the question. What's the best fix?",
+ "options": [
+  "Give the model a semantic layer of approved metric definitions and have it query those, instead of writing raw logic each time",
+  "Add a line to the prompt asking the model to always be consistent when calculating business metrics",
+  "Lower the temperature to zero so the model produces the same SQL whenever the question is the same",
+  "Show the generated SQL to every user so they can check whether the metric logic is correct"
+ ],
+ "answer": 0,
+ "explanation": "The model is inventing metric logic each time, so small wording changes produce different definitions. A semantic layer stores the company's agreed definitions in one place, and the model picks from them, so answers match the official dashboards. This moves correctness from the prompt into governed data.",
+ "rationales": [
+  "Correct: approved, central definitions remove the model's freedom to invent different metric logic.",
+  "A consistency instruction is weak; the model doesn't know the official definition, so it can't be consistent with it.",
+  "Temperature zero helps for identical questions, but differently worded questions will still produce different logic.",
+  "Most business users can't check SQL, so showing it shifts the burden to them without fixing the cause."
+ ],
+ "interview_tip": "This tests whether you put business rules in reliable systems rather than prompts. Linking the fix to trust in numbers across the company shows product judgement."},
+{"topic": "AI Product", "concept": "Consent verification for AI voice cloning", "difficulty": "easy",
+ "question": "Your app lets creators clone their own voice for dubbing videos. What's the most important safeguard before launch?",
+ "options": [
+  "Verify the speaker consents, for example by having them read a random phrase live, so people can't clone someone else's voice from a recording",
+  "Limit cloned voices to a maximum of 30 seconds of generated audio per video to reduce misuse",
+  "Only allow voice cloning in English, since misuse is easier to monitor in a single language",
+  "Make the cloned voice sound slightly robotic so listeners can always tell it was generated"
+ ],
+ "answer": 0,
+ "explanation": "The main risk is someone cloning another person's voice from public audio to impersonate or defraud. A live consent check with a random phrase proves the person creating the clone is the speaker. Other measures like watermarking and abuse reporting help, but consent verification blocks the core misuse.",
+ "rationales": [
+  "Correct: live, random-phrase verification confirms the voice owner is the one consenting, blocking the main abuse.",
+  "Short clips still allow scams and impersonation; length limits don't address whose voice is being cloned.",
+  "Language limits don't stop impersonation and cut the product's value for creators in other languages.",
+  "Degrading quality defeats the product's purpose and doesn't stop someone from cloning another person's voice."
+ ],
+ "interview_tip": "AI safety questions reward targeting the main harm with a specific control. Adding secondary layers like watermarking and reporting shows defence in depth."},
+{"topic": "AI Product", "concept": "Avoiding inferred sensitive attributes in personalisation", "difficulty": "medium",
+ "question": "Your shopping assistant starts recommending baby products to a user who never mentioned a pregnancy, based on their browsing patterns. Several users call this 'creepy'. What's the best product fix?",
+ "options": [
+  "Stop the model from personalising on inferred sensitive traits like pregnancy or health, and use them only when the user shares them",
+  "Keep the recommendations but add a line explaining that they are based on the user's browsing history",
+  "Only show these recommendations in email, where they are less visible than in the main app",
+  "Raise the confidence threshold so that only users the model is very sure about see these recommendations"
+ ],
+ "answer": 0,
+ "explanation": "Inferring sensitive traits the user didn't share, and acting on them, breaks trust even when the guess is right. The fix is to keep sensitive categories out of inferred personalisation and let users opt in by telling you. Accuracy isn't the issue; respecting what people choose to disclose is.",
+ "rationales": [
+  "Correct: it avoids acting on sensitive guesses and puts users in control of what they share.",
+  "Explaining the basis makes it clearer that you inferred something private, which can feel even more intrusive.",
+  "Moving it to email doesn't change that the system is acting on a private inference, and emails can be seen by others.",
+  "Higher confidence makes the guesses more accurate, which doesn't help; being right about a private matter is the creepy part."
+ ],
+ "interview_tip": "Interviewers look for PMs who weigh trust and privacy, not just relevance. Naming specific sensitive categories and an opt-in path shows you can turn principles into product rules."},
+{"topic": "Technology", "concept": "CORS: browser rules for cross-origin requests", "difficulty": "easy",
+ "question": "Your web app at app.example.com calls an API at api.partner.com, and the browser blocks the response with a 'CORS' error, though the same call works from a server. What does this mean?",
+ "options": [
+  "The browser only lets a page read responses from another origin if that server explicitly allows it, so the partner API must permit your domain",
+  "The partner API is down, and the browser is reporting the outage with a CORS error message",
+  "Your user's internet connection is too slow, so the browser gives up before the response arrives",
+  "The API key is wrong, and CORS errors are how browsers report invalid credentials"
+ ],
+ "answer": 0,
+ "explanation": "Browsers apply a same-origin rule: a page can't read responses from a different domain unless that server sends headers allowing it. Server-to-server calls don't have this rule, which is why the same request works there. The fix is for the partner to allow your domain, or to route the call through your own backend.",
+ "rationales": [
+  "Correct: CORS is the browser's rule that the other server must explicitly allow your origin to read its responses.",
+  "An outage would fail from the server too; the call working server-side shows the API is up.",
+  "Slow connections cause timeouts, not CORS errors, and wouldn't explain why server calls succeed.",
+  "Invalid keys usually return 401 or 403 errors; CORS is about which origins may read the response."
+ ],
+ "interview_tip": "Technical fluency questions check that you can follow an engineering discussion. Explaining the browser vs. server difference and the two fixes is enough to show you get it."},
+{"topic": "Technology", "concept": "Distributed tracing across microservices", "difficulty": "easy",
+ "question": "Checkout in your app sometimes takes 8 seconds. The request passes through six services, and each team says its service is fast. Which tool best finds where the time goes?",
+ "options": [
+  "Distributed tracing, which follows a single request across all services and shows how long each step takes",
+  "Load testing, which sends heavy traffic to the system to see the maximum number of checkouts it can handle",
+  "A dashboard of average CPU use for each service, so you can see which servers are busiest",
+  "Unit tests for each service, which check that every function returns the right result"
+ ],
+ "answer": 0,
+ "explanation": "When a request crosses many services, each team's own metrics can look fine while the delay hides in calls between them or in a slow path that only some requests take. Tracing attaches an ID to a request and records each step's timing, so you can see exactly which hop or dependency causes the 8 seconds.",
+ "rationales": [
+  "Correct: tracing shows the full path and timing of one request, revealing where the delay actually occurs.",
+  "Load testing measures capacity under stress, not which step makes a specific slow request slow.",
+  "Average CPU hides individual slow requests and doesn't show time spent waiting on other services.",
+  "Unit tests check correctness of code, not latency across a live chain of services."
+ ],
+ "interview_tip": "In incident or system design discussions, naming tracing for multi-service latency shows you know how real teams debug. Pair it with percentiles rather than averages for extra credit."},
+{"topic": "Growth", "concept": "Pre-launch waitlist to build demand and stage onboarding", "difficulty": "easy",
+ "question": "A startup will launch an AI note-taking app in two months but can only onboard a few thousand users at first. What's the main benefit of a pre-launch waitlist?",
+ "options": [
+  "It gathers interested users early and lets the team invite them in batches as capacity grows, learning from each group",
+  "It guarantees that everyone on the waitlist will become a paying customer when the product launches",
+  "It replaces the need for any marketing after launch, since the waitlist will grow on its own forever",
+  "It lets the team skip user research, since waitlist sign-ups prove the product solves a real problem"
+ ],
+ "answer": 0,
+ "explanation": "A waitlist captures demand before the product is ready and lets the team control how fast people come in. Inviting users in waves matches onboarding to capacity and gives a chance to fix problems between groups. Sign-ups show interest, not proven value, so the team still needs to watch activation and retention.",
+ "rationales": [
+  "Correct: it captures early demand and allows staged onboarding matched to capacity, with learning between waves.",
+  "Joining a waitlist is a light signal; many sign-ups never activate or pay.",
+  "Waitlists help at launch, but they don't replace ongoing acquisition.",
+  "A sign-up shows curiosity, not that the product solves the problem; research and activation data are still needed."
+ ],
+ "interview_tip": "Growth questions reward knowing what a tactic does and doesn't prove. Saying that waitlist sign-ups are interest, not retention, shows good judgement."},
+{"topic": "Current Events", "concept": "Assistant-generated custom mini-apps (Meta Muse spaces, Nov 2026)", "difficulty": "medium",
+ "question": "In November 2026 Meta added 'spaces' to its Muse AI app, letting users generate custom app-like experiences on demand; examples cited include shopping hubs, school dashboards, music trackers and trivia games. If you're the PM of a standalone single-purpose tracker app, what's the most important strategic takeaway?",
+ "options": [
+  "Simple utilities become easy for assistants to recreate, so defensibility must come from things they can't generate: unique data, network, integrations or deep workflow",
+  "Assistants can only make toy apps, so dedicated apps face no real threat and the roadmap can stay as it is",
+  "The best response is to rebuild the app as a chat interface, since users will prefer talking to every app",
+  "Single-purpose apps should drop their prices to zero immediately, because assistant-made apps are free"
+ ],
+ "answer": 0,
+ "explanation": "When an assistant can produce a decent custom tracker from a prompt, the basic feature set stops being a reason to download a separate app. What remains defensible is what a generated mini-app lacks: proprietary data, a network of users, integrations with other services, or depth built over years. PMs of simple utilities should invest there or consider being available inside assistants.",
+ "rationales": [
+  "Correct: generated mini-apps commoditise basic utilities, so value must move to assets an assistant can't easily produce.",
+  "Dismissing the threat is risky; even simple generated apps can satisfy users whose needs are basic, which is often most of them.",
+  "A chat interface doesn't add defensibility and may make a structured tool worse to use; the issue is commoditisation, not interface.",
+  "Cutting price to zero gives away revenue without creating any lasting advantage over a free, generated alternative."
+ ],
+ "interview_tip": "Interviewers often ask how AI platform moves change your product's strategy. Strong answers identify what gets commoditised and where lasting value moves, rather than just reacting to the headline.",
+ "source": "https://digitaltrends.com/phones/metas-now-lets-you-build-custom-mini-app-experiences-in-the-muse-app"}
+]}

@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-14",
+   "theme": "Hidden causes, honest signals and earning trust",
+   "count": 30
+  },
+  {
    "date": "2026-11-13",
    "theme": "Trust, density and closed-set decisions",
    "count": 30
