@@ -1,0 +1,637 @@
+{
+ "date": "2026-11-15",
+ "theme": "Hidden costs, clear signals and fair tiers",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Granular per-item visibility in shared finance accounts between partners",
+   "difficulty": "hard",
+   "question": "You're designing a joint-finances feature for a budgeting app used by couples. Research shows partners want shared visibility of household spending, but many hesitate to link accounts because a few purchases (gifts, personal spending) feel private. Which design best addresses the core tension?",
+   "options": [
+    "Default to sharing household categories, with each partner able to mark specific transactions or accounts as private while shared totals stay accurate",
+    "Require both partners to share every linked account in full, since partial sharing undermines the trust the feature is meant to build",
+    "Keep accounts fully separate and only show each partner a monthly combined total, so no individual transaction is ever visible",
+    "Let the account owner choose a single global setting of 'share all' or 'share nothing' when they first link their accounts"
+   ],
+   "answer": 0,
+   "explanation": "The insight is that the barrier to adoption is not sharing in general but a small set of sensitive items. Sharing by default with per-item privacy lets couples get the shared view they want while removing the reason people refuse to link at all. Keeping shared totals accurate preserves the budgeting value even when some details are hidden.",
+   "rationales": [
+    "Correct: it targets the specific blocker (a few private items) while keeping the shared value and accurate totals.",
+    "Forcing full sharing ignores the research; the users who hesitate would simply not link accounts, so adoption stalls.",
+    "Totals-only removes the transaction-level visibility couples said they wanted, solving privacy by giving up most of the value.",
+    "An all-or-nothing switch pushes hesitant users to 'share nothing', because one private purchase decides the whole setting."
+   ],
+   "interview_tip": "Product-sense interviewers look for you to name the real tension in the user research and design for the edge that blocks adoption. Strong answers keep the main value intact while giving users fine-grained control."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Unit price display to compare pack sizes",
+   "difficulty": "easy",
+   "question": "Users of a quick-commerce grocery app often pick the wrong pack size and later complain they 'overpaid'. Products come in many sizes (200 g, 500 g, 1 kg, multipacks). What is the simplest change that helps shoppers compare value?",
+   "options": [
+    "Show a standard unit price (for example ₹ per 100 g) next to each pack's price on listing and product pages",
+    "Hide the smaller pack sizes so customers only see the larger packs, which usually offer the better value",
+    "Add a long product description explaining how to calculate value across different pack sizes manually",
+    "Sort every search result by total price from lowest to highest so the cheapest option always appears first"
+   ],
+   "answer": 0,
+   "explanation": "Shoppers struggle because prices for different sizes aren't directly comparable. A unit price normalises them to the same quantity so the comparison is instant. It's cheap to build, respects user choice, and fixes the root cause of the 'overpaid' complaint.",
+   "rationales": [
+    "Correct: normalising to a common unit makes value comparison effortless at the point of decision.",
+    "Hiding sizes removes choice from people who want small packs, such as single-person households or trial buyers.",
+    "Asking users to do arithmetic adds effort; most won't read it, so the confusion remains.",
+    "Lowest total price usually surfaces the smallest pack, which is often the worst value, making the problem worse."
+   ],
+   "interview_tip": "Simple product-sense prompts test whether you spot the root cause before proposing features. A strong answer picks the smallest change that fixes the user's actual comparison problem."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Gate-entry pre-approval for deliveries in gated communities",
+   "difficulty": "medium",
+   "question": "A food-delivery app in Indian metros sees that many late orders in gated apartment societies are caused by couriers waiting at the security gate while guards call residents for permission. Which solution addresses the root cause most directly?",
+   "options": [
+    "Let customers pre-approve the expected delivery at checkout, passing the courier's details to the society's gate-management system so guards can admit them instantly",
+    "Add more couriers in areas with many gated communities so that orders are picked up faster from restaurants",
+    "Show customers a longer delivery estimate for gated societies so that late deliveries feel less disappointing",
+    "Ask couriers to leave orders with the security guard at the gate whenever the resident does not answer quickly"
+   ],
+   "answer": 0,
+   "explanation": "The delay happens at a specific step: guards waiting for resident approval. Capturing that approval in advance, when the customer is already in the app, removes the wait entirely. Integrating with the gate-management apps many societies already use makes it work without changing guard behaviour.",
+   "rationales": [
+    "Correct: it moves the approval to the moment the customer is active, eliminating the gate wait.",
+    "More couriers speeds up pickup, but the bottleneck is at the gate, so the same waiting time remains.",
+    "Padding the estimate manages expectations but doesn't fix anything and makes the app look slower in comparison.",
+    "Leaving food with guards hurts the experience (cold food, missing items) and many residents won't accept it."
+   ],
+   "interview_tip": "Interviewers like answers that locate the exact step in the journey where time is lost. Strong candidates design around that step and use existing local infrastructure instead of adding generic capacity."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Recognisable billing descriptors to reduce friendly-fraud chargebacks",
+   "difficulty": "medium",
+   "question": "A subscription meditation app sees many chargebacks where customers tell their bank they 'don't recognise this charge'. Investigation shows the card statement shows the parent company's legal name, not the app name. Which change most directly reduces these disputes?",
+   "options": [
+    "Change the card statement descriptor to the app's name plus a support URL, and send a receipt email at each renewal",
+    "Add a stronger fraud-detection system at signup to block risky cards before they can start a subscription",
+    "Raise the subscription price slightly to cover the cost of chargeback fees and lost revenue",
+    "Require customers to re-enter their card details each month to confirm they still want to continue"
+   ],
+   "answer": 0,
+   "explanation": "These disputes are 'friendly fraud': real customers who don't recognise the charge. If the statement shows a name they know and a way to contact you, they'll recognise it or reach support instead of their bank. Renewal receipts reinforce recognition before the statement arrives.",
+   "rationales": [
+    "Correct: it fixes the recognition problem that causes the disputes and gives a path to support instead of the bank.",
+    "Fraud screening targets stolen cards, but these are legitimate customers, so it would block good users and not cut disputes.",
+    "Pricing in the cost ignores the cause; disputes also risk payment-processor penalties if the ratio stays high.",
+    "Monthly re-entry adds heavy friction and would increase involuntary churn far more than it reduces chargebacks."
+   ],
+   "interview_tip": "This tests whether you diagnose the user's mental model before reaching for systems. Strong answers separate true fraud from confusion and fix the confusing touchpoint."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "End of app-store editorial featuring behind a new-install drop",
+   "difficulty": "hard",
+   "question": "New installs of your iOS app fell 30% week over week. Paid installs and search-driven installs are flat, existing-user engagement is normal, and Android installs are unchanged. App Store Connect shows the drop is almost entirely in the 'App Store Browse' source. What is the most likely explanation to check first?",
+   "options": [
+    "An App Store editorial feature or category placement that was driving browse traffic has ended",
+    "A bug in the latest iOS release is crashing the app on launch for new users after they install",
+    "A competitor has started bidding on your brand keywords in Apple Search Ads and is taking your traffic",
+    "Your onboarding flow was changed last week and is now converting fewer new users into active ones"
+   ],
+   "answer": 0,
+   "explanation": "Segmenting by source isolates the drop to browse traffic, which comes from featuring, charts and category placements rather than search or ads. A feature ending is a common cause of a sudden browse drop on one platform. The other explanations would show up in different sources or later in the funnel.",
+   "rationales": [
+    "Correct: the drop is isolated to iOS browse traffic, which is driven by editorial and chart placement.",
+    "A launch crash would hurt activation and engagement after install, not reduce the number of installs from browse.",
+    "Brand-keyword bidding would reduce search-driven installs, but search installs are flat.",
+    "Onboarding changes affect what happens after install, so they couldn't explain fewer installs."
+   ],
+   "interview_tip": "Root-cause questions reward systematic segmentation (platform, source, new vs existing) before guessing. Say what each hypothesis would predict and rule them out with the data you have."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Weekly actives are not the sum of daily actives",
+   "difficulty": "easy",
+   "question": "An analyst reports weekly active users by adding up the seven daily active user counts for the week. Why is this wrong?",
+   "options": [
+    "Users active on several days are counted more than once, so the sum overstates the number of unique weekly users",
+    "Daily counts use a different time zone from weekly counts, so the totals cannot be added together reliably",
+    "Weekly active users should only include users who were active on every day of the week, not on any day",
+    "Summing undercounts weekly users because users active late at night are dropped from each daily total"
+   ],
+   "answer": 0,
+   "explanation": "WAU counts unique users who were active at least once during the week. Summing daily counts double-counts anyone who came back on more than one day, which is exactly your most engaged users. You need a distinct count over the week.",
+   "rationales": [
+    "Correct: repeat visitors are counted once per day, inflating the total.",
+    "Time zones can cause small boundary differences, but they aren't the main reason the sum is wrong.",
+    "That describes a 'daily for seven days' cohort, not WAU, which counts anyone active at least once.",
+    "Summing overcounts rather than undercounts; late-night users still appear in a daily total."
+   ],
+   "interview_tip": "Basic metric-definition questions check whether you think in unique users and denominators. A crisp answer names the double-counting and the correct distinct-count approach."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Price increase masking usage decline in revenue retention",
+   "difficulty": "medium",
+   "question": "A B2B analytics tool raised list prices 15% at renewal this year. Net revenue retention rose from 102% to 110%, and leadership calls it a sign of stronger product engagement. What should you check before agreeing?",
+   "options": [
+    "Whether usage per account (active seats, queries, dashboards viewed) also grew, since the price rise alone could explain the NRR gain",
+    "Whether the sales team hit its quarterly quota, since higher quota attainment confirms that customers value the product more",
+    "Whether the gross margin improved, because higher margins show customers are getting more value from each dollar",
+    "Whether the number of new logos rose this year, since new customers are what drive the net revenue retention figure"
+   ],
+   "answer": 0,
+   "explanation": "NRR measures revenue from existing customers, so a price increase lifts it even if customers use the product less. To claim stronger engagement, you need a usage measure that isn't driven by price. If usage is flat or falling, the higher NRR may be borrowing against future churn.",
+   "rationales": [
+    "Correct: separating price effects from usage shows whether customers are actually engaging more.",
+    "Quota attainment also rises with price increases, so it can't separate price from real value.",
+    "Margin improvement is mostly a direct result of the price rise and says nothing about engagement.",
+    "NRR excludes new logos by definition, so new-customer counts don't explain the change."
+   ],
+   "interview_tip": "Interviewers probe whether you can decompose a headline metric into its drivers. Strong answers separate price, volume and mix before drawing conclusions."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Payday cycle as an intra-month pattern in spending metrics",
+   "difficulty": "medium",
+   "question": "A food-delivery app in India compares order volume in the first week of the month to the last week of the month and finds a 20% drop at month-end. A new PM proposes a retention campaign for the last week. What should they consider first?",
+   "options": [
+    "Whether the dip is a normal monthly pattern tied to salary days, by comparing the same weeks across several prior months",
+    "Whether the last week of the month had more rainy days, since weather is the main driver of food-delivery demand",
+    "Whether the retention campaign could be launched sooner, since every day of delay loses more orders at month-end",
+    "Whether the drop comes from a recent app release, since product changes are the most common cause of order dips"
+   ],
+   "answer": 0,
+   "explanation": "Many salaried users spend more right after payday and cut back as the month ends. If the same dip shows up every month, it's a predictable cycle, not a new retention problem. Comparing like-for-like weeks across months tells you whether anything has actually changed.",
+   "rationales": [
+    "Correct: checking for a recurring monthly pattern avoids treating a normal cycle as a problem.",
+    "Weather can matter, but jumping to one cause without checking the recurring pattern is premature.",
+    "Rushing the campaign assumes a problem exists; it may spend money fighting a normal cycle.",
+    "A release could matter, but it wouldn't explain a dip that recurs every month."
+   ],
+   "interview_tip": "In metric questions, interviewers want you to rule out normal cycles before treating a change as a problem. Mention the specific baseline you'd compare against."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Placebo test on a pre-period to validate a quasi-experiment",
+   "difficulty": "hard",
+   "question": "You can't randomise a new store-pickup option, so you launched it in 10 cities and compare their order growth to 10 similar cities without it, using difference-in-differences. A sceptical data scientist asks how you know the comparison cities are a fair control. What is the strongest check?",
+   "options": [
+    "Run the same analysis on a pre-launch period with a fake launch date; a 'significant effect' there means the groups weren't tracking each other",
+    "Increase the number of weeks after launch in the analysis, since a longer post-period makes any estimated effect more reliable",
+    "Show that the launch cities have more total orders than the control cities, which proves they were the right markets to choose",
+    "Add more metrics to the analysis, such as app opens and searches, so the result is confirmed across many outcomes"
+   ],
+   "answer": 0,
+   "explanation": "Difference-in-differences relies on the groups following parallel trends without the treatment. A placebo test pretends the launch happened earlier, when nothing changed. If it still finds an 'effect', the groups were already diverging, and your real estimate is likely biased.",
+   "rationales": [
+    "Correct: a placebo on the pre-period directly tests the parallel-trends assumption the method depends on.",
+    "A longer post-period adds data but doesn't fix a biased control; it can make the bias look more certain.",
+    "Larger launch cities make the groups less comparable, which weakens rather than proves the design.",
+    "More outcomes don't validate the control; they all share the same comparison and the same bias."
+   ],
+   "interview_tip": "When you propose a non-randomised method, interviewers expect you to name its key assumption and how you'd test it. Mentioning placebo or pre-trend checks signals real analytical maturity."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Adding test arms reduces per-arm sample size",
+   "difficulty": "medium",
+   "question": "A PM wants to test six headline variants against control on a landing page that gets 20,000 visitors a week. The previous two-arm test needed about two weeks to detect the expected lift. What is the main problem with the six-variant plan?",
+   "options": [
+    "Traffic is split across seven arms, so each arm gets far fewer visitors and the test needs much longer to reach adequate power",
+    "Testing several variants at once always creates interaction effects between variants that make the results impossible to read",
+    "Landing-page tests can only compare two versions at a time because analytics tools can't track more than two variants",
+    "Using six variants guarantees that one of them will win, so the result will be biased toward finding a positive effect"
+   ],
+   "answer": 0,
+   "explanation": "Power depends on sample size per arm. Splitting the same traffic seven ways gives each arm well under half the visitors it had in a two-arm test, so the test may take several times as long. More comparisons also raise the false-positive risk unless you correct for them.",
+   "rationales": [
+    "Correct: per-arm sample shrinks, so duration rises sharply for the same detectable effect.",
+    "Variants in the same test are mutually exclusive, so users don't see two; interaction effects aren't the issue here.",
+    "Most experiment platforms support multi-arm tests; the constraint is traffic, not tooling.",
+    "Multiple variants raise false-positive risk but don't guarantee a winner; the main issue is the loss of power."
+   ],
+   "interview_tip": "Experiment-design interviews often test whether you can relate traffic, arms and duration. Strong answers suggest fewer, bolder variants or a staged approach."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual prepaid mobile recharges in India",
+   "difficulty": "medium",
+   "question": "Estimate the number of prepaid mobile recharges done in India in a year.",
+   "options": [
+    "About 1 billion",
+    "About 10 billion",
+    "About 100 billion",
+    "About 300 million"
+   ],
+   "answer": 1,
+   "explanation": "India has roughly 1.1–1.2 billion mobile connections, and about 90% are prepaid, so around 1 billion prepaid connections. Popular plans last 28 days (about 13 recharges a year) while longer 84-day or annual plans need fewer, so assume about 9–10 recharges per connection per year. 1 billion × ~10 ≈ 10 billion recharges a year.",
+   "rationales": [
+    "Too low: 1 billion would mean each prepaid connection recharges about once a year, but most plans last a month.",
+    "Correct: about 1 billion prepaid connections × about 10 recharges a year each gives about 10 billion.",
+    "Too high: 100 billion would require about 100 recharges per connection per year, or two a week.",
+    "Too low: 300 million is less than the number of prepaid connections, so it implies under one recharge each per year."
+   ],
+   "interview_tip": "Guesstimates reward a clean structure: base (connections), share (prepaid), frequency (plan length mix). State each assumption and sanity-check the final per-user number."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual mosquito-repellent refill sales in urban India",
+   "difficulty": "medium",
+   "question": "Estimate the annual number of plug-in liquid mosquito-repellent refills sold in urban India.",
+   "options": [
+    "About 35 million",
+    "About 3.5 billion",
+    "About 350 million",
+    "About 1.2 billion"
+   ],
+   "answer": 2,
+   "explanation": "Urban India has roughly 480 million people, or about 110 million households at about 4.3 people each. Assume about 40% use plug-in liquid vaporisers, about 45 million households. If each uses about one refill a month for about 8 months of the mosquito season, that's about 8 refills a year: 45 million × 8 ≈ 360 million, so about 350 million.",
+   "rationales": [
+    "Too low: 35 million would mean users buy less than one refill a year each.",
+    "Too high: 3.5 billion would mean each user household buys about 80 refills a year.",
+    "Correct: about 45 million user households × about 8 refills a year ≈ 350 million.",
+    "Too high: 1.2 billion implies year-round heavy use in every urban household, beyond reasonable penetration."
+   ],
+   "interview_tip": "For consumables, interviewers look for penetration × usage rate × seasonality. Calling out seasonality is a strong signal that you think about real behaviour."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Best-of-breed vs suite buying in enterprise software",
+   "difficulty": "medium",
+   "question": "Your startup sells a best-in-class scheduling tool for hospitals. A large incumbent adds a 'good enough' scheduling module to its hospital software suite at no extra cost. Which strategy gives your product the best chance?",
+   "options": [
+    "Go deep where the suite is weakest, integrate tightly with the suite, and target buyers whose scheduling pain is costly enough to justify a separate tool",
+    "Build your own full hospital suite with records, billing and HR so you can compete with the incumbent on breadth",
+    "Cut your price to zero to match the suite and rely on future upsells to cover the lost revenue",
+    "Focus marketing on how much better your interface looks, since buyers usually choose software based on design"
+   ],
+   "answer": 0,
+   "explanation": "When a suite bundles a 'good enough' feature, the point solution must win on depth where it matters and reduce the cost of using both. Integrating with the suite lowers switching friction, and targeting buyers with expensive scheduling problems focuses on those who'll pay for best-of-breed. Rebuilding a suite or a price war plays to the incumbent's strengths.",
+   "rationales": [
+    "Correct: depth plus integration plus a focused segment is how best-of-breed tools survive bundling.",
+    "Building a full suite takes years and money the startup lacks, and it competes on the incumbent's home turf.",
+    "Free pricing destroys revenue and still loses to a bundle the buyer already pays for.",
+    "Interface polish alone rarely beats bundled cost and procurement convenience in enterprise buying."
+   ],
+   "interview_tip": "Strategy prompts about bundled competitors test whether you can find where the incumbent is weak. Strong answers combine segment choice, differentiation and coexistence."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Why investors value recurring revenue above one-time sales",
+   "difficulty": "easy",
+   "question": "Two companies each made ₹100 crore in revenue last year. One sells software subscriptions that renew yearly; the other sells one-time licences. Why do investors usually value the subscription business more highly?",
+   "options": [
+    "Recurring revenue is more predictable, because most of next year's revenue is already expected to renew",
+    "Subscription companies always have higher profit margins than companies that sell one-time licences",
+    "Subscription revenue is counted twice in financial statements, which makes the business look larger",
+    "One-time licence sales are not allowed to be recognised as revenue under accounting rules"
+   ],
+   "answer": 0,
+   "explanation": "Investors value future cash flows. With subscriptions, much of next year's revenue is likely to renew, so it's easier to forecast and plan. A one-time licence business has to win most of its revenue again each year, which makes it riskier.",
+   "rationales": [
+    "Correct: predictability and visibility into future revenue raise the value investors place on each rupee.",
+    "Margins vary widely; subscription businesses are often less profitable early on.",
+    "Revenue isn't double-counted; this reflects a misunderstanding of accounting.",
+    "One-time licence revenue is recognised normally; it's just less predictable year to year."
+   ],
+   "interview_tip": "Basic business-model questions check whether you understand how revenue quality drives value. Mention predictability, retention and lifetime value."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Smaller player favouring interoperability against a closed leader",
+   "difficulty": "hard",
+   "question": "You're the PM of the number-three messaging app in a market where the leader has 80% share and a closed network. Your app's features are better, but users stay because their contacts are on the leader. Which strategy is most likely to shift share?",
+   "options": [
+    "Push for interoperability (open standards or regulatory mandates) so your users can reach the leader's users, removing the network lock-in that protects them",
+    "Copy the leader's interface exactly so users who switch feel at home and don't need to learn a new app",
+    "Make your network even more closed than the leader's to build your own lock-in among current users",
+    "Spend heavily on brand advertising that highlights your better features to persuade users to switch"
+   ],
+   "answer": 0,
+   "explanation": "The leader's advantage is the network, not features, so better features alone won't move users. Interoperability lets your users reach everyone, which neutralises the leader's moat and lets you compete on product quality. That's why smaller players usually support open standards and leaders resist them.",
+   "rationales": [
+    "Correct: removing the network barrier lets your feature advantage actually matter.",
+    "A familiar interface doesn't solve the main problem: switching still means losing access to your contacts.",
+    "A closed network only helps if you're already large; at small scale it traps users in a smaller network.",
+    "Advertising features doesn't overcome the cost of leaving your contacts behind, so few users would switch."
+   ],
+   "interview_tip": "Strong strategy answers name the true source of the leader's power and attack it directly. Interviewers look for an understanding of how network effects shape who benefits from openness."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Roadmap vs release plan",
+   "difficulty": "easy",
+   "question": "A stakeholder asks why the product roadmap doesn't show exact ship dates and ticket numbers. What best explains the difference between a roadmap and a release plan?",
+   "options": [
+    "A roadmap communicates direction, priorities and goals over time, while a release plan details what ships when and in what scope",
+    "A roadmap is only for engineers to track tickets, while a release plan is only for executives to review goals",
+    "A roadmap and a release plan are the same document, just named differently at different companies",
+    "A roadmap lists every bug fix scheduled, while a release plan lists only the large features planned"
+   ],
+   "answer": 0,
+   "explanation": "A roadmap explains where the product is going and why, at a level that stays stable as details change. A release plan is the tactical schedule of specific items and dates. Mixing them makes the roadmap brittle and turns it into a promise list.",
+   "rationales": [
+    "Correct: strategic direction vs tactical schedule is the key distinction.",
+    "Both serve multiple audiences; neither is just a ticket tracker or an exec-only view.",
+    "They serve different purposes; treating them as the same causes date-driven roadmaps.",
+    "Neither is defined by bug fixes vs features; the difference is level of detail and purpose."
+   ],
+   "interview_tip": "Interviewers check that you can tailor artefacts to audiences. Strong answers explain why roadmaps avoid hard dates while release plans include them."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Setting a decide-by date on open decisions",
+   "difficulty": "medium",
+   "question": "Your team has debated for three weeks whether to support guest checkout in v1. Engineering is blocked on the checkout design and the debate keeps reopening in meetings. What is the most effective next step as PM?",
+   "options": [
+    "Set a decide-by date, name the decision owner, list the criteria and the data needed, and commit to deciding with what's available then",
+    "Let the debate continue until everyone agrees, since forcing a decision will hurt team morale and buy-in",
+    "Ask engineering to build both versions in parallel so the team can decide once both are finished",
+    "Escalate the question to the CEO so a senior leader can make the decision for the team right away"
+   ],
+   "answer": 0,
+   "explanation": "Open decisions without deadlines drift and block work. A decide-by date with a clear owner and criteria focuses the debate on what matters and makes it okay to decide with incomplete information. Recording the decision stops it from reopening.",
+   "rationales": [
+    "Correct: a deadline, owner and criteria turn an endless debate into a decision.",
+    "Waiting for full consensus can take forever and leaves engineering blocked in the meantime.",
+    "Building both wastes engineering time on work that will be thrown away.",
+    "Escalating a team-level decision too early weakens your ownership and may not be needed."
+   ],
+   "interview_tip": "Execution questions test whether you can unblock teams without overriding them. Mention decision ownership, deadlines and documenting the outcome."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Including migration, rollout and support work in estimates",
+   "difficulty": "medium",
+   "question": "Engineering estimated a new billing system at six weeks, and you shared that date with sales. Halfway through, the team realises the estimate covered only building the new system, not migrating existing customers, running both systems in parallel, or training support. How could this have been prevented?",
+   "options": [
+    "Have the estimate cover the full path to customers using it: build, data migration, parallel running, rollout, and support enablement",
+    "Ask engineering to add a fixed 20% buffer to every estimate so that unexpected work is always covered",
+    "Avoid sharing any dates with sales until the project is fully complete and launched to every customer",
+    "Have the PM write the technical estimate personally, since the PM understands the customer needs best"
+   ],
+   "answer": 0,
+   "explanation": "Estimates often cover only the core build and leave out the work needed for customers to actually use it. Spelling out migration, parallel running, rollout and enablement in the plan exposes that work early. Then the shared date reflects real delivery, not just code complete.",
+   "rationales": [
+    "Correct: defining 'done' as customers live on the new system brings hidden work into the estimate.",
+    "A flat buffer may be too small for missing work streams like migration; it hides the gap instead of fixing it.",
+    "Sales needs some planning visibility; withholding dates entirely damages trust and planning.",
+    "Engineers own technical estimates; the PM's job is to make sure the scope is complete."
+   ],
+   "interview_tip": "Interviewers like seeing that you define 'done' as customer outcomes. Strong answers mention end-to-end scope and communicating ranges."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Correcting a leader's inaccurate public number privately first",
+   "difficulty": "hard",
+   "question": "At an all-hands, your VP says your feature 'increased retention by 12%'. You know the real figure is 1.2 percentage points, and the 12% came from an early, flawed analysis. Several teams are now planning around the higher number. What should you do?",
+   "options": [
+    "Speak to the VP privately that day, share the correct figure and why it differs, and propose a quick correction to the teams relying on it",
+    "Stay quiet, because correcting a VP's public statement could damage your relationship and career",
+    "Reply on the all-hands thread with the correct number so everyone sees the accurate figure right away",
+    "Wait until the next quarterly review to mention it, when there will be a natural chance to update the numbers"
+   ],
+   "answer": 0,
+   "explanation": "Teams are making plans on a wrong number, so the correction is urgent, but correcting a leader in public first is likely to backfire. Going to the VP privately and quickly gives them the facts and a chance to own the correction. Proposing how to tell the affected teams shows you care about the outcome, not about being right.",
+   "rationales": [
+    "Correct: fast, private and solution-focused protects both accuracy and the relationship.",
+    "Staying silent lets teams make costly decisions on false data and undermines trust in metrics.",
+    "Correcting publicly first embarrasses the VP and can make them defensive, even though the facts are right.",
+    "Waiting a quarter lets plans and commitments build up on a wrong figure."
+   ],
+   "interview_tip": "Behavioural interviewers look for integrity combined with judgement about how you raise it. Strong answers move quickly, start privately and focus on fixing the downstream impact."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Repairing a misunderstanding caused by indirect communication across cultures",
+   "difficulty": "hard",
+   "question": "Your engineering partner team in another country said 'we'll try' when you asked if a feature would be ready by the end of the month. You took it as a yes and told stakeholders. It slipped, and you learn 'we'll try' often meant 'this is unlikely' on their team. What's the best response?",
+   "options": [
+    "Own the misreading with stakeholders, then agree with the partner team on explicit confidence levels and a safe way to flag risk early",
+    "Tell stakeholders the partner team missed their commitment, since they agreed to the date in writing",
+    "Stop working with the partner team and move the work to a team that communicates more directly",
+    "Ask the partner team to always say yes or no only, so there's no ambiguity in future commitments"
+   ],
+   "answer": 0,
+   "explanation": "The miss came from a communication gap, not bad faith. Owning your part with stakeholders keeps your credibility, and agreeing on clear confidence levels (for example high, medium, low) makes future commitments clear. Creating a safe way to raise risk matters because indirect phrasing often exists to avoid conflict.",
+   "rationales": [
+    "Correct: owning the misunderstanding and building a shared language fixes the cause, not just this miss.",
+    "Blaming the partner team ignores that you misread the signal, and it damages the relationship.",
+    "Moving the work away is a big reaction to a fixable communication gap and loses the team's context.",
+    "Forcing yes/no answers drops the nuance of uncertainty and may make people hide risk."
+   ],
+   "interview_tip": "Interviewers want you to own your part and build systems that prevent repeats. Strong answers show cultural awareness and a concrete mechanism."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Making the case for headcount with opportunity cost and a staged ask",
+   "difficulty": "hard",
+   "question": "You believe a new B2B integrations initiative could unlock a large customer segment, but your director says there's no headcount this half. Which approach is most likely to get support?",
+   "options": [
+    "Quantify the revenue at stake and what it costs to delay, then propose a small first stage using existing people to prove demand before asking for more",
+    "Tell your director the initiative will fail without new headcount and ask them to escalate the request immediately",
+    "Quietly pull two engineers from your current roadmap to start the work without telling your director",
+    "Drop the idea for now and wait until next year's planning cycle when headcount may be available"
+   ],
+   "answer": 0,
+   "explanation": "Leaders say yes to clear trade-offs and lower-risk asks. Putting a number on the opportunity and the cost of waiting makes the stakes concrete. A small first stage that proves demand lowers the risk and gives your director evidence to back a larger request.",
+   "rationales": [
+    "Correct: quantified stakes plus a low-risk first step makes it easy for leaders to support.",
+    "An all-or-nothing ultimatum puts pressure on your director without giving them a reason to say yes.",
+    "Moving people without telling your director breaks trust and puts existing commitments at risk.",
+    "Waiting for a year may lose the opportunity, and it shows little ownership."
+   ],
+   "interview_tip": "Strong 'influence' answers show business framing and creativity under constraints. Interviewers look for staged bets and transparency with leadership."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "What a vector database does",
+   "difficulty": "easy",
+   "question": "An engineer suggests adding a vector database to your support chatbot. What does it do in a typical AI product?",
+   "options": [
+    "It stores embeddings of content and quickly finds the items whose meaning is most similar to a query",
+    "It stores the language model's weights so that the model can run faster on the company's own servers",
+    "It records every chat conversation so the product team can read past user messages later",
+    "It replaces the language model by answering questions directly from a table of saved responses"
+   ],
+   "answer": 0,
+   "explanation": "Content is turned into embeddings, which are lists of numbers that capture meaning. A vector database stores them and finds the nearest ones to a query's embedding, which is how a chatbot retrieves the most relevant help articles to answer a question.",
+   "rationales": [
+    "Correct: storing embeddings and doing fast similarity search is its core job.",
+    "Model weights are stored and served by inference infrastructure, not a vector database.",
+    "Chat logs can be stored in any normal database; that isn't what a vector database is for.",
+    "It retrieves relevant content for the model to use; it doesn't replace the model's generation."
+   ],
+   "interview_tip": "AI PM interviews often check that you understand the parts of a RAG system. A crisp answer connects embeddings, similarity search and retrieval."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Trimming verbose tool outputs to protect agent context",
+   "difficulty": "medium",
+   "question": "Your AI agent calls a CRM search tool that returns full JSON records with hundreds of fields. After a few calls the agent starts forgetting the user's original request and costs rise sharply. What's the best fix?",
+   "options": [
+    "Have the tool return only the fields the agent needs, summarised or paginated, so results don't flood the context window",
+    "Switch to a model with a larger context window so all the tool output can fit without any changes",
+    "Tell the agent in the system prompt to pay more attention to the user's original request",
+    "Limit the agent to one tool call per task so that the context never grows too large"
+   ],
+   "answer": 0,
+   "explanation": "Huge tool outputs fill the context with irrelevant data, pushing out the instructions and raising token costs. Designing tools to return focused, concise results keeps the context clean. This fixes both quality and cost at the source.",
+   "rationales": [
+    "Correct: shaping tool output to what the agent needs fixes both forgetting and cost.",
+    "A bigger window raises cost further and models still struggle with long, noisy contexts.",
+    "A prompt reminder doesn't remove the noise crowding the context; the problem persists.",
+    "Limiting tool calls cripples the agent on tasks that genuinely need several steps."
+   ],
+   "interview_tip": "Interviewers value PMs who see agent quality as a system design issue, not just prompting. Mention context budgets and tool design."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "AI feature opt-out rate as a guardrail metric",
+   "difficulty": "medium",
+   "question": "You launched AI-generated reply suggestions in a messaging app, turned on by default. Usage of suggestions is high. Which additional metric is most important as a guardrail?",
+   "options": [
+    "The share of users who turn the feature off in settings, tracked over time and by segment",
+    "The total number of suggestions generated per day, since more suggestions means more value delivered",
+    "The average length of suggested replies, since longer suggestions show the model is doing more work",
+    "The number of servers used to generate suggestions, to make sure the feature can scale to more users"
+   ],
+   "answer": 0,
+   "explanation": "Default-on features can look successful because many people see them. The opt-out rate shows how many users dislike it enough to turn it off. A rising rate, or a high rate in a segment, is an early warning that the feature is annoying people.",
+   "rationales": [
+    "Correct: opt-outs capture rejection that high usage figures can hide.",
+    "Generation volume rises with exposure and says nothing about whether users want the suggestions.",
+    "Length is not a measure of quality; longer suggestions may be worse.",
+    "Infrastructure capacity matters operationally but isn't a user-experience guardrail."
+   ],
+   "interview_tip": "When asked about metrics for AI features, strong answers pair adoption with signals of rejection or harm. Interviewers like candidates who are sceptical of default-on usage numbers."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Blending survey-based satisfaction into an engagement-optimised ranker",
+   "difficulty": "hard",
+   "question": "Your video app's recommendation model is trained to maximise watch time. Watch time is up, but surveys show users increasingly feel the feed is 'clickbaity' and regret time spent. What's the best change to the ranking objective?",
+   "options": [
+    "Add a predicted user-satisfaction signal, trained on in-app survey responses, alongside watch time in the ranking objective",
+    "Remove watch time entirely and rank videos only by how recently they were uploaded to the platform",
+    "Keep the objective but show fewer videos in the feed so users spend less total time in the app",
+    "Rank by the number of likes each video has received, since likes better reflect what users enjoy"
+   ],
+   "answer": 0,
+   "explanation": "Watch time is a proxy for value, and optimising it hard can promote content people regret. Training a model on survey responses lets the ranker predict satisfaction for every item, even though only a small share of users answer surveys. Blending it with watch time keeps engagement while rewarding content people value.",
+   "rationales": [
+    "Correct: adding a learned satisfaction signal fixes the misaligned objective without discarding engagement.",
+    "Recency-only ranking throws away personalisation and would likely hurt both satisfaction and engagement.",
+    "Showing fewer videos doesn't change which videos rank highest, so the clickbait problem remains.",
+    "Likes are sparse, popularity-biased and can also be gamed; they don't fix the objective on their own."
+   ],
+   "interview_tip": "Recommendation questions often test whether you recognise proxy-metric problems. Strong answers propose multi-objective ranking grounded in direct user feedback."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Vision-language model to auto-fill listing attributes from photos",
+   "difficulty": "easy",
+   "question": "Sellers on a fashion marketplace often skip filling in attributes like colour, sleeve length and pattern, which hurts search filters. What is the most practical AI solution?",
+   "options": [
+    "Use a vision-language model to suggest attributes from the listing photos, which the seller can confirm or edit",
+    "Use a text-only language model to guess attributes from the product title the seller typed",
+    "Make all attribute fields mandatory so sellers can't publish a listing without filling them in",
+    "Hire a team to manually tag every listing's attributes after it's published on the site"
+   ],
+   "answer": 0,
+   "explanation": "Photos already contain most of the visual attributes buyers filter by. A vision-language model can suggest them automatically, and letting sellers confirm keeps accuracy high and gives you correction data to improve the model.",
+   "rationales": [
+    "Correct: it uses information sellers already provide and keeps the seller in control.",
+    "Titles are often short or vague, so a text-only model will miss many visual attributes.",
+    "Mandatory fields add friction and can push sellers to pick random values or abandon listings.",
+    "Manual tagging is slow and expensive, and it doesn't scale with listing volume."
+   ],
+   "interview_tip": "Interviewers want AI solutions that fit the data you already have. Strong answers include human confirmation and a feedback loop."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Round-trip time grows with physical distance to the server",
+   "difficulty": "easy",
+   "question": "Your app's servers are in the US, and users in India report the app feels slow even though the server responds in 50 ms. What is the main cause?",
+   "options": [
+    "Network round-trip time: each request must travel thousands of kilometres and back, adding significant delay",
+    "Indian users have older phones that process the server's response much more slowly than US users",
+    "The server gives lower priority to requests coming from outside the US, so they wait in a queue",
+    "Data is encrypted differently for international users, which makes each request take much longer"
+   ],
+   "answer": 0,
+   "explanation": "Even at near-light speed in fibre, a request from India to the US and back takes roughly 200–300 ms, and apps often make several requests. That network delay, not server time, dominates. Serving from nearby regions or a CDN cuts it.",
+   "rationales": [
+    "Correct: physical distance adds round-trip delay to every request.",
+    "Device speed can matter, but it doesn't explain the gap when the slow part is waiting on the network.",
+    "Servers don't usually prioritise by country; there's no evidence of this.",
+    "Encryption is the same for all users and adds little delay compared with distance."
+   ],
+   "interview_tip": "Technical fluency questions check that you can reason about latency sources. Mention distance, number of round trips and edge or regional serving."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Data lake vs data warehouse",
+   "difficulty": "easy",
+   "question": "Your data team says raw event logs go into a 'data lake', while cleaned metrics tables go into a 'data warehouse'. What is the main difference?",
+   "options": [
+    "A data lake stores large volumes of raw data in many formats cheaply; a warehouse stores structured, modelled data optimised for analysis",
+    "A data lake is used only for real-time data, while a data warehouse is used only for historical data",
+    "A data lake stores data for engineers only, while a data warehouse stores data for customers to view",
+    "A data lake and a data warehouse are the same thing, just offered by different cloud providers"
+   ],
+   "answer": 0,
+   "explanation": "Data lakes hold raw, often unstructured data at low cost, useful for flexible exploration and machine learning. Warehouses hold cleaned, structured tables designed for fast, reliable queries like dashboards and metrics. Many companies use both.",
+   "rationales": [
+    "Correct: raw and flexible vs structured and query-optimised is the key difference.",
+    "Both can hold historical data; the difference isn't real-time vs historical.",
+    "Neither is for customers by default; both are internal data stores.",
+    "They are different architectures with different purposes, not just brand names."
+   ],
+   "interview_tip": "PMs are expected to know where data lives and why. A strong answer explains the trade-off and how it affects metric reliability."
+  },
+  {
+   "topic": "Growth",
+   "concept": "App store listing conversion rate (ASO)",
+   "difficulty": "easy",
+   "question": "Your app gets plenty of store page views from search, but few viewers install it. Which metric and lever matter most?",
+   "options": [
+    "The store listing's view-to-install conversion rate, improved by testing icons, screenshots and the first lines of the description",
+    "The number of app store keywords you rank for, improved by adding more keywords to the app title",
+    "Day-30 retention, improved by redesigning the onboarding flow inside the app",
+    "Cost per click on paid search ads, improved by lowering your bids in the ad auction"
+   ],
+   "answer": 0,
+   "explanation": "The problem is between seeing the listing and installing. That's measured by listing conversion rate and driven by what users see first: icon, screenshots and the opening description. Store testing tools let you compare versions.",
+   "rationales": [
+    "Correct: it targets the exact step where users drop off.",
+    "More keywords increases views, but views are already high; the leak is after the view.",
+    "Retention happens after install, so it doesn't explain why viewers don't install.",
+    "Paid search bids affect ad traffic cost, not whether organic viewers convert."
+   ],
+   "interview_tip": "Growth questions reward locating the leaky funnel step precisely. Strong answers name the metric and a testable lever."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Fencing premium models into a higher tier (Google AI Plus loses Gemini Pro, Nov 2026)",
+   "difficulty": "medium",
+   "question": "From 13 November 2026, Google's $5/month AI Plus plan no longer lets subscribers select Gemini Pro models in the Gemini app or AI Mode in Search; they keep the Flash models, and Pro access requires the $20/month AI Pro plan. As a PM, what is the clearest product rationale for this kind of change?",
+   "options": [
+    "Sharpening the gap between tiers: the expensive-to-serve top model becomes the main reason to upgrade, protecting margins on the cheap plan",
+    "Simplifying the product: Google wants every subscriber to use only one model so that support costs fall",
+    "Reducing storage costs: removing Pro models lets Google cut the cloud storage included with AI Plus",
+    "Meeting a legal requirement: regulators require low-priced plans to exclude the most capable AI models"
+   ],
+   "answer": 0,
+   "explanation": "Pro models cost more to run, and offering them on a $5 plan both squeezes margin and weakens the reason to buy the $20 plan. Reserving them for AI Pro makes the model the clear upgrade trigger. The trade-off is user backlash and possible churn among AI Plus users who valued Pro access.",
+   "rationales": [
+    "Correct: it's a tiering and margin decision that uses the best model as the upgrade driver.",
+    "Subscribers still get Flash models and Pro remains available on a higher tier, so this isn't about using one model.",
+    "The change is about model access; the article reports no change tied to storage costs.",
+    "No such legal requirement was cited; this is a pricing and packaging decision."
+   ],
+   "interview_tip": "Interviewers like questions on recent pricing moves. Strong answers explain the tiering logic, the cost driver and the risk of backlash from existing subscribers.",
+   "source": "https://www.androidcentral.com/apps-software/google-wants-you-to-pay-more-for-using-gemini-pro-in-gemini-app-and-google-search"
+  }
+ ]
+}
