@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-19",
+ "theme": "Unspoken constraints and quiet failures",
+ "questions": [
+  {
+   "id": "2026-11-19-01",
+   "topic": "Product Sense",
+   "concept": "Audio-first guidance when the screen is out of sight (two-wheeler riders)",
+   "difficulty": "hard",
+   "question": "You're the PM for a navigation app launching a two-wheeler mode in Bengaluru. Field research shows most riders keep the phone in a pocket and listen through one earphone, and their top complaint is missing turns. What should v1 prioritise?",
+   "options": [
+    "Routes through narrow lanes that cars can't use, to cut travel time",
+    "Speed-camera and pothole alerts shown as large on-screen banners",
+    "A richer map view showing lane-level detail and two-wheeler shortcuts on screen",
+    "Voice guidance built for audio-only use: earlier prompts, landmark cues and a quick repeat option"
+   ],
+   "rationales": [
+    "Shorter routes are a real two-wheeler need, but they don't fix missed turns, which is the stated problem.",
+    "Visual alerts have the same flaw as the map view, and safety alerts aren't the top complaint.",
+    "A better screen doesn't help when the phone is in a pocket; this is designing for the wrong context.",
+    "Correct: it solves the top pain point in the way riders actually use the phone, by ear."
+   ],
+   "answer": 3,
+   "explanation": "The research tells you the screen isn't part of the experience: riders hear, they don't look. So the core job (making the next turn) has to work by sound alone, with prompts timed earlier for riding speed and cues riders can recognise, like landmarks. Shortcuts and alerts may add value later, but they don't fix the stated pain, and anything visual misses how riders actually use the phone.",
+   "interview_tip": "In product-sense rounds, let the context of use drive the solution. Saying 'the screen isn't visible, so the product must work audio-first' shows you build from research, not from feature habits."
+  },
+  {
+   "id": "2026-11-19-02",
+   "topic": "Product Sense",
+   "concept": "Filtering by commute time rather than distance in rental search",
+   "difficulty": "hard",
+   "question": "A rental-listings app in Bengaluru sees many renters visit flats and then drop out. Exit interviews say the flat was fine, but the real commute at office hours turned out to be 70+ minutes, even though the map showed it as '6 km away'. What's the strongest product change?",
+   "options": [
+    "Let renters enter their office and filter and sort by estimated peak-hour commute time",
+    "Add a radius filter so renters can limit results to listings within 5 km of a pin",
+    "Show more listing photos and a video walkthrough so renters can skip weak visits",
+    "Add neighbourhood guides with photos, reviews and nearby amenities for each area"
+   ],
+   "rationales": [
+    "Correct: it replaces a misleading proxy with the measure renters actually care about.",
+    "A radius filter is still distance, the proxy that misled renters in the first place.",
+    "Better media reduces visits to bad flats, but these flats were fine; the commute was the dealbreaker.",
+    "Guides help users judge areas, but the interviews say the problem was commute, not the neighbourhood."
+   ],
+   "answer": 0,
+   "explanation": "Users don't care about distance itself; they care about time spent travelling, and in a congested city the two diverge sharply. Making commute time at the hours they actually travel a first-class filter matches the real decision criterion and stops wasted visits. The other options improve the listing or the area but keep the wrong proxy (distance) or miss the cause of the drop-off.",
+   "interview_tip": "Strong candidates notice when a product uses a proxy (distance) for the user's real goal (time). Naming the gap and designing around the real goal is a hallmark of good product sense."
+  },
+  {
+   "id": "2026-11-19-03",
+   "topic": "Product Sense",
+   "concept": "Skills-based profiles instead of resumes for blue-collar job seekers",
+   "difficulty": "hard",
+   "question": "A jobs platform for electricians, plumbers and delivery workers loses 65% of new workers at the 'upload your resume' step. Most have never had a resume. Employers say they mainly want to know skills, experience, location and reliability. What's the best redesign?",
+   "options": [
+    "Replace the resume with a guided profile: tap-to-pick skills, years of experience, area and a short voice intro",
+    "Add tutorial videos in local languages that explain how to write and upload a resume",
+    "Add an AI resume writer that turns a few answers into a polished PDF resume for each worker",
+    "Make the resume step optional so workers can apply with just a name and phone number"
+   ],
+   "rationales": [
+    "Correct: it fits both sides, easy to create for workers and useful for employers' decisions.",
+    "Teaching a hard task keeps the hard task; most workers still won't finish it.",
+    "This still centres a resume format employers don't need; it fixes effort but not fit.",
+    "It removes the drop-off but gives employers no signal, so match quality and hiring rates suffer."
+   ],
+   "answer": 0,
+   "explanation": "The resume is the wrong artefact for this segment: workers can't easily produce one and employers don't need one. A guided, structured profile captures exactly what employers filter on, in a format workers can complete on a phone, and it creates searchable data. Skipping the step entirely removes friction but leaves employers with nothing to decide on.",
+   "interview_tip": "Interviewers like candidates who question an assumed step rather than polishing it. Ask 'what does each side actually need from this step?' and design for that."
+  },
+  {
+   "id": "2026-11-19-04",
+   "topic": "Product Sense",
+   "concept": "Spoiler controls for time-shifted sports viewers",
+   "difficulty": "easy",
+   "question": "A sports streaming app finds many fans watch matches on replay after work. They complain that score notifications and thumbnails on the home screen ruin the result before they watch. What's the most direct fix?",
+   "options": [
+    "Showing a warning before match pages that says the result may be visible",
+    "A spoiler-free mode per team or match that hides scores in notifications, thumbnails and titles",
+    "Turning off all score notifications for every user by default",
+    "Moving replays to a separate tab so the live scores are less prominent"
+   ],
+   "rationales": [
+    "A warning doesn't stop the spoiler; users still see the result.",
+    "Correct: it serves the replay segment without hurting live viewers.",
+    "This hurts the many fans who want live scores; it trades one segment's pain for another's.",
+    "Scores still appear in notifications and elsewhere, so the leak isn't fixed."
+   ],
+   "answer": 1,
+   "explanation": "Replay viewers and live viewers want opposite things from the same content. A user-controlled spoiler-free mode serves replay viewers without taking live scores away from everyone else. It also covers every place a spoiler leaks: notifications, thumbnails and titles.",
+   "interview_tip": "When two segments want opposite things, look for a user control rather than a global default. It shows you can serve both without a zero-sum trade."
+  },
+  {
+   "id": "2026-11-19-05",
+   "topic": "Metrics",
+   "concept": "Smile-shaped retention curve from returning users",
+   "difficulty": "medium",
+   "question": "A cohort's monthly retention for a social app reads 100%, 41%, 30%, 27%, 29%, 33% across months 0-5. What's the best reading?",
+   "options": [
+    "Lapsed users are coming back; check whether that's organic, such as friends joining, or driven by reactivation campaigns",
+    "It's a data error, since a cohort's retention can never rise after it has fallen",
+    "The product has clearly reached product-market fit, so the team should scale acquisition now",
+    "It means churn has stopped, so churned users can be dropped from the analysis"
+   ],
+   "rationales": [
+    "Correct: it reads the curve correctly and asks the right follow-up about the cause.",
+    "Cohort retention can rise, because users who lapsed can return; it's not impossible.",
+    "It may be a good sign, but scaling before you know why users return is premature.",
+    "Returning users show churn isn't permanent; it doesn't mean churn has stopped."
+   ],
+   "answer": 0,
+   "explanation": "A curve that dips then rises (a 'smile') means some lapsed users are returning. That can be a strong sign, for example the product gets more valuable as more friends join. But it can also be produced by win-back pushes or a seasonal event. Before celebrating, find out what is bringing them back.",
+   "interview_tip": "Reading retention curves is a common analytical prompt. Spotting a smile curve and asking 'organic or pushed?' shows you look for the mechanism behind the shape."
+  },
+  {
+   "id": "2026-11-19-06",
+   "topic": "Metrics",
+   "concept": "Search conversion drop after catalog expansion brings long-tail queries",
+   "difficulty": "hard",
+   "question": "A marketplace added 2 million niche items. Two weeks later, overall search-to-purchase conversion is down 8%. Conversion on popular (head) queries is flat, and the share of rare, long-tail queries has risen sharply. What's the most likely explanation and next step?",
+   "options": [
+    "The drop is seasonal noise, so wait another month before looking at the data",
+    "Users now search for harder niche items; measure conversion by query type and check whether long-tail searches find relevant results",
+    "The search ranking model got worse after the launch, so roll back the new items until it's retrained",
+    "The new items are lower quality, so they should be hidden from search results until they get reviews"
+   ],
+   "rationales": [
+    "The query-mix shift is a clear, testable explanation; waiting ignores it.",
+    "Correct: it explains the drop with the mix shift and tests the remaining real risk.",
+    "Flat head-query conversion argues against a general ranking regression.",
+    "There's no evidence the items are bad; hiding them throws away the new demand."
+   ],
+   "answer": 1,
+   "explanation": "Head-query conversion is flat, so search didn't get worse for existing behaviour. The mix shifted: the bigger catalog invited new, harder searches that naturally convert lower. The right move is to segment by query type and check whether the long-tail searches return relevant items, which tells you if there's a real coverage or ranking gap to fix.",
+   "interview_tip": "Root-cause questions reward segmenting before concluding. Saying 'the aggregate fell but the like-for-like segment is flat' is the kind of reasoning interviewers look for."
+  },
+  {
+   "id": "2026-11-19-07",
+   "topic": "Metrics",
+   "concept": "Revenue concentration among top-spending users (whale dependence)",
+   "difficulty": "medium",
+   "question": "A mobile game's monthly revenue is up 12%. Digging in, the top 1% of payers now produce 60% of revenue (up from 45%), and the total number of paying users fell 9%. What's the most important takeaway?",
+   "options": [
+    "The paying-user drop doesn't matter because revenue is the North Star for a game",
+    "The team should raise prices for regular players to match what top spenders are paying",
+    "The game is healthy, since higher revenue with fewer payers means monetisation got more efficient",
+    "Revenue is growing fragile, so track payer count and spend distribution alongside total revenue"
+   ],
+   "rationales": [
+    "A North Star still needs supporting metrics; ignoring a 9% payer drop hides risk.",
+    "This could push even more regular payers away and doesn't address why they're leaving.",
+    "Fewer payers is a warning, not efficiency; the revenue now depends on a small group.",
+    "Correct: it spots the concentration risk and adds the metrics that reveal it."
+   ],
+   "answer": 3,
+   "explanation": "The headline hides growing concentration: fewer people pay, and a small group carries more of the revenue. If a few big spenders leave, revenue can fall sharply. Track breadth (number of payers, conversion) and the spread of spend next to the total, and investigate why regular payers are leaving.",
+   "interview_tip": "When a top-line metric rises, interviewers want to see you check its composition. Calling out concentration risk shows mature metric judgement."
+  },
+  {
+   "id": "2026-11-19-08",
+   "topic": "Metrics",
+   "concept": "Cross-country response-style bias in satisfaction scores",
+   "difficulty": "medium",
+   "question": "Your SaaS product's NPS is +45 in Brazil and +5 in Japan. A leader wants to send a fix-it team to Japan. What should you check first?",
+   "options": [
+    "Whether Japanese users have more support tickets per account than users in Brazil",
+    "Whether Japanese respondents avoid extreme scores, by comparing against local benchmarks and Japan's own trend",
+    "Whether the Japanese sample is large enough, since the gap must be noise otherwise",
+    "Whether the survey was translated, since language alone explains all of the gap"
+   ],
+   "rationales": [
+    "Ticket counts are useful later, but they don't address why raw scores aren't comparable.",
+    "Correct: it controls for how each culture uses the scale before acting.",
+    "Sample size matters, but a 40-point gap is unlikely to be pure noise; the scale bias is the bigger issue.",
+    "Translation can play a part, but saying it explains everything is an overclaim."
+   ],
+   "answer": 1,
+   "explanation": "People in different cultures use rating scales differently; in some countries, respondents rarely give the top scores even when satisfied. Comparing raw NPS across countries can mislead. Benchmark against local competitors and look at each country's trend over time, then use behavioural data (retention, usage) to confirm whether there's a real problem.",
+   "interview_tip": "Comparing survey metrics across markets is a classic trap. Mentioning response-style bias and local benchmarks shows you understand how measurement works, not just the formula."
+  },
+  {
+   "id": "2026-11-19-09",
+   "topic": "Experimentation",
+   "concept": "Specifying MDE as relative vs absolute lift",
+   "difficulty": "easy",
+   "question": "Checkout conversion is 4%. An analyst plans a test 'powered to detect a 5% MDE'. What should you clarify first?",
+   "options": [
+    "Whether 5% is relative (4.0% to 4.2%) or absolute (4% to 9%), since sample size differs hugely",
+    "Whether 5% is the significance level or the statistical power of the test",
+    "Whether the test should use a one-tailed or two-tailed significance test",
+    "Whether the test can stop early once it reaches a 5% lift"
+   ],
+   "rationales": [
+    "Correct: the ambiguity changes the required sample size dramatically.",
+    "MDE is an effect size, not the significance level or power; mixing them up is a common error.",
+    "Tail choice matters, but it's secondary to knowing what effect size you're designing for.",
+    "Stopping early is a separate issue (peeking) and unrelated to defining the MDE."
+   ],
+   "answer": 0,
+   "explanation": "A 5% relative lift on a 4% baseline is 0.2 percentage points; a 5-point absolute lift would more than double conversion. These need very different sample sizes, and only one is realistic here. Always state an MDE as relative or absolute.",
+   "interview_tip": "Interviewers often check whether you're precise about percent versus percentage points. Clarifying it unprompted signals strong experimentation habits."
+  },
+  {
+   "id": "2026-11-19-10",
+   "topic": "Experimentation",
+   "concept": "Narrow confidence interval around zero as evidence of no meaningful effect",
+   "difficulty": "medium",
+   "question": "A well-powered test of a redesigned settings page shows a +0.1% lift in retention, with a 95% CI of -0.3% to +0.5%. The team agreed beforehand that only a 2% lift would matter. What's the right conclusion?",
+   "options": [
+    "The test failed, so the redesign should be reverted no matter what else it improves",
+    "The result is inconclusive, so the test should run twice as long to get significance",
+    "The change works, because the point estimate is positive and close to significant",
+    "The change has no meaningful effect, so decide on other grounds such as simpler code or design consistency"
+   ],
+   "rationales": [
+    "No meaningful effect isn't harm; reverting ignores other valid reasons to keep it.",
+    "Running longer would narrow an already tight interval; it can't reveal a 2% effect the data already rules out.",
+    "A positive point estimate inside a CI that spans zero isn't evidence the change works.",
+    "Correct: a tight interval near zero is evidence that no meaningful effect exists."
+   ],
+   "answer": 3,
+   "explanation": "Not significant doesn't always mean 'we don't know'. Here the whole interval sits far below the 2% effect that matters, so you can confidently rule out a meaningful impact. The test has done its job; the decision can now rest on other factors, like maintenance cost or consistency.",
+   "interview_tip": "Distinguishing 'absence of evidence' from 'evidence of absence' is a strong signal. Mention the CI versus the pre-agreed MDE when you explain a flat result."
+  },
+  {
+   "id": "2026-11-19-11",
+   "topic": "Estimation",
+   "concept": "Annual new passenger car sales in India via ownership and replacement",
+   "difficulty": "medium",
+   "question": "Estimate the annual number of new passenger cars sold in India. Which figure is closest?",
+   "options": [
+    "About 15 million",
+    "About 4 million",
+    "About 400,000",
+    "About 40 million"
+   ],
+   "rationales": [
+    "Too high; it would mean far more car-owning households or a very short replacement cycle.",
+    "Correct: ownership base divided by replacement cycle, plus new buyers, gives about 4 million.",
+    "Too low by about 10x; it would imply most car owners almost never replace their cars.",
+    "Far too high; it's about double India's yearly two-wheeler sales, and cars sell far fewer units."
+   ],
+   "answer": 1,
+   "explanation": "One method: about 300 million households; about a quarter (75 million) can afford a car, and about 40% of those own one, giving about 30 million household cars. With a replacement cycle of 8-10 years, that's about 3-3.5 million replacement purchases a year. Add about 0.5-1 million first-time buyers and commercial fleets, and you get about 4 million. That matches reported industry volumes of roughly 4 million-plus a year.",
+   "interview_tip": "Show a clear structure (base x penetration / replacement cycle + new demand) and sanity-check against a known figure. Interviewers grade the method more than the exact number."
+  },
+  {
+   "id": "2026-11-19-12",
+   "topic": "Estimation",
+   "concept": "Annual tipping volume on a food-delivery app",
+   "difficulty": "medium",
+   "question": "A food-delivery app handles 2.5 million orders a day. About 15% of orders include a tip, and the average tip is ₹25. Roughly how much do riders receive in tips per year?",
+   "options": [
+    "About ₹3,400 crore",
+    "About ₹3.4 crore",
+    "About ₹340 crore",
+    "About ₹34 crore"
+   ],
+   "rationales": [
+    "10x too high, as if every order or a much larger share were tipped.",
+    "100x too low, close to a single month's tips at a much lower rate.",
+    "Correct: 2.5M x 0.15 x ₹25 x 365 is about ₹342 crore.",
+    "10x too low, a typical slip when converting lakh to crore."
+   ],
+   "answer": 2,
+   "explanation": "Daily tipped orders = 2.5M x 15% = 375,000. Daily tips = 375,000 x ₹25 = about ₹94 lakh. Yearly = ₹94 lakh x 365 = about ₹342 crore. The common mistakes are slips in powers of ten, especially converting lakh to crore.",
+   "interview_tip": "Say the steps out loud and keep units clear (lakh, crore). Catching your own order-of-magnitude slip is a positive signal in estimation rounds."
+  },
+  {
+   "id": "2026-11-19-13",
+   "topic": "Strategy",
+   "concept": "Committed-spend drawdown contracts in usage-based pricing",
+   "difficulty": "medium",
+   "question": "An AI API company offers enterprise customers a discount if they commit to $1M of annual spend, drawn down by actual usage. What's the main strategic benefit for the vendor?",
+   "options": [
+    "It lets the vendor raise per-token prices for customers who don't commit",
+    "It guarantees the customer will use the full $1M, so usage risk disappears",
+    "It removes the need to meter usage, since the customer pays a fixed $1M either way",
+    "More predictable revenue and a larger locked-in share of the customer's spend, in exchange for a lower unit price"
+   ],
+   "rationales": [
+    "Raising non-commit prices isn't the purpose and could push customers away.",
+    "Customers may under-use their commitment; the vendor still faces renewal risk.",
+    "Usage is still metered; the commitment is drawn down by actual consumption.",
+    "Correct: predictability and share of wallet are what the vendor gets for the discount."
+   ],
+   "answer": 3,
+   "explanation": "Pure usage pricing makes revenue volatile and lets customers spread spend across vendors. A commitment trades a discount for predictability and a bigger share of the customer's budget, which discourages multi-vendor use. Usage is still metered against the commitment.",
+   "interview_tip": "Pricing questions often test whether you see both sides of a trade. Explain what the vendor gives up and what it gains."
+  },
+  {
+   "id": "2026-11-19-14",
+   "topic": "Strategy",
+   "concept": "Price-match guarantees discourage rivals' price cuts",
+   "difficulty": "medium",
+   "question": "A large electronics retailer promises to match any competitor's lower price. Beyond reassuring shoppers, what's the main strategic effect on competition?",
+   "options": [
+    "Rivals gain less by undercutting, since cuts no longer win the retailer's customers, so price wars soften",
+    "It mainly reduces costs, since the retailer no longer needs to track competitors' prices",
+    "It lets the retailer charge the lowest prices in the market at all times",
+    "It always starts a price war, because rivals must keep cutting to stay below the matched price"
+   ],
+   "rationales": [
+    "Correct: matching removes the reward for undercutting, which softens price competition.",
+    "Retailers still need to monitor rivals; the guarantee isn't a cost-saving tool.",
+    "Prices only drop when a match is claimed; list prices can stay higher.",
+    "It tends to do the opposite: undercutting stops paying off, so wars become less likely."
+   ],
+   "answer": 0,
+   "explanation": "If a rival cuts its price, the retailer's customers simply ask for a match, so the rival steals few shoppers. That reduces the payoff from undercutting and can keep prices higher across the market. Only some shoppers actually claim matches, so the retailer rarely pays the full cost.",
+   "interview_tip": "Strategy interviewers like second-order thinking about competitor responses. Showing how a customer-facing promise changes rivals' incentives is a strong answer."
+  },
+  {
+   "id": "2026-11-19-15",
+   "topic": "Strategy",
+   "concept": "Easy data export to lower perceived lock-in for cautious enterprise buyers",
+   "difficulty": "medium",
+   "question": "A B2B workflow startup keeps losing late-stage enterprise deals. Buyers say they like the product but fear being locked in if the startup fails or gets acquired. What's the best strategic response?",
+   "options": [
+    "Add more integrations so the product becomes harder to remove once it's adopted",
+    "Offer a three-year contract at a deep discount so the buyer's commitment feels worth it",
+    "Offer full data export in open formats and contract exit terms, and earn retention through product value",
+    "Drop enterprise and focus only on small businesses, who care less about lock-in"
+   ],
+   "rationales": [
+    "Deeper embedding raises switching costs, which makes the objection worse at the buying stage.",
+    "A longer contract increases lock-in, the very thing buyers fear.",
+    "Correct: lowering exit risk removes the objection while keeping the product's real strengths.",
+    "Abandoning a segment for a fixable objection is an overreaction."
+   ],
+   "answer": 2,
+   "explanation": "For a small vendor, fear of lock-in is a reason not to buy. Making it easy to leave (exports, open formats, exit clauses) lowers the perceived risk and helps win the deal. The moat then has to come from value and workflow fit, not from trapping data.",
+   "interview_tip": "Interviewers like candidates who know when a moat helps and when it scares buyers. Linking the buyer's risk to how you win the deal shows commercial judgement."
+  },
+  {
+   "id": "2026-11-19-16",
+   "topic": "Execution",
+   "concept": "Fast-follow list to keep launch scope tight",
+   "difficulty": "medium",
+   "question": "Three weeks before launch, stakeholders ask to add five 'small' items. The core user journey works and is tested. What's the best approach?",
+   "options": [
+    "Add all five items and ask the team to work weekends to keep the date",
+    "Keep the launch to the core journey and agree a fast-follow list with owners and target dates after launch",
+    "Decline all five items and tell stakeholders they can raise them next quarter",
+    "Push the launch back a month so every requested item can be included"
+   ],
+   "rationales": [
+    "Weekend crunch adds risk and burnout for items that aren't essential.",
+    "Correct: it protects the launch and gives stakeholders a credible plan.",
+    "A flat 'no' damages trust; a fast-follow commitment is more collaborative.",
+    "Delaying the core value for small extras usually costs more than it gains."
+   ],
+   "answer": 1,
+   "explanation": "Late additions put the date and quality at risk. A fast-follow list protects the launch while showing stakeholders their requests are planned, not ignored. It also lets you use launch data to decide which items still matter.",
+   "interview_tip": "Scope-creep questions test whether you can say 'not now' without saying 'no'. A fast-follow plan with owners and dates is a strong, concrete answer."
+  },
+  {
+   "id": "2026-11-19-17",
+   "topic": "Execution",
+   "concept": "Retiring an obsolete OKR mid-quarter",
+   "difficulty": "medium",
+   "question": "Mid-quarter, a partner announces it is shutting down the API your key result depends on, making the KR meaningless. What should you do?",
+   "options": [
+    "Agree with stakeholders to retire or rewrite the KR, record why, and redirect the team's effort",
+    "Quietly stop working on it and explain the missed KR at the end of the quarter",
+    "Keep working on the KR so the team's score isn't hurt at quarter-end review",
+    "Replace it with an easier KR the team is already on track to hit"
+   ],
+   "rationales": [
+    "Correct: it keeps goals honest and effort pointed at what matters now.",
+    "Silent changes surprise stakeholders and hurt trust.",
+    "Chasing a meaningless goal wastes effort just to protect a score.",
+    "Swapping in an easy KR games the system rather than resetting priorities."
+   ],
+   "answer": 0,
+   "explanation": "OKRs exist to focus effort on outcomes that matter. When the context changes, a KR that no longer matters should be changed openly, with a short record of why, so the team's effort moves to what's now important. Keeping it to protect a score, or dropping it quietly, defeats the purpose.",
+   "interview_tip": "Interviewers want to see that you treat OKRs as tools, not scorecards. Openly resetting a goal when the context changes shows judgement and transparency."
+  },
+  {
+   "id": "2026-11-19-18",
+   "topic": "Execution",
+   "concept": "Writing the analytics event spec before development",
+   "difficulty": "easy",
+   "question": "A team is about to build a new onboarding flow. When should the PM define the analytics events that will measure it?",
+   "options": [
+    "During QA, when the engineers have time to add tracking calls",
+    "Only if the first week's top-line numbers look worse than expected",
+    "After launch, once the team sees which questions stakeholders actually ask",
+    "Before development, in the spec, with event names, properties and the decisions they'll inform"
+   ],
+   "rationales": [
+    "Adding tracking in QA is rushed and often incomplete.",
+    "Waiting for a problem means you can't diagnose it, because the data isn't there.",
+    "After launch, the early data is already lost and the baseline can't be recovered.",
+    "Correct: planned tracking ships with the feature and supports the success criteria."
+   ],
+   "answer": 3,
+   "explanation": "If tracking isn't planned up front, it's often missing or inconsistent at launch, and you can't measure the change you just shipped. Writing the event spec early, linked to the success metrics, lets engineers build it in and QA it before release.",
+   "interview_tip": "Mentioning instrumentation as part of the spec signals you think about measurement from day one, a common expectation in execution rounds."
+  },
+  {
+   "id": "2026-11-19-19",
+   "topic": "Behavioural",
+   "concept": "Earning ownership from an engineering lead who acted as PM before you",
+   "difficulty": "hard",
+   "question": "You join a team where the engineering lead has acted as PM for a year. They push back on your decisions in meetings and still set priorities directly with the team. What's the best way to handle it?",
+   "options": [
+    "Defer to them on everything for a quarter until the team accepts you",
+    "Ask your manager to announce clearly that you now own all product decisions",
+    "Meet them one-on-one, learn their context, agree how you'll split decisions, and earn trust by bringing new customer insight",
+    "Make a bold roadmap call early to show the team who is in charge"
+   ],
+   "rationales": [
+    "Deferring completely means you don't do the job and delays the needed role clarity.",
+    "Escalating first makes it a power struggle and can damage the relationship for good.",
+    "Correct: it respects their context, clarifies roles and builds trust through value.",
+    "A unilateral show of authority without context risks a bad decision and more resistance."
+   ],
+   "answer": 2,
+   "explanation": "The lead has context and credibility you don't have yet, and they likely feel their role is shrinking. Learning from them, agreeing roles openly (for example, you own the what and why, they own the how), and adding visible value builds trust. Authority asserted from above or through a show of force tends to deepen the conflict.",
+   "interview_tip": "Behavioural answers on influence should show empathy, explicit role agreements and value creation. Interviewers mark down answers that rely on title or escalation."
+  },
+  {
+   "id": "2026-11-19-20",
+   "topic": "Behavioural",
+   "concept": "Allocating unglamorous work fairly with the engineering manager",
+   "difficulty": "hard",
+   "question": "You notice the same two engineers always volunteer for new feature work, while a quieter engineer keeps getting maintenance tasks and seems disengaged. You're the PM, not their manager. What should you do?",
+   "options": [
+    "Leave it alone, since task assignment is the engineering manager's job, not yours",
+    "Assign the next big feature to the quiet engineer yourself so they get a turn",
+    "Ask the two volunteers in the team meeting to step back and let others go first",
+    "Raise it with the engineering manager and help set up a visible rotation that also reflects each person's growth goals"
+   ],
+   "rationales": [
+    "Saying nothing ignores a morale risk you've seen; a good partner raises it.",
+    "Assigning work yourself oversteps the manager's role and doesn't fix the pattern.",
+    "Calling people out publicly is likely to embarrass them and hurt team trust.",
+    "Correct: it raises the issue with the right owner and fixes the system, not just one case."
+   ],
+   "answer": 3,
+   "explanation": "Fair work distribution matters for morale and delivery, but assignment belongs to the engineering manager. The best move is to share what you've noticed with them and help create a transparent system, such as a rotation shaped by people's growth goals. That fixes the pattern without overstepping or embarrassing anyone.",
+   "interview_tip": "Interviewers look for ownership without overstepping. Showing you know whose decision it is, and still act on the problem, is a strong signal."
+  },
+  {
+   "id": "2026-11-19-21",
+   "topic": "Behavioural",
+   "concept": "Responding constructively to a disappointing performance review",
+   "difficulty": "hard",
+   "question": "You expected an 'exceeds expectations' rating but got 'meets'. You believe you delivered a lot this cycle. What's the best response?",
+   "options": [
+    "Ask your skip-level manager to review the rating, since your manager may be biased",
+    "Ask for specific examples and the gap to the next level, reflect, then agree a plan with checkpoints",
+    "Accept it without discussion so you don't seem defensive to your manager",
+    "Present your list of achievements in the meeting and ask for the rating to be changed"
+   ],
+   "rationales": [
+    "Escalating before you understand the reasoning damages trust with your manager.",
+    "Correct: it seeks to understand, owns the gap and creates a clear path forward.",
+    "Staying silent misses the chance to understand the gap and avoid repeating it.",
+    "Arguing right away makes you look defensive and makes it hard to learn what was missing."
+   ],
+   "answer": 1,
+   "explanation": "The most useful thing a disappointing review gives you is information on how your work is judged. Asking for concrete examples and what the next level looks like turns it into a growth plan, and regular checkpoints stop the same surprise happening again. You can still share context, but arguing first or escalating makes you look defensive.",
+   "interview_tip": "Questions about feedback test self-awareness. Strong answers show curiosity, ownership and a concrete plan, not justification."
+  },
+  {
+   "id": "2026-11-19-22",
+   "topic": "AI Product",
+   "concept": "Shortening outputs to cut latency when streaming isn't possible",
+   "difficulty": "medium",
+   "question": "Your WhatsApp support bot can't stream, so users see nothing until the full answer arrives. Average replies are 600 tokens, time to first token is 0.8s, and total response time is 9s. What's the biggest latency lever?",
+   "options": [
+    "Retrieve more documents so the model doesn't need to think as long",
+    "Switch to a larger model that can reason more efficiently",
+    "Make answers much shorter, since generating output tokens takes most of the 9 seconds",
+    "Shorten the system prompt, since reading input tokens takes most of the time"
+   ],
+   "rationales": [
+    "More retrieved text adds input tokens and doesn't shorten the answer.",
+    "Larger models are usually slower per token, which makes latency worse.",
+    "Correct: output generation dominates the wait, so shorter outputs are the biggest lever.",
+    "Input processing is reflected in the 0.8s first-token time; it's the smaller part."
+   ],
+   "answer": 2,
+   "explanation": "With 0.8s to the first token, about 8 seconds goes to generating 600 output tokens one at a time. Without streaming, users wait for all of it. Cutting answers to what the user needs (often a quarter of the length on chat) directly cuts wait time and cost, and short replies suit messaging anyway.",
+   "interview_tip": "AI PM interviews often ask you to break latency into parts. Separating time to first token from generation time and naming the dominant one shows real technical fluency."
+  },
+  {
+   "id": "2026-11-19-23",
+   "topic": "AI Product",
+   "concept": "Re-tuning the agent harness when swapping the underlying model",
+   "difficulty": "medium",
+   "question": "Your team switches its coding agent to a newer model that scores higher on public benchmarks, but success on your own internal tasks drops. What's the best next step?",
+   "options": [
+    "Fine-tune the new model on your tasks before trying anything else",
+    "Re-tune the harness (prompts, tool descriptions, scaffolding) for the new model and re-run your own evals",
+    "Ship it anyway, since public benchmarks are a more reliable signal than internal tests",
+    "Revert to the old model permanently, since the new one is clearly worse for your use case"
+   ],
+   "rationales": [
+    "Fine-tuning is expensive and premature when cheaper harness changes haven't been tried.",
+    "Correct: it tests the likely cause, a harness tuned to the old model.",
+    "Your own tasks matter more than public benchmarks for your product.",
+    "Reverting before re-tuning may throw away a better model."
+   ],
+   "answer": 1,
+   "explanation": "Agent performance depends on the model and its harness together: the prompts, tools and control loop around it. A harness tuned to one model often isn't the best for another. Adjust the harness and re-benchmark on your own tasks before deciding; fine-tuning is slower and costlier, and reverting may leave gains on the table.",
+   "interview_tip": "Showing you know agent quality depends on the model plus its harness signals hands-on AI product experience."
+  },
+  {
+   "id": "2026-11-19-24",
+   "topic": "AI Product",
+   "concept": "Agents silently skipping blocked steps: requiring explicit failure reporting",
+   "difficulty": "hard",
+   "question": "Your coding agent reports 'task complete' on most tickets, but code review finds that it often quietly skipped steps it couldn't do, like tests it couldn't run. What's the best fix?",
+   "options": [
+    "Require a structured report of blocked or skipped steps, verify with independent checks, and score honest reporting in evals",
+    "Add a prompt telling the agent never to skip steps under any circumstances",
+    "Let the agent retry blocked steps without limit until they all succeed",
+    "Measure the agent only on how often it marks tasks complete, to push it to finish more"
+   ],
+   "rationales": [
+    "Correct: it makes failures visible and checkable, and rewards honesty.",
+    "Some steps really can't be done; a ban can't fix that and may push the agent to hide failures more.",
+    "Unlimited retries waste money and still won't succeed for truly blocked steps.",
+    "Rewarding 'complete' encourages exactly this kind of hidden failure."
+   ],
+   "answer": 0,
+   "explanation": "The real problem is that the agent's reports can't be trusted. The fix makes failure visible: a required list of what was blocked or skipped, independent checks (like CI running the tests), and evals that reward honest reporting. Just telling it not to skip doesn't change behaviour when it truly can't do the step, and rewarding completion makes hiding failures worse.",
+   "interview_tip": "Interviewers value candidates who design for honest failure, not just success. Mention verification and evals that reward reporting problems."
+  },
+  {
+   "id": "2026-11-19-25",
+   "topic": "AI Product",
+   "concept": "Image resolution as a cost-accuracy lever for vision-model inputs",
+   "difficulty": "easy",
+   "question": "A marketplace sends sellers' full 12-megapixel photos to a vision model to pull out category and colour. Costs are high. What's the first thing to try?",
+   "options": [
+    "Ask sellers to type category and colour themselves instead",
+    "Send every photo twice and keep the answer when the two runs agree",
+    "Downscale images to the lowest resolution that keeps accuracy on an eval set",
+    "Switch to a much larger vision model that handles big images better"
+   ],
+   "rationales": [
+    "This drops the feature's value and adds friction for sellers.",
+    "Running twice doubles cost; it's a reliability tactic, not a cost fix.",
+    "Correct: it cuts the main cost driver and checks quality with an eval.",
+    "A larger model raises cost and doesn't address oversized inputs."
+   ],
+   "answer": 2,
+   "explanation": "Vision-model cost usually grows with image size, and category and colour don't need fine detail. Testing smaller resolutions on a labelled eval set lets you cut cost a lot while confirming accuracy holds.",
+   "interview_tip": "Naming input size as a cost lever, and checking it with an eval, shows practical AI product sense."
+  },
+  {
+   "id": "2026-11-19-26",
+   "topic": "AI Product",
+   "concept": "Cross-lingual retrieval with multilingual embeddings",
+   "difficulty": "medium",
+   "question": "An Indian fintech's help docs are in English, but many users ask the support assistant questions in Hindi. The keyword-based search returns nothing for those questions. What's the best retrieval fix?",
+   "options": [
+    "Increase top-k so more English documents are passed to the model each time",
+    "Tell users in the chat to ask their questions in English for better results",
+    "Use a multilingual embedding model that maps Hindi and English into one space, tested on real Hindi queries",
+    "Add more Hindi keywords to the existing keyword index by hand"
+   ],
+   "rationales": [
+    "More documents don't help when the search can't match the language at all.",
+    "This pushes the burden onto users and excludes the people the product should serve.",
+    "Correct: it fixes the root cause, matching meaning across languages.",
+    "Manual keyword lists are fragile and miss how people actually phrase questions."
+   ],
+   "answer": 2,
+   "explanation": "Keyword search can't match Hindi words to English text. Multilingual embeddings place questions and documents with the same meaning close together, whatever the language, so Hindi questions can find English docs. Translating queries first is another option; either way, test on a set of real Hindi questions.",
+   "interview_tip": "Interviewers at global companies like candidates who think about multilingual users. Explaining why embeddings work across languages shows depth."
+  },
+  {
+   "id": "2026-11-19-27",
+   "topic": "Technology",
+   "concept": "Content-addressed deduplication of uploaded files",
+   "difficulty": "easy",
+   "question": "A photo-backup app finds the same viral images, forwarded in group chats, stored millions of times. Which technique cuts storage most directly?",
+   "options": [
+    "Compress every image more heavily before storing it",
+    "Delete images that users haven't opened in a year",
+    "Move all images to a cheaper storage tier after upload",
+    "Hash each file's contents and store identical files once, with references for each user"
+   ],
+   "rationales": [
+    "Heavier compression lowers quality and still stores every duplicate.",
+    "Deleting users' photos breaks the promise of a backup app.",
+    "Cheaper tiers lower the price per byte but keep every duplicate.",
+    "Correct: deduplication by content hash removes the repeated copies."
+   ],
+   "answer": 3,
+   "explanation": "Identical files produce identical content hashes, so the system can keep one copy and point each user's library to it. This removes duplicates without changing what users see. Compression and cheaper tiers help too, but they don't remove the repeated copies.",
+   "interview_tip": "Technical-fluency questions reward naming the mechanism. Explaining how hashing finds identical files shows you can talk with engineers about cost."
+  },
+  {
+   "id": "2026-11-19-28",
+   "topic": "Technology",
+   "concept": "Pinning dependencies with lockfiles against malicious package releases",
+   "difficulty": "easy",
+   "question": "An attacker publishes a malicious new version of a popular open-source package. Your builds pulled it automatically because the dependency was set to 'latest'. Which practice would most directly have prevented this?",
+   "options": [
+    "Pin exact versions with a lockfile and checksums, and review upgrades on purpose",
+    "Only deploy builds during business hours when engineers are around",
+    "Use more open-source packages so no single one matters",
+    "Run the full test suite on every build before deploying"
+   ],
+   "rationales": [
+    "Correct: pinning stops unreviewed new versions from entering builds.",
+    "Timing doesn't stop the bad package from being installed.",
+    "More dependencies increase the attack surface.",
+    "Malicious code often passes tests, since it doesn't break features."
+   ],
+   "answer": 0,
+   "explanation": "With pinned versions and checksums, builds only use versions you've chosen, so a newly published bad version isn't pulled in on its own. Upgrades become deliberate steps you can review. Tests usually won't catch a credential stealer that leaves the features working.",
+   "interview_tip": "Supply-chain security comes up more and more in PM interviews. Knowing why pinning matters shows you can weigh speed against risk."
+  },
+  {
+   "id": "2026-11-19-29",
+   "topic": "Growth",
+   "concept": "Viral cycle time as a growth driver alongside K-factor",
+   "difficulty": "easy",
+   "question": "Two apps each have a viral coefficient (K) of 1.2. In App A, invites usually turn into new users within a day; in App B, it takes about ten days. Which grows faster, and why?",
+   "options": [
+    "Neither grows, because K must be above 2 for viral growth",
+    "Both grow at the same rate, because they have the same K-factor",
+    "App A, because a shorter cycle means more rounds of invites in the same time",
+    "App B, because a longer cycle gives invitees more time to decide"
+   ],
+   "rationales": [
+    "Any K above 1 means self-sustaining viral growth.",
+    "K alone doesn't set the growth rate; cycle time matters as much.",
+    "Correct: more cycles per period means much faster compounding.",
+    "A longer cycle slows compounding; time to decide isn't the advantage here."
+   ],
+   "answer": 2,
+   "explanation": "K says how many new users each user brings; cycle time says how fast that happens. With the same K, the app with the shorter cycle completes many more rounds in a month, so it compounds much faster. Cutting cycle time, for example with instant invites, is a major growth lever.",
+   "interview_tip": "Mentioning cycle time next to K-factor shows you understand growth loops beyond the formula."
+  },
+  {
+   "id": "2026-11-19-30",
+   "topic": "Current Events",
+   "concept": "Separating AI training opt-out from chat history (Gemini, Nov 2026)",
+   "difficulty": "easy",
+   "question": "In November 2026, Google added Gemini settings that separate AI training from chat history, so users can keep their history while opting out of training. What's the main product benefit of splitting these controls?",
+   "options": [
+    "It lets Google train on more conversations, since history is now on for everyone",
+    "Users no longer have to give up a useful feature (history) to make a privacy choice (no training)",
+    "It makes Gemini's answers more accurate, since history now feeds training",
+    "It removes the need to retain any conversations for safety or operations"
+   ],
+   "rationales": [
+    "The point is that users can opt out of training; the reports don't say history is on for everyone.",
+    "Correct: splitting the controls removes a forced trade-off between value and privacy.",
+    "Opting out means those chats aren't used for training; it's a privacy choice, not an accuracy gain.",
+    "The reports say some conversations are still kept, around two months, for safety and operations."
+   ],
+   "answer": 1,
+   "explanation": "When one switch controls two things, users face a bad trade: keep a useful feature or protect their data. Splitting the controls lets people choose each separately, which respects their privacy choice without costing them value. The same reports noted a separate change: temporary chats are now kept for about two months for safety and operations.",
+   "interview_tip": "Privacy-control questions test whether you can spot a bundled setting forcing a bad trade. Proposing separate controls shows you respect user trust.",
+   "source": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-november-18-2026/"
+  }
+ ]
+}

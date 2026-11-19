@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-19",
+   "theme": "Unspoken constraints and quiet failures",
+   "count": 30
+  },
+  {
    "date": "2026-11-18",
    "theme": "Agents that pay, metrics that mislead",
    "count": 30
