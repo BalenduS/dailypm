@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-20",
+   "theme": "Who carries the risk when things go wrong",
+   "count": 30
+  },
+  {
    "date": "2026-11-19",
    "theme": "Unspoken constraints and quiet failures",
    "count": 30

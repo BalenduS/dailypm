@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-20",
+ "theme": "Who carries the risk when things go wrong",
+ "questions": [
+  {
+   "id": "2026-11-20-01",
+   "topic": "Product Sense",
+   "concept": "Scheduled pre-orders to smooth peak demand for predictable meals",
+   "difficulty": "hard",
+   "question": "You're the PM for a food-delivery app in Bengaluru. Office workers in tech parks order lunch at 12:45 almost every weekday, and their top complaint is lunch arriving 50+ minutes late because riders and kitchens are swamped in that window. Restaurants say they could cook more if they knew orders earlier. What should you build first?",
+   "options": [
+    "Scheduled lunch pre-orders placed by mid-morning, batched for delivery to each tech park at a chosen slot",
+    "A live tracker with more accurate ETAs so users at least know how late lunch will be",
+    "Surge delivery fees between 12:30 and 1:30 to push some users to order at other times",
+    "More rider incentives during the lunch peak to add delivery capacity in tech parks"
+   ],
+   "rationales": [
+    "Correct: it turns predictable demand into planned supply and batched delivery, attacking the root cause of lateness.",
+    "Accurate ETAs reduce anxiety but leave lunch just as late; it treats the symptom.",
+    "Surge pricing shifts some demand but punishes users who can't change their lunch hour, and it doesn't help kitchens prepare.",
+    "Extra riders help a bit, but kitchens are also a bottleneck and paying for peak capacity every day is costly."
+   ],
+   "answer": 0,
+   "explanation": "The demand here is predictable: the same people want lunch at the same time and place every day. Collecting it hours earlier lets kitchens plan and lets one rider carry many orders to the same campus, which fixes the cause (a capacity spike) rather than the symptom. Surge fees and incentives fight the peak with money, and better ETAs only make lateness visible.",
+   "interview_tip": "In product-sense rounds, notice when demand is predictable. Saying 'this demand is known in advance, so capture it early and plan supply' shows you look for structural fixes before throwing money at a peak."
+  },
+  {
+   "id": "2026-11-20-02",
+   "topic": "Product Sense",
+   "concept": "Move-in condition documentation to prevent deposit disputes",
+   "difficulty": "hard",
+   "question": "You're the PM for a rental platform in Pune that holds security deposits. Your biggest source of angry support tickets is move-out disputes: landlords deduct for damage, tenants say it was already there, and neither side has proof. What should v1 focus on?",
+   "options": [
+    "A cap on deductions at 25% of the deposit unless the landlord gets platform approval",
+    "Mediation by your support team, with a promise to resolve every dispute within 7 days",
+    "A rating system so tenants and landlords can review each other after the tenancy ends",
+    "A guided move-in checklist with timestamped photos per room that both parties sign off in the app"
+   ],
+   "rationales": [
+    "An arbitrary cap may be unfair to landlords with real damage and doesn't address who caused it.",
+    "Faster mediation is still mediation without evidence; agents end up guessing and one side stays angry.",
+    "Reviews add accountability over time, but they don't settle whether a specific crack existed before the tenant moved in.",
+    "Correct: it creates the missing evidence at the moment it can be captured, preventing most disputes."
+   ],
+   "answer": 3,
+   "explanation": "The disputes happen because there is no shared record of the flat's condition at the start. A joint, timestamped record captured at move-in removes the ambiguity, so most disputes either never start or resolve on evidence. Reviews, mediation and caps all act after the fact without fixing the missing evidence.",
+   "interview_tip": "Interviewers like candidates who find the moment where a problem can be prevented cheaply. Pointing out that the evidence gap starts at move-in, not move-out, signals root-cause thinking about the full journey."
+  },
+  {
+   "id": "2026-11-20-03",
+   "topic": "Product Sense",
+   "concept": "Navigable chapters for long-form audio",
+   "difficulty": "easy",
+   "question": "Users of your podcast app say they love 2-hour interview episodes but often abandon them because they can't find the part they care about, and scrubbing a long timeline is painful. Which feature best addresses this?",
+   "options": [
+    "Playback speeds up to 3x so long episodes finish faster",
+    "Chapter markers with titles that users can tap to jump to a section",
+    "Recommendations for shorter episodes from the same show",
+    "A sleep timer so users can listen in shorter sessions at night"
+   ],
+   "rationales": [
+    "Speed helps people who want the whole episode faster, not people looking for one segment.",
+    "Correct: it directly solves 'I can't find the part I care about' with a scannable structure.",
+    "Pushing shorter episodes dodges the problem and steers users away from content they say they love.",
+    "A sleep timer splits listening into sessions but doesn't help users find a section."
+   ],
+   "answer": 1,
+   "explanation": "The pain is navigation: users want a specific part of a long episode and can't find it. Titled chapters give a table of contents, so users jump straight to what they want. Faster playback and shorter episodes change how long listening takes, not whether users can find the part they came for.",
+   "interview_tip": "A quick check in any product-sense answer: does the solution match the exact pain stated? Restating the pain ('it's a findability problem, not a length problem') before solving shows sharp problem framing."
+  },
+  {
+   "id": "2026-11-20-04",
+   "topic": "Product Sense",
+   "concept": "Verifying the employer side to protect domestic workers",
+   "difficulty": "hard",
+   "question": "You run a marketplace in Delhi that connects households with domestic workers (cooks, cleaners, nannies). Households already get ID-verified worker profiles. Supply growth has stalled, and interviews show many women workers won't take jobs from the app because they don't know who they'd be working for. What should you prioritise?",
+   "options": [
+    "Add more background checks on workers so households trust the platform more",
+    "Verify households too (ID, address check, reviews from past workers) and show this to workers before they accept",
+    "Raise worker pay on the platform by 15% to make jobs more attractive than offline ones",
+    "Run a referral bonus so current workers bring in friends from their neighbourhood"
+   ],
+   "rationales": [
+    "This strengthens trust in the wrong direction; households aren't the constrained side here.",
+    "Correct: it removes the specific barrier workers named by making the employer side accountable and visible.",
+    "More pay may tempt some workers but doesn't make an unknown home feel safe; it's an expensive fix for a trust problem.",
+    "Referrals bring in more workers who will face the same fear, so conversion stays low."
+   ],
+   "answer": 1,
+   "explanation": "The stated barrier is safety and uncertainty about the employer, the side that has never been verified. In marketplaces where one side bears more personal risk, trust has to flow both ways. Showing verified, reviewed households removes the barrier directly; pay and referrals add incentive but leave the fear in place.",
+   "interview_tip": "In marketplace questions, ask which side is constrained and what risk that side carries. Spotting that trust tools usually protect only the paying side, and fixing the other side, is a strong product-sense signal."
+  },
+  {
+   "id": "2026-11-20-05",
+   "topic": "Metrics",
+   "concept": "Third-party SDK outage behind a single funnel-step drop",
+   "difficulty": "hard",
+   "question": "Checkout completion on your Shopify-based D2C store fell 18% starting Tuesday at 10:00. Traffic, add-to-cart and payment success are normal. The drop is at the address step, across all browsers and both mobile and desktop. No code was deployed. What is the most likely cause to check first?",
+   "options": [
+    "Users became more price-sensitive after a competitor launched a sale on Tuesday",
+    "The third-party address-autocomplete or pincode-lookup service the address step depends on started failing",
+    "A tracking bug is undercounting checkouts on one browser",
+    "Shipping charges shown at the address step suddenly look higher than before"
+   ],
+   "rationales": [
+    "A competitor's sale would cut traffic or add-to-cart, not only the address step, and wouldn't start at a sharp hour.",
+    "Correct: the exact start time, single step and cross-platform pattern without a deploy fit an outside service failing.",
+    "The drop is on all browsers and devices, so a bug on one browser doesn't explain it.",
+    "Shipping charges only change if someone changed them; with no deploy or config change, this is less likely than a dependency failure."
+   ],
+   "answer": 1,
+   "explanation": "A sharp drop that starts at a precise time, is confined to one step, and hits every platform with no deploy points to an external dependency in that step. Address steps usually rely on third-party autocomplete or serviceability APIs, so check their status and error logs first. A competitor sale would show earlier in the funnel, and a tracking bug would usually be platform-specific.",
+   "interview_tip": "For root-cause questions, use the shape of the drop: when it started, where in the funnel, which segments. Saying 'sharp, one step, all platforms, no deploy — check dependencies' shows structured debugging rather than guessing."
+  },
+  {
+   "id": "2026-11-20-06",
+   "topic": "Metrics",
+   "concept": "Accidental clicks inflating ad CTR",
+   "difficulty": "medium",
+   "question": "After moving banner ads closer to the scroll area in your news app, ad click-through rate rose 40%. Advertisers then complain their landing-page bounce rate jumped and conversions per click fell. What's the most likely explanation?",
+   "options": [
+    "Many new clicks are accidental taps from scrolling, so CTR rose while real interest did not",
+    "The new placement attracts more curious users who need more time to convert",
+    "Advertisers' landing pages got slower at the same time the placement changed",
+    "Higher CTR means the ads are more relevant, and conversions will catch up over time"
+   ],
+   "rationales": [
+    "Correct: higher CTR with instant bounces is the classic sign of accidental clicks.",
+    "Curious users would still stay on the page; immediate bounces point to clicks nobody meant to make.",
+    "Possible but a coincidence; the change lines up with your placement move, which is the simpler cause.",
+    "Relevance didn't change, only placement, and the falling conversion per click contradicts the idea of better ads."
+   ],
+   "answer": 0,
+   "explanation": "Placing ads where thumbs scroll raises taps that users didn't intend; these users bounce immediately, which is exactly what advertisers see. CTR alone can't tell intended from accidental clicks, so pair it with post-click signals like dwell time or bounce. If those worsen, the 'win' hurts advertisers and eventually ad prices.",
+   "interview_tip": "Interviewers test whether you check a metric win against what happens next. Pairing CTR with post-click quality shows you think about the advertiser side, not just your own dashboard."
+  },
+  {
+   "id": "2026-11-20-07",
+   "topic": "Metrics",
+   "concept": "Skip rate as a leading churn signal in subscriptions",
+   "difficulty": "easy",
+   "question": "You manage a weekly meal-kit subscription where customers can skip a week without cancelling. Which metric is the best early warning that a customer is likely to cancel soon?",
+   "options": [
+    "A rising share of weeks they skip over the last month",
+    "Whether they used a discount code on their first box",
+    "Their average rating of recipes over their lifetime",
+    "Total number of orders they've placed since signing up"
+   ],
+   "rationales": [
+    "Correct: a rising recent skip rate is a timely, behavioural signal of fading engagement.",
+    "This is fixed at signup; it may predict churn on average but can't warn you that a specific customer is drifting now.",
+    "Lifetime ratings change slowly and many customers never rate at all.",
+    "Lifetime orders reflect past value, not a current change in behaviour."
+   ],
+   "answer": 0,
+   "explanation": "Skipping is a soft form of leaving: customers who skip more and more are often drifting towards cancelling. Tracking recent skip rate gives you a window to act, for example with menu changes or a pause offer. Lifetime totals and first-order facts move too slowly or are fixed, so they can't warn you of a change.",
+   "interview_tip": "When asked for leading indicators, choose recent behaviour that changes before the outcome. Explaining why a signal is early and actionable is more convincing than naming many metrics."
+  },
+  {
+   "id": "2026-11-20-08",
+   "topic": "Metrics",
+   "concept": "North Star for a telemedicine platform",
+   "difficulty": "medium",
+   "question": "You're defining the North Star metric for a telemedicine app where patients book video consultations with doctors. Which is the best choice?",
+   "options": [
+    "Average consultation length in minutes",
+    "Number of doctors listed on the platform",
+    "Total app downloads per week",
+    "Weekly consultations completed where the patient followed through (filled the prescription or booked the follow-up)"
+   ],
+   "rationales": [
+    "Longer isn't better; a quick, effective consult may serve patients best.",
+    "Supply is an input; many listed doctors with no consultations creates no value.",
+    "Downloads measure top-of-funnel interest, not whether anyone got care.",
+    "Correct: it measures delivered value on both sides of the marketplace and ties to revenue."
+   ],
+   "answer": 3,
+   "explanation": "A North Star should capture the value users get and track long-term business health. A completed consultation that leads to the patient acting on the advice means real care was delivered, and it grows with both demand and supply. Downloads and doctor count are inputs, and longer calls aren't clearly better.",
+   "interview_tip": "When proposing a North Star, explain why it reflects value for the user and the business, and name what you'd pair it with (e.g. a quality guardrail). That shows you understand metrics as a system."
+  },
+  {
+   "id": "2026-11-20-09",
+   "topic": "Experimentation",
+   "concept": "Comparing notification openers to non-openers vs a randomized holdout",
+   "difficulty": "easy",
+   "question": "An analyst reports that users who opened your weekly 'deals' push notification spent 3x more that week than users who didn't. Marketing wants to send it daily. What's the right way to measure the notification's real effect?",
+   "options": [
+    "Survey users who opened the notification about whether it influenced their purchase",
+    "Compare spend for openers this week against openers last week",
+    "Randomly hold out a group that never gets the notification and compare their spend with the group that does",
+    "Compare spend of users who enabled notifications with those who disabled them"
+   ],
+   "rationales": [
+    "Self-reports are unreliable and only cover openers, so it can't measure incremental spend.",
+    "This compares the same self-selected group over time and still has no counterfactual.",
+    "Correct: randomisation removes the selection bias and measures the causal effect.",
+    "People who enable notifications are a self-selected group too, so this has the same bias."
+   ],
+   "answer": 2,
+   "explanation": "Openers are already more engaged, so they'd spend more even without the notification; the 3x is mostly selection, not effect. A randomized holdout makes the two groups alike on average, so any spending difference is caused by the notification. Only then can you judge whether sending it daily is worth the opt-out risk.",
+   "interview_tip": "Interviewers often hide selection bias inside a tempting number. Saying 'openers are a different population; I need a holdout' quickly signals strong causal thinking."
+  },
+  {
+   "id": "2026-11-20-10",
+   "topic": "Experimentation",
+   "concept": "Few clusters limit power in market-level randomization",
+   "difficulty": "medium",
+   "question": "Your grocery delivery app wants to test a new delivery-fee structure. Because fees affect riders and stores city-wide, you plan to randomize by city, but you only operate in 8 cities. What's the main risk with this design?",
+   "options": [
+    "Randomizing by city always causes a sample ratio mismatch",
+    "City-level tests can't measure revenue, only order counts",
+    "Users in treatment cities will see control prices and get confused",
+    "With only 8 units, the test has low power and city differences can easily swamp the effect"
+   ],
+   "rationales": [
+    "SRM is about unexpected splits in assignment; a planned 4-vs-4 city split doesn't cause it.",
+    "You can measure any metric at city level; the issue is precision, not what you can measure.",
+    "Users in different cities rarely see each other's prices, so cross-city confusion is minor.",
+    "Correct: few clusters means high variance between arms, low power and fragile conclusions."
+   ],
+   "answer": 3,
+   "explanation": "Statistical power depends on the number of randomized units, not the number of users inside them. With 8 cities, 4 per arm, one unusual city can drive the result. Mitigations include pairing similar cities, using pre-period data to adjust, switchback designs over time, or running longer.",
+   "interview_tip": "When you choose a bigger randomization unit to avoid interference, say what it costs: fewer units and less power. Naming fixes like matched pairs or switchbacks shows experimentation depth."
+  },
+  {
+   "id": "2026-11-20-11",
+   "topic": "Estimation",
+   "concept": "Daily ride-hailing pickups at Bengaluru airport",
+   "difficulty": "medium",
+   "question": "Roughly how many app-based cab pickups (Uber, Ola, etc.) happen at Bengaluru airport per day? Assume the airport handles about 1 lakh passengers a day in total.",
+   "options": [
+    "About 1,200",
+    "About 12,000",
+    "About 60,000",
+    "About 1,20,000"
+   ],
+   "rationales": [
+    "This implies only ~2% of arriving passengers take an app cab, far too low for a city with weak public transit to the airport.",
+    "Correct: arrivals x non-transfer share x app-cab share / riders per cab gives about 12,000.",
+    "This is more pickups than the ~45,000 arriving passengers who leave the airport, so it can't be right.",
+    "This is more than the airport's entire daily passenger count, arrivals and departures combined."
+   ],
+   "answer": 1,
+   "explanation": "1 lakh passengers a day, about half arriving = 50,000. Remove ~10% transfer passengers who never leave = ~45,000. Assume ~40% use an app cab (others take the airport bus, private cars, or prepaid taxis) = ~18,000 people. At ~1.5 passengers per ride, that's ~12,000 pickups a day.",
+   "interview_tip": "Interviewers care about structure and sanity checks. Splitting arrivals from departures and checking your answer against the passenger total shows disciplined estimation."
+  },
+  {
+   "id": "2026-11-20-12",
+   "topic": "Estimation",
+   "concept": "Daily street-tea cups sold in Mumbai",
+   "difficulty": "medium",
+   "question": "Roughly how many cups of tea are bought from tea stalls and vendors in Mumbai each day? Assume a metro population of about 2 crore.",
+   "options": [
+    "About 5 crore",
+    "About 1 lakh",
+    "About 1 crore",
+    "About 10 lakh"
+   ],
+   "rationales": [
+    "This implies 2.5 cups bought outside per person per day including children, which is too high.",
+    "This is one cup for every 200 people, clearly far too low.",
+    "Correct: adults x share buying outside x cups per buyer gives about 1 crore.",
+    "This means only ~7% of adults buy one cup, too low for a city where street tea is a daily habit."
+   ],
+   "answer": 2,
+   "explanation": "2 crore people, about 70% adults = 1.4 crore. Assume about half of adults buy tea outside on a given day (commuters, workers, shopkeepers) = 70 lakh. At about 1.5 cups each, that's roughly 1 crore cups a day. The exact number matters less than a defensible chain of assumptions.",
+   "interview_tip": "For consumption estimates, segment who buys and how often, then sanity-check against the population. Saying out loud which assumption you're least sure of shows good judgement."
+  },
+  {
+   "id": "2026-11-20-13",
+   "topic": "Strategy",
+   "concept": "Seeding third-party supply with a developer fund on a new platform",
+   "difficulty": "medium",
+   "question": "You're launching an app store for a new smart-glasses platform. Developers won't build until there are users, and users won't buy glasses without good apps. What's the most common and effective way to break this deadlock early?",
+   "options": [
+    "Fund and co-build a small set of high-quality launch apps with selected developers",
+    "Charge developers a lower 15% commission than competitors from day one",
+    "Wait until the device sells 1 million units before courting developers",
+    "Open the store to any developer and approve every app to maximise the count"
+   ],
+   "rationales": [
+    "Correct: subsidising key supply creates the early value that kicks off the network effect.",
+    "A lower commission on zero revenue is no incentive; developers care about users first.",
+    "Without apps the device won't reach 1 million units, so this waits for something that won't happen.",
+    "A large count of low-quality apps disappoints early buyers and damages the platform's reputation."
+   ],
+   "answer": 0,
+   "explanation": "In a chicken-and-egg platform, the platform owner usually subsidises the harder side. Paying for and co-building a few great apps creates a reason to buy the device at launch, which then attracts more developers. A lower fee only matters once there's revenue to share, and flooding the store with weak apps hurts the first impression.",
+   "interview_tip": "Platform strategy questions often test cold-start thinking. Naming which side to subsidise and why, with an example like launch titles for a console, shows you understand two-sided dynamics."
+  },
+  {
+   "id": "2026-11-20-14",
+   "topic": "Strategy",
+   "concept": "Lowering one side's adoption cost to break a payments chicken-and-egg",
+   "difficulty": "medium",
+   "question": "Card payments in India grew slowly for years because small shops wouldn't pay for card machines, and customers didn't carry cards since few shops accepted them. Which feature of UPI QR codes most directly broke this cycle?",
+   "options": [
+    "UPI was promoted mainly through TV ads aimed at urban consumers",
+    "UPI gave customers cashback on every transaction for the first few years",
+    "Merchants could accept payments with a free printed QR code instead of buying a terminal",
+    "QR payments settled faster than cards, improving merchants' cash flow"
+   ],
+   "rationales": [
+    "Advertising builds awareness but doesn't change the economics that kept small shops from accepting.",
+    "Cashback helped some apps but was a temporary consumer incentive, not the structural change that spread acceptance.",
+    "Correct: removing the hardware cost unlocked acceptance on the side that was holding the network back.",
+    "Settlement speed matters, but merchants first had to be able to accept payments cheaply."
+   ],
+   "answer": 2,
+   "explanation": "The bottleneck was merchant acceptance, which was costly because of hardware. A printed QR code cut that cost to almost zero, so acceptance spread quickly, and customers then had a reason to use UPI everywhere. Lowering the cost on the stuck side is a classic way to tip a two-sided network.",
+   "interview_tip": "When analysing network businesses, ask which side is stuck and what it costs them to join. Showing that the winning move cut that cost, not just added incentives, signals sharp strategic thinking."
+  },
+  {
+   "id": "2026-11-20-15",
+   "topic": "Strategy",
+   "concept": "Price umbrella inviting low-cost entrants",
+   "difficulty": "hard",
+   "question": "Your B2B invoicing SaaS dominates Indian mid-market firms. Churn is low, so leadership plans a 30% price rise for the third year running. Which strategic risk should you raise most strongly?",
+   "options": [
+    "Higher prices will immediately cause most existing customers to churn",
+    "Rising prices will hurt your gross margin",
+    "High prices create a gap under which cheaper rivals can enter and win new customers, even if current ones stay for now",
+    "The price rise will make the sales team's quota harder to hit"
+   ],
+   "rationales": [
+    "Switching costs mean existing customers usually don't leave immediately, which is why churn has stayed low.",
+    "Raising prices increases margin per customer, it doesn't cut it.",
+    "Correct: repeated price rises invite entrants and cost you new-customer share, a slow but serious strategic risk.",
+    "Higher prices typically make revenue quotas easier, not harder, per deal."
+   ],
+   "answer": 2,
+   "explanation": "Low churn from switching costs can hide the damage of repeated price rises. Each rise widens the 'price umbrella' under which a cheaper competitor can profitably enter, win most new customers, and later go after your base. The risk is to future growth and position, not to today's retention.",
+   "interview_tip": "Strategy interviewers reward second-order thinking. Pointing out that today's low churn hides a growing opening for competitors shows you think beyond the next quarter's revenue."
+  },
+  {
+   "id": "2026-11-20-16",
+   "topic": "Execution",
+   "concept": "Calibrating prioritisation scores across teams to prevent inflation",
+   "difficulty": "medium",
+   "question": "Your org uses RICE scores to rank proposals from five teams. Over two quarters, reach and impact estimates have crept up, and every team now scores its own ideas as 'massive impact'. What's the best fix?",
+   "options": [
+    "Switch to ICE scoring, since it's simpler and harder to game",
+    "Hold a joint calibration review with shared definitions and compare past estimates against actual results",
+    "Drop RICE and let the head of product decide based on judgement",
+    "Cap each team's impact scores at 'medium' so nobody can inflate"
+   ],
+   "rationales": [
+    "ICE has the same self-estimation problem and is easier to game.",
+    "Correct: calibration and feedback against real results fix the cause, not just the scores.",
+    "This removes structure and moves to decisions that teams can't see or predict.",
+    "A cap hides real differences between ideas and teams will game the next field."
+   ],
+   "answer": 1,
+   "explanation": "Scores inflate when each team estimates alone with no feedback. Shared definitions with examples, a cross-team review and a check of past estimates against outcomes put everyone on the same scale and make inflation visible. Changing frameworks or adding blunt caps leaves the incentive to inflate in place.",
+   "interview_tip": "Interviewers want to see that you know frameworks are only as good as their inputs. Talking about calibration and checking estimates against outcomes shows mature prioritisation."
+  },
+  {
+   "id": "2026-11-20-17",
+   "topic": "Execution",
+   "concept": "Out-of-band hotfix criteria for a release-train team",
+   "difficulty": "medium",
+   "question": "Your app ships on a fixed two-week release train. A bug in today's release stops 2% of Android users from logging in. The next train leaves in 9 days. What should you do?",
+   "options": [
+    "Roll back the whole release, even though the rest of it works well",
+    "Wait for the next train, since the release process exists to keep shipping predictable",
+    "Add the fix to the next train and send affected users an apology email",
+    "Ship an out-of-band hotfix, because the bug blocks a core flow for real users and can't wait for the train"
+   ],
+   "rationales": [
+    "A full rollback undoes good changes when a targeted fix solves the problem; it's more disruptive than needed.",
+    "Leaving users locked out for 9 days for the sake of process puts the process above the customer.",
+    "An apology without a fix still leaves users locked out for over a week.",
+    "Correct: blocked login is a severe core-flow failure that justifies breaking the cadence with a narrow fix."
+   ],
+   "answer": 3,
+   "explanation": "Release trains are a default, not a rule that overrides user harm. Teams usually agree hotfix criteria in advance, such as a core flow broken, data loss or a security issue, and a login blocker meets that bar. A small, focused hotfix is safer than a full rollback when the rest of the release is healthy.",
+   "interview_tip": "Execution interviewers look for judgement on when to break a process. Mentioning pre-agreed hotfix criteria shows you'd turn one-off decisions into a clear rule."
+  },
+  {
+   "id": "2026-11-20-18",
+   "topic": "Execution",
+   "concept": "Chronic sprint carryover as a signal of oversized stories",
+   "difficulty": "easy",
+   "question": "For five sprints in a row your team has carried 30-40% of committed stories into the next sprint. Velocity is steady and nobody is slacking. What's the most likely issue to look at first?",
+   "options": [
+    "The team should stop estimating and just work through the backlog",
+    "The team needs more engineers to finish the work",
+    "Sprints should be made longer so more work fits in",
+    "Stories are too large or poorly split, so they don't fit within a sprint"
+   ],
+   "rationales": [
+    "Dropping estimation removes the signal that's telling you something is wrong.",
+    "More engineers adds cost and coordination without fixing how the work is sliced.",
+    "Longer sprints slow feedback and the big stories will still spill over.",
+    "Correct: oversized stories are the most common cause of steady carryover with stable velocity."
+   ],
+   "answer": 3,
+   "explanation": "Steady velocity with repeated carryover suggests the team is working at a normal pace but committing to stories too big to finish in one sprint. Splitting stories into smaller, independently shippable slices makes commitments realistic and gives faster feedback. Adding people or stretching sprints hides the problem.",
+   "interview_tip": "When diagnosing delivery problems, start with how work is shaped before asking for more people. Mentioning vertical slicing shows practical delivery skill."
+  },
+  {
+   "id": "2026-11-20-19",
+   "topic": "Behavioural",
+   "concept": "Giving candid peer feedback about a friend in a review cycle",
+   "difficulty": "hard",
+   "question": "During performance reviews, your manager asks for feedback on a fellow PM who is also a close friend. Over the past half they missed two launch dates and didn't flag the slips early, which hurt your team. What's the best approach?",
+   "options": [
+    "Focus only on their strengths, since raising issues could damage the friendship",
+    "Share the concerns with your manager privately but avoid mentioning them to your friend",
+    "Give specific, factual feedback on the slips and their impact, and tell your friend directly what you shared",
+    "Say you're too close to them to give fair feedback and decline"
+   ],
+   "rationales": [
+    "Leaving out real problems gives a misleading picture and denies your friend useful feedback.",
+    "This is honest with your manager but leaves your friend blindsided, which damages trust more than direct feedback.",
+    "Correct: it's candid, evidence-based and transparent with the person affected.",
+    "Declining avoids the discomfort but deprives the review of a relevant view; you can give fair, fact-based input."
+   ],
+   "answer": 2,
+   "explanation": "Honest, specific feedback helps your friend grow and gives your manager an accurate picture. Using facts and impact keeps it fair, and telling your friend directly avoids surprise and keeps trust. Hiding issues or ducking the request protects comfort at the expense of the team and your friend's development.",
+   "interview_tip": "Behavioural questions often test honesty under social pressure. A strong answer shows you separate the relationship from the work and deliver hard feedback with care and evidence."
+  },
+  {
+   "id": "2026-11-20-20",
+   "topic": "Behavioural",
+   "concept": "Amplifying a junior colleague's overlooked idea",
+   "difficulty": "hard",
+   "question": "In a planning meeting, a junior designer suggests a simple fix for your onboarding drop-off. Nobody responds. Ten minutes later a senior director proposes almost the same idea and everyone praises it. What do you do?",
+   "options": [
+    "Say in the meeting that this builds on the designer's earlier point and invite them to lead the next step",
+    "Stay quiet, since the idea is being adopted and that's what matters",
+    "Bring it up with the director privately the following week",
+    "Message the designer later to say you noticed and that it was their idea"
+   ],
+   "rationales": [
+    "Correct: it gives credit publicly and immediately, where it matters, and builds the designer's ownership.",
+    "The idea moves forward, but the team learns that junior voices get ignored and the designer loses credit.",
+    "Delayed and private, and it may sound like a complaint rather than recognition.",
+    "Kind, but the credit stays private while the room still thinks the idea was the director's."
+   ],
+   "answer": 0,
+   "explanation": "Crediting the designer in the moment, in front of the same group, fixes the record and gives them visibility at no real cost. Offering them the next step turns recognition into ownership. Private messages are kind but don't change how the room sees the contribution.",
+   "interview_tip": "Leadership questions often test how you build an inclusive team. Describing a small, timely action that redirects credit shows you lead without needing authority."
+  },
+  {
+   "id": "2026-11-20-21",
+   "topic": "Behavioural",
+   "concept": "Taking over a peer's project transparently when leadership reassigns it",
+   "difficulty": "hard",
+   "question": "Your VP tells you that you'll take over a peer PM's payments project next week because it's behind. The VP hasn't told your peer yet and asks you to 'start getting up to speed quietly'. What's the best response?",
+   "options": [
+    "Start reading the project docs and talking to engineers right away as asked",
+    "Tell your peer yourself today so they hear it from you",
+    "Decline the project to avoid conflict with your peer",
+    "Ask the VP to tell your peer first, then plan a handover with them so you keep their context and goodwill"
+   ],
+   "rationales": [
+    "Following the instruction risks your peer finding out from engineers, which harms trust and the project.",
+    "It's not your decision to announce; telling them yourself oversteps the VP and can look like you pushed for it.",
+    "Declining avoids discomfort but ignores a business need; you can take it on and still handle it well.",
+    "Correct: it keeps the process transparent, respects the peer and sets up a useful handover."
+   ],
+   "answer": 3,
+   "explanation": "Ramping up behind your peer's back will likely be noticed, damage trust, and lose you the context only they have. The person making the decision should communicate it, so asking the VP to tell your peer first is respectful and practical. Then a joint handover keeps knowledge and relationships intact.",
+   "interview_tip": "Interviewers look for integrity in awkward situations. A strong answer shows you push back on how something is done while still taking the business need seriously."
+  },
+  {
+   "id": "2026-11-20-22",
+   "topic": "AI Product",
+   "concept": "Propagating data deletion to vector indexes and derived stores",
+   "difficulty": "medium",
+   "question": "Your AI assistant lets users upload documents, which are chunked and embedded into a vector database for retrieval. A user deletes a document. Their assistant still quotes it a week later. What's the most likely gap?",
+   "options": [
+    "The user's browser cached the earlier answer",
+    "Deleting the file didn't delete its chunks and embeddings from the vector index and caches",
+    "The LLM memorised the document during training and still remembers it",
+    "The model's context window is too large and holds old content"
+   ],
+   "rationales": [
+    "A browser cache wouldn't generate new answers quoting the document in new questions.",
+    "Correct: derived data (chunks and embeddings) survived the delete and is still being retrieved.",
+    "User uploads aren't used to train the model in real time; retrieval is the path here.",
+    "Context windows don't persist across sessions for a week; each request rebuilds context."
+   ],
+   "answer": 1,
+   "explanation": "In a RAG system, an uploaded document lives in several places: the original file, its chunks, their embeddings, and sometimes caches or memory summaries. If deletion only removes the original, retrieval still finds the chunks. Deletion has to cascade to every derived store, which also matters for privacy rules like India's DPDP Act.",
+   "interview_tip": "AI PM interviews increasingly test data lifecycle thinking. Listing every copy of user data (raw, chunks, embeddings, caches, memory) shows you can own privacy for AI features."
+  },
+  {
+   "id": "2026-11-20-23",
+   "topic": "AI Product",
+   "concept": "Binary pass/fail criteria over 1-10 scales for LLM judges",
+   "difficulty": "medium",
+   "question": "Your team uses an LLM judge to score support-bot replies from 1 to 10 on 'helpfulness'. Scores cluster around 7 and barely move between prompt versions, and reviewers disagree on what a 6 vs an 8 means. What change would most improve the eval?",
+   "options": [
+    "Average the judge's score over five runs to smooth out noise",
+    "Replace the scale with several specific pass/fail checks, such as 'answered the actual question' and 'gave the correct refund policy'",
+    "Switch to a 1-100 scale so the judge can show finer differences",
+    "Use a larger, more expensive model as the judge with the same scale"
+   ],
+   "rationales": [
+    "Averaging reduces random noise but the criteria are still vague and scores still cluster.",
+    "Correct: specific binary checks are clearer, more consistent and point to what to fix.",
+    "A wider scale adds false precision; if 6 vs 8 is unclear, 62 vs 78 is worse.",
+    "A stronger judge still has to guess what '7 out of 10 helpful' means."
+   ],
+   "answer": 1,
+   "explanation": "Vague numeric scales give fuzzy, compressed scores that are hard to act on. Breaking quality into concrete yes/no criteria makes judgments more consistent for both humans and LLM judges, and shows exactly which behaviour changed between versions. A finer scale or a bigger model doesn't fix an unclear definition.",
+   "interview_tip": "When discussing evals, show you design criteria, not just pick a judge. Turning a vague goal into checkable criteria is a strong signal of practical AI product skill."
+  },
+  {
+   "id": "2026-11-20-24",
+   "topic": "AI Product",
+   "concept": "Designing task-level tools instead of thin API wrappers for agents",
+   "difficulty": "medium",
+   "question": "Your travel agent exposes 40 tools that each wrap one internal API endpoint (search flights, get fare rules, hold seat, get seat map, and so on). The agent often calls them in the wrong order and fails to finish bookings. What's the best design change?",
+   "options": [
+    "Combine endpoints into a few task-level tools like 'find bookable options' and 'book itinerary' that handle the steps inside",
+    "Let the agent retry failed bookings up to five times",
+    "Switch to a larger model so it can reason about the 40 tools better",
+    "Add more detailed instructions to the system prompt listing the correct order of all 40 calls"
+   ],
+   "rationales": [
+    "Correct: task-level tools move fixed sequencing into code and reduce the agent's room for error.",
+    "Retries waste cost and time, and may repeat the same mistake or create duplicate holds.",
+    "A bigger model may help a little but is costlier and still has to orchestrate 40 low-level calls.",
+    "Long ordering rules in a prompt are fragile and get harder to follow as the list grows."
+   ],
+   "answer": 0,
+   "explanation": "Agents do better when tools match the tasks they need to do, not the shape of your internal APIs. Wrapping fixed sequences in code removes steps the model can get wrong and shrinks the choice of tools. Long prompts, bigger models and retries all ask the model to keep doing work that deterministic code should handle.",
+   "interview_tip": "AI interviewers like candidates who know that reliability often comes from system design, not a better model. Saying 'move deterministic steps into code' is a strong, practical signal."
+  },
+  {
+   "id": "2026-11-20-25",
+   "topic": "AI Product",
+   "concept": "Counterfactual name-swap tests for bias in LLM outputs",
+   "difficulty": "medium",
+   "question": "Your AI recruiting tool writes short summaries of candidate resumes for hiring managers. Before launch, legal asks how you'll check that the summaries don't treat candidates differently by gender or religion. What's the most direct test?",
+   "options": [
+    "Run the same resumes with only the names and pronouns swapped and compare the summaries' tone and ratings",
+    "Remove all names from resumes and assume the problem is solved",
+    "Check that the overall approval rating from hiring managers is high",
+    "Ask the model whether its summaries are biased and log its answer"
+   ],
+   "rationales": [
+    "Correct: a controlled swap isolates the effect of identity on the output.",
+    "Names are only one signal; other details can still reveal identity, so you still need to test.",
+    "Managers may be satisfied with biased summaries; satisfaction isn't a fairness measure.",
+    "Models can't reliably detect their own bias; this gives no evidence."
+   ],
+   "answer": 0,
+   "explanation": "Keeping everything identical except identity signals isolates their effect: if summaries change in tone or rating, the model is treating groups differently. This counterfactual test is simple, repeatable and easy to explain to legal. Self-reports and satisfaction scores don't measure bias, and removing names misses other signals like colleges, clubs or gaps.",
+   "interview_tip": "Responsible-AI questions reward concrete test design. Describing a controlled, repeatable check, and its limits, shows you can turn fairness concerns into evidence."
+  },
+  {
+   "id": "2026-11-20-26",
+   "topic": "AI Product",
+   "concept": "Ordering prompt content so the cacheable prefix stays stable",
+   "difficulty": "easy",
+   "question": "Your app sends each request a long system prompt and product catalog, followed by the user's question. Prompt caching barely saves anything. An engineer notices the very first line of every prompt is today's date and time. What's the fix?",
+   "options": [
+    "Send the system prompt as a separate API call before each question",
+    "Increase the cache's expiry time from 5 minutes to an hour",
+    "Move the timestamp and other changing parts to the end, so the long unchanging prefix is identical across requests",
+    "Remove the product catalog from the prompt to make it shorter"
+   ],
+   "rationales": [
+    "There's no separate cached call like this; the prompt prefix in each request is what's cached.",
+    "A longer expiry doesn't help if the prefix never matches in the first place.",
+    "Correct: a stable prefix is what lets the cache reuse the long, expensive part.",
+    "Shortening helps cost a little but throws away useful context and still leaves caching broken."
+   ],
+   "answer": 2,
+   "explanation": "Prompt caches match on an identical prefix. If something that changes on every request sits at the very start, nothing after it can be reused. Putting stable content first (instructions, catalog) and variable content last (time, user question) lets the cache hit on most of the tokens.",
+   "interview_tip": "Cost questions on AI products reward knowing how the levers actually work. Explaining that caching depends on an identical prefix shows real fluency, not just buzzwords."
+  },
+  {
+   "id": "2026-11-20-27",
+   "topic": "Technology",
+   "concept": "Short-lived access tokens with refresh tokens",
+   "difficulty": "easy",
+   "question": "Your mobile app keeps users logged in for months. Security asks why access tokens expire after 15 minutes while users don't have to log in again. What's the reason for this design?",
+   "options": [
+    "Short tokens make API calls faster because they're smaller",
+    "A short-lived access token limits damage if stolen, while a refresh token quietly gets new ones so the user stays logged in",
+    "The refresh token is a backup in case the server loses the access token",
+    "Access tokens must expire every 15 minutes because of app-store rules"
+   ],
+   "rationales": [
+    "Token size isn't related to expiry; a 15-minute token is the same size as a long one.",
+    "Correct: it balances limited exposure of the frequently sent token with a seamless login.",
+    "The server doesn't 'lose' tokens; the refresh token's job is renewal, not backup.",
+    "There's no app-store rule setting token lifetimes; it's a security design choice."
+   ],
+   "answer": 1,
+   "explanation": "Access tokens are sent with every request, so they're more exposed; keeping their life short limits how long a stolen one works. A longer-lived refresh token, stored more carefully and used only to get new access tokens, keeps the experience smooth and can be revoked if needed. You get both security and convenience.",
+   "interview_tip": "Technical-fluency questions check that you can explain trade-offs simply. Framing this as 'security vs convenience, solved with two tokens' is the kind of clarity engineers value from PMs."
+  },
+  {
+   "id": "2026-11-20-28",
+   "topic": "Technology",
+   "concept": "At-least-once delivery requires deduplication downstream",
+   "difficulty": "easy",
+   "question": "Your order system uses a message queue that guarantees 'at-least-once' delivery to the service that sends order-confirmation SMS. Customers occasionally get the same SMS twice. What does this tell you?",
+   "options": [
+    "The SMS provider is resending messages because of network errors on its side",
+    "Customers are placing their orders twice by tapping the button again",
+    "The queue is broken and should be replaced with one that guarantees no duplicates",
+    "Duplicates are expected with at-least-once delivery, so the SMS service should skip messages it has already processed"
+   ],
+   "rationales": [
+    "Possible in rare cases, but the queue's guarantee already explains duplicates and is the first place to look.",
+    "Duplicate orders would show up as two orders, not two SMS for one order.",
+    "The queue is working as promised; exactly-once end to end is hard and usually achieved by dedupe, not a new queue.",
+    "Correct: redelivery is part of the guarantee, so the consumer needs to deduplicate."
+   ],
+   "answer": 3,
+   "explanation": "At-least-once means the queue may redeliver a message, for example when a consumer is slow to confirm it. That's a normal trade-off for not losing messages. The consumer should be idempotent: track processed message or order IDs and skip repeats, so a redelivery doesn't send a second SMS.",
+   "interview_tip": "Knowing delivery guarantees helps PMs write better specs. Saying 'the consumer must be idempotent' shows you understand why duplicates happen and where to fix them."
+  },
+  {
+   "id": "2026-11-20-29",
+   "topic": "Growth",
+   "concept": "Native-language onboarding for vernacular users",
+   "difficulty": "easy",
+   "question": "Your personal-finance app is growing fast in Tamil Nadu and Maharashtra via regional influencers, but activation there is half that of English-speaking users. Session recordings show many users stall on the English-only signup and KYC screens. What's the best first step?",
+   "options": [
+    "Cut influencer spend in those states until activation improves",
+    "Add an English tutorial video at the start of onboarding",
+    "Detect or ask for the user's language at the start and offer onboarding and KYC screens in Tamil and Marathi",
+    "Offer a cash reward for completing KYC"
+   ],
+   "rationales": [
+    "This gives up a channel that brings real demand instead of fixing the experience.",
+    "An English video doesn't help users who struggle with English.",
+    "Correct: it removes the language barrier that the data shows is causing users to stall.",
+    "Rewards may push some through but users still won't understand what they're agreeing to in a finance app."
+   ],
+   "answer": 2,
+   "explanation": "The recordings show a comprehension barrier: users can't follow English-only screens, especially for sensitive steps like KYC. Offering onboarding in the language they came from (the influencer's language) removes the barrier directly. Cutting spend or paying rewards ignores why they stall.",
+   "interview_tip": "Growth interviewers like seeing you match onboarding to the acquisition channel. Noting that users arrive from regional-language content and should continue in that language shows end-to-end funnel thinking."
+  },
+  {
+   "id": "2026-11-20-30",
+   "topic": "Current Events",
+   "concept": "Banks shifting liability for third-party AI agents to customers (Citi, Nov 2026)",
+   "difficulty": "medium",
+   "question": "In November 2026, Citi said it had updated its Online User Agreement so that customers who give third-party AI agents access to their accounts are responsible for activities conducted through those agents, and other US banks took similar positions. If you're the PM of a consumer AI finance agent, what's the best product response?",
+   "options": [
+    "Stop relying on users sharing bank passwords; use bank-sanctioned, scoped access (e.g. read-only open-banking connections) and make actions that move money need the user's explicit approval",
+    "Keep asking for bank logins but add a terms-of-service line saying your company isn't liable either",
+    "Pause the product until banks reverse their position",
+    "Build stronger scraping so the agent still works when banks try to block it"
+   ],
+   "rationales": [
+    "Correct: it reduces user risk, works with banks' rules, and keeps a human in the loop for high-stakes actions.",
+    "This leaves users holding all the risk with nobody accountable, which destroys trust in a finance product.",
+    "Waiting gives up the market and banks have shown no sign of reversing; there are compliant paths now.",
+    "Fighting the platform raises security risk and invites more blocking; it's the opposite of building trust."
+   ],
+   "answer": 0,
+   "explanation": "Banks are signalling that credential-sharing agents leave users carrying the risk, and some are blocking agents from logging in or transacting. A trustworthy product moves to approved, limited access, such as read-only data connections, and keeps a human approval step for money movement. That protects users and keeps you on the right side of the platforms you depend on.",
+   "interview_tip": "Current-events questions test whether you turn news into product decisions. Linking a policy change to concrete design choices (scoped access, approvals) shows you think about risk, trust and platform dependence together.",
+   "source": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/"
+  }
+ ]
+}
