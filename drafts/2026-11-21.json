@@ -1,0 +1,527 @@
+{"date": "2026-11-21", "theme": "Allocating scarce things fairly", "questions": [
+{"topic": "Product Sense", "concept": "Reducing low-intent buyer messages in peer-to-peer marketplaces", "difficulty": "hard",
+ "question": "You're the PM for a peer-to-peer marketplace like Facebook Marketplace. Sellers of popular items (used phones, furniture) say they get 30-50 messages per listing, most of them just 'Is this still available?', and many sellers stop replying, so serious buyers get ignored too. What should you build first?",
+ "options": [
+  "A listing status the seller sets (available, pending, sold) shown on the listing, with an auto-reply that answers availability",
+  "A cap of five buyer messages per listing so sellers are never overwhelmed",
+  "A seller response-rate badge that ranks responsive sellers higher in search",
+  "AI-written reply suggestions so sellers can answer every message faster"
+ ],
+ "answer": 0,
+ "explanation": "Most messages ask a question the listing itself could answer. Showing availability on the listing and auto-answering it removes the bulk of the noise at the source, so sellers' attention goes to buyers who ask real questions or make offers. Caps, badges and faster replies all accept the noise as given and either block good buyers or push more work onto sellers.",
+ "rationales": [
+  "Correct: it answers the most common question without a human, cutting message volume at its cause and protecting serious buyers.",
+  "A hard cap is first-come, not best-buyer: the five slots go to the fastest low-intent messages and serious buyers get locked out.",
+  "Ranking by response rate pressures sellers to answer even more noise; it rewards stamina rather than reducing the load.",
+  "Reply suggestions make each answer faster but still require sellers to handle 50 messages; the volume problem remains."
+ ],
+ "interview_tip": "Strong product-sense answers look at what the repeated user behaviour is really asking for. Saying 'most messages are one question, so make the listing answer it' shows you remove work rather than speed it up."},
+
+{"topic": "Product Sense", "concept": "Diagnostic, actionable feedback after a failed practice attempt", "difficulty": "medium",
+ "question": "An exam-prep app for Indian engineering entrance students sees that many users quit within a week of scoring poorly on their first full mock test. Interviews show they feel 'I'm just bad at this' and don't know what to do next. Which change best addresses this?",
+ "options": [
+  "Replace the single score with a breakdown by chapter and error type, plus a short plan of the next three topics to practise",
+  "Hide the mock-test score entirely so students never see a discouraging number",
+  "Add a leaderboard so students can see they are not the only ones scoring low",
+  "Send motivational push notifications every day for the first week after a poor score"
+ ],
+ "answer": 0,
+ "explanation": "The pain is not the low score itself but the lack of a path forward, which turns a setback into a verdict on ability. Breaking the result into specific, fixable gaps and giving a next step converts failure into a plan, which is what keeps learners going. Hiding scores removes useful signal, leaderboards add comparison anxiety, and pep talks don't tell anyone what to do.",
+ "rationales": [
+  "Correct: specific diagnosis plus a next action makes the setback feel fixable, addressing the 'I don't know what to do' pain.",
+  "Hiding scores avoids the sting but removes the feedback students need and they will expect it on the real exam anyway.",
+  "Leaderboards show most students ranking below others; for discouraged users this usually deepens the sense of being bad at it.",
+  "Generic motivation doesn't solve the missing plan, and daily nudges to a discouraged user can feel like pressure."
+ ],
+ "interview_tip": "When users churn after a negative moment, interviewers want you to separate the emotion from the underlying need. Naming 'they lack a next step' and designing for it shows real user empathy, not just engagement tactics."},
+
+{"topic": "Product Sense", "concept": "Separating utility images (documents, screenshots) from personal memories", "difficulty": "medium",
+ "question": "You're the PM for a photo-gallery app. Users have thousands of photos, and a top complaint is 'I can't find the photo of my Aadhaar card or that bill I clicked last month'. They also dislike that screenshots and receipts clutter their memories feed. What's the best solution to prioritise?",
+ "options": [
+  "Automatically detect documents, receipts and screenshots, file them in a separate searchable 'Documents' space, and keep them out of memories",
+  "Add manual albums and ask users to tag each document photo when they take it",
+  "Improve the general search ranking so that recent photos appear first in results",
+  "Prompt users each month to delete screenshots and receipts to free up space"
+ ],
+ "answer": 0,
+ "explanation": "Users have two different jobs for the same camera roll: reliving memories and retrieving information. Automatically classifying utility images serves both at once, making documents findable and keeping them out of the emotional surfaces. Manual tagging needs effort users won't spend, recency ranking doesn't help with a bill from last month, and deletion prompts destroy things people need later.",
+ "rationales": [
+  "Correct: one automatic change solves both pains, findability of documents and clutter in memories, with no effort from the user.",
+  "Manual tagging relies on users being organised at the moment of capture, which is exactly the behaviour they don't have.",
+  "Recency helps only for very recent items; the user's problem is finding a specific document by type, not by date.",
+  "Deleting receipts and IDs removes the very photos people later need to find; it treats storage, not the stated pain."
+ ],
+ "interview_tip": "Look for when one surface serves two different jobs. Spotting 'memories vs. information' and separating them shows you segment by need rather than by feature."},
+
+{"topic": "Product Sense", "concept": "Lottery allocation instead of first-come-first-served for scarce inventory", "difficulty": "hard",
+ "question": "You're the PM for a ticketing app. For a stadium concert with 40,000 seats and 2 million fans wanting tickets, sales open at 10:00 and sell out in four minutes. Fans complain that bots and resellers grab most tickets, and the site crashes under load. What change best improves fairness?",
+ "options": [
+  "Open a two-day registration window, verify fans, then allocate purchase slots by random draw with tickets tied to the buyer's identity",
+  "Add more servers so the site stays up when sales open at 10:00",
+  "Add a CAPTCHA at checkout so bots can't complete purchases",
+  "Raise ticket prices so that demand comes down closer to supply"
+ ],
+ "answer": 0,
+ "explanation": "First-come-first-served turns a scarce good into a speed contest, which bots and resellers win by design and which creates a traffic spike. Spreading registration over days removes the spike, a random draw makes speed irrelevant, and identity-linked tickets make resale hard. Servers and CAPTCHAs patch symptoms of the race; higher prices change who can attend rather than making allocation fair.",
+ "rationales": [
+  "Correct: it changes the allocation mechanism so speed no longer matters, which removes both the bot advantage and the load spike.",
+  "More capacity keeps the site up, but the fastest buyers, mostly bots, still win the race for 40,000 seats.",
+  "CAPTCHAs slow simple bots, but resellers use solving services and humans; the race itself still favours them.",
+  "Higher prices ration by willingness to pay, which shuts out many real fans and doesn't stop resale markups."
+ ],
+ "interview_tip": "When supply is tiny compared to demand, question the allocation rule itself. Interviewers are impressed when you see that 'first-come' creates the bot problem, rather than fighting the bots one by one."},
+
+{"topic": "Metrics", "concept": "Month-length and weekday-mix effects in monthly comparisons", "difficulty": "hard",
+ "question": "A B2B payments product reports that February's total transaction volume fell 8% compared with January, and leadership asks what broke. January had 31 days with 22 business days; February had 28 days with 20 business days. Nearly all volume happens on business days. What should you do first?",
+ "options": [
+  "Compare volume per business day across the two months before looking for a product cause",
+  "Segment the drop by customer size to find which accounts reduced volume",
+  "Check the release log for changes shipped in February that could hurt payments",
+  "Compare February with February of last year to remove seasonality"
+ ],
+ "answer": 0,
+ "explanation": "Two fewer business days is about 9% fewer chances to transact, which is enough to explain an 8% drop on its own. Normalising per business day shows whether anything changed at all; here daily volume is actually flat or slightly up. Segmenting or reading release logs before normalising risks chasing a problem that doesn't exist.",
+ "rationales": [
+  "Correct: 20 vs 22 business days is roughly a 9% difference, so per-day volume is the first check and likely explains the whole drop.",
+  "Segmenting is useful once you know there's a real change; here you'd find every segment 'down' simply because of the calendar.",
+  "Release logs matter for real drops, but you should first confirm the drop isn't a calendar artefact.",
+  "Year-over-year helps with seasonality but doesn't fix the business-day count, which can differ year to year too."
+ ],
+ "interview_tip": "In root-cause questions, check for 'is this real?' before 'why did it happen?'. Doing quick normalisation (per day, per user) first is a signal of analytical maturity."},
+
+{"topic": "Metrics", "concept": "Success metric for an account recovery flow", "difficulty": "easy",
+ "question": "You redesigned the 'forgot password' flow for a banking app. Which is the best primary success metric?",
+ "options": [
+  "Share of recovery attempts that end in a successful sign-in within a short time window",
+  "Number of password-reset emails and SMS messages sent each day",
+  "Number of users who visit the 'forgot password' page each day",
+  "Average time users spend on the password-reset screens"
+ ],
+ "answer": 0,
+ "explanation": "The user's goal is getting back into their account, so success is a completed sign-in after starting recovery. Reset messages sent and page visits measure how often people get stuck, not whether you helped. Time on screen is ambiguous: longer can mean confusion and shorter can mean giving up.",
+ "rationales": [
+  "Correct: it measures the outcome the user wanted, regaining access, and counts failures where users start but never get in.",
+  "Messages sent is an activity count; it can rise because users retry after failed attempts.",
+  "Page visits measure how many people lose access, which you may want to reduce, not a sign of flow success.",
+  "Time spent can't tell confusion from care, so it doesn't show whether the redesign worked."
+ ],
+ "interview_tip": "For flow-level metrics, tie success to the user's goal at the end of the flow. Saying 'completed X within Y minutes' shows you think in outcomes and time-boxed conversion."},
+
+{"topic": "Metrics", "concept": "Rolling averages lag and smooth sudden changes", "difficulty": "easy",
+ "question": "Your dashboard shows a 7-day rolling average of daily orders. Yesterday a payment outage cut orders by 60% for the whole day. What will the rolling-average chart show?",
+ "options": [
+  "A small dip of roughly 9%, which stays visible for seven days before disappearing",
+  "A 60% drop yesterday, the same as the daily chart",
+  "No change at all, because rolling averages ignore one-day events",
+  "A 60% drop spread evenly across the previous seven days"
+ ],
+ "answer": 0,
+ "explanation": "A 7-day rolling average divides one day's 60% loss across seven days, so it shows about a 60/7 ≈ 9% dip. That dip stays in the window for a week and then drops out. Rolling averages are good for trends but hide and delay sharp incidents, so outages should be watched on daily or hourly charts.",
+ "rationales": [
+  "Correct: one bad day is averaged with six normal ones, giving a dip of about 9% that persists until the day leaves the window.",
+  "That's what the daily chart shows; the rolling average smooths the drop across the window.",
+  "Rolling averages don't ignore events; they dilute them, so a small dip still appears.",
+  "A rolling average can't change past days' values; the effect appears from yesterday onward, not backwards."
+ ],
+ "interview_tip": "Knowing how smoothing hides incidents shows dashboard literacy. Strong candidates say which time grain suits which question: rolling for trends, raw daily or hourly for incidents."},
+
+{"topic": "Metrics", "concept": "North Star for a daily milk-subscription delivery service", "difficulty": "medium",
+ "question": "You're the PM at an Indian D2C brand that delivers milk and essentials every morning on subscription. Which is the best North Star metric?",
+ "options": [
+  "Number of scheduled subscription deliveries completed on time each week",
+  "Number of new subscriptions started each month",
+  "Total app opens per subscriber each week",
+  "Average order value of add-on items per delivery"
+ ],
+ "answer": 0,
+ "explanation": "The value customers pay for is fresh milk at the door every morning, reliably. On-time scheduled deliveries grows when you keep subscribers, they subscribe for more days, and operations stay reliable, so it captures both customer value and business health. New subscriptions ignore churn, app opens are low for a good subscription product, and add-on AOV is a monetisation lever, not core value.",
+ "rationales": [
+  "Correct: it measures the core value delivered, grows with retention and reliability, and links to revenue.",
+  "New subscriptions are an acquisition metric; they can grow while churn quietly empties the base.",
+  "A working subscription needs no app visits; more opens can mean users are fixing problems.",
+  "Add-on AOV matters for revenue but can rise while the core daily service gets worse."
+ ],
+ "interview_tip": "Pick a North Star that measures the value users receive, not activity in your app. Explaining why app engagement is the wrong signal for a 'set and forget' product is a strong signal."},
+
+{"topic": "Experimentation", "concept": "Feedback-loop leakage when both arms train one shared model", "difficulty": "hard",
+ "question": "You A/B test a new recommendation ranking against the current one. Both arms log clicks into the same training data, and the production model retrains nightly on all of it. After three weeks the gap between arms keeps shrinking. What's the most likely issue?",
+ "options": [
+  "Data from the treatment arm is training the control model too, so the arms are not independent and the effect is being diluted",
+  "The novelty effect is wearing off, so users are clicking the new ranking less over time",
+  "The test was underpowered from the start, so the measured lift is just noise",
+  "Seasonality has changed user behaviour equally in both arms over the three weeks"
+ ],
+ "answer": 0,
+ "explanation": "When both arms feed one shared model, the treatment's behaviour changes the training data the control learns from, so control slowly picks up treatment's gains (or losses). That breaks the assumption that arms are independent and shrinks the measured gap. The fix is to train separate models on each arm's own data or hold out a slice of traffic from shared training.",
+ "rationales": [
+  "Correct: shared training data leaks the treatment's effect into control, a feedback-loop violation of independence.",
+  "Novelty fading is possible, but it doesn't explain why the control would change; here the shared model is the clear mechanism.",
+  "Low power gives noisy results, not a steady, directional shrinking of the gap over weeks.",
+  "Seasonality that affects both arms equally wouldn't by itself make the gap between them shrink."
+ ],
+ "interview_tip": "Experiments on ML systems often fail because of shared training pipelines. Mentioning feedback loops and per-arm model training shows you understand experimentation beyond simple UI tests."},
+
+{"topic": "Experimentation", "concept": "Differential survey response rates between test arms", "difficulty": "medium",
+ "question": "Your test adds an in-app satisfaction survey after checkout. The new checkout design shows a higher average satisfaction score, but only 4% of treatment users answered the survey versus 9% of control users. What's the right conclusion?",
+ "options": [
+  "The scores aren't comparable yet, because a different kind of user may be choosing to answer in each arm",
+  "Treatment wins, since a higher average satisfaction score is the outcome you were testing",
+  "Control wins, since more of its users were engaged enough to answer the survey",
+  "The test is invalid and has to be rerun from the start with a new design"
+ ],
+ "answer": 0,
+ "explanation": "When response rates differ a lot between arms, the people answering are self-selected differently, so the average scores compare different groups. The treatment might only hear from its happiest users. You should check behavioural metrics that cover everyone, look at why response rates differ (perhaps the survey is placed differently), and treat the score as unreliable until fixed.",
+ "rationales": [
+  "Correct: unequal response rates create selection bias, so the arms' averages may describe different kinds of users.",
+  "This ignores that only 4% answered in treatment; a higher average from a narrower group isn't a fair comparison.",
+  "Response rate isn't a satisfaction measure; the drop may come from survey placement, not user engagement.",
+  "Randomisation and behavioural metrics are still valid; you may only need to fix the survey and lean on other metrics."
+ ],
+ "interview_tip": "Interviewers like candidates who check who is in the denominator. Spotting that survey respondents are a self-selected subset shows you won't be fooled by a clean-looking average."},
+
+{"topic": "Estimation", "concept": "Annual pairs of sports shoes sold in India", "difficulty": "medium",
+ "question": "Estimate the number of pairs of sports shoes (running shoes and sneakers) sold in India each year. Which is closest?",
+ "options": ["About 150 million pairs", "About 15 million pairs", "About 600 million pairs", "About 1.5 billion pairs"],
+ "answer": 0,
+ "explanation": "India has about 1.45 billion people. Urban: about 530 million, of whom about 60% (around 320 million) are in the age band that buys sports shoes; say half buy them, replacing a pair every 1.5 years, so about 160M / 1.5 ≈ 105 million pairs. Rural: about 900 million, with perhaps 10% buying and replacing every 2 years, so about 45 million pairs. Total is about 150 million pairs a year.",
+ "rationales": [
+  "Correct: urban buyers (about 105M pairs) plus rural buyers (about 45M pairs) gives roughly 150 million.",
+  "15 million would mean only about 1% of Indians buy a pair a year, far too low given school, sport and casual use.",
+  "600 million would mean nearly half the country buys a new pair every year, too high for a non-essential category.",
+  "1.5 billion is about one pair per person per year, which is far above what Indian incomes and usage support."
+ ],
+ "interview_tip": "Split the market into segments with different habits (urban vs rural) and use a replacement cycle. Interviewers grade the structure and sanity checks more than the final number."},
+
+{"topic": "Estimation", "concept": "Annual storage for ride GPS location pings", "difficulty": "medium",
+ "question": "A ride-hailing app completes 2 million trips a day. Each trip lasts about 20 minutes, and the driver app sends a GPS ping every 4 seconds; each stored ping is about 50 bytes. Roughly how much storage do one year of trip pings need?",
+ "options": ["About 11 TB", "About 110 GB", "About 110 TB", "About 1.1 PB"],
+ "answer": 0,
+ "explanation": "20 minutes is 1,200 seconds, so 1,200 / 4 = 300 pings per trip. 300 × 50 bytes = 15 KB per trip. 15 KB × 2 million trips = 30 GB per day. 30 GB × 365 ≈ 11 TB per year, before replication or indexes.",
+ "rationales": [
+  "Correct: 300 pings × 50 B × 2M trips ≈ 30 GB/day, and 30 GB × 365 ≈ 11 TB/year.",
+  "110 GB is less than four days of data; this misses a factor of about 100.",
+  "110 TB is ten times too high, as if pings were every 0.4 seconds or 500 bytes each.",
+  "1.1 PB is 100 times too high; it would need much larger records or far more trips."
+ ],
+ "interview_tip": "Say each step out loud with units and round sensibly. Mentioning that replication, indexes and retention policy change the real number shows practical engineering awareness."},
+
+{"topic": "Strategy", "concept": "Release windowing as intertemporal price discrimination", "difficulty": "medium",
+ "question": "A film studio releases a movie in cinemas first, then on paid rental about six weeks later, then on a subscription streaming service months later. What is the main economic logic of this sequence?",
+ "options": [
+  "It charges the most eager fans a high price first, then reaches more price-sensitive viewers later at lower prices",
+  "It reduces piracy, since the film is only available in one channel at any time",
+  "It lowers distribution costs, since each channel only needs to handle the film once",
+  "It builds network effects, since early viewers recruit later viewers to the platform"
+ ],
+ "answer": 0,
+ "explanation": "Windowing is price discrimination over time: people who most want the film pay the cinema price now, while people willing to wait pay less later through rental or subscription. Each window captures a different willingness to pay, increasing total revenue compared with releasing everywhere at one price. The same logic applies to hardcover-then-paperback books and early-access software.",
+ "rationales": [
+  "Correct: it segments buyers by impatience, capturing high willingness to pay first and lower willingness later.",
+  "Piracy is a side concern; films are pirated during cinema windows too, and that's not why studios stage releases.",
+  "Distribution costs aren't lower; the studio pays for marketing and deals in every window.",
+  "Word of mouth helps, but that's marketing, not a network effect where the product itself gets more valuable with users."
+ ],
+ "interview_tip": "Seeing time as a pricing lever is a useful strategy tool. Linking windowing to early-access tiers or launch pricing in tech products shows you can transfer frameworks across industries."},
+
+{"topic": "Strategy", "concept": "Top-down market entry: premium first, then mass market", "difficulty": "medium",
+ "question": "A startup builds a new type of home battery that is expensive to make today, but costs should fall sharply with volume. It plans to launch a premium model for wealthy early adopters first, then cheaper models later. What is the strongest argument for this sequencing?",
+ "options": [
+  "High early margins fund scale and cost reduction, and early users help refine the product before the mass-market version",
+  "Wealthy buyers are less demanding, so early product flaws are less likely to be noticed",
+  "A premium launch blocks competitors from entering the mass market altogether",
+  "Mass-market customers will refuse to buy a product unless it was first sold at a premium"
+ ],
+ "answer": 0,
+ "explanation": "When unit costs fall with volume, selling first to customers who will pay a lot lets the company earn margin while it builds scale, learns, and pushes costs down. Each generation funds the next, cheaper one. Tesla's Roadster to Model S to Model 3 sequence is the classic example. The risks are staying niche or being overtaken by a cheaper rival who scales faster.",
+ "rationales": [
+  "Correct: premium margins finance the cost curve and early adopters give feedback, setting up a cheaper, better mass product.",
+  "Premium buyers are usually more demanding, not less; they expect high quality for the high price.",
+  "A premium launch doesn't stop others entering the mass market; it can even leave that space open to them.",
+  "Mass buyers don't require a premium history; they care about price and proven reliability."
+ ],
+ "interview_tip": "When discussing market entry, connect sequencing to unit economics. Saying 'start where willingness to pay covers today's costs' shows you think about strategy and cost curves together."},
+
+{"topic": "Strategy", "concept": "Gabor-Granger direct price testing", "difficulty": "easy",
+ "question": "You want to find the revenue-maximising price for a new SaaS add-on. In a survey, you show each respondent a price and ask if they would buy at that price, moving up or down based on answers, then build a demand curve. What is this method called?",
+ "options": ["Gabor-Granger pricing", "Van Westendorp price sensitivity meter", "Conjoint analysis", "Cost-plus pricing"],
+ "answer": 0,
+ "explanation": "Gabor-Granger asks directly whether a respondent would buy at specific prices, often adjusting the next price based on the answer, producing a demand curve and a revenue-maximising price. Van Westendorp asks four open questions about 'too cheap' and 'too expensive' to find an acceptable range. Conjoint measures trade-offs among features and price together.",
+ "rationales": [
+  "Correct: direct purchase-likelihood at set prices, used to build a demand curve and find the revenue-maximising point.",
+  "Van Westendorp asks respondents to name price points (too cheap, cheap, expensive, too expensive), not yes/no at given prices.",
+  "Conjoint shows bundles of features with prices and infers the value of each attribute; it's broader than single-price testing.",
+  "Cost-plus sets price from your costs plus a margin and involves no customer research."
+ ],
+ "interview_tip": "Knowing several pricing research methods and when to use each is useful in strategy rounds. Pointing out that stated willingness to pay often overstates real behaviour shows good judgement."},
+
+{"topic": "Execution", "concept": "Strangler fig migration of a legacy system", "difficulty": "medium",
+ "question": "Your team wants to replace a 10-year-old checkout system that handles all revenue. Engineering proposes rebuilding it fully over 12 months and switching over in one cutover. What's the better approach to suggest?",
+ "options": [
+  "Route traffic through a layer that sends one flow at a time to the new system, retiring old parts as each new piece proves itself",
+  "Freeze all changes to the old system for 12 months so the rebuild has a stable target",
+  "Run the rebuild in secret and announce it only when it is fully complete",
+  "Keep both systems fully live and let users choose which checkout they want to use"
+ ],
+ "answer": 0,
+ "explanation": "The strangler fig pattern replaces a legacy system piece by piece behind a routing layer, so each new part goes live, is validated with real traffic, and can be rolled back. It delivers value early and avoids the risk of a single huge cutover of a revenue-critical system. Freezes stall the business for a year, secrecy hides risk, and letting users pick doubles the maintenance and confuses everyone.",
+ "rationales": [
+  "Correct: incremental replacement behind a routing layer reduces risk, delivers value early and allows rollback per piece.",
+  "A year-long freeze blocks all business changes and still ends in one big risky cutover.",
+  "Hiding the rebuild removes feedback and stakeholder alignment; problems surface only at the riskiest moment.",
+  "Letting users pick runs two full systems in production with no plan to retire either."
+ ],
+ "interview_tip": "Big-bang rewrites are a classic trap. Suggesting incremental migration with clear checkpoints shows you manage risk and still ship value along the way."},
+
+{"topic": "Execution", "concept": "Buy-a-feature prioritisation game with customers", "difficulty": "easy",
+ "question": "In a workshop, you give each of 8 customers a fixed budget of play money and a list of candidate features with 'prices' based on their cost to build. Customers can pool money to buy features. What is the main benefit of this method?",
+ "options": [
+  "It forces customers to make trade-offs under a budget, revealing which features they value most together",
+  "It gives you exact revenue forecasts for each feature before you build it",
+  "It lets customers decide the final roadmap so that the PM doesn't need to",
+  "It measures how often customers would use each feature once it ships"
+ ],
+ "answer": 0,
+ "explanation": "Buy-a-feature makes trade-offs explicit: with limited money, customers can't ask for everything, and the discussion when they pool funds shows what matters most and why. It's richer than a wishlist survey. It's an input to prioritisation, not a revenue forecast, a usage prediction, or a replacement for the PM's judgement.",
+ "rationales": [
+  "Correct: a constrained budget and pooling reveal relative value and the reasoning behind it.",
+  "Play money doesn't forecast revenue; it reveals relative preference, not what customers will pay.",
+  "The PM still decides; customer input is weighed against strategy, cost and other users.",
+  "It shows preference at a moment in time, not actual future usage."
+ ],
+ "interview_tip": "Mentioning trade-off based methods instead of 'ask users what they want' shows you know stated wishlists are unreliable. Always add that the output informs, not replaces, your prioritisation."},
+
+{"topic": "Execution", "concept": "Lead time vs cycle time", "difficulty": "easy",
+ "question": "On your team's Kanban board, what is the difference between lead time and cycle time?",
+ "options": [
+  "Lead time runs from when a request is made to delivery; cycle time runs from when work starts to delivery",
+  "Lead time is measured in story points; cycle time is measured in days",
+  "Lead time covers only design work; cycle time covers only engineering work",
+  "They are two names for the same measure, used by different agile frameworks"
+ ],
+ "answer": 0,
+ "explanation": "Lead time is what the customer experiences: the full wait from request to delivery, including time sitting in the backlog. Cycle time is the part where the team is actively working. A big gap between them means items wait a long time before anyone starts, which points to too much work queued rather than slow execution.",
+ "rationales": [
+  "Correct: lead time includes waiting in the queue; cycle time starts when work begins.",
+  "Both are measured in time; story points estimate effort and are a different concept.",
+  "Neither is tied to a discipline; both span all work from start (or request) to done.",
+  "They differ by the queue time, and that difference is often the most useful thing to look at."
+ ],
+ "interview_tip": "Knowing flow metrics helps in execution rounds. Saying 'if lead time is much longer than cycle time, our problem is queueing, not speed' shows you diagnose delivery with data."},
+
+{"topic": "Behavioural", "concept": "Explaining the reasoning behind an unpopular decision to your team", "difficulty": "hard",
+ "question": "You decided to drop a feature your team had spent two months on because user tests showed it confused customers. The team is frustrated and some feel their work was wasted. What's the strongest way to handle it?",
+ "options": [
+  "Meet the team, share the user evidence and your reasoning openly, acknowledge the effort, and show what was learned and where the work can be reused",
+  "Announce the decision by email so that the team has time to process it privately",
+  "Tell the team the decision came from leadership so they don't blame you personally",
+  "Reverse the decision to protect morale and ship the feature with an extra tutorial"
+ ],
+ "answer": 0,
+ "explanation": "People accept tough calls far better when they understand the reasons and feel their work was respected. Sharing the evidence openly, owning the decision, and showing what was learned or reusable turns 'wasted work' into a lesson that saved customers from a confusing feature. Email avoids the conversation, blaming leadership erodes trust, and reversing a correct decision to please the team harms users.",
+ "rationales": [
+  "Correct: transparent evidence, ownership and recognition keep trust even when the decision is unpopular.",
+  "Email feels like avoidance on an emotional topic and leaves no room for questions.",
+  "Deflecting to leadership is dishonest if it was your call and teaches the team you won't own hard decisions.",
+  "Shipping a feature known to confuse users to protect feelings puts team comfort above customers."
+ ],
+ "interview_tip": "Behavioural answers on hard decisions should show both conviction and care. Interviewers look for ownership ('it was my call'), evidence, and how you helped the team move on."},
+
+{"topic": "Behavioural", "concept": "Responding to feedback that you're too slow to decide", "difficulty": "hard",
+ "question": "Your manager tells you that engineers feel blocked because you take too long to make product decisions; you keep asking for more data. How should you respond?",
+ "options": [
+  "Thank them, sort decisions into reversible and irreversible, set decide-by dates, and make reversible calls quickly with the data you have",
+  "Explain that more data always leads to better decisions, so the delays are worth it",
+  "Ask engineers to make the decisions themselves so you never block them again",
+  "Commit to always deciding within one day, no matter how big the decision is"
+ ],
+ "answer": 0,
+ "explanation": "The strong response accepts the feedback and changes the system. Most product decisions are reversible and should be made fast with 'good enough' data, while a few one-way doors deserve more care. Setting decide-by dates makes the change visible. Defending the delays ignores the cost to the team, handing all decisions away abandons the role, and a blanket one-day rule is as unthinking as the original habit.",
+ "rationales": [
+  "Correct: it accepts the feedback and matches decision speed to reversibility, with visible deadlines.",
+  "Data has diminishing returns, and blocked engineers are a real cost; this is defensive.",
+  "Delegating some calls is good, but giving up product decisions altogether leaves the team without direction.",
+  "Treating all decisions the same is the opposite mistake; big irreversible bets deserve more time."
+ ],
+ "interview_tip": "Interviewers ask about feedback to see if you can grow without getting defensive. Showing a concrete mechanism (reversible vs irreversible, decide-by dates) is stronger than just 'I took it on board'."},
+
+{"topic": "Behavioural", "concept": "Refusing to backdate a compliance sign-off", "difficulty": "hard",
+ "question": "Before an audit, a senior colleague asks you to backdate your sign-off on a security review so it looks like it happened before launch. The review actually happened two weeks after launch and found no issues. What should you do?",
+ "options": [
+  "Decline to backdate, record the real date, and help prepare an honest explanation of the timeline and the fix to the process",
+  "Backdate it, since the review found no issues and the result would be the same",
+  "Sign with the real date but say nothing about the colleague's request",
+  "Refuse and immediately report the colleague to HR without speaking to them first"
+ ],
+ "answer": 0,
+ "explanation": "Backdating creates a false record, which is an integrity problem regardless of the review's outcome, and auditors rely on records being true. The right move is to keep the real date and help the team explain the gap honestly, along with how the process will make sure reviews happen before launch. Talking to the colleague directly first usually resolves it; escalate if they insist.",
+ "rationales": [
+  "Correct: it keeps the record honest and turns the gap into a process fix, while supporting the team.",
+  "A clean result doesn't make a falsified date acceptable; it is still a false record for an audit.",
+  "Using the real date is right, but ignoring the request and the process gap misses the chance to fix it.",
+  "Going straight to HR skips a direct conversation that might resolve it; escalation fits if the pressure continues."
+ ],
+ "interview_tip": "Integrity questions test whether you hold the line kindly. Interviewers want a firm 'no' plus a constructive path, not a lecture or an immediate escalation."},
+
+{"topic": "AI Product", "concept": "Out-of-scope intent detection for a narrow-domain assistant", "difficulty": "medium",
+ "question": "A bank's AI assistant is meant to answer questions about the bank's accounts and cards. Users increasingly ask it for stock tips, medical advice and help with homework, and its answers to these sometimes make the news. What's the best fix?",
+ "options": [
+  "Classify each request as in-scope or out-of-scope before answering, and politely decline or redirect out-of-scope ones",
+  "Add a disclaimer under every answer saying the bank isn't responsible for the content",
+  "Switch to a larger model so its answers to off-topic questions are more accurate",
+  "Remove the free-text box so users can only choose from preset questions"
+ ],
+ "answer": 0,
+ "explanation": "A narrow-domain assistant needs a clear boundary: detect when a request is outside its job and respond with a polite decline or a pointer elsewhere. This keeps the assistant useful for its real purpose while avoiding risky answers. Disclaimers don't stop harmful content, a bigger model still answers things the bank shouldn't, and removing free text kills the main benefit of the assistant.",
+ "rationales": [
+  "Correct: an explicit scope check keeps the assistant in its lane and handles off-topic requests gracefully.",
+  "Disclaimers don't prevent the bad answer, and they don't reduce reputational or regulatory risk much.",
+  "Better answers to stock tips are still answers the bank shouldn't give; the issue is scope, not quality.",
+  "Preset buttons remove risk but also the flexibility that makes an AI assistant valuable."
+ ],
+ "interview_tip": "Defining what an AI product should NOT do is a key PM skill. Mention scope classifiers, graceful refusals and measuring both wrong refusals and leaks to show balanced thinking."},
+
+{"topic": "AI Product", "concept": "Saturated eval sets that no longer discriminate between models", "difficulty": "easy",
+ "question": "Your team's eval set for a writing assistant shows every candidate model scoring 97-99%, yet users clearly prefer some models over others. What's the most likely problem?",
+ "options": [
+  "The eval set is too easy and has saturated, so it can't tell the models apart",
+  "The users are wrong, because the eval scores show all models are equally good",
+  "The models are overfitting to user preferences instead of the eval set",
+  "The eval scores are too high to be real and must contain a scoring bug"
+ ],
+ "answer": 0,
+ "explanation": "When every model scores near the top, the eval set has hit its ceiling and no longer discriminates. It's probably missing the harder, more realistic cases where models differ. The fix is to add harder examples, often taken from real user sessions and failures, so the eval tracks what users notice.",
+ "rationales": [
+  "Correct: a ceiling effect means the test only checks things all models already do well.",
+  "User preference is real signal; when it disagrees with evals, the eval usually needs to change.",
+  "Models aren't trained on your users' preferences here; that's not why scores cluster.",
+  "High scores can be real on easy tests; a bug is possible but saturation is far more common."
+ ],
+ "interview_tip": "Interviewers like hearing that evals are a product to maintain. Saying 'when evals stop matching user preference, refresh them with harder real cases' shows practical AI PM experience."},
+
+{"topic": "AI Product", "concept": "Age assurance and stricter defaults for minors in AI chat", "difficulty": "medium",
+ "question": "Your general-purpose AI chat app is popular with adults but you find many users appear to be teenagers. What's the most responsible product approach?",
+ "options": [
+  "Estimate likely age, apply stricter safety defaults for likely minors, and let adults verify to remove them",
+  "Ban anyone under 18 and rely on users ticking a box confirming their age",
+  "Apply the strictest teen settings to every user regardless of age",
+  "Leave the experience unchanged, since parents are responsible for what teens use"
+ ],
+ "answer": 0,
+ "explanation": "A layered approach protects minors while keeping the product useful for adults: estimate age from signals, default uncertain or likely-minor users to safer settings, and offer a verification path for adults wrongly flagged. A tick-box ban is easily bypassed, blanket restrictions frustrate adults, and doing nothing ignores real risk and regulatory pressure.",
+ "rationales": [
+  "Correct: age estimation plus safer defaults and an adult verification path balances protection and usefulness.",
+  "Self-declared age is easy to fake, so it gives an appearance of safety without real protection.",
+  "Treating every adult as a teen degrades the product for the main user base without need.",
+  "Platforms are increasingly expected to protect young users; ignoring the issue is a safety and legal risk."
+ ],
+ "interview_tip": "Safety questions reward layered, proportionate answers. Mentioning the cost of false positives for adults, not just protection for teens, shows you weigh both sides."},
+
+{"topic": "AI Product", "concept": "Direct preference optimisation (DPO) without a reward model", "difficulty": "hard",
+ "question": "Your ML team proposes using DPO (direct preference optimisation) on pairs of 'preferred vs rejected' responses to tune your assistant's tone. How does DPO differ from classic RLHF with PPO?",
+ "options": [
+  "DPO updates the model directly from preference pairs, without training a separate reward model or running a reinforcement-learning loop",
+  "DPO needs no human preference data, because the model generates and judges its own outputs",
+  "DPO only changes the system prompt, so the model's weights stay exactly the same",
+  "DPO trains on the rejected answers only, teaching the model what never to say"
+ ],
+ "answer": 0,
+ "explanation": "Classic RLHF trains a reward model on human preferences and then uses reinforcement learning (often PPO) to optimise the language model against it. DPO skips both steps: it uses the same preference pairs to adjust the model directly with a simple loss that raises the likelihood of preferred answers relative to rejected ones. That makes it simpler, cheaper and more stable, which is why it's popular for tone and style tuning.",
+ "rationales": [
+  "Correct: DPO optimises on preference pairs directly, removing the reward model and RL loop.",
+  "DPO still uses preference data, which can come from humans or AI judges; self-judging isn't what defines it.",
+  "DPO is a fine-tuning method and does change the model's weights; it's not prompt engineering.",
+  "DPO uses both preferred and rejected answers together; the contrast between them is the signal."
+ ],
+ "interview_tip": "AI PMs don't need the maths, but knowing what each tuning method needs (data, cost, complexity) helps you weigh options. Linking DPO to cheaper tone tuning shows you connect technique to product choices."},
+
+{"topic": "AI Product", "concept": "Provider-agnostic model abstraction layer to reduce vendor lock-in", "difficulty": "easy",
+ "question": "Your product calls one LLM provider's API directly from many places in the codebase. Leadership worries about price changes and model retirements. What's the best structural step?",
+ "options": [
+  "Put model calls behind one internal interface so you can switch or mix providers and re-run evals in one place",
+  "Sign a five-year contract with the current provider to lock in today's prices",
+  "Build your own frontier model in-house so you never depend on a provider",
+  "Copy each call to two providers on every request and use whichever answers first"
+ ],
+ "answer": 0,
+ "explanation": "A single internal layer for model calls makes switching providers or models a configuration change rather than a rewrite, and lets you test new models against your evals before moving traffic. That turns vendor risk into a manageable choice. Long contracts reduce flexibility, building a frontier model is unrealistic for most companies, and sending every request twice doubles cost.",
+ "rationales": [
+  "Correct: one abstraction point gives you the option to switch or route between providers cheaply.",
+  "Long contracts may fix price, but they don't protect against model retirements and they reduce flexibility.",
+  "Training a frontier model costs far more than the risk it removes for almost every product team.",
+  "Double calls double cost and still require integrating each provider everywhere."
+ ],
+ "interview_tip": "Showing you design for change in AI vendors is a strong signal. Mention that switching still needs eval runs, since prompts tuned for one model often behave differently on another."},
+
+{"topic": "Technology", "concept": "CAP theorem: choosing consistency or availability during a network partition", "difficulty": "medium",
+ "question": "Your system stores data in two data centres. When the network link between them breaks, each side can either keep accepting writes or refuse writes until the link returns. For a bank account balance, which choice is better and why?",
+ "options": [
+  "Refuse writes on the cut-off side to keep balances consistent, accepting some unavailability",
+  "Keep accepting writes on both sides, since availability always matters most",
+  "Accept writes on both sides and average the two balances once the link returns",
+  "It doesn't matter, because a well-designed system avoids this trade-off entirely"
+ ],
+ "answer": 0,
+ "explanation": "The CAP theorem says that during a network partition a distributed system must choose between consistency (all sides agree) and availability (every side keeps responding). For money, two sides independently accepting withdrawals could let a user spend the same balance twice, so consistency wins. For something like a 'likes' count, staying available and reconciling later is fine.",
+ "rationales": [
+  "Correct: for balances, inconsistent data can cause double spending, so pausing writes is the safer trade-off.",
+  "Availability is right for many products, but not where conflicting writes cause real financial harm.",
+  "Averaging balances is meaningless and loses real transactions.",
+  "No design avoids the trade-off during a partition; you can only choose which side to favour."
+ ],
+ "interview_tip": "Interviewers like seeing you pick the trade-off based on product risk. Contrasting money (consistency) with social counts (availability) shows you can apply technical ideas to product choices."},
+
+{"topic": "Technology", "concept": "Sharding to scale writes vs replicas to scale reads", "difficulty": "easy",
+ "question": "Your database can no longer keep up because the volume of new orders being written each second has grown tenfold. Reads are fine. Which approach targets the actual bottleneck?",
+ "options": [
+  "Shard the data across several databases so that writes are spread out",
+  "Add more read replicas so that queries are served from copies",
+  "Add a cache in front of the database for frequently read data",
+  "Add a CDN so that static files load faster for users"
+ ],
+ "answer": 0,
+ "explanation": "Read replicas and caches take read load off the primary database, but every write still goes to the primary. Sharding splits data (for example by customer or region) across several databases, so each handles only part of the writes. Since writes are the bottleneck here, sharding is the fix, at the cost of more complex queries across shards.",
+ "rationales": [
+  "Correct: sharding divides writes across databases, directly increasing write capacity.",
+  "Replicas scale reads; all writes still hit the primary, so the bottleneck remains.",
+  "Caches speed up repeated reads but don't help with a flood of new writes.",
+  "A CDN serves static files and doesn't touch database write load at all."
+ ],
+ "interview_tip": "Match the fix to the bottleneck. Saying 'first, is this read or write load?' before proposing a solution shows structured technical thinking."},
+
+{"topic": "Growth", "concept": "Done-for-you setup to accelerate B2B activation", "difficulty": "medium",
+ "question": "Your B2B inventory software has a self-serve signup, but only 20% of new small-business accounts finish importing their product catalogue, and accounts that do are five times more likely to convert to paid. What is the highest-impact intervention to test?",
+ "options": [
+  "Offer to import the catalogue for them from a spreadsheet or their existing store, done by your team or an automated importer",
+  "Send a series of tutorial emails explaining how the import feature works",
+  "Extend the free trial from 14 to 30 days so users have more time to import",
+  "Offer a discount on the first paid month to every new account"
+ ],
+ "answer": 0,
+ "explanation": "Catalogue import is the key activation step and also the hardest, most tedious one for a busy small-business owner. Doing it for them removes the barrier entirely and gets them to value quickly. You should still confirm the 5x link is causal, but removing effort usually beats explaining it. Tutorials leave the work with the user, longer trials delay the same problem, and discounts don't help people who never reach value.",
+ "rationales": [
+  "Correct: removing the hardest setup step directly lifts the activation that predicts conversion.",
+  "Tutorials help a little, but the problem is effort and time, not knowledge of how the feature works.",
+  "More time doesn't make the import easier; many users will still never do it.",
+  "A discount targets price, but users who haven't set up the product haven't seen enough value to care."
+ ],
+ "interview_tip": "For B2B activation, interviewers like 'do it for them' ideas when setup is the barrier. Noting that you'd check the correlation is causal before scaling shows analytical care."},
+
+{"topic": "Current Events", "concept": "Mid-tier model priced below the flagship (Gemini 4 Neon, Nov 2026)", "difficulty": "medium",
+ "question": "On 18 November 2026 Google launched Gemini 4 Neon, positioned as 'Carbon quality at Flash speeds', at $3 per million input tokens and $15 per million output tokens. 9to5Google reported that Gemini 4 Carbon's introductory $2/$10 pricing rises to $4/$20 after 30 November. For an AI product team using Carbon today for a high-volume coding workflow, what's the most sensible response?",
+ "options": [
+  "Run your own evals on Neon for the workflow, and if quality holds, move traffic before Carbon's price rises, since Neon would be about 25% cheaper",
+  "Move all traffic to Neon at once, since Google says it matches Carbon",
+  "Stay on Carbon because the flagship model is always the safer choice",
+  "Wait until Carbon's price rises before considering any change"
+ ],
+ "answer": 0,
+ "explanation": "After 30 November, Carbon at $4/$20 costs more than Neon at $3/$15, about 25% more per token. If Neon matches Carbon on your workload, switching saves money and adds speed. But vendor claims are averages across benchmarks, so test on your own evals first, then move traffic with a plan to roll back. This is why a model abstraction layer and a good eval set pay off.",
+ "rationales": [
+  "Correct: verify on your own evals, then switch before the price change to capture the saving at no quality cost.",
+  "Vendor claims don't guarantee results on your specific workload; switching without testing risks regressions.",
+  "The flagship isn't always better for a given task, and after the price rise it costs more for similar quality.",
+  "Waiting means paying the higher price while you test; you can evaluate now, while there is time."
+ ],
+ "interview_tip": "Model line-ups and prices change fast. Interviewers like candidates who answer with 'test on our evals, then migrate with rollback' rather than trusting launch headlines.",
+ "source": "https://9to5google.com/2026/11/18/gemini-4-neon-announcement/"}
+]}
