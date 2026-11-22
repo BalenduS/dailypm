@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-22",
+ "theme": "Hidden costs and true signals",
+ "questions": [
+  {
+   "id": "2026-11-22-01",
+   "topic": "Product Sense",
+   "concept": "Open shift-swap board with manager approval for rotating-roster nurses",
+   "difficulty": "hard",
+   "question": "You're the PM for a hospital workforce app. Nurses on rotating rosters say the most stressful thing is needing a shift changed for a family event: today they message colleagues one by one on WhatsApp, then chase the ward manager for sign-off, and swaps often fall through. What should you build first?",
+   "options": [
+    "A group chat inside the app for each ward so nurses can coordinate swaps in one place",
+    "An AI roster optimiser that regenerates the whole month's schedule whenever someone requests a change",
+    "A swap board where a nurse posts a shift, eligible colleagues with matching skills can claim it, and the manager approves in one tap",
+    "A leave-request form that sends shift-change requests straight to HR for processing"
+   ],
+   "rationales": [
+    "A ward chat just moves today's WhatsApp messages into the app; nurses still ask one by one and chase approval.",
+    "Regenerating the roster disrupts everyone else's shifts to solve one person's problem; nurses want a small, predictable change, not a new schedule.",
+    "Correct: it removes the one-by-one search, keeps skill and hours rules built in, and shrinks approval to one tap.",
+    "Routing to HR adds a slower, more distant approver and still doesn't find a colleague to cover the shift."
+   ],
+   "answer": 2,
+   "explanation": "The pain is a multi-party coordination problem: finding a qualified colleague who is free, then getting approval. A swap board turns one-by-one asking into a single broadcast, filters to colleagues with the right skills and hours so swaps stay compliant, and makes the manager's step a quick approval instead of a chase. It fixes the actual broken steps without replacing how rosters are made.",
+   "interview_tip": "Product-sense interviewers look for you to map the steps of a workflow and find where it breaks. Naming both broken steps (finding cover, getting approval) and fixing them with constraints built in shows structured thinking."
+  },
+  {
+   "id": "2026-11-22-02",
+   "topic": "Product Sense",
+   "concept": "Pooled contribution link for WhatsApp group gifts",
+   "difficulty": "medium",
+   "question": "You're the PM for a gifting store that sells mostly through WhatsApp. Customer calls reveal that many orders are group gifts for a colleague's farewell or a friend's wedding: one person pays the full amount up front and then spends days chasing ten people for their share over UPI. Which feature best addresses this?",
+   "options": [
+    "A reminder message the organiser can forward to friends who haven't paid them back yet",
+    "An option to split the bill into equal parts shown on the final invoice",
+    "A shareable contribution link where each person pays their share and the order is placed once the target is reached",
+    "A 10% discount on orders above a set value so group gifts feel cheaper"
+   ],
+   "rationales": [
+    "A forwarded reminder makes chasing a little easier but keeps the organiser as the debt collector.",
+    "Splitting the invoice only shows the math; it doesn't collect money from anyone.",
+    "Correct: it removes the up-front risk and the chasing, and each contributor becomes a store touchpoint.",
+    "A discount lowers the total but the organiser still pays everything and still chases ten people."
+   ],
+   "answer": 2,
+   "explanation": "The organiser's pain is carrying the full cost and the social awkwardness of chasing money. A pooled link moves collection to the point of purchase: each person pays their share directly and nobody is out of pocket. It also brings more buyers into the store, since every contributor sees the product and the brand.",
+   "interview_tip": "Interviewers like candidates who notice who in a group carries the pain. Saying 'the organiser carries the money risk, so move collection to the point of purchase' shows you design for the real user in a multi-person flow."
+  },
+  {
+   "id": "2026-11-22-03",
+   "topic": "Product Sense",
+   "concept": "Auto-captured invoice and warranty records for electronics buyers",
+   "difficulty": "easy",
+   "question": "You run an electronics e-commerce app. Service data shows that many warranty claims are rejected or delayed because customers can't find the invoice months later, and support spends hours re-sending invoices. What's the simplest product fix with the biggest impact?",
+   "options": [
+    "Automatically save each purchase's invoice and warranty end date in a 'My devices' section, with a reminder before the warranty ends",
+    "Add a chatbot that helps customers search their email for old invoices",
+    "Email the invoice twice at purchase so customers have a backup copy",
+    "Print a warning on the box asking customers to keep their invoice safe"
+   ],
+   "rationales": [
+    "Correct: it uses data the app already has to remove the customer's storage job entirely.",
+    "A chatbot helps search, but the invoice is still scattered in email; it treats the symptom.",
+    "A second email still relies on customers finding it months later in a crowded inbox.",
+    "A printed warning asks for more customer effort and is easy to ignore."
+   ],
+   "answer": 0,
+   "explanation": "The app already knows every purchase, so it can keep the proof for the customer instead of asking them to store it. A 'My devices' record with warranty dates is always there when a claim is needed and cuts support work. The expiry reminder adds value at a moment the customer cares about.",
+   "interview_tip": "A strong product-sense signal is spotting when the product can do a job for the user instead of asking them to remember. Mention the support cost saved, which links the user fix to a business metric."
+  },
+  {
+   "id": "2026-11-22-04",
+   "topic": "Product Sense",
+   "concept": "Remote-assisted phone setup for older parents",
+   "difficulty": "hard",
+   "question": "You're a PM on a smartphone OS team in India. Research shows that when adults buy a new phone for parents in another city, the parents struggle with setup (accounts, WhatsApp restore, font size, UPI) and the children spend hours on video calls saying 'tap the blue button'. What should you build?",
+   "options": [
+    "A consented remote-assist mode where the child can see the parent's screen and complete setup steps, with the parent approving sensitive steps",
+    "A paid home-visit service where a technician sets up the phone at the parent's house",
+    "A simplified 'senior launcher' with large icons that the parent can turn on in settings",
+    "A set of short video tutorials in regional languages covering each setup step"
+   ],
+   "rationales": [
+    "Correct: it serves the helper and the person being helped together, with consent and approvals built in for safety.",
+    "Home visits are slow, costly and hard to scale across cities; they ignore the child who already wants to help.",
+    "A senior launcher helps daily use but doesn't solve setup, the hardest part, and the parent still has to find and turn it on.",
+    "Tutorials still assume the parent can follow steps alone, which is exactly what fails today."
+   ],
+   "answer": 0,
+   "explanation": "The real user is the pair: a capable child who is far away and a parent who struggles to follow instructions. Letting the child act on the parent's device, with clear consent and the parent approving sensitive actions like payments, fits that relationship and removes the 'describe the button' loop. It must be designed against misuse, with visible session indicators and easy ending.",
+   "interview_tip": "Interviewers reward noticing the helper in the user's life. A strong answer designs for the pair and names the safety risk (remote control can be abused) with mitigations, showing you balance helpfulness and trust."
+  },
+  {
+   "id": "2026-11-22-05",
+   "topic": "Metrics",
+   "concept": "Late-repayment rate as counter-metric for a BNPL checkout option",
+   "difficulty": "medium",
+   "question": "You're launching a buy-now-pay-later option at checkout for an Indian D2C fashion brand. The goal is higher conversion on orders above ₹3,000. Which metric is the most important counter-metric to track alongside conversion?",
+   "options": [
+    "Time spent on the checkout page by BNPL users",
+    "The number of customers who view the BNPL option at checkout",
+    "Average order value of BNPL orders compared with card orders",
+    "The share of BNPL orders that become late or unpaid instalments"
+   ],
+   "rationales": [
+    "Checkout time is a weak signal of friction and says nothing about repayment risk.",
+    "Views measure exposure, not harm; they can't tell you if the launch is creating bad debt.",
+    "Higher order value is usually another success metric, not a check on the downside.",
+    "Correct: it tracks the main risk that a conversion gain could be hiding, which is buyers who can't or won't repay."
+   ],
+   "answer": 3,
+   "explanation": "BNPL can lift conversion by making expensive orders easier to accept, but it can also pull in buyers who later fail to repay, which creates losses, collections cost and unhappy customers. Late or unpaid instalments show whether the conversion gain is healthy. A counter-metric should capture the harm the goal metric could hide.",
+   "interview_tip": "Interviewers often ask 'what could go wrong with this metric?'. Pairing each goal with the specific harm it could hide, here repayment risk, shows mature metric thinking."
+  },
+  {
+   "id": "2026-11-22-06",
+   "topic": "Metrics",
+   "concept": "Riders marking orders delivered at the building gate",
+   "difficulty": "hard",
+   "question": "Your food-delivery app's average delivery time dropped from 31 to 26 minutes in a month with no change to rider supply or routing. At the same time, 'order not received' complaints rose 40%, mostly from large apartment complexes. What is the most likely explanation?",
+   "options": [
+    "Customers in large complexes are abusing the complaints system to get free refunds",
+    "Restaurants are preparing food faster, which shortens delivery and causes more handover mistakes",
+    "Riders began marking orders as delivered at the building gate, before reaching the customer's door, so the recorded time no longer covers the full delivery",
+    "The new faster times mean customers expect more, so they complain more about small delays"
+   ],
+   "rationales": [
+    "Fraud is possible, but a sudden rise tied to one building type alongside a faster timer points first to how riders record delivery.",
+    "Faster prep would shorten waiting at the restaurant, but nothing changed operationally, and it doesn't explain why complaints cluster in apartments.",
+    "Correct: it explains both the unexplained speed gain and the complaint spike concentrated in large complexes.",
+    "Higher expectations wouldn't produce a 40% jump in 'not received' complaints specifically."
+   ],
+   "answer": 2,
+   "explanation": "When a speed metric improves with no operational cause while a related quality signal gets worse, suspect how the event is recorded. If riders tap 'delivered' at the gate, perhaps to protect their own speed scores, the timer stops early and the last stretch is hidden, which also explains more missing-order complaints in big complexes. Check GPS distance from the door at the 'delivered' tap and use proof of delivery.",
+   "interview_tip": "Root-cause questions reward candidates who check the metric's definition and recording before celebrating. Linking two moving metrics into one story and proposing a check (GPS distance at the tap) is what a strong answer sounds like."
+  },
+  {
+   "id": "2026-11-22-07",
+   "topic": "Metrics",
+   "concept": "Festival-sale deal-hunter cohorts lowering repeat-purchase rate",
+   "difficulty": "medium",
+   "question": "After a big Diwali sale, your D2C brand's 60-day repeat-purchase rate fell from 28% to 19%. Leadership worries that product quality has slipped. What should you check first?",
+   "options": [
+    "Whether the fall comes from the large group of new, discount-driven customers acquired in the sale, by comparing repeat rates of sale-acquired and regular cohorts",
+    "Whether product reviews posted in the last month have lower star ratings",
+    "Whether delivery times got slower during the sale because of high order volumes",
+    "Whether the repeat-purchase metric's 60-day window should be shortened to 30 days"
+   ],
+   "rationales": [
+    "Correct: it tests the simplest explanation, a change in who the customers are, before assuming the product got worse.",
+    "Reviews are a lagging, self-selected signal and can't separate a mix change from a quality change.",
+    "Slower delivery could matter, but you should first rule out the much larger effect of the cohort mix.",
+    "Changing the window changes the number without explaining the drop; it's moving the goalposts."
+   ],
+   "answer": 0,
+   "explanation": "Big sales bring in many first-time buyers who came for the price and are less likely to return at full price. If they make up a large share of the base, the blended repeat rate falls even when each type of customer behaves as before. Splitting by acquisition cohort shows whether this is a mix change or real damage.",
+   "interview_tip": "Interviewers like candidates who ask 'did the users change, or did their behaviour change?'. Segmenting by acquisition source before diagnosing product quality is a strong habit to show."
+  },
+  {
+   "id": "2026-11-22-08",
+   "topic": "Metrics",
+   "concept": "Crashes per 1,000 sessions vs raw crash count during growth",
+   "difficulty": "easy",
+   "question": "Your app's daily crash count doubled over three months, and an executive asks why stability is getting worse. In the same period, daily sessions grew 2.5x. What's the best way to report stability?",
+   "options": [
+    "The number of unique bugs causing crashes, because that's what engineers fix",
+    "The percentage of app-store reviews that mention crashes",
+    "Total crashes, because every crash is a bad experience no matter how many users there are",
+    "Crashes per 1,000 sessions, which has actually improved because crashes grew more slowly than usage"
+   ],
+   "rationales": [
+    "Unique bug count is useful for engineering planning but doesn't show how often users are affected.",
+    "Review mentions are a small, biased sample and lag behind real crash data.",
+    "Every crash matters to the user, but raw totals can't tell you if stability is better or worse while usage grows.",
+    "Correct: a rate tied to usage removes the growth effect and shows the real trend."
+   ],
+   "answer": 3,
+   "explanation": "Raw counts grow with usage, so a rate tied to exposure is needed to compare periods. Crashes doubled while sessions grew 2.5x, so the crash rate per session fell by about 20%. Stability improved; usage just grew faster.",
+   "interview_tip": "A quick win in metric questions is asking 'per what?'. Turning a raw count into a rate tied to exposure shows you won't be fooled by growth."
+  },
+  {
+   "id": "2026-11-22-09",
+   "topic": "Experimentation",
+   "concept": "Inconsistent price exposure when randomizing a delivery fee by session",
+   "difficulty": "medium",
+   "question": "You want to test a ₹10 higher delivery fee on a grocery app. An engineer suggests randomizing each app session, since it's the easiest to build. Why is this a poor choice?",
+   "options": [
+    "Session-level tests can only measure clicks, not orders or revenue",
+    "The same user can see different fees across sessions, which confuses them, lets them reopen the app to get the lower fee, and blurs the effect",
+    "Sessions are too few to give enough statistical power for a pricing test",
+    "Session-level randomization always produces sample ratio mismatch"
+   ],
+   "rationales": [
+    "Session-level tests can measure orders; the problem is inconsistent exposure, not what can be measured.",
+    "Correct: inconsistent exposure lets users game the test, harms trust, and mixes the two arms in one person's behaviour.",
+    "There are usually more sessions than users, so power isn't the problem.",
+    "SRM comes from bugs in assignment or logging, not from choosing the session as the unit."
+   ],
+   "answer": 1,
+   "explanation": "Price tests need each user to see one consistent price. With session-level assignment, users notice the fee changing, can reopen the app until they get the cheaper one, and lose trust. Their behaviour mixes both prices, so the measured effect is distorted. Randomize by user (or account) so each person has one experience.",
+   "interview_tip": "Interviewers check whether you choose the randomization unit based on what the user experiences. Saying 'price must stay consistent per user' shows you think about the user, not just the stats."
+  },
+  {
+   "id": "2026-11-22-10",
+   "topic": "Experimentation",
+   "concept": "App-version adoption confounding in client-side mobile tests",
+   "difficulty": "hard",
+   "question": "Your new checkout feature ships in Android app version 9.4. To test quickly, the team compares conversion of users on 9.4 (who get the feature) with users on older versions (who don't). Conversion is 12% higher for 9.4 users. What's the main flaw?",
+   "options": [
+    "Older app versions may have bugs that lower conversion, so the gap is likely smaller than measured but still valid",
+    "Users who update quickly tend to be more engaged, so the comparison mixes the feature's effect with who chooses to update; you should randomize among 9.4 users only",
+    "The sample is too small because only some users have updated, so the result can't be significant",
+    "Android users behave differently from iOS users, so the result can't apply to the whole app"
+   ],
+   "rationales": [
+    "Bugs in older versions are one more difference between groups, which makes the comparison less valid, not 'still valid'.",
+    "Correct: the groups differ in who they are, not just in the feature; randomizing within the new version removes that bias.",
+    "Sample size isn't the core issue; even a huge sample would still carry the selection bias.",
+    "Platform generalization is a real question, but it's secondary to the fact that the comparison isn't randomized."
+   ],
+   "answer": 1,
+   "explanation": "Updating is a choice, and early updaters are usually heavier, more engaged users with higher conversion anyway. Comparing them with non-updaters is a selection-biased comparison, not an experiment. The fix is to ship the feature behind a flag in 9.4 and randomly turn it on for half of 9.4 users, so both arms come from the same population.",
+   "interview_tip": "Strong candidates spot hidden self-selection quickly. Saying 'early updaters are different, so randomize inside the new version behind a flag' shows you know how mobile experiments work in practice."
+  },
+  {
+   "id": "2026-11-22-11",
+   "topic": "Estimation",
+   "concept": "Daily packaged idli/dosa batter packets sold in Bengaluru",
+   "difficulty": "medium",
+   "question": "Estimate how many packets of ready-made idli/dosa batter are sold per day in Bengaluru.",
+   "options": [
+    "About 25,000",
+    "About 250,000",
+    "About 25 million",
+    "About 2.5 million"
+   ],
+   "rationales": [
+    "Too low: it implies only about 2-3% of households buy batter, which is far below how common packaged batter is in South Indian cities.",
+    "Correct: households × share buying × packets per week ÷ 7 gives about 250,000.",
+    "Far too high: it is almost two packets per person per day.",
+    "Too high: it implies most households buy several packets a week, ignoring home grinding and eating out."
+   ],
+   "answer": 1,
+   "explanation": "Bengaluru has about 14 million people, or roughly 3.5 million households at 4 per household. Assume about 25% buy packaged batter (others grind at home or eat out), which is about 875,000 households. If each buys about 2 packets a week, that's about 1.75 million packets a week, or about 250,000 a day. The answer depends on the share of buyers and how often they buy, so state those clearly.",
+   "interview_tip": "Interviewers care about structure and stated assumptions more than the exact number. Start from households (not people) for a household product and sanity-check your result against the city's population."
+  },
+  {
+   "id": "2026-11-22-12",
+   "topic": "Estimation",
+   "concept": "Annual lunchbox (tiffin) unit sales in India",
+   "difficulty": "easy",
+   "question": "A steel-kitchenware brand wants to size its market before launching a new lunchbox line. Roughly how many lunchboxes (tiffin boxes) are bought in India in a year?",
+   "options": [
+    "About 15 million",
+    "About 1.5 million",
+    "About 1.5 billion",
+    "About 150 million"
+   ],
+   "rationales": [
+    "Too low: it would mean students replace a lunchbox only once in about 17 years.",
+    "Far too low: it's less than 1% of school students buying one in a year.",
+    "Too high: it implies each student buys several boxes every year.",
+    "Correct: students × replacement rate plus working adults gives about 150 million."
+   ],
+   "answer": 3,
+   "explanation": "Start with the largest users: about 250 million school students. If a student replaces a lunchbox about every 2 years (loss, breakage, growing up), that's about 125 million a year. Add office and factory workers who carry food, perhaps 25 million more boxes a year. The total is about 150 million.",
+   "interview_tip": "For a replacement-driven product, interviewers want to see 'installed base ÷ replacement cycle'. Naming the main segment first and adding smaller ones after keeps the answer clean."
+  },
+  {
+   "id": "2026-11-22-13",
+   "topic": "Strategy",
+   "concept": "Moving merchants from per-transaction fees to flat SaaS pricing as GMV grows",
+   "difficulty": "medium",
+   "question": "Your WhatsApp commerce platform charges merchants 2% of every sale. Your largest merchants, now selling ₹50 lakh a month, are leaving for rivals that charge a flat monthly fee. What's the best pricing response?",
+   "options": [
+    "Offer high-volume merchants a flat or tiered subscription with lower or no per-sale fees, keeping the percentage fee for small merchants",
+    "Add premium features for big merchants but keep the 2% fee unchanged",
+    "Keep 2% for everyone, since big merchants bring the most revenue",
+    "Cut the percentage fee to 1% for all merchants to match rivals on price"
+   ],
+   "rationales": [
+    "Correct: it fixes the fee resentment for large merchants without giving away margin on the long tail.",
+    "Features don't solve the main complaint, which is the size of the bill as they grow.",
+    "Standing still keeps short-term revenue but loses the merchants who produce most of it.",
+    "Halving the fee for everyone gives up a lot of revenue from small merchants who weren't leaving."
+   ],
+   "answer": 0,
+   "explanation": "A percentage fee fits small merchants because cost grows only with success, but at high volume it becomes a large bill for the same service, and merchants feel taxed. Tiered or flat pricing for big merchants keeps them, while small merchants keep the low-risk model. This is matching the price model to each segment's value and size.",
+   "interview_tip": "Interviewers like pricing answers that segment customers. Explaining why the same model feels fair to small merchants and unfair to large ones shows you understand value-based pricing."
+  },
+  {
+   "id": "2026-11-22-14",
+   "topic": "Strategy",
+   "concept": "Pricing an AI capability as a paid add-on vs including it in core plans",
+   "difficulty": "hard",
+   "question": "You're the PM for a B2B helpdesk SaaS. You've built an AI agent that resolves about 40% of tickets, but each resolution costs you about ₹8 in model fees. Competitors are starting to include basic AI in their standard plans. How should you price it?",
+   "options": [
+    "Sell the AI agent only as an expensive separate add-on to protect margins",
+    "Delay launching until model costs fall enough to give it away for free",
+    "Include a basic AI tier in core plans to stay competitive, and charge for high-volume autonomous resolutions by usage so cost tracks value",
+    "Make the full AI agent free in all plans to win market share quickly"
+   ],
+   "rationales": [
+    "A pricey separate add-on looks behind the market when rivals include AI, which slows adoption.",
+    "Waiting gives competitors time to set the standard and win customers.",
+    "Correct: it meets the market's new baseline while making sure your costs and your revenue grow together.",
+    "Unlimited free AI means your costs grow with usage while revenue doesn't, which can harm margins badly."
+   ],
+   "answer": 2,
+   "explanation": "Two forces matter: competitors are making basic AI a standard expectation, and your resolution cost is real and grows with use. Including basic AI keeps you competitive and avoids looking behind. Charging by resolutions for heavy autonomous use ties price to the value delivered (tickets solved) and protects margins as usage grows.",
+   "interview_tip": "AI pricing is a hot interview topic. Mention both the market baseline and the per-use cost of serving AI, and show how a hybrid model balances them."
+  },
+  {
+   "id": "2026-11-22-15",
+   "topic": "Strategy",
+   "concept": "Paying OEMs for preinstalls: distribution cost vs organic intent",
+   "difficulty": "medium",
+   "question": "Your Indian fintech app is considering paying a phone maker to preinstall the app on 10 million budget phones. What's the most important thing to evaluate before signing?",
+   "options": [
+    "The total number of phones the deal covers, since more installs means more growth",
+    "Whether the phone maker's brand matches your brand image",
+    "How many preinstalled users will actually activate and transact, compared with what those users would cost through other channels",
+    "How quickly the phone maker can ship the phones with your app installed"
+   ],
+   "rationales": [
+    "Install count looks big but says nothing about how many become real users.",
+    "Brand fit can matter, but it comes after knowing if the deal produces customers at a fair cost.",
+    "Correct: it judges the deal on real customers gained, not on installs.",
+    "Shipping speed is a detail; a fast deal that produces few active users is still a bad deal."
+   ],
+   "answer": 2,
+   "explanation": "Preinstalls give many installs but low intent: many users never open the app. What matters is cost per activated, transacting user, compared with other channels. Deals often look cheap per install but expensive per real customer, so model activation rates before signing.",
+   "interview_tip": "Distribution questions test whether you look past top-line numbers. Translating a deal into 'cost per activated user' and comparing channels shows business judgment."
+  },
+  {
+   "id": "2026-11-22-16",
+   "topic": "Execution",
+   "concept": "Definition of Ready to stop half-specified stories entering a sprint",
+   "difficulty": "easy",
+   "question": "Your team often starts sprint stories that are missing designs or have unclear acceptance criteria, so work stalls mid-sprint while engineers wait for answers. What practice best fixes this?",
+   "options": [
+    "Have engineers start coding anyway and fix the details in code review",
+    "Make sprints longer so there's more time to answer questions as they come up",
+    "Agree a 'Definition of Ready' checklist that a story must meet (designs, acceptance criteria, dependencies known) before it can enter a sprint",
+    "Add more stories to each sprint so engineers can switch when one is blocked"
+   ],
+   "rationales": [
+    "Coding before details are known leads to rework when answers arrive.",
+    "Longer sprints only give more time to wait; they don't fix unclear stories.",
+    "Correct: it stops unready work from entering the sprint and moves clarification earlier.",
+    "Overloading the sprint hides blocked work and reduces focus."
+   ],
+   "answer": 2,
+   "explanation": "A Definition of Ready sets the minimum a story needs before work begins: designs, acceptance criteria, known dependencies. It moves clarification work before the sprint, so engineers don't stall. It pairs with the Definition of Done, which sets when work is finished.",
+   "interview_tip": "Execution questions often check whether you solve a recurring problem with a lasting practice. Naming a simple entry rule shows you think in systems, not one-off fixes."
+  },
+  {
+   "id": "2026-11-22-17",
+   "topic": "Execution",
+   "concept": "Pre-read written decision doc to make a decision meeting productive",
+   "difficulty": "easy",
+   "question": "Your monthly roadmap decision meetings run long and end without decisions, because the first 40 minutes are spent explaining context. What's the best change?",
+   "options": [
+    "Replace the meeting with an email vote on each option",
+    "Invite more stakeholders so everyone hears the context first-hand",
+    "Send a short written doc with the context, options and your recommendation before the meeting, and use the meeting to discuss and decide",
+    "Make the meeting twice as long so there's time to decide after the explanation"
+   ],
+   "rationales": [
+    "An email vote skips the discussion needed for hard trade-offs and can split the group.",
+    "More people usually means more questions and slower decisions.",
+    "Correct: it uses written context for the explaining and meeting time for deciding.",
+    "A longer meeting keeps the same waste and asks for more of everyone's time."
+   ],
+   "answer": 2,
+   "explanation": "A written pre-read moves the explanation out of the meeting. Attendees come in knowing the context and options, so meeting time goes to discussion and decision. Including a recommendation gives people something concrete to react to.",
+   "interview_tip": "Interviewers like seeing that you make decisions efficient. Mentioning a written pre-read with a clear recommendation shows you drive clarity, not just meetings."
+  },
+  {
+   "id": "2026-11-22-18",
+   "topic": "Execution",
+   "concept": "Splitting a bundled launch so one blocked component doesn't hold the rest",
+   "difficulty": "medium",
+   "question": "You're launching a seller dashboard with five features on one date. Four are ready, but the fifth (payout forecasts) is blocked by a finance-data issue that may take six weeks. Sellers have been asking for the other four for months. What's the best move?",
+   "options": [
+    "Cancel payout forecasts to keep the original launch simple",
+    "Launch the four ready features now behind their own flags and release payout forecasts when the data issue is fixed",
+    "Launch all five, showing payout forecasts with an 'estimates may be inaccurate' note",
+    "Delay the whole launch six weeks so sellers get the complete dashboard at once"
+   ],
+   "rationales": [
+    "Cancelling is too drastic; the feature is valuable and only delayed.",
+    "Correct: it delivers value now and keeps the blocked feature on its own track.",
+    "Showing wrong payout numbers can hurt trust with sellers, who plan cash flow on them.",
+    "Waiting holds back four useful features for one that isn't ready, with no benefit to sellers."
+   ],
+   "answer": 1,
+   "explanation": "When features are independent, there's no reason to make sellers wait for the blocked one. Releasing the four ready features delivers value now, and separate flags let forecasts ship later without a new launch. This reduces risk and keeps momentum.",
+   "interview_tip": "Strong execution answers keep scope independent and protect user trust. Saying 'ship what's ready, flag the rest, and don't show wrong money numbers' shows good judgment."
+  },
+  {
+   "id": "2026-11-22-19",
+   "topic": "Behavioural",
+   "concept": "Coaching an APM who escalates every decision to you",
+   "difficulty": "hard",
+   "question": "An associate PM on your team brings you every small decision (copy changes, ticket priority, meeting agendas). It's slowing the team, and the APM says they 'don't want to get anything wrong'. What's the best approach?",
+   "options": [
+    "Keep answering quickly, since it's faster than coaching",
+    "Ask the APM's mentor to explain that escalating everything looks bad",
+    "Tell the APM to stop asking and make all decisions alone from now on",
+    "Agree which decisions the APM owns outright, ask them to bring a recommendation for others, and review outcomes together so they build confidence"
+   ],
+   "rationales": [
+    "Always answering keeps you as the bottleneck and stops the APM from growing.",
+    "Sending the message through someone else avoids your own job as their manager and can feel like criticism.",
+    "Removing all support at once adds pressure and may lead to poor decisions on things that matter.",
+    "Correct: it gives clear ownership, builds judgment step by step, and addresses the fear behind the behaviour."
+   ],
+   "answer": 3,
+   "explanation": "The root cause is fear of mistakes, not a lack of ability. Clear decision boundaries tell the APM where they can act freely, and asking for a recommendation on bigger calls builds judgment. Reviewing outcomes together, without blame, builds confidence and grows the APM over time.",
+   "interview_tip": "Behavioural interviews look for coaching and delegation. A strong answer names the root cause (fear), sets clear ownership, and shows how you build judgment over time."
+  },
+  {
+   "id": "2026-11-22-20",
+   "topic": "Behavioural",
+   "concept": "Turning a manager's vague ask into explicit success criteria",
+   "difficulty": "medium",
+   "question": "Your new director asks you to 'make onboarding better this quarter' and gives no further detail. What should you do first?",
+   "options": [
+    "Write down what 'better' could mean (for example, activation rate or time to first value), propose a target, and confirm it with the director",
+    "Ask the director to write a full spec before your team starts",
+    "Run a large user survey and wait for results before agreeing a goal",
+    "Start building the most-requested onboarding features right away to show momentum"
+   ],
+   "rationales": [
+    "Correct: it creates a shared, measurable target early and shows you take ownership of the problem.",
+    "Asking the director for a full spec pushes the PM's work back up to them.",
+    "Research may help later, but waiting weeks for a survey before agreeing a goal wastes the quarter.",
+    "Building before agreeing what 'better' means risks shipping things that don't match what the director wants."
+   ],
+   "answer": 0,
+   "explanation": "A vague goal invites misaligned work and a surprise at the end of the quarter. Proposing a concrete definition and target turns the ask into something both of you can measure. Taking the first step yourself shows ownership rather than waiting for instructions.",
+   "interview_tip": "Ambiguity questions test ownership. Saying 'I'd propose the success metric myself and confirm it' shows you turn vague asks into clear outcomes."
+  },
+  {
+   "id": "2026-11-22-21",
+   "topic": "Behavioural",
+   "concept": "Rebuilding team trust after making a unilateral decision",
+   "difficulty": "hard",
+   "question": "Under deadline pressure, you cut a feature your designer and tech lead had argued for, without consulting them. They found out from a status email and are upset. What's the best next step?",
+   "options": [
+    "Restore the feature to repair the relationship, even though the deadline is still at risk",
+    "Meet them, own that skipping them was wrong, explain your reasoning, ask how they would have approached it, and agree how you'll decide together next time",
+    "Explain that the deadline forced the decision, so it was the right call",
+    "Let it pass and focus on the deadline, since emotions will calm down"
+   ],
+   "rationales": [
+    "Reversing a needed decision to make people feel better trades the product's interests for comfort.",
+    "Correct: it separates the decision from the process, owns the mistake, and fixes how decisions get made.",
+    "Defending the decision ignores the real hurt, which is being left out.",
+    "Ignoring it lets resentment grow and harms future collaboration."
+   ],
+   "answer": 1,
+   "explanation": "The decision itself may have been right, but the process damaged trust. Owning the process mistake, explaining your reasoning, and listening shows respect. Agreeing on how you'll decide together next time prevents it happening again, which is what rebuilds trust.",
+   "interview_tip": "Interviewers like candidates who own their mistakes without collapsing. Separating 'the decision may have been right' from 'how I made it was wrong' shows maturity."
+  },
+  {
+   "id": "2026-11-22-22",
+   "topic": "AI Product",
+   "concept": "Verifying agent success by checking end state rather than the agent's own report",
+   "difficulty": "medium",
+   "question": "You're evaluating an AI travel agent that books trains. The eval marks a task as passed when the agent says 'Your ticket is booked'. Engineers find that in some passed tasks no booking was actually made. How should the eval change?",
+   "options": [
+    "Ask the agent to double-check its answer before replying",
+    "Check the real end state (whether a booking with the right details exists in the system) instead of trusting the agent's message",
+    "Have an LLM judge read the agent's message and score how confident it sounds",
+    "Increase the number of eval tasks so these errors average out"
+   ],
+   "rationales": [
+    "Self-checking can help but still relies on the agent's own report, which is the problem.",
+    "Correct: it tests the outcome directly, so false success claims can't pass.",
+    "Judging how confident the message sounds measures tone, not whether the booking happened.",
+    "More tasks with the same flawed check just repeat the same blind spot."
+   ],
+   "answer": 1,
+   "explanation": "An agent's claim of success is not proof. The reliable check is whether the world is in the right state: a booking exists with the correct date, train and passenger. Checking end state catches silent failures and false claims, which are costly for agents that take actions.",
+   "interview_tip": "AI PM interviews increasingly ask how you evaluate agents. Saying 'check the state of the system, not the transcript' shows you understand agent failure modes."
+  },
+  {
+   "id": "2026-11-22-23",
+   "topic": "AI Product",
+   "concept": "Constraining AI product copy to verified catalog attributes",
+   "difficulty": "medium",
+   "question": "Your marketplace uses an LLM to write product descriptions. Sellers complain that some descriptions claim features the product doesn't have (for example, 'waterproof' on a regular watch), leading to returns. What's the best fix?",
+   "options": [
+    "Switch to a larger model, which will hallucinate less",
+    "Add a line at the bottom saying 'Description generated by AI'",
+    "Raise the model's temperature so descriptions are more varied",
+    "Generate descriptions only from the product's structured catalog attributes, and check that every claimed feature appears in those attributes before publishing"
+   ],
+   "rationales": [
+    "Bigger models may hallucinate less, but without grounding and checks they still invent features.",
+    "A disclaimer doesn't stop wrong claims or the returns they cause.",
+    "Higher temperature makes output more random, which usually increases made-up claims.",
+    "Correct: it grounds the output in verified data and adds an automatic check before publishing."
+   ],
+   "answer": 3,
+   "explanation": "Made-up features come from the model filling gaps with plausible claims. Limiting inputs to verified catalog data and checking each claimed feature against those attributes keeps claims grounded. This targets the specific error, product claims, that drives returns.",
+   "interview_tip": "Interviewers want to see that you address AI errors with system design, not just bigger models. Grounding plus an automated check is a strong, practical answer."
+  },
+  {
+   "id": "2026-11-22-24",
+   "topic": "AI Product",
+   "concept": "Measuring AI summary usefulness by how often users open the original",
+   "difficulty": "hard",
+   "question": "You've launched AI summaries of long email threads. Users rate summaries 4.5/5, but time saved looks small. Which behavioural metric best shows whether summaries are actually useful?",
+   "options": [
+    "The share of summarized threads where users still open and read the full thread before acting",
+    "The average length of the summaries",
+    "The share of users who rate a summary at all",
+    "The number of summaries generated per day"
+   ],
+   "rationales": [
+    "Correct: it shows whether the summary replaces reading, which is the value promised.",
+    "Length tells you about format, not whether users can act on the summary.",
+    "Rating participation measures how many people give feedback, not whether summaries help.",
+    "Summary volume shows usage, not usefulness; summaries can be generated automatically and ignored."
+   ],
+   "answer": 0,
+   "explanation": "If the summary is good enough to act on, users don't need to read the full thread. A high rate of opening the original suggests users don't trust the summary or it's missing key details, even if they rate it well. Behaviour often tells you more than ratings, which are given by few users and tend to be polite.",
+   "interview_tip": "Strong AI PMs measure whether AI replaces work. Picking a behavioural signal that shows the user didn't need the old workflow signals sharp metric thinking."
+  },
+  {
+   "id": "2026-11-22-25",
+   "topic": "AI Product",
+   "concept": "Self-consistency: sampling several answers and taking the majority",
+   "difficulty": "medium",
+   "question": "Your AI feature classifies insurance claims into categories. Accuracy is 88%, and the team proposes asking the model five times and using the most common answer. What's the main trade-off?",
+   "options": [
+    "It always gives the same result as one call, since the model is deterministic",
+    "It often improves accuracy on uncertain cases, but costs about five times as much and adds latency",
+    "It reduces cost, because the model learns from repeated calls",
+    "It removes the need for any evaluation, since majority voting guarantees correctness"
+   ],
+   "rationales": [
+    "With sampling at non-zero temperature, answers can differ between calls; that's why voting helps.",
+    "Correct: it trades higher cost and latency for better reliability.",
+    "Models don't learn from calls at inference time, so repeated calls cost more, not less.",
+    "Voting improves reliability but can still be wrong, especially when the model is wrong consistently, so evaluation is still needed."
+   ],
+   "answer": 1,
+   "explanation": "Sampling several answers and taking the majority (self-consistency) can raise accuracy, because random errors are less likely to agree. But each extra call adds cost and, unless run in parallel, latency. A smart variant only re-samples when the first answer looks uncertain.",
+   "interview_tip": "AI PM interviews test whether you can reason about cost and quality together. Mentioning 'only re-sample when uncertain' shows you optimize, not just add compute."
+  },
+  {
+   "id": "2026-11-22-26",
+   "topic": "AI Product",
+   "concept": "Evaluating a voice assistant on real-world noisy audio, not clean recordings",
+   "difficulty": "easy",
+   "question": "Your voice assistant for shop owners scores well in testing, but after launch many shop owners in busy markets say it misunderstands them. The test set was recorded by employees in quiet offices. What's the best fix to your evaluation?",
+   "options": [
+    "Build an eval set from real-world audio with background noise, local accents and code-mixed speech, and track results by condition",
+    "Switch to a model with a higher benchmark score on public datasets",
+    "Raise the target accuracy on the current quiet-office test set",
+    "Ask shop owners to speak more slowly and clearly"
+   ],
+   "rationales": [
+    "Correct: it makes the eval represent real usage, so scores predict real performance.",
+    "Public benchmark scores may not reflect your users' noise, accents or languages.",
+    "A higher target on an unrepresentative test set still won't reflect what users experience.",
+    "Asking users to change how they talk pushes the product's problem onto them."
+   ],
+   "answer": 0,
+   "explanation": "Your eval should match the conditions where users actually speak: noisy markets, local accents and mixed languages. A clean office test set overstates real performance. Tracking results by condition shows where the model fails and what to fix.",
+   "interview_tip": "Interviewers like candidates who check that the eval data matches real users. Saying 'test where users actually are' is a simple but strong AI PM signal."
+  },
+  {
+   "id": "2026-11-22-27",
+   "topic": "Technology",
+   "concept": "Presigned URLs for direct-to-storage uploads",
+   "difficulty": "easy",
+   "question": "Your app lets sellers upload product videos up to 500 MB. Uploads currently go through your API servers, which slow down and sometimes time out. What's a common fix?",
+   "options": [
+    "Limit videos to 10 MB so they upload quickly through the API",
+    "Ask sellers to email videos to the support team instead",
+    "Buy larger API servers so they can handle bigger uploads",
+    "Give the app a short-lived presigned URL so it can upload directly to cloud storage, then notify your server when done"
+   ],
+   "rationales": [
+    "A tiny limit hurts sellers who need longer product videos.",
+    "Emailing files is manual, slow and hard to scale.",
+    "Bigger servers cost more and still tie up resources with large uploads.",
+    "Correct: it moves heavy uploads off your servers with secure, time-limited access."
+   ],
+   "answer": 3,
+   "explanation": "A presigned URL is a temporary, limited permission to upload one file directly to cloud storage. The heavy data skips your API servers entirely, so they stay fast, and the storage service handles large files reliably. The server only records the upload once it's complete.",
+   "interview_tip": "Technical fluency questions test whether you know common patterns. Explaining a presigned URL in plain words, with why it helps, is the right level for a PM."
+  },
+  {
+   "id": "2026-11-22-28",
+   "topic": "Technology",
+   "concept": "Search index lag making newly created listings temporarily unsearchable",
+   "difficulty": "medium",
+   "question": "Sellers on your marketplace complain that new listings don't appear in search for about 5 minutes after they're created, though the listings open fine via direct link. What's the most likely cause?",
+   "options": [
+    "The listings failed to save and are being retried",
+    "The CDN is caching the listing pages for 5 minutes",
+    "Search ranking is pushing new listings too low to be found",
+    "The search index is updated in batches from the main database, so new listings take time to appear in search"
+   ],
+   "rationales": [
+    "If the save failed, the direct link wouldn't work either.",
+    "CDN caching would affect how the page looks, not whether search can find it.",
+    "Ranking could bury a listing, but a consistent 5-minute delay for all new listings points to index updates.",
+    "Correct: it explains why the listing exists but isn't searchable yet."
+   ],
+   "answer": 3,
+   "explanation": "Search usually runs on a separate index built from the main database. If the index updates in batches or through a queue, there's a delay before new items appear. The listing exists (the direct link works), but the index hasn't caught up. Options include faster indexing for new items or telling sellers 'your listing will appear in search shortly'.",
+   "interview_tip": "PMs should know that search, analytics and caches are often copies of the main data. Explaining the lag and proposing a product fix, such as setting expectations, shows good technical judgment."
+  },
+  {
+   "id": "2026-11-22-29",
+   "topic": "Growth",
+   "concept": "WhatsApp opt-in at checkout to build an owned re-engagement channel",
+   "difficulty": "easy",
+   "question": "Your Indian D2C brand relies on paid ads to bring back past customers, and costs keep rising. Which change best builds a cheaper way to reach existing customers?",
+   "options": [
+    "Ask for clear WhatsApp opt-in at checkout for order updates and offers, so you can reach customers directly later",
+    "Raise the ad budget for retargeting past customers",
+    "Send SMS offers to every phone number in your order history without asking",
+    "Add more product photos to the website to raise first-time conversion"
+   ],
+   "rationales": [
+    "Correct: it builds a consented, low-cost channel to reach existing customers again.",
+    "More ad spend keeps you dependent on rising paid costs.",
+    "Messaging without consent risks complaints, spam blocks and breaking regulations.",
+    "Better photos may help first purchases but don't create a way to reach past customers."
+   ],
+   "answer": 0,
+   "explanation": "An owned channel lets you reach customers without paying for each contact. Asking for WhatsApp opt-in at checkout, when customers want order updates, gets high opt-in rates and creates a direct line for later offers. Clear consent keeps you within platform rules and customer trust.",
+   "interview_tip": "Growth interviews reward reducing reliance on paid channels. Mentioning consent at a moment of value shows you balance growth with trust."
+  },
+  {
+   "id": "2026-11-22-30",
+   "topic": "Current Events",
+   "concept": "Billed standby time for idle realtime voice sessions (GPT-Live-1.1, Nov 2026)",
+   "difficulty": "medium",
+   "question": "In November 2026, OpenAI made GPT-Live-1.1 available in its API with a standby mode: when a voice session is connected but silent, it's billed at $0.02 per minute instead of the $0.05 per minute active rate. You're the PM for a voice tutoring app where students often sit silently for long stretches while solving problems. What's the right takeaway?",
+   "options": [
+    "Silent time is now free, so sessions can stay open as long as students like",
+    "Standby cuts idle cost by 60%, but silent connected time is still billed, so you still need idle timeouts and easy reconnects",
+    "Standby makes the app cheaper only if students talk more",
+    "Standby pricing only matters for phone-call products, not tutoring apps"
+   ],
+   "rationales": [
+    "Standby is cheaper, not free; long-open sessions still add up.",
+    "Correct: standby reduces the cost of silence a lot, but silent time still costs money, so session design still matters.",
+    "Standby helps most when users are silent; talking more is billed at the higher active rate.",
+    "Any always-connected voice product with long silences, including tutoring, is affected."
+   ],
+   "answer": 1,
+   "explanation": "Standby lowers the cost of a connected but silent session from $0.05 to $0.02 per minute, a 60% cut, but not to zero. A student who leaves a session open for an hour still costs about $1.20. For a product with long silences, idle timeouts, a quick 'tap to resume' and per-session cost tracking remain important for unit economics.",
+   "interview_tip": "Interviewers like candidates who turn pricing news into a product decision. Doing the quick math (an hour idle costs about $1.20) and naming the design fix shows commercial awareness.",
+   "source": "https://developers.openai.com/api/docs/models/gpt-live-1.1"
+  }
+ ]
+}
