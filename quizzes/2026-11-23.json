@@ -1,0 +1,667 @@
+{
+ "date": "2026-11-23",
+ "theme": "Giving users control and reading signals right",
+ "questions": [
+  {
+   "id": "2026-11-23-01",
+   "topic": "Product Sense",
+   "concept": "Platform-sent payment reminders so freelancers don't have to chase clients",
+   "difficulty": "hard",
+   "question": "You're the PM for an invoicing app used by Indian freelancers. In interviews, they say the worst part of the job is chasing late payments: they don't want to sound pushy with clients they hope to keep, so they put off reminding and wait weeks for money. What should you build first?",
+   "options": [
+    "Instant advances on unpaid invoices, so freelancers get cash now for a small fee",
+    "Polite reminders the app sends on a schedule the freelancer approves, with a payment link included",
+    "A dashboard that shows each freelancer their overdue invoices and total amount owed",
+    "Automatic late fees added to every invoice that goes past its due date"
+   ],
+   "rationales": [
+    "Advances fix cash flow at a cost, but they don't address late payment itself; they're a possible later add-on, not the first fix.",
+    "Correct: it removes the awkward personal ask, keeps the freelancer in control of tone and timing, and makes paying easy.",
+    "Freelancers already know who owes them; a dashboard adds information but doesn't remove the uncomfortable step of asking.",
+    "Late fees can feel hostile and put at risk the client relationships freelancers said they want to protect."
+   ],
+   "answer": 1,
+   "explanation": "The real blocker is social, not informational: freelancers know who owes them but avoid the awkward ask. Reminders sent by the app, on a schedule and in a tone the freelancer approves, take the awkward step off them, so it reads as the system following up, not the freelancer nagging. A payment link in the message removes friction for the client too. It solves the stated pain without harming the relationship.",
+   "interview_tip": "Strong product-sense answers find the real blocker, which is often emotional or social rather than missing information. Saying 'users know, but they avoid the ask' shows real user empathy."
+  },
+  {
+   "id": "2026-11-23-02",
+   "topic": "Product Sense",
+   "concept": "Showing charger reliability, not just location, to reduce EV range anxiety",
+   "difficulty": "hard",
+   "question": "You're the PM for an EV route-planning app in India. Users planning intercity trips say they're anxious, and support logs show many reached a charger on the map only to find it broken or occupied. Which improvement best addresses the pain?",
+   "options": [
+    "Add every charger in the country to the map, including private and unverified ones, so users have more options",
+    "Add badges and leaderboards that reward drivers for efficient, low-consumption driving",
+    "Send users tips on extending battery range, such as driving at steady speeds and limiting AC use",
+    "Show recent status for each charger (last successful charge, user check-ins) and plan routes with a backup charger in range"
+   ],
+   "rationales": [
+    "More unverified pins make the problem worse, because users can't tell which chargers will actually work.",
+    "Gamifying efficiency doesn't help someone who arrives at a broken charger with 10% battery.",
+    "Range tips help a little, but the anxiety comes from chargers not working when users get there.",
+    "Correct: it targets the real failure (unreliable chargers) with evidence of status and a fallback plan."
+   ],
+   "answer": 3,
+   "explanation": "Range anxiety here comes from not trusting the charger, not from a lack of pins on the map. Showing recent status (when it last worked, what drivers reported) lets users judge reliability, and planning a backup within range turns one point of failure into a safety net. This addresses the failure the support logs actually show.",
+   "interview_tip": "Interviewers reward candidates who use the evidence given (support logs) to pin down the real problem. Adding a fallback shows you design for failure, not just the happy path."
+  },
+  {
+   "id": "2026-11-23-03",
+   "topic": "Product Sense",
+   "concept": "Guest mode for smart-home controls",
+   "difficulty": "medium",
+   "question": "You're the PM for a smart-home app. Owners say that when their parents visit, the guests can't turn lights or the AC on and off: they don't have the app, voice commands confuse them, and owners end up controlling things remotely. What should you build?",
+   "options": [
+    "A tutorial video that shows guests how to install the app and use voice commands",
+    "An option to give guests a full owner account so they can control everything",
+    "A setting that turns off all automations while guests are staying in the house",
+    "A time-limited guest mode with simple room controls, sent as a link, while wall switches keep working"
+   ],
+   "rationales": [
+    "It asks occasional users to learn the full product, which is exactly what they struggle with.",
+    "Full owner access is a security and privacy risk, and the full app is still too complex for guests.",
+    "Turning off automation removes value for the owner and still doesn't give guests an easy way to control things.",
+    "Correct: low effort for guests, limited and time-boxed access for owners, with physical switches as a fallback."
+   ],
+   "answer": 3,
+   "explanation": "Guests are occasional users who shouldn't need setup or training. A time-limited guest mode with only the basic controls, opened from a link with no account needed, plus physical switches that keep working, lets them be comfortable on their own. The owner keeps control of settings and security, and access ends when the visit does.",
+   "interview_tip": "Designing for secondary users (guests, family, staff) is a common product-sense angle. Strong answers balance the secondary user's ease with the primary user's control."
+  },
+  {
+   "id": "2026-11-23-04",
+   "topic": "Product Sense",
+   "concept": "Auto-protected focus blocks to reduce calendar fragmentation",
+   "difficulty": "medium",
+   "question": "You're the PM for a workplace calendar product. Engineers and designers say their days are broken into 30-minute gaps between meetings, so they never get long stretches for deep work. Which feature best addresses this?",
+   "options": [
+    "Making 25-minute meetings the default length instead of 30 minutes",
+    "Let users set focus blocks that the calendar protects, suggesting other slots and grouping meetings together",
+    "A company-wide setting that blocks all meetings on Wednesdays",
+    "A weekly report showing each user how many hours they spent in meetings"
+   ],
+   "rationales": [
+    "Shorter meetings save a few minutes each but don't join the gaps into usable blocks.",
+    "Correct: it directly creates long blocks of time and handles scheduling for the user.",
+    "A blanket no-meeting day is blunt, depends on company policy, and leaves the other four days fragmented.",
+    "A report raises awareness but doesn't change how meetings land on the calendar."
+   ],
+   "answer": 1,
+   "explanation": "The pain is fragmentation: free time comes in pieces too small to use. Protected focus blocks, where the calendar steers new invites to other slots and groups meetings next to each other, create long uninterrupted stretches while still letting meetings happen. It changes the outcome rather than just reporting on it.",
+   "interview_tip": "Interviewers watch whether your solution changes the outcome or only measures it. Pointing out that reports and nudges inform users but don't fix the problem is a strong move."
+  },
+  {
+   "id": "2026-11-23-05",
+   "topic": "Metrics",
+   "concept": "Hour-of-day segmentation revealing a partner bank's maintenance window",
+   "difficulty": "hard",
+   "question": "You're the PM for a UPI payments app. Over the last two weeks, payment success rate fell from 96% to 93%. There was no app release. Breaking it down, the failures cluster between 11:30 PM and 1:00 AM, almost all for one issuing bank, starting on the same day. What is the most likely cause, and what should you do?",
+   "options": [
+    "The bank moved its downtime window; show a heads-up during those hours and suggest another linked account",
+    "Late-night users have lower intent; add reminders to complete payments the next morning",
+    "A bug in the app's payment flow; roll back to the previous version immediately",
+    "A fraud attack; tighten risk rules for all transactions made late at night"
+   ],
+   "rationales": [
+    "Correct: one bank, a fixed window and a sudden start all match a partner's scheduled downtime.",
+    "Intent affects whether people start a payment, not whether a started payment technically fails.",
+    "No release happened, and an app bug wouldn't be limited to a single bank's customers.",
+    "Fraud would usually look different (many banks, risk flags) and blanket rules would hurt good late-night payers."
+   ],
+   "answer": 0,
+   "explanation": "Failures limited to one bank, a fixed time window, and a sudden start date point to a change on the bank's side, such as a new scheduled maintenance window. There was no app release, so a client bug is unlikely, and a bug would hit all banks. The product fix is to warn users before they try during that window and steer them to another account, while partnerships confirms the schedule with the bank.",
+   "interview_tip": "Root-cause questions reward segmenting by more than one dimension (time and partner here). Saying why each other explanation doesn't fit the pattern is what separates strong candidates."
+  },
+  {
+   "id": "2026-11-23-06",
+   "topic": "Metrics",
+   "concept": "Small-denominator segments topping a ranked conversion table",
+   "difficulty": "easy",
+   "question": "A dashboard ranks cities by checkout conversion. The top city shows 50% conversion, far above the 4% average, but it had only 12 visitors last week. What's the right way to read this?",
+   "options": [
+    "Shift marketing budget to that city, since it converts more than ten times better than average",
+    "Treat it as likely noise from a tiny sample; set a minimum sample size or show confidence intervals before ranking",
+    "Remove the city from the dashboard permanently, because small cities never matter",
+    "Study that city's users closely, because whatever they're doing could lift conversion everywhere"
+   ],
+   "rationales": [
+    "Moving budget on 12 visitors is a big bet based on a number that will probably fall back toward average.",
+    "Correct: extreme rates from tiny samples are mostly chance; the dashboard should account for sample size.",
+    "Small cities can matter; the fix is to account for sample size, not to drop them forever.",
+    "Studying a 12-visitor sample is likely to chase noise rather than a real pattern."
+   ],
+   "answer": 1,
+   "explanation": "With 12 visitors, 6 purchases gives 50%, and one or two purchases either way swings the rate wildly. Small segments naturally land at the top and bottom of any ranked list just by chance. Setting a minimum sample size, showing confidence intervals, or pooling small cities keeps the ranking from rewarding noise.",
+   "interview_tip": "Spotting small-sample extremes is a quick way to show data maturity. Mention minimum sample sizes or confidence intervals rather than just saying 'it might be noise'."
+  },
+  {
+   "id": "2026-11-23-07",
+   "topic": "Metrics",
+   "concept": "Catalog coverage as a recommender health metric",
+   "difficulty": "medium",
+   "question": "On your marketplace, a new recommendation model raised click-through rate by 6%. But the share of catalog items recommended at least once a week fell from 40% to 12%, and long-tail sellers are complaining about lost sales. What should you conclude?",
+   "options": [
+    "CTR rose, so the model is better; seller complaints are normal after any change",
+    "The drop in coverage is an instrumentation bug, since better models always show more items",
+    "Coverage doesn't matter as long as clicks rise, because buyers only want popular items",
+    "The model is concentrating on popular items; track catalog coverage as a guardrail and rebalance before full launch"
+   ],
+   "rationales": [
+    "Dismissing a large coverage drop ignores a real risk to the seller side of the marketplace.",
+    "Models optimised for clicks often narrow recommendations; this is a real effect, not an instrumentation bug.",
+    "Buyers also value discovery and selection; and sellers who get no exposure eventually leave.",
+    "Correct: the coverage drop shows the CTR gain is partly from concentration, which hurts supply over time."
+   ],
+   "answer": 3,
+   "explanation": "Higher CTR can come from showing the same popular items to everyone. Catalog coverage, the share of items that get recommended at all, shows whether the long tail is being starved. In a marketplace, sellers who get no exposure stop listing or leave, which shrinks selection over time. Coverage should be a guardrail next to CTR, and the model should be tuned to add exploration or diversity.",
+   "interview_tip": "In marketplace metrics questions, show you think about both sides. Naming a supply-side guardrail like coverage shows you see second-order effects."
+  },
+  {
+   "id": "2026-11-23-08",
+   "topic": "Metrics",
+   "concept": "Reading growth rate on a log-scale chart",
+   "difficulty": "easy",
+   "question": "Your monthly active users chart uses a logarithmic y-axis. The line was straight for a year and has started to bend flatter over the last three months, even though you're adding more users each month than a year ago. What does the bend mean?",
+   "options": [
+    "Your user base is shrinking and you are losing more users than you add",
+    "Nothing changed, because log-scale charts can't show changes in growth",
+    "Your percentage growth rate is slowing, even though absolute monthly additions are still rising",
+    "Growth is speeding up, since a flatter line on a log scale means faster growth"
+   ],
+   "rationales": [
+    "A shrinking base would make the line go down, not just flatten.",
+    "Log scales are the standard way to see changes in percentage growth.",
+    "Correct: flattening on a log scale means a lower growth rate, even if the absolute numbers added are larger.",
+    "It's the opposite: a steeper line on a log scale means faster percentage growth."
+   ],
+   "answer": 2,
+   "explanation": "On a log scale, a straight line means a constant percentage growth rate. A line that bends flatter means the percentage rate is falling. Absolute additions can still go up because the base is bigger; for example, growing 5% on 10 million adds more users than 10% on 4 million.",
+   "interview_tip": "Being clear on absolute vs percentage growth helps in metrics interviews. Explaining why a bigger base can hide a slowing rate shows you can read charts critically."
+  },
+  {
+   "id": "2026-11-23-09",
+   "topic": "Experimentation",
+   "concept": "Uplift modelling to target coupons at persuadable users",
+   "difficulty": "medium",
+   "question": "Your team sends a 15% discount coupon to the users a model predicts are most likely to buy this week. Revenue from coupon users looks great, but finance says margins fell. What's the better targeting approach?",
+   "options": [
+    "Target by predicted uplift, the extra purchase chance the coupon causes, using a randomized holdout to train and measure it",
+    "Target the users least likely to buy, since they have the most room to grow",
+    "Send the coupon to everyone so no potential buyer is missed",
+    "Keep targeting the users most likely to buy, but lower the discount to 10%"
+   ],
+   "rationales": [
+    "Correct: it targets the causal effect of the coupon, not purchase likelihood, which is where margin is lost.",
+    "Many of the least likely buyers won't buy even with a coupon, so it can waste spend too; the question is who responds.",
+    "Blanket coupons give away the most margin to people who would have bought at full price.",
+    "A smaller discount for people who'd buy anyway still loses margin on sales you'd have made."
+   ],
+   "answer": 0,
+   "explanation": "Users with the highest purchase probability were likely to buy anyway, so the coupon mostly gave away margin. Uplift modelling estimates how much the coupon changes each user's behaviour, using data from a randomized treatment and control group. Targeting the 'persuadables', whose purchase depends on the coupon, raises incremental revenue per coupon.",
+   "interview_tip": "Interviewers like candidates who separate 'likely to convert' from 'likely to be influenced'. Mentioning a randomized holdout to measure incrementality shows causal thinking."
+  },
+  {
+   "id": "2026-11-23-10",
+   "topic": "Experimentation",
+   "concept": "Matching the significance threshold to the cost of a wrong decision",
+   "difficulty": "medium",
+   "question": "Your team runs dozens of tests on small, easy-to-reverse UI copy changes, and also occasionally tests pricing changes that are expensive to undo. Someone suggests using the same 95% confidence bar for everything. What's the better policy?",
+   "options": [
+    "Set the bar by decision cost: accept a looser threshold for cheap, reversible changes and a stricter one for pricing",
+    "Use 99% confidence for every test, so the team never ships a false positive",
+    "Use 95% for everything, because a single standard is always the most rigorous approach",
+    "Skip statistics for copy changes and ship whatever the team prefers"
+   ],
+   "rationales": [
+    "Correct: the evidence bar should depend on the cost of being wrong, set before the test.",
+    "99% everywhere makes small tests slow and underpowered, so many real wins get missed.",
+    "One standard is simple, but it ignores that the cost of a wrong decision varies a lot.",
+    "Dropping measurement entirely loses the ability to learn which changes actually help."
+   ],
+   "answer": 0,
+   "explanation": "A significance threshold trades false positives against false negatives and speed. For cheap, reversible changes, a wrong ship costs little and can be undone, so a looser bar lets you learn faster. For pricing, a false positive is costly and hard to reverse, so a stricter bar and more data are worth it. The bar should be chosen ahead of time per decision type, not after seeing results.",
+   "interview_tip": "Linking statistical rigor to the cost of errors and reversibility shows decision maturity. Add that thresholds must be set before results are seen to avoid moving the goalposts."
+  },
+  {
+   "id": "2026-11-23-11",
+   "topic": "Estimation",
+   "concept": "Daily cups sold across a 500-outlet café chain",
+   "difficulty": "easy",
+   "question": "Estimate how many cups of coffee and tea a café chain with 500 outlets in Indian cities sells per day. Assume each outlet is open about 14 hours.",
+   "options": [
+    "About 17,500 cups",
+    "About 1.75 million cups",
+    "About 175,000 cups",
+    "About 50,000 cups"
+   ],
+   "rationales": [
+    "This implies about 2-3 cups an hour per outlet, far below what a busy city café sells.",
+    "This implies about 250 cups an hour per outlet, beyond what a single counter can serve.",
+    "Correct: about 25 cups/hour × 14 hours × 500 outlets ≈ 175,000.",
+    "This implies about 7 cups an hour, which ignores morning and evening peaks."
+   ],
+   "answer": 2,
+   "explanation": "Estimate throughput per outlet: perhaps 50-60 cups an hour at morning and evening peaks and 10-15 cups an hour off-peak, averaging about 25 cups an hour. Over 14 hours that's about 350 cups per outlet per day. Across 500 outlets: 350 × 500 ≈ 175,000 cups a day.",
+   "interview_tip": "Break throughput into peak and off-peak, then sanity-check against physical capacity. Interviewers care more about clear, checkable assumptions than the exact number."
+  },
+  {
+   "id": "2026-11-23-12",
+   "topic": "Estimation",
+   "concept": "Annual revenue of a city bike-sharing service",
+   "difficulty": "medium",
+   "question": "A city bike-sharing service has 5,000 bikes. About 80% are in service on a typical day, each in-service bike is ridden about 3 times a day, and the average fare is ₹30 per trip. Roughly what is its annual ride revenue?",
+   "options": [
+    "About ₹1.3 crore",
+    "About ₹4.4 crore",
+    "About ₹13 crore",
+    "About ₹130 crore"
+   ],
+   "rationales": [
+    "This is off by a factor of 10, a common slip when converting lakh to crore.",
+    "This assumes about one trip per bike per day, ignoring the stated utilisation.",
+    "Correct: 4,000 bikes × 3 trips × ₹30 × 365 ≈ ₹13 crore.",
+    "This is 10 times too high, as if each bike did about 30 trips a day."
+   ],
+   "answer": 2,
+   "explanation": "In-service bikes: 5,000 × 80% = 4,000. Daily trips: 4,000 × 3 = 12,000. Daily revenue: 12,000 × ₹30 = ₹3.6 lakh. Annual: ₹3.6 lakh × 365 ≈ ₹13.1 crore.",
+   "interview_tip": "Say each step out loud and convert units carefully (lakh vs crore). Noting that downtime (bikes out of service) matters shows operational realism."
+  },
+  {
+   "id": "2026-11-23-13",
+   "topic": "Strategy",
+   "concept": "Household plan to convert account sharing into paid users",
+   "difficulty": "medium",
+   "question": "Your streaming service finds that about 30% of active accounts are shared with people outside the household. Leadership wants to stop sharing outright. What's the strongest strategic alternative to a plain crackdown?",
+   "options": [
+    "Cut the base price so sharers feel the service is cheap enough to buy themselves",
+    "Offer a paid add-on for extra members, so sharers can stay on and pay, alongside limits on free sharing",
+    "Block all logins from outside the home network immediately, with no paid option",
+    "Ignore sharing, since every shared viewer is free marketing that will eventually subscribe"
+   ],
+   "rationales": [
+    "A price cut lowers revenue from everyone who already pays, and sharers may still share.",
+    "Correct: it pairs enforcement with a paid path, turning free riders into paying members.",
+    "A hard block with no alternative maximises backlash and pushes viewers to competitors or piracy.",
+    "Unlimited free sharing at 30% leaves a lot of revenue on the table with no clear conversion path."
+   ],
+   "answer": 1,
+   "explanation": "A pure crackdown risks losing viewers and creating backlash. A paid extra-member option gives sharers a legitimate, cheaper path to stay, which turns some of them into revenue, and the account owner keeps the convenience of sharing. Combining limits with a paid path recovers revenue while keeping more viewers than blocking alone.",
+   "interview_tip": "Strategy interviewers reward options that turn a problem into revenue. Showing that a policy plus a product offer beats a policy alone is a strong signal."
+  },
+  {
+   "id": "2026-11-23-14",
+   "topic": "Strategy",
+   "concept": "Wholesale vs agency model for pricing control on a marketplace",
+   "difficulty": "hard",
+   "question": "You run an online marketplace for recorded courses. Today you buy courses from creators at a fixed rate and set the selling price yourself, often running deep site-wide discounts. Top creators complain the discounts make their work look cheap and threaten to leave. You're considering switching to an agency model, where creators set the price and you take a commission. What's the key trade-off?",
+   "options": [
+    "Creators gain price control and stay, but you lose deep discounts as a lever to drive traffic and conversion",
+    "You gain more pricing power, since creators will always price lower than you would",
+    "Nothing changes for you, since the commission works out the same as buying at a wholesale rate",
+    "Agency removes all your inventory risk and has no effect on your marketing strategy"
+   ],
+   "rationales": [
+    "Correct: it names both sides: creator retention and pricing control vs losing your discount lever.",
+    "Creators usually price higher than a discount-led marketplace, which is why they're asking for control.",
+    "The economics and control change: who sets price shifts, which changes discounting and positioning.",
+    "Agency shifts risk, but it directly limits your discount-driven marketing, so it does affect strategy."
+   ],
+   "answer": 0,
+   "explanation": "Under a wholesale model, the marketplace owns the retail price and can discount to grow volume. Under an agency model, the seller sets the price and the marketplace takes a cut, which protects creators' price positioning and helps keep top supply. The cost is losing a key demand lever: you can no longer run deep discounts on your own. The decision depends on whether keeping top supply matters more than discount-driven demand.",
+   "interview_tip": "Business-model questions test whether you know who controls price and who bears risk. Naming both the gain and the lever you give up shows balanced judgment."
+  },
+  {
+   "id": "2026-11-23-15",
+   "topic": "Strategy",
+   "concept": "Accountants as channel partners to reach SMBs",
+   "difficulty": "easy",
+   "question": "You're launching GST and bookkeeping software for small Indian businesses. Owners say they trust their chartered accountant (CA) for anything about tax, and many CAs handle 50+ small-business clients each. What's the most efficient way to reach these businesses?",
+   "options": [
+    "A large outbound sales team calling small businesses one at a time",
+    "Listing the software on general e-commerce sites as a downloadable product",
+    "Broad social media ads aimed at small-business owners across India",
+    "A CA partner programme with a multi-client dashboard and benefits, so each CA brings in many clients"
+   ],
+   "rationales": [
+    "Calling small businesses one by one is expensive for low-value accounts and skips the trusted advisor.",
+    "A general e-commerce listing reaches few of the right buyers and adds no trust.",
+    "Ads can work, but they don't carry the trust of the advisor owners already rely on for tax decisions.",
+    "Correct: CAs are trusted, high-leverage gatekeepers; winning one reaches many businesses."
+   ],
+   "answer": 3,
+   "explanation": "When buyers rely on a trusted advisor, that advisor is the channel. One CA can bring dozens of clients, and their recommendation carries trust that ads can't. A partner programme with tools that make CAs' own work easier (managing many clients in one place) gives them a reason to recommend you.",
+   "interview_tip": "In distribution questions, look for who already influences the buyer's decision. Pointing out the leverage (one partner, many customers) shows strategic thinking."
+  },
+  {
+   "id": "2026-11-23-16",
+   "topic": "Execution",
+   "concept": "Parallel run with reconciliation before a billing system cutover",
+   "difficulty": "medium",
+   "question": "You're moving 40,000 customers from a legacy billing system to a new one. An invoice error would hit revenue and customer trust. Which rollout plan best reduces risk?",
+   "options": [
+    "Launch the new system and let support handle any invoice complaints as they come in",
+    "Switch all customers over one weekend so there's a single clean cutover date",
+    "Move only new customers to the new system and keep existing ones on legacy for good",
+    "Run both systems for a billing cycle, compare every invoice, fix mismatches, then cut over in batches"
+   ],
+   "rationales": [
+    "Using customers as the test means errors reach them first, damaging trust and revenue.",
+    "A single big-bang weekend means any undetected error hits all 40,000 customers at once.",
+    "Keeping two systems running forever doubles maintenance and never retires the legacy risk.",
+    "Correct: it catches errors before customers are affected and limits impact with batched cutover."
+   ],
+   "answer": 3,
+   "explanation": "A parallel run generates invoices in both systems from the same data and reconciles them line by line, so discrepancies surface before any customer sees them. Once the outputs match, migrating in batches limits the impact if something still slips through. It costs extra effort, but billing errors are expensive and damage trust.",
+   "interview_tip": "For risky migrations, interviewers look for ways to verify before cutting over. Naming reconciliation and batched rollout shows you plan for failure."
+  },
+  {
+   "id": "2026-11-23-17",
+   "topic": "Execution",
+   "concept": "Load testing above projected peak before a sale event",
+   "difficulty": "easy",
+   "question": "Your e-commerce app expects about 5x normal traffic during a festival sale in four weeks. What's the most important readiness step?",
+   "options": [
+    "Run a load test the day before the sale at exactly the projected peak",
+    "Load test a production-like setup above the projected peak now, leaving time to fix bottlenecks",
+    "Ask engineering whether they think the system can handle 5x traffic",
+    "Add more servers on the morning of the sale and monitor closely"
+   ],
+   "rationales": [
+    "Testing the day before leaves no time to fix anything, and testing exactly at peak leaves no margin.",
+    "Correct: early testing with headroom finds bottlenecks while there's time to fix them.",
+    "Opinions aren't evidence; a test shows real limits.",
+    "Extra servers help only if the bottleneck is server capacity; databases or payment partners may still fail."
+   ],
+   "answer": 1,
+   "explanation": "Load testing well before the event, at more than the expected peak (for example 1.5-2x the forecast), shows where the system breaks while there's still time to fix it. Forecasts are often wrong on the high side during sales, and bottlenecks frequently sit in databases or third-party services that more servers won't fix.",
+   "interview_tip": "Execution answers are stronger with specifics: when to test, at what multiple, and why. Mentioning dependencies like payment gateways shows end-to-end thinking."
+  },
+  {
+   "id": "2026-11-23-18",
+   "topic": "Execution",
+   "concept": "Re-baselining a slipped launch date with cause and confidence",
+   "difficulty": "medium",
+   "question": "Your launch will slip by about three weeks because a partner API is less stable than expected. Sales has already told customers the original date. What's the best way to communicate the slip?",
+   "options": [
+    "Keep the original date publicly and push the team to work weekends to catch up",
+    "Tell stakeholders now: the cause, a new date with your confidence in it, what's being done, and options to reduce impact",
+    "Wait until you're sure of the new date so you only have to send one update",
+    "Tell stakeholders the date is moving but avoid giving a cause, to protect the partner"
+   ],
+   "rationales": [
+    "Hiding the slip and forcing overtime risks burnout and an even bigger surprise later.",
+    "Correct: early, specific and actionable, with an honest confidence level and options.",
+    "Waiting means others keep planning around a date you already know is wrong.",
+    "Without a cause, stakeholders can't judge how reliable the new date is."
+   ],
+   "answer": 1,
+   "explanation": "Early, specific updates let sales and customers adjust before the old date passes. A good update gives the cause, a new date with an honest confidence level, the plan to get there, and options (such as launching a subset, or a beta for key customers). This keeps trust and lets others make their own plans.",
+   "interview_tip": "Interviewers want to hear how you share bad news: early, with a cause, a new plan and options. A confidence level on the new date shows maturity."
+  },
+  {
+   "id": "2026-11-23-19",
+   "topic": "Behavioural",
+   "concept": "Letting the team try a reversible approach you disagree with",
+   "difficulty": "hard",
+   "question": "A senior engineer wants to fix slow page loads by adding a caching layer. You suspect the real cause is a slow third-party call, so caching won't help much. The caching work takes three days and is easy to remove. How do you handle it?",
+   "options": [
+    "Share your concern and data, agree on a latency target and a check date, and let them try, with a plan B if it misses",
+    "Escalate to the engineering manager so they can decide which approach is right",
+    "Say nothing and let them proceed, then use the result to prove your point later",
+    "Insist they investigate the third-party call first, since the PM is accountable for the outcome"
+   ],
+   "rationales": [
+    "Correct: it shares evidence, sets measurable success criteria and respects engineering's ownership of the how.",
+    "Escalating a small, reversible disagreement wastes leadership time and signals you can't resolve it yourself.",
+    "Staying silent to be proven right later is unhelpful and costs the team time.",
+    "Overriding the engineer on a cheap, reversible technical choice damages trust and ownership."
+   ],
+   "answer": 0,
+   "explanation": "The 'how' belongs to engineering, the change is cheap and reversible, and you might be wrong. The strong move is to share your evidence openly, agree on how success will be measured and when, and plan the next step if it misses. That protects the outcome, respects the engineer's ownership, and settles the disagreement with data, not rank.",
+   "interview_tip": "Behavioural interviewers want to see you match your response to the stakes. Saying 'it's cheap and reversible, so let's test it with clear criteria' shows good judgment and trust."
+  },
+  {
+   "id": "2026-11-23-20",
+   "topic": "Behavioural",
+   "concept": "Bringing disconfirming customer evidence on an exec-announced initiative",
+   "difficulty": "hard",
+   "question": "Your VP announced a new feature at an all-hands. You then interview 12 target customers, and most say they don't need it; their real pain is something nearby. Your team is about to start building. What do you do?",
+   "options": [
+    "Share the findings with the VP privately and soon, with quotes, and propose a quick test or a reshaped version",
+    "Quietly deprioritise the feature and work on the nearby pain instead",
+    "Build it as announced, since the VP already committed publicly and disagreeing now would embarrass them",
+    "Share the interview results with the whole team so they can push back on the VP together"
+   ],
+   "rationales": [
+    "Correct: early, private, evidence-based and constructive, leaving the decision with the VP.",
+    "Quietly changing priorities undermines trust and avoids the needed conversation.",
+    "Committing without sharing evidence isn't 'disagree and commit', because you never disagreed.",
+    "Rallying the team against the VP turns a product question into a political fight."
+   ],
+   "answer": 0,
+   "explanation": "The VP needs to know before the team spends months on it, and a private conversation lets them change course without losing face. Bringing customer quotes keeps it about evidence, not opinion, and proposing a quick test or a reshaped version gives them a constructive path. If they still decide to proceed after hearing it, you can disagree and commit.",
+   "interview_tip": "This tests courage and tact together. Strong answers raise the issue early and privately, lead with customer evidence, and offer a path forward."
+  },
+  {
+   "id": "2026-11-23-21",
+   "topic": "Behavioural",
+   "concept": "Stepping back from design work to restore a designer's ownership",
+   "difficulty": "hard",
+   "question": "To move fast, you've been making Figma mockups yourself and taking them straight to engineering. Your designer tells you they feel sidelined and their work has become just polishing your screens. What's the best response?",
+   "options": [
+    "Explain that you were only trying to save time and that the mocks were just rough ideas",
+    "Own it, reset roles so you bring the problem, constraints and success metrics while they own the solution, and involve them earlier",
+    "Ask your manager to clarify the boundaries between product and design roles for the team",
+    "Keep making mocks but ask the designer to review and improve them before engineering sees them"
+   ],
+   "rationales": [
+    "Explaining your intent without changing behaviour leaves the problem in place.",
+    "Correct: it takes ownership and fixes the working model, not just the feelings.",
+    "Escalating a problem you can fix yourself avoids responsibility and may seem defensive.",
+    "Asking for polish on your mocks is the exact pattern the designer said made them feel sidelined."
+   ],
+   "answer": 1,
+   "explanation": "The designer has pointed out a real problem you caused. Owning it, then changing how you work (you define the problem and what success looks like; they explore and own solutions, and join discovery earlier), rebuilds trust and usually leads to better design. It also removes you as a design bottleneck.",
+   "interview_tip": "Interviewers look for candidates who accept feedback without getting defensive and change how they work. Showing what you'll do differently matters more than the apology."
+  },
+  {
+   "id": "2026-11-23-22",
+   "topic": "AI Product",
+   "concept": "Coverage–accuracy trade-off when an AI system abstains",
+   "difficulty": "hard",
+   "question": "Your AI assistant answers insurance policy questions. Answering everything, it is 88% accurate. If it abstains on the 20% of questions where it's least confident and sends those to human agents, accuracy on the questions it answers rises to 97%. How should you choose the abstention threshold?",
+   "options": [
+    "Pick 20% because it raises accuracy to 97%, which clears the usual 95% bar",
+    "Never abstain, because sending questions to humans means the AI feature failed",
+    "Weigh the cost of a wrong answer against human handling cost, and check that abstentions aren't concentrated in one segment",
+    "Always choose the threshold with the highest accuracy, even if the assistant answers very few questions"
+   ],
+   "rationales": [
+    "95% is an arbitrary bar; the right threshold depends on the costs of errors and human handling.",
+    "Passing hard cases to humans is a valid design choice; forcing answers raises costly errors.",
+    "Correct: it sets the threshold from business costs and checks for uneven impact on segments.",
+    "Maximising accuracy alone can push coverage so low that the assistant barely helps anyone."
+   ],
+   "answer": 2,
+   "explanation": "Abstaining trades coverage (how much the AI handles) for accuracy on what it does handle. The right point depends on what a wrong answer costs in insurance (complaints, regulatory risk) versus what a human-handled question costs. You should also check who gets the abstentions: if they cluster in one language or policy type, those users get a worse experience.",
+   "interview_tip": "AI PM interviews often probe trade-offs between automation and accuracy. Tying the threshold to costs and checking fairness across segments signals senior thinking."
+  },
+  {
+   "id": "2026-11-23-23",
+   "topic": "AI Product",
+   "concept": "Fixed system-prompt overhead multiplied across high call volume",
+   "difficulty": "easy",
+   "question": "Your AI feature sends a 3,000-token system prompt with every request, at 10 million requests a day. Input tokens cost $0.50 per million. If you trim the system prompt to 1,000 tokens without hurting quality, roughly how much do you save per day?",
+   "options": [
+    "About $1,000 per day",
+    "About $20,000 per day",
+    "About $10,000 per day",
+    "About $100,000 per day"
+   ],
+   "rationales": [
+    "This is off by a factor of 10, a common slip when converting billions to millions.",
+    "This uses $1 per million instead of the stated $0.50.",
+    "Correct: 2,000 tokens × 10M requests = 20B tokens; 20,000 million × $0.50 per million = $10,000.",
+    "This is 10 times too high, as if the price were $5 per million tokens."
+   ],
+   "answer": 2,
+   "explanation": "Trimming saves 2,000 tokens per request. Across 10 million requests that's 20 billion tokens a day. 20 billion is 20,000 million, and at $0.50 per million tokens that's 20,000 × $0.50 = $10,000 a day. Fixed prompt overhead is easy to overlook because it's invisible to users, but at scale it adds up quickly.",
+   "interview_tip": "Quick cost math on token volume is a common AI PM check. Pointing out that fixed per-request overhead scales with traffic shows cost awareness."
+  },
+  {
+   "id": "2026-11-23-24",
+   "topic": "AI Product",
+   "concept": "Hint-first tutoring so AI doesn't just hand over homework answers",
+   "difficulty": "medium",
+   "question": "You're the PM for an AI homework helper for school students. Teachers and parents worry it just gives answers, so students don't learn. Usage is high. What design best addresses the concern while keeping it useful?",
+   "options": [
+    "Refuse to help with any question that looks like it came from homework",
+    "Default to hints and guiding questions, and show the full worked solution after the student tries",
+    "Let teachers see every question their students ask so they can spot copying",
+    "Keep giving full answers but add a reminder that students should learn the material"
+   ],
+   "rationales": [
+    "Blanket refusal makes the product useless and pushes students to tools with no learning design.",
+    "Correct: it builds learning into the flow without making the product useless for stuck students.",
+    "Monitoring every question raises privacy concerns and doesn't help students learn.",
+    "A reminder doesn't change behaviour when the full answer is one tap away."
+   ],
+   "answer": 1,
+   "explanation": "The goal is learning, not just getting answers. A hint-first flow nudges students to think through the problem, and the full solution is still available once they've tried, so stuck students aren't blocked. This keeps the product useful while addressing what parents and teachers care about.",
+   "interview_tip": "AI product questions often test whether you design for the real outcome (learning) rather than the easy metric (questions answered). Naming who the stakeholders are and what they need helps."
+  },
+  {
+   "id": "2026-11-23-25",
+   "topic": "AI Product",
+   "concept": "Native speech-to-speech vs cascaded voice pipeline trade-off",
+   "difficulty": "medium",
+   "question": "You're building an AI voice agent for a bank's customer support. You can use a native speech-to-speech model or a cascaded pipeline (speech-to-text, then an LLM, then text-to-speech). Compliance requires a text record of every turn and policy checks before the agent speaks. What's the main trade-off?",
+   "options": [
+    "Cascaded gives text at each step for logging and policy checks, at the cost of more latency than speech-to-speech",
+    "Cascaded is always cheaper and faster, so there's no real trade-off",
+    "Speech-to-speech is always better, because it's newer and more natural to listen to",
+    "The two are the same in practice, so choose based on which vendor is cheaper"
+   ],
+   "rationales": [
+    "Correct: it names the real trade-off: auditability and control vs latency and naturalness.",
+    "Three steps usually add latency, so cascaded is not automatically faster.",
+    "Natural audio matters, but 'always better' ignores the compliance need for text records and checks.",
+    "They differ on latency, control and auditability, which matter a lot in banking."
+   ],
+   "answer": 0,
+   "explanation": "A cascaded pipeline produces text in the middle, which makes it easy to log transcripts, run policy checks before speaking, and fix domain words. The cost is extra latency from three steps, and some loss of tone. Speech-to-speech can feel faster and more natural, but it's harder to inspect and control. In a regulated bank, auditability often outweighs a little latency.",
+   "interview_tip": "Interviewers want trade-offs tied to the context. Showing that regulation changes which architecture wins signals good AI product judgment."
+  },
+  {
+   "id": "2026-11-23-26",
+   "topic": "AI Product",
+   "concept": "Truthful AI identity disclosure when users ask if they're talking to a human",
+   "difficulty": "easy",
+   "question": "On your e-commerce site's sales chatbot, users sometimes ask, \"Am I talking to a real person?\" A growth teammate suggests dodging the question because conversions are higher when users think a human is chatting. What should the bot do?",
+   "options": [
+    "Say clearly that it's an AI assistant and offer a way to reach a human",
+    "Say it's a human agent, since that makes the conversation feel warmer",
+    "Give a vague answer like \"I'm here to help you\" without saying either way",
+    "Change the subject back to the product and keep helping with the purchase"
+   ],
+   "rationales": [
+    "Correct: honest disclosure with a path to a human protects trust and compliance.",
+    "Claiming to be human is deceptive and may violate consumer-protection rules.",
+    "A vague non-answer is designed to mislead and carries the same risks.",
+    "Dodging a direct question is still misleading and hurts trust if users find out."
+   ],
+   "answer": 0,
+   "explanation": "When a user asks directly, the bot should answer honestly. Pretending to be human, or dodging, misleads users and can break consumer-protection rules in many places. Being clear and offering a human option builds trust, and the short-term conversion gain from misleading users isn't worth the trust and legal risk.",
+   "interview_tip": "AI ethics questions test whether you'll trade trust for a short-term metric. A clear answer plus a better way to keep conversions (such as a fast human handoff) is the strong response."
+  },
+  {
+   "id": "2026-11-23-27",
+   "topic": "Technology",
+   "concept": "Sequential IDs leaking business volume and enabling enumeration",
+   "difficulty": "medium",
+   "question": "Your app's order URLs look like /orders/104233, and the number goes up by one with every order. A security reviewer flags this. What's the main concern?",
+   "options": [
+    "Sequential IDs will run out quickly and cause orders to fail",
+    "URLs with numbers in them are blocked by most browsers",
+    "Sequential numbers make database lookups much slower than random IDs",
+    "Anyone can estimate your order volume, and if access checks are weak, they can guess other users' orders"
+   ],
+   "rationales": [
+    "Standard integer IDs have plenty of room; running out isn't the realistic risk.",
+    "Browsers don't block URLs with numbers.",
+    "Lookups by sequential IDs are fast; performance isn't the concern here.",
+    "Correct: it leaks business data and makes guessing other records easy if access checks fail."
+   ],
+   "answer": 3,
+   "explanation": "Sequential IDs reveal how many orders you get (place two orders a week apart and subtract). They also make it easy to try nearby IDs; if any endpoint has weak authorization, that exposes other users' data. Random or opaque IDs (such as UUIDs) reduce both risks, but proper access checks on every request are still required.",
+   "interview_tip": "Technical fluency questions often test whether you spot a non-obvious risk. Mentioning that random IDs help but don't replace access checks shows depth."
+  },
+  {
+   "id": "2026-11-23-28",
+   "topic": "Technology",
+   "concept": "Response compression for slow mobile networks",
+   "difficulty": "easy",
+   "question": "Your app's home feed API returns about 800 KB of JSON. Users on slow mobile networks in smaller towns complain it takes a long time to load. What's the quickest server-side win?",
+   "options": [
+    "Move the database to a bigger server with more memory and CPU",
+    "Switch the app to a dark theme so screens render faster",
+    "Ask users to switch to Wi-Fi when the app detects a slow connection",
+    "Turn on response compression (gzip or Brotli), which often shrinks JSON by 70-90%"
+   ],
+   "rationales": [
+    "A bigger database server doesn't help if the delay is transferring 800 KB over a slow connection.",
+    "Theme colours don't change how much data is downloaded.",
+    "Many of these users don't have Wi-Fi access; the product should work on their network.",
+    "Correct: compression cuts transfer size a lot with little effort, which is what matters on slow networks."
+   ],
+   "answer": 3,
+   "explanation": "On slow networks, the time to transfer data dominates. JSON is repetitive text and compresses very well, often to a fraction of its size, and it's a configuration change on the server with clients decompressing automatically. Trimming unused fields in the response is a good next step.",
+   "interview_tip": "Show you can find the bottleneck (network transfer here) before suggesting fixes. Mentioning payload trimming as a follow-up shows you know more than one lever."
+  },
+  {
+   "id": "2026-11-23-29",
+   "topic": "Growth",
+   "concept": "Partner app-store listings as a high-intent acquisition channel",
+   "difficulty": "medium",
+   "question": "You're the PM for a WhatsApp marketing tool built for Shopify merchants. You need a scalable acquisition channel with a limited budget. Which channel likely has the best fit?",
+   "options": [
+    "Outbound sales calls to large enterprise retailers on custom platforms",
+    "Billboards in major cities to build brand awareness among shop owners",
+    "The Shopify App Store, optimising the listing, reviews and one-click install for merchants searching for solutions",
+    "Broad Facebook ads targeting anyone interested in small business"
+   ],
+   "rationales": [
+    "Enterprises on custom platforms aren't the target users, and outbound sales is costly for a low-price tool.",
+    "Billboards are expensive, hard to measure, and poorly targeted for a niche tool.",
+    "Correct: it reaches the exact users with high intent, in the place where they install tools.",
+    "Broad ads reach many people who aren't Shopify merchants and cost more per useful signup."
+   ],
+   "answer": 2,
+   "explanation": "Merchants browse the Shopify App Store when they have a problem to solve, so intent is high, and a one-click install fits the product's self-serve nature. Investing in the listing (clear value, screenshots, reviews and ratings) and a fast first setup turns that intent into active users at low cost.",
+   "interview_tip": "Growth interviews reward channel-product fit: match the channel to where users already look for solutions. Naming what to optimise in the channel makes it concrete."
+  },
+  {
+   "id": "2026-11-23-30",
+   "topic": "Current Events",
+   "concept": "Canva's generative-AI off switch drawing the line at new-content generation (Nov 2026)",
+   "difficulty": "medium",
+   "question": "On 19 November 2026, Canva added a setting for free and paid users that turns off nine generative AI features, including Magic Write, Magic Expand and Dream Lab, plus a separate option to show less AI-generated content in search. Background Remover and Magic Grab stay available. What's the key product decision in how Canva drew the line?",
+   "options": [
+    "The search setting removes all AI-generated designs from Canva's library",
+    "The switch turns off every AI-powered tool in Canva, including background removal",
+    "The switch targets tools that generate new content, while keeping tools that only edit existing content",
+    "The controls are admin-only settings for enterprise teams, not individual users"
+   ],
+   "rationales": [
+    "The search setting shows less AI content and prioritises human-made work; it doesn't remove AI designs.",
+    "Background Remover and Magic Grab stay available because they don't generate anything new.",
+    "Correct: the line is about generating new content versus helping edit existing content.",
+    "The controls are available to both free and paid users, not only admins."
+   ],
+   "answer": 2,
+   "explanation": "Canva drew the line around what users object to, generating new content, rather than everything that uses AI. Tools like Background Remover and Magic Grab work on content already in a design and, in Canva's words, 'don't generate anything new', so they stay. This gives users who dislike generative AI real control without taking away everyday editing help. The search option prioritises human-made content rather than fully removing AI items.",
+   "interview_tip": "Interviewers like candidates who can explain why a company drew a line where it did. Defining 'AI' by what users actually object to shows you think in user terms.",
+   "source": "https://petapixel.com/2026/11/19/canva-now-lets-users-turn-off-generative-ai-features/"
+  }
+ ]
+}

@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-23",
+   "theme": "Giving users control and reading signals right",
+   "count": 30
+  },
+  {
    "date": "2026-11-22",
    "theme": "Hidden costs and true signals",
    "count": 30
