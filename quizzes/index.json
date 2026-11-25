@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-25",
+   "theme": "Look past the headline number",
+   "count": 30
+  },
+  {
    "date": "2026-11-24",
    "theme": "Second-order effects: when the obvious fix isn't the real one",
    "count": 30
