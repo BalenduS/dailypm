@@ -1,0 +1,637 @@
+{
+ "date": "2026-11-26",
+ "theme": "Check what the number actually counts",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Dish-level dietary attributes for users with strict food rules",
+   "difficulty": "hard",
+   "question": "You're the PM for a food-delivery app in India. Users who follow strict food rules (Jain, no onion-garlic, or vegan) order much less often than others and often cancel after calling the restaurant. Interviews show they don't trust that a 'veg' restaurant label means a dish fits their rules. What should you build first?",
+   "options": [
+    "A 'Jain-friendly' badge on restaurants whose owners say they serve suitable food",
+    "Dish-level ingredient tags that restaurants confirm, with filters for each food rule",
+    "A free-text cooking note at checkout so users can ask the kitchen to change a dish",
+    "A curated home-screen collection of popular veg restaurants for these users"
+   ],
+   "answer": 1,
+   "explanation": "The trust gap sits at the dish, not the restaurant: a fully vegetarian kitchen can still use onion, garlic or dairy in a given dish. Restaurant-confirmed dish attributes plus filters let these users find safe options before ordering, which removes the phone call and the cancellations. It solves the decision point where users drop off.",
+   "rationales": [
+    "A restaurant badge is too coarse: one restaurant serves dishes that both fit and break the rule, so the doubt remains.",
+    "Correct: it answers the real question ('can I eat this dish?') at the point of choice, and confirmation by the restaurant makes it trustworthy.",
+    "Notes are often missed by busy kitchens and give no confidence before ordering, so users would still call.",
+    "Curating restaurants helps discovery but doesn't tell users which dishes are safe, which is the actual barrier."
+   ],
+   "interview_tip": "Product-sense interviewers look for whether you find the exact moment trust breaks. A strong answer names the unit of decision (the dish) and designs for it rather than adding generic labels."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Shared queue controls for group listening in a car",
+   "difficulty": "medium",
+   "question": "Spotify-style app: during road trips, passengers keep grabbing the driver's phone to change songs, which is unsafe and annoying. What's the best solution?",
+   "options": [
+    "Add a large-button driving mode so the driver can skip songs more easily",
+    "Let passengers join the session from their own phones to add songs to a shared queue",
+    "Auto-generate a road-trip playlist so nobody needs to change songs",
+    "Add voice commands so anyone in the car can ask for a song by name"
+   ],
+   "answer": 1,
+   "explanation": "The underlying need is that several people want a say in the music while only one person controls the device, and that person is driving. Letting passengers add to a shared queue from their own phones gives them control without touching the driver's phone. It addresses the safety problem and the social need together.",
+   "rationales": [
+    "A driving mode helps the driver, but passengers still want to choose songs and will still reach for the phone.",
+    "Correct: it moves control to the people who want it, on their own devices, so the driver's phone stays untouched.",
+    "A good playlist reduces the need a little, but passengers still want their own picks, so the behaviour continues.",
+    "Voice requests from several people in a noisy car are unreliable and can distract the driver more."
+   ],
+   "interview_tip": "Interviewers like answers that spot multiple users in one context (driver vs passengers). Naming each user's need and resolving the conflict shows strong product sense."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Priority inbox for creators' business inquiries",
+   "difficulty": "hard",
+   "question": "An Instagram-style app: mid-size creators say they miss brand-deal messages because their DMs are flooded with fan messages. Brands complain creators don't reply. Which solution best fits the problem?",
+   "options": [
+    "Limit how many DMs fans can send to a creator each day",
+    "A separate business inbox where brands send structured inquiries the creator sees first",
+    "Let creators turn off DMs from accounts that don't follow them",
+    "An auto-reply telling everyone the creator may take a few days to respond"
+   ],
+   "answer": 1,
+   "explanation": "The problem is mixing two very different kinds of message in one stream. A separate, structured channel for business inquiries makes high-value messages easy to find and easier to act on (budget, dates, deliverables), while fans can still message. It serves both sides: creators earn more, brands get replies.",
+   "rationales": [
+    "Capping fans hurts the fan relationship that makes the creator valuable, and still mixes brand messages into the pile.",
+    "Correct: separating the streams and structuring brand inquiries makes the important messages visible and actionable.",
+    "Filtering non-followers would also block many brands, who often don't follow the creator.",
+    "An auto-reply sets expectations but doesn't help creators find the messages they're missing."
+   ],
+   "interview_tip": "This mirrors 'improve X for creators' prompts. A strong answer identifies that two user groups share one channel and designs a separation, while checking the effect on the other side (fans)."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Showing the invitee's local time when proposing meeting slots",
+   "difficulty": "easy",
+   "question": "A scheduling tool for remote teams: people often propose meeting slots that fall at 2 a.m. for colleagues in other countries, and invites get declined. What's the simplest fix with the biggest impact?",
+   "options": [
+    "Show each invitee's local time and working hours next to every proposed slot",
+    "Send a reminder email asking people to check time zones before booking",
+    "Block all meetings outside 9-to-5 in the organiser's time zone",
+    "Let invitees decline with a reason so the organiser learns over time"
+   ],
+   "answer": 0,
+   "explanation": "Showing the other person's local time at the moment of choosing a slot prevents the mistake before it happens. It needs no new habits from the organiser. The best fixes often put the missing information right where the decision is made.",
+   "rationales": [
+    "Correct: it gives the organiser the missing information at the decision point, so the bad slot is never picked.",
+    "Reminders are easy to ignore and still leave the organiser doing time-zone maths in their head.",
+    "Blocking hours in the organiser's zone doesn't help, because the problem is the invitee's hours, not the organiser's.",
+    "Decline reasons help after the fact; the meeting has already been proposed at a bad time."
+   ],
+   "interview_tip": "Interviewers reward simple fixes that put information at the decision point. Mentioning why reminders fail (they rely on memory) shows good reasoning."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Autoplay previews counted as views diluting per-view watch time",
+   "difficulty": "hard",
+   "question": "A video app's 'average watch time per view' fell 30% in one week. Total watch time is flat and the number of views jumped. The same week, the home feed started autoplaying muted previews when users scroll past. What's the most likely explanation?",
+   "options": [
+    "Users find the videos less interesting and are leaving them sooner",
+    "The previews are logged as views, so many very short 'views' are pulling the average down",
+    "The new feed is slower to load, so users watch fewer videos overall",
+    "A competitor launched a feature that drew engaged viewers away"
+   ],
+   "answer": 1,
+   "explanation": "When the denominator suddenly gains lots of tiny events, an average falls even if real behaviour hasn't changed. Flat total watch time with a jump in views points to new, very short views—exactly what logged previews would create. The fix is to check the view definition and report previews separately.",
+   "rationales": [
+    "If users were less interested, total watch time would fall too, but it is flat.",
+    "Correct: flat total time plus a spike in views is the signature of a counting change, and the previews launched that week.",
+    "Slower loading would lower total watch time and views, not raise view counts.",
+    "Losing engaged viewers to a competitor would lower total watch time, which hasn't moved."
+   ],
+   "interview_tip": "Root-cause questions test whether you check metric definitions before telling a behaviour story. Saying 'first check what now counts as a view' is a strong signal."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "North Star for a corporate expense-management product",
+   "difficulty": "easy",
+   "question": "You're choosing a North Star metric for a B2B expense-management product (employees submit receipts; finance teams approve and reimburse). Which is the best choice?",
+   "options": [
+    "Number of companies that signed up this month",
+    "Number of expense reports submitted and approved per month across customers",
+    "Average time employees spend in the app each week",
+    "Number of features used per customer account"
+   ],
+   "answer": 1,
+   "explanation": "A good North Star captures the core value delivered to customers and grows with customer success. Approved expense reports show both sides getting value: employees get reimbursed and finance closes the books. It also predicts retention and revenue.",
+   "rationales": [
+    "Sign-ups measure acquisition, not whether customers get ongoing value.",
+    "Correct: it reflects the core job being done for both employees and finance teams.",
+    "More time in an expense tool is usually a bad sign—users want to finish quickly.",
+    "Feature counts measure breadth of clicking, not whether the main job is done."
+   ],
+   "interview_tip": "Interviewers check that your North Star reflects delivered value, not activity. Explaining why time spent is wrong for utility products earns extra credit."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Average order value is revenue divided by orders",
+   "difficulty": "easy",
+   "question": "An online store had 2,000 orders from 1,600 customers last month, with ₹10,00,000 in revenue. What's the average order value (AOV)?",
+   "options": [
+    "₹625",
+    "₹500",
+    "₹400",
+    "₹5,000"
+   ],
+   "answer": 1,
+   "explanation": "AOV = total revenue ÷ number of orders = ₹10,00,000 ÷ 2,000 = ₹500. Dividing by customers instead gives revenue per customer (₹625), which is a different metric. Mixing up the denominator is a common mistake.",
+   "rationales": [
+    "₹625 is revenue per customer (divided by 1,600), not per order.",
+    "Correct: ₹10,00,000 ÷ 2,000 orders = ₹500.",
+    "₹400 doesn't match any correct split of these numbers.",
+    "₹5,000 is off by a factor of ten—a slip in the zeros."
+   ],
+   "interview_tip": "Simple metric definitions come up early in analytical rounds. Stating the formula out loud and naming the denominator shows rigour."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Widget glances replacing app opens in engagement metrics",
+   "difficulty": "hard",
+   "question": "A weather app launched a home-screen widget. Two weeks later, daily active users are down 8% and sessions per user are down 20%, but uninstalls are flat and widget adoption is high. Leadership is worried. What's the best reading?",
+   "options": [
+    "The widget is failing, and users are losing interest in the app",
+    "Users now get what they need from the widget, so app opens fell; measure widget views as engagement",
+    "The drop is seasonal, since weather apps get less use in winter",
+    "There is probably a logging bug in the app session counter"
+   ],
+   "answer": 1,
+   "explanation": "The widget delivers the core value (today's forecast) without opening the app, so app-based metrics fall even though users get more value. Flat uninstalls and high widget adoption support this. The fix is to update how engagement is measured to include widget views, and track whether users still open the app for deeper needs.",
+   "rationales": [
+    "Flat uninstalls and high widget use don't fit a story of users losing interest.",
+    "Correct: value moved to a new surface that the metrics don't count, so engagement must be redefined.",
+    "Seasonality would show up in prior years and wouldn't line up so neatly with the widget launch.",
+    "A logging bug is possible, but the timing with a widget that removes the need to open the app is a better explanation."
+   ],
+   "interview_tip": "Interviewers test whether you see value moving across surfaces. Saying 'the metric no longer captures where value is delivered' is a senior answer."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Decomposing a revenue-per-user lift into conversion and spend per buyer",
+   "difficulty": "medium",
+   "question": "An A/B test of a new checkout shows revenue per user up 4%. You want to understand why before shipping. Which breakdown is most useful?",
+   "options": [
+    "Split the lift into conversion rate (who buys) and average spend per buyer",
+    "Split the result by the hour of day each user visited",
+    "Look only at the top 1% of spenders, since they drive revenue",
+    "Re-run the test with a larger sample to confirm the 4%"
+   ],
+   "answer": 0,
+   "explanation": "Revenue per user = conversion rate × revenue per buyer. Splitting the lift tells you whether more people buy or buyers spend more, which point to different mechanisms and risks. It also helps check whether a few big orders explain the result.",
+   "rationales": [
+    "Correct: the two parts explain the mechanism and help spot whether outliers drive the result.",
+    "Hour-of-day cuts are rarely tied to how a checkout change works and invite false findings.",
+    "Looking only at top spenders hides the effect on most users and can be noisy.",
+    "Re-running adds time but doesn't explain why revenue moved."
+   ],
+   "interview_tip": "Strong candidates break a composite metric into its parts before deciding. It shows you understand the mechanism, not just the headline number."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Fake accounts inflating a sign-up lift after removing a CAPTCHA",
+   "difficulty": "hard",
+   "question": "You test removing the CAPTCHA from sign-up. Treatment shows +12% sign-ups and the result is significant. What should you check before shipping?",
+   "options": [
+    "Whether the lift holds on weekends as well as weekdays",
+    "Whether the extra sign-ups are real users, by comparing activation, fraud and spam rates across arms",
+    "Whether the p-value stays below 0.05 if you run the test a week longer",
+    "Whether users in treatment rate the sign-up page more highly in a survey"
+   ],
+   "answer": 1,
+   "explanation": "A CAPTCHA exists to stop bots. Removing it will raise sign-ups almost by design, but some of those may be fake. Comparing activation and abuse rates between arms tells you whether the lift is real users or bots. Ship only if real-user activation rises without a jump in abuse.",
+   "rationales": [
+    "Day-of-week checks matter, but they don't address the main risk that the extra sign-ups are fake.",
+    "Correct: it tests whether the lift is real people, which is the obvious risk when removing an anti-bot step.",
+    "Running longer doesn't tell you who the extra sign-ups are.",
+    "Survey ratings come from humans who already signed up and say nothing about bots."
+   ],
+   "interview_tip": "Interviewers look for the guardrail that fits the change. Asking 'what was this friction protecting us from?' shows mature experiment thinking."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Annual packaged dog-food market in Bengaluru",
+   "difficulty": "medium",
+   "question": "Estimate the annual spend on packaged dog food in Bengaluru (about 1.4 crore people). Which is closest?",
+   "options": [
+    "₹20 crore",
+    "₹200 crore",
+    "₹2,000 crore",
+    "₹20,000 crore"
+   ],
+   "answer": 1,
+   "explanation": "Method: 1.4 crore people ≈ 35 lakh households. Say ~6% own a dog → ~2 lakh dogs. Maybe 40% eat mostly packaged food → ~80,000 dogs. Each eats ~0.3 kg/day ≈ 9 kg/month at ~₹250/kg ≈ ₹2,250/month ≈ ₹27,000/year. 80,000 × ₹27,000 ≈ ₹216 crore, so about ₹200 crore.",
+   "rationales": [
+    "Too low: it implies only ~7,000 dogs on packaged food in a city of 35 lakh households.",
+    "Correct: households → dog owners → packaged-food share → spend per dog gives about ₹200 crore.",
+    "Too high: it implies nearly every dog-owning household spends ~₹1 lakh a year on food.",
+    "Far too high: this would be bigger than the whole Indian pet-food market."
+   ],
+   "interview_tip": "Guesstimate interviews care about clear structure and sanity checks. Stating each assumption and comparing with a known number (the national market) earns credit."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Monthly storage bill for a photo-backup app",
+   "difficulty": "easy",
+   "question": "A photo-backup app has 1 crore (10 million) users storing an average of 20 GB each. Cloud storage costs about $0.02 per GB per month. Roughly what's the monthly storage bill?",
+   "options": [
+    "$40,000",
+    "$400,000",
+    "$4 million",
+    "$40 million"
+   ],
+   "answer": 2,
+   "explanation": "Total stored = 10 million × 20 GB = 200 million GB (200 PB). Cost = 200 million × $0.02 = $4 million per month. This ignores replication, retrieval and bandwidth, which add more.",
+   "rationales": [
+    "Off by 100×—likely a dropped zero in users or GB.",
+    "Off by 10×—check the multiplication of users and GB.",
+    "Correct: 200 million GB × $0.02 = $4 million per month.",
+    "Off by 10× the other way—too high for these inputs."
+   ],
+   "interview_tip": "Cost estimates come up for storage-heavy and AI products. Showing units at each step and noting extra costs (replicas, egress) shows good judgement."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Most-favoured-nation pricing clauses on a booking platform",
+   "difficulty": "medium",
+   "question": "A hotel-booking platform requires hotels to never offer a lower room price anywhere else, including their own website. What's the main strategic effect of this clause?",
+   "options": [
+    "It lowers prices for travellers on every channel",
+    "It stops hotels from steering guests to cheaper direct bookings, protecting the platform's share",
+    "It improves the quality of hotel listings on the platform",
+    "It lets hotels raise prices freely on the platform"
+   ],
+   "answer": 1,
+   "explanation": "A most-favoured-nation (price parity) clause means the platform always matches the lowest price, so travellers have no reason to book direct. That protects the platform's position and its commission. Regulators in several markets have restricted these clauses because they can keep commissions high.",
+   "rationales": [
+    "Parity often keeps prices high everywhere, since hotels can't undercut the platform's commission elsewhere.",
+    "Correct: price parity removes the incentive to book direct and protects the platform's role.",
+    "The clause is about price, not listing quality.",
+    "Hotels can raise prices, but they must raise them everywhere; the clause doesn't give extra freedom on the platform."
+   ],
+   "interview_tip": "Strategy rounds test whether you understand how contracts shape competition. Mentioning regulatory risk alongside the advantage shows balanced thinking."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Tying a companion device to a platform to raise ecosystem switching costs",
+   "difficulty": "medium",
+   "question": "A phone maker's smartwatch only works with its own phones. Watch sales would be higher if it also worked with rival phones. Why might the company still keep it exclusive?",
+   "options": [
+    "Supporting other phones is technically impossible",
+    "Owners of the watch are less likely to switch phones, protecting the larger phone business",
+    "Exclusive products always have higher profit margins",
+    "Regulators require device makers to keep accessories exclusive"
+   ],
+   "answer": 1,
+   "explanation": "The watch is worth more as a reason to stay with the phone than as a standalone product. Exclusivity raises the cost of switching phones, since you'd lose your watch too. The company gives up some watch sales to protect a much bigger revenue stream.",
+   "rationales": [
+    "Many rival watches work across phones, so it is possible; this is a choice.",
+    "Correct: the watch adds to ecosystem lock-in, protecting phone revenue that dwarfs watch sales.",
+    "Exclusivity doesn't guarantee margins; the value is in the strategic effect on the core product.",
+    "No such rule exists; if anything, regulators push toward interoperability."
+   ],
+   "interview_tip": "Interviewers like candidates who judge a product by its role in a portfolio. Saying 'the watch is a retention tool for the phone' shows strategic clarity."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "SWOT: strengths and weaknesses are internal, opportunities and threats external",
+   "difficulty": "easy",
+   "question": "In a SWOT analysis for a D2C skincare brand, where does 'a new law requiring ingredient labels on all cosmetics' belong?",
+   "options": [
+    "Strength",
+    "Weakness",
+    "Opportunity or threat",
+    "It doesn't belong in a SWOT"
+   ],
+   "answer": 2,
+   "explanation": "SWOT splits factors into internal (strengths, weaknesses—things the company controls) and external (opportunities, threats—things in the market). A new law is external. Whether it's an opportunity or a threat depends on the brand: a clean-label brand gains, others face cost.",
+   "rationales": [
+    "Strengths are internal abilities, not changes in the outside world.",
+    "Weaknesses are internal gaps; a law is an outside force.",
+    "Correct: it's an external factor, and its sign depends on the brand's position.",
+    "Regulatory changes are classic external factors for a SWOT."
+   ],
+   "interview_tip": "Frameworks are often a warm-up. Using one quickly and then explaining what it means for the company matters more than reciting the grid."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Inner-source contribution to unblock a busy platform team",
+   "difficulty": "medium",
+   "question": "Your feature needs a small change to the payments platform's API. The payments team agrees it's useful but can't schedule it for two quarters. What's the best next step?",
+   "options": [
+    "Escalate to your VP to force the payments team to reprioritise",
+    "Offer to have your engineers build the change under the payments team's review and standards",
+    "Build a workaround in your own service that copies the payments logic",
+    "Push your feature back two quarters to wait for the payments team"
+   ],
+   "answer": 1,
+   "explanation": "When the owning team agrees on value but lacks capacity, contributing the change yourself, with their review, often unblocks you fastest. They keep ownership and quality control, and you get the change sooner. Agree up front on design, testing and who maintains it after launch.",
+   "rationales": [
+    "Escalation damages trust when the other team already agrees; it's a last resort.",
+    "Correct: it respects ownership while removing the capacity constraint.",
+    "Copying payments logic creates risky duplicate code in a sensitive area.",
+    "Waiting may be fine for low-priority work, but it gives up value when a faster path exists."
+   ],
+   "interview_tip": "Execution interviews ask how you handle dependencies. Offering to bring capacity while respecting ownership shows collaboration, not just escalation."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Triage beta feedback into bugs, usability issues and new requests",
+   "difficulty": "easy",
+   "question": "A beta of your new invoicing feature produced 300 pieces of feedback in a week. What's the best first step to make it useful?",
+   "options": [
+    "Group it into bugs, usability problems and new feature requests, then rank each by impact",
+    "Fix the items mentioned most often, in order",
+    "Share the full list with engineering so they can choose what to work on",
+    "Reply to every user to thank them before doing anything else"
+   ],
+   "answer": 0,
+   "explanation": "Different kinds of feedback need different handling: bugs block use, usability issues hurt adoption, and new requests shape the roadmap. Grouping first, then ranking within each by impact and frequency, turns a pile into decisions. Frequency alone misses severe issues raised by a few users.",
+   "rationales": [
+    "Correct: categorising then ranking gives a clear plan and surfaces severe issues.",
+    "Frequency is one input, but a rare data-loss bug matters more than a common cosmetic request.",
+    "Handing an unsorted list to engineering pushes the PM's job onto them.",
+    "Thanking users is good, but it doesn't help you act on the feedback."
+   ],
+   "interview_tip": "Interviewers ask how you'd process feedback at scale. A clear sorting scheme plus impact ranking signals structured execution."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Champions network for internal tool adoption",
+   "difficulty": "medium",
+   "question": "You launched a new internal sales tool. Two months later only 30% of reps use it; the rest still use spreadsheets. Training sessions are poorly attended. What's the most effective next step?",
+   "options": [
+    "Mandate the tool and track reps who don't use it",
+    "Recruit respected reps in each team as champions to coach peers and feed back problems",
+    "Run more training sessions at different times",
+    "Add more features so the tool is clearly better than spreadsheets"
+   ],
+   "answer": 1,
+   "explanation": "Internal adoption often spreads through peers, not announcements. Respected reps can show how the tool helps in daily work and bring back the real reasons others resist. Those reasons then guide fixes. Mandates can force usage but often lead to poor data entry.",
+   "rationales": [
+    "A mandate may raise logins, but reps who don't see value will enter poor data.",
+    "Correct: peer champions build trust and surface the real blockers.",
+    "Poor attendance suggests training isn't the barrier; more sessions won't fix it.",
+    "Adding features before knowing why reps resist may not address the real issue."
+   ],
+   "interview_tip": "Execution rounds include internal change management. Showing you understand how people adopt new tools, not just how to ship them, stands out."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Pausing the build when a core spec assumption is invalidated",
+   "difficulty": "hard",
+   "question": "Two weeks into a six-week build, an engineer shows you data proving the core assumption in your spec is wrong: most target users already solve the problem another way. Leadership is expecting the launch. What's the strongest response?",
+   "options": [
+    "Keep building, since stopping now would waste two weeks and upset leadership",
+    "Pause, verify the data quickly with the engineer, then bring leadership a clear recommendation and options",
+    "Quietly reduce scope so the launch still happens on time",
+    "Ask the engineer to keep it to themselves until after launch"
+   ],
+   "answer": 1,
+   "explanation": "Owning the spec means acting when evidence shows it's wrong. Verify the finding fast, then tell leadership early with options (pivot, narrow, stop), so they decide with full information. Sunk cost isn't a reason to continue, and thanking the engineer encourages others to speak up.",
+   "rationales": [
+    "Continuing wastes four more weeks on something users don't need, which is worse than two.",
+    "Correct: it verifies, owns the mistake, and gives leadership options early.",
+    "Cutting scope quietly hides the real problem and still ships something users don't need.",
+    "Hiding evidence breaks trust and punishes the person who raised it."
+   ],
+   "interview_tip": "This tests ownership and 'disagree with yourself'. Strong answers show speed, honesty with leadership, and credit to the person who found the problem."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Reconciling contradictory direction from two executives",
+   "difficulty": "hard",
+   "question": "Your VP of Product wants your onboarding redesign to maximise sign-ups. The VP of Sales wants it to collect more company details to qualify leads, which will lower sign-ups. Both have given you direct instructions. What's the best approach?",
+   "options": [
+    "Follow the VP of Product, since they are in your reporting line",
+    "Build both versions and let the A/B test decide without telling either VP",
+    "Bring both together with data on the trade-off and options, and ask them to agree on the goal",
+    "Do half of each request so both feel partly satisfied"
+   ],
+   "answer": 2,
+   "explanation": "When two leaders give conflicting goals, the PM's job is to surface the conflict and help them make a shared decision, not to quietly pick a side. Show the trade-off with data (for example, sign-up drop vs lead quality) and offer options such as progressive profiling. Getting agreement on the goal prevents the conflict from coming back.",
+   "rationales": [
+    "Picking based on hierarchy ignores a real business need and leaves Sales unhappy.",
+    "Testing helps, but running it without aligning on the success metric leaves the dispute unresolved.",
+    "Correct: it makes the trade-off explicit and gets a shared decision from the people who own it.",
+    "Splitting the difference often produces a design that serves neither goal well."
+   ],
+   "interview_tip": "Interviewers want to see you can manage up and across. A strong answer frames the trade-off with data and suggests creative options, not just a meeting."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Stabilising a roadmap after repeated pivots",
+   "difficulty": "hard",
+   "question": "You join a team that has changed direction three times in six months after each leadership review. Engineers are frustrated and shipping has stalled. What's the strongest first move?",
+   "options": [
+    "Pick the most recent direction and push the team to ship quickly",
+    "Agree with leadership on a clear goal, a quarter-long plan and the evidence that would justify changing it",
+    "Ask leadership to stop attending reviews so the team can focus",
+    "Hold a team offsite to rebuild morale before discussing plans"
+   ],
+   "answer": 1,
+   "explanation": "Constant pivots usually come from unclear goals and no agreed rules for changing course. Locking in the goal, a plan for the quarter, and the specific signals that would trigger a change gives the team stability while keeping leadership in control. Morale improves when the team sees work reach users.",
+   "rationales": [
+    "Speed alone doesn't stop the next pivot if the goal is still unclear.",
+    "Correct: it fixes the root cause—no shared goal or change criteria—while keeping leadership aligned.",
+    "Removing leadership from reviews is unrealistic and damages trust.",
+    "An offsite may help morale, but without a stable plan the frustration returns."
+   ],
+   "interview_tip": "This tests creating clarity in chaos. Strong answers address the system causing churn, not just the symptoms on the team."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Passing structured state in multi-agent handoffs",
+   "difficulty": "medium",
+   "question": "In your customer-support system, a triage agent hands cases to a billing agent. The billing agent often asks users to repeat details they already gave. What's the best fix?",
+   "options": [
+    "Give the billing agent a larger context window",
+    "Have the triage agent pass a structured summary of key facts (account, issue, steps tried) at handoff",
+    "Merge both agents into one with a very long prompt",
+    "Ask users to give all their details again at the start of every chat"
+   ],
+   "answer": 1,
+   "explanation": "Handoffs lose information when the next agent gets either nothing or a wall of raw text. A structured handoff object with the key facts gives the next agent what it needs. It also makes handoffs testable: you can check that required fields are filled.",
+   "rationales": [
+    "A larger window doesn't help if the information isn't passed at all.",
+    "Correct: a structured summary carries the facts reliably and can be checked.",
+    "Merging may work at small scale but gives up the benefits of specialised agents and grows prompt complexity.",
+    "Making users repeat themselves is the problem, not the fix."
+   ],
+   "interview_tip": "AI PM interviews increasingly cover agent design. Talking about the interface between agents—what state moves and how you test it—shows practical depth."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Few-shot example anchoring: outputs copying example content",
+   "difficulty": "medium",
+   "question": "Your product-description generator uses three example descriptions in the prompt, all for kitchen items. Now descriptions for shoes and laptops keep mentioning 'easy to clean' and 'dishwasher safe'. What's the most likely cause and fix?",
+   "options": [
+    "The model is too small; upgrade to a larger model",
+    "The examples are anchoring the output; use varied examples or examples that match the item's category",
+    "The temperature is too low; raise it so outputs vary more",
+    "The catalog data is wrong; audit every product record"
+   ],
+   "answer": 1,
+   "explanation": "Models copy patterns from few-shot examples, including content, not just style. When every example is a kitchen item, kitchen phrases leak into unrelated products. Using diverse examples, or picking examples by category, fixes the leak.",
+   "rationales": [
+    "A larger model may copy less, but the root cause is the narrow examples.",
+    "Correct: the examples are steering content; diverse or category-matched examples fix it.",
+    "Higher temperature adds randomness but doesn't stop phrases copied from the examples.",
+    "The bad phrases match the examples, not the catalog, so the data isn't the likely cause."
+   ],
+   "interview_tip": "Interviewers like candidates who can diagnose prompt problems from symptoms. Linking the error back to the examples shows hands-on experience."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Stratified eval sets with prevalence reweighting",
+   "difficulty": "hard",
+   "question": "Your fraud classifier sees about 1 fraud case per 1,000 transactions. You build an eval set with 500 fraud and 500 normal cases. How should you report precision so it reflects production?",
+   "options": [
+    "Report precision on the balanced set as-is, since it has enough fraud examples",
+    "Reweight results by real prevalence, because a balanced set makes precision look much higher than in production",
+    "Drop precision and report only accuracy on the balanced set",
+    "Add more fraud cases until the set is 90% fraud"
+   ],
+   "answer": 1,
+   "explanation": "Oversampling rare cases is good for measuring recall, but precision depends on how common the positive class is. In production there are far more normal cases, so false positives pile up and precision drops. Reweight counts by real prevalence (or estimate on a realistic sample) before reporting precision.",
+   "rationales": [
+    "Balanced-set precision overstates real precision because normal cases are underrepresented.",
+    "Correct: precision must be adjusted to real prevalence to predict production behaviour.",
+    "Accuracy on a balanced set is also unrepresentative and hides the trade-offs that matter.",
+    "Adding more fraud makes the distribution even less like production."
+   ],
+   "interview_tip": "This tests ML metric literacy. Explaining why precision depends on prevalence shows you can read eval reports critically."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Representing minority opinions in AI review summaries",
+   "difficulty": "medium",
+   "question": "Your AI summary of product reviews says 'Customers love the battery life'. But 15% of reviews mention the battery dying after a few months. What's the best change?",
+   "options": [
+    "Remove the AI summary because it can't be fully accurate",
+    "Require the summary to include significant concerns with rough proportions, such as 'some report battery failing after months'",
+    "Only summarise five-star reviews to keep the summary positive",
+    "Let sellers edit the summary before it's shown"
+   ],
+   "answer": 1,
+   "explanation": "A summary that hides meaningful negatives misleads shoppers and later causes returns and trust loss. Asking the model to include recurring concerns with rough proportions keeps it short but honest. You can test this with evals that check whether known issues appear.",
+   "rationales": [
+    "Removing it loses a useful feature; the fix is to make it more faithful.",
+    "Correct: it keeps the summary useful while representing real concerns honestly.",
+    "Summarising only positive reviews is misleading and damages trust.",
+    "Seller edits create a conflict of interest and invite bias."
+   ],
+   "interview_tip": "AI PM interviews test whether you think about faithfulness and user trust. A strong answer proposes both the product change and how to evaluate it."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Larger models trade higher latency and cost for capability",
+   "difficulty": "easy",
+   "question": "Your team wants to switch a simple 'classify this support ticket into 8 categories' task from a small model to the largest frontier model. What's the most likely trade-off?",
+   "options": [
+    "Better accuracy at the same cost and speed",
+    "Possibly small accuracy gains, with higher cost and slower responses",
+    "Lower cost because larger models need fewer tokens",
+    "No change, since all models perform the same on classification"
+   ],
+   "answer": 1,
+   "explanation": "Larger models usually cost more per token and respond more slowly. On a simple, well-defined task, a small model is often already accurate enough, so the gain may be small. Test both on your eval set and pick the cheapest model that meets the quality bar.",
+   "rationales": [
+    "Bigger models rarely come at the same cost and speed.",
+    "Correct: expect higher cost and latency, with uncertain gains on a simple task.",
+    "Larger models usually cost more per token, not less.",
+    "Models differ in quality, which is why you test them."
+   ],
+   "interview_tip": "Interviewers expect you to match model size to task. Saying 'cheapest model that meets the bar, verified by evals' is a strong default."
+  },
+  {
+   "topic": "Technology",
+   "concept": "API keys identify an app, not a user",
+   "difficulty": "easy",
+   "question": "Your partner integration uses a single API key for all requests. A partner now wants each of their users to see only their own data. Why doesn't the API key alone solve this?",
+   "options": [
+    "API keys expire too quickly to be useful",
+    "An API key identifies the calling app, not which end user is acting, so it can't enforce per-user access",
+    "API keys only work for read-only requests",
+    "API keys can't be sent over HTTPS"
+   ],
+   "answer": 1,
+   "explanation": "An API key tells your server which application is calling. It doesn't say which person inside that app is making the request. Per-user access needs user identity, for example via OAuth tokens or a user ID that your server checks.",
+   "rationales": [
+    "Many API keys don't expire at all; expiry isn't the issue.",
+    "Correct: keys identify the app, so per-user permissions need user identity too.",
+    "API keys can be used for writes as well as reads.",
+    "API keys are routinely sent over HTTPS in headers."
+   ],
+   "interview_tip": "Technical rounds check basic auth concepts. Separating 'which app' from 'which user' shows you can reason about permissions."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Virtual waiting room for flash-sale traffic spikes",
+   "difficulty": "medium",
+   "question": "A flash sale opens at exactly 12:00. Last time, traffic jumped 50× in seconds and checkout crashed for everyone. Adding servers takes minutes. What's the best design for this sale?",
+   "options": [
+    "Remove product images to make pages lighter",
+    "A virtual waiting room that lets users into checkout at a rate the system can handle",
+    "Tell users to refresh if the page fails",
+    "Move the sale to a random time so traffic spreads out"
+   ],
+   "answer": 1,
+   "explanation": "A waiting room controls how many users reach the bottleneck at once, so the site keeps working for those inside. Users see their place in line, which feels fairer than random errors. It protects the system while extra capacity scales up.",
+   "rationales": [
+    "Lighter pages help a little but won't absorb a 50× spike.",
+    "Correct: it limits load to what the system can handle and gives users a fair experience.",
+    "Refreshing increases load and makes the crash worse.",
+    "A random time hurts the marketing goal and doesn't stop users from piling in when it starts."
+   ],
+   "interview_tip": "Interviewers like PMs who can balance user experience with system limits. Mentioning fairness and transparency alongside reliability is a strong signal."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Usage-based expansion from individual to team plan (bottom-up B2B)",
+   "difficulty": "medium",
+   "question": "A note-taking tool has many individual paid users inside large companies but few team plans. What's the best way to grow team-plan revenue?",
+   "options": [
+    "Cold-call IT departments at those companies",
+    "Prompt users to share notes with colleagues, then offer a team plan when several people at one company collaborate",
+    "Raise prices on individual plans to push users to team plans",
+    "Offer a discount to any user who refers a friend"
+   ],
+   "answer": 1,
+   "explanation": "Bottom-up B2B growth works when usage spreads from individuals to colleagues. Sharing creates collaboration, and once several people at one company collaborate, a team plan solves a real need (shared spaces, admin, billing). Sales can then reach companies that already show usage.",
+   "rationales": [
+    "Cold outreach ignores the usage signal you already have and converts poorly.",
+    "Correct: it turns individual use into team use and offers the upgrade at the right moment.",
+    "Raising prices may cause churn rather than team upgrades.",
+    "Friend referrals may grow individual users but don't create team accounts."
+   ],
+   "interview_tip": "Growth rounds often ask about product-led B2B motions. Describing the path from individual to team, and the signal that triggers sales, shows good GTM thinking."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Aggregate-only merchant analytics in Businesses in ChatGPT (Nov 2026)",
+   "difficulty": "medium",
+   "question": "In November 2026, OpenAI launched 'Businesses in ChatGPT' in beta, letting eligible US merchants verify their info and publish business agents. Merchants get Business Hub analytics such as mention counts and common topics, but OpenAI says it won't share users' conversations, and aggregated data appears only after interaction thresholds are met. Why the thresholds?",
+   "options": [
+    "To push merchants into buying a paid analytics tier",
+    "So small numbers can't be used to identify individual users from aggregate data",
+    "Because the system can't count small numbers accurately",
+    "To reduce server costs for small merchants"
+   ],
+   "answer": 1,
+   "explanation": "Aggregates over very few interactions can reveal individuals: if only two people asked about a product, a merchant might guess who. Minimum thresholds before showing data are a standard privacy safeguard. They balance merchants' need for insight with users' trust that their chats stay private.",
+   "rationales": [
+    "Nothing in the reporting ties the thresholds to a paid tier.",
+    "Correct: thresholds stop small counts from exposing individual users.",
+    "Counting small numbers is easy; the reason is privacy, not accuracy.",
+    "Showing small numbers costs almost nothing, so cost isn't the reason."
+   ],
+   "interview_tip": "Interviewers like PMs who see privacy as a design choice. Explaining how you'd give partners insight without exposing users shows mature judgement.",
+   "source": "https://www.rootdata.com/news/828145"
+  }
+ ]
+}

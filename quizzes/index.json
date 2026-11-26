@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-26",
+   "theme": "Check what the number actually counts",
+   "count": 30
+  },
+  {
    "date": "2026-11-25",
    "theme": "Look past the headline number",
    "count": 30
