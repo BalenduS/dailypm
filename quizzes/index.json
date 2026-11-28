@@ -1,6 +1,11 @@
 {
  "quizzes": [
   {
+   "date": "2026-11-28",
+   "theme": "Honest signals and safe defaults",
+   "count": 30
+  },
+  {
    "date": "2026-11-27",
    "theme": "Trust only what you can verify",
    "count": 30

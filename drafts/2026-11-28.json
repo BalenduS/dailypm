@@ -1,0 +1,637 @@
+{
+ "date": "2026-11-28",
+ "theme": "Honest signals and safe defaults",
+ "questions": [
+  {
+   "topic": "Product Sense",
+   "concept": "Remote verification for housing chosen without an in-person visit (student PG rentals)",
+   "difficulty": "hard",
+   "question": "You're the PM for a paying-guest (PG) accommodation app in India. Most users are students moving to a new city for college, and their parents pay the deposit from another city. Listings get plenty of views but few bookings, and interviews show families only book after a relative visits in person. What should you build first?",
+   "options": [
+    "Verified live video walkthroughs plus an on-site check by the app's own staff, shown on each listing",
+    "A larger catalogue of PGs in each city so students can compare many more options before choosing",
+    "A first-month rent discount for any booking made without a physical visit, funded by the platform",
+    "A roommate-matching quiz so students can see who they would be living with before they book"
+   ],
+   "answer": 0,
+   "explanation": "The funnel breaks at trust, not at choice. The decision-makers (parents) can't see the place, and listing photos are easy to fake, so they wait for a relative to visit. Platform-verified evidence the family can watch from afar stands in for the visit and removes the blocker for the person who actually pays.",
+   "rationales": [
+    "Correct: it replaces the in-person visit, which is the real bottleneck, with evidence the remote payer can trust.",
+    "More supply doesn't help when users already don't trust the listings they're viewing; it can even add confusion.",
+    "A discount pays people to accept risk instead of removing it; cautious parents spending a deposit won't take the bet, and it costs margin.",
+    "Roommate fit matters, but the interviews point to whether the place itself is real and safe, which this doesn't address."
+   ],
+   "interview_tip": "Strong candidates notice that the user (student) and the decision-maker (parent) differ, and design for the person who blocks the transaction. Naming the substitute for the behaviour users already rely on (the relative's visit) shows sharp problem framing."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Treating uncertainty, not wait length, as the core pain in airport security queues",
+   "difficulty": "medium",
+   "question": "You're asked to improve the airport departure experience in an airline app. Research shows travellers arrive three hours early for domestic flights 'just in case' and then complain about wasted time. Which problem framing gives the best solution space?",
+   "options": [
+    "Travellers can't predict how long check-in and security will take, so they pad their arrival time heavily",
+    "Airports have too few security lanes, so queue times are long for most travellers at peak hours",
+    "Travellers are bored while waiting at the gate, so they need more entertainment and shopping offers",
+    "Travellers forget their boarding passes, so they need faster access to documents at each checkpoint"
+   ],
+   "answer": 0,
+   "explanation": "The behaviour (arriving three hours early) is a hedge against uncertainty. If the app shows live, reliable queue-time estimates and a personal 'leave home by' time, travellers can arrive later without risk. The real pain is not knowing how long it will take, which a product can solve; an airline app can't add lanes.",
+   "rationales": [
+    "Correct: it explains the padding behaviour and points to solutions the product can deliver, such as live wait estimates and leave-by alerts.",
+    "Lane capacity is an operations problem outside the app's control, and it doesn't explain why people arrive hours early even when queues are short.",
+    "This treats the symptom (idle time) and would make an early arrival more pleasant instead of making it unnecessary.",
+    "Document access is a minor friction and nothing in the research links it to people arriving three hours early."
+   ],
+   "interview_tip": "Interviewers look for candidates who read user behaviour as evidence of the underlying need. Saying 'the padding is a hedge against variance' and designing to cut variance is a strong product-sense signal."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Redistributing household mental load through shared ownership in a family calendar",
+   "difficulty": "hard",
+   "question": "A family-organiser app has strong retention among the one parent who sets it up, but the second parent rarely opens it, and the active parent still says they 'carry everything'. Which change best targets the problem?",
+   "options": [
+    "Let each event or task have a named owner, so the second parent gets reminders only for the things assigned to them",
+    "Send the second parent a daily digest of every family event so that they are always fully informed",
+    "Add a richer colour-coded weekly view so the family's schedule is easier to read at a glance",
+    "Offer the active parent a premium plan with more automation for creating and editing events"
+   ],
+   "answer": 0,
+   "explanation": "The pain is that one person owns all the remembering and follow-up, and the app copies that imbalance. Assigning clear owners moves real responsibility to the second parent and gives them a reason to open the app. Sending more information to someone who doesn't feel responsible tends to get ignored.",
+   "rationales": [
+    "Correct: it moves accountability, not just visibility, which is what the active parent is asking for.",
+    "A digest of everything adds noise for a disengaged user and leaves the active parent still responsible for all of it.",
+    "Better visuals help the person already using the app; they don't change who carries the load.",
+    "More automation makes the active parent more efficient but strengthens the imbalance they're complaining about."
+   ],
+   "interview_tip": "This is a classic 'second user' problem. A strong answer separates the job of being informed from the job of being responsible, and designs for the less-engaged user's reason to show up."
+  },
+  {
+   "topic": "Product Sense",
+   "concept": "Official face-value resale exchange to undercut secondary-market touts",
+   "difficulty": "medium",
+   "question": "A concert-ticketing platform sells out big shows in minutes. Tickets then reappear on unofficial resale sites at three to five times face value, and fans who can't attend have no easy way to sell their ticket. What is the most effective product response?",
+   "options": [
+    "A built-in resale exchange at face value, with tickets reissued in the new buyer's name on transfer",
+    "A stricter CAPTCHA at checkout so that bots buy fewer tickets during the initial on-sale rush",
+    "Raising prices for all tickets to match what the unofficial resale market is willing to pay",
+    "A public warning on the event page telling fans not to buy from unofficial resale websites"
+   ],
+   "answer": 0,
+   "explanation": "Touts profit because there's a real need (fans who can't go must sell, latecomers want in) that the platform doesn't serve. A face-value exchange with name reissue meets both needs and makes unofficial resale less useful, because tickets bought elsewhere won't transfer cleanly. It removes the market rather than fighting it at one entry point.",
+   "rationales": [
+    "Correct: it serves the legitimate resale need and makes the tout's product worse at the same time.",
+    "Bot defences help, but human touts and fans who genuinely can't attend still feed the secondary market.",
+    "Matching tout prices harms fans and the artist's reputation, and demand at the top of the distribution doesn't hold for every seat.",
+    "Warnings rarely change behaviour when fans have no official alternative for getting a sold-out ticket."
+   ],
+   "interview_tip": "Interviewers value candidates who ask what need the unwanted behaviour is serving. Absorbing that need into the product is usually stronger than enforcement alone."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "More honest ETAs lowering request conversion while improving trust",
+   "difficulty": "hard",
+   "question": "A ride-hailing app fixed its pickup-ETA model, which used to underestimate. ETAs shown are now accurate but about two minutes longer on average. Request conversion (ride requests ÷ app opens with a quote) dropped 4%. The team proposes reverting. What is the best response?",
+   "options": [
+    "Judge the change on completed trips, rider cancellations and 4-week retention, not on request conversion alone",
+    "Revert the model, since a 4% drop in request conversion means the change is clearly hurting the business",
+    "Keep the new model but subtract two minutes from every displayed ETA to recover the lost conversion",
+    "Investigate whether the 4% drop is caused by an instrumentation bug in the new ETA logging pipeline"
+   ],
+   "answer": 0,
+   "explanation": "Optimistic ETAs won requests the app couldn't fulfil as promised, which shows up later as rider cancellations, complaints and lower trust. Request conversion counts the promise, not the outcome. The right test is whether completed trips and repeat usage hold or improve once riders stop being disappointed.",
+   "rationales": [
+    "Correct: it measures outcomes downstream of the promise, where the honest ETA should pay off.",
+    "Request conversion is inflated by the inaccurate promise; reverting optimises a metric that hides cancellations and churn.",
+    "Deliberately misleading users brings back the very trust problem the fix solved, and riders notice quickly.",
+    "Checking instrumentation is reasonable, but the drop has an obvious cause (longer ETAs); the real question is how to evaluate it."
+   ],
+   "interview_tip": "Metric questions like this test whether you can tell a funnel metric that counts promises from one that counts value delivered. Naming the lagging metrics that capture the cost of over-promising is a strong signal."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "North Star for a public-library e-book lending app",
+   "difficulty": "easy",
+   "question": "You're the PM for an app that lets public-library members borrow e-books for free. Which is the best North Star metric?",
+   "options": [
+    "Weekly count of borrowed e-books where the reader got past the first 10% of the book",
+    "Total number of e-book titles available in the library's digital catalogue each month",
+    "Number of new library members who download and install the app each week",
+    "Average number of minutes each user spends browsing the catalogue per session"
+   ],
+   "answer": 0,
+   "explanation": "The value for members (and the library's mission) is people actually reading. Counting loans that move past the opening filters out impulse borrows that are never opened, and it grows only when the app helps members find and read books. Catalogue size and installs are inputs; browsing time can even signal that people can't find anything.",
+   "rationales": [
+    "Correct: it captures delivered value (reading) and responds to both discovery and reading experience.",
+    "Catalogue size is an input the library controls; a big catalogue no one reads delivers no value.",
+    "Installs are top-of-funnel; members who install and never borrow don't benefit.",
+    "Long browsing can mean users struggle to find a book, so more time isn't clearly better."
+   ],
+   "interview_tip": "When choosing a North Star, interviewers want the metric closest to the value the user receives, with a quality filter to exclude empty activity. Explaining why you added the 'past 10%' condition shows judgement."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Attach rate calculation for accessory add-ons",
+   "difficulty": "easy",
+   "question": "Last month an electronics store sold 8,000 smartphones. 2,000 of those orders also included a phone case, and 600 included both a case and a screen protector. What is the case attach rate?",
+   "options": [
+    "25%",
+    "32.5%",
+    "7.5%",
+    "17.5%"
+   ],
+   "answer": 0,
+   "explanation": "Attach rate = orders of the primary product that include the add-on ÷ all orders of the primary product. 2,000 ÷ 8,000 = 25%. The 600 orders with both items are already within the 2,000 and don't change the case attach rate.",
+   "rationales": [
+    "Correct: 2,000 case orders divided by 8,000 phone orders.",
+    "This adds the 600 to the 2,000 (2,600 ÷ 8,000), double-counting orders already included.",
+    "This is the rate of orders with both a case and a screen protector (600 ÷ 8,000), not the case attach rate.",
+    "This counts only case orders without a screen protector, (2,000 − 600) ÷ 8,000, wrongly leaving out orders that had both."
+   ],
+   "interview_tip": "Attach rate comes up in hardware, retail and SaaS add-on questions. Stating the numerator and denominator before calculating shows you won't double-count overlapping groups."
+  },
+  {
+   "topic": "Metrics",
+   "concept": "Login-event activity definition broken by longer SSO sessions",
+   "difficulty": "hard",
+   "question": "A B2B project-management tool defines 'weekly active user' as a user with a login event that week. WAU fell 20% in two weeks, but paid seats, tasks created and comments posted are all flat. What is the most likely explanation?",
+   "options": [
+    "A change such as longer SSO sessions means users log in less often, so the login-based definition undercounts activity",
+    "Users are disengaging, and task and comment counts will follow the WAU drop within a few weeks",
+    "A competitor launched a cheaper product and customers are quietly moving some teams to it",
+    "Seasonal holidays reduced usage in some regions, which shows up first in active-user counts"
+   ],
+   "answer": 0,
+   "explanation": "When the active-user count drops but the actions users take are flat, the definition is the suspect. Tying activity to login events breaks if sessions get longer (for example, a new SSO setup or 'remember me' default), because people keep working without logging in again. Activity should be based on meaningful actions, not logins.",
+   "rationales": [
+    "Correct: flat usage with falling WAU points to a measurement artefact in how 'active' is defined.",
+    "Disengagement would normally show up in the actions themselves; flat tasks and comments argue against it.",
+    "Teams moving to a competitor would reduce tasks and comments, which aren't falling.",
+    "Holidays would lower actual work done, but tasks and comments are flat."
+   ],
+   "interview_tip": "In root-cause questions, first ask whether the metric drop is real by checking related metrics that should move together. Spotting a definitional artefact before theorising about user behaviour is what interviewers want to see."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Bonferroni-adjusted significance threshold calculation",
+   "difficulty": "easy",
+   "question": "Your experiment readout tests 5 primary metrics, and you want the chance of any false positive across all of them to be at most 5%. Using a Bonferroni correction, what p-value threshold should each metric meet?",
+   "options": [
+    "0.01",
+    "0.05",
+    "0.25",
+    "0.001"
+   ],
+   "answer": 0,
+   "explanation": "Bonferroni divides the overall significance level by the number of tests: 0.05 ÷ 5 = 0.01. Testing each metric at 0.05 would give roughly a 23% chance (1 − 0.95⁵) of at least one false positive. Bonferroni is simple and conservative; teams often limit the number of primary metrics instead.",
+   "rationales": [
+    "Correct: 0.05 divided by 5 tests.",
+    "Using 0.05 for each metric ignores the multiple tests and inflates the family-wide false positive rate to about 23%.",
+    "This multiplies instead of divides, making false positives much more likely.",
+    "This is ten times stricter than needed and would cost a lot of statistical power."
+   ],
+   "interview_tip": "Interviewers expect you to know that testing many metrics inflates false positives. Mentioning a correction and the better practice of pre-registering one primary metric shows mature experiment thinking."
+  },
+  {
+   "topic": "Experimentation",
+   "concept": "Censored users when comparing time-to-conversion between test arms",
+   "difficulty": "medium",
+   "question": "A trial-onboarding test measures 'average days from signup to paid conversion' among users who converted. Treatment shows 6.1 days vs control's 8.4 days after two weeks, but treatment's overall conversion rate is lower. What is the main flaw in the metric?",
+   "options": [
+    "It ignores users who haven't converted yet, so faster but fewer conversions can look like a win",
+    "Two weeks is too short to measure any change in how quickly trial users decide to pay",
+    "Averages of days are always misleading, so the team should have used the median instead",
+    "Time to conversion can't be compared between arms because users signed up on different days"
+   ],
+   "answer": 0,
+   "explanation": "Averaging only over converters drops everyone still in the trial or lost, who are 'censored'. If treatment converts a smaller, more eager group, their average time looks short even though the outcome is worse. Use conversion within a fixed window (e.g., paid by day 14) or survival analysis that keeps censored users in.",
+   "rationales": [
+    "Correct: conditioning on conversion excludes censored users and can reverse the conclusion.",
+    "Two weeks may be short for full maturity, but the bigger problem is excluding non-converters from the average.",
+    "A median among converters has the same selection problem; the issue is who is included, not the statistic.",
+    "Randomisation balances signup dates across arms, so staggered signup isn't the flaw."
+   ],
+   "interview_tip": "Strong candidates spot metrics that condition on an outcome the treatment affects. Proposing a fixed-window conversion rate or survival curve shows statistical fluency without heavy jargon."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Daily elevator trips in a residential tower",
+   "difficulty": "easy",
+   "question": "Estimate the number of elevator rides per day in a 30-floor residential tower with 4 flats per floor. Which is the closest estimate?",
+   "options": [
+    "About 2,000",
+    "About 200",
+    "About 20,000",
+    "About 200,000"
+   ],
+   "answer": 0,
+   "explanation": "30 floors × 4 flats = 120 flats; at about 3.5 people each, that's roughly 420 residents. If each leaves and returns about twice a day, that's ~4 rides per person, or ~1,700 rides. Add deliveries, staff and visitors (~300) and you get about 2,000 rides a day.",
+   "rationales": [
+    "Correct: about 420 residents × 4 rides plus visitors and deliveries gives roughly 2,000.",
+    "This would mean fewer than one ride per resident per day, which is too low for a high-rise where most people use the lift.",
+    "This implies about 48 rides per resident per day, far above realistic behaviour.",
+    "This is two orders of magnitude too high for a single building of about 420 people."
+   ],
+   "interview_tip": "Estimation interviews reward a clear structure: population, behaviour per person, then add-ons such as visitors. Stating assumptions aloud and sense-checking the final number matter more than precision."
+  },
+  {
+   "topic": "Estimation",
+   "concept": "Reviewer headcount for sampling AI assistant conversations for QA",
+   "difficulty": "medium",
+   "question": "An AI support assistant handles 500,000 conversations a day. The quality team wants humans to review a random 2% sample. Each review takes about 3 minutes, and a reviewer has about 6 productive hours a day. Roughly how many full-time reviewers are needed?",
+   "options": [
+    "About 80",
+    "About 8",
+    "About 800",
+    "About 40"
+   ],
+   "answer": 0,
+   "explanation": "2% of 500,000 = 10,000 reviews a day. At 3 minutes each that's 30,000 minutes, or 500 hours. 500 hours ÷ 6 hours per reviewer ≈ 83 reviewers, before adding cover for leave and calibration time.",
+   "rationales": [
+    "Correct: 10,000 reviews × 3 minutes = 500 hours ÷ 6 hours ≈ 83 people.",
+    "This is ten times too low; it may come from sampling 0.2% or treating minutes as hours somewhere.",
+    "This is ten times too high, for example from sampling 20% instead of 2%.",
+    "This assumes about 12 productive hours per reviewer, double the stated 6 hours."
+   ],
+   "interview_tip": "AI PM interviews increasingly include operational sizing of human-in-the-loop review. Showing the chain (volume → sample → time → capacity) and noting overheads like leave signals realistic planning."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Bundling gains depend on negatively correlated customer valuations",
+   "difficulty": "medium",
+   "question": "A software company sells a design tool and a video editor separately. It is considering a single bundle at one price. In which situation is pure bundling most likely to raise revenue compared with selling separately?",
+   "options": [
+    "Customers who value one product highly tend to value the other product less, and vice versa",
+    "Almost all customers value both products highly and would happily buy each one at full price",
+    "Customers who value one product highly also value the other highly, while others value both low",
+    "Each product has very high marginal costs, so every extra unit sold sharply lowers its profit"
+   ],
+   "answer": 0,
+   "explanation": "Bundling works best when valuations are negatively correlated. Their combined value is then similar across customers, so one bundle price captures more total willingness to pay than two separate prices. When valuations move together or everyone values both highly, separate pricing already captures most of it.",
+   "rationales": [
+    "Correct: negatively correlated valuations even out customers' total value, which a single bundle price can capture.",
+    "If everyone already buys both at full price, a bundle adds little and often requires a discount.",
+    "Positively correlated valuations leave the spread in total value unchanged, so bundling gains little.",
+    "High marginal costs make bundling less attractive, because customers get units they value little that still cost a lot to provide."
+   ],
+   "interview_tip": "Pricing strategy questions often test the economics behind bundles. Explaining why the correlation of valuations matters, instead of saying 'bundles increase value', marks a strong candidate."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Paid-acquisition-dependent D2C brand lacks a moat when ad costs rise",
+   "difficulty": "medium",
+   "question": "An Indian D2C brand grew fast by selling a single viral skincare product through Instagram ads. Ad costs have doubled, and look-alike products from other brands now appear in the same feeds. Which is the most important strategic weakness this exposes?",
+   "options": [
+    "Its growth relies on rented paid reach and an easily copied product, so it has no lasting advantage",
+    "Its product is priced too high for the market, so it should cut prices to match the copycat brands",
+    "It has too few products, so it should launch many new products quickly to fill its catalogue",
+    "Its Instagram creatives are weak, so it should invest more heavily in better ad design and targeting"
+   ],
+   "answer": 0,
+   "explanation": "When both distribution (paid ads) and product are easy for rivals to copy, rising ad costs squeeze margins with nothing to fall back on. Sustainable options include building repeat purchase and an owned channel, brand loyalty, or real product differentiation. Better ads or more SKUs only treat the symptoms.",
+   "rationales": [
+    "Correct: it identifies the structural problem, with no moat in distribution or product.",
+    "A price cut speeds up margin erosion without creating any advantage the copycats can't match.",
+    "More products may help repeat purchase later, but launching them through the same expensive channel leaves the core problem unsolved.",
+    "Creative work can lower costs a little, but competitors can improve their ads too; it isn't a durable advantage."
+   ],
+   "interview_tip": "Strategy interviewers look for candidates who separate tactics from moats. Saying 'rented distribution plus a commodity product' and proposing owned channels shows structural thinking."
+  },
+  {
+   "topic": "Strategy",
+   "concept": "Cost-to-serve differences across customer segments",
+   "difficulty": "medium",
+   "question": "A B2B invoicing SaaS has a self-serve tier at ₹999/month. Analysis shows these small customers file five times more support tickets per rupee of revenue than mid-market customers, and the tier loses money after support costs. What is the best first move?",
+   "options": [
+    "Redesign how the tier is served, with better in-product help and community support, before changing price",
+    "Shut down the self-serve tier immediately and focus all of the company's effort on mid-market customers",
+    "Raise the self-serve price by five times to match its share of support tickets and costs",
+    "Keep the tier as it is, since small customers provide a large volume of word-of-mouth referrals"
+   ],
+   "answer": 0,
+   "explanation": "The problem is the cost to serve, not necessarily the segment. Small customers often file tickets that better onboarding, help content and self-service tools can prevent. Lowering cost to serve keeps a valuable acquisition funnel (many SMBs grow or refer others) while fixing margins; price or exit decisions come after.",
+   "rationales": [
+    "Correct: it attacks the cause of the losses and keeps the segment's strategic value.",
+    "Exiting gives up a funnel and future upgrades without trying the cheaper fix first.",
+    "A fivefold price rise would drive most of the segment away and ignores that many tickets are preventable.",
+    "Referral value is an assumption that should be measured, and it doesn't justify losing money on every customer forever."
+   ],
+   "interview_tip": "Interviewers like candidates who look at unit economics by segment, including cost to serve. A strong answer tries to fix the economics before cutting a segment."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Enthusiast skew in self-selected beta cohorts",
+   "difficulty": "medium",
+   "question": "You opened a beta of a new budgeting feature to anyone who clicked 'Join beta' in settings. Beta users show 70% weekly usage and glowing feedback, and leadership wants to forecast launch adoption from these numbers. What should you flag?",
+   "options": [
+    "Self-selected beta users are more motivated than typical users, so their usage will overstate launch adoption",
+    "The beta sample is too small, so the results cannot be trusted at all and should not be used",
+    "Weekly usage is the wrong metric for a budgeting feature and daily usage should be used instead",
+    "Glowing feedback is only reliable once it is collected through a formal survey tool, not in-app"
+   ],
+   "answer": 0,
+   "explanation": "People who look for and join a beta are early adopters with high motivation. Their behaviour is useful for finding bugs and usability issues, but it overstates how the average user will engage. To forecast adoption, use a randomised rollout or a holdout on a representative sample.",
+   "rationales": [
+    "Correct: it names the selection bias and explains why the numbers won't hold at launch.",
+    "Sample size may be fine; the problem is who is in the sample, which more users of the same kind won't fix.",
+    "Budgeting is often weekly or monthly, and the metric choice isn't the main issue here.",
+    "The way feedback is collected matters less than the fact that it comes from enthusiasts."
+   ],
+   "interview_tip": "Execution questions often check whether you can tell when early data is safe to extrapolate. Calling out selection bias and suggesting a randomised rollout shows sound judgement."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Anchoring bias when sharing a target date before asking for estimates",
+   "difficulty": "medium",
+   "question": "Before an estimation session, a PM tells the engineers, 'Leadership is hoping we can ship this by the end of the month.' The estimates that follow all land just under the end of the month. What is the main risk?",
+   "options": [
+    "The estimates were anchored to the hoped-for date, so they may not reflect the work's real size",
+    "Engineers dislike being told about leadership's expectations, so they will lose trust in the PM",
+    "The team will finish early and waste the remaining time because the date was set too late",
+    "The estimates will be too pessimistic, since engineers always add a buffer to stated targets"
+   ],
+   "answer": 0,
+   "explanation": "Stating a target first anchors people's estimates toward it, so the numbers echo the date instead of the work. Ask for independent estimates first (for example, with planning poker or written estimates), then compare them with the target and discuss scope trade-offs openly.",
+   "rationales": [
+    "Correct: anchoring makes estimates cluster around the stated date and hides the real risk.",
+    "Sharing context isn't a trust problem in itself; the issue is the timing relative to estimating.",
+    "Anchored estimates more often underestimate, so finishing early is the less likely risk.",
+    "The pattern here shows estimates pulled toward the target, not padded beyond it."
+   ],
+   "interview_tip": "Interviewers like hearing how you get honest estimates. Describing how you collect independent estimates before revealing constraints shows awareness of bias in planning."
+  },
+  {
+   "topic": "Execution",
+   "concept": "Kano must-be features cause dissatisfaction when missing but little delight when present",
+   "difficulty": "easy",
+   "question": "In the Kano model, how do 'must-be' (basic) features such as a working password reset affect customer satisfaction?",
+   "options": [
+    "Their absence causes strong dissatisfaction, but their presence adds little satisfaction",
+    "Satisfaction rises steadily the more of the feature customers get, with no upper limit",
+    "Their presence creates delight because customers don't expect them in the product",
+    "Customers are indifferent to them whether or not they are present in the product"
+   ],
+   "answer": 0,
+   "explanation": "Must-be features are expected. Users don't praise a working password reset, but they get very frustrated if it's missing or broken. That's why they must be covered before investing in delighters, even though they rarely appear in feature requests.",
+   "rationales": [
+    "Correct: this is the defining shape of a must-be feature in Kano.",
+    "This describes performance (one-dimensional) features, where more is better in a linear way.",
+    "This describes attractive (delighter) features, which customers don't expect.",
+    "This describes indifferent features, which don't affect satisfaction either way."
+   ],
+   "interview_tip": "Kano often comes up in prioritisation questions. Explaining that basics rarely show up in feature requests but cause churn when missing shows you prioritise beyond what users ask for."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Accommodating a teammate's caregiving constraints while keeping team commitments",
+   "difficulty": "hard",
+   "question": "An engineer on your team has started missing morning stand-ups and some meetings. In a private conversation, she tells you she's caring for a parent with a serious illness for the next few months. Her work is still good but sometimes late. What is the best response?",
+   "options": [
+    "Agree on flexible hours and async updates with her, adjust her commitments to fit, and involve her manager on support options",
+    "Tell her the team needs her at every stand-up, since being present is part of being a reliable member",
+    "Quietly move her critical tasks to others without telling her, so she can focus on her parent",
+    "Share her situation with the whole team so they understand why she's missing some meetings"
+   ],
+   "answer": 0,
+   "explanation": "A strong leader protects both the person and the delivery. Working out a sustainable arrangement with her (async updates, adjusted scope) keeps commitments realistic, and involving her line manager makes sure she gets formal support such as leave options. It keeps her trust and respects her privacy.",
+   "rationales": [
+    "Correct: it balances empathy with accountability, plans together with her and uses the right support channel.",
+    "Insisting on attendance puts a ritual ahead of outcomes and is likely to push her toward burnout or leaving.",
+    "Moving work without asking her is well meant but removes her say and can feel like a demotion.",
+    "Her situation is private; sharing it without consent breaks trust, and the team only needs to know about the changed working pattern."
+   ],
+   "interview_tip": "Behavioural questions about personal hardship test judgement on empathy, privacy and delivery at once. Strong answers make the plan with the person, not around them, and involve the formal manager where appropriate."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Responding to public blame from a sales leader for a missed quarter",
+   "difficulty": "hard",
+   "question": "In a leadership meeting, the VP of Sales says the quarter's missed target is 'because product hasn't shipped what customers need'. You know some deals slipped for other reasons, but two deals were lost to a feature gap your team deprioritised. What is the best response?",
+   "options": [
+    "Acknowledge the two deals lost to the gap, offer to analyse all lost deals together, and agree next steps in a follow-up",
+    "Point out right away, with data, that most of the lost deals had nothing to do with the product roadmap",
+    "Stay silent in the meeting and raise your disagreement privately with your manager afterwards",
+    "Promise to build the missing feature next sprint so the sales team can close deals next quarter"
+   ],
+   "answer": 0,
+   "explanation": "Owning your part of the story builds credibility and lowers tension. Proposing a joint analysis of lost deals moves the conversation from blame to evidence and gives both teams a shared fact base. Defending yourself publicly or promising a quick fix usually makes things worse.",
+   "rationales": [
+    "Correct: it owns the real gap, avoids a public fight and moves the discussion to shared evidence.",
+    "Being right in public can feel like scoring a point, and it ignores the two deals your team did affect.",
+    "Silence lets an inaccurate story stand in front of leadership and pushes the issue onto your manager.",
+    "A rushed promise skips prioritisation and rewards blame, and the feature may not fix the bigger causes."
+   ],
+   "interview_tip": "Amazon-style 'Earn Trust' and 'Have Backbone' questions look for candidates who admit their share and still steer toward evidence. Describing how you turned a blame moment into a joint analysis makes a strong story."
+  },
+  {
+   "topic": "Behavioural",
+   "concept": "Removing a costly support channel relied on by a vulnerable minority of customers",
+   "difficulty": "hard",
+   "question": "Operations wants to shut down your banking app's phone support line to save costs, since 92% of contacts now use chat. Data shows the phone line is used mostly by customers over 65, many of whom have never used chat. What should you do?",
+   "options": [
+    "Find out why these customers use phone and propose a cheaper option, such as a call-back service, before deciding",
+    "Support the shutdown, since nearly all customers already use chat and the cost saving is significant",
+    "Block the shutdown outright, arguing that any reduction in service quality is unacceptable for a bank",
+    "Support the shutdown but add a banner telling older customers how to use chat instead of phone"
+   ],
+   "answer": 0,
+   "explanation": "Aggregate numbers hide a group that may have no workable alternative and may be at higher risk of fraud. Understanding their needs lets you find options that cut cost while still serving them, for example call-backs, assisted chat or limited hours. You avoid both an expensive status quo and harm to a vulnerable group.",
+   "rationales": [
+    "Correct: it takes the cost goal seriously while protecting customers who rely on the channel.",
+    "The 92% figure hides that the remaining customers are the ones who most need the channel.",
+    "Refusing any change ignores a legitimate cost concern and closes off better solutions.",
+    "A banner assumes these customers can and will switch to chat, which the data suggests many can't."
+   ],
+   "interview_tip": "This tests Customer Obsession against cost pressure. Strong answers neither rubber-stamp nor block; they look at the affected segment and propose a third option."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Elo-style ratings aggregate pairwise model preferences into a ranking",
+   "difficulty": "easy",
+   "question": "Your team compares several LLM versions by showing reviewers two answers side by side and asking which is better. How do Elo-style ratings turn these pairwise votes into a ranking?",
+   "options": [
+    "Each win raises a model's score and each loss lowers it, with bigger changes for upsets against stronger models",
+    "Each model's score is its share of wins, ignoring how strong the opponents in its comparisons were",
+    "Each model is given an absolute quality score out of 10 by reviewers, and the scores are then averaged",
+    "Each model's rank is set by how many comparisons it has taken part in, regardless of results"
+   ],
+   "answer": 0,
+   "explanation": "Elo updates ratings after each comparison based on the expected result. Beating a higher-rated model moves your rating more than beating a weaker one. This lets you rank many models without comparing every pair equally often, as public chatbot arenas do.",
+   "rationales": [
+    "Correct: rating changes depend on the result and on the opponent's current rating.",
+    "Raw win share ignores opponent strength, so a model that faced weak opponents looks better than it is.",
+    "That describes absolute rating, not a pairwise preference system.",
+    "The number of comparisons affects confidence, not rank."
+   ],
+   "interview_tip": "AI PMs should be able to explain how leaderboards are built. Knowing that Elo accounts for opponent strength, and that arenas can still favour style over substance, shows evaluation literacy."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Policy-as-prompt LLM moderation enables fast policy changes",
+   "difficulty": "medium",
+   "question": "A marketplace uses a trained classifier to flag prohibited listings. Every time the policy team adds a rule (for example, a new banned product), it takes weeks to collect labels and retrain. What is the main advantage of switching to an LLM that reads the written policy at run time?",
+   "options": [
+    "Policy changes can go live by editing the policy text and re-running evals, without collecting labels and retraining",
+    "LLMs never make moderation mistakes, so the team can stop reviewing flagged listings manually",
+    "LLM moderation is much cheaper per listing than a small trained classifier at high volume",
+    "LLMs don't need any evaluation set, because the written policy fully defines their behaviour"
+   ],
+   "answer": 0,
+   "explanation": "With the policy in the prompt, a rule change becomes a text edit, followed by an eval run on test cases, instead of a labelling and training cycle. That speed is the main gain. The trade-offs are usually higher cost per item and latency, so teams often use the LLM for new or hard cases and a cheap classifier for high-volume ones.",
+   "rationales": [
+    "Correct: it describes the real advantage, faster iteration on policy, while still requiring evals.",
+    "LLMs still make errors, so human review and appeals are still needed.",
+    "LLMs are usually more expensive per item than a small classifier, not cheaper.",
+    "You still need an eval set to check that the model applies the policy as intended."
+   ],
+   "interview_tip": "Trust & safety AI questions often test cost-speed-accuracy trade-offs. Mentioning a hybrid design (LLM for new rules, classifier for volume) shows practical judgement."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Higher accuracy bar for AI summaries shown under a third-party publisher's name",
+   "difficulty": "hard",
+   "question": "Your phone OS groups notifications and shows AI summaries of them. For news alerts, several summaries misstated headlines, and publishers complained because the summaries appeared under their names. What is the best product response?",
+   "options": [
+    "Pause or turn off summaries for news apps until accuracy meets a stricter bar, and label summaries clearly as AI-generated",
+    "Keep summaries running for news, since the error rate across all notification types is still very low",
+    "Add a small disclaimer to the settings page noting that AI summaries may sometimes contain mistakes",
+    "Let users rate each summary with a thumbs up or down and use the feedback to improve the model over time"
+   ],
+   "answer": 0,
+   "explanation": "When an error is shown under someone else's brand and concerns facts, the harm (misinformation, damage to publisher trust) is much higher than for a chat message. Different content categories need different launch bars. Pausing news summaries while improving accuracy, and labelling AI text clearly, matches the bar to the risk.",
+   "rationales": [
+    "Correct: it applies a stricter, risk-based bar to the category where errors do the most harm.",
+    "An average error rate hides a high-harm category where even rare errors are unacceptable.",
+    "A disclaimer users rarely see doesn't stop misleading text appearing under the publisher's name.",
+    "Feedback helps over time, but leaves harmful errors live in the meantime."
+   ],
+   "interview_tip": "Interviewers look for candidates who set quality bars by the cost of errors in each category, not by a global average. Mentioning attribution and labelling shows awareness of trust beyond your own product."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Letting users steer or stop an agent mid-run",
+   "difficulty": "medium",
+   "question": "Users of a research agent say that when it heads in the wrong direction early in a 15-minute task, they have to wait for it to finish, then start over. What is the most effective improvement?",
+   "options": [
+    "Let users interrupt, redirect or stop the agent during the run, with its partial work kept",
+    "Make the agent run faster so the 15-minute wait for a wrong answer is shorter for users",
+    "Ask users to write much more detailed instructions up front so the agent never goes off course",
+    "Show a fixed progress bar so users know how much time remains until the task is complete"
+   ],
+   "answer": 0,
+   "explanation": "Long-running agents will sometimes misread the task. Letting users steer mid-run turns a wasted 15 minutes into a quick correction, and keeping partial work avoids starting over. Progress visibility helps, but only if users can act on what they see.",
+   "rationales": [
+    "Correct: it lets users catch and fix the wrong direction early, which is the real pain.",
+    "Faster runs reduce waste a little but still deliver the wrong answer and force a restart.",
+    "Better prompts help, but no prompt removes all ambiguity, and it puts the burden on users.",
+    "A progress bar shows time left but doesn't let users fix a run that's going wrong."
+   ],
+   "interview_tip": "Agent UX questions reward thinking about control as well as autonomy. Describing interrupt, redirect and resume capabilities shows you understand how users work with agents in practice."
+  },
+  {
+   "topic": "AI Product",
+   "concept": "Scoping assistant memory per workspace to prevent cross-context leakage",
+   "difficulty": "medium",
+   "question": "An AI assistant with long-term memory is used by consultants who work for several client companies in separate workspaces. A consultant notices the assistant mentioned one client's pricing details while she was working in another client's workspace. What is the right design fix?",
+   "options": [
+    "Store and retrieve memories separately per workspace, so memories from one client never appear in another",
+    "Tell the model in its system prompt not to mention information from other clients in its answers",
+    "Turn off long-term memory for all users, since it can't be made safe for professional settings",
+    "Add a warning at the start of each session reminding users not to share confidential information"
+   ],
+   "answer": 0,
+   "explanation": "Confidentiality boundaries should be enforced in the system, not left to the model's judgement. Scoping memory storage and retrieval to each workspace means the model never sees other clients' data in the first place. Prompt instructions can fail; access boundaries don't depend on the model's behaviour.",
+   "rationales": [
+    "Correct: it enforces the boundary where the data is stored and retrieved.",
+    "A prompt instruction is a soft control the model can ignore, especially once the data is already in its context.",
+    "Disabling memory removes a useful feature when proper scoping fixes the problem.",
+    "Warnings push the burden to users and don't stop the leak the system itself caused."
+   ],
+   "interview_tip": "Interviewers want to hear that data boundaries are enforced in architecture, not in prompts. That distinction is a strong signal for enterprise AI PM roles."
+  },
+  {
+   "topic": "Technology",
+   "concept": "Expired TLS certificates as a preventable outage cause",
+   "difficulty": "easy",
+   "question": "Your app suddenly fails for all users with 'secure connection' errors, though no code was deployed. The backend team finds the problem in minutes. What is a common cause of this pattern?",
+   "options": [
+    "The server's TLS certificate expired, so browsers and apps refused to trust the connection",
+    "A database index was dropped, so all queries became too slow and timed out for users",
+    "The CDN cache was cleared, so static images and scripts had to be reloaded from origin",
+    "Users' app versions are too old and need an update to access the latest API features"
+   ],
+   "answer": 0,
+   "explanation": "TLS certificates have expiry dates, and once one lapses, clients reject the connection with security errors, even though nothing was deployed. It's a common and preventable outage. Automated renewal and alerts well before expiry should be standard.",
+   "rationales": [
+    "Correct: an expired certificate produces sudden security errors without any code change.",
+    "A missing index causes slowness or timeouts, not 'secure connection' errors.",
+    "A cache clear slows the first loads but doesn't cause security errors.",
+    "Old app versions might fail on new APIs, but wouldn't suddenly fail for all users with security errors."
+   ],
+   "interview_tip": "PMs aren't expected to configure certificates, but knowing common outage causes helps in incident and reliability discussions. Mentioning prevention through automation shows operational maturity."
+  },
+  {
+   "topic": "Technology",
+   "concept": "IP-based rate limiting blocking many mobile users behind carrier-grade NAT",
+   "difficulty": "medium",
+   "question": "After adding a limit of 100 requests per minute per IP address to stop scraping, your Indian app sees a spike in 'Too many requests' errors among ordinary users on mobile data, but not on home Wi-Fi. What is the most likely cause?",
+   "options": [
+    "Mobile carriers share one public IP among many users, so normal users hit the shared per-IP limit together",
+    "Mobile phones send far more requests per minute than laptops, so mobile users exceed the limit alone",
+    "The rate limiter is counting requests incorrectly because mobile networks have higher latency",
+    "Scrapers have moved to mobile networks, so the errors are blocking real attackers as intended"
+   ],
+   "answer": 0,
+   "explanation": "Mobile carriers commonly use carrier-grade NAT, where many subscribers share a public IP address. A per-IP limit then treats thousands of users as one client. Rate limits for logged-in traffic should use user or device identifiers, with IP limits kept loose and combined with other signals.",
+   "rationales": [
+    "Correct: shared carrier IPs make a per-IP limit hit many legitimate users at once.",
+    "One normal user rarely sends 100 requests a minute; the spike comes from many users sharing an IP.",
+    "Latency affects timing, not how many requests are counted against a limit.",
+    "The errors affect ordinary users on mobile data, so the limit is blocking the wrong people."
+   ],
+   "interview_tip": "This tests whether you can connect a technical choice to who it actually affects. Linking the symptom (mobile only) to shared IPs and proposing user-level limits shows good technical fluency."
+  },
+  {
+   "topic": "Growth",
+   "concept": "Prioritising recently lapsed users in reactivation because win-back odds decay with time",
+   "difficulty": "medium",
+   "question": "You have budget to send reactivation offers to 100,000 of 1 million lapsed users of a food-delivery app. Which group should you prioritise for the best return?",
+   "options": [
+    "Users who lapsed most recently, for example in the last 30 to 60 days, who had ordered regularly",
+    "Users who lapsed longest ago, since they have the most room to return and are the largest group",
+    "A random sample of all lapsed users, since targeting any subgroup would bias the results",
+    "Users who placed a single order and never returned, since they have not yet formed any habit"
+   ],
+   "answer": 0,
+   "explanation": "The chance of winning a user back usually falls as time since their last activity grows, and past frequency is a strong predictor of return. Recently lapsed, formerly regular users have the highest response rate per offer. A small random holdout within this group is still needed to measure true incremental lift.",
+   "rationales": [
+    "Correct: recency and past frequency predict who is most likely to come back.",
+    "Long-lapsed users have usually moved on, so response rates per offer are lowest.",
+    "Random targeting is useful for a holdout, but not for spending the main budget efficiently.",
+    "One-time users have shown the least interest, so they usually respond least to offers."
+   ],
+   "interview_tip": "Growth interviews like recency-frequency reasoning for targeting. Mentioning a holdout to measure incremental lift, rather than raw returns, shows rigour."
+  },
+  {
+   "topic": "Current Events",
+   "concept": "Google Workspace MCP mandate with human confirmation for agent email and sharing (Nov 2026)",
+   "difficulty": "easy",
+   "question": "On 24 November 2026, Google made Workspace MCP and gwscli generally available and said AI agents must use them instead of the traditional Workspace REST APIs, with enforcement starting 1 February 2027. Which agent actions did Google say require human-in-the-loop confirmation, and what principle does that reflect?",
+   "options": [
+    "Sending email and changing Drive sharing, because they are visible to others and hard to undo",
+    "Reading Gmail and searching Drive, because any access to user data could reveal private files",
+    "Creating new Docs and Sheets, because generated content may contain errors users don't notice",
+    "Every action an agent takes, because no agent should act on Workspace data without approval"
+   ],
+   "answer": 0,
+   "explanation": "Coverage of the launch reports that human confirmation is required before an agent sends email or changes Drive sharing settings. Both actions affect people outside the user's own workspace and can't easily be reversed. Gating only those high-impact actions keeps agents useful for low-risk reading and drafting while protecting against costly mistakes.",
+   "rationales": [
+    "Correct: these are the gated actions reported, and they are externally visible and hard to reverse.",
+    "Read actions are lower risk and weren't reported as requiring confirmation; gating them would make agents much less useful.",
+    "Creating documents is easy to undo and private by default, so it doesn't need the same gate.",
+    "Confirming every action would cause approval fatigue and defeat the purpose of an agent."
+   ],
+   "interview_tip": "Agent-platform questions often probe where you place human approval. A strong answer gates by reversibility and blast radius instead of gating everything or nothing.",
+   "source": "https://ashutoshai.com/ai-compass/2026/11/24/"
+  }
+ ]
+}
